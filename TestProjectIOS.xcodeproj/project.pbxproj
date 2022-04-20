@@ -17,6 +17,7 @@
 		3447EE16280EA29D001AE2F0 /* TestProjectDispatchBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EE15280EA29D001AE2F0 /* TestProjectDispatchBlock.m */; };
 		3447EE1D280ED1C7001AE2F0 /* TestProjectDispatchQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EE1C280ED1C7001AE2F0 /* TestProjectDispatchQueue.m */; };
 		346D4DB0280FA42D003D4D86 /* TestProjectDispatchData.m in Sources */ = {isa = PBXBuildFile; fileRef = 346D4DAF280FA42D003D4D86 /* TestProjectDispatchData.m */; };
+		34BE62A1281016360052E1B5 /* TestProjectDispatchGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BE62A0281016360052E1B5 /* TestProjectDispatchGroup.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		3447EE1C280ED1C7001AE2F0 /* TestProjectDispatchQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchQueue.m; sourceTree = "<group>"; };
 		346D4DAE280FA42D003D4D86 /* TestProjectDispatchData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchData.h; sourceTree = "<group>"; };
 		346D4DAF280FA42D003D4D86 /* TestProjectDispatchData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchData.m; sourceTree = "<group>"; };
+		34BE629F281016360052E1B5 /* TestProjectDispatchGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchGroup.h; sourceTree = "<group>"; };
+		34BE62A0281016360052E1B5 /* TestProjectDispatchGroup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchGroup.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,8 @@
 				346D4DAF280FA42D003D4D86 /* TestProjectDispatchData.m */,
 				3447EE1B280ED1C7001AE2F0 /* TestProjectDispatchQueue.h */,
 				3447EE1C280ED1C7001AE2F0 /* TestProjectDispatchQueue.m */,
+				34BE629F281016360052E1B5 /* TestProjectDispatchGroup.h */,
+				34BE62A0281016360052E1B5 /* TestProjectDispatchGroup.m */,
 			);
 			path = dispatch;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3447EDFD280E8EBC001AE2F0 /* ViewController.m in Sources */,
+				34BE62A1281016360052E1B5 /* TestProjectDispatchGroup.m in Sources */,
 				3447EE1D280ED1C7001AE2F0 /* TestProjectDispatchQueue.m in Sources */,
 				3447EDF7280E8EBC001AE2F0 /* AppDelegate.m in Sources */,
 				3447EE16280EA29D001AE2F0 /* TestProjectDispatchBlock.m in Sources */,

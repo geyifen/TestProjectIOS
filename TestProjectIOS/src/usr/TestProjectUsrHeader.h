@@ -10,6 +10,9 @@
 
 #import "TestProjectDispatchBlock.h"
 #import "TestProjectDispatchData.h"
+#import "TestProjectDispatchGroup.h"
+
 #import "TestProjectDispatchQueue.h"
+
 
 #endif /* TestProjectUsrHeader_h */
