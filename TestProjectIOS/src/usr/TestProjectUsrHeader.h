@@ -9,6 +9,7 @@
 #define TestProjectUsrHeader_h
 
 #import "TestProjectDispatchBlock.h"
-#import "TestProjectQueue.h"
+#import "TestProjectDispatchData.h"
+#import "TestProjectDispatchQueue.h"
 
 #endif /* TestProjectUsrHeader_h */

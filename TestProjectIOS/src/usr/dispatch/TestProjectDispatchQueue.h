@@ -1,5 +1,5 @@
 //
-//  TestProjectQueue.h
+//  TestProjectDispatchQueue.h
 //  TestProjectIOS
 //
 //  Created by zjrcumac on 2022/4/19.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TestProjectQueue : NSObject
+@interface TestProjectDispatchQueue : NSObject
 
 + (dispatch_queue_t)generateConcurrentQueueWithSel:(SEL)sel;
 

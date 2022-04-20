@@ -20,7 +20,7 @@
 }
 
 - (void)testNotifyAndCancelDispatchBlock {
-    dispatch_queue_t concurrentQueue = [TestProjectQueue generateConcurrentQueueWithSel:_cmd];
+    dispatch_queue_t concurrentQueue = [TestProjectDispatchQueue generateConcurrentQueueWithSel:_cmd];
     NSTimeInterval notifySleepTime = 3;
     NSTimeInterval refreshSleepTime = 5;
     
@@ -106,7 +106,7 @@
 }
 
 - (void)testWaitDispatchBlock {
-    dispatch_queue_t concurrentQueue = [TestProjectQueue generateConcurrentQueueWithSel:_cmd];
+    dispatch_queue_t concurrentQueue = [TestProjectDispatchQueue generateConcurrentQueueWithSel:_cmd];
     dispatch_async(concurrentQueue, ^{
         NSTimeInterval time = 5;
         NSTimeInterval sleepTime = 8;
@@ -115,7 +115,7 @@
             NSLog(@"dispatchBlock 在%f后完成操作", sleepTime);
         });
         NSLog(@"我这个是在dispatchBlock之前操作的");
-        dispatch_queue_t testTaskQueue = [TestProjectQueue generateConcurrentQueueWithQueueName:@"testTask"];
+        dispatch_queue_t testTaskQueue = [TestProjectDispatchQueue generateConcurrentQueueWithQueueName:@"testTask"];
         dispatch_async(testTaskQueue, dispatchBlock);
         NSLog(@"我这个是在dispatchBlock之后操作的");
                 
@@ -181,7 +181,7 @@
         [NSThread sleepForTimeInterval:time];
         NSLog(@"我是个qosUnspecifiedDispatchBlock");
     });
-    dispatch_queue_t concurrentQueue = [TestProjectQueue generateConcurrentQueueWithSel:_cmd];
+    dispatch_queue_t concurrentQueue = [TestProjectDispatchQueue generateConcurrentQueueWithSel:_cmd];
     dispatch_async(concurrentQueue, qosUserInteractiveDispatchBlock);
     dispatch_async(concurrentQueue, qosUserInitiatedDispatchBlock);
     dispatch_async(concurrentQueue, qosUnspecifiedDispatchBlock);

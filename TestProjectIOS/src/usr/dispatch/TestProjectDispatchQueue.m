@@ -1,13 +1,13 @@
 //
-//  TestProjectQueue.m
+//  TestProjectDispatchQueue.m
 //  TestProjectIOS
 //
 //  Created by zjrcumac on 2022/4/19.
 //
 
-#import "TestProjectQueue.h"
+#import "TestProjectDispatchQueue.h"
 
-@implementation TestProjectQueue
+@implementation TestProjectDispatchQueue
 
 + (dispatch_queue_t)generateConcurrentQueueWithSel:(SEL)sel {
     NSString *label = [NSString stringWithFormat:@"concurrent_%@", NSStringFromSelector(sel)];

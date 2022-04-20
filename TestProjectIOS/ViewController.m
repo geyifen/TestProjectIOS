@@ -18,7 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [[TestProjectDispatchBlock alloc] init];
+    [[TestProjectDispatchData alloc] init];
+//    [[TestProjectDispatchBlock alloc] init];
 }
 
 
