@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		342A0D97281695AF00CAE929 /* TestProjectDispatchIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 342A0D96281695AF00CAE929 /* TestProjectDispatchIO.m */; };
 		3447EDF7280E8EBC001AE2F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EDF6280E8EBC001AE2F0 /* AppDelegate.m */; };
 		3447EDFA280E8EBC001AE2F0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EDF9280E8EBC001AE2F0 /* SceneDelegate.m */; };
 		3447EDFD280E8EBC001AE2F0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EDFC280E8EBC001AE2F0 /* ViewController.m */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		342A0D95281695AF00CAE929 /* TestProjectDispatchIO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchIO.h; sourceTree = "<group>"; };
+		342A0D96281695AF00CAE929 /* TestProjectDispatchIO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchIO.m; sourceTree = "<group>"; };
 		3447EDF2280E8EBC001AE2F0 /* TestProjectIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProjectIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3447EDF5280E8EBC001AE2F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3447EDF6280E8EBC001AE2F0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -118,6 +121,8 @@
 				3447EE1C280ED1C7001AE2F0 /* TestProjectDispatchQueue.m */,
 				34BE629F281016360052E1B5 /* TestProjectDispatchGroup.h */,
 				34BE62A0281016360052E1B5 /* TestProjectDispatchGroup.m */,
+				342A0D95281695AF00CAE929 /* TestProjectDispatchIO.h */,
+				342A0D96281695AF00CAE929 /* TestProjectDispatchIO.m */,
 			);
 			path = dispatch;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 				3447EE1D280ED1C7001AE2F0 /* TestProjectDispatchQueue.m in Sources */,
 				3447EDF7280E8EBC001AE2F0 /* AppDelegate.m in Sources */,
 				3447EE16280EA29D001AE2F0 /* TestProjectDispatchBlock.m in Sources */,
+				342A0D97281695AF00CAE929 /* TestProjectDispatchIO.m in Sources */,
 				3447EE08280E8EBD001AE2F0 /* main.m in Sources */,
 				346D4DB0280FA42D003D4D86 /* TestProjectDispatchData.m in Sources */,
 				3447EDFA280E8EBC001AE2F0 /* SceneDelegate.m in Sources */,
