@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TestProjectDispatchData : NSObject
 
+- (void)mapData;
+
 @end
 
 NS_ASSUME_NONNULL_END
