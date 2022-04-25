@@ -12,7 +12,10 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        [self testRunDispatchGroup];
+//        [self testRunDispatchGroup];
+//        [self testRunTask1];
+//        [self testRunTask2];
+        [self testRunTask3];
     }
     return self;
 }
@@ -76,5 +79,88 @@
     dispatch_group_wait(dispatchGroup, DISPATCH_TIME_FOREVER);
     NSLog(@"这个在group wait后执行的");
 }
+
+
+- (void)testRunTask1 {
+    dispatch_queue_t concurrentQueue = [TestProjectDispatchQueue generateConcurrentQueueWithSel:_cmd];
+    dispatch_group_t dispatchGroup = dispatch_group_create();
+    
+    dispatch_group_async(dispatchGroup, concurrentQueue, ^{
+        for (NSInteger i = 0; i < 5; i++) {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"第1个任务中的index:%ld", i);
+        }
+    });
+    
+    dispatch_group_async(dispatchGroup, concurrentQueue, ^{
+        for (NSInteger i = 0; i < 5; i++) {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"第2个任务中的index:%ld", i);
+        }
+    });
+
+    dispatch_group_notify(dispatchGroup, dispatch_get_main_queue(), ^{
+        NSLog(@"全部完成任务了吗");
+    });
+}
+
+- (void)testRunTask2 {
+    dispatch_queue_t concurrentQueue = [TestProjectDispatchQueue generateConcurrentQueueWithSel:_cmd];
+    dispatch_group_t dispatchGroup = dispatch_group_create();
+    
+    dispatch_group_async(dispatchGroup, concurrentQueue, ^{
+        dispatch_sync(concurrentQueue, ^{
+            for (NSInteger i = 0; i < 5; i++) {
+                [NSThread sleepForTimeInterval:2];
+                NSLog(@"第1个任务中的index:%ld", i);
+            }
+        });
+        
+    });
+    
+    dispatch_group_async(dispatchGroup, concurrentQueue, ^{
+        dispatch_sync(concurrentQueue, ^{
+            for (NSInteger i = 0; i < 5; i++) {
+                [NSThread sleepForTimeInterval:2];
+                NSLog(@"第2个任务中的index:%ld", i);
+            }
+        });
+       
+    });
+
+    dispatch_group_notify(dispatchGroup, dispatch_get_main_queue(), ^{
+        NSLog(@"全部完成任务了吗");
+    });
+}
+
+- (void)testRunTask3 {
+    dispatch_queue_t concurrentQueue = [TestProjectDispatchQueue generateConcurrentQueueWithSel:_cmd];
+    dispatch_group_t dispatchGroup = dispatch_group_create();
+    
+    dispatch_group_async(dispatchGroup, concurrentQueue, ^{
+        dispatch_async(concurrentQueue, ^{
+            for (NSInteger i = 0; i < 5; i++) {
+                [NSThread sleepForTimeInterval:2];
+                NSLog(@"第1个任务中的index:%ld", i);
+            }
+        });
+        
+    });
+    
+    dispatch_group_async(dispatchGroup, concurrentQueue, ^{
+        dispatch_async(concurrentQueue, ^{
+            for (NSInteger i = 0; i < 5; i++) {
+                [NSThread sleepForTimeInterval:2];
+                NSLog(@"第2个任务中的index:%ld", i);
+            }
+        });
+       
+    });
+
+    dispatch_group_notify(dispatchGroup, dispatch_get_main_queue(), ^{
+        NSLog(@"全部完成任务了吗");
+    });
+}
+
 
 @end
