@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		342A0D97281695AF00CAE929 /* TestProjectDispatchIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 342A0D96281695AF00CAE929 /* TestProjectDispatchIO.m */; };
 		3447EDF7280E8EBC001AE2F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EDF6280E8EBC001AE2F0 /* AppDelegate.m */; };
 		3447EDFA280E8EBC001AE2F0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EDF9280E8EBC001AE2F0 /* SceneDelegate.m */; };
 		3447EDFD280E8EBC001AE2F0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EDFC280E8EBC001AE2F0 /* ViewController.m */; };
@@ -15,15 +14,15 @@
 		3447EE02280E8EBD001AE2F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3447EE01280E8EBD001AE2F0 /* Assets.xcassets */; };
 		3447EE05280E8EBD001AE2F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3447EE03280E8EBD001AE2F0 /* LaunchScreen.storyboard */; };
 		3447EE08280E8EBD001AE2F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EE07280E8EBD001AE2F0 /* main.m */; };
-		3447EE16280EA29D001AE2F0 /* TestProjectDispatchBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EE15280EA29D001AE2F0 /* TestProjectDispatchBlock.m */; };
-		3447EE1D280ED1C7001AE2F0 /* TestProjectDispatchQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EE1C280ED1C7001AE2F0 /* TestProjectDispatchQueue.m */; };
-		346D4DB0280FA42D003D4D86 /* TestProjectDispatchData.m in Sources */ = {isa = PBXBuildFile; fileRef = 346D4DAF280FA42D003D4D86 /* TestProjectDispatchData.m */; };
-		34BE62A1281016360052E1B5 /* TestProjectDispatchGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BE62A0281016360052E1B5 /* TestProjectDispatchGroup.m */; };
+		345D97ED2824F43E002D0A83 /* TestProjectDispatchData.m in Sources */ = {isa = PBXBuildFile; fileRef = 345D97E62824F43E002D0A83 /* TestProjectDispatchData.m */; };
+		345D97EE2824F43E002D0A83 /* TestProjectDispatchQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 345D97E72824F43E002D0A83 /* TestProjectDispatchQueue.m */; };
+		345D97EF2824F43E002D0A83 /* TestProjectDispatchObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 345D97E82824F43E002D0A83 /* TestProjectDispatchObject.m */; };
+		345D97F02824F43E002D0A83 /* TestProjectDispatchGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 345D97E92824F43E002D0A83 /* TestProjectDispatchGroup.m */; };
+		345D97F12824F43E002D0A83 /* TestProjectDispatchIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 345D97EA2824F43E002D0A83 /* TestProjectDispatchIO.m */; };
+		345D97F22824F43E002D0A83 /* TestProjectDispatchBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 345D97EB2824F43E002D0A83 /* TestProjectDispatchBlock.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		342A0D95281695AF00CAE929 /* TestProjectDispatchIO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchIO.h; sourceTree = "<group>"; };
-		342A0D96281695AF00CAE929 /* TestProjectDispatchIO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchIO.m; sourceTree = "<group>"; };
 		3447EDF2280E8EBC001AE2F0 /* TestProjectIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProjectIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3447EDF5280E8EBC001AE2F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3447EDF6280E8EBC001AE2F0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -36,15 +35,19 @@
 		3447EE04280E8EBD001AE2F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3447EE06280E8EBD001AE2F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3447EE07280E8EBD001AE2F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3447EE14280EA29D001AE2F0 /* TestProjectDispatchBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchBlock.h; sourceTree = "<group>"; };
-		3447EE15280EA29D001AE2F0 /* TestProjectDispatchBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchBlock.m; sourceTree = "<group>"; };
-		3447EE18280EA3B9001AE2F0 /* TestProjectUsrHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectUsrHeader.h; sourceTree = "<group>"; };
-		3447EE1B280ED1C7001AE2F0 /* TestProjectDispatchQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchQueue.h; sourceTree = "<group>"; };
-		3447EE1C280ED1C7001AE2F0 /* TestProjectDispatchQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchQueue.m; sourceTree = "<group>"; };
-		346D4DAE280FA42D003D4D86 /* TestProjectDispatchData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchData.h; sourceTree = "<group>"; };
-		346D4DAF280FA42D003D4D86 /* TestProjectDispatchData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchData.m; sourceTree = "<group>"; };
-		34BE629F281016360052E1B5 /* TestProjectDispatchGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchGroup.h; sourceTree = "<group>"; };
-		34BE62A0281016360052E1B5 /* TestProjectDispatchGroup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchGroup.m; sourceTree = "<group>"; };
+		345D97E02824F43E002D0A83 /* TestProjectDispatchData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchData.h; sourceTree = "<group>"; };
+		345D97E12824F43E002D0A83 /* TestProjectDispatchQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchQueue.h; sourceTree = "<group>"; };
+		345D97E22824F43E002D0A83 /* TestProjectDispatchGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchGroup.h; sourceTree = "<group>"; };
+		345D97E32824F43E002D0A83 /* TestProjectDispatchObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchObject.h; sourceTree = "<group>"; };
+		345D97E42824F43E002D0A83 /* TestProjectDispatchBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchBlock.h; sourceTree = "<group>"; };
+		345D97E52824F43E002D0A83 /* TestProjectDispatchIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchIO.h; sourceTree = "<group>"; };
+		345D97E62824F43E002D0A83 /* TestProjectDispatchData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchData.m; sourceTree = "<group>"; };
+		345D97E72824F43E002D0A83 /* TestProjectDispatchQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchQueue.m; sourceTree = "<group>"; };
+		345D97E82824F43E002D0A83 /* TestProjectDispatchObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchObject.m; sourceTree = "<group>"; };
+		345D97E92824F43E002D0A83 /* TestProjectDispatchGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchGroup.m; sourceTree = "<group>"; };
+		345D97EA2824F43E002D0A83 /* TestProjectDispatchIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchIO.m; sourceTree = "<group>"; };
+		345D97EB2824F43E002D0A83 /* TestProjectDispatchBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchBlock.m; sourceTree = "<group>"; };
+		345D97EC2824F43E002D0A83 /* TestProjectUsrHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProjectUsrHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +80,7 @@
 		3447EDF4280E8EBC001AE2F0 /* TestProjectIOS */ = {
 			isa = PBXGroup;
 			children = (
-				3447EE10280EA11F001AE2F0 /* src */,
+				345D97DD2824F43E002D0A83 /* src */,
 				3447EDF5280E8EBC001AE2F0 /* AppDelegate.h */,
 				3447EDF6280E8EBC001AE2F0 /* AppDelegate.m */,
 				3447EDF8280E8EBC001AE2F0 /* SceneDelegate.h */,
@@ -93,36 +96,38 @@
 			path = TestProjectIOS;
 			sourceTree = "<group>";
 		};
-		3447EE10280EA11F001AE2F0 /* src */ = {
+		345D97DD2824F43E002D0A83 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				3447EE11280EA148001AE2F0 /* usr */,
+				345D97DE2824F43E002D0A83 /* usr */,
 			);
 			path = src;
 			sourceTree = "<group>";
 		};
-		3447EE11280EA148001AE2F0 /* usr */ = {
+		345D97DE2824F43E002D0A83 /* usr */ = {
 			isa = PBXGroup;
 			children = (
-				3447EE18280EA3B9001AE2F0 /* TestProjectUsrHeader.h */,
-				3447EE12280EA18F001AE2F0 /* dispatch */,
+				345D97EC2824F43E002D0A83 /* TestProjectUsrHeader.h */,
+				345D97DF2824F43E002D0A83 /* dispatch */,
 			);
 			path = usr;
 			sourceTree = "<group>";
 		};
-		3447EE12280EA18F001AE2F0 /* dispatch */ = {
+		345D97DF2824F43E002D0A83 /* dispatch */ = {
 			isa = PBXGroup;
 			children = (
-				3447EE14280EA29D001AE2F0 /* TestProjectDispatchBlock.h */,
-				3447EE15280EA29D001AE2F0 /* TestProjectDispatchBlock.m */,
-				346D4DAE280FA42D003D4D86 /* TestProjectDispatchData.h */,
-				346D4DAF280FA42D003D4D86 /* TestProjectDispatchData.m */,
-				3447EE1B280ED1C7001AE2F0 /* TestProjectDispatchQueue.h */,
-				3447EE1C280ED1C7001AE2F0 /* TestProjectDispatchQueue.m */,
-				34BE629F281016360052E1B5 /* TestProjectDispatchGroup.h */,
-				34BE62A0281016360052E1B5 /* TestProjectDispatchGroup.m */,
-				342A0D95281695AF00CAE929 /* TestProjectDispatchIO.h */,
-				342A0D96281695AF00CAE929 /* TestProjectDispatchIO.m */,
+				345D97E42824F43E002D0A83 /* TestProjectDispatchBlock.h */,
+				345D97EB2824F43E002D0A83 /* TestProjectDispatchBlock.m */,
+				345D97E02824F43E002D0A83 /* TestProjectDispatchData.h */,
+				345D97E62824F43E002D0A83 /* TestProjectDispatchData.m */,
+				345D97E22824F43E002D0A83 /* TestProjectDispatchGroup.h */,
+				345D97E92824F43E002D0A83 /* TestProjectDispatchGroup.m */,
+				345D97E52824F43E002D0A83 /* TestProjectDispatchIO.h */,
+				345D97EA2824F43E002D0A83 /* TestProjectDispatchIO.m */,
+				345D97E32824F43E002D0A83 /* TestProjectDispatchObject.h */,
+				345D97E82824F43E002D0A83 /* TestProjectDispatchObject.m */,
+				345D97E12824F43E002D0A83 /* TestProjectDispatchQueue.h */,
+				345D97E72824F43E002D0A83 /* TestProjectDispatchQueue.m */,
 			);
 			path = dispatch;
 			sourceTree = "<group>";
@@ -197,14 +202,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				3447EDFD280E8EBC001AE2F0 /* ViewController.m in Sources */,
-				34BE62A1281016360052E1B5 /* TestProjectDispatchGroup.m in Sources */,
-				3447EE1D280ED1C7001AE2F0 /* TestProjectDispatchQueue.m in Sources */,
+				345D97F02824F43E002D0A83 /* TestProjectDispatchGroup.m in Sources */,
+				345D97EF2824F43E002D0A83 /* TestProjectDispatchObject.m in Sources */,
 				3447EDF7280E8EBC001AE2F0 /* AppDelegate.m in Sources */,
-				3447EE16280EA29D001AE2F0 /* TestProjectDispatchBlock.m in Sources */,
-				342A0D97281695AF00CAE929 /* TestProjectDispatchIO.m in Sources */,
 				3447EE08280E8EBD001AE2F0 /* main.m in Sources */,
-				346D4DB0280FA42D003D4D86 /* TestProjectDispatchData.m in Sources */,
+				345D97F12824F43E002D0A83 /* TestProjectDispatchIO.m in Sources */,
 				3447EDFA280E8EBC001AE2F0 /* SceneDelegate.m in Sources */,
+				345D97F22824F43E002D0A83 /* TestProjectDispatchBlock.m in Sources */,
+				345D97ED2824F43E002D0A83 /* TestProjectDispatchData.m in Sources */,
+				345D97EE2824F43E002D0A83 /* TestProjectDispatchQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,7 @@
 #import "TestProjectDispatchData.h"
 #import "TestProjectDispatchGroup.h"
 #import "TestProjectDispatchIO.h"
+#import "TestProjectDispatchObject.h"
 
 #import "TestProjectDispatchQueue.h"
 

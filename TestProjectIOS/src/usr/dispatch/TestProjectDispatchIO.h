@@ -10,6 +10,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TestProjectDispatchIO : NSObject
+/**写入固定的数据*/
+- (void)testRunWriteDispatchIO;
+/**串行读数据*/
+- (void)testRunSerialReadDispatchIO;
+/**并行读数据*/
+- (void)testRunConcurrentReadDispatchIO;
 
 @end
 
