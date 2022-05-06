@@ -25,9 +25,6 @@
 
 @property (nonatomic, copy) NSString *filePath;
 
-
-@property (nonatomic, strong) TestProjectDispatchIO *dispatchIO;
-
 @end
 
 @implementation ViewController
@@ -40,7 +37,7 @@
     
 //    [[TestProjectDispatchGroup alloc] init];
 //      self.dispatchIO = [[TestProjectDispatchIO alloc] init];
-    [[TestProjectDispatchObject alloc] init];
+        [[TestProjectDispatchObject alloc] init];
     
 //    UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
 //    [btn1 setBackgroundColor:[UIColor redColor]];
@@ -48,7 +45,7 @@
 //    [btn1 setTitle:@"点击" forState:UIControlStateNormal];
 //    [btn1 addTarget:self action:@selector(clickEvent1) forControlEvents:UIControlEventTouchUpInside];
 //    [self.view addSubview:btn1];
-//    
+//
 //    UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
 //    [btn2 setBackgroundColor:[UIColor blueColor]];
 //    btn2.frame = CGRectMake(0, 200, 100, 50);
@@ -68,11 +65,11 @@
 
 - (void)clickEvent1 {
 //    [self.dispatchData mapData];
-    [self.dispatchIO testRunWriteDispatchIO];
+//    [self.dispatchIO testRunWriteDispatchIO];
 }
 
 - (void)clickEvent2 {
-    [self.dispatchIO testRunConcurrentReadDispatchIO];
+//    [self.dispatchIO testRunConcurrentReadDispatchIO];
 }
 
 //- (BOOL)documentInteractionController:(UIDocumentInteractionController *)controller canPerformAction:(SEL)action {
