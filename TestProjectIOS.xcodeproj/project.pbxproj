@@ -20,6 +20,7 @@
 		345D97F02824F43E002D0A83 /* TestProjectDispatchGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 345D97E92824F43E002D0A83 /* TestProjectDispatchGroup.m */; };
 		345D97F12824F43E002D0A83 /* TestProjectDispatchIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 345D97EA2824F43E002D0A83 /* TestProjectDispatchIO.m */; };
 		345D97F22824F43E002D0A83 /* TestProjectDispatchBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 345D97EB2824F43E002D0A83 /* TestProjectDispatchBlock.m */; };
+		345D97F728250609002D0A83 /* TestProjectDispatchOnce.m in Sources */ = {isa = PBXBuildFile; fileRef = 345D97F628250609002D0A83 /* TestProjectDispatchOnce.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,8 @@
 		345D97EA2824F43E002D0A83 /* TestProjectDispatchIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchIO.m; sourceTree = "<group>"; };
 		345D97EB2824F43E002D0A83 /* TestProjectDispatchBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchBlock.m; sourceTree = "<group>"; };
 		345D97EC2824F43E002D0A83 /* TestProjectUsrHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProjectUsrHeader.h; sourceTree = "<group>"; };
+		345D97F528250609002D0A83 /* TestProjectDispatchOnce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchOnce.h; sourceTree = "<group>"; };
+		345D97F628250609002D0A83 /* TestProjectDispatchOnce.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchOnce.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 				345D97E82824F43E002D0A83 /* TestProjectDispatchObject.m */,
 				345D97E12824F43E002D0A83 /* TestProjectDispatchQueue.h */,
 				345D97E72824F43E002D0A83 /* TestProjectDispatchQueue.m */,
+				345D97F528250609002D0A83 /* TestProjectDispatchOnce.h */,
+				345D97F628250609002D0A83 /* TestProjectDispatchOnce.m */,
 			);
 			path = dispatch;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 			files = (
 				3447EDFD280E8EBC001AE2F0 /* ViewController.m in Sources */,
 				345D97F02824F43E002D0A83 /* TestProjectDispatchGroup.m in Sources */,
+				345D97F728250609002D0A83 /* TestProjectDispatchOnce.m in Sources */,
 				345D97EF2824F43E002D0A83 /* TestProjectDispatchObject.m in Sources */,
 				3447EDF7280E8EBC001AE2F0 /* AppDelegate.m in Sources */,
 				3447EE08280E8EBD001AE2F0 /* main.m in Sources */,
