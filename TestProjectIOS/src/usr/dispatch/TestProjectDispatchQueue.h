@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (dispatch_queue_t)generateSerialQueueWithQueueName:(NSString *)queueName;
 
++ (dispatch_queue_t)generateGlobalQueue;
+
 @end
 
 NS_ASSUME_NONNULL_END

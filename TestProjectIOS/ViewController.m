@@ -28,15 +28,19 @@
 //    [[TestProjectDispatchGroup alloc] init];
 //    self.dispatchIO = [[TestProjectDispatchIO alloc] init];
 //    [[TestProjectDispatchObject alloc] init];
-    [self testDispatchOnce1];
+//    [self testDispatchOnce1];
     }
     {
-    UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn1 setBackgroundColor:[UIColor redColor]];
-    btn1.frame = CGRectMake(0, 100, 100, 50);
-    [btn1 setTitle:@"点击" forState:UIControlStateNormal];
-    [btn1 addTarget:self action:@selector(clickEvent1) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn1];
+        TestProjectDispatchQueue *dispatchQueue = [[TestProjectDispatchQueue alloc] init];
+        
+    }
+    {
+//    UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [btn1 setBackgroundColor:[UIColor redColor]];
+//    btn1.frame = CGRectMake(0, 100, 100, 50);
+//    [btn1 setTitle:@"点击" forState:UIControlStateNormal];
+//    [btn1 addTarget:self action:@selector(clickEvent1) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:btn1];
 
 //    UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
 //    [btn2 setBackgroundColor:[UIColor blueColor]];
