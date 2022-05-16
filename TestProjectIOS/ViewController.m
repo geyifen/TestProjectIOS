@@ -31,8 +31,8 @@
 //    [self testDispatchOnce1];
     }
     {
-        TestProjectDispatchQueue *dispatchQueue = [[TestProjectDispatchQueue alloc] init];
-        
+//        TestProjectDispatchQueue *dispatchQueue = [[TestProjectDispatchQueue alloc] init];
+        [[TestProjectDispatchSemaphore alloc] init];
     }
     {
 //    UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];

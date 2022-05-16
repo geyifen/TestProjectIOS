@@ -21,6 +21,7 @@
 		345D97F12824F43E002D0A83 /* TestProjectDispatchIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 345D97EA2824F43E002D0A83 /* TestProjectDispatchIO.m */; };
 		345D97F22824F43E002D0A83 /* TestProjectDispatchBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 345D97EB2824F43E002D0A83 /* TestProjectDispatchBlock.m */; };
 		345D97F728250609002D0A83 /* TestProjectDispatchOnce.m in Sources */ = {isa = PBXBuildFile; fileRef = 345D97F628250609002D0A83 /* TestProjectDispatchOnce.m */; };
+		34947538282E396A00D4A567 /* TestProjectDispatchSemaphore.m in Sources */ = {isa = PBXBuildFile; fileRef = 34947537282E396A00D4A567 /* TestProjectDispatchSemaphore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,8 @@
 		345D97EC2824F43E002D0A83 /* TestProjectUsrHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProjectUsrHeader.h; sourceTree = "<group>"; };
 		345D97F528250609002D0A83 /* TestProjectDispatchOnce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchOnce.h; sourceTree = "<group>"; };
 		345D97F628250609002D0A83 /* TestProjectDispatchOnce.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchOnce.m; sourceTree = "<group>"; };
+		34947536282E396A00D4A567 /* TestProjectDispatchSemaphore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchSemaphore.h; sourceTree = "<group>"; };
+		34947537282E396A00D4A567 /* TestProjectDispatchSemaphore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchSemaphore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,10 +132,12 @@
 				345D97EA2824F43E002D0A83 /* TestProjectDispatchIO.m */,
 				345D97E32824F43E002D0A83 /* TestProjectDispatchObject.h */,
 				345D97E82824F43E002D0A83 /* TestProjectDispatchObject.m */,
-				345D97E12824F43E002D0A83 /* TestProjectDispatchQueue.h */,
-				345D97E72824F43E002D0A83 /* TestProjectDispatchQueue.m */,
 				345D97F528250609002D0A83 /* TestProjectDispatchOnce.h */,
 				345D97F628250609002D0A83 /* TestProjectDispatchOnce.m */,
+				345D97E12824F43E002D0A83 /* TestProjectDispatchQueue.h */,
+				345D97E72824F43E002D0A83 /* TestProjectDispatchQueue.m */,
+				34947536282E396A00D4A567 /* TestProjectDispatchSemaphore.h */,
+				34947537282E396A00D4A567 /* TestProjectDispatchSemaphore.m */,
 			);
 			path = dispatch;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34947538282E396A00D4A567 /* TestProjectDispatchSemaphore.m in Sources */,
 				3447EDFD280E8EBC001AE2F0 /* ViewController.m in Sources */,
 				345D97F02824F43E002D0A83 /* TestProjectDispatchGroup.m in Sources */,
 				345D97F728250609002D0A83 /* TestProjectDispatchOnce.m in Sources */,

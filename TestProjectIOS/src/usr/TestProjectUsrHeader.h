@@ -15,5 +15,6 @@
 #import "TestProjectDispatchObject.h"
 #import "TestProjectDispatchOnce.h"
 #import "TestProjectDispatchQueue.h"
+#import "TestProjectDispatchSemaphore.h"
 
 #endif /* TestProjectUsrHeader_h */
