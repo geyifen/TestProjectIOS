@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3445299C2831E701003EFFA1 /* TestProjectDispatchSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3445299B2831E701003EFFA1 /* TestProjectDispatchSource.m */; };
 		3447EDF7280E8EBC001AE2F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EDF6280E8EBC001AE2F0 /* AppDelegate.m */; };
 		3447EDFA280E8EBC001AE2F0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EDF9280E8EBC001AE2F0 /* SceneDelegate.m */; };
 		3447EDFD280E8EBC001AE2F0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EDFC280E8EBC001AE2F0 /* ViewController.m */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3445299A2831E701003EFFA1 /* TestProjectDispatchSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchSource.h; sourceTree = "<group>"; };
+		3445299B2831E701003EFFA1 /* TestProjectDispatchSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchSource.m; sourceTree = "<group>"; };
 		3447EDF2280E8EBC001AE2F0 /* TestProjectIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProjectIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3447EDF5280E8EBC001AE2F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3447EDF6280E8EBC001AE2F0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 				345D97E72824F43E002D0A83 /* TestProjectDispatchQueue.m */,
 				34947536282E396A00D4A567 /* TestProjectDispatchSemaphore.h */,
 				34947537282E396A00D4A567 /* TestProjectDispatchSemaphore.m */,
+				3445299A2831E701003EFFA1 /* TestProjectDispatchSource.h */,
+				3445299B2831E701003EFFA1 /* TestProjectDispatchSource.m */,
 			);
 			path = dispatch;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 				345D97EF2824F43E002D0A83 /* TestProjectDispatchObject.m in Sources */,
 				3447EDF7280E8EBC001AE2F0 /* AppDelegate.m in Sources */,
 				3447EE08280E8EBD001AE2F0 /* main.m in Sources */,
+				3445299C2831E701003EFFA1 /* TestProjectDispatchSource.m in Sources */,
 				345D97F12824F43E002D0A83 /* TestProjectDispatchIO.m in Sources */,
 				3447EDFA280E8EBC001AE2F0 /* SceneDelegate.m in Sources */,
 				345D97F22824F43E002D0A83 /* TestProjectDispatchBlock.m in Sources */,
