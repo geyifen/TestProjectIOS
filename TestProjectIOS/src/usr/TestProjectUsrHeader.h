@@ -8,6 +8,7 @@
 #ifndef TestProjectUsrHeader_h
 #define TestProjectUsrHeader_h
 
+#import "TestProjectIgnoreWarningDefmacro.h"
 #import "TestProjectDispatchBlock.h"
 #import "TestProjectDispatchData.h"
 #import "TestProjectDispatchGroup.h"
@@ -17,5 +18,6 @@
 #import "TestProjectDispatchQueue.h"
 #import "TestProjectDispatchSemaphore.h"
 #import "TestProjectDispatchSource.h"
+#import "TestProjectMath.h"
 
 #endif /* TestProjectUsrHeader_h */

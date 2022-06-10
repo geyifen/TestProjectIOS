@@ -6,6 +6,7 @@
 //
 
 #import "TestProjectDispatchQueue.h"
+#import "TestProjectIgnoreWarningDefmacro.h"
 
 @implementation TestProjectDispatchQueue
 
@@ -32,7 +33,6 @@ static void *concurrentKey = &concurrentKey;
     dispatch_queue_create("attr", attr);
 //    [TestProjectDispatchQueue generateGlobalQueue];
     //[TestProjectDispatchQueue generateConcurrentQueueWithSel:_cmd];
-    dispatch_queue_t assertQueue = [TestProjectDispatchQueue generateConcurrentQueueWithSel:_cmd];
     NSTimeInterval sleepTime = 3;
     NSLog(@"start----");
     dispatch_async(queue, ^{

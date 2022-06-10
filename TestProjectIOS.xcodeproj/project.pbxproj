@@ -23,6 +23,7 @@
 		345D97F22824F43E002D0A83 /* TestProjectDispatchBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 345D97EB2824F43E002D0A83 /* TestProjectDispatchBlock.m */; };
 		345D97F728250609002D0A83 /* TestProjectDispatchOnce.m in Sources */ = {isa = PBXBuildFile; fileRef = 345D97F628250609002D0A83 /* TestProjectDispatchOnce.m */; };
 		34947538282E396A00D4A567 /* TestProjectDispatchSemaphore.m in Sources */ = {isa = PBXBuildFile; fileRef = 34947537282E396A00D4A567 /* TestProjectDispatchSemaphore.m */; };
+		34BE0C92283F0FA80003317D /* TestProjectMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BE0C91283F0FA80003317D /* TestProjectMath.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,8 +56,11 @@
 		345D97EC2824F43E002D0A83 /* TestProjectUsrHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProjectUsrHeader.h; sourceTree = "<group>"; };
 		345D97F528250609002D0A83 /* TestProjectDispatchOnce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchOnce.h; sourceTree = "<group>"; };
 		345D97F628250609002D0A83 /* TestProjectDispatchOnce.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchOnce.m; sourceTree = "<group>"; };
+		346920AA28517F5100E0F769 /* TestProjectIgnoreWarningDefmacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectIgnoreWarningDefmacro.h; sourceTree = "<group>"; };
 		34947536282E396A00D4A567 /* TestProjectDispatchSemaphore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchSemaphore.h; sourceTree = "<group>"; };
 		34947537282E396A00D4A567 /* TestProjectDispatchSemaphore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchSemaphore.m; sourceTree = "<group>"; };
+		34BE0C90283F0FA80003317D /* TestProjectMath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectMath.h; sourceTree = "<group>"; };
+		34BE0C91283F0FA80003317D /* TestProjectMath.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectMath.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 		345D97DD2824F43E002D0A83 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				346920AA28517F5100E0F769 /* TestProjectIgnoreWarningDefmacro.h */,
 				345D97DE2824F43E002D0A83 /* usr */,
 			);
 			path = src;
@@ -118,6 +123,8 @@
 			children = (
 				345D97EC2824F43E002D0A83 /* TestProjectUsrHeader.h */,
 				345D97DF2824F43E002D0A83 /* dispatch */,
+				34BE0C90283F0FA80003317D /* TestProjectMath.h */,
+				34BE0C91283F0FA80003317D /* TestProjectMath.m */,
 			);
 			path = usr;
 			sourceTree = "<group>";
@@ -227,6 +234,7 @@
 				345D97F12824F43E002D0A83 /* TestProjectDispatchIO.m in Sources */,
 				3447EDFA280E8EBC001AE2F0 /* SceneDelegate.m in Sources */,
 				345D97F22824F43E002D0A83 /* TestProjectDispatchBlock.m in Sources */,
+				34BE0C92283F0FA80003317D /* TestProjectMath.m in Sources */,
 				345D97ED2824F43E002D0A83 /* TestProjectDispatchData.m in Sources */,
 				345D97EE2824F43E002D0A83 /* TestProjectDispatchQueue.m in Sources */,
 			);
