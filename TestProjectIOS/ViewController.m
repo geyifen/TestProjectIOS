@@ -39,7 +39,8 @@
         //必须设置为属性，否则不持有导致timer不走
 //        self.dispatchSource =
 //        [[TestProjectDispatchSource alloc] init];
-        [[TestProjectMath alloc] init];//[NSString stringWithFormat:@" %@", a].UTF8String;
+//        [[TestProjectMath alloc] init];
+        [[TestProjectObjc alloc] init];
     }
     {
 //    UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];

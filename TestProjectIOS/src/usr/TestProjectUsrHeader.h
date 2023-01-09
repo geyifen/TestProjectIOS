@@ -9,6 +9,8 @@
 #define TestProjectUsrHeader_h
 
 #import "TestProjectIgnoreWarningDefmacro.h"
+#import "TestProjectModel.h"
+
 #import "TestProjectDispatchBlock.h"
 #import "TestProjectDispatchData.h"
 #import "TestProjectDispatchGroup.h"
@@ -19,5 +21,6 @@
 #import "TestProjectDispatchSemaphore.h"
 #import "TestProjectDispatchSource.h"
 #import "TestProjectMath.h"
+#import "TestProjectObjc.h"
 
 #endif /* TestProjectUsrHeader_h */

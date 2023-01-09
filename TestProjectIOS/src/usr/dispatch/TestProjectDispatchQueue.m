@@ -63,9 +63,15 @@ static void *concurrentKey = &concurrentKey;
      拦住当前线程
      end在此之后打印
      */
-    dispatch_barrier_sync(queue, ^{
+    dispatch_barrier_async(queue, ^{
         [NSThread sleepForTimeInterval:sleepTime];
         NSLog(@"barrier_sync2 执行 %@", [NSThread currentThread]);
+        
+        dispatch_async(queue, ^{
+            NSLog(@"我在嵌套的barrier_sync2 -1执行");
+        });
+        NSLog(@"barrier_sync2 嵌套之后的");
+        
         //验证此当前的queue是否在barrier queue中
         dispatch_assert_queue_barrier(queue);
     });

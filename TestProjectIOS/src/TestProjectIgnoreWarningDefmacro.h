@@ -24,3 +24,9 @@ work; \
 _Pragma("clang diagnostic pop") \
 
 #endif /* TestProjectIgnoreWarningDefmacro_h */
+
+
+//#pragma clang diagnostic push
+//#pragma clang diagnostic ignored "warning"
+//work;
+//#pragma clang diagnostic pop
