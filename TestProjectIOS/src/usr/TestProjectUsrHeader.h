@@ -22,5 +22,6 @@
 #import "TestProjectDispatchSource.h"
 #import "TestProjectMath.h"
 #import "TestProjectObjc.h"
+#import "TestProjectPThread.h"
 
 #endif /* TestProjectUsrHeader_h */

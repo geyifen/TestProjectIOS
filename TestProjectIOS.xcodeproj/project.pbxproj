@@ -34,6 +34,7 @@
 		34D77A4028C19FBB00A0CE9F /* TestProjectXModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D77A3F28C19FBB00A0CE9F /* TestProjectXModel.m */; };
 		34D77A4328C19FD100A0CE9F /* TestProjectZModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D77A4228C19FD100A0CE9F /* TestProjectZModel.m */; };
 		34D77A4628C1A1FF00A0CE9F /* TestProjectUModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D77A4528C1A1FF00A0CE9F /* TestProjectUModel.m */; };
+		34DDB787296C0FA3009D56B8 /* TestProjectPThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDB786296C0FA3009D56B8 /* TestProjectPThread.m */; };
 		34EC4DD128532604000AEF1E /* TestProjectObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EC4DD028532604000AEF1E /* TestProjectObjc.m */; };
 		34EF82AF28571B3B0046F4C3 /* TestProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EF82AE28571B3B0046F4C3 /* TestProjectModel.m */; };
 /* End PBXBuildFile section */
@@ -93,6 +94,8 @@
 		34D77A4228C19FD100A0CE9F /* TestProjectZModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectZModel.m; sourceTree = "<group>"; };
 		34D77A4428C1A1FF00A0CE9F /* TestProjectUModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectUModel.h; sourceTree = "<group>"; };
 		34D77A4528C1A1FF00A0CE9F /* TestProjectUModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectUModel.m; sourceTree = "<group>"; };
+		34DDB785296C0FA3009D56B8 /* TestProjectPThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectPThread.h; sourceTree = "<group>"; };
+		34DDB786296C0FA3009D56B8 /* TestProjectPThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectPThread.m; sourceTree = "<group>"; };
 		34EC4DCF28532604000AEF1E /* TestProjectObjc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectObjc.h; sourceTree = "<group>"; };
 		34EC4DD028532604000AEF1E /* TestProjectObjc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectObjc.m; sourceTree = "<group>"; };
 		34EF82AD28571B3B0046F4C3 /* TestProjectModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectModel.h; sourceTree = "<group>"; };
@@ -163,6 +166,8 @@
 				345D97DF2824F43E002D0A83 /* dispatch */,
 				34BE0C90283F0FA80003317D /* TestProjectMath.h */,
 				34BE0C91283F0FA80003317D /* TestProjectMath.m */,
+				34DDB785296C0FA3009D56B8 /* TestProjectPThread.h */,
+				34DDB786296C0FA3009D56B8 /* TestProjectPThread.m */,
 			);
 			path = usr;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				34BB4A6E28D2BF1E00E79698 /* NSObject+TestProject.m in Sources */,
 				347338DC28BDB85600B921EC /* TestProjectAModel.m in Sources */,
 				347338DF28BDB86700B921EC /* TestProjectBModel.m in Sources */,
+				34DDB787296C0FA3009D56B8 /* TestProjectPThread.m in Sources */,
 				345BA75828BF46CD00ED6C5C /* TestProjectDModel.m in Sources */,
 				34EF82AF28571B3B0046F4C3 /* TestProjectModel.m in Sources */,
 				345EC4BE286548D100F61F2E /* TestProjectCustomModel.m in Sources */,

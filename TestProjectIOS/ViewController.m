@@ -40,7 +40,8 @@
 //        self.dispatchSource =
 //        [[TestProjectDispatchSource alloc] init];
 //        [[TestProjectMath alloc] init];
-        [[TestProjectObjc alloc] init];
+//        [[TestProjectObjc alloc] init];
+        [[TestProjectPThread alloc] init];
     }
     {
 //    UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
