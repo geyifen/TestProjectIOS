@@ -23,5 +23,6 @@
 #import "TestProjectMath.h"
 #import "TestProjectObjc.h"
 #import "TestProjectPThread.h"
+#import "TestProjectSignal.h"
 
 #endif /* TestProjectUsrHeader_h */
