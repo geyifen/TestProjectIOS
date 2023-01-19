@@ -24,5 +24,6 @@
 #import "TestProjectObjc.h"
 #import "TestProjectPThread.h"
 #import "TestProjectSignal.h"
+#import "TestProjectString.h"
 
 #endif /* TestProjectUsrHeader_h */
