@@ -43,7 +43,7 @@
 //        [[TestProjectObjc alloc] init];
 //        [[TestProjectPThread alloc] init];
 //        [[TestProjectSignal alloc] init];
-        [[TestProjectString alloc] init];
+//        [[TestProjectString alloc] init];
     }
     {
 //    UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];

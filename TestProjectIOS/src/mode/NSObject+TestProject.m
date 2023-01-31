@@ -117,7 +117,7 @@ void finallyExceptionMethodC(id objc, SEL cmd, id args, ...) {
     NSLog(@"NSObject methodSignatureForSelector: %@ %@", self, NSStringFromSelector(aSelector));
 //    return nil;
     //这个没有执行第三步就会崩溃
-    return [NSMethodSignature methodSignatureForSelector:@selector(finallyExceptionMethodOC:)];
+    return [NSMethodSignature methodSignatureForSelector:aSelector];
 }
 
 //重写了这个方法[doesNotRecognizeSelector:]就不会调用，否则就调用

@@ -31,6 +31,8 @@
 		347338E228BDB87E00B921EC /* TestProjectCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 347338E128BDB87E00B921EC /* TestProjectCModel.m */; };
 		3493CF0329767261008B7CA7 /* TestProjectString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3493CF0229767261008B7CA7 /* TestProjectString.m */; };
 		34947538282E396A00D4A567 /* TestProjectDispatchSemaphore.m in Sources */ = {isa = PBXBuildFile; fileRef = 34947537282E396A00D4A567 /* TestProjectDispatchSemaphore.m */; };
+		34B20F0A2988A9A5009B4EFD /* TestProjectHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B20F092988A9A5009B4EFD /* TestProjectHomeController.m */; };
+		34B20F0D2988A9CB009B4EFD /* TestProjectMyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B20F0C2988A9CB009B4EFD /* TestProjectMyController.m */; };
 		34BB4A6E28D2BF1E00E79698 /* NSObject+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BB4A6D28D2BF1E00E79698 /* NSObject+TestProject.m */; };
 		34BE0C92283F0FA80003317D /* TestProjectMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BE0C91283F0FA80003317D /* TestProjectMath.m */; };
 		34D77A3D28C19FA100A0CE9F /* TestProjectYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D77A3C28C19FA100A0CE9F /* TestProjectYModel.m */; };
@@ -40,6 +42,9 @@
 		34DDB787296C0FA3009D56B8 /* TestProjectPThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDB786296C0FA3009D56B8 /* TestProjectPThread.m */; };
 		34EC4DD128532604000AEF1E /* TestProjectObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EC4DD028532604000AEF1E /* TestProjectObjc.m */; };
 		34EF82AF28571B3B0046F4C3 /* TestProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EF82AE28571B3B0046F4C3 /* TestProjectModel.m */; };
+		E297EF9F297934B5005B2877 /* TestProjectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E297EF9E297934B5005B2877 /* TestProjectVC.m */; };
+		E297EFA22979350C005B2877 /* TestProjectTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E297EFA12979350C005B2877 /* TestProjectTabBarController.m */; };
+		E297EFAA2979371B005B2877 /* TestProjectNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E297EFA92979371B005B2877 /* TestProjectNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +95,10 @@
 		3493CF0229767261008B7CA7 /* TestProjectString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectString.m; sourceTree = "<group>"; };
 		34947536282E396A00D4A567 /* TestProjectDispatchSemaphore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchSemaphore.h; sourceTree = "<group>"; };
 		34947537282E396A00D4A567 /* TestProjectDispatchSemaphore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchSemaphore.m; sourceTree = "<group>"; };
+		34B20F082988A9A5009B4EFD /* TestProjectHomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectHomeController.h; sourceTree = "<group>"; };
+		34B20F092988A9A5009B4EFD /* TestProjectHomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectHomeController.m; sourceTree = "<group>"; };
+		34B20F0B2988A9CB009B4EFD /* TestProjectMyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectMyController.h; sourceTree = "<group>"; };
+		34B20F0C2988A9CB009B4EFD /* TestProjectMyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectMyController.m; sourceTree = "<group>"; };
 		34BB4A6C28D2BF1E00E79698 /* NSObject+TestProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+TestProject.h"; sourceTree = "<group>"; };
 		34BB4A6D28D2BF1E00E79698 /* NSObject+TestProject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TestProject.m"; sourceTree = "<group>"; };
 		34BE0C90283F0FA80003317D /* TestProjectMath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectMath.h; sourceTree = "<group>"; };
@@ -110,6 +119,13 @@
 		34EF82AE28571B3B0046F4C3 /* TestProjectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectModel.m; sourceTree = "<group>"; };
 		4C0C719FA4BA50B72430BEFF /* Pods-TestProjectIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProjectIOS.debug.xcconfig"; path = "Target Support Files/Pods-TestProjectIOS/Pods-TestProjectIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		5333BFEE96AFF8870A1B4B78 /* Pods-TestProjectIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProjectIOS.release.xcconfig"; path = "Target Support Files/Pods-TestProjectIOS/Pods-TestProjectIOS.release.xcconfig"; sourceTree = "<group>"; };
+		E297EF9D297934B5005B2877 /* TestProjectVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectVC.h; sourceTree = "<group>"; };
+		E297EF9E297934B5005B2877 /* TestProjectVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectVC.m; sourceTree = "<group>"; };
+		E297EFA02979350C005B2877 /* TestProjectTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectTabBarController.h; sourceTree = "<group>"; };
+		E297EFA12979350C005B2877 /* TestProjectTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectTabBarController.m; sourceTree = "<group>"; };
+		E297EFA629793563005B2877 /* TestProjectViewHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectViewHeader.h; sourceTree = "<group>"; };
+		E297EFA82979371B005B2877 /* TestProjectNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectNavigationController.h; sourceTree = "<group>"; };
+		E297EFA92979371B005B2877 /* TestProjectNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				346920AA28517F5100E0F769 /* TestProjectIgnoreWarningDefmacro.h */,
+				E297EF9C29793471005B2877 /* view */,
 				34EF82AC28571B260046F4C3 /* mode */,
 				345D97DE2824F43E002D0A83 /* usr */,
 			);
@@ -267,6 +284,32 @@
 				044E49489342EC595D627E86 /* Pods_TestProjectIOS.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E297EF9C29793471005B2877 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				E297EFA629793563005B2877 /* TestProjectViewHeader.h */,
+				E297EFA729793574005B2877 /* VC */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		E297EFA729793574005B2877 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				E297EF9D297934B5005B2877 /* TestProjectVC.h */,
+				E297EF9E297934B5005B2877 /* TestProjectVC.m */,
+				E297EFA02979350C005B2877 /* TestProjectTabBarController.h */,
+				E297EFA12979350C005B2877 /* TestProjectTabBarController.m */,
+				E297EFA82979371B005B2877 /* TestProjectNavigationController.h */,
+				E297EFA92979371B005B2877 /* TestProjectNavigationController.m */,
+				34B20F082988A9A5009B4EFD /* TestProjectHomeController.h */,
+				34B20F092988A9A5009B4EFD /* TestProjectHomeController.m */,
+				34B20F0B2988A9CB009B4EFD /* TestProjectMyController.h */,
+				34B20F0C2988A9CB009B4EFD /* TestProjectMyController.m */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,17 +433,22 @@
 				345BA75828BF46CD00ED6C5C /* TestProjectDModel.m in Sources */,
 				34EF82AF28571B3B0046F4C3 /* TestProjectModel.m in Sources */,
 				345EC4BE286548D100F61F2E /* TestProjectCustomModel.m in Sources */,
+				E297EFA22979350C005B2877 /* TestProjectTabBarController.m in Sources */,
 				34D77A4628C1A1FF00A0CE9F /* TestProjectUModel.m in Sources */,
 				34D77A4028C19FBB00A0CE9F /* TestProjectXModel.m in Sources */,
 				347338E228BDB87E00B921EC /* TestProjectCModel.m in Sources */,
 				34D77A3D28C19FA100A0CE9F /* TestProjectYModel.m in Sources */,
 				34D77A4328C19FD100A0CE9F /* TestProjectZModel.m in Sources */,
 				3447EE08280E8EBD001AE2F0 /* main.m in Sources */,
+				E297EF9F297934B5005B2877 /* TestProjectVC.m in Sources */,
 				3447EDF7280E8EBC001AE2F0 /* AppDelegate.m in Sources */,
+				34B20F0D2988A9CB009B4EFD /* TestProjectMyController.m in Sources */,
 				34947538282E396A00D4A567 /* TestProjectDispatchSemaphore.m in Sources */,
 				3447EDFD280E8EBC001AE2F0 /* ViewController.m in Sources */,
 				34EC4DD128532604000AEF1E /* TestProjectObjc.m in Sources */,
+				34B20F0A2988A9A5009B4EFD /* TestProjectHomeController.m in Sources */,
 				345D97F02824F43E002D0A83 /* TestProjectDispatchGroup.m in Sources */,
+				E297EFAA2979371B005B2877 /* TestProjectNavigationController.m in Sources */,
 				345D97F728250609002D0A83 /* TestProjectDispatchOnce.m in Sources */,
 				345D97EF2824F43E002D0A83 /* TestProjectDispatchObject.m in Sources */,
 				3445299C2831E701003EFFA1 /* TestProjectDispatchSource.m in Sources */,
