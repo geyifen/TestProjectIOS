@@ -16,6 +16,8 @@
 #define CancelUnusedValue(work) CancelWarning(work, "clang diagnostic ignored \"-Wunused-value\"")
 /**返回的值未被使用的的警告 "Unused variable **" */
 #define CancelUnusedVariable(work) CancelWarning(work, "clang diagnostic ignored \"-Wunused-variable\"")
+/**方法被废弃**/
+#define CancelDeprecated(work) CancelWarning(work, "clang diagnostic ignored \"-Wdeprecated\"")
 
 #define CancelWarning(work, warning) \
 _Pragma("clang diagnostic push") \

@@ -27,11 +27,14 @@
     
     TestProjectHomeController *homeVC = [[TestProjectHomeController alloc] init];
     TestProjectNavigationController *homeNavController = [[TestProjectNavigationController alloc] initWithRootViewController:homeVC];
+    homeNavController.navigationBarHidden = YES;
     
     TestProjectMyController *myVC = [[TestProjectMyController alloc] init];
     TestProjectNavigationController *myNavController = [[TestProjectNavigationController alloc] initWithRootViewController:myVC];
+    myNavController.navigationBarHidden = YES;
     
     self.viewControllers = @[homeNavController, myNavController];
+//    self.viewControllers = @[homeVC, myVC];
 }
 
 @end

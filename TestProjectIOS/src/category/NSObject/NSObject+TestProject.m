@@ -114,6 +114,11 @@ void finallyExceptionMethodC(id objc, SEL cmd, id args, ...) {
 
 // 消息转发第三步
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
+    NSString *selectorStr = NSStringFromSelector(aSelector);
+    if ([selectorStr isEqualToString:@"layoutMargins"]) {
+        //在debug查看视图层级的时候会执行到这
+        return nil;
+    }
     NSLog(@"NSObject methodSignatureForSelector: %@ %@", self, NSStringFromSelector(aSelector));
 //    return nil;
     //这个没有执行第三步就会崩溃
