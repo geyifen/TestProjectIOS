@@ -11,12 +11,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TestProjectTableModel : NSObject <TestProjectViewModelProtocol>
+@interface TestProjectTableModel : NSObject <TestProjectViewModelProtocol> {
+    CGFloat _titleHeight;
+    CGFloat _descHeight;
+}
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *desc;
 @property (nonatomic, copy) NSString *method;
 @property (nonatomic, copy) NSString *viewKey;
+
+- (void)calculDataViewHeight;
 
 @end
 

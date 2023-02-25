@@ -7,14 +7,21 @@
 
 #import "TestProjectTableModel.h"
 
-@implementation TestProjectTableModel
+@implementation TestProjectTableModel {
+    CGFloat _viewHeight;
+}
 
 - (NSString *)viewIdentifier {
     return @"TestProjectTableViewCell";
 }
 
 - (CGFloat)viewHeight {
-    return 150;
+    return _viewHeight;
+}
+
+- (void)calculDataViewHeight {
+    UILabel *titleLabel = [[UILabel alloc] init];
+    _viewHeight = _titleHeight + _descHeight;
 }
 
 @end

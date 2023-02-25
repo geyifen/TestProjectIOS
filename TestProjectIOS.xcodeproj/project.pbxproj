@@ -116,7 +116,6 @@
 		348799782988B75D00032E22 /* TestProjectTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestProjectTableView.m; sourceTree = "<group>"; };
 		348799792988B75D00032E22 /* TestProjectTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProjectTableView.h; sourceTree = "<group>"; };
 		3487997B2988B75D00032E22 /* TestProjectViewModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProjectViewModelProtocol.h; sourceTree = "<group>"; };
-		3487997C2988B75D00032E22 /* TestProjectCustomerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProjectCustomerHeader.h; sourceTree = "<group>"; };
 		3487997E2988B75D00032E22 /* TestProjectTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProjectTabView.h; sourceTree = "<group>"; };
 		348799802988B75D00032E22 /* TestProjectTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestProjectTabView.m; sourceTree = "<group>"; };
 		348799822988B75D00032E22 /* TestProjectCategoryHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProjectCategoryHeader.h; sourceTree = "<group>"; };
@@ -242,11 +241,10 @@
 			children = (
 				346920AA28517F5100E0F769 /* TestProjectIgnoreWarningDefmacro.h */,
 				34D52F0829A5B48900F5F9C2 /* Frameworks */,
-				348799812988B75D00032E22 /* category */,
-				348799762988B75D00032E22 /* customer */,
-				E297EF9C29793471005B2877 /* viewModel */,
-				34EF82AC28571B260046F4C3 /* mode */,
 				345D97DE2824F43E002D0A83 /* usr */,
+				348799812988B75D00032E22 /* category */,
+				E297EF9C29793471005B2877 /* viewModel-module */,
+				34EF82AC28571B260046F4C3 /* mode */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -294,50 +292,11 @@
 			path = dispatch;
 			sourceTree = "<group>";
 		};
-		348799722988B74900032E22 /* testView */ = {
+		3487997D2988B75D00032E22 /* tabView */ = {
 			isa = PBXGroup;
 			children = (
 				348799732988B74900032E22 /* TestProjectTabSectionView.h */,
 				348799742988B74900032E22 /* TestProjectTabSectionView.m */,
-				34D52F0E29A5EEFA00F5F9C2 /* TestProjectViewTable.h */,
-				34D52F0F29A5EEFA00F5F9C2 /* TestProjectViewTable.m */,
-				34D52F1129A602A700F5F9C2 /* TestProjectTableViewCell.h */,
-				34D52F1229A602A700F5F9C2 /* TestProjectTableViewCell.m */,
-			);
-			path = testView;
-			sourceTree = "<group>";
-		};
-		348799762988B75D00032E22 /* customer */ = {
-			isa = PBXGroup;
-			children = (
-				348799772988B75D00032E22 /* tableView */,
-				3487997A2988B75D00032E22 /* protocol */,
-				3487997C2988B75D00032E22 /* TestProjectCustomerHeader.h */,
-				3487997D2988B75D00032E22 /* tabView */,
-			);
-			path = customer;
-			sourceTree = "<group>";
-		};
-		348799772988B75D00032E22 /* tableView */ = {
-			isa = PBXGroup;
-			children = (
-				348799792988B75D00032E22 /* TestProjectTableView.h */,
-				348799782988B75D00032E22 /* TestProjectTableView.m */,
-			);
-			path = tableView;
-			sourceTree = "<group>";
-		};
-		3487997A2988B75D00032E22 /* protocol */ = {
-			isa = PBXGroup;
-			children = (
-				3487997B2988B75D00032E22 /* TestProjectViewModelProtocol.h */,
-			);
-			path = protocol;
-			sourceTree = "<group>";
-		};
-		3487997D2988B75D00032E22 /* tabView */ = {
-			isa = PBXGroup;
-			children = (
 				3487997E2988B75D00032E22 /* TestProjectTabView.h */,
 				348799802988B75D00032E22 /* TestProjectTabView.m */,
 				3487998B2988B7A700032E22 /* TestProjectTabViewModel.h */,
@@ -400,15 +359,6 @@
 				34D52F0C29A5B4D400F5F9C2 /* TestProjectColor.m */,
 			);
 			path = UIColor;
-			sourceTree = "<group>";
-		};
-		34D52F1429A606C300F5F9C2 /* testModel */ = {
-			isa = PBXGroup;
-			children = (
-				34D52F1529A606F400F5F9C2 /* TestProjectTableModel.h */,
-				34D52F1629A606F400F5F9C2 /* TestProjectTableModel.m */,
-			);
-			path = testModel;
 			sourceTree = "<group>";
 		};
 		34D52F1B29A62A9B00F5F9C2 /* UIApplication */ = {
@@ -477,21 +427,53 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E297EF9C29793471005B2877 /* viewModel */ = {
+		E2783E9F29A9A3EE0035900C /* tab */ = {
+			isa = PBXGroup;
+			children = (
+				34E5D4512990E45600FD4F71 /* tabVC */,
+				3487997D2988B75D00032E22 /* tabView */,
+			);
+			path = tab;
+			sourceTree = "<group>";
+		};
+		E2783EA129A9A4790035900C /* tableView */ = {
+			isa = PBXGroup;
+			children = (
+				E2783EA229A9A4A70035900C /* view */,
+			);
+			path = tableView;
+			sourceTree = "<group>";
+		};
+		E2783EA229A9A4A70035900C /* view */ = {
+			isa = PBXGroup;
+			children = (
+				34D52F1529A606F400F5F9C2 /* TestProjectTableModel.h */,
+				34D52F1629A606F400F5F9C2 /* TestProjectTableModel.m */,
+				348799792988B75D00032E22 /* TestProjectTableView.h */,
+				348799782988B75D00032E22 /* TestProjectTableView.m */,
+				34D52F1129A602A700F5F9C2 /* TestProjectTableViewCell.h */,
+				34D52F1229A602A700F5F9C2 /* TestProjectTableViewCell.m */,
+				3487997B2988B75D00032E22 /* TestProjectViewModelProtocol.h */,
+				34D52F0E29A5EEFA00F5F9C2 /* TestProjectViewTable.h */,
+				34D52F0F29A5EEFA00F5F9C2 /* TestProjectViewTable.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		E297EF9C29793471005B2877 /* viewModel-module */ = {
 			isa = PBXGroup;
 			children = (
 				E297EFA629793563005B2877 /* TestProjectViewHeader.h */,
-				34D52F1429A606C300F5F9C2 /* testModel */,
-				348799722988B74900032E22 /* testView */,
+				E2783E9F29A9A3EE0035900C /* tab */,
+				E2783EA129A9A4790035900C /* tableView */,
 				E297EFA729793574005B2877 /* VC */,
 			);
-			path = viewModel;
+			path = "viewModel-module";
 			sourceTree = "<group>";
 		};
 		E297EFA729793574005B2877 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				34E5D4512990E45600FD4F71 /* tabVC */,
 				E297EF9D297934B5005B2877 /* TestProjectVC.h */,
 				E297EF9E297934B5005B2877 /* TestProjectVC.m */,
 				E297EFA02979350C005B2877 /* TestProjectTabBarController.h */,

@@ -18,9 +18,20 @@
     return @[@{
         @"+ (UIColor *)colorWithWhite:(CGFloat)white alpha:(CGFloat)alpha;":@{
             @"method":@"TestProjectColor_colorWithWhite_alpha",
-            @"desc":@"@param white:颜色1->0 从白色到黑色 alpha:颜色的透明度1->0 从显示到不显示"
+            @"desc":@"根据white和alpha获取颜色\n@param white:颜色1->0 从白色到黑色 alpha:颜色的透明度1->0 从显示到不显示"
         }}
     ];
+}
+
+- (UILabel *)createViewWithColor:(UIColor *)color text:(NSString *)text {
+    UILabel *label = [[UILabel alloc] init];
+    label.font = [UIFont systemFontOfSize:22];
+    label.textColor = [UIColor redColor];
+    label.text = text;
+    label.backgroundColor = color;
+    label.textAlignment = NSTextAlignmentCenter;
+    [self addSubview:label];
+    return label;
 }
 
 - (void)initialViewData {
@@ -71,25 +82,24 @@
 }
 
 - (void)TestProjectColor_colorWithWhite_alpha {
-    CGFloat width = 200;
     CGFloat height = 50;
     UILabel *label_1 = [self createViewWithColor:[UIColor colorWithWhite:0 alpha:1.0] text:@"white:0 alpha:1.0"];
     [label_1 mas_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
         make.height.equal(@(height));
-        make.width.equal(@(width));
         make.top.leading.equal(self);
     }];
     UILabel *label_2 = [self createViewWithColor:[UIColor colorWithWhite:0.5 alpha:1.0] text:@"white:0.5 alpha:1.0"];
     [label_2 mas_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
         make.height.equal(@(height));
-        make.width.equal(@(width));
+        make.width.equal(label_1);
         make.top.equal(label_1);
+        make.trainling.equal(self);
         make.leading.equal(label_1.trainling).offset(10);
     }];
     UILabel *label_3 = [self createViewWithColor:[UIColor colorWithWhite:1.0 alpha:1.0] text:@"white:1.0 alpha:1.0"];
     [label_3 mas_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
         make.height.equal(@(height));
-        make.width.equal(@(width));
+        make.width.equal(label_1);
         make.top.equal(label_1.bottom);
         make.leading.equal(label_1);
     }];
@@ -98,21 +108,21 @@
     UILabel *label_1_1 = [self createViewWithColor:[UIColor colorWithWhite:1.0 alpha:0] text:@"white:1 alpha:0"];
     [label_1_1 mas_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
         make.height.equal(@(height));
-        make.width.equal(@(width));
+        make.width.equal(label_1);
         make.leading.equal(self);
         make.top.equal(label_3.bottom).offset(10);
     }];
     UILabel *label_1_2 = [self createViewWithColor:[UIColor colorWithWhite:1.0 alpha:0.5] text:@"white:1 alpha:0.5"];
     [label_1_2 mas_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
         make.height.equal(@(height));
-        make.width.equal(@(width));
+        make.width.equal(label_1);
         make.top.equal(label_1_1);
         make.leading.equal(label_1_1.trainling).offset(10);
     }];
     UILabel *label_1_3 = [self createViewWithColor:[UIColor colorWithWhite:1.0 alpha:1.0] text:@"white:1 alpha:1.0"];
     [label_1_3 mas_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
         make.height.equal(@(height));
-        make.width.equal(@(width));
+        make.width.equal(label_1);
         make.top.equal(label_1_1.bottom);
         make.leading.equal(label_1_1);
     }];
@@ -121,35 +131,24 @@
     UILabel *label_1_1_1 = [self createViewWithColor:[UIColor colorWithWhite:0.5 alpha:0] text:@"white:0.5 alpha:0"];
     [label_1_1_1 mas_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
         make.height.equal(@(height));
-        make.width.equal(@(width));
+        make.width.equal(label_1);
         make.leading.equal(self);
         make.top.equal(label_1_3.bottom).offset(10);
     }];
     UILabel *label_1_1_2 = [self createViewWithColor:[UIColor colorWithWhite:0.5 alpha:0.5] text:@"white:0.5 alpha:0.5"];
     [label_1_1_2 mas_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
         make.height.equal(@(height));
-        make.width.equal(@(width));
+        make.width.equal(label_1);
         make.top.equal(label_1_1_1);
         make.leading.equal(label_1_1.trainling).offset(10);
     }];
     UILabel *label_1_1_3 = [self createViewWithColor:[UIColor colorWithWhite:0.5 alpha:1.0] text:@"white:0.5 alpha:1.0"];
     [label_1_1_3 mas_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
         make.height.equal(@(height));
-        make.width.equal(@(width));
+        make.width.equal(label_1);
         make.top.equal(label_1_1_1.bottom);
         make.leading.equal(label_1_1_1);
     }];
-
-}
-
-- (UILabel *)createViewWithColor:(UIColor *)color text:(NSString *)text {
-    UILabel *label = [[UILabel alloc] init];
-    label.font = [UIFont systemFontOfSize:23];
-    label.textColor = [UIColor redColor];
-    label.text = text;
-    label.backgroundColor = color;
-    [self addSubview:label];
-    return label;
 }
 
 @end

@@ -10,7 +10,6 @@
 #import "TestProjectTableModel.h"
 #import "TestProjectDetailObjectController.h"
 #import "TestProjectCategoryHeader.h"
-#import "TestProjectCustomerHeader.h"
 #import <objc/message.h>
 
 @implementation TestProjectViewTable

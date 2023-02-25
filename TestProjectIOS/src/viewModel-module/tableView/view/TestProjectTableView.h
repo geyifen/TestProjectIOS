@@ -7,7 +7,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import "TestProjectCustomerHeader.h"
+#import "TestProjectViewModelProtocol.h"
+
 NS_ASSUME_NONNULL_BEGIN
 @protocol TestProjectTableViewProtocol <UITableViewDelegate>
 
