@@ -23,18 +23,23 @@
     NSArray *project = [self project];
     NSMutableArray *mutArr = [self converToModel:project tabType:TestProjectTab_AutoDivede];
     self.nestScrollTabVC = [[TestProjectNestScrollTabController alloc] initWithTabType:TestProjectTab_EqualDivede viewModelList:mutArr];
+    self.nestScrollTabVC.pageTitle = @"Framework";
     [self addChildViewController:self.nestScrollTabVC];
     [self.view addSubview:self.nestScrollTabVC.view];
 }
 
 - (NSMutableArray *)converToModel:(NSArray *)arr tabType:(TestProjectTabType)tabType {
     NSMutableArray *mutArr = [NSMutableArray array];
-    for (NSDictionary *dic in arr) {
-        TestProjectTabViewModel *tabViewModel = [[TestProjectTabViewModel alloc] init];
-        tabViewModel.tabType = tabType;
+    for (NSInteger j = 0; j < arr.count; j++) {
+        NSDictionary *dic = arr[j];
         NSArray *allKeys = [dic allKeys];
-        [mutArr addObject:tabViewModel];
-        for (NSString *key in allKeys) {
+        for (NSInteger i = 0; i < allKeys.count; i++) {
+            NSString *key = allKeys[i];
+            UIColor *color = j % 2 == 0 ? [UIColor redColor] : [UIColor blueColor];
+            TestProjectTabViewModel *tabViewModel = [[TestProjectTabViewModel alloc] init];
+            tabViewModel.tabType = tabType;
+            tabViewModel.backgroundColor = color;
+            [mutArr addObject:tabViewModel];
             id data = [dic objectForKey:key];
             tabViewModel.title = key;
             if ([data isKindOfClass:[NSArray class]]) {
@@ -51,7 +56,16 @@
     return @[@{
         @"Frameworks":@[@{
             @"UIKit": @[@{
-                @"UIColor":@"TestProjectColor"
+                @"CIColor":@[
+                    @{@"CIColor":@"TestProjectCIColor"},
+                    @{@"CIColor(UIKitAdditions)":@"TestProjectCIColorKitAdditions"},
+                ],
+                @"UIColor":@[
+                    @{@"UIColor(TestProject)":@"TestProjectColorCategory"},
+                    @{@"UIColor":@"TestProjectColor"},
+                    @{@"UIColor(UIColorNamedColors)":@"TestProjectColorNamedColors"},
+                    @{@"UIColor(DynamicColors)":@"TestProjectColorDynamicdColors"},
+                ],
             },],
         },],
     },];

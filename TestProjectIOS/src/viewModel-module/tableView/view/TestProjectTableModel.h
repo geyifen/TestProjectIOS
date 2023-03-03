@@ -7,13 +7,17 @@
 
 #import <Foundation/Foundation.h>
 
-#import "TestProjectViewModelProtocol.h"
+#import "TestProjectCustomerHeader.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TestProjectTableModel : NSObject <TestProjectViewModelProtocol> {
+
+@public
     CGFloat _titleHeight;
     CGFloat _descHeight;
+    NSMutableAttributedString *_titleAttr;
+    NSMutableAttributedString *_descAttr;
 }
 
 @property (nonatomic, copy) NSString *title;

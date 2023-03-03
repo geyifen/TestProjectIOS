@@ -41,8 +41,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (TestProject_Constrain)
 
-- (void)mas_makeConstraints:(void (^)(TestProjectViewConstrainMake *make))block;
-- (void)mas_updateConstraints:(void (^)(TestProjectViewConstrainMake *make))block;
+- (void)testproject_makeConstraints:(void (^)(TestProjectViewConstrainMake *make))block;
+- (void)testproject_updateConstraints:(void (^)(TestProjectViewConstrainMake *make))block;
 
 - (TestProjectViewConstrainProperty *)leading;
 - (TestProjectViewConstrainProperty *)trainling;

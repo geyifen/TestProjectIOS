@@ -40,7 +40,7 @@
 - (void)updateMoveTabView:(TestProjectTabView *)tabView animated:(BOOL)animated completed:(void (^)(void))completed  {
     if (animated) {
         [UIView animateWithDuration:0.25 animations:^{
-            [self.bottomLineView mas_updateConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+            [self.bottomLineView testproject_updateConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
                 make.centerX.equal(self.titleLabel).offset(-tabView.moveViewCenterOffset);
                 make.width.equal(self.titleLabel).offset(tabView.moveViewWidthOffset);
             }];
@@ -50,7 +50,7 @@
             }
         }];
     } else {
-        [self.bottomLineView mas_updateConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+        [self.bottomLineView testproject_updateConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
             make.centerX.equal(self.titleLabel).offset(-tabView.moveViewCenterOffset);
             make.width.equal(self.titleLabel).offset(tabView.moveViewWidthOffset);
         }];
@@ -64,7 +64,7 @@
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         
         [self addSubview:_titleLabel];
-        [_titleLabel mas_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+        [_titleLabel testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
             make.top.bottom.equal(self);
             make.height.equal(@50);
             if (self.viewModel.tabType == TestProjectTab_AutoDivede) {
@@ -82,7 +82,7 @@
         _bottomLineView = [[UIView alloc] init];
         _bottomLineView.backgroundColor = [UIColor blackColor];
         [self addSubview:_bottomLineView];
-        [_bottomLineView mas_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+        [_bottomLineView testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
             make.bottom.width.centerX.equal(self.titleLabel);
             make.height.equal(@2);
         }];

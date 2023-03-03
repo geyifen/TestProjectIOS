@@ -72,14 +72,14 @@ typedef NS_ENUM(NSInteger, TestProjectTabType) {
 
 /**
  @param moveAtIndex :即将移动到那个index页面
- @param ges :move的手势
+ @param gesState :move的手势的状态
  @param callerViewWidth :moveAtIndex页面的页面宽度
  @param moveCenterXOffset :moveAtIndex页面中心和屏幕中心的偏移量
  */
-- (void)moveByCallerGes:(UIGestureRecognizer *)ges
-        callerViewWidth:(CGFloat)callerViewWidth
-      moveCenterXOffset:(CGFloat)moveCenterXOffset
-            moveAtIndex:(NSInteger)moveAtIndex;
+- (void)moveByCallerGesState:(UIGestureRecognizerState)gesState
+             callerViewWidth:(CGFloat)callerViewWidth
+           moveCenterXOffset:(CGFloat)moveCenterXOffset
+                 moveAtIndex:(NSInteger)moveAtIndex;
 
 @end
 

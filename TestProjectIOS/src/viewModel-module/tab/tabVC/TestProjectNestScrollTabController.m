@@ -13,7 +13,7 @@
 @interface TestProjectNestScrollTabController ()<TestProjectScrollTabControllerProtocol, TestProjectNestScrollTabChildControllerProtocol>
 
 @property (nonatomic, assign) BOOL isNestVCType;
-@property (nonatomic, strong) NSMutableArray<TestProjectTabViewModel *> *dataItems;
+@property (nonatomic, strong) NSArray<TestProjectTabViewModel *> *dataItems;
 @property (nonatomic, strong) TestProjectScrollTabController *scrollTabController;
 @property (nonatomic, assign) TestProjectTabType tabType;
 
@@ -32,10 +32,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _scrollTabController = [[TestProjectScrollTabController alloc] initWithTabType:self.tabType viewModelList:self.dataItems];
+    _scrollTabController = [[TestProjectScrollTabController alloc] initWithTabType:self.tabType viewModelList:(NSArray<TestProjectTabViewModelProtocol> *)self.dataItems];
+    _scrollTabController.pageTitle = self.pageTitle;
     _scrollTabController.delegate = self;
     _scrollTabController.isNestChildVC = self.isNestVCType;
-    _scrollTabController.isNeedRelationNestChildVCScroll = !self.isNestVCType;
+    _scrollTabController.isNeedRelationNestChildVCScroll = YES;
     [self addChildViewController:_scrollTabController];
     [self.view addSubview:_scrollTabController.view];
 }
@@ -46,7 +47,12 @@
                                       viewModel:(TestProjectTabViewModel *)viewModel {
     if (viewModel.childItems.count > 0) {
         TestProjectNestScrollTabController *vc = [[TestProjectNestScrollTabController alloc] initWithTabType:viewModel.tabType viewModelList:viewModel.childItems];
-        vc.isNestVCType = YES;
+        vc.pageTitle = viewModel.title;
+        if (self.tabType == TestProjectTab_EqualDivede) {
+            vc.isNestVCType = NO;
+        } else {
+            vc.isNestVCType = YES;
+        }
         return vc;
     } else {
         TestProjectObjectController *vc = [[TestProjectObjectController alloc] initWithTabViewModel:viewModel];
@@ -59,8 +65,8 @@
     return [self.scrollTabController nestChildVCContainerViewWidth];
 }
 
-- (BOOL)handlePanGestureEvent:(UIPanGestureRecognizer *)pan gesState:(UIGestureRecognizerState)gesState {
-    return [self.scrollTabController handlePanGestureEvent:pan gesState:gesState];
+- (BOOL)handlePanGestureEvent:(UIPanGestureRecognizer *)pan gesState:(UIGestureRecognizerState)gesState moveX:(CGFloat)moveX {
+    return [self.scrollTabController handlePanGestureEvent:pan gesState:gesState moveX:moveX];
 }
 
 @end

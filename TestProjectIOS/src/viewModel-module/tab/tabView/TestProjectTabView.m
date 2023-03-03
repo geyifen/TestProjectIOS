@@ -73,7 +73,7 @@
         UIView *parentView = [[UIView alloc] init];
         parentView.userInteractionEnabled = YES;
         [self.containerView addSubview:parentView];
-        [parentView mas_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+        [parentView testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
             make.top.bottom.equal(self.containerView);
             if (self.tabType == TestProjectTab_EqualDivede) {
                 if (currentParentView) {
@@ -103,13 +103,13 @@
         CGFloat leading = [viewModel respondsToSelector:@selector(tabView:leadingAtIndex:)] ? [viewModel tabView:self leadingAtIndex:i] : 0;
         CGFloat trailing = [viewModel respondsToSelector:@selector(tabView:trailingAtIndex:)] ? [viewModel tabView:self trailingAtIndex:i] : 0;
         [parentView addSubview:view];
-        [view mas_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+        [view testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
             make.top.bottom.equal(parentView);
             make.leading.equal(parentView).offset(leading);
             make.trainling.equal(parentView).offset(-trailing);
         }];
 
-        [control mas_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+        [control testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
             make.top.bottom.leading.trainling.equal(view);
         }];
         if (atIndex == i) {
@@ -159,14 +159,14 @@
 - (void)setContainerViewLeading:(CGFloat)leadOffset animated:(BOOL)animated {
     if (animated) {
         [UIView animateWithDuration:0.25 animations:^{
-            [self.containerView mas_updateConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+            [self.containerView testproject_updateConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
                 make.leading.equal(self).offset(leadOffset);
             }];
             [self layoutIfNeeded];
             [self setNeedsLayout];
         }];
     } else {
-        [self.containerView mas_updateConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+        [self.containerView testproject_updateConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
             make.leading.equal(self).offset(leadOffset);
         }];
     }
@@ -308,11 +308,11 @@
     [self setContainerViewLeading:newOriginX animated:animated];
 }
 
-- (void)moveByCallerGes:(UIGestureRecognizer *)ges
-        callerViewWidth:(CGFloat)callerViewWidth
-      moveCenterXOffset:(CGFloat)moveCenterXOffset
-            moveAtIndex:(NSInteger)moveAtIndex {
-    switch (ges.state) {
+- (void)moveByCallerGesState:(UIGestureRecognizerState)gesState
+             callerViewWidth:(CGFloat)callerViewWidth
+           moveCenterXOffset:(CGFloat)moveCenterXOffset
+                 moveAtIndex:(NSInteger)moveAtIndex {
+    switch (gesState) {
         case UIGestureRecognizerStateBegan: {
             self.originView = self.currentItemView;
             self.s_lastMoveCenterXOffset = 0;
@@ -413,7 +413,6 @@
         //更新sourceView的一半宽度
         //更新sourceView到边缘位置宽度要增加或者缩小的差距
         self.s_borderWidthDiff = self.ts_widthDiff * (self.sourceView.superview.viewWidth / 2.0) / self.ts_betweenWidth;
-//        NSLog(@"ts_betweenWidth:%f so_widthDiff:%f s_halfWidth:%f s_widthScale:%f", self.ts_betweenWidth, self.so_widthDiff, self.s_halfWidth, self.s_widthScale);
     }
 }
 
@@ -422,7 +421,7 @@
         _containerView = [[UIView alloc] init];
         _containerView.userInteractionEnabled = YES;
         [self addSubview:_containerView];
-        [_containerView mas_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+        [_containerView testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
             make.top.bottom.equal(self);
             make.leading.equal(self);
             if (self.tabType == TestProjectTab_EqualDivede) {

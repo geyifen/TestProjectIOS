@@ -22,25 +22,42 @@
 }
 
 - (NSArray *)viewDataArray {
-    return nil;
+    unsigned int methodCount = 0;
+    Method *methodList = class_copyMethodList(self.class, &methodCount);
+    NSMutableArray *mutArr = [NSMutableArray array];
+    for (NSInteger i = 0; i < methodCount; i++) {
+        Method m = methodList[i];
+        SEL sel = method_getName(m);
+        NSString *methodName = NSStringFromSelector(sel);
+        if ([methodName hasPrefix:@"method_"]) {
+            NSDictionary *dic = ((NSDictionary *(*)(id, SEL))objc_msgSend)(self, sel);
+            [mutArr insertObject:dic atIndex:0];
+        }
+    }
+    return [mutArr copy];
 }
 
 - (void)createDataViewModel {
-    NSMutableArray *mutArr = [NSMutableArray array];
-    NSString *viewKey = NSStringFromClass(self.class);
-    NSArray *viewDataArray = [self viewDataArray];
-    for (NSInteger i = 0; i < viewDataArray.count; i++) {
-        TestProjectTableModel *tableModel = [[TestProjectTableModel alloc] init];
-        NSDictionary *dic = [viewDataArray objectAtIndex:i];
-        NSString *key = dic.allKeys.firstObject;
-        NSDictionary *subDic = [dic objectForKey:key];
-        tableModel.title = key;
-        tableModel.viewKey = viewKey;
-        tableModel.method = [subDic objectForKey:@"method"];
-        tableModel.desc = [subDic objectForKey:@"desc"];
-        [mutArr addObject:tableModel];
-    }
-    self.tableView.dataSourceArray = mutArr;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSMutableArray *mutArr = [NSMutableArray array];
+        NSString *viewKey = NSStringFromClass(self.class);
+        NSArray *viewDataArray = [self viewDataArray];
+        for (NSInteger i = 0; i < viewDataArray.count; i++) {
+            TestProjectTableModel *tableModel = [[TestProjectTableModel alloc] init];
+            NSDictionary *dic = [viewDataArray objectAtIndex:i];
+            NSString *key = dic.allKeys.firstObject;
+            NSDictionary *subDic = [dic objectForKey:key];
+            tableModel.title = key;
+            tableModel.viewKey = viewKey;
+            tableModel.method = [subDic objectForKey:@"method"];
+            tableModel.desc = [subDic objectForKey:@"desc"];
+            [tableModel calculDataViewHeight];
+            [mutArr addObject:tableModel];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.tableView.dataSourceArray = mutArr;
+        });
+    });
 }
 
 - (void)setViewModel:(TestProjectTableModel *)viewModel {
@@ -62,6 +79,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath viewModel:(TestProjectTableModel *)viewModel {
+    if (!viewModel.viewKey) {
+        return;
+    }
     TestProjectDetailObjectController *vc = [[TestProjectDetailObjectController alloc] initWithViewModel:viewModel];
     [UIApplication.rootNavController presentViewController:vc animated:YES completion:nil];
 }
@@ -71,7 +91,7 @@
         _tableView = [[TestProjectTableView alloc] init];
         _tableView.tableViewDelegate = self;
         [self addSubview:_tableView];
-        [_tableView mas_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+        [_tableView testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
             make.top.bottom.leading.trainling.equal(self);
         }];
     }

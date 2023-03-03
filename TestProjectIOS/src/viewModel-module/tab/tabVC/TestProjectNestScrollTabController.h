@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TestProjectNestScrollTabController : TestProjectVC
 
+@property (nonatomic, copy) NSString *pageTitle;
+
 - (instancetype)initWithTabType:(TestProjectTabType)tabType viewModelList:(NSMutableArray *)viewModelList;
 
 @end

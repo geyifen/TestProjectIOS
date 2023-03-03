@@ -12,8 +12,9 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface TestProjectTableViewCell : UITableViewCell <TestProjectViewProtocol>
 
-
 @property (nonatomic, strong) TestProjectTableModel *viewModel;
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *descLabel;
 
 @end
 

@@ -26,7 +26,7 @@
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeContactAdd];
     [btn addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
-    [btn mas_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+    [btn testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
         make.top.leading.equal(self.view);
         make.width.height.equal(@100);
     }];

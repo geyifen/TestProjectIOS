@@ -75,7 +75,7 @@
         [self addChildViewController:vc];
         [self.containerView addSubview:vc.view];
         CGFloat viewWidth = self.view.viewWidth;
-        [vc.view mas_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+        [vc.view testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
             make.top.bottom.equal(self.containerView);
             make.leading.equal(self.containerView).offset(atIndex * viewWidth);
             make.width.equal(@(viewWidth));
@@ -91,7 +91,7 @@
 - (void)setContainerViewLeading:(CGFloat)leadOffset animated:(BOOL)animated completed:(void(^)(void))completed {
     if (animated) {
         [UIView animateWithDuration:0.25 animations:^{
-            [self.containerView mas_updateConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+            [self.containerView testproject_updateConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
                 make.leading.equal(self.view).offset(leadOffset);
             }];
             [self.view layoutIfNeeded];
@@ -102,18 +102,19 @@
             }
         }];
     } else {
-        [self.containerView mas_updateConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+        [self.containerView testproject_updateConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
             make.leading.equal(self.view).offset(leadOffset);
         }];
     }
 }
 
 - (void)didPanGesEvent:(UIPanGestureRecognizer *)pan {
-    [self handlePanGestureEvent:pan gesState:pan.state];
+    UIView *panView = pan.view;
+    CGFloat movingX = [pan translationInView:panView].x;
+    [self handlePanGestureEvent:pan gesState:pan.state moveX:movingX];
 }
 
-- (BOOL)handlePanGestureEvent:(UIPanGestureRecognizer *)pan gesState:(UIGestureRecognizerState)gesState {
-    UIView *panView = pan.view;
+- (BOOL)handlePanGestureEvent:(UIPanGestureRecognizer *)pan gesState:(UIGestureRecognizerState)gesState moveX:(CGFloat)moveX {
     CGFloat newOriginX = self.containerView.viewX;
     
     CGFloat afterMoveOriginX;
@@ -121,6 +122,7 @@
     NSInteger afterMoveAtIndex = self.tabView.currentIndex;
     CGFloat afterMoveViewOriginXWidth;
     CGFloat moveCenterXOffset = 0;
+    CGFloat movingX = moveX;
 
     switch (gesState) {
         case UIGestureRecognizerStateBegan: {
@@ -131,13 +133,12 @@
             [self addChildControllerAtIndex:tabIndex + 1];
             self.lastMoveAtIndex = tabIndex;
             self.currentMoveAtIndex = tabIndex;
-            [self.tabView moveByCallerGes:pan callerViewWidth:self.selfViewWidth moveCenterXOffset:moveCenterXOffset moveAtIndex:afterMoveAtIndex];
+            [self.tabView moveByCallerGesState:gesState callerViewWidth:self.selfViewWidth moveCenterXOffset:moveCenterXOffset moveAtIndex:afterMoveAtIndex];
             _nestChildVCGesState = UIGestureRecognizerStateEnded;
             if (self.isNeedRelationNestChildVCScroll) {
                 //判断当前页面是否有嵌套滚动的vc
                 UIViewController *childVC = [self addChildControllerAtIndex:tabIndex];
                 if ([childVC conformsToProtocol:@protocol(TestProjectNestScrollTabChildControllerProtocol)]) {
-                    //childVC是否遵循协议了
                     UIViewController<TestProjectNestScrollTabChildControllerProtocol> *nestChildVC = (UIViewController<TestProjectNestScrollTabChildControllerProtocol> *)childVC;
                     //获取childVC的containerView的宽度
                     CGFloat nestChildVCViewWidth = [nestChildVC nestChildVCContainerViewWidth];
@@ -147,7 +148,7 @@
                         _nestChildVCViewWidth = nestChildVC.view.viewWidth;
                         _nestChildVCGesState = UIGestureRecognizerStateBegan;
                         //childVC执行Began手势
-                        [_nestScrollChildVC handlePanGestureEvent:pan gesState:UIGestureRecognizerStateBegan];
+                        [_nestScrollChildVC handlePanGestureEvent:pan gesState:UIGestureRecognizerStateBegan moveX:movingX];
                     }
                 }
             }
@@ -158,26 +159,30 @@
             }
             if (_nestChildVCGesState == UIGestureRecognizerStateChanged) {
                 //childVC执行Changed手势
-                BOOL isNoBeyondFatherFrame = [_nestScrollChildVC handlePanGestureEvent:self.panGes gesState:UIGestureRecognizerStateChanged];
+                BOOL isNoBeyondFatherFrame = [_nestScrollChildVC handlePanGestureEvent:pan gesState:UIGestureRecognizerStateChanged moveX:movingX];
                 if (isNoBeyondFatherFrame) {
                     //移动后的点没有超过父容器的宽度
+                    if (self.panGes) {
+                        [self.panGes setTranslation:CGPointZero inView:self.panGes.view];
+                    }
                     return YES;
                 } else {
                     //移动后的点超过父容器的宽度，结束childVC的手势，执行父VC的Changed手势
                     _nestChildVCGesState = UIGestureRecognizerStateEnded;
                     //childVC执行Ended手势
-                    [_nestScrollChildVC handlePanGestureEvent:self.panGes gesState:UIGestureRecognizerStateEnded];
+                    [_nestScrollChildVC handlePanGestureEvent:pan gesState:UIGestureRecognizerStateEnded moveX:movingX];
                 }
             }
             CGFloat containerViewWidth = self.containerView.viewWidth;
             if (containerViewWidth <= self.selfViewWidth) {
                 return NO;
             }
-            CGFloat movingX = [pan translationInView:panView].x;
 
             CGFloat orininX = self.containerView.viewX;
             newOriginX = orininX + movingX;
-            [pan setTranslation:CGPointZero inView:panView];
+            if (self.panGes) {
+                [self.panGes setTranslation:CGPointZero inView:self.panGes.view];
+            }
             if (newOriginX == orininX) {
                 return YES;
             }
@@ -209,6 +214,7 @@
             }
             NSInteger tabIndex = self.tabView.currentIndex;
             BOOL needForbid = NO;
+            
             if (self.currentMoveAtIndex != tabIndex) {
                 if (self.currentMoveAtIndex > tabIndex && moveCenterXOffset <= 0) {
                     //当前的view在初始的view的右边并且中心点超过屏幕的右边
@@ -229,7 +235,7 @@
             } else {
                 [self setContainerViewLeading:newOriginX animated:NO completed:nil];
             }
-            [self.tabView moveByCallerGes:pan callerViewWidth:self.selfViewWidth moveCenterXOffset:moveCenterXOffset moveAtIndex:afterMoveAtIndex];
+            [self.tabView moveByCallerGesState:gesState callerViewWidth:self.selfViewWidth moveCenterXOffset:moveCenterXOffset moveAtIndex:afterMoveAtIndex];
             return isNoBeyondFatherFrame;
         } break;
         case UIGestureRecognizerStateFailed:
@@ -237,11 +243,11 @@
         case UIGestureRecognizerStateEnded: {
             if (_nestChildVCGesState != UIGestureRecognizerStateEnded) {
                 _nestChildVCGesState = UIGestureRecognizerStateEnded;
-                [_nestScrollChildVC handlePanGestureEvent:self.panGes gesState:UIGestureRecognizerStateEnded];
+                [_nestScrollChildVC handlePanGestureEvent:pan gesState:UIGestureRecognizerStateEnded moveX:movingX];
                 return YES;
             }
             if (!pan.enabled) {
-                [self.tabView moveByCallerGes:pan callerViewWidth:self.selfViewWidth moveCenterXOffset:0 moveAtIndex:self.currentMoveAtIndex];
+                [self.tabView moveByCallerGesState:gesState callerViewWidth:self.selfViewWidth moveCenterXOffset:0 moveAtIndex:self.currentMoveAtIndex];
                 pan.enabled = YES;
                 return YES;
             }
@@ -273,7 +279,7 @@
             //newOriginX重置到当前view的X
             newOriginX = -afterMoveAtIndex * self.selfViewWidth;
             moveCenterXOffset = 0;
-            [self.tabView moveByCallerGes:pan callerViewWidth:self.selfViewWidth moveCenterXOffset:moveCenterXOffset moveAtIndex:afterMoveAtIndex];
+            [self.tabView moveByCallerGesState:gesState callerViewWidth:self.selfViewWidth moveCenterXOffset:moveCenterXOffset moveAtIndex:afterMoveAtIndex];
             if (afterMoveOriginX == newOriginX) {
                 return YES;
             }
@@ -305,7 +311,7 @@
             [_containerView addGestureRecognizer:self.panGes];
         }
         [self.view addSubview:_containerView];
-        [_containerView mas_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+        [_containerView testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
             make.bottom.leading.equal(self.view);
             make.width.equal(@(self.viewModelList.count * self.view.viewWidth));
             make.top.equal(self.tabView.bottom);
@@ -326,7 +332,7 @@
         _tabView = [[TestProjectTabView alloc] initWithTabType:self.tabType];
         _tabView.delegate = self;
         [self.view addSubview:_tabView];
-        [_tabView mas_makeConstraints:^(TestProjectViewConstrainMake *make) {
+        [_tabView testproject_makeConstraints:^(TestProjectViewConstrainMake *make) {
             make.top.leading.trainling.equal(self.view);
         }];
     }

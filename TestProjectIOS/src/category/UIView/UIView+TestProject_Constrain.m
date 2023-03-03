@@ -100,7 +100,7 @@
         secondView = secondProperty.firstView;
         commondView = [self lookCommonView:secondView];
     } else if ([self.secondProperty isKindOfClass:[NSNumber class]]) {
-        self.constant += [self.secondProperty integerValue];
+        self.constant += [self.secondProperty floatValue];
         secondView = nil;
         commondView = self.firstView;
     } else {
@@ -119,7 +119,7 @@
         NSLayoutAttribute toLayoutAttr = secondLayoutAttr?:layoutAttr;
         if (commonViewConstrainArr) {
             NSLayoutConstraint *lookConstrain;
-            for (NSLayoutConstraint *constraint in commonViewConstrainArr) {
+            for (NSLayoutConstraint *constraint in commonViewConstrainArr.reverseObjectEnumerator) {
                 if (constraint.firstItem != self.firstView) continue;
                 if (constraint.secondItem != secondView) continue;
                 if (constraint.firstAttribute != layoutAttr) continue;
@@ -251,11 +251,11 @@
 
 @implementation UIView (TestProject_Constrain)
 
-- (void)mas_makeConstraints:(void (^)(TestProjectViewConstrainMake *make))block {
+- (void)testproject_makeConstraints:(void (^)(TestProjectViewConstrainMake *make))block {
     [self make_constrain:block isUpdate:NO];
 }
 
-- (void)mas_updateConstraints:(void (^)(TestProjectViewConstrainMake *))block {
+- (void)testproject_updateConstraints:(void (^)(TestProjectViewConstrainMake *))block {
     [self make_constrain:block isUpdate:YES];
 }
 

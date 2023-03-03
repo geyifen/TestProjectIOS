@@ -12,5 +12,6 @@
 #import "UIView+TestProject_Constrain.h"
 #import "UIView+TestProject_Frame.h"
 #import "UIApplication+TestProject.h"
+#import "UIColor+TestProject.h"
 
 #endif /* TestProjectCategoryHeader_h */

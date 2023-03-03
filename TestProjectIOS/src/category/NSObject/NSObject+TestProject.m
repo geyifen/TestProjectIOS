@@ -78,63 +78,63 @@ void finallyExceptionMethodC(id objc, SEL cmd, id args, ...) {
     return [NSStringFromSelector(sel) isEqualToString:@"eating:"];
 }
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
-//第一步
-+ (BOOL)resolveInstanceMethod:(SEL)sel {
-    BOOL addMethod = NO;
+//#pragma clang diagnostic push
+//#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
+////第一步
+//+ (BOOL)resolveInstanceMethod:(SEL)sel {
+//    BOOL addMethod = NO;
+////    if ([self isSameSel:sel]) {
+////        NSLog(@"resolveInstanceMethod %@", NSStringFromSelector(sel));
+////        NSLog(@"NSObject resolveClassMethod: %@ %@", self, NSStringFromSelector(sel));
+////        addMethod = [self.class addMethod:sel];
+////    }
+//    return addMethod;
+//}
+//
+//+ (BOOL)resolveClassMethod:(SEL)sel {
+//    BOOL addMethod = NO;
 //    if ([self isSameSel:sel]) {
-//        NSLog(@"resolveInstanceMethod %@", NSStringFromSelector(sel));
 //        NSLog(@"NSObject resolveClassMethod: %@ %@", self, NSStringFromSelector(sel));
 //        addMethod = [self.class addMethod:sel];
 //    }
-    return addMethod;
-}
-
-+ (BOOL)resolveClassMethod:(SEL)sel {
-    BOOL addMethod = NO;
-    if ([self isSameSel:sel]) {
-        NSLog(@"NSObject resolveClassMethod: %@ %@", self, NSStringFromSelector(sel));
-        addMethod = [self.class addMethod:sel];
-    }
-    return addMethod;
-}
-
-//第二步
-- (id)forwardingTargetForSelector:(SEL)aSelector {
-//    if ([self isSameSel:aSelector]) {
-//        NSLog(@"NSObject forwardingTargetForSelector: %@ %@", self, NSStringFromSelector(aSelector));
-//        TestProjectCustomMeModel *objc = [[TestProjectCustomMeModel alloc] init];
-//        if ([objc respondsToSelector:aSelector]) {
-//            return objc;
-//        }
-//    }
-    return nil;
-}
-
-// 消息转发第三步
-- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
-    NSString *selectorStr = NSStringFromSelector(aSelector);
-    if ([selectorStr isEqualToString:@"layoutMargins"]) {
-        //在debug查看视图层级的时候会执行到这
-        return nil;
-    }
-    NSLog(@"NSObject methodSignatureForSelector: %@ %@", self, NSStringFromSelector(aSelector));
+//    return addMethod;
+//}
+//
+////第二步
+//- (id)forwardingTargetForSelector:(SEL)aSelector {
+////    if ([self isSameSel:aSelector]) {
+////        NSLog(@"NSObject forwardingTargetForSelector: %@ %@", self, NSStringFromSelector(aSelector));
+////        TestProjectCustomMeModel *objc = [[TestProjectCustomMeModel alloc] init];
+////        if ([objc respondsToSelector:aSelector]) {
+////            return objc;
+////        }
+////    }
 //    return nil;
-    //这个没有执行第三步就会崩溃
-    return [NSMethodSignature methodSignatureForSelector:aSelector];
-}
-
-//重写了这个方法[doesNotRecognizeSelector:]就不会调用，否则就调用
-- (void)forwardInvocation:(NSInvocation *)anInvocation {
-    NSLog(@"NSObject forwardInvocation: %@ %@ target:%@", self, NSStringFromSelector(anInvocation.selector), anInvocation.target);
-}
-
+//}
+//
+//// 消息转发第三步
+//- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
+//    NSString *selectorStr = NSStringFromSelector(aSelector);
+//    if ([selectorStr isEqualToString:@"layoutMargins"] || [selectorStr isEqualToString:@"inputModeSelectionSequence"]) {
+//        //在debug查看视图层级的时候会执行到这
+//        return nil;
+//    }
+//    NSLog(@"NSObject methodSignatureForSelector: %@ %@", self, NSStringFromSelector(aSelector));
+////    return nil;
+//    //这个没有执行第三步就会崩溃
+//    return [NSMethodSignature methodSignatureForSelector:aSelector];
+//}
+//
+////重写了这个方法[doesNotRecognizeSelector:]就不会调用，否则就调用
+//- (void)forwardInvocation:(NSInvocation *)anInvocation {
+//    NSLog(@"NSObject forwardInvocation: %@ %@ target:%@", self, NSStringFromSelector(anInvocation.selector), anInvocation.target);
+//}
+//
 //- (void)doesNotRecognizeSelector:(SEL)aSelector {
 //    NSLog(@"NSObject doesNotRecognizeSelector: %@ %@", self, NSStringFromSelector(aSelector));
 //}
-
-#pragma clang diagnostic pop
+//
+//#pragma clang diagnostic pop
 
 
 - (NSString *)set_propertGetXXXMethod:(NSString *)propertXXX {

@@ -30,9 +30,12 @@
     Class viewClass = NSClassFromString(self.viewModel.viewKey);
     UIView *view = [[viewClass alloc] init];
     [self.view addSubview:view];
-    [view mas_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+    [view testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
         make.top.bottom.leading.trainling.equal(self.view);
     }];
+//    if (self.viewModel.backgroundColor) {
+//        self.view.backgroundColor = self.viewModel.backgroundColor;
+//    }
 }
 
 @end
