@@ -1,5 +1,5 @@
 //
-//  TestProjectColorCategory.h
+//  TestProjectUIColorCategory.h
 //  TestProjectIOS
 //
 //  Created by zjrcumac on 2023/3/2.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TestProjectColorCategory : TestProjectViewTable
+@interface TestProjectUIColorCategory : TestProjectViewTable
 
 @end
 

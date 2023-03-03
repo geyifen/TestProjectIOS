@@ -1,15 +1,15 @@
 //
-//  TestProjectColorNamedColors.m
+//  TestProjectUIColorNamedColors.m
 //  TestProjectIOS
 //
 //  Created by 李文凡 on 2023/2/26.
 //
 
-#import "TestProjectColorNamedColors.h"
+#import "TestProjectUIColorNamedColors.h"
 
-#import "TestProjectColorCell.h"
+#import "TestProjectUIColorCell.h"
 
-@implementation TestProjectColorNamedColors
+@implementation TestProjectUIColorNamedColors
 
 - (NSDictionary *)method_1 {
     return @{
@@ -27,8 +27,8 @@
     };
 }
 
-- (TestProjectColorModel *)createColorModel:(UIColor *)color text:(NSString *)text {
-    TestProjectColorModel *colorModel = [[TestProjectColorModel alloc] init];
+- (TestProjectUIColorModel *)createColorModel:(UIColor *)color text:(NSString *)text {
+    TestProjectUIColorModel *colorModel = [[TestProjectUIColorModel alloc] init];
     colorModel.title = text;
     colorModel.backgroundColor = color;
     [colorModel calculDataViewHeight];
@@ -37,14 +37,14 @@
 
 - (void)TestProjectColorNamedColors_colorNamed_inBundle_compatibleWithTraitCollection {
     NSMutableArray *mutDataArr = [NSMutableArray array];
-    TestProjectColorModel *m1 = [self createColorModel:[UIColor colorNamed:@"Color_Red" inBundle:nil compatibleWithTraitCollection:nil] text:@"从asset根据名字获取颜色, 名字是：Color_Red"];
+    TestProjectUIColorModel *m1 = [self createColorModel:[UIColor colorNamed:@"Color_Red" inBundle:nil compatibleWithTraitCollection:nil] text:@"从asset根据名字获取颜色, 名字是：Color_Red"];
     [mutDataArr addObject:m1];
     self.tableView.dataSourceArray = mutDataArr;
 }
 
 - (void)TestProjectColorNamedColors_colorNamed {
     NSMutableArray *mutDataArr = [NSMutableArray array];
-    TestProjectColorModel *m1 = [self createColorModel:[UIColor colorNamed:@"Color_Red"] text:@"从asset根据名字获取颜色, 名字是：Color_Red"];
+    TestProjectUIColorModel *m1 = [self createColorModel:[UIColor colorNamed:@"Color_Red"] text:@"从asset根据名字获取颜色, 名字是：Color_Red"];
     [mutDataArr addObject:m1];
     self.tableView.dataSourceArray = mutDataArr;
 }

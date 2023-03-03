@@ -1,16 +1,16 @@
 //
-//  TestProjectColorCell.m
+//  TestProjectUIColorCell.m
 //  TestProjectIOS
 //
 //  Created by 李文凡 on 2023/2/25.
 //
 
-#import "TestProjectColorCell.h"
+#import "TestProjectUIColorCell.h"
 
-@implementation TestProjectColorModel
+@implementation TestProjectUIColorModel
 
 - (NSString *)viewIdentifier {
-    return @"TestProjectColorCell";
+    return @"TestProjectUIColorCell";
 }
 
 - (CGFloat)viewHeight {
@@ -20,13 +20,13 @@
 
 @end
 
-@interface TestProjectColorCell ()
+@interface TestProjectUIColorCell ()
 
 @end
 
-@implementation TestProjectColorCell
+@implementation TestProjectUIColorCell
 
-- (void)setViewModel:(TestProjectColorModel *)viewModel {
+- (void)setViewModel:(TestProjectUIColorModel *)viewModel {
     [super setViewModel:viewModel];
     self.backgroundColor = viewModel.backgroundColor;
     self.titleLabel.textColor = viewModel.textColor ? viewModel.textColor : (viewModel.isSection ? [UIColor blackColor] : [UIColor blueColor]);

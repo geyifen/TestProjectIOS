@@ -1,5 +1,5 @@
 //
-//  TestProjectColorCell.h
+//  TestProjectUIColorCell.h
 //  TestProjectIOS
 //
 //  Created by 李文凡 on 2023/2/25.
@@ -7,7 +7,7 @@
 
 #import "TestProjectTableViewCell.h"
 
-@interface TestProjectColorModel : TestProjectTableModel
+@interface TestProjectUIColorModel : TestProjectTableModel
 
 @property (nonatomic, strong) UIColor *backgroundColor;
 @property (nonatomic, assign) BOOL isSection;
@@ -18,7 +18,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TestProjectColorCell : TestProjectTableViewCell
+@interface TestProjectUIColorCell : TestProjectTableViewCell
 
 @end
 

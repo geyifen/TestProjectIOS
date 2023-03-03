@@ -1,5 +1,5 @@
 //
-//  TestProjectColorNamedColors.h
+//  TestProjectUIColorNamedColors.h
 //  TestProjectIOS
 //
 //  Created by 李文凡 on 2023/2/26.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TestProjectColorNamedColors : TestProjectViewTable
+@interface TestProjectUIColorNamedColors : TestProjectViewTable
 
 @end
 

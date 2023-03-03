@@ -56,15 +56,18 @@
     return @[@{
         @"Frameworks":@[@{
             @"UIKit": @[@{
+                @"NSAttributedString":@[
+                    @{@"NSAttributedString":@"TestProjectAttributeStringKit"},
+                ],
                 @"CIColor":@[
                     @{@"CIColor":@"TestProjectCIColor"},
                     @{@"CIColor(UIKitAdditions)":@"TestProjectCIColorKitAdditions"},
                 ],
                 @"UIColor":@[
-                    @{@"UIColor(TestProject)":@"TestProjectColorCategory"},
-                    @{@"UIColor":@"TestProjectColor"},
-                    @{@"UIColor(UIColorNamedColors)":@"TestProjectColorNamedColors"},
-                    @{@"UIColor(DynamicColors)":@"TestProjectColorDynamicdColors"},
+                    @{@"UIColor(TestProject)":@"TestProjectUIColorCategory"},
+                    @{@"UIColor":@"TestProjectUIColor"},
+                    @{@"UIColor(UIColorNamedColors)":@"TestProjectUIColorNamedColors"},
+                    @{@"UIColor(DynamicColors)":@"TestProjectUIColorDynamicdColors"},
                 ],
             },],
         },],

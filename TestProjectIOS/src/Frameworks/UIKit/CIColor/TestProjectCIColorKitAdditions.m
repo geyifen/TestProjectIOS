@@ -7,7 +7,7 @@
 
 #import "TestProjectCIColorKitAdditions.h"
 
-#import "TestProjectColorCell.h"
+#import "TestProjectUIColorCell.h"
 
 #import <CoreImage/CoreImage.h>
 
@@ -21,8 +21,8 @@
     };
 }
 
-- (TestProjectColorModel *)createColorModel:(UIColor *)color text:(NSString *)text {
-    TestProjectColorModel *colorModel = [[TestProjectColorModel alloc] init];
+- (TestProjectUIColorModel *)createColorModel:(UIColor *)color text:(NSString *)text {
+    TestProjectUIColorModel *colorModel = [[TestProjectUIColorModel alloc] init];
     colorModel.title = text;
     colorModel.backgroundColor = color;
     [colorModel calculDataViewHeight];
@@ -39,7 +39,7 @@
     } @finally {
         
     }
-    TestProjectColorModel *m1 = [self createColorModel:[UIColor whiteColor] text:[NSString stringWithFormat:@"%@", data]];
+    TestProjectUIColorModel *m1 = [self createColorModel:[UIColor whiteColor] text:[NSString stringWithFormat:@"%@", data]];
     [mutDataArr addObject:m1];
     self.tableView.dataSourceArray = mutDataArr;
 }

@@ -1,15 +1,15 @@
 //
-//  TestProjectColorDynamicdColors.m
+//  TestProjectUIColorDynamicdColors.m
 //  TestProjectIOS
 //
 //  Created by 李文凡 on 2023/2/26.
 //
 
-#import "TestProjectColorDynamicdColors.h"
+#import "TestProjectUIColorDynamicdColors.h"
 
-#import "TestProjectColorCell.h"
+#import "TestProjectUIColorCell.h"
 
-@implementation TestProjectColorDynamicdColors
+@implementation TestProjectUIColorDynamicdColors
 
 - (NSDictionary *)method_1 {
     return @{
@@ -35,8 +35,8 @@
     };
 }
 
-- (TestProjectColorModel *)createColorModel:(UIColor *)color text:(NSString *)text {
-    TestProjectColorModel *colorModel = [[TestProjectColorModel alloc] init];
+- (TestProjectUIColorModel *)createColorModel:(UIColor *)color text:(NSString *)text {
+    TestProjectUIColorModel *colorModel = [[TestProjectUIColorModel alloc] init];
     colorModel.title = text;
     colorModel.backgroundColor = color;
     [colorModel calculDataViewHeight];
@@ -53,7 +53,7 @@
         }
         return [UIColor redColor];
     }];
-    TestProjectColorModel *m1 = [self createColorModel:[UIColor whiteColor] text:traitCollectionDesc];
+    TestProjectUIColorModel *m1 = [self createColorModel:[UIColor whiteColor] text:traitCollectionDesc];
     m1.cgColor = [color resolvedColorWithTraitCollection:self.traitCollection].CGColor;
     [mutDataArr addObject:m1];
     self.tableView.dataSourceArray = mutDataArr;
@@ -62,7 +62,7 @@
 - (void)TestProjectColorDynamicdColors_initWithDynamicProvider {
     NSMutableArray *mutDataArr = [NSMutableArray array];
     __block NSString *traitCollectionDesc = @"";
-    TestProjectColorModel *m1 = [self createColorModel:[[UIColor alloc] initWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+    TestProjectUIColorModel *m1 = [self createColorModel:[[UIColor alloc] initWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
         traitCollectionDesc = [NSString stringWithFormat:@"%@", traitCollection];
         if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
             return [UIColor yellowColor];
@@ -76,7 +76,7 @@
 - (void)TestProjectColorDynamicdColors_colorWithDynamicProvider {
     NSMutableArray *mutDataArr = [NSMutableArray array];
     __block NSString *traitCollectionDesc = @"";
-    TestProjectColorModel *m1 = [self createColorModel:[UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+    TestProjectUIColorModel *m1 = [self createColorModel:[UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
         traitCollectionDesc = [NSString stringWithFormat:@"%@", traitCollection];
         if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
             return [UIColor yellowColor];
