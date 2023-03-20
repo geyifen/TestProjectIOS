@@ -64,7 +64,13 @@
 - (void)setViewModel:(TestProjectTableModel *)viewModel {
     _viewModel = viewModel;
     SEL sel = NSSelectorFromString(viewModel.method);
-    ((void(*)(id, SEL))objc_msgSend)(self, sel);
+    @try {
+        ((void(*)(id, SEL))objc_msgSend)(self, sel);
+    } @catch (NSException *exception) {
+        NSLog(@"TestProjectViewTable ---> 转换方法失败 exception:%@", exception);
+    } @finally {
+        
+    }
 }
 
 - (instancetype)initCreate {
@@ -97,6 +103,13 @@
         }];
     }
     return _tableView;
+}
+
+- (NSMutableArray *)dataMutArr {
+    if (!_dataMutArr) {
+        _dataMutArr = [NSMutableArray array];
+    }
+    return _dataMutArr;
 }
 
 @end

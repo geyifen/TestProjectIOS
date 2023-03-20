@@ -13,7 +13,6 @@
 
 @property (nonatomic, copy) NSString *firstAttrText;
 @property (nonatomic, copy) NSString *secondAttrText;
-@property (nonatomic, strong) NSMutableArray *dataMutArr;
 
 @end
 
@@ -31,13 +30,6 @@
         _secondAttrText = @"我是第二个secondAttrText";
     }
     return _secondAttrText;
-}
-
-- (NSMutableArray *)dataMutArr {
-    if (!_dataMutArr) {
-        _dataMutArr = [NSMutableArray array];
-    }
-    return _dataMutArr;
 }
 
 //- (NSDictionary *)method_1 {

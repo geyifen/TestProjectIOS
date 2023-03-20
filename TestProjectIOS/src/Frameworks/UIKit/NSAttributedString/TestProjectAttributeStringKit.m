@@ -12,7 +12,6 @@
 @interface TestProjectAttributeStringKit ()
 
 @property (nonatomic, copy) NSString *firstAttrText;
-@property (nonatomic, strong) NSMutableArray *dataMutArr;
 
 @end
 
@@ -23,13 +22,6 @@
         _firstAttrText = @"我是第一个段落的开头的数据\n我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据ABCDEFGHIJKLMNOPQRSTUVWXYZ我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据abggggfffcbbdefghijklmnopqrstuwwwvvvwxyz我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据\n我是第三段的开头数据";
     }
     return _firstAttrText;
-}
-
-- (NSMutableArray *)dataMutArr {
-    if (!_dataMutArr) {
-        _dataMutArr = [NSMutableArray array];
-    }
-    return _dataMutArr;
 }
 
 - (NSDictionary *)method_1 {

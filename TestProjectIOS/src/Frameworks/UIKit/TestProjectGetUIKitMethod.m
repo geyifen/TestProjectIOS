@@ -14,6 +14,7 @@
         @"itemChilds": @[
             [self NSDataAsset],
             [self NSParagraphStyle],
+            [self NSTextAttachment],
             [self NSAttributedString],
             [self CIColor],
             [self UIColor],
@@ -45,6 +46,18 @@
     };
 }
 
++ (NSDictionary *)NSTextAttachment {
+    return @{
+        @"NSTextAttachment":@{
+            @"itemChilds":@[@{
+                @"NSTextAttachment": @{
+                    @"viewKey":@"TestProjectTextAttachment"
+                },
+            }, ],
+        },
+    };
+}
+
 + (NSDictionary *)NSAttributedString {
     return @{
         @"NSAttributedString":@{
@@ -60,7 +73,7 @@
                 @"NSAttributedString(NSAttributedStringDocumentFormats)": @{
                     @"viewKey":@"TestProjectAttributedStringDocumentFormats"
                 },
-            }],
+            }, ],
         },
     };
 }

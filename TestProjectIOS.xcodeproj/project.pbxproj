@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		27A585E85C033FBF09E7B973 /* Pods_TestProjectIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044E49489342EC595D627E86 /* Pods_TestProjectIOS.framework */; };
 		340E9F992975378600C1D440 /* TestProjectSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 340E9F982975378600C1D440 /* TestProjectSignal.m */; };
+		3412005929C7FD46007338D0 /* TestProjectTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3412005829C7FD46007338D0 /* TestProjectTextAttachment.m */; };
+		3412005B29C843F1007338D0 /* lyf_2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3412005A29C843F1007338D0 /* lyf_2.jpeg */; };
+		3412005D29C846B7007338D0 /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3412005C29C846B7007338D0 /* test.txt */; };
 		3418071B29C1C94700F095C6 /* TestProjectDataAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 3418071A29C1C94700F095C6 /* TestProjectDataAsset.m */; };
 		3418071E29C1C97100F095C6 /* TestProjectDataAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3418071D29C1C97100F095C6 /* TestProjectDataAssetCell.m */; };
 		3428C1D129C306EF00CF06B1 /* TestProjectParagraphStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3428C1D029C306EF00CF06B1 /* TestProjectParagraphStyle.m */; };
@@ -90,6 +93,10 @@
 		044E49489342EC595D627E86 /* Pods_TestProjectIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestProjectIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		340E9F972975378600C1D440 /* TestProjectSignal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectSignal.h; sourceTree = "<group>"; };
 		340E9F982975378600C1D440 /* TestProjectSignal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectSignal.m; sourceTree = "<group>"; };
+		3412005729C7FD46007338D0 /* TestProjectTextAttachment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectTextAttachment.h; sourceTree = "<group>"; };
+		3412005829C7FD46007338D0 /* TestProjectTextAttachment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectTextAttachment.m; sourceTree = "<group>"; };
+		3412005A29C843F1007338D0 /* lyf_2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lyf_2.jpeg; sourceTree = "<group>"; };
+		3412005C29C846B7007338D0 /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
 		3418071929C1C94700F095C6 /* TestProjectDataAsset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDataAsset.h; sourceTree = "<group>"; };
 		3418071A29C1C94700F095C6 /* TestProjectDataAsset.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDataAsset.m; sourceTree = "<group>"; };
 		3418071C29C1C97100F095C6 /* TestProjectDataAssetCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDataAssetCell.h; sourceTree = "<group>"; };
@@ -267,6 +274,15 @@
 				5333BFEE96AFF8870A1B4B78 /* Pods-TestProjectIOS.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		3412005629C7FD04007338D0 /* NSTextAttachment */ = {
+			isa = PBXGroup;
+			children = (
+				3412005729C7FD46007338D0 /* TestProjectTextAttachment.h */,
+				3412005829C7FD46007338D0 /* TestProjectTextAttachment.m */,
+			);
+			path = NSTextAttachment;
 			sourceTree = "<group>";
 		};
 		3418071829C1C90900F095C6 /* NSDataAsset */ = {
@@ -507,6 +523,7 @@
 				34A5C41E29B1CC8600E61F65 /* TestProjectGetUIKitMethod.h */,
 				34A5C41F29B1CC8600E61F65 /* TestProjectGetUIKitMethod.m */,
 				3418071829C1C90900F095C6 /* NSDataAsset */,
+				3412005629C7FD04007338D0 /* NSTextAttachment */,
 				3428C1CE29C3065600CF06B1 /* NSParagraphStyle */,
 				34A5C40F29B193B300E61F65 /* NSAttributedString */,
 				E2392A3C29AB90BE00638D25 /* CIColor */,
@@ -677,6 +694,8 @@
 		E2FF19F929AA5A1100A6F325 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				3412005C29C846B7007338D0 /* test.txt */,
+				3412005A29C843F1007338D0 /* lyf_2.jpeg */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -743,6 +762,8 @@
 				E2FF19FD29AA5B7300A6F325 /* images.xcassets in Resources */,
 				3447EE02280E8EBD001AE2F0 /* Assets.xcassets in Resources */,
 				3447EE00280E8EBC001AE2F0 /* Main.storyboard in Resources */,
+				3412005D29C846B7007338D0 /* test.txt in Resources */,
+				3412005B29C843F1007338D0 /* lyf_2.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -852,6 +873,7 @@
 				34A5C40D29B0976600E61F65 /* TestProjectUIColorCategory.m in Sources */,
 				346B745129938CAC00C06A99 /* TestProjectObjectController.m in Sources */,
 				345D97F12824F43E002D0A83 /* TestProjectDispatchIO.m in Sources */,
+				3412005929C7FD46007338D0 /* TestProjectTextAttachment.m in Sources */,
 				E2392A3B29AB7E1400638D25 /* TestProjectUIColorDynamicdColors.m in Sources */,
 				3447EDFA280E8EBC001AE2F0 /* SceneDelegate.m in Sources */,
 				34A5C40A29B096DA00E61F65 /* UIColor+TestProject.m in Sources */,

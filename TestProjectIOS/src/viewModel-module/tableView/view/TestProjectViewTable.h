@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) TestProjectTableView *tableView;
 @property (nonatomic, strong) id viewModel;
 @property (nonatomic, strong) id compareViewModel;
+@property (nonatomic, strong) NSMutableArray *dataMutArr;
 
 - (NSArray *)viewDataArray;
 
