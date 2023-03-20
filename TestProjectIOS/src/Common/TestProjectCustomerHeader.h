@@ -10,5 +10,6 @@
 
 #import "TestProjectCategoryHeader.h"
 #import "TestProjectViewModelProtocol.h"
+#import "TestProjectConfig.h"
 
 #endif /* TestProjectCustomerHeader_h */

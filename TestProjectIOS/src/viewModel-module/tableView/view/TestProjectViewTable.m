@@ -34,6 +34,7 @@
             [mutArr insertObject:dic atIndex:0];
         }
     }
+    free(methodList);
     return [mutArr copy];
 }
 

@@ -43,6 +43,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL isNeedRelationNestChildVCScroll;
 //是否是嵌套的ChildVC, 嵌套的ChildVC没有手势，通过调用者的移动距离进行移动
 @property (nonatomic, assign) BOOL isNestChildVC;
+//指定在第几个tab下
+@property (nonatomic, assign) NSInteger atIndex;
 /**
  嵌套childVC的containerView的宽度
  */

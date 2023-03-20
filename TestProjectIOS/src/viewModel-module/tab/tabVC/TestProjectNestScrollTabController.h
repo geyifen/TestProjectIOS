@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithTabType:(TestProjectTabType)tabType viewModelList:(NSMutableArray *)viewModelList;
 
+@property (nonatomic, assign) NSInteger atIndex;
+
 @end
 
 NS_ASSUME_NONNULL_END

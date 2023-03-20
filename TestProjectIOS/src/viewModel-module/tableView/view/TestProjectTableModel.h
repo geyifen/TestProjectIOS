@@ -21,7 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, strong) NSMutableAttributedString *titleMutAttrStr;
 @property (nonatomic, copy) NSString *desc;
+@property (nonatomic, strong) NSMutableAttributedString *descMutAttrStr;
 @property (nonatomic, copy) NSString *method;
 @property (nonatomic, copy) NSString *viewKey;
 

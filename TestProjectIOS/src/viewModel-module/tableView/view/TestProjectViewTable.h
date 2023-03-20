@@ -9,13 +9,15 @@
 
 #import "TestProjectTableView.h"
 #import "TestProjectCategoryHeader.h"
+#import "TestProjectDetailObjectController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TestProjectViewTable : UIView <TestProjectTableViewProtocol, TestProjectCreateViewProtocol>
+@interface TestProjectViewTable : UIView <TestProjectTableViewProtocol, TestProjectDetailObjectChildView>
 
 @property (nonatomic, strong) TestProjectTableView *tableView;
 @property (nonatomic, strong) id viewModel;
+@property (nonatomic, strong) id compareViewModel;
 
 - (NSArray *)viewDataArray;
 

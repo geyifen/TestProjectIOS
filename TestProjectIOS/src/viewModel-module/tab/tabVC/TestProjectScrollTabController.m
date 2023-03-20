@@ -9,6 +9,7 @@
 
 #import "TestProjectTabViewModel.h"
 #import "TestProjectCategoryHeader.h"
+#import "TestProjectConfig.h"
 
 @interface TestProjectScrollTabController () <TestProjectTabViewProtocol, TestProjectNestScrollTabChildControllerProtocol>
 
@@ -45,7 +46,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.clipsToBounds = YES;
-    [self.tabView resetData:self.viewModelList atIndex:0];
+    [self.tabView resetData:self.viewModelList atIndex:self.atIndex];
     self.selfViewWidth = self.view.viewWidth;
 }
 
@@ -149,6 +150,9 @@
                         _nestChildVCGesState = UIGestureRecognizerStateBegan;
                         //childVC执行Began手势
                         [_nestScrollChildVC handlePanGestureEvent:pan gesState:UIGestureRecognizerStateBegan moveX:movingX];
+                        if ([_nestScrollChildVC respondsToSelector:@selector(pageTitle)]) {
+                            NSLog(@"tabView===>begin pageTitle:%@", [_nestScrollChildVC performSelector:@selector(pageTitle)]);
+                        }
                     }
                 }
             }
@@ -165,6 +169,7 @@
                     if (self.panGes) {
                         [self.panGes setTranslation:CGPointZero inView:self.panGes.view];
                     }
+                    NSLog(@"tabView===>Changed pageTitle:%@ 超过父容器的宽度了", self.pageTitle);
                     return YES;
                 } else {
                     //移动后的点超过父容器的宽度，结束childVC的手势，执行父VC的Changed手势
@@ -175,6 +180,7 @@
             }
             CGFloat containerViewWidth = self.containerView.viewWidth;
             if (containerViewWidth <= self.selfViewWidth) {
+                NSLog(@"tabView===>Changed pageTitle:%@ 父的容器不足够滑动", self.pageTitle);
                 return NO;
             }
 
@@ -184,6 +190,7 @@
                 [self.panGes setTranslation:CGPointZero inView:self.panGes.view];
             }
             if (newOriginX == orininX) {
+                NSLog(@"tabView===>Changed pageTitle:%@ originX没有改变", self.pageTitle);
                 return YES;
             }
             BOOL isNoBeyondFatherFrame = YES;
@@ -218,10 +225,12 @@
             if (self.currentMoveAtIndex != tabIndex) {
                 if (self.currentMoveAtIndex > tabIndex && moveCenterXOffset <= 0) {
                     //当前的view在初始的view的右边并且中心点超过屏幕的右边
+                    NSLog(@"tabView===>Changed pageTitle:%@ 换成右边的view", self.pageTitle);
                     afterMoveAtIndex = tabIndex + 1;
                     needForbid = YES;
                 } else if (self.currentMoveAtIndex < tabIndex && moveCenterXOffset >= 0) {
                     //当前的view在初始的view的左边并且中心点超过屏幕的左边
+                    NSLog(@"tabView===>Changed pageTitle:%@ 换成左边的view", self.pageTitle);
                     afterMoveAtIndex = tabIndex - 1;
                     needForbid = YES;
                 }
@@ -231,8 +240,10 @@
                 moveCenterXOffset = 0;
                 self.currentMoveAtIndex = afterMoveAtIndex;
                 [self setContainerViewLeading:newOriginX animated:NO completed:nil];
+                NSLog(@"tabView===>Changed pageTitle:%@ 滑动中断了", self.pageTitle);
                 pan.enabled = NO;
             } else {
+                NSLog(@"tabView===>Changed pageTitle:%@ 滑动偏移位置：%f", self.pageTitle, newOriginX);
                 [self setContainerViewLeading:newOriginX animated:NO completed:nil];
             }
             [self.tabView moveByCallerGesState:gesState callerViewWidth:self.selfViewWidth moveCenterXOffset:moveCenterXOffset moveAtIndex:afterMoveAtIndex];

@@ -33,6 +33,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _scrollTabController = [[TestProjectScrollTabController alloc] initWithTabType:self.tabType viewModelList:(NSArray<TestProjectTabViewModelProtocol> *)self.dataItems];
+    _scrollTabController.atIndex = self.atIndex;
     _scrollTabController.pageTitle = self.pageTitle;
     _scrollTabController.delegate = self;
     _scrollTabController.isNestChildVC = self.isNestVCType;
@@ -48,6 +49,7 @@
     if (viewModel.childItems.count > 0) {
         TestProjectNestScrollTabController *vc = [[TestProjectNestScrollTabController alloc] initWithTabType:viewModel.tabType viewModelList:viewModel.childItems];
         vc.pageTitle = viewModel.title;
+        vc.atIndex = viewModel.atIndex;
         if (self.tabType == TestProjectTab_EqualDivede) {
             vc.isNestVCType = NO;
         } else {

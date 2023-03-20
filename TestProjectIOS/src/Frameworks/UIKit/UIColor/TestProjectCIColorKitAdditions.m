@@ -13,7 +13,7 @@
 
 @implementation TestProjectCIColorKitAdditions
 
-- (NSDictionary *)method_3 {
+- (NSDictionary *)method_1 {
     return @{
         @"- (instancetype)initWithColor:(UIColor *)color API_AVAILABLE(ios(5.0));":@{
             @"method":@"TestProjectCIColorKitAdditions_initWithColor",

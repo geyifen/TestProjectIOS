@@ -9,6 +9,13 @@
 
 #import "TestProjectTableModel.h"
 
+@protocol TestProjectDetailObjectChildView <TestProjectCreateViewProtocol>
+
+@optional
+@property (nonatomic, strong) TestProjectTableModel * _Nullable compareViewModel;
+
+@end
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TestProjectDetailObjectController : TestProjectVC

@@ -8,6 +8,8 @@
 #import "TestProjectOCController.h"
 
 #import "TestProjectNestScrollTabController.h"
+#import "TestProjectGetUIKitMethod.h"
+#import "TestProjectGetFoundationImplementationMethod.h"
 
 @interface TestProjectOCController ()
 
@@ -40,38 +42,33 @@
             tabViewModel.tabType = tabType;
             tabViewModel.backgroundColor = color;
             [mutArr addObject:tabViewModel];
-            id data = [dic objectForKey:key];
+            NSDictionary *dataDic = [dic objectForKey:key];
             tabViewModel.title = key;
-            if ([data isKindOfClass:[NSArray class]]) {
-                tabViewModel.childItems = [self converToModel:(NSArray *)data tabType:TestProjectTab_AutoDivede];
+            NSArray *itemChilds = [dataDic objectForKey:@"itemChilds"];
+            if (itemChilds && itemChilds.count > 0) {
+                tabViewModel.childItems = [self converToModel:itemChilds tabType:TestProjectTab_AutoDivede];
             } else {
-                tabViewModel.viewKey = data;
+                NSString *viewKey = [dataDic objectForKey:@"viewKey"];
+                tabViewModel.viewKey = viewKey;
             }
+            tabViewModel.atIndex = [[dataDic objectForKey:@"atIndex"] integerValue];
         }
     }
     return mutArr;
 }
 
 - (NSArray *)project {
-    return @[@{
-        @"Frameworks":@[@{
-            @"UIKit": @[@{
-                @"NSAttributedString":@[
-                    @{@"NSAttributedString":@"TestProjectAttributeStringKit"},
-                ],
-                @"CIColor":@[
-                    @{@"CIColor":@"TestProjectCIColor"},
-                    @{@"CIColor(UIKitAdditions)":@"TestProjectCIColorKitAdditions"},
-                ],
-                @"UIColor":@[
-                    @{@"UIColor(TestProject)":@"TestProjectUIColorCategory"},
-                    @{@"UIColor":@"TestProjectUIColor"},
-                    @{@"UIColor(UIColorNamedColors)":@"TestProjectUIColorNamedColors"},
-                    @{@"UIColor(DynamicColors)":@"TestProjectUIColorDynamicdColors"},
-                ],
-            },],
-        },],
-    },];
+    return @[[self FrameWork]];
+}
+
+- (NSDictionary *)FrameWork {
+    return @{@"Frameworks": @{
+        @"itemChilds":@[
+            [TestProjectGetUIKitMethod getImplementationProject],
+            [TestProjectGetFoundationImplementationMethod getImplementationProject],
+        ],
+        @"atIndex": @0,
+    }, };
 }
 
 @end
