@@ -12,8 +12,8 @@
 		3412005929C7FD46007338D0 /* TestProjectTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3412005829C7FD46007338D0 /* TestProjectTextAttachment.m */; };
 		3412005B29C843F1007338D0 /* lyf_2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3412005A29C843F1007338D0 /* lyf_2.jpeg */; };
 		3412005D29C846B7007338D0 /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3412005C29C846B7007338D0 /* test.txt */; };
+		3412006129C8531D007338D0 /* TestProjectFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 3412006029C8531D007338D0 /* TestProjectFont.m */; };
 		3418071B29C1C94700F095C6 /* TestProjectDataAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 3418071A29C1C94700F095C6 /* TestProjectDataAsset.m */; };
-		3418071E29C1C97100F095C6 /* TestProjectDataAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3418071D29C1C97100F095C6 /* TestProjectDataAssetCell.m */; };
 		3428C1D129C306EF00CF06B1 /* TestProjectParagraphStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3428C1D029C306EF00CF06B1 /* TestProjectParagraphStyle.m */; };
 		3428C1D429C3073600CF06B1 /* TestProjectMutableParagraphStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3428C1D329C3073600CF06B1 /* TestProjectMutableParagraphStyle.m */; };
 		3445299C2831E701003EFFA1 /* TestProjectDispatchSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3445299B2831E701003EFFA1 /* TestProjectDispatchSource.m */; };
@@ -97,10 +97,10 @@
 		3412005829C7FD46007338D0 /* TestProjectTextAttachment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectTextAttachment.m; sourceTree = "<group>"; };
 		3412005A29C843F1007338D0 /* lyf_2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lyf_2.jpeg; sourceTree = "<group>"; };
 		3412005C29C846B7007338D0 /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
+		3412005F29C8531D007338D0 /* TestProjectFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectFont.h; sourceTree = "<group>"; };
+		3412006029C8531D007338D0 /* TestProjectFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectFont.m; sourceTree = "<group>"; };
 		3418071929C1C94700F095C6 /* TestProjectDataAsset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDataAsset.h; sourceTree = "<group>"; };
 		3418071A29C1C94700F095C6 /* TestProjectDataAsset.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDataAsset.m; sourceTree = "<group>"; };
-		3418071C29C1C97100F095C6 /* TestProjectDataAssetCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDataAssetCell.h; sourceTree = "<group>"; };
-		3418071D29C1C97100F095C6 /* TestProjectDataAssetCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDataAssetCell.m; sourceTree = "<group>"; };
 		3419D90829B5767700CDF493 /* TestProjectConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectConfig.h; sourceTree = "<group>"; };
 		3428C1CF29C306EF00CF06B1 /* TestProjectParagraphStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectParagraphStyle.h; sourceTree = "<group>"; };
 		3428C1D029C306EF00CF06B1 /* TestProjectParagraphStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectParagraphStyle.m; sourceTree = "<group>"; };
@@ -285,13 +285,20 @@
 			path = NSTextAttachment;
 			sourceTree = "<group>";
 		};
+		3412005E29C852D3007338D0 /* UIFont */ = {
+			isa = PBXGroup;
+			children = (
+				3412005F29C8531D007338D0 /* TestProjectFont.h */,
+				3412006029C8531D007338D0 /* TestProjectFont.m */,
+			);
+			path = UIFont;
+			sourceTree = "<group>";
+		};
 		3418071829C1C90900F095C6 /* NSDataAsset */ = {
 			isa = PBXGroup;
 			children = (
 				3418071929C1C94700F095C6 /* TestProjectDataAsset.h */,
 				3418071A29C1C94700F095C6 /* TestProjectDataAsset.m */,
-				3418071C29C1C97100F095C6 /* TestProjectDataAssetCell.h */,
-				3418071D29C1C97100F095C6 /* TestProjectDataAssetCell.m */,
 			);
 			path = NSDataAsset;
 			sourceTree = "<group>";
@@ -526,8 +533,9 @@
 				3412005629C7FD04007338D0 /* NSTextAttachment */,
 				3428C1CE29C3065600CF06B1 /* NSParagraphStyle */,
 				34A5C40F29B193B300E61F65 /* NSAttributedString */,
-				E2392A3C29AB90BE00638D25 /* CIColor */,
+				3412005E29C852D3007338D0 /* UIFont */,
 				34D52F0A29A5B49C00F5F9C2 /* UIColor */,
+				E2392A3C29AB90BE00638D25 /* CIColor */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -823,7 +831,6 @@
 				34D52F0629A5AA1500F5F9C2 /* TestProjectOCController.m in Sources */,
 				34BB4A6E28D2BF1E00E79698 /* NSObject+TestProject.m in Sources */,
 				347338DC28BDB85600B921EC /* TestProjectAModel.m in Sources */,
-				3418071E29C1C97100F095C6 /* TestProjectDataAssetCell.m in Sources */,
 				348799862988B75D00032E22 /* TestProjectTableView.m in Sources */,
 				347338DF28BDB86700B921EC /* TestProjectBModel.m in Sources */,
 				34DDB787296C0FA3009D56B8 /* TestProjectPThread.m in Sources */,
@@ -838,6 +845,7 @@
 				34A5C42A29B1F06400E61F65 /* TestProjectAttributeStringExtendedString.m in Sources */,
 				345EC4BE286548D100F61F2E /* TestProjectCustomModel.m in Sources */,
 				E297EFA22979350C005B2877 /* TestProjectTabBarController.m in Sources */,
+				3412006129C8531D007338D0 /* TestProjectFont.m in Sources */,
 				34E5D44B2990865100FD4F71 /* UIView+TestProject_Frame.m in Sources */,
 				34D77A4628C1A1FF00A0CE9F /* TestProjectUModel.m in Sources */,
 				34D77A4028C19FBB00A0CE9F /* TestProjectXModel.m in Sources */,

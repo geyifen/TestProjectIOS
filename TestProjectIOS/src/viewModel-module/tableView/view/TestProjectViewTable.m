@@ -64,12 +64,13 @@
 - (void)setViewModel:(TestProjectTableModel *)viewModel {
     _viewModel = viewModel;
     SEL sel = NSSelectorFromString(viewModel.method);
+    
     @try {
         ((void(*)(id, SEL))objc_msgSend)(self, sel);
     } @catch (NSException *exception) {
         NSLog(@"TestProjectViewTable ---> 转换方法失败 exception:%@", exception);
     } @finally {
-        
+
     }
 }
 

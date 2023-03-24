@@ -16,10 +16,11 @@
             [self NSParagraphStyle],
             [self NSTextAttachment],
             [self NSAttributedString],
-            [self CIColor],
+            [self UIFont],
             [self UIColor],
+            [self CIColor],
         ],
-        @"atIndex": @2,
+        @"atIndex": @4,
     }, };
 }
 
@@ -78,15 +79,15 @@
     };
 }
 
-+ (NSDictionary *)CIColor {
++ (NSDictionary *)UIFont {
     return @{
-        @"CIColor": @{
+        @"UIFont":@{
             @"itemChilds":@[@{
-                @"CIColor":@{
-                    @"viewKey":@"TestProjectCIColor",
+                @"UIFont": @{
+                    @"viewKey":@"TestProjectFont"
                 },
             }, ],
-        }
+        },
     };
 }
 
@@ -115,6 +116,18 @@
                 },
             }, ]
         },
+    };
+}
+
++ (NSDictionary *)CIColor {
+    return @{
+        @"CIColor": @{
+            @"itemChilds":@[@{
+                @"CIColor":@{
+                    @"viewKey":@"TestProjectCIColor",
+                },
+            }, ],
+        }
     };
 }
 
