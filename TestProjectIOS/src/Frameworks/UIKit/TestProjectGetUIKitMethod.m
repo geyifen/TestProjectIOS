@@ -20,7 +20,7 @@
             [self UIColor],
             [self CIColor],
         ],
-        @"atIndex": @4,
+        @"atIndex": @1,
     }, };
 }
 
@@ -43,6 +43,7 @@
                     @"viewKey":@"TestProjectMutableParagraphStyle"
                 },
             }, ],
+            @"atIndex": @1,
         },
     };
 }
