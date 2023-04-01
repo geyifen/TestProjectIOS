@@ -12,7 +12,9 @@
 + (NSDictionary *)project_UIKit {
     return @{@"UIKit": @{
         @"itemChilds": @[
+            [self ActivityIndicatorView],
             [self NSDataAsset],
+            [self NSShadow],
             [self NSParagraphStyle],
             [self NSTextAttachment],
             [self NSAttributedString],
@@ -20,14 +22,30 @@
             [self UIColor],
             [self CIColor],
         ],
-        @"atIndex": @1,
+        @"atIndex": @0,
     }, };
+}
+
++ (NSDictionary *)ActivityIndicatorView {
+    return @{
+        @"UIActivityIndicatorView":@{
+            @"viewKey":@"TestProjectActivityIndicatorView"
+        },
+    };
 }
 
 + (NSDictionary *)NSDataAsset {
     return @{
         @"NSDataAsset":@{
             @"viewKey":@"TestProjectDataAsset"
+        },
+    };
+}
+
++ (NSDictionary *)NSShadow {
+    return @{
+        @"NSShadow":@{
+            @"viewKey":@"TestProjectShadow"
         },
     };
 }
