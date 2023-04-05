@@ -7,6 +7,10 @@
 
 #import "TestProjectTableModel.h"
 
+@implementation TestProjectJumpModel
+
+@end
+
 @implementation TestProjectTableModel {
     CGFloat _viewHeight;
 }

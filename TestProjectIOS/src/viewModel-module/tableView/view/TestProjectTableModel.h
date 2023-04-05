@@ -9,7 +9,20 @@
 
 #import "TestProjectCustomerHeader.h"
 
+typedef NS_ENUM(NSInteger, TestProjectJumpType) {
+    TestProjectJumpTypeOfPresent = 0,
+    TestProjectJumpTypeOfPush,
+    TestProjectJumpTypeOfAlert,
+    TestProjectJumpTypeOfSheet,
+    TestProjectJumpTypeOfClick,
+};
 NS_ASSUME_NONNULL_BEGIN
+
+@interface TestProjectJumpModel : NSObject
+
+@property (nonatomic, copy) NSString *jumpMethod;
+
+@end
 
 @interface TestProjectTableModel : NSObject <TestProjectViewModelProtocol> {
 
@@ -26,6 +39,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSMutableAttributedString *descMutAttrStr;
 @property (nonatomic, copy) NSString *method;
 @property (nonatomic, copy) NSString *viewKey;
+@property (nonatomic, copy) void(^clickBlock)(void);
+@property (nonatomic, assign) TestProjectJumpType jumpType;
+@property (nonatomic, strong) TestProjectJumpModel *jumpModel;
 
 - (void)calculDataViewHeight;
 

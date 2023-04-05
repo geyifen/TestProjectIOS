@@ -76,6 +76,7 @@
 		34D77A4328C19FD100A0CE9F /* TestProjectZModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D77A4228C19FD100A0CE9F /* TestProjectZModel.m */; };
 		34D77A4628C1A1FF00A0CE9F /* TestProjectUModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D77A4528C1A1FF00A0CE9F /* TestProjectUModel.m */; };
 		34DDB787296C0FA3009D56B8 /* TestProjectPThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDB786296C0FA3009D56B8 /* TestProjectPThread.m */; };
+		34E2548929DBC2EB002CF4B0 /* TestProjectAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E2548829DBC2EB002CF4B0 /* TestProjectAppearance.m */; };
 		34E5D44B2990865100FD4F71 /* UIView+TestProject_Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E5D44A2990865100FD4F71 /* UIView+TestProject_Frame.m */; };
 		34E5D4542990E48C00FD4F71 /* TestProjectScrollTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E5D4532990E48C00FD4F71 /* TestProjectScrollTabController.m */; };
 		34EC4DD128532604000AEF1E /* TestProjectObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EC4DD028532604000AEF1E /* TestProjectObjc.m */; };
@@ -84,6 +85,7 @@
 		E2392A3B29AB7E1400638D25 /* TestProjectUIColorDynamicdColors.m in Sources */ = {isa = PBXBuildFile; fileRef = E2392A3A29AB7E1400638D25 /* TestProjectUIColorDynamicdColors.m */; };
 		E2392A3F29AB90DA00638D25 /* TestProjectCIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = E2392A3E29AB90DA00638D25 /* TestProjectCIColor.m */; };
 		E2392A4229AB911200638D25 /* TestProjectCIColorKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E2392A4129AB911200638D25 /* TestProjectCIColorKitAdditions.m */; };
+		E25412D929D86AFE00B960A0 /* TestProjectAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = E25412D829D86AFE00B960A0 /* TestProjectAlertController.m */; };
 		E2783EA629A9B51C0035900C /* TestProjectUIColorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2783EA529A9B51C0035900C /* TestProjectUIColorCell.m */; };
 		E27FE81829C597C400C77298 /* TestProjectMutableAttributedStringAttributeFixing.m in Sources */ = {isa = PBXBuildFile; fileRef = E27FE81729C597C400C77298 /* TestProjectMutableAttributedStringAttributeFixing.m */; };
 		E27FE81B29C5A02D00C77298 /* TestProjectAttributedStringDocumentFormats.m in Sources */ = {isa = PBXBuildFile; fileRef = E27FE81A29C5A02D00C77298 /* TestProjectAttributedStringDocumentFormats.m */; };
@@ -232,6 +234,8 @@
 		34D77A4528C1A1FF00A0CE9F /* TestProjectUModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectUModel.m; sourceTree = "<group>"; };
 		34DDB785296C0FA3009D56B8 /* TestProjectPThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectPThread.h; sourceTree = "<group>"; };
 		34DDB786296C0FA3009D56B8 /* TestProjectPThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectPThread.m; sourceTree = "<group>"; };
+		34E2548729DBC2EB002CF4B0 /* TestProjectAppearance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectAppearance.h; sourceTree = "<group>"; };
+		34E2548829DBC2EB002CF4B0 /* TestProjectAppearance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectAppearance.m; sourceTree = "<group>"; };
 		34E5D4492990865100FD4F71 /* UIView+TestProject_Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+TestProject_Frame.h"; sourceTree = "<group>"; };
 		34E5D44A2990865100FD4F71 /* UIView+TestProject_Frame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+TestProject_Frame.m"; sourceTree = "<group>"; };
 		34E5D4522990E48C00FD4F71 /* TestProjectScrollTabController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectScrollTabController.h; sourceTree = "<group>"; };
@@ -250,6 +254,8 @@
 		E2392A3E29AB90DA00638D25 /* TestProjectCIColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectCIColor.m; sourceTree = "<group>"; };
 		E2392A4029AB911200638D25 /* TestProjectCIColorKitAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectCIColorKitAdditions.h; sourceTree = "<group>"; };
 		E2392A4129AB911200638D25 /* TestProjectCIColorKitAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectCIColorKitAdditions.m; sourceTree = "<group>"; };
+		E25412D729D86AFE00B960A0 /* TestProjectAlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectAlertController.h; sourceTree = "<group>"; };
+		E25412D829D86AFE00B960A0 /* TestProjectAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectAlertController.m; sourceTree = "<group>"; };
 		E2783EA329A9A9D20035900C /* TestProjectCustomerHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectCustomerHeader.h; sourceTree = "<group>"; };
 		E2783EA429A9B51C0035900C /* TestProjectUIColorCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectUIColorCell.h; sourceTree = "<group>"; };
 		E2783EA529A9B51C0035900C /* TestProjectUIColorCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectUIColorCell.m; sourceTree = "<group>"; };
@@ -571,6 +577,8 @@
 				34A5C41E29B1CC8600E61F65 /* TestProjectGetUIKitMethod.h */,
 				34A5C41F29B1CC8600E61F65 /* TestProjectGetUIKitMethod.m */,
 				34C3E5CA29D675F500BC4C7D /* UIView */,
+				34E2548629DBC2BA002CF4B0 /* UIAppearance */,
+				E25412D629D86ACD00B960A0 /* UIAlertController */,
 				34C3E5C929D6759A00BC4C7D /* UIActivityIndicatorView */,
 				3418071829C1C90900F095C6 /* NSDataAsset */,
 				3482D99E29D16B55008E3D98 /* NSShadow */,
@@ -610,6 +618,15 @@
 				34D52F1D29A62AC600F5F9C2 /* UIApplication+TestProject.m */,
 			);
 			path = UIApplication;
+			sourceTree = "<group>";
+		};
+		34E2548629DBC2BA002CF4B0 /* UIAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				34E2548729DBC2EB002CF4B0 /* TestProjectAppearance.h */,
+				34E2548829DBC2EB002CF4B0 /* TestProjectAppearance.m */,
+			);
+			path = UIAppearance;
 			sourceTree = "<group>";
 		};
 		34E5D4512990E45600FD4F71 /* tabVC */ = {
@@ -676,6 +693,15 @@
 				E2392A3E29AB90DA00638D25 /* TestProjectCIColor.m */,
 			);
 			path = CIColor;
+			sourceTree = "<group>";
+		};
+		E25412D629D86ACD00B960A0 /* UIAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				E25412D729D86AFE00B960A0 /* TestProjectAlertController.h */,
+				E25412D829D86AFE00B960A0 /* TestProjectAlertController.m */,
+			);
+			path = UIAlertController;
 			sourceTree = "<group>";
 		};
 		E2783E9F29A9A3EE0035900C /* tab */ = {
@@ -908,6 +934,7 @@
 				34E5D4542990E48C00FD4F71 /* TestProjectScrollTabController.m in Sources */,
 				348799882988B75D00032E22 /* UIView+TestProject_Constrain.m in Sources */,
 				E2392A3F29AB90DA00638D25 /* TestProjectCIColor.m in Sources */,
+				E25412D929D86AFE00B960A0 /* TestProjectAlertController.m in Sources */,
 				34B20F0D2988A9CB009B4EFD /* TestProjectMyController.m in Sources */,
 				3487998C2988B7A700032E22 /* TestProjectTabViewModel.m in Sources */,
 				348799872988B75D00032E22 /* TestProjectTabView.m in Sources */,
@@ -929,6 +956,7 @@
 				34A5C40D29B0976600E61F65 /* TestProjectUIColorCategory.m in Sources */,
 				346B745129938CAC00C06A99 /* TestProjectObjectController.m in Sources */,
 				345D97F12824F43E002D0A83 /* TestProjectDispatchIO.m in Sources */,
+				34E2548929DBC2EB002CF4B0 /* TestProjectAppearance.m in Sources */,
 				3412005929C7FD46007338D0 /* TestProjectTextAttachment.m in Sources */,
 				E2392A3B29AB7E1400638D25 /* TestProjectUIColorDynamicdColors.m in Sources */,
 				3447EDFA280E8EBC001AE2F0 /* SceneDelegate.m in Sources */,

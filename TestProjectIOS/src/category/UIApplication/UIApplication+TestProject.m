@@ -57,4 +57,13 @@
     return (UINavigationController *)[self mainKeyWindon].rootViewController;
 }
 
++ (UIViewController *)rootCurrentController {
+    UINavigationController *nav = [self rootNavController];
+    if (nav.presentedViewController) {
+        return nav.presentedViewController;
+    }
+    UIViewController *controller = nav.childViewControllers.lastObject;
+    return controller;
+}
+
 @end

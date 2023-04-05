@@ -12,6 +12,8 @@
 + (NSDictionary *)project_UIKit {
     return @{@"UIKit": @{
         @"itemChilds": @[
+            [self UIAppearance],
+            [self UIAlertController],
             [self ActivityIndicatorView],
             [self NSDataAsset],
             [self NSShadow],
@@ -24,6 +26,22 @@
         ],
         @"atIndex": @0,
     }, };
+}
+
++ (NSDictionary *)UIAppearance {
+    return @{
+        @"UIAppearance":@{
+            @"viewKey":@"TestProjectAppearance"
+        },
+    };
+}
+
++ (NSDictionary *)UIAlertController {
+    return @{
+        @"UIAlertController":@{
+            @"viewKey":@"TestProjectAlertController"
+        },
+    };
 }
 
 + (NSDictionary *)ActivityIndicatorView {

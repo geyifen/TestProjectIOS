@@ -10,7 +10,9 @@
 #import "TestProjectTableModel.h"
 #import "TestProjectDetailObjectController.h"
 #import "TestProjectCategoryHeader.h"
+
 #import <objc/message.h>
+#import <YYModel/YYModel.h>
 
 @implementation TestProjectViewTable
 
@@ -44,14 +46,12 @@
         NSString *viewKey = NSStringFromClass(self.class);
         NSArray *viewDataArray = [self viewDataArray];
         for (NSInteger i = 0; i < viewDataArray.count; i++) {
-            TestProjectTableModel *tableModel = [[TestProjectTableModel alloc] init];
             NSDictionary *dic = [viewDataArray objectAtIndex:i];
             NSString *key = dic.allKeys.firstObject;
             NSDictionary *subDic = [dic objectForKey:key];
+            TestProjectTableModel *tableModel = [TestProjectTableModel yy_modelWithDictionary:subDic];
             tableModel.title = key;
             tableModel.viewKey = viewKey;
-            tableModel.method = [subDic objectForKey:@"method"];
-            tableModel.desc = [subDic objectForKey:@"desc"];
             [tableModel calculDataViewHeight];
             [mutArr addObject:tableModel];
         }
@@ -63,14 +63,16 @@
 
 - (void)setViewModel:(TestProjectTableModel *)viewModel {
     _viewModel = viewModel;
-    SEL sel = NSSelectorFromString(viewModel.method);
-    
+    [self jumpSelector:viewModel.method];
+}
+
+- (void)jumpSelector:(NSString *)method {
+    SEL sel = NSSelectorFromString(method);
     @try {
         ((void(*)(id, SEL))objc_msgSend)(self, sel);
     } @catch (NSException *exception) {
         NSLog(@"TestProjectViewTable ---> 转换方法失败 exception:%@", exception);
     } @finally {
-
     }
 }
 
@@ -87,11 +89,34 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath viewModel:(TestProjectTableModel *)viewModel {
-    if (!viewModel.viewKey) {
-        return;
+    if (viewModel.clickBlock) {
+        viewModel.clickBlock();
+    } else {
+        if (!viewModel.viewKey) {
+            return;
+        }
+        TestProjectDetailObjectController *vc = [[TestProjectDetailObjectController alloc] initWithViewModel:viewModel];
+        switch (viewModel.jumpType) {
+            case TestProjectJumpTypeOfPresent: {
+                [UIApplication.rootNavController presentViewController:vc animated:YES completion:nil];
+            } break;
+            case TestProjectJumpTypeOfPush: {
+                [UIApplication.rootNavController pushViewController:vc animated:YES];
+            } break;
+            case TestProjectJumpTypeOfAlert: {
+                [UIApplication.rootNavController presentViewController:vc animated:YES completion:nil];
+            } break;
+            case TestProjectJumpTypeOfSheet: {
+                [UIApplication.rootNavController presentViewController:vc animated:YES completion:nil];
+            } break;
+            case TestProjectJumpTypeOfClick: {
+                [self jumpSelector:viewModel.jumpModel.jumpMethod];
+            } break;
+            default: {
+                [UIApplication.rootNavController presentViewController:vc animated:YES completion:nil];
+            } break;
+        }
     }
-    TestProjectDetailObjectController *vc = [[TestProjectDetailObjectController alloc] initWithViewModel:viewModel];
-    [UIApplication.rootNavController presentViewController:vc animated:YES completion:nil];
 }
 
 - (TestProjectTableView *)tableView {

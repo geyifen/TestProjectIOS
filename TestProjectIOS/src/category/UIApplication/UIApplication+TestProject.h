@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UINavigationController *)rootNavController;
 
++ (UIViewController *)rootCurrentController;
+
 @end
 
 NS_ASSUME_NONNULL_END
