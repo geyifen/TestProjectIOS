@@ -5,7 +5,7 @@
 //  Created by 李文凡 on 2023/2/25.
 //
 
-#import "TestProjectTableViewCell.h"
+#import "TestProjectBaseTableViewCell.h"
 
 @interface TestProjectUIColorModel : TestProjectTableModel
 
@@ -18,7 +18,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TestProjectUIColorCell : TestProjectTableViewCell
+@interface TestProjectUIColorCell : TestProjectBaseTableViewCell
 
 @end
 

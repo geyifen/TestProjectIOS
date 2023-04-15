@@ -32,16 +32,19 @@
 //    return self;
 //}
 
+- (BOOL)enableLog {
+    return YES;
+}
 
 - (void)finallyExceptionMethodOC:(id)args, ... {
     NSLog(@"未实现的：self:%@, cmd:%@", self, NSStringFromSelector(_cmd));
     if (args) {
         va_list list;
         NSMutableString *appendStr = [NSMutableString stringWithFormat:@":%@", args];
-        va_start(list, args);
-        id obj = va_arg(list, id);
-        [appendStr appendFormat:@":%@", obj];
-        va_end(list);
+//        va_start(list, args);
+//        id obj = va_arg(list, id);
+//        [appendStr appendFormat:@":%@", obj];
+//        va_end(list);
         NSLog(@"参数为%@", appendStr);
     }
 }
@@ -74,6 +77,7 @@ void finallyExceptionMethodC(id objc, SEL cmd, id args, ...) {
 }
 
 - (BOOL)isSameSel:(SEL)sel {
+    return [NSStringFromSelector(sel) isEqualToString:@"addObject:"];
 //    return [NSStringFromSelector(sel) isEqualToString:@"eating:playing:seeing:"];
     return [NSStringFromSelector(sel) isEqualToString:@"eating:"];
 }
@@ -81,15 +85,15 @@ void finallyExceptionMethodC(id objc, SEL cmd, id args, ...) {
 //#pragma clang diagnostic push
 //#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
 ////第一步
-//+ (BOOL)resolveInstanceMethod:(SEL)sel {
-//    BOOL addMethod = NO;
-////    if ([self isSameSel:sel]) {
-////        NSLog(@"resolveInstanceMethod %@", NSStringFromSelector(sel));
-////        NSLog(@"NSObject resolveClassMethod: %@ %@", self, NSStringFromSelector(sel));
-////        addMethod = [self.class addMethod:sel];
-////    }
-//    return addMethod;
-//}
++ (BOOL)resolveInstanceMethod:(SEL)sel {
+    BOOL addMethod = NO;
+    if ([self isSameSel:sel]) {
+//        NSLog(@"resolveInstanceMethod %@", NSStringFromSelector(sel));
+//        NSLog(@"NSObject resolveClassMethod: %@ %@", self, NSStringFromSelector(sel));
+//        addMethod = [self.class addMethod:sel];
+    }
+    return addMethod;
+}
 //
 //+ (BOOL)resolveClassMethod:(SEL)sel {
 //    BOOL addMethod = NO;
@@ -102,17 +106,17 @@ void finallyExceptionMethodC(id objc, SEL cmd, id args, ...) {
 //
 ////第二步
 //- (id)forwardingTargetForSelector:(SEL)aSelector {
-////    if ([self isSameSel:aSelector]) {
-////        NSLog(@"NSObject forwardingTargetForSelector: %@ %@", self, NSStringFromSelector(aSelector));
-////        TestProjectCustomMeModel *objc = [[TestProjectCustomMeModel alloc] init];
-////        if ([objc respondsToSelector:aSelector]) {
-////            return objc;
-////        }
-////    }
+//    if ([self isSameSel:aSelector]) {
+//        NSLog(@"NSObject forwardingTargetForSelector: %@ %@", self, NSStringFromSelector(aSelector));
+//        TestProjectCustomMeModel *objc = [[TestProjectCustomMeModel alloc] init];
+//        if ([objc respondsToSelector:aSelector]) {
+//            return objc;
+//        }
+//    }
 //    return nil;
 //}
 //
-//// 消息转发第三步
+// 消息转发第三步
 //- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
 //    NSString *selectorStr = NSStringFromSelector(aSelector);
 //    if ([selectorStr isEqualToString:@"layoutMargins"] || [selectorStr isEqualToString:@"inputModeSelectionSequence"]) {
@@ -124,16 +128,18 @@ void finallyExceptionMethodC(id objc, SEL cmd, id args, ...) {
 //    //这个没有执行第三步就会崩溃
 //    return [NSMethodSignature methodSignatureForSelector:aSelector];
 //}
-//
+
 ////重写了这个方法[doesNotRecognizeSelector:]就不会调用，否则就调用
 //- (void)forwardInvocation:(NSInvocation *)anInvocation {
-//    NSLog(@"NSObject forwardInvocation: %@ %@ target:%@", self, NSStringFromSelector(anInvocation.selector), anInvocation.target);
+////    NSLog(@"NSObject forwardInvocation: %@ %@ target:%@", self, NSStringFromSelector(anInvocation.selector), anInvocation.target);
 //}
 //
 //- (void)doesNotRecognizeSelector:(SEL)aSelector {
-//    NSLog(@"NSObject doesNotRecognizeSelector: %@ %@", self, NSStringFromSelector(aSelector));
-//}
+//    NSLog(@"NSObject doesNotRecognizeSelector");
 //
+////    NSLog(@"NSObject doesNotRecognizeSelector: %@ %@", self, NSStringFromSelector(aSelector));
+//}
+
 //#pragma clang diagnostic pop
 
 
@@ -145,6 +151,14 @@ void finallyExceptionMethodC(id objc, SEL cmd, id args, ...) {
 - (void)set_propertSetXXXMethod:(NSString *)propertXXX value:(NSString *)value {
     Ivar ivar = class_getInstanceVariable(self.class, [propertXXX UTF8String]);
     object_setIvar(self, ivar, value);
+}
+
++ (void)exchangeSameClassMethod:(NSString *)methodName {
+    SEL s1 = NSSelectorFromString(methodName);
+    SEL s2 = NSSelectorFromString([NSString stringWithFormat:@"testProject_%@", methodName]);
+    Method m1 = class_getInstanceMethod(self.class, s1);
+    Method m2 = class_getInstanceMethod(self.class, s2);
+    method_exchangeImplementations(m1, m2);
 }
 
 @end

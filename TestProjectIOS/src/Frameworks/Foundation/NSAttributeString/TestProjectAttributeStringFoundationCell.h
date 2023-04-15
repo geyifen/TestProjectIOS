@@ -5,7 +5,7 @@
 //  Created by zjrcumac on 2023/3/3.
 //
 
-#import "TestProjectTableViewCell.h"
+#import "TestProjectBaseTableViewCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface TestProjectAttributeStringFoundationCell : TestProjectTableViewCell
+@interface TestProjectAttributeStringFoundationCell : TestProjectBaseTableViewCell
 
 @end
 

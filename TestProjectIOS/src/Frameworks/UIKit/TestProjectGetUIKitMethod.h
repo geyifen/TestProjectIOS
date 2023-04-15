@@ -7,6 +7,8 @@
 
 #import "TestProjectGetImplementationMethod.h"
 
+#import "TestProjectNavigationController.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TestProjectGetUIKitMethod : TestProjectGetImplementationMethod

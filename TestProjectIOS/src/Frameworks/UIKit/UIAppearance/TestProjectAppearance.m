@@ -93,9 +93,6 @@
         @"+ (instancetype)appearance;":@{
             @"method":@"TestProjectAppearance_appearance",
             @"jumpType": @(TestProjectJumpTypeOfClick),
-            @"jumpModel": @{
-                @"jumpMethod": @"TestProjectAppearance_appearance",
-            },
             @"desc":@"设置appearance的颜色为[UIColor redColor] \n 它的优先级低于+ (instancetype)appearanceWhenContainedInInstancesOfClasses:(NSArray<Class <UIAppearanceContainer>> *)containerTypes API_AVAILABLE(ios(9.0));方法"}
     };
 }
@@ -105,9 +102,6 @@
         @"+ (instancetype)appearanceWhenContainedInInstancesOfClasses:(NSArray<Class <UIAppearanceContainer>> *)containerTypes API_AVAILABLE(ios(9.0));":@{
             @"method":@"TestProjectAppearance_appearanceWhenContainedInInstancesOfClasses",
             @"jumpType": @(TestProjectJumpTypeOfClick),
-            @"jumpModel": @{
-                @"jumpMethod": @"TestProjectAppearance_appearanceWhenContainedInInstancesOfClasses",
-            },
             @"desc":@"只设置了子视图的appearance的颜色为[UIColor blackColor] \n 它的优先级高于+ (instancetype)appearance;方法 \n param containerTypes : 必须是一个实例对象的class而且使用的appearance视图必须在这个实例对象class里生成"}
     };
 }

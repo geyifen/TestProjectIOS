@@ -66,4 +66,20 @@
     return controller;
 }
 
++ (CGFloat)safe_top {
+    return self.mainKeyWindon.safeAreaInsets.top;
+}
+
++ (CGFloat)safe_bottom {
+    return self.mainKeyWindon.safeAreaInsets.bottom;
+}
+
++ (CGFloat)safe_left {
+    return self.mainKeyWindon.safeAreaInsets.left;
+}
+
++ (CGFloat)safe_right {
+    return self.mainKeyWindon.safeAreaInsets.right;
+}
+
 @end

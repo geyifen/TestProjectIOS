@@ -7,8 +7,8 @@
 
 #import "SceneDelegate.h"
 
-#import "TestProjectTabBarController.h"
-#import "TestProjectNavigationController.h"
+#import "TestProjectBaseTabBarController.h"
+#import "TestProjectBaseNavigationController.h"
 
 @interface SceneDelegate ()
 
@@ -20,8 +20,9 @@
     UIWindowScene *windowScene = (UIWindowScene *)scene;
     self.window = [[UIWindow alloc] initWithWindowScene:windowScene];
     self.window.frame = windowScene.coordinateSpace.bounds;
-    TestProjectTabBarController *tabBarController = [[TestProjectTabBarController alloc] init];
-    TestProjectNavigationController *navController = [[TestProjectNavigationController alloc] initWithRootViewController:tabBarController];
+    self.window.backgroundColor = [UIColor whiteColor];
+    TestProjectBaseTabBarController *tabBarController = [[TestProjectBaseTabBarController alloc] init];
+    TestProjectBaseNavigationController *navController = [[TestProjectBaseNavigationController alloc] initWithRootViewController:tabBarController];
     self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];
 }

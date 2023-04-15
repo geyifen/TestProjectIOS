@@ -17,6 +17,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIViewController *)rootCurrentController;
 
++ (CGFloat)safe_top;
+
++ (CGFloat)safe_bottom;
+
++ (CGFloat)safe_left;
+
++ (CGFloat)safe_right;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -9,23 +9,107 @@
 
 @implementation TestProjectGetUIKitMethod
 
++ (NSArray *)oldItemChilds {
+    return @[
+        [self UINavigationController],
+        [self UIViewController],
+        [self UIAppearance],
+        [self UIAlertController],
+        [self ActivityIndicatorView],
+        [self NSDataAsset],
+        [self NSShadow],
+        [self NSParagraphStyle],
+        [self NSTextAttachment],
+        [self NSAttributedString],
+        [self UIFont],
+        [self UIColor],
+        [self CIColor],
+    ];
+}
+
++ (NSArray *)newItemChilds {
+    return @[
+        [self UIBarAppearance],
+        [self UINavigationBarAppearance],
+        [self UINavigationBar],
+        [self UINavigationItem],
+    ];
+}
+
++ (NSArray *)itemChilds {
+    NSMutableArray *arr = [NSMutableArray array];
+    [arr addObjectsFromArray:[self newItemChilds]];
+    [arr addObjectsFromArray:[self oldItemChilds]];
+
+    return [arr copy];
+}
+
 + (NSDictionary *)project_UIKit {
     return @{@"UIKit": @{
-        @"itemChilds": @[
-            [self UIAppearance],
-            [self UIAlertController],
-            [self ActivityIndicatorView],
-            [self NSDataAsset],
-            [self NSShadow],
-            [self NSParagraphStyle],
-            [self NSTextAttachment],
-            [self NSAttributedString],
-            [self UIFont],
-            [self UIColor],
-            [self CIColor],
-        ],
-        @"atIndex": @0,
+        @"itemChilds": [self itemChilds],
+        @"atIndex": @2,
     }, };
+}
+
++ (NSDictionary *)UIBarAppearance {
+    return @{
+        @"UIBarAppearance":@{
+            @"viewKey":@"TestProjectBarAppearance"
+        },
+    };
+}
+
++ (NSDictionary *)UINavigationBarAppearance {
+    return @{
+        @"UINavigationBarAppearance":@{
+            @"viewKey":@"TestProjectNavigationBarAppearance"
+        },
+    };
+}
+
++ (NSDictionary *)UINavigationBar {
+    return @{
+        @"UINavigationBar":@{
+            @"viewKey":@"TestProjectNavigationBar"
+        },
+    };
+}
+
++ (NSDictionary *)UINavigationItem {
+    return @{
+        @"UINavigationItem":@{
+            @"viewKey":@"TestProjectNavigationItem"
+        },
+    };
+}
+
++ (NSDictionary *)UINavigationController {
+    return @{
+        @"UINavigationController":@{
+            @"itemChilds":@[@{
+                @"UIViewController(UINavigationControllerItem)":@{
+                    @"viewKey":@"TestProjectViewControllerNavigationControllerItem"
+                },
+                @"UINavigationController":@{
+                    @"viewKey":@"TestProjectNavigationController"
+                },
+            }, ],
+            @"atIndex": @0,
+        },
+    };
+}
+
++ (NSDictionary *)UIViewController {
+    return @{
+        @"UIViewController":@{
+            @"itemChilds":@[@{
+                @"UIViewController":@{
+                    @"viewKey":@"TestProjectViewController"
+                },
+            }, ],
+            @"atIndex": @0,
+        },
+    };
 }
 
 + (NSDictionary *)UIAppearance {

@@ -5,7 +5,7 @@
 //  Created by zjrcumac on 2023/3/31.
 //
 
-#import "TestProjectTableViewCell.h"
+#import "TestProjectBaseTableViewCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface TestProjectUIViewCell : TestProjectTableViewCell
+@interface TestProjectUIViewCell : TestProjectBaseTableViewCell
 
 @end
 
