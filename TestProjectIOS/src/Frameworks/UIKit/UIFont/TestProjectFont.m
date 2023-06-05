@@ -11,542 +11,708 @@
 
 @interface TestProjectFont ()
 
-@property (nonatomic, copy) NSString *firstAttrText;
-
 @end
 
 @implementation TestProjectFont
 
-- (NSString *)firstAttrText {
-    if (!_firstAttrText) {
-        _firstAttrText = @"我是第一个段落的开头的数据\n我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据ABCDEFGHIJKLMNOPQRSTUVWXYZ我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据abggggfffcbbdefghijklmnopqrstuwwwvvvwxyz我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据\n我是第三段的开头数据";
-    }
-    return _firstAttrText;
-}
-
 - (NSDictionary *)method_1 {
     return @{
-        @"+ (UIFont *)preferredFontForTextStyle:(UIFontTextStyle)style API_AVAILABLE(ios(7.0));":@{
-            @"method":@"TestProjectFont_add_preferredFontForTextStyle",
-            @"desc":@"根据系统的定义的类型获取的UIFont"}
+        @"dataModel": @{
+            @"abstract": @"根据系统的定义的类型获取的UIFont",
+            @"title": @"+ (UIFont *)preferredFontForTextStyle:(UIFontTextStyle)style API_AVAILABLE(ios(7.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectFont_add_preferredFontForTextStyle],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_2 {
     return @{
-        @"+ (UIFont *)preferredFontForTextStyle:(UIFontTextStyle)style compatibleWithTraitCollection:(nullable UITraitCollection *)traitCollection API_AVAILABLE(ios(10.0)) API_UNAVAILABLE(watchos);":@{
-            @"method":@"TestProjectFont_add_preferredFontForTextStyle_compatibleWithTraitCollection",
-            @"desc":@"根据系统的定义的类型获取的UIFont \n @parma style:系统定义的类型 \n @param traitCollection: 暂时不知道怎么玩"}
+        @"dataModel": @{
+            @"abstract": @"根据系统的定义的类型获取的UIFont",
+            @"title": @"+ (UIFont *)preferredFontForTextStyle:(UIFontTextStyle)style compatibleWithTraitCollection:(nullable UITraitCollection *)traitCollection API_AVAILABLE(ios(10.0)) API_UNAVAILABLE(watchos);",
+            @"desc": @"@parma style:系统定义的类型 \n @param traitCollection: 暂时不知道怎么玩",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectFont_add_preferredFontForTextStyle_compatibleWithTraitCollection],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_3 {
     return @{
-        @"+ (nullable UIFont *)fontWithName:(NSString *)fontName size:(CGFloat)fontSize;":@{
-            @"method":@"TestProjectFont_add_fontWithName_size",
-            @"desc":@"根据字体的类型获取的UIFont \n 只有部分字体的类型可以和UIFontWeight结合起来共同使用, 可以使用[UIFont fontNamesForFamilyName:name]查看每个字体可以搭配的 \n @parma fontName:字体的类型 \n @param fontSize: 字体的大小"}
+        @"dataModel": @{
+            @"abstract": @"根据字体的类型获取的UIFont",
+            @"title": @"+ (nullable UIFont *)fontWithName:(NSString *)fontName size:(CGFloat)fontSize;",
+            @"desc": @"只有部分字体的类型可以和UIFontWeight结合起来共同使用, 可以使用[UIFont fontNamesForFamilyName:name]查看每个字体可以搭配的 \n @parma fontName:字体的类型 \n @param fontSize: 字体的大小",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectFont_add_fontWithName_size],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_4 {
     return @{
-        @"@property(class, nonatomic, readonly) NSArray<NSString *> *familyNames;":@{
-            @"method":@"TestProjectFont_property_familyNames",
-            @"desc":@"获取系统的所有字体类型 用的是class方法获取的"}
+        @"dataModel": @{
+            @"abstract": @"获取系统的所有字体类型 用的是class方法获取的",
+            @"title": @"@property(class, nonatomic, readonly) NSArray<NSString *> *familyNames;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectFont_property_familyNames],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_5 {
     return @{
-        @"+ (NSArray<NSString *> *)fontNamesForFamilyName:(NSString *)familyName;":@{
-            @"method":@"TestProjectFont_add_fontNamesForFamilyName",
-            @"desc":@"根据字体类型查看当前类型可以搭配的UIFontWeight"}
+        @"dataModel": @{
+            @"abstract": @"根据字体类型查看当前类型可以搭配的UIFontWeight",
+            @"title": @"+ (NSArray<NSString *> *)fontNamesForFamilyName:(NSString *)familyName;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectFont_add_fontNamesForFamilyName],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_6 {
     return @{
-        @"+ (UIFont *)systemFontOfSize:(CGFloat)fontSize;":@{
-            @"method":@"TestProjectFont_add_systemFontOfSize",
-            @"desc":@"根据传入的size设置字体大小"}
+        @"dataModel": @{
+            @"abstract": @"根据传入的size设置字体大小",
+            @"title": @"+ (UIFont *)systemFontOfSize:(CGFloat)fontSize;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectFont_add_systemFontOfSize],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_7 {
     return @{
-        @"+ (UIFont *)boldSystemFontOfSize:(CGFloat)fontSize;":@{
-            @"method":@"TestProjectFont_add_boldSystemFontOfSize",
-            @"desc":@"根据传入的size设置字体大小并且默认是加粗的"}
+        @"dataModel": @{
+            @"abstract": @"根据传入的size设置字体大小并且默认是加粗的",
+            @"title": @"+ (UIFont *)boldSystemFontOfSize:(CGFloat)fontSize;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectFont_add_boldSystemFontOfSize],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_8 {
     return @{
-        @"+ (UIFont *)italicSystemFontOfSize:(CGFloat)fontSize;":@{
-            @"method":@"TestProjectFont_add_italicSystemFontOfSize",
-            @"desc":@"根据传入的size设置字体大小并且默认是斜体的"}
+        @"dataModel": @{
+            @"abstract": @"根据传入的size设置字体大小并且默认是斜体的",
+            @"title": @"+ (UIFont *)italicSystemFontOfSize:(CGFloat)fontSize;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectFont_add_italicSystemFontOfSize],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_9 {
     return @{
-        @"+ (UIFont *)systemFontOfSize:(CGFloat)fontSize weight:(UIFontWeight)weight API_AVAILABLE(ios(8.2))":@{
-            @"method":@"TestProjectFont_add_systemFontOfSize_weight",
-            @"desc":@"根据传入的size和weight获取UIFont字体"}
+        @"dataModel": @{
+            @"abstract": @"根据传入的size和weight获取UIFont字体",
+            @"title": @"+ (UIFont *)systemFontOfSize:(CGFloat)fontSize weight:(UIFontWeight)weight API_AVAILABLE(ios(8.2))",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectFont_add_systemFontOfSize_weight],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_10 {
     return @{
-        @"+ (UIFont *)monospacedDigitSystemFontOfSize:(CGFloat)fontSize weight:(UIFontWeight)weight API_AVAILABLE(ios(9.0));":@{
-            @"method":@"TestProjectFont_add_monospacedDigitSystemFontOfSize_weight",
-            @"desc":@"根据传入的size和weight获取UIFont字体"}
+        @"dataModel": @{
+            @"abstract": @"根据传入的size和weight获取UIFont字体",
+            @"title": @"+ (UIFont *)monospacedDigitSystemFontOfSize:(CGFloat)fontSize weight:(UIFontWeight)weight API_AVAILABLE(ios(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectFont_add_monospacedDigitSystemFontOfSize_weight],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_11 {
     return @{
-        @"+ (UIFont *)systemFontOfSize:(CGFloat)fontSize weight:(UIFontWeight)weight width:(UIFontWidth)width API_AVAILABLE(ios(16.0));":@{
-            @"method":@"TestProjectFont_add_systemFontOfSize_weight_width",
-            @"desc":@"根据传入的size和weight和width获取UIFont字体"}
+        @"dataModel": @{
+            @"abstract": @"根据传入的size和weight和width获取UIFont字体",
+            @"title": @"+ (UIFont *)systemFontOfSize:(CGFloat)fontSize weight:(UIFontWeight)weight width:(UIFontWidth)width API_AVAILABLE(ios(16.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectFont_add_systemFontOfSize_weight_width],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_12 {
     return @{
-        @"+ (UIFont *)monospacedSystemFontOfSize:(CGFloat)fontSize weight:(UIFontWeight)weight API_AVAILABLE(ios(13.0));":@{
-            @"method":@"TestProjectFont_add_monospacedSystemFontOfSize_weight",
-            @"desc":@"根据传入的size和weight和width获取UIFont字体"}
+        @"dataModel": @{
+            @"abstract": @"根据传入的size和weight和width获取UIFont字体",
+            @"title": @"+ (UIFont *)monospacedSystemFontOfSize:(CGFloat)fontSize weight:(UIFontWeight)weight API_AVAILABLE(ios(13.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectFont_add_monospacedSystemFontOfSize_weight],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_13 {
     return @{
-        @"@property(nonatomic,readonly,strong) NSString *familyName;":@{
-            @"method":@"TestProjectFont_property_familyName",
-            @"desc":@"获取UIFont的familyName"}
+        @"dataModel": @{
+            @"abstract": @"获取UIFont的familyName",
+            @"title": @"@property(nonatomic,readonly,strong) NSString *familyName;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectFont_property_familyName],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_14 {
     return @{
-        @"@property(nonatomic,readonly,strong) NSString *fontName;":@{
-            @"method":@"TestProjectFont_property_fontName",
-            @"desc":@"获取UIFont的fontName"}
+        @"dataModel": @{
+            @"abstract": @"获取UIFont的fontName",
+            @"title": @"@property(nonatomic,readonly,strong) NSString *fontName;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectFont_property_fontName],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_15 {
     return @{
-        @"@property(nonatomic,readonly)        CGFloat   pointSize;":@{
-            @"method":@"TestProjectFont_property_pointSize",
-            @"desc":@"获取UIFont的pointSize"}
+        @"dataModel": @{
+            @"abstract": @"获取UIFont的pointSize",
+            @"title": @"@property(nonatomic,readonly)        CGFloat   pointSize;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectFont_property_pointSize],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_16 {
     return @{
-        @"@property(nonatomic,readonly)        CGFloat   ascender;":@{
-            @"method":@"TestProjectFont_property_ascender",
-            @"desc":@"获取UIFont的ascender"}
+        @"dataModel": @{
+            @"abstract": @"获取UIFont的ascender",
+            @"title": @"@property(nonatomic,readonly)        CGFloat   ascender;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectFont_property_ascender],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_17 {
     return @{
-        @"@property(nonatomic,readonly)        CGFloat   descender;":@{
-            @"method":@"TestProjectFont_property_descender",
-            @"desc":@"获取UIFont的descender"}
+        @"dataModel": @{
+            @"abstract": @"获取UIFont的descender",
+            @"title": @"@property(nonatomic,readonly)        CGFloat   descender;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectFont_property_descender],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_18 {
     return @{
-        @"@property(nonatomic,readonly)        CGFloat   capHeight;":@{
-            @"method":@"TestProjectFont_property_capHeight",
-            @"desc":@"获取UIFont的capHeight"}
+        @"dataModel": @{
+            @"abstract": @"获取UIFont的capHeight",
+            @"title": @"@property(nonatomic,readonly)        CGFloat   capHeight;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectFont_property_capHeight],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_19 {
     return @{
-        @"@property(nonatomic,readonly)        CGFloat   xHeight;":@{
-            @"method":@"TestProjectFont_property_xHeight",
-            @"desc":@"获取UIFont的xHeight"}
+        @"dataModel": @{
+            @"abstract": @"获取UIFont的xHeight",
+            @"title": @"@property(nonatomic,readonly)        CGFloat   xHeight;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectFont_property_xHeight],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_20 {
     return @{
-        @"@property(nonatomic,readonly)        CGFloat   lineHeight API_AVAILABLE(ios(4.0));":@{
-            @"method":@"TestProjectFont_property_lineHeight",
-            @"desc":@"获取UIFont的lineHeight"}
+        @"dataModel": @{
+            @"abstract": @"获取UIFont的lineHeight",
+            @"title": @"@property(nonatomic,readonly)        CGFloat   lineHeight API_AVAILABLE(ios(4.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectFont_property_lineHeight],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_21 {
     return @{
-        @"@property(nonatomic,readonly)        CGFloat   leading;":@{
-            @"method":@"TestProjectFont_property_leading",
-            @"desc":@"获取UIFont的leading"}
+        @"dataModel": @{
+            @"abstract": @"获取UIFont的leading",
+            @"title": @"@property(nonatomic,readonly)        CGFloat   leading;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectFont_property_leading],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_22 {
     return @{
-        @"- (UIFont *)fontWithSize:(CGFloat)fontSize;":@{
-            @"method":@"TestProjectFont_fontWithSize",
-            @"desc":@"通过fontSize获取Font"}
+        @"dataModel": @{
+            @"abstract": @"通过fontSize获取Font",
+            @"title": @"- (UIFont *)fontWithSize:(CGFloat)fontSize;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectFont_fontWithSize],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_23 {
     return @{
-        @"+ (UIFont *)fontWithDescriptor:(UIFontDescriptor *)descriptor size:(CGFloat)pointSize API_AVAILABLE(ios(7.0));":@{
-            @"method":@"TestProjectFont_add_fontWithDescriptor_size",
-            @"desc":@"通过descriptor和pointSize获取Font"}
+        @"dataModel": @{
+            @"abstract": @"通过descriptor和pointSize获取Font",
+            @"title": @"+ (UIFont *)fontWithDescriptor:(UIFontDescriptor *)descriptor size:(CGFloat)pointSize API_AVAILABLE(ios(7.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectFont_add_fontWithDescriptor_size],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_24 {
     return @{
-        @"@property(nonatomic, readonly) UIFontDescriptor *fontDescriptor API_AVAILABLE(ios(7.0));":@{
-            @"method":@"TestProjectFont_property_fontDescriptor",
-            @"desc":@"获取UIFont的fontDescriptor"}
+        @"dataModel": @{
+            @"abstract": @"获取UIFont的fontDescriptor",
+            @"title": @"@property(nonatomic, readonly) UIFontDescriptor *fontDescriptor API_AVAILABLE(ios(7.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectFont_property_fontDescriptor],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
-- (TestProjectAttributeStringFoundationModel *)createAttrStrModelWith:(UIFont *)font {
-    TestProjectAttributeStringFoundationModel *attrStrModel = [[TestProjectAttributeStringFoundationModel alloc] init];
-    NSAttributedString *firstAttrStr = [[NSAttributedString alloc] initWithString:self.firstAttrText attributes:@{NSFontAttributeName: font}];
-
-    attrStrModel.titleMutAttrStr = [[NSMutableAttributedString alloc] initWithAttributedString:firstAttrStr];
-    [self.dataMutArr addObject:attrStrModel];
-    return attrStrModel;
+- (TestProjectAttributeStringFoundationModel *)createAttrStrModelWithFont:(UIFont *)font {
+    TestProjectAttributeStringFoundationModel *m = [[TestProjectAttributeStringFoundationModel alloc] init];
+    m.isChild = YES;
+    m.isTitleExpand = NO;
+    m.titleMutAttrStr = [[NSMutableAttributedString alloc] initWithString:self.firstAttrText attributes:@{NSFontAttributeName: font}];
+    [self.dataMutArr addObject:m];
+    return m;
 }
 
-- (void)TestProjectFont_add_fontWithDescriptor_size {
+- (NSMutableArray *)TestProjectFont_add_fontWithDescriptor_size {
     UIFontDescriptor *desc = [UIFontDescriptor fontDescriptorWithName:@".SFUI-Regular" size:12];
     UIFont *font1 = [UIFont fontWithDescriptor:desc size:18];
-    TestProjectAttributeStringFoundationModel *m1 = [self createAttrStrModelWith:font1];
-    m1.desc = [NSString stringWithFormat:@"FontDescriptor:%@\nattrText:%@", desc, m1.titleMutAttrStr];
-    for (TestProjectAttributeStringFoundationModel *model in self.dataMutArr) {
-        [model calculDataViewHeight];
-    }
+    TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithFont:font1];
+    m.desc = [NSString stringWithFormat:@"FontDescriptor:%@\nattrText:%@", desc, m.titleMutAttrStr];
+    [m calculDataViewHeight];
 
-    self.tableView.dataSourceArray = self.dataMutArr;
+    return self.dataMutArr;
 }
 
-- (void)TestProjectFont_property_fontDescriptor {
+- (NSMutableArray *)TestProjectFont_property_get:(NSString *)property value:(id)value {
     UIFont *font = [UIFont systemFontOfSize:18];
-    TestProjectAttributeStringFoundationModel *m1 = [self createAttrStrModelWith:font];
-    m1.desc = [NSString stringWithFormat:@"获取属性fontDescriptor:%@\nattrText:%@", font.fontDescriptor, m1.titleMutAttrStr];
-    for (TestProjectAttributeStringFoundationModel *model in self.dataMutArr) {
-        [model calculDataViewHeight];
+    TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithFont:font];
+    if (value) {
+        [font setValue:value forKey:property];
     }
-
-    self.tableView.dataSourceArray = self.dataMutArr;
+    m.desc = [NSString stringWithFormat:@"获取属性%@:%@\nattrText:%@", property, [font valueForKey:property], m.titleMutAttrStr];
+    [m calculDataViewHeight];
+    return self.dataMutArr;
 }
 
-- (void)TestProjectFont_fontWithSize {
+- (NSMutableArray *)TestProjectFont_property_fontDescriptor {
+    return [self TestProjectFont_property_get:@"fontDescriptor" value:nil];
+}
+
+- (NSMutableArray *)TestProjectFont_fontWithSize {
     UIFont *font = [UIFont systemFontOfSize:18];
-    font = [font fontWithSize:12];
-    TestProjectAttributeStringFoundationModel *m1 = [self createAttrStrModelWith:font];
-    m1.desc = [NSString stringWithFormat:@"重新修改font大小为12\nattrText:%@", m1.titleMutAttrStr];
-    for (TestProjectAttributeStringFoundationModel *model in self.dataMutArr) {
-        [model calculDataViewHeight];
-    }
-
-    self.tableView.dataSourceArray = self.dataMutArr;
+    [font fontWithSize:12];
+    TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithFont:font];
+    m.desc = [NSString stringWithFormat:@"设置字体大小为12\nattrText:%@", m.titleMutAttrStr];
+    return self.dataMutArr;
 }
 
-- (void)TestProjectFont_property_leading {
-    UIFont *font = [UIFont systemFontOfSize:18];
-    TestProjectAttributeStringFoundationModel *m1 = [self createAttrStrModelWith:font];
-    m1.desc = [NSString stringWithFormat:@"获取属性leading:%f\nattrText:%@", font.leading, m1.titleMutAttrStr];
-    for (TestProjectAttributeStringFoundationModel *model in self.dataMutArr) {
-        [model calculDataViewHeight];
-    }
-
-    self.tableView.dataSourceArray = self.dataMutArr;
+- (NSMutableArray *)TestProjectFont_property_leading {
+    return [self TestProjectFont_property_get:@"leading" value:nil];
 }
 
-- (void)TestProjectFont_property_lineHeight {
-    UIFont *font = [UIFont systemFontOfSize:18];
-    TestProjectAttributeStringFoundationModel *m1 = [self createAttrStrModelWith:font];
-    m1.desc = [NSString stringWithFormat:@"获取属性lineHeight:%f\nattrText:%@", font.lineHeight, m1.titleMutAttrStr];
-    for (TestProjectAttributeStringFoundationModel *model in self.dataMutArr) {
-        [model calculDataViewHeight];
-    }
-
-    self.tableView.dataSourceArray = self.dataMutArr;
+- (NSMutableArray *)TestProjectFont_property_lineHeight {
+    return [self TestProjectFont_property_get:@"lineHeight" value:nil];
 }
 
-- (void)TestProjectFont_property_xHeight {
-    UIFont *font = [UIFont systemFontOfSize:18];
-    TestProjectAttributeStringFoundationModel *m1 = [self createAttrStrModelWith:font];
-    m1.desc = [NSString stringWithFormat:@"获取属性xHeight:%f\nattrText:%@", font.xHeight, m1.titleMutAttrStr];
-    for (TestProjectAttributeStringFoundationModel *model in self.dataMutArr) {
-        [model calculDataViewHeight];
-    }
-
-    self.tableView.dataSourceArray = self.dataMutArr;
+- (NSMutableArray *)TestProjectFont_property_xHeight {
+    return [self TestProjectFont_property_get:@"xHeight" value:nil];
 }
 
-- (void)TestProjectFont_property_capHeight {
-    UIFont *font = [UIFont systemFontOfSize:18];
-    TestProjectAttributeStringFoundationModel *m1 = [self createAttrStrModelWith:font];
-    m1.desc = [NSString stringWithFormat:@"获取属性capHeight:%f\nattrText:%@", font.capHeight, m1.titleMutAttrStr];
-    for (TestProjectAttributeStringFoundationModel *model in self.dataMutArr) {
-        [model calculDataViewHeight];
-    }
-    self.tableView.dataSourceArray = self.dataMutArr;
+- (NSMutableArray *)TestProjectFont_property_capHeight {
+    return [self TestProjectFont_property_get:@"capHeight" value:nil];
 }
 
-- (void)TestProjectFont_property_descender {
-    UIFont *font = [UIFont systemFontOfSize:18];
-    TestProjectAttributeStringFoundationModel *m1 = [self createAttrStrModelWith:font];
-    m1.desc = [NSString stringWithFormat:@"获取属性descender:%f\nattrText:%@", font.descender, m1.titleMutAttrStr];
-    for (TestProjectAttributeStringFoundationModel *model in self.dataMutArr) {
-        [model calculDataViewHeight];
-    }
-
-    self.tableView.dataSourceArray = self.dataMutArr;
+- (NSMutableArray *)TestProjectFont_property_descender {
+    return [self TestProjectFont_property_get:@"descender" value:nil];
 }
 
-- (void)TestProjectFont_property_ascender {
-    UIFont *font = [UIFont systemFontOfSize:18];
-    TestProjectAttributeStringFoundationModel *m1 = [self createAttrStrModelWith:font];
-    m1.desc = [NSString stringWithFormat:@"获取属性ascender:%f\nattrText:%@", font.ascender, m1.titleMutAttrStr];
-    for (TestProjectAttributeStringFoundationModel *model in self.dataMutArr) {
-        [model calculDataViewHeight];
-    }
-
-    self.tableView.dataSourceArray = self.dataMutArr;
+- (NSMutableArray *)TestProjectFont_property_ascender {
+    return [self TestProjectFont_property_get:@"ascender" value:nil];
 }
 
-- (void)TestProjectFont_property_pointSize {
-    UIFont *font = [UIFont systemFontOfSize:18];
-    TestProjectAttributeStringFoundationModel *m1 = [self createAttrStrModelWith:font];
-    m1.desc = [NSString stringWithFormat:@"获取属性pointSize:%f\nattrText:%@", font.pointSize, m1.titleMutAttrStr];
-    for (TestProjectAttributeStringFoundationModel *model in self.dataMutArr) {
-        [model calculDataViewHeight];
-    }
-
-    self.tableView.dataSourceArray = self.dataMutArr;
+- (NSMutableArray *)TestProjectFont_property_pointSize {
+    return [self TestProjectFont_property_get:@"pointSize" value:nil];
+    
 }
 
-- (void)TestProjectFont_property_fontName {
-    UIFont *font = [UIFont systemFontOfSize:18];
-    TestProjectAttributeStringFoundationModel *m1 = [self createAttrStrModelWith:font];
-    m1.desc = [NSString stringWithFormat:@"获取属性fontName:%@\nattrText:%@", font.fontName, m1.titleMutAttrStr];
-    for (TestProjectAttributeStringFoundationModel *model in self.dataMutArr) {
-        [model calculDataViewHeight];
-    }
-
-    self.tableView.dataSourceArray = self.dataMutArr;
+- (NSMutableArray *)TestProjectFont_property_fontName {
+    return [self TestProjectFont_property_get:@"fontName" value:nil];
 }
 
-- (void)TestProjectFont_property_familyName {
-    UIFont *font = [UIFont systemFontOfSize:18];
-    TestProjectAttributeStringFoundationModel *m1 = [self createAttrStrModelWith:font];
-    m1.desc = [NSString stringWithFormat:@"获取属性familyName:%@\nattrText:%@", font.familyName, m1.titleMutAttrStr];
-    for (TestProjectAttributeStringFoundationModel *model in self.dataMutArr) {
-        [model calculDataViewHeight];
-    }
-
-    self.tableView.dataSourceArray = self.dataMutArr;
+- (NSMutableArray *)TestProjectFont_property_familyName {
+    return [self TestProjectFont_property_get:@"familyName" value:nil];
 }
 
-- (void)TestProjectFont_add_monospacedSystemFontOfSize_weight {
+- (NSMutableArray *)TestProjectFont_add_monospacedSystemFontOfSize_weight {
     for (NSInteger i = 0; i < 10; i++) {
         NSInteger size = 20 + i;
         UIFont *font = [UIFont monospacedSystemFontOfSize:size weight:UIFontWeightBold];
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWith:font];
+        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithFont:font];
         m.desc = [NSString stringWithFormat:@"[UIFont monospacedSystemFontOfSize:%ld weight:UIFontWeightBold]设置字体的大小为：\n%@", size, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
 
-    self.tableView.dataSourceArray = self.dataMutArr;
+    return self.dataMutArr;
 }
 
-- (void)TestProjectFont_add_systemFontOfSize_weight_width {
+- (NSMutableArray *)TestProjectFont_add_systemFontOfSize_weight_width {
     if (@available(iOS 16.0, *)) {
         NSArray *widths = @[@(UIFontWidthCondensed), @(UIFontWidthStandard), @(UIFontWidthExpanded), @(UIFontWidthCompressed)];
         for (NSInteger i = 0; i < widths.count; i++) {
             UIFontWeight width = [widths[i] floatValue];
             UIFont *font = [UIFont systemFontOfSize:14 weight:UIFontWeightBold width:width];
-            TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWith:font];
+            TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithFont:font];
             m.desc = [NSString stringWithFormat:@"设置字体的粗重为：\n%@", m.titleMutAttrStr];
             [m calculDataViewHeight];
         }
     }
 
-    self.tableView.dataSourceArray = self.dataMutArr;
+    return self.dataMutArr;
 }
 
-- (void)TestProjectFont_add_monospacedDigitSystemFontOfSize_weight {
+- (NSMutableArray *)TestProjectFont_add_monospacedDigitSystemFontOfSize_weight {
     for (NSInteger i = 0; i < 10; i++) {
         NSInteger size = 20 + i;
         UIFont *font = [UIFont monospacedDigitSystemFontOfSize:size weight:UIFontWeightBold];
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWith:font];
+        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithFont:font];
         m.desc = [NSString stringWithFormat:@"[UIFont monospacedSystemFontOfSize:%ld weight:UIFontWeightBold]设置字体的大小为：\n%@", size, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
 
-    self.tableView.dataSourceArray = self.dataMutArr;
+    return self.dataMutArr;
 }
 
-- (void)TestProjectFont_add_systemFontOfSize_weight {
+- (NSMutableArray *)TestProjectFont_add_systemFontOfSize_weight {
     NSArray *weights = @[@(UIFontWeightUltraLight), @(UIFontWeightThin), @(UIFontWeightLight), @(UIFontWeightRegular), @(UIFontWeightMedium), @(UIFontWeightSemibold), @(UIFontWeightBold), @(UIFontWeightHeavy), @(UIFontWeightBlack)];
     for (NSInteger i = 0; i < weights.count; i++) {
         UIFontWeight weight = [weights[i] floatValue];
         UIFont *font = [UIFont systemFontOfSize:14 weight:weight];
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWith:font];
+        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithFont:font];
         m.desc = [NSString stringWithFormat:@"设置字体的粗重为：\n%@", m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
 
-    self.tableView.dataSourceArray = self.dataMutArr;
+    return self.dataMutArr;
 }
 
-- (void)TestProjectFont_add_italicSystemFontOfSize {
+- (NSMutableArray *)TestProjectFont_add_italicSystemFontOfSize {
     for (NSInteger i = 0; i < 10; i++) {
         NSInteger size = 20 + i;
         UIFont *font = [UIFont italicSystemFontOfSize:size];
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWith:font];
+        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithFont:font];
         m.desc = [NSString stringWithFormat:@"[UIFont italicSystemFontOfSize:%ld]设置字体的大小为：\n%@", size, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
 
-    self.tableView.dataSourceArray = self.dataMutArr;
+    return self.dataMutArr;
 }
 
-- (void)TestProjectFont_add_boldSystemFontOfSize {
+- (NSMutableArray *)TestProjectFont_add_boldSystemFontOfSize {
     for (NSInteger i = 0; i < 10; i++) {
         NSInteger size = 20 + i;
         UIFont *font = [UIFont boldSystemFontOfSize:size];
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWith:font];
+        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithFont:font];
         m.desc = [NSString stringWithFormat:@"[UIFont boldSystemFontOfSize:%ld]设置字体的大小为：\n%@", size, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
 
-    self.tableView.dataSourceArray = self.dataMutArr;
+    return self.dataMutArr;
 }
 
-- (void)TestProjectFont_add_systemFontOfSize {
+- (NSMutableArray *)TestProjectFont_add_systemFontOfSize {
     for (NSInteger i = 0; i < 10; i++) {
         NSInteger size = 20 + i;
         UIFont *font = [UIFont systemFontOfSize:size];
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWith:font];
+        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithFont:font];
         m.desc = [NSString stringWithFormat:@"[UIFont systemFontOfSize:%ld]设置字体的大小为：\n%@", size, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
 
-    self.tableView.dataSourceArray = self.dataMutArr;
+    return self.dataMutArr;
 }
 
-- (void)TestProjectFont_add_fontNamesForFamilyName {
+- (NSMutableArray *)TestProjectFont_add_fontNamesForFamilyName {
     NSArray *font_familyNames = [UIFont familyNames];
     for (NSString *fontName in font_familyNames) {
         NSArray *fontNames = [UIFont fontNamesForFamilyName:fontName];
         TestProjectAttributeStringFoundationModel *m = [[TestProjectAttributeStringFoundationModel alloc] init];
         m.desc = [NSString stringWithFormat:@"获取%@字体的可以搭配的属性：\n%@", fontName, fontNames];
         [m calculDataViewHeight];
-        [self.dataMutArr addObject:m];
     }
 
-    self.tableView.dataSourceArray = self.dataMutArr;
+    return self.dataMutArr;
 }
 
-- (void)TestProjectFont_property_familyNames {
+- (NSMutableArray *)TestProjectFont_property_familyNames {
     NSArray *font_familyNames = [UIFont familyNames];
-    TestProjectAttributeStringFoundationModel *m1 = [[TestProjectAttributeStringFoundationModel alloc] init];
-    NSString *desc = [NSString stringWithFormat:@"获取UIFont所有字体: 总个数为:%ld \n %@", font_familyNames.count, font_familyNames];
-    m1.desc = desc;
-    [m1 calculDataViewHeight];
-    [self.dataMutArr addObject:m1];
-    NSLog(@"%@", desc);
-
-    self.tableView.dataSourceArray = self.dataMutArr;
+    TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithFont:[UIFont systemFontOfSize:17]];
+    m.desc = [NSString stringWithFormat:@"获取UIFont所有字体: 总个数为:%ld \n %@", font_familyNames.count, font_familyNames];
+    [m calculDataViewHeight];
+    return self.dataMutArr;
 }
 
-- (void)TestProjectFont_add_fontWithName_size {
+- (NSMutableArray *)TestProjectFont_add_fontWithName_size {
     NSArray *font_familyNames = [UIFont familyNames];
     for (NSString *fontName in font_familyNames) {
         UIFont *font = [UIFont fontWithName:fontName size:14];
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWith:font];
+        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithFont:font];
         m.desc = [NSString stringWithFormat:@"设置的字体是[UIFont fontWithName:@\"%@\" size:18] attrText:%@", fontName, m.titleMutAttrStr];
+        [m calculDataViewHeight];
     }
-    
-    for (TestProjectAttributeStringFoundationModel *model in self.dataMutArr) {
-        [model calculDataViewHeight];
-    }
-
-    self.tableView.dataSourceArray = self.dataMutArr;
+    return self.dataMutArr;
 }
 
-- (void)TestProjectFont_add_preferredFontForTextStyle_compatibleWithTraitCollection {
-    UIFont *font1 = [UIFont preferredFontForTextStyle:UIFontTextStyleLargeTitle compatibleWithTraitCollection:nil];
-    TestProjectAttributeStringFoundationModel *m1 = [self createAttrStrModelWith:font1];
-    m1.desc = [NSString stringWithFormat:@"设置的是UIFontTextStyleLargeTitle-34 attrText:%@", m1.titleMutAttrStr];
-    for (TestProjectAttributeStringFoundationModel *model in self.dataMutArr) {
-        [model calculDataViewHeight];
+- (NSMutableArray *)TestProjectFont_add_preferredFontForTextStyle_compatibleWithTraitCollection {
+    NSArray *arr = @[
+        @{
+            @"desc": @"UIFontTextStyleLargeTitle-34",
+            @"styleValue": @"UIFontTextStyleLargeTitle",
+            @"style": UIFontTextStyleLargeTitle,
+        },
+        @{
+            @"desc": @"UIFontTextStyleTitle1-28 ",
+            @"styleValue": @"UIFontTextStyleTitle1",
+            @"style": UIFontTextStyleTitle1,
+        },
+        @{
+            @"desc": @"UIFontTextStyleTitle2-22",
+            @"styleValue": @"UIFontTextStyleTitle2",
+            @"style": UIFontTextStyleTitle2,
+        },
+        @{
+            @"desc": @"UIFontTextStyleTitle3-20",
+            @"styleValue": @"UIFontTextStyleTitle3",
+            @"style": UIFontTextStyleTitle3,
+        },
+        @{
+            @"desc": @"UIFontTextStyleHeadline-17",
+            @"styleValue": @"UIFontTextStyleHeadline",
+            @"style": UIFontTextStyleHeadline,
+        },
+        @{
+            @"desc": @"UIFontTextStyleSubheadline-15",
+            @"styleValue": @"UIFontTextStyleSubheadline",
+            @"style": UIFontTextStyleSubheadline,
+        },
+        @{
+            @"desc": @"UIFontTextStyleBody-17",
+            @"styleValue": @"UIFontTextStyleBody",
+            @"style": UIFontTextStyleBody,
+        },
+        @{
+            @"desc": @"UIFontTextStyleCallout-16",
+            @"styleValue": @"UIFontTextStyleCallout",
+            @"style": UIFontTextStyleCallout,
+        },
+        @{
+            @"desc": @"UIFontTextStyleFootnote-13",
+            @"styleValue": @"UIFontTextStyleFootnote",
+            @"style": UIFontTextStyleFootnote,
+        },
+        @{
+            @"desc": @"UIFontTextStyleCaption1-12",
+            @"styleValue": @"UIFontTextStyleCaption1",
+            @"style": UIFontTextStyleCaption1,
+        },
+        @{
+            @"desc": @"UIFontTextStyleCaption2-11",
+            @"styleValue": @"UIFontTextStyleCaption2",
+            @"style": UIFontTextStyleCaption2,
+        },
+    ];
+    for (NSDictionary *dic in arr) {
+        NSString *desc = dic[@"desc"];
+        NSString *styleValue = dic[@"styleValue"];
+        UIFontTextStyle style = dic[@"style"];
+        UIFont *font = [UIFont preferredFontForTextStyle:style compatibleWithTraitCollection:nil];
+        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithFont:font];
+        m.desc = [NSString stringWithFormat:@"设置的是%@ style 取的值(%@) attrText:\n%@", desc, styleValue, m.titleMutAttrStr];
+        [m calculDataViewHeight];
     }
-
-    self.tableView.dataSourceArray = self.dataMutArr;
+    return self.dataMutArr;
 }
 
-- (void)TestProjectFont_add_preferredFontForTextStyle {
-    UIFont *font1 = [UIFont preferredFontForTextStyle:UIFontTextStyleLargeTitle];
-    TestProjectAttributeStringFoundationModel *m1 = [self createAttrStrModelWith:font1];
-    m1.desc = [NSString stringWithFormat:@"设置的是UIFontTextStyleLargeTitle-34 attrText:%@", m1.titleMutAttrStr];
-    
-    UIFont *font2 = [UIFont preferredFontForTextStyle:UIFontTextStyleTitle1];
-    TestProjectAttributeStringFoundationModel *m2 = [self createAttrStrModelWith:font2];
-    m2.desc = [NSString stringWithFormat:@"设置的是UIFontTextStyleTitle1-28 attrText:%@", m2.titleMutAttrStr];
-
-    UIFont *font3 = [UIFont preferredFontForTextStyle:UIFontTextStyleTitle2];
-    TestProjectAttributeStringFoundationModel *m3 = [self createAttrStrModelWith:font3];
-    m3.desc = [NSString stringWithFormat:@"设置的是UIFontTextStyleTitle2-22 attrText:%@", m3.titleMutAttrStr];
-
-    UIFont *font4 = [UIFont preferredFontForTextStyle:UIFontTextStyleTitle3];
-    TestProjectAttributeStringFoundationModel *m4 = [self createAttrStrModelWith:font4];
-    m4.desc = [NSString stringWithFormat:@"设置的是UIFontTextStyleTitle3-20 attrText:%@", m4.titleMutAttrStr];
-
-    UIFont *font5 = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
-    TestProjectAttributeStringFoundationModel *m5 = [self createAttrStrModelWith:font5];
-    m5.desc = [NSString stringWithFormat:@"设置的是UIFontTextStyleHeadline-17 attrText:%@", m5.titleMutAttrStr];
-
-    UIFont *font6 = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
-    TestProjectAttributeStringFoundationModel *m6 = [self createAttrStrModelWith:font6];
-    m6.desc = [NSString stringWithFormat:@"设置的是UIFontTextStyleSubheadline-15 attrText:%@", m6.titleMutAttrStr];
-
-    UIFont *font7 = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
-    TestProjectAttributeStringFoundationModel *m7 = [self createAttrStrModelWith:font7];
-    m7.desc = [NSString stringWithFormat:@"设置的是UIFontTextStyleBody-17 attrText:%@", m7.titleMutAttrStr];
-
-    UIFont *font8 = [UIFont preferredFontForTextStyle:UIFontTextStyleCallout];
-    TestProjectAttributeStringFoundationModel *m8 = [self createAttrStrModelWith:font8];
-    m8.desc = [NSString stringWithFormat:@"设置的是UIFontTextStyleCallout-16 attrText:%@", m8.titleMutAttrStr];
-
-    UIFont *font9 = [UIFont preferredFontForTextStyle:UIFontTextStyleFootnote];
-    TestProjectAttributeStringFoundationModel *m9 = [self createAttrStrModelWith:font9];
-    m9.desc = [NSString stringWithFormat:@"设置的是UIFontTextStyleFootnote-13 attrText:%@", m9.titleMutAttrStr];
-
-    UIFont *font10 = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
-    TestProjectAttributeStringFoundationModel *m10 = [self createAttrStrModelWith:font10];
-    m10.desc = [NSString stringWithFormat:@"设置的是UIFontTextStyleCaption1-12 attrText:%@", m10.titleMutAttrStr];
-
-    UIFont *font11 = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption2];
-    TestProjectAttributeStringFoundationModel *m11 = [self createAttrStrModelWith:font11];
-    m11.desc = [NSString stringWithFormat:@"设置的是UIFontTextStyleCaption2-11 attrText:%@", m11.titleMutAttrStr];
-
-    for (TestProjectAttributeStringFoundationModel *model in self.dataMutArr) {
-        [model calculDataViewHeight];
+- (NSMutableArray *)TestProjectFont_add_preferredFontForTextStyle {
+    NSArray *arr = @[
+        @{
+            @"desc": @"UIFontTextStyleLargeTitle-34",
+            @"styleValue": @"UIFontTextStyleLargeTitle",
+            @"style": UIFontTextStyleLargeTitle,
+        },
+        @{
+            @"desc": @"UIFontTextStyleTitle1-28 ",
+            @"styleValue": @"UIFontTextStyleTitle1",
+            @"style": UIFontTextStyleTitle1,
+        },
+        @{
+            @"desc": @"UIFontTextStyleTitle2-22",
+            @"styleValue": @"UIFontTextStyleTitle2",
+            @"style": UIFontTextStyleTitle2,
+        },
+        @{
+            @"desc": @"UIFontTextStyleTitle3-20",
+            @"styleValue": @"UIFontTextStyleTitle3",
+            @"style": UIFontTextStyleTitle3,
+        },
+        @{
+            @"desc": @"UIFontTextStyleHeadline-17",
+            @"styleValue": @"UIFontTextStyleHeadline",
+            @"style": UIFontTextStyleHeadline,
+        },
+        @{
+            @"desc": @"UIFontTextStyleSubheadline-15",
+            @"styleValue": @"UIFontTextStyleSubheadline",
+            @"style": UIFontTextStyleSubheadline,
+        },
+        @{
+            @"desc": @"UIFontTextStyleBody-17",
+            @"styleValue": @"UIFontTextStyleBody",
+            @"style": UIFontTextStyleBody,
+        },
+        @{
+            @"desc": @"UIFontTextStyleCallout-16",
+            @"styleValue": @"UIFontTextStyleCallout",
+            @"style": UIFontTextStyleCallout,
+        },
+        @{
+            @"desc": @"UIFontTextStyleFootnote-13",
+            @"styleValue": @"UIFontTextStyleFootnote",
+            @"style": UIFontTextStyleFootnote,
+        },
+        @{
+            @"desc": @"UIFontTextStyleCaption1-12",
+            @"styleValue": @"UIFontTextStyleCaption1",
+            @"style": UIFontTextStyleCaption1,
+        },
+        @{
+            @"desc": @"UIFontTextStyleCaption2-11",
+            @"styleValue": @"UIFontTextStyleCaption2",
+            @"style": UIFontTextStyleCaption2,
+        },
+    ];
+    for (NSDictionary *dic in arr) {
+        NSString *desc = dic[@"desc"];
+        NSString *styleValue = dic[@"styleValue"];
+        UIFontTextStyle style = dic[@"style"];
+        UIFont *font = [UIFont preferredFontForTextStyle:style];
+        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithFont:font];
+        m.desc = [NSString stringWithFormat:@"设置的是%@ style 取的值(%@) attrText:\n%@", desc, styleValue, m.titleMutAttrStr];
+        [m calculDataViewHeight];
     }
-
-    self.tableView.dataSourceArray = self.dataMutArr;
+    return self.dataMutArr;
 }
 
 @end

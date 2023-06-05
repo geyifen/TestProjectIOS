@@ -15,33 +15,37 @@
 
 - (NSDictionary *)method_1 {
     return @{
-        @"- (instancetype)initWithColor:(UIColor *)color API_AVAILABLE(ios(5.0));":@{
-            @"method":@"TestProjectCIColorKitAdditions_initWithColor",
-            @"desc":@"根据UIColor获取CIColor"}
+        @"dataModel": @{
+            @"abstract": @"根据UIColor获取CIColor",
+            @"title": @"- (instancetype)initWithColor:(UIColor *)color API_AVAILABLE(ios(5.0));", 
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectUIColorModel.class,
+                @"childItems": [self TestProjectCIColorKitAdditions_initWithColor],
+            }
+        },
     };
 }
 
-- (TestProjectUIColorModel *)createColorModel:(UIColor *)color text:(NSString *)text {
+- (void)createColorModel:(UIColor *)color text:(NSString *)text {
     TestProjectUIColorModel *colorModel = [[TestProjectUIColorModel alloc] init];
     colorModel.title = text;
     colorModel.backgroundColor = color;
-    [colorModel calculDataViewHeight];
-    return colorModel;
+    [self.dataMutArr addObject:colorModel];
 }
 
-- (void)TestProjectCIColorKitAdditions_initWithColor {
-    NSMutableArray *mutDataArr = [NSMutableArray array];
+- (NSMutableArray *)TestProjectCIColorKitAdditions_initWithColor {
+    UIColor *color = [UIColor yellowColor];
     id data;
     @try {
-        data = [UIColor yellowColor].CIColor;
+        data = color.CIColor;
     } @catch (NSException *exception) {
         data = exception;
     } @finally {
         
     }
-    TestProjectUIColorModel *m1 = [self createColorModel:[UIColor whiteColor] text:[NSString stringWithFormat:@"%@", data]];
-    [mutDataArr addObject:m1];
-    self.tableView.dataSourceArray = mutDataArr;
+    [self createColorModel:color text:[NSString stringWithFormat:@"%@", data]];
+    return self.dataMutArr;
 }
 
 @end

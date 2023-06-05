@@ -5,11 +5,11 @@
 //  Created by zjrcumac on 2023/3/3.
 //
 
-#import "TestProjectViewTable.h"
+#import "TestProjectAttributeStringFoundationCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TestProjectAttributeStringExtendedString : TestProjectViewTable
+@interface TestProjectAttributeStringExtendedString : TestProjectAttributeStringFoundViewTable
 
 @end
 

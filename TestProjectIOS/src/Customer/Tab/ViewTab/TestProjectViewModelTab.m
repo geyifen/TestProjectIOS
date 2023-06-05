@@ -21,4 +21,8 @@
     return 15;
 }
 
++ (NSDictionary *)modelContainerPropertyGenericClass{
+    return @{@"itemChilds" : TestProjectViewModelTab.class};
+}
+
 @end

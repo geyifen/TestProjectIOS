@@ -7,9 +7,7 @@
 
 #import "TestProjectAlertController.h"
 
-#import "TestProjectUIViewCell.h"
-
-@interface TestProjectAlertControllerViewModel : NSObject
+@interface TestProjectAlertControllerViewModel : TestProjectTableModel
 
 @property (nonatomic, assign) UIAlertControllerStyle style;
 
@@ -23,22 +21,36 @@
 
 - (NSDictionary *)method_1 {
     return @{
-        @"+ (instancetype)alertControllerWithTitle:(nullable NSString *)title message:(nullable NSString *)message preferredStyle:(UIAlertControllerStyle)preferredStyle;":@{
-            @"method":@"TestProjectAlertController_alertControllerWithTitle_message_preferredStyle",
-            @"desc":@"通过style设置alert或者sheet弹窗 \n 只能设置一个UIAlertActionStyleCancel样式，多了则会崩溃"}
+        @"dataModel": @{
+            @"abstract": @"通过style设置alert或者sheet弹窗",
+            @"title": @"+ (instancetype)alertControllerWithTitle:(nullable NSString *)title message:(nullable NSString *)message preferredStyle:(UIAlertControllerStyle)preferredStyle;",
+            @"desc": @"只能设置一个UIAlertActionStyleCancel样式，多了则会崩溃",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAlertControllerViewModel.class,
+                @"childItems": [self TestProjectAlertController_alertControllerWithTitle_message_preferredStyle],
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_2 {
     return @{
-        @"- (void)addTextFieldWithConfigurationHandler:(void (^ __nullable)(UITextField *textField))configurationHandler;":@{
-            @"method":@"TestProjectAlertController_addTextFieldWithConfigurationHandler",
-            @"desc":@"alert或者sheet弹窗上添加一个UITextField \n sheet不支持添加UITextField \n 只能设置一个UIAlertActionStyleCancel样式，多了则会崩溃"}
+        @"dataModel": @{
+            @"abstract": @"alert或者sheet弹窗上添加一个UITextField",
+            @"title": @"- (void)addTextFieldWithConfigurationHandler:(void (^ __nullable)(UITextField *textField))configurationHandler;",
+            @"desc": @"sheet不支持添加UITextField \n 只能设置一个UIAlertActionStyleCancel样式，多了则会崩溃",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAlertControllerViewModel.class,
+                @"childItems": [self TestProjectAlertController_addTextFieldWithConfigurationHandler],
+            }
+        },
     };
 }
 
 - (void)createTabModelWith:(NSString *)title style:(UIAlertControllerStyle)style isAddText:(BOOL)isAddText {
-    TestProjectTableModel *m = [[TestProjectTableModel alloc] init];
+    TestProjectAlertControllerViewModel *m = [[TestProjectAlertControllerViewModel alloc] init];
     m.title = title;
     if (isAddText && style == UIAlertControllerStyleActionSheet) {
         m.desc = @"不支持添加UITextField";
@@ -68,30 +80,31 @@
     [self.dataMutArr addObject:m];
 }
 
-- (void)TestProjectAlertController_alertControllerWithTitle_message_preferredStyle {
-    NSArray *styles = @[
-    @{@(UIAlertControllerStyleAlert):@"我的样式是alert"},
-    @{@(UIAlertControllerStyleActionSheet):@"我的样式是sheet"}, ];
-    for (NSDictionary *dic in styles) {
-        NSNumber *num = dic.allKeys.firstObject;
-        UIAlertControllerStyle style = (UIAlertControllerStyle)[num integerValue];
-        NSString *title = [dic objectForKey:num];
-        [self createTabModelWith:title style:style isAddText:NO];
+- (NSMutableArray *)createAlertController_isAddText:(BOOL)isAddText {
+    NSArray *arr = @[
+        @{
+            @"title": @"我的样式是alert",
+            @"style": @(UIAlertControllerStyleAlert),
+        },
+        @{
+            @"title": @"我的样式是sheet",
+            @"style": @(UIAlertControllerStyleActionSheet),
+        },
+    ];
+    for (NSDictionary *dic in arr) {
+        NSString *title = dic[@"title"];
+        UIAlertControllerStyle style = [dic[@"style"] integerValue];
+        [self createTabModelWith:title style:style isAddText:isAddText];
     }
-    self.tableView.dataSourceArray = self.dataMutArr;
+    return self.dataMutArr;
 }
 
-- (void)TestProjectAlertController_addTextFieldWithConfigurationHandler {
-    NSArray *styles = @[
-    @{@(UIAlertControllerStyleAlert):@"我的样式是alert"},
-    @{@(UIAlertControllerStyleActionSheet):@"我的样式是sheet"}, ];
-    for (NSDictionary *dic in styles) {
-        NSNumber *num = dic.allKeys.firstObject;
-        UIAlertControllerStyle style = (UIAlertControllerStyle)[num integerValue];
-        NSString *title = [dic objectForKey:num];
-        [self createTabModelWith:title style:style isAddText:YES];
-    }
-    self.tableView.dataSourceArray = self.dataMutArr;
+- (NSMutableArray *)TestProjectAlertController_alertControllerWithTitle_message_preferredStyle {
+    return [self createAlertController_isAddText:NO];
+}
+
+- (NSMutableArray *)TestProjectAlertController_addTextFieldWithConfigurationHandler {
+    return [self createAlertController_isAddText:YES];
 }
 
 @end

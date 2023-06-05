@@ -7,38 +7,29 @@
 
 #import "TestProjectAttributedStringDocumentFormats.h"
 
-#import "TestProjectAttributeStringFoundationCell.h"
-
-@interface TestProjectAttributedStringDocumentFormats ()
-
-@property (nonatomic, copy) NSString *firstAttrText;
-@property (nonatomic, copy) NSString *secondAttrText;
-
-@end
-
 @implementation TestProjectAttributedStringDocumentFormats
 
-- (NSString *)firstAttrText {
-    if (!_firstAttrText) {
-        _firstAttrText = @"我是第一个段落的开头的数据\n我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据ABCDEFGHIJKLMNOPQRSTUVWXYZ我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据abggggfffcbbdefghijklmnopqrstuwwwvvvwxyz我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据\n我是第三段的开头数据";
-    }
-    return _firstAttrText;
-}
+- (NSDictionary *)method_1 {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"修改attrText的信息，保持一致",
+            @"title": @"- (nullable instancetype)initWithURL:(NSURL *)url options:(NSDictionary<NSAttributedStringDocumentReadingOptionKey, id> *)options documentAttributes:(NSDictionary<NSAttributedStringDocumentAttributeKey, id> * __nullable * __nullable)dict error:(NSError **)error API_AVAILABLE(macos(10.4), ios(9.0));",
+            @"desc": @"NSMutableAttributedString提供若干方法，即可以修改字符串，又可以修改字符串的属性。经过多次修改后，有些信息可能变的不一致了，为了让信息保持一致，可以使用下面的方法 \n 异常崩溃条件：range超过文字的范围 \n NSVerticalGlyphFormAttributeName 为1的时候英文字母是横着放向的，0的时候是竖着方向的",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectAttributedStringDocumentFormats_initWithURL_options_documentAttributes_error],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
+    };
 
-- (NSString *)secondAttrText {
-    if (!_secondAttrText) {
-        _secondAttrText = @"我是第二个secondAttrText";
-    }
-    return _secondAttrText;
+    return @{
+        @"- (nullable instancetype)initWithURL:(NSURL *)url options:(NSDictionary<NSAttributedStringDocumentReadingOptionKey, id> *)options documentAttributes:(NSDictionary<NSAttributedStringDocumentAttributeKey, id> * __nullable * __nullable)dict error:(NSError **)error API_AVAILABLE(macos(10.4), ios(9.0));":@{
+            @"method":@"TestProjectAttributedStringDocumentFormats_initWithURL_options_documentAttributes_error",
+            @"desc":@"修改attrText的信息，保持一致 \n NSMutableAttributedString提供若干方法，即可以修改字符串，又可以修改字符串的属性。经过多次修改后，有些信息可能变的不一致了，为了让信息保持一致，可以使用下面的方法"}
+    };
 }
-
-//- (NSDictionary *)method_1 {
-//    return @{
-//        @"- (nullable instancetype)initWithURL:(NSURL *)url options:(NSDictionary<NSAttributedStringDocumentReadingOptionKey, id> *)options documentAttributes:(NSDictionary<NSAttributedStringDocumentAttributeKey, id> * __nullable * __nullable)dict error:(NSError **)error API_AVAILABLE(macos(10.4), ios(9.0));":@{
-//            @"method":@"TestProjectAttributedStringDocumentFormats_initWithURL_options_documentAttributes_error",
-//            @"desc":@"修改attrText的信息，保持一致 \n NSMutableAttributedString提供若干方法，即可以修改字符串，又可以修改字符串的属性。经过多次修改后，有些信息可能变的不一致了，为了让信息保持一致，可以使用下面的方法"}
-//    };
-//}
 
 - (TestProjectAttributeStringFoundationModel *)createAttrStrModelWith:(NSDictionary *)keyValue {
     TestProjectAttributeStringFoundationModel *attrStrModel = [[TestProjectAttributeStringFoundationModel alloc] init];
@@ -52,27 +43,39 @@
     return attrStrModel;
 }
 
-- (void)TestProjectAttributedStringDocumentFormats_initWithURL_options_documentAttributes_error {
-    
-    NSError *err;
-    TestProjectAttributeStringFoundationModel *m1 = [self createAttrStrModelWith:@{NSVerticalGlyphFormAttributeName: @1}];
-    NSAttributedString *a1 = [[NSAttributedString alloc] initWithURL:[NSURL URLWithString:@"https://www.baidu.com"] options:nil documentAttributes:nil error:&err];
-    [m1.titleMutAttrStr appendAttributedString:a1];
-    
-    NSRange range1 = NSMakeRange(0, self.firstAttrText.length);
-    m1.desc = [NSString stringWithFormat:@"我是在第一段的range:%@ attrText:%@", NSStringFromRange(range1),  m1.titleMutAttrStr];
-    [m1.titleMutAttrStr fixAttributesInRange:range1];
-    
-    TestProjectAttributeStringFoundationModel *m2 = [self createAttrStrModelWith:@{NSVerticalGlyphFormAttributeName: @0}];
-    NSRange range2 = NSMakeRange(0, m2.titleMutAttrStr.length);
-    m2.desc = [NSString stringWithFormat:@"我是在第一段的range:%@  attrText:%@", NSStringFromRange(range2), m2.titleMutAttrStr];
-    [m2.titleMutAttrStr fixAttributesInRange:range2];
+- (NSMutableArray *)TestProjectAttributedStringDocumentFormats_initWithURL_options_documentAttributes_error {
+    NSArray *arr = @[
+        @{
+            @"location": @0,
+            @"length": @(self.firstAttrText.length),
+            @"atIndex": @1,
+            @"value": @1,
+        },
+        @{
+            @"location": @(0),
+            @"length": @(self.secondAttrText.length + self.firstAttrText.length),
+            @"atIndex": @0,
+            @"value": @0,
+        },
+    ];
+    for (NSDictionary *dic in arr) {
+        NSInteger location = [dic[@"location"] integerValue];
+        NSInteger length = [dic[@"length"] integerValue];
+        NSInteger atIndex = [dic[@"atIndex"] integerValue];
+        NSNumber *value = dic[@"value"];
+        NSRange range = NSMakeRange(location, length);
+        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithAttributes:@{NSVerticalGlyphFormAttributeName:value}];
+        NSError *err;
+        NSAttributedString *attr = [[NSAttributedString alloc] initWithURL:[NSURL URLWithString:@"file://www.baidu.com"] options:nil documentAttributes:nil error:&err];
+        if (!err && attr) {
+            [m.titleMutAttrStr appendAttributedString:attr];
+        }
 
-    for (TestProjectAttributeStringFoundationModel *model in self.dataMutArr) {
-        [model calculDataViewHeight];
+        m.desc = [NSString stringWithFormat:@"我是在第%ld段的range:%@ attrText:%@", atIndex, NSStringFromRange(range),  m.titleMutAttrStr];
+        [m.titleMutAttrStr fixAttributesInRange:range];
+        [m calculDataViewHeight];
     }
-
-    self.tableView.dataSourceArray = self.dataMutArr;
+    return self.dataMutArr;
 }
 
 

@@ -62,11 +62,12 @@
         _titleLabel = [[UILabel alloc] init];
         _titleLabel.font = [UIFont systemFontOfSize:18 weight:UIFontWeightMedium];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.numberOfLines = 0;
         
         [self addSubview:_titleLabel];
         [_titleLabel testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
             make.top.bottom.equal(self);
-            make.height.equal(@50);
+            make.height.equal(@70);
             if (self.viewModel.tabType == TestProjectTab_AutoDivede) {
                 make.width.equal(self);
             } else {

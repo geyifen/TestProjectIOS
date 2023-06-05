@@ -5,13 +5,11 @@
 //  Created by zjrcumac on 2023/4/11.
 //
 
-#import "TestProjectViewTable.h"
-
-#import "TestProjectNavigationController.h"
+#import "TestProjectViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TestProjectNavigationItem : TestProjectViewTableController
+@interface TestProjectNavigationItem : TestProjectViewController
 
 @end
 

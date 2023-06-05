@@ -8,14 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		27A585E85C033FBF09E7B973 /* Pods_TestProjectIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044E49489342EC595D627E86 /* Pods_TestProjectIOS.framework */; };
+		34032F512A0E35A100122D77 /* TestProjectViewViewGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 34032F502A0E35A100122D77 /* TestProjectViewViewGeometry.m */; };
+		340DC4B82A0CEC250089D175 /* TestProjectResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 340DC4B72A0CEC250089D175 /* TestProjectResponder.m */; };
 		340E9F992975378600C1D440 /* TestProjectSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 340E9F982975378600C1D440 /* TestProjectSignal.m */; };
 		3412005929C7FD46007338D0 /* TestProjectTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3412005829C7FD46007338D0 /* TestProjectTextAttachment.m */; };
 		3412005B29C843F1007338D0 /* lyf_2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3412005A29C843F1007338D0 /* lyf_2.jpeg */; };
 		3412005D29C846B7007338D0 /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3412005C29C846B7007338D0 /* test.txt */; };
 		3412006129C8531D007338D0 /* TestProjectFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 3412006029C8531D007338D0 /* TestProjectFont.m */; };
 		3418071B29C1C94700F095C6 /* TestProjectDataAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 3418071A29C1C94700F095C6 /* TestProjectDataAsset.m */; };
-		3428C1D129C306EF00CF06B1 /* TestProjectParagraphStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3428C1D029C306EF00CF06B1 /* TestProjectParagraphStyle.m */; };
 		3428C1D429C3073600CF06B1 /* TestProjectMutableParagraphStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3428C1D329C3073600CF06B1 /* TestProjectMutableParagraphStyle.m */; };
+		344012A62A1E057100D25366 /* TestProjectViewViewRendering.m in Sources */ = {isa = PBXBuildFile; fileRef = 344012A52A1E057100D25366 /* TestProjectViewViewRendering.m */; };
+		344012A92A1E1AB500D25366 /* TestProjectViewViewAnimationWithBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 344012A82A1E1AB500D25366 /* TestProjectViewViewAnimationWithBlocks.m */; };
 		344106E229E8027800683950 /* NSMutableArray+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 344106E129E8027800683950 /* NSMutableArray+TestProject.m */; };
 		344106E529E8094200683950 /* NSArray+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 344106E429E8094200683950 /* NSArray+TestProject.m */; };
 		3445299C2831E701003EFFA1 /* TestProjectDispatchSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3445299B2831E701003EFFA1 /* TestProjectDispatchSource.m */; };
@@ -28,6 +31,8 @@
 		3447EE08280E8EBD001AE2F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EE07280E8EBD001AE2F0 /* main.m */; };
 		345BA75828BF46CD00ED6C5C /* TestProjectDModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 345BA75728BF46CD00ED6C5C /* TestProjectDModel.m */; };
 		345C814E29BF2E7A00AE3D07 /* TestProjectMutableAttributedStringExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 345C814D29BF2E7A00AE3D07 /* TestProjectMutableAttributedStringExtended.m */; };
+		345CDF022A209FC2003C1FF3 /* TestProjectViewSnapshotting.m in Sources */ = {isa = PBXBuildFile; fileRef = 345CDF012A209FC2003C1FF3 /* TestProjectViewSnapshotting.m */; };
+		345CDF052A20AFF8003C1FF3 /* TestProjectViewContentSizeCategoryLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = 345CDF042A20AFF8003C1FF3 /* TestProjectViewContentSizeCategoryLimit.m */; };
 		345D97ED2824F43E002D0A83 /* TestProjectDispatchData.m in Sources */ = {isa = PBXBuildFile; fileRef = 345D97E62824F43E002D0A83 /* TestProjectDispatchData.m */; };
 		345D97EE2824F43E002D0A83 /* TestProjectDispatchQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 345D97E72824F43E002D0A83 /* TestProjectDispatchQueue.m */; };
 		345D97EF2824F43E002D0A83 /* TestProjectDispatchObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 345D97E82824F43E002D0A83 /* TestProjectDispatchObject.m */; };
@@ -35,12 +40,16 @@
 		345D97F12824F43E002D0A83 /* TestProjectDispatchIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 345D97EA2824F43E002D0A83 /* TestProjectDispatchIO.m */; };
 		345D97F22824F43E002D0A83 /* TestProjectDispatchBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 345D97EB2824F43E002D0A83 /* TestProjectDispatchBlock.m */; };
 		345D97F728250609002D0A83 /* TestProjectDispatchOnce.m in Sources */ = {isa = PBXBuildFile; fileRef = 345D97F628250609002D0A83 /* TestProjectDispatchOnce.m */; };
+		345E44C229F914D400BBED12 /* TestProjectBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 345E44C129F914D400BBED12 /* TestProjectBaseTableViewCell.m */; };
+		345E44C629F9476E00BBED12 /* UIAlertController+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 345E44C529F9476E00BBED12 /* UIAlertController+TestProject.m */; };
 		345EC4BE286548D100F61F2E /* TestProjectCustomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 345EC4BD286548D100F61F2E /* TestProjectCustomModel.m */; };
+		346083CA2A1F68B300096DD2 /* TestProjectViewViewKeyframeAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 346083C92A1F68B300096DD2 /* TestProjectViewViewKeyframeAnimations.m */; };
 		346B744E29933A2F00C06A99 /* TestProjectNestScrollTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 346B744D29933A2F00C06A99 /* TestProjectNestScrollTabController.m */; };
 		346B745129938CAC00C06A99 /* TestProjectObjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 346B745029938CAC00C06A99 /* TestProjectObjectController.m */; };
 		347338DC28BDB85600B921EC /* TestProjectAModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 347338DB28BDB85600B921EC /* TestProjectAModel.m */; };
 		347338DF28BDB86700B921EC /* TestProjectBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 347338DE28BDB86700B921EC /* TestProjectBModel.m */; };
 		347338E228BDB87E00B921EC /* TestProjectCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 347338E128BDB87E00B921EC /* TestProjectCModel.m */; };
+		347AAA162A24A39A00F0C475 /* TestProjectControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 347AAA152A24A39A00F0C475 /* TestProjectControl.m */; };
 		347DCC4E29E6AE3E005A3D44 /* TestProjectNavigationBarAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 347DCC4D29E6AE3E005A3D44 /* TestProjectNavigationBarAppearance.m */; };
 		347DCC5229E6AFBC005A3D44 /* TestProjectBarAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 347DCC5129E6AFBC005A3D44 /* TestProjectBarAppearance.m */; };
 		3480AA5A29B76C0D00D9C957 /* TestProjectMutableAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3480AA5929B76C0D00D9C957 /* TestProjectMutableAttributedString.m */; };
@@ -51,7 +60,6 @@
 		348799882988B75D00032E22 /* UIView+TestProject_Constrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 348799852988B75D00032E22 /* UIView+TestProject_Constrain.m */; };
 		3493CF0329767261008B7CA7 /* TestProjectString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3493CF0229767261008B7CA7 /* TestProjectString.m */; };
 		34947538282E396A00D4A567 /* TestProjectDispatchSemaphore.m in Sources */ = {isa = PBXBuildFile; fileRef = 34947537282E396A00D4A567 /* TestProjectDispatchSemaphore.m */; };
-		349801CF29E4EEE200C2B5E1 /* TestProjectSubNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 349801CE29E4EEE200C2B5E1 /* TestProjectSubNavController.m */; };
 		349801D229E57F1A00C2B5E1 /* TestProjectViewControllerNavigationControllerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 349801D129E57F1A00C2B5E1 /* TestProjectViewControllerNavigationControllerItem.m */; };
 		349801D729E58C3700C2B5E1 /* TestProjectNavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 349801D629E58C3700C2B5E1 /* TestProjectNavigationItem.m */; };
 		349801DA29E58C6200C2B5E1 /* TestProjectNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 349801D929E58C6200C2B5E1 /* TestProjectNavigationBar.m */; };
@@ -66,25 +74,27 @@
 		34A5C42329B1D06E00E61F65 /* TestProjectGetFoundationImplementationMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A5C42229B1D06E00E61F65 /* TestProjectGetFoundationImplementationMethod.m */; };
 		34A5C42729B1DA2400E61F65 /* TestProjectAttributeStringFoundationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A5C42629B1DA2400E61F65 /* TestProjectAttributeStringFoundationCell.m */; };
 		34A5C42A29B1F06400E61F65 /* TestProjectAttributeStringExtendedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A5C42929B1F06400E61F65 /* TestProjectAttributeStringExtendedString.m */; };
+		34B1A5DE2A289FB100766B44 /* TestProjectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B1A5DD2A289FB100766B44 /* TestProjectButton.m */; };
+		34B1A5E12A28B57800766B44 /* TestProjectUIButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B1A5E02A28B57800766B44 /* TestProjectUIButtonCell.m */; };
 		34B20F0A2988A9A5009B4EFD /* TestProjectHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B20F092988A9A5009B4EFD /* TestProjectHomeController.m */; };
 		34B20F0D2988A9CB009B4EFD /* TestProjectMyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B20F0C2988A9CB009B4EFD /* TestProjectMyController.m */; };
 		34B4C16D29DEA1B1001728DC /* TestProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B4C16C29DEA1B1001728DC /* TestProjectViewController.m */; };
 		34B4C17029DEA75C001728DC /* TestProjectTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B4C16F29DEA75C001728DC /* TestProjectTestVC.m */; };
 		34B4C17429DEB611001728DC /* TestProjectTestNibVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B4C17229DEB611001728DC /* TestProjectTestNibVC.m */; };
 		34B4C17529DEB611001728DC /* TestProjectTestNibVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34B4C17329DEB611001728DC /* TestProjectTestNibVC.xib */; };
+		34BA4AB92A1CBE6800997CC4 /* TestProjectViewViewHierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BA4AB82A1CBE6800997CC4 /* TestProjectViewViewHierarchy.m */; };
 		34BB4A6E28D2BF1E00E79698 /* NSObject+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BB4A6D28D2BF1E00E79698 /* NSObject+TestProject.m */; };
 		34BE0C92283F0FA80003317D /* TestProjectMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BE0C91283F0FA80003317D /* TestProjectMath.m */; };
+		34C034752A035F7100C9F6EA /* TestProjectTestVCViewTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C034742A035F7100C9F6EA /* TestProjectTestVCViewTable.m */; };
 		34C3E5CD29D6768C00BC4C7D /* TestProjectUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C3E5CC29D6768C00BC4C7D /* TestProjectUIView.m */; };
-		34C3E5D029D676CE00BC4C7D /* TestProjectUIViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C3E5CF29D676CE00BC4C7D /* TestProjectUIViewCell.m */; };
 		34C3E5D329D679FB00BC4C7D /* TestProjectActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C3E5D229D679FB00BC4C7D /* TestProjectActivityIndicatorView.m */; };
 		34D2993929E3EF03002F7A37 /* UIViewController+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2993829E3EF03002F7A37 /* UIViewController+TestProject.m */; };
 		34D2993C29E3F262002F7A37 /* TestProjectNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2993B29E3F262002F7A37 /* TestProjectNavigationController.m */; };
 		34D52F0629A5AA1500F5F9C2 /* TestProjectOCController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D52F0529A5AA1500F5F9C2 /* TestProjectOCController.m */; };
 		34D52F0D29A5B4D400F5F9C2 /* TestProjectUIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D52F0C29A5B4D400F5F9C2 /* TestProjectUIColor.m */; };
 		34D52F1029A5EEFA00F5F9C2 /* TestProjectViewTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D52F0F29A5EEFA00F5F9C2 /* TestProjectViewTable.m */; };
-		34D52F1329A602A700F5F9C2 /* TestProjectBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D52F1229A602A700F5F9C2 /* TestProjectBaseTableViewCell.m */; };
+		34D52F1329A602A700F5F9C2 /* TestProjectBaseTableViewTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D52F1229A602A700F5F9C2 /* TestProjectBaseTableViewTableCell.m */; };
 		34D52F1729A606F400F5F9C2 /* TestProjectTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D52F1629A606F400F5F9C2 /* TestProjectTableModel.m */; };
-		34D52F1A29A6281200F5F9C2 /* TestProjectDetailObjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D52F1929A6281200F5F9C2 /* TestProjectDetailObjectController.m */; };
 		34D52F1E29A62AC600F5F9C2 /* UIApplication+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D52F1D29A62AC600F5F9C2 /* UIApplication+TestProject.m */; };
 		34D77A3D28C19FA100A0CE9F /* TestProjectYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D77A3C28C19FA100A0CE9F /* TestProjectYModel.m */; };
 		34D77A4028C19FBB00A0CE9F /* TestProjectXModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D77A3F28C19FBB00A0CE9F /* TestProjectXModel.m */; };
@@ -96,6 +106,7 @@
 		34E5D4542990E48C00FD4F71 /* TestProjectScrollTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E5D4532990E48C00FD4F71 /* TestProjectScrollTabController.m */; };
 		34EC4DD128532604000AEF1E /* TestProjectObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EC4DD028532604000AEF1E /* TestProjectObjc.m */; };
 		34EF82AF28571B3B0046F4C3 /* TestProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EF82AE28571B3B0046F4C3 /* TestProjectModel.m */; };
+		34F378712A0B8A4700CFC8E6 /* TestProjectBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F378702A0B8A4700CFC8E6 /* TestProjectBarButtonItem.m */; };
 		E2392A3829AB762D00638D25 /* TestProjectUIColorNamedColors.m in Sources */ = {isa = PBXBuildFile; fileRef = E2392A3729AB762D00638D25 /* TestProjectUIColorNamedColors.m */; };
 		E2392A3B29AB7E1400638D25 /* TestProjectUIColorDynamicdColors.m in Sources */ = {isa = PBXBuildFile; fileRef = E2392A3A29AB7E1400638D25 /* TestProjectUIColorDynamicdColors.m */; };
 		E2392A3F29AB90DA00638D25 /* TestProjectCIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = E2392A3E29AB90DA00638D25 /* TestProjectCIColor.m */; };
@@ -112,6 +123,10 @@
 
 /* Begin PBXFileReference section */
 		044E49489342EC595D627E86 /* Pods_TestProjectIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestProjectIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34032F4F2A0E35A100122D77 /* TestProjectViewViewGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectViewViewGeometry.h; sourceTree = "<group>"; };
+		34032F502A0E35A100122D77 /* TestProjectViewViewGeometry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectViewViewGeometry.m; sourceTree = "<group>"; };
+		340DC4B62A0CEC250089D175 /* TestProjectResponder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectResponder.h; sourceTree = "<group>"; };
+		340DC4B72A0CEC250089D175 /* TestProjectResponder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectResponder.m; sourceTree = "<group>"; };
 		340E9F972975378600C1D440 /* TestProjectSignal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectSignal.h; sourceTree = "<group>"; };
 		340E9F982975378600C1D440 /* TestProjectSignal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectSignal.m; sourceTree = "<group>"; };
 		3412005729C7FD46007338D0 /* TestProjectTextAttachment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectTextAttachment.h; sourceTree = "<group>"; };
@@ -123,10 +138,12 @@
 		3418071929C1C94700F095C6 /* TestProjectDataAsset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDataAsset.h; sourceTree = "<group>"; };
 		3418071A29C1C94700F095C6 /* TestProjectDataAsset.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDataAsset.m; sourceTree = "<group>"; };
 		3419D90829B5767700CDF493 /* TestProjectConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectConfig.h; sourceTree = "<group>"; };
-		3428C1CF29C306EF00CF06B1 /* TestProjectParagraphStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectParagraphStyle.h; sourceTree = "<group>"; };
-		3428C1D029C306EF00CF06B1 /* TestProjectParagraphStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectParagraphStyle.m; sourceTree = "<group>"; };
 		3428C1D229C3073600CF06B1 /* TestProjectMutableParagraphStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectMutableParagraphStyle.h; sourceTree = "<group>"; };
 		3428C1D329C3073600CF06B1 /* TestProjectMutableParagraphStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectMutableParagraphStyle.m; sourceTree = "<group>"; };
+		344012A42A1E057100D25366 /* TestProjectViewViewRendering.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectViewViewRendering.h; sourceTree = "<group>"; };
+		344012A52A1E057100D25366 /* TestProjectViewViewRendering.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectViewViewRendering.m; sourceTree = "<group>"; };
+		344012A72A1E1AB500D25366 /* TestProjectViewViewAnimationWithBlocks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectViewViewAnimationWithBlocks.h; sourceTree = "<group>"; };
+		344012A82A1E1AB500D25366 /* TestProjectViewViewAnimationWithBlocks.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectViewViewAnimationWithBlocks.m; sourceTree = "<group>"; };
 		344106E029E8027800683950 /* NSMutableArray+TestProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+TestProject.h"; sourceTree = "<group>"; };
 		344106E129E8027800683950 /* NSMutableArray+TestProject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+TestProject.m"; sourceTree = "<group>"; };
 		344106E329E8094200683950 /* NSArray+TestProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+TestProject.h"; sourceTree = "<group>"; };
@@ -149,6 +166,10 @@
 		345BA75728BF46CD00ED6C5C /* TestProjectDModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDModel.m; sourceTree = "<group>"; };
 		345C814C29BF2E7A00AE3D07 /* TestProjectMutableAttributedStringExtended.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectMutableAttributedStringExtended.h; sourceTree = "<group>"; };
 		345C814D29BF2E7A00AE3D07 /* TestProjectMutableAttributedStringExtended.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectMutableAttributedStringExtended.m; sourceTree = "<group>"; };
+		345CDF002A209FC2003C1FF3 /* TestProjectViewSnapshotting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectViewSnapshotting.h; sourceTree = "<group>"; };
+		345CDF012A209FC2003C1FF3 /* TestProjectViewSnapshotting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectViewSnapshotting.m; sourceTree = "<group>"; };
+		345CDF032A20AFF8003C1FF3 /* TestProjectViewContentSizeCategoryLimit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectViewContentSizeCategoryLimit.h; sourceTree = "<group>"; };
+		345CDF042A20AFF8003C1FF3 /* TestProjectViewContentSizeCategoryLimit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectViewContentSizeCategoryLimit.m; sourceTree = "<group>"; };
 		345D97E02824F43E002D0A83 /* TestProjectDispatchData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchData.h; sourceTree = "<group>"; };
 		345D97E12824F43E002D0A83 /* TestProjectDispatchQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchQueue.h; sourceTree = "<group>"; };
 		345D97E22824F43E002D0A83 /* TestProjectDispatchGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchGroup.h; sourceTree = "<group>"; };
@@ -164,8 +185,14 @@
 		345D97EC2824F43E002D0A83 /* TestProjectUsrHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProjectUsrHeader.h; sourceTree = "<group>"; };
 		345D97F528250609002D0A83 /* TestProjectDispatchOnce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchOnce.h; sourceTree = "<group>"; };
 		345D97F628250609002D0A83 /* TestProjectDispatchOnce.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchOnce.m; sourceTree = "<group>"; };
+		345E44C029F914D400BBED12 /* TestProjectBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectBaseTableViewCell.h; sourceTree = "<group>"; };
+		345E44C129F914D400BBED12 /* TestProjectBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectBaseTableViewCell.m; sourceTree = "<group>"; };
+		345E44C429F9476E00BBED12 /* UIAlertController+TestProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+TestProject.h"; sourceTree = "<group>"; };
+		345E44C529F9476E00BBED12 /* UIAlertController+TestProject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+TestProject.m"; sourceTree = "<group>"; };
 		345EC4BC286548D100F61F2E /* TestProjectCustomModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectCustomModel.h; sourceTree = "<group>"; };
 		345EC4BD286548D100F61F2E /* TestProjectCustomModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectCustomModel.m; sourceTree = "<group>"; };
+		346083C82A1F68B300096DD2 /* TestProjectViewViewKeyframeAnimations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectViewViewKeyframeAnimations.h; sourceTree = "<group>"; };
+		346083C92A1F68B300096DD2 /* TestProjectViewViewKeyframeAnimations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectViewViewKeyframeAnimations.m; sourceTree = "<group>"; };
 		346920AA28517F5100E0F769 /* TestProjectIgnoreWarningDefmacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectIgnoreWarningDefmacro.h; sourceTree = "<group>"; };
 		346B744C29933A2F00C06A99 /* TestProjectNestScrollTabController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectNestScrollTabController.h; sourceTree = "<group>"; };
 		346B744D29933A2F00C06A99 /* TestProjectNestScrollTabController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectNestScrollTabController.m; sourceTree = "<group>"; };
@@ -177,6 +204,8 @@
 		347338DE28BDB86700B921EC /* TestProjectBModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectBModel.m; sourceTree = "<group>"; };
 		347338E028BDB87E00B921EC /* TestProjectCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectCModel.h; sourceTree = "<group>"; };
 		347338E128BDB87E00B921EC /* TestProjectCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectCModel.m; sourceTree = "<group>"; };
+		347AAA142A24A39A00F0C475 /* TestProjectControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectControl.h; sourceTree = "<group>"; };
+		347AAA152A24A39A00F0C475 /* TestProjectControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectControl.m; sourceTree = "<group>"; };
 		347DCC4C29E6AE3E005A3D44 /* TestProjectNavigationBarAppearance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectNavigationBarAppearance.h; sourceTree = "<group>"; };
 		347DCC4D29E6AE3E005A3D44 /* TestProjectNavigationBarAppearance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectNavigationBarAppearance.m; sourceTree = "<group>"; };
 		347DCC5029E6AFBC005A3D44 /* TestProjectBarAppearance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectBarAppearance.h; sourceTree = "<group>"; };
@@ -199,8 +228,6 @@
 		3493CF0229767261008B7CA7 /* TestProjectString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectString.m; sourceTree = "<group>"; };
 		34947536282E396A00D4A567 /* TestProjectDispatchSemaphore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchSemaphore.h; sourceTree = "<group>"; };
 		34947537282E396A00D4A567 /* TestProjectDispatchSemaphore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchSemaphore.m; sourceTree = "<group>"; };
-		349801CD29E4EEE200C2B5E1 /* TestProjectSubNavController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectSubNavController.h; sourceTree = "<group>"; };
-		349801CE29E4EEE200C2B5E1 /* TestProjectSubNavController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectSubNavController.m; sourceTree = "<group>"; };
 		349801D029E57F1A00C2B5E1 /* TestProjectViewControllerNavigationControllerItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectViewControllerNavigationControllerItem.h; sourceTree = "<group>"; };
 		349801D129E57F1A00C2B5E1 /* TestProjectViewControllerNavigationControllerItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectViewControllerNavigationControllerItem.m; sourceTree = "<group>"; };
 		349801D529E58C3700C2B5E1 /* TestProjectNavigationItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectNavigationItem.h; sourceTree = "<group>"; };
@@ -229,6 +256,10 @@
 		34A5C42629B1DA2400E61F65 /* TestProjectAttributeStringFoundationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectAttributeStringFoundationCell.m; sourceTree = "<group>"; };
 		34A5C42829B1F06400E61F65 /* TestProjectAttributeStringExtendedString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectAttributeStringExtendedString.h; sourceTree = "<group>"; };
 		34A5C42929B1F06400E61F65 /* TestProjectAttributeStringExtendedString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectAttributeStringExtendedString.m; sourceTree = "<group>"; };
+		34B1A5DC2A289FB100766B44 /* TestProjectButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectButton.h; sourceTree = "<group>"; };
+		34B1A5DD2A289FB100766B44 /* TestProjectButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectButton.m; sourceTree = "<group>"; };
+		34B1A5DF2A28B57800766B44 /* TestProjectUIButtonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectUIButtonCell.h; sourceTree = "<group>"; };
+		34B1A5E02A28B57800766B44 /* TestProjectUIButtonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectUIButtonCell.m; sourceTree = "<group>"; };
 		34B20F082988A9A5009B4EFD /* TestProjectHomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectHomeController.h; sourceTree = "<group>"; };
 		34B20F092988A9A5009B4EFD /* TestProjectHomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectHomeController.m; sourceTree = "<group>"; };
 		34B20F0B2988A9CB009B4EFD /* TestProjectMyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectMyController.h; sourceTree = "<group>"; };
@@ -240,14 +271,16 @@
 		34B4C17129DEB611001728DC /* TestProjectTestNibVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectTestNibVC.h; sourceTree = "<group>"; };
 		34B4C17229DEB611001728DC /* TestProjectTestNibVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectTestNibVC.m; sourceTree = "<group>"; };
 		34B4C17329DEB611001728DC /* TestProjectTestNibVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestProjectTestNibVC.xib; sourceTree = "<group>"; };
+		34BA4AB72A1CBE6800997CC4 /* TestProjectViewViewHierarchy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectViewViewHierarchy.h; sourceTree = "<group>"; };
+		34BA4AB82A1CBE6800997CC4 /* TestProjectViewViewHierarchy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectViewViewHierarchy.m; sourceTree = "<group>"; };
 		34BB4A6C28D2BF1E00E79698 /* NSObject+TestProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+TestProject.h"; sourceTree = "<group>"; };
 		34BB4A6D28D2BF1E00E79698 /* NSObject+TestProject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TestProject.m"; sourceTree = "<group>"; };
 		34BE0C90283F0FA80003317D /* TestProjectMath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectMath.h; sourceTree = "<group>"; };
 		34BE0C91283F0FA80003317D /* TestProjectMath.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectMath.m; sourceTree = "<group>"; };
+		34C034732A035F7100C9F6EA /* TestProjectTestVCViewTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectTestVCViewTable.h; sourceTree = "<group>"; };
+		34C034742A035F7100C9F6EA /* TestProjectTestVCViewTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectTestVCViewTable.m; sourceTree = "<group>"; };
 		34C3E5CB29D6768C00BC4C7D /* TestProjectUIView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectUIView.h; sourceTree = "<group>"; };
 		34C3E5CC29D6768C00BC4C7D /* TestProjectUIView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectUIView.m; sourceTree = "<group>"; };
-		34C3E5CE29D676CE00BC4C7D /* TestProjectUIViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectUIViewCell.h; sourceTree = "<group>"; };
-		34C3E5CF29D676CE00BC4C7D /* TestProjectUIViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectUIViewCell.m; sourceTree = "<group>"; };
 		34C3E5D129D679FB00BC4C7D /* TestProjectActivityIndicatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectActivityIndicatorView.h; sourceTree = "<group>"; };
 		34C3E5D229D679FB00BC4C7D /* TestProjectActivityIndicatorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectActivityIndicatorView.m; sourceTree = "<group>"; };
 		34D2993729E3EF03002F7A37 /* UIViewController+TestProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TestProject.h"; sourceTree = "<group>"; };
@@ -260,12 +293,10 @@
 		34D52F0C29A5B4D400F5F9C2 /* TestProjectUIColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectUIColor.m; sourceTree = "<group>"; };
 		34D52F0E29A5EEFA00F5F9C2 /* TestProjectViewTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectViewTable.h; sourceTree = "<group>"; };
 		34D52F0F29A5EEFA00F5F9C2 /* TestProjectViewTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectViewTable.m; sourceTree = "<group>"; };
-		34D52F1129A602A700F5F9C2 /* TestProjectBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectBaseTableViewCell.h; sourceTree = "<group>"; };
-		34D52F1229A602A700F5F9C2 /* TestProjectBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectBaseTableViewCell.m; sourceTree = "<group>"; };
+		34D52F1129A602A700F5F9C2 /* TestProjectBaseTableViewTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectBaseTableViewTableCell.h; sourceTree = "<group>"; };
+		34D52F1229A602A700F5F9C2 /* TestProjectBaseTableViewTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectBaseTableViewTableCell.m; sourceTree = "<group>"; };
 		34D52F1529A606F400F5F9C2 /* TestProjectTableModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectTableModel.h; sourceTree = "<group>"; };
 		34D52F1629A606F400F5F9C2 /* TestProjectTableModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectTableModel.m; sourceTree = "<group>"; };
-		34D52F1829A6281200F5F9C2 /* TestProjectDetailObjectController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDetailObjectController.h; sourceTree = "<group>"; };
-		34D52F1929A6281200F5F9C2 /* TestProjectDetailObjectController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDetailObjectController.m; sourceTree = "<group>"; };
 		34D52F1C29A62AC600F5F9C2 /* UIApplication+TestProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+TestProject.h"; sourceTree = "<group>"; };
 		34D52F1D29A62AC600F5F9C2 /* UIApplication+TestProject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+TestProject.m"; sourceTree = "<group>"; };
 		34D77A3B28C19FA100A0CE9F /* TestProjectYModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectYModel.h; sourceTree = "<group>"; };
@@ -288,6 +319,8 @@
 		34EC4DD028532604000AEF1E /* TestProjectObjc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectObjc.m; sourceTree = "<group>"; };
 		34EF82AD28571B3B0046F4C3 /* TestProjectModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectModel.h; sourceTree = "<group>"; };
 		34EF82AE28571B3B0046F4C3 /* TestProjectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectModel.m; sourceTree = "<group>"; };
+		34F3786F2A0B8A4700CFC8E6 /* TestProjectBarButtonItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectBarButtonItem.h; sourceTree = "<group>"; };
+		34F378702A0B8A4700CFC8E6 /* TestProjectBarButtonItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectBarButtonItem.m; sourceTree = "<group>"; };
 		4C0C719FA4BA50B72430BEFF /* Pods-TestProjectIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProjectIOS.debug.xcconfig"; path = "Target Support Files/Pods-TestProjectIOS/Pods-TestProjectIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		5333BFEE96AFF8870A1B4B78 /* Pods-TestProjectIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProjectIOS.release.xcconfig"; path = "Target Support Files/Pods-TestProjectIOS/Pods-TestProjectIOS.release.xcconfig"; sourceTree = "<group>"; };
 		E2392A3629AB762D00638D25 /* TestProjectUIColorNamedColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectUIColorNamedColors.h; sourceTree = "<group>"; };
@@ -337,6 +370,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		340DC4B52A0CEBF90089D175 /* UIResponder */ = {
+			isa = PBXGroup;
+			children = (
+				340DC4B62A0CEC250089D175 /* TestProjectResponder.h */,
+				340DC4B72A0CEC250089D175 /* TestProjectResponder.m */,
+			);
+			path = UIResponder;
+			sourceTree = "<group>";
+		};
 		3412005629C7FD04007338D0 /* NSTextAttachment */ = {
 			isa = PBXGroup;
 			children = (
@@ -367,8 +409,6 @@
 		3428C1CE29C3065600CF06B1 /* NSParagraphStyle */ = {
 			isa = PBXGroup;
 			children = (
-				3428C1CF29C306EF00CF06B1 /* TestProjectParagraphStyle.h */,
-				3428C1D029C306EF00CF06B1 /* TestProjectParagraphStyle.m */,
 				3428C1D229C3073600CF06B1 /* TestProjectMutableParagraphStyle.h */,
 				3428C1D329C3073600CF06B1 /* TestProjectMutableParagraphStyle.m */,
 			);
@@ -481,6 +521,24 @@
 			path = dispatch;
 			sourceTree = "<group>";
 		};
+		345E44C329F946C600BBED12 /* UIAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				345E44C429F9476E00BBED12 /* UIAlertController+TestProject.h */,
+				345E44C529F9476E00BBED12 /* UIAlertController+TestProject.m */,
+			);
+			path = UIAlertController;
+			sourceTree = "<group>";
+		};
+		347AAA132A24344700F0C475 /* UIControl */ = {
+			isa = PBXGroup;
+			children = (
+				347AAA142A24A39A00F0C475 /* TestProjectControl.h */,
+				347AAA152A24A39A00F0C475 /* TestProjectControl.m */,
+			);
+			path = UIControl;
+			sourceTree = "<group>";
+		};
 		347DCC4B29E6AE17005A3D44 /* UINavigationBarAppearance */ = {
 			isa = PBXGroup;
 			children = (
@@ -525,6 +583,7 @@
 			isa = PBXGroup;
 			children = (
 				348799822988B75D00032E22 /* TestProjectCategoryHeader.h */,
+				345E44C329F946C600BBED12 /* UIAlertController */,
 				34D2993629E3EED2002F7A37 /* UIViewController */,
 				3487998D2988B7BB00032E22 /* NSObject */,
 				34A5C40729B08F1C00E61F65 /* UIColor */,
@@ -560,8 +619,6 @@
 			children = (
 				34D2993A29E3F262002F7A37 /* TestProjectNavigationController.h */,
 				34D2993B29E3F262002F7A37 /* TestProjectNavigationController.m */,
-				349801CD29E4EEE200C2B5E1 /* TestProjectSubNavController.h */,
-				349801CE29E4EEE200C2B5E1 /* TestProjectSubNavController.m */,
 				349801D029E57F1A00C2B5E1 /* TestProjectViewControllerNavigationControllerItem.h */,
 				349801D129E57F1A00C2B5E1 /* TestProjectViewControllerNavigationControllerItem.m */,
 			);
@@ -608,6 +665,8 @@
 				E297EFA92979371B005B2877 /* TestProjectBaseNavigationController.m */,
 				34A0686A29E7D5CF003B115C /* TestProjectBaseModel.h */,
 				34A0686B29E7D5CF003B115C /* TestProjectBaseModel.m */,
+				345E44C029F914D400BBED12 /* TestProjectBaseTableViewCell.h */,
+				345E44C129F914D400BBED12 /* TestProjectBaseTableViewCell.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -620,8 +679,8 @@
 				34D52F1629A606F400F5F9C2 /* TestProjectTableModel.m */,
 				348799792988B75D00032E22 /* TestProjectBaseTableView.h */,
 				348799782988B75D00032E22 /* TestProjectBaseTableView.m */,
-				34D52F1129A602A700F5F9C2 /* TestProjectBaseTableViewCell.h */,
-				34D52F1229A602A700F5F9C2 /* TestProjectBaseTableViewCell.m */,
+				34D52F1129A602A700F5F9C2 /* TestProjectBaseTableViewTableCell.h */,
+				34D52F1229A602A700F5F9C2 /* TestProjectBaseTableViewTableCell.m */,
 				34D52F0E29A5EEFA00F5F9C2 /* TestProjectViewTable.h */,
 				34D52F0F29A5EEFA00F5F9C2 /* TestProjectViewTable.m */,
 			);
@@ -689,11 +748,24 @@
 			path = NSAttributeString;
 			sourceTree = "<group>";
 		};
+		34B1A5DB2A289F8C00766B44 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				34B1A5DF2A28B57800766B44 /* TestProjectUIButtonCell.h */,
+				34B1A5E02A28B57800766B44 /* TestProjectUIButtonCell.m */,
+				34B1A5DC2A289FB100766B44 /* TestProjectButton.h */,
+				34B1A5DD2A289FB100766B44 /* TestProjectButton.m */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
 		34B4C16A29DEA17D001728DC /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
 				34B4C16B29DEA1B1001728DC /* TestProjectViewController.h */,
 				34B4C16C29DEA1B1001728DC /* TestProjectViewController.m */,
+				34C034732A035F7100C9F6EA /* TestProjectTestVCViewTable.h */,
+				34C034742A035F7100C9F6EA /* TestProjectTestVCViewTable.m */,
 				34B4C16E29DEA75C001728DC /* TestProjectTestVC.h */,
 				34B4C16F29DEA75C001728DC /* TestProjectTestVC.m */,
 				34B4C17129DEB611001728DC /* TestProjectTestNibVC.h */,
@@ -717,8 +789,20 @@
 			children = (
 				34C3E5CB29D6768C00BC4C7D /* TestProjectUIView.h */,
 				34C3E5CC29D6768C00BC4C7D /* TestProjectUIView.m */,
-				34C3E5CE29D676CE00BC4C7D /* TestProjectUIViewCell.h */,
-				34C3E5CF29D676CE00BC4C7D /* TestProjectUIViewCell.m */,
+				34032F4F2A0E35A100122D77 /* TestProjectViewViewGeometry.h */,
+				34032F502A0E35A100122D77 /* TestProjectViewViewGeometry.m */,
+				34BA4AB72A1CBE6800997CC4 /* TestProjectViewViewHierarchy.h */,
+				34BA4AB82A1CBE6800997CC4 /* TestProjectViewViewHierarchy.m */,
+				344012A42A1E057100D25366 /* TestProjectViewViewRendering.h */,
+				344012A52A1E057100D25366 /* TestProjectViewViewRendering.m */,
+				344012A72A1E1AB500D25366 /* TestProjectViewViewAnimationWithBlocks.h */,
+				344012A82A1E1AB500D25366 /* TestProjectViewViewAnimationWithBlocks.m */,
+				346083C82A1F68B300096DD2 /* TestProjectViewViewKeyframeAnimations.h */,
+				346083C92A1F68B300096DD2 /* TestProjectViewViewKeyframeAnimations.m */,
+				345CDF002A209FC2003C1FF3 /* TestProjectViewSnapshotting.h */,
+				345CDF012A209FC2003C1FF3 /* TestProjectViewSnapshotting.m */,
+				345CDF032A20AFF8003C1FF3 /* TestProjectViewContentSizeCategoryLimit.h */,
+				345CDF042A20AFF8003C1FF3 /* TestProjectViewContentSizeCategoryLimit.m */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -746,11 +830,15 @@
 			children = (
 				34A5C41E29B1CC8600E61F65 /* TestProjectGetUIKitMethod.h */,
 				34A5C41F29B1CC8600E61F65 /* TestProjectGetUIKitMethod.m */,
-				347DCC4F29E6AF91005A3D44 /* UIBarAppearance */,
-				347DCC4B29E6AE17005A3D44 /* UINavigationBarAppearance */,
-				349801D429E58A2000C2B5E1 /* UINavigationBar */,
-				349801D329E589F600C2B5E1 /* UINavigationItem */,
+				34B1A5DB2A289F8C00766B44 /* UIButton */,
+				347AAA132A24344700F0C475 /* UIControl */,
 				34C3E5CA29D675F500BC4C7D /* UIView */,
+				340DC4B52A0CEBF90089D175 /* UIResponder */,
+				34F3786E2A0B8A1000CFC8E6 /* UIBarButtonItem */,
+				349801D329E589F600C2B5E1 /* UINavigationItem */,
+				347DCC4B29E6AE17005A3D44 /* UINavigationBarAppearance */,
+				347DCC4F29E6AF91005A3D44 /* UIBarAppearance */,
+				349801D429E58A2000C2B5E1 /* UINavigationBar */,
 				349801CC29E4EAA400C2B5E1 /* UINavigationController */,
 				34B4C16A29DEA17D001728DC /* UIViewController */,
 				34E2548629DBC2BA002CF4B0 /* UIAppearance */,
@@ -854,6 +942,15 @@
 			path = mode;
 			sourceTree = "<group>";
 		};
+		34F3786E2A0B8A1000CFC8E6 /* UIBarButtonItem */ = {
+			isa = PBXGroup;
+			children = (
+				34F3786F2A0B8A4700CFC8E6 /* TestProjectBarButtonItem.h */,
+				34F378702A0B8A4700CFC8E6 /* TestProjectBarButtonItem.m */,
+			);
+			path = UIBarButtonItem;
+			sourceTree = "<group>";
+		};
 		8341478956B65C808563A445 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -898,8 +995,6 @@
 				34B20F0C2988A9CB009B4EFD /* TestProjectMyController.m */,
 				34D52F0429A5AA1500F5F9C2 /* TestProjectOCController.h */,
 				34D52F0529A5AA1500F5F9C2 /* TestProjectOCController.m */,
-				34D52F1829A6281200F5F9C2 /* TestProjectDetailObjectController.h */,
-				34D52F1929A6281200F5F9C2 /* TestProjectDetailObjectController.m */,
 			);
 			path = MainVC;
 			sourceTree = "<group>";
@@ -1038,20 +1133,25 @@
 				34BB4A6E28D2BF1E00E79698 /* NSObject+TestProject.m in Sources */,
 				347338DC28BDB85600B921EC /* TestProjectAModel.m in Sources */,
 				348799862988B75D00032E22 /* TestProjectBaseTableView.m in Sources */,
+				345E44C629F9476E00BBED12 /* UIAlertController+TestProject.m in Sources */,
 				34B4C17029DEA75C001728DC /* TestProjectTestVC.m in Sources */,
 				347338DF28BDB86700B921EC /* TestProjectBModel.m in Sources */,
 				34DDB787296C0FA3009D56B8 /* TestProjectPThread.m in Sources */,
+				34B1A5DE2A289FB100766B44 /* TestProjectButton.m in Sources */,
 				34D52F1029A5EEFA00F5F9C2 /* TestProjectViewTable.m in Sources */,
 				34A5C41929B1992500E61F65 /* TestProjectAttributeStringFoundation.m in Sources */,
 				344106E529E8094200683950 /* NSArray+TestProject.m in Sources */,
 				345BA75828BF46CD00ED6C5C /* TestProjectDModel.m in Sources */,
+				344012A92A1E1AB500D25366 /* TestProjectViewViewAnimationWithBlocks.m in Sources */,
 				E2392A3829AB762D00638D25 /* TestProjectUIColorNamedColors.m in Sources */,
 				34EF82AF28571B3B0046F4C3 /* TestProjectModel.m in Sources */,
 				E27FE81B29C5A02D00C77298 /* TestProjectAttributedStringDocumentFormats.m in Sources */,
-				34D52F1329A602A700F5F9C2 /* TestProjectBaseTableViewCell.m in Sources */,
+				34032F512A0E35A100122D77 /* TestProjectViewViewGeometry.m in Sources */,
+				345E44C229F914D400BBED12 /* TestProjectBaseTableViewCell.m in Sources */,
+				34D52F1329A602A700F5F9C2 /* TestProjectBaseTableViewTableCell.m in Sources */,
 				34D2993929E3EF03002F7A37 /* UIViewController+TestProject.m in Sources */,
+				345CDF022A209FC2003C1FF3 /* TestProjectViewSnapshotting.m in Sources */,
 				E2783EA629A9B51C0035900C /* TestProjectUIColorCell.m in Sources */,
-				34C3E5D029D676CE00BC4C7D /* TestProjectUIViewCell.m in Sources */,
 				34A0686C29E7D5CF003B115C /* TestProjectBaseModel.m in Sources */,
 				34A5C42A29B1F06400E61F65 /* TestProjectAttributeStringExtendedString.m in Sources */,
 				345EC4BE286548D100F61F2E /* TestProjectCustomModel.m in Sources */,
@@ -1065,20 +1165,21 @@
 				34A5C42029B1CC8600E61F65 /* TestProjectGetUIKitMethod.m in Sources */,
 				34B4C16D29DEA1B1001728DC /* TestProjectViewController.m in Sources */,
 				34D77A3D28C19FA100A0CE9F /* TestProjectYModel.m in Sources */,
-				34D52F1A29A6281200F5F9C2 /* TestProjectDetailObjectController.m in Sources */,
 				34D52F1729A606F400F5F9C2 /* TestProjectTableModel.m in Sources */,
 				34D77A4328C19FD100A0CE9F /* TestProjectZModel.m in Sources */,
 				3447EE08280E8EBD001AE2F0 /* main.m in Sources */,
 				34D52F0D29A5B4D400F5F9C2 /* TestProjectUIColor.m in Sources */,
 				344106E229E8027800683950 /* NSMutableArray+TestProject.m in Sources */,
+				345CDF052A20AFF8003C1FF3 /* TestProjectViewContentSizeCategoryLimit.m in Sources */,
 				E297EF9F297934B5005B2877 /* TestProjectBaseVC.m in Sources */,
+				344012A62A1E057100D25366 /* TestProjectViewViewRendering.m in Sources */,
+				34F378712A0B8A4700CFC8E6 /* TestProjectBarButtonItem.m in Sources */,
 				3447EDF7280E8EBC001AE2F0 /* AppDelegate.m in Sources */,
 				34C3E5CD29D6768C00BC4C7D /* TestProjectUIView.m in Sources */,
 				34E5D4542990E48C00FD4F71 /* TestProjectScrollTabController.m in Sources */,
 				348799882988B75D00032E22 /* UIView+TestProject_Constrain.m in Sources */,
 				E2392A3F29AB90DA00638D25 /* TestProjectCIColor.m in Sources */,
 				347DCC4E29E6AE3E005A3D44 /* TestProjectNavigationBarAppearance.m in Sources */,
-				349801CF29E4EEE200C2B5E1 /* TestProjectSubNavController.m in Sources */,
 				E25412D929D86AFE00B960A0 /* TestProjectAlertController.m in Sources */,
 				34B20F0D2988A9CB009B4EFD /* TestProjectMyController.m in Sources */,
 				34D2993C29E3F262002F7A37 /* TestProjectNavigationController.m in Sources */,
@@ -1086,21 +1187,27 @@
 				34947538282E396A00D4A567 /* TestProjectDispatchSemaphore.m in Sources */,
 				348799752988B74900032E22 /* TestProjectSectionViewTab.m in Sources */,
 				3447EDFD280E8EBC001AE2F0 /* ViewController.m in Sources */,
+				34BA4AB92A1CBE6800997CC4 /* TestProjectViewViewHierarchy.m in Sources */,
+				340DC4B82A0CEC250089D175 /* TestProjectResponder.m in Sources */,
 				34C3E5D329D679FB00BC4C7D /* TestProjectActivityIndicatorView.m in Sources */,
 				34EC4DD128532604000AEF1E /* TestProjectObjc.m in Sources */,
 				349801D729E58C3700C2B5E1 /* TestProjectNavigationItem.m in Sources */,
 				34A5C41C29B1C55400E61F65 /* TestProjectGetImplementationMethod.m in Sources */,
 				34B20F0A2988A9A5009B4EFD /* TestProjectHomeController.m in Sources */,
 				345D97F02824F43E002D0A83 /* TestProjectDispatchGroup.m in Sources */,
+				347AAA162A24A39A00F0C475 /* TestProjectControl.m in Sources */,
 				345C814E29BF2E7A00AE3D07 /* TestProjectMutableAttributedStringExtended.m in Sources */,
 				E297EFAA2979371B005B2877 /* TestProjectBaseNavigationController.m in Sources */,
 				345D97F728250609002D0A83 /* TestProjectDispatchOnce.m in Sources */,
 				347DCC5229E6AFBC005A3D44 /* TestProjectBarAppearance.m in Sources */,
 				3482D9A129D16B83008E3D98 /* TestProjectShadow.m in Sources */,
 				34B4C17429DEB611001728DC /* TestProjectTestNibVC.m in Sources */,
+				34B1A5E12A28B57800766B44 /* TestProjectUIButtonCell.m in Sources */,
 				345D97EF2824F43E002D0A83 /* TestProjectDispatchObject.m in Sources */,
+				346083CA2A1F68B300096DD2 /* TestProjectViewViewKeyframeAnimations.m in Sources */,
 				3480AA5A29B76C0D00D9C957 /* TestProjectMutableAttributedString.m in Sources */,
 				3445299C2831E701003EFFA1 /* TestProjectDispatchSource.m in Sources */,
+				34C034752A035F7100C9F6EA /* TestProjectTestVCViewTable.m in Sources */,
 				34A5C40D29B0976600E61F65 /* TestProjectUIColorCategory.m in Sources */,
 				346B745129938CAC00C06A99 /* TestProjectObjectController.m in Sources */,
 				345D97F12824F43E002D0A83 /* TestProjectDispatchIO.m in Sources */,
@@ -1118,7 +1225,6 @@
 				3428C1D429C3073600CF06B1 /* TestProjectMutableParagraphStyle.m in Sources */,
 				345D97ED2824F43E002D0A83 /* TestProjectDispatchData.m in Sources */,
 				34A0686F29E7E41E003B115C /* TestProjectViewModelTab.m in Sources */,
-				3428C1D129C306EF00CF06B1 /* TestProjectParagraphStyle.m in Sources */,
 				34D52F1E29A62AC600F5F9C2 /* UIApplication+TestProject.m in Sources */,
 				345D97EE2824F43E002D0A83 /* TestProjectDispatchQueue.m in Sources */,
 				34A5C42729B1DA2400E61F65 /* TestProjectAttributeStringFoundationCell.m in Sources */,

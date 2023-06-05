@@ -7,74 +7,101 @@
 
 #import "TestProjectTextAttachment.h"
 
-#import "TestProjectAttributeStringFoundationCell.h"
-
-@interface TestProjectTextAttachment ()
-
-@property (nonatomic, copy) NSString *firstAttrText;
-
-@end
-
 @implementation TestProjectTextAttachment
-
-- (NSString *)firstAttrText {
-    if (!_firstAttrText) {
-        _firstAttrText = @"我是第一个段落的开头的数据\n我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据ABCDEFGHIJKLMNOPQRSTUVWXYZ我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据abggggfffcbbdefghijklmnopqrstuwwwvvvwxyz我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据\n我是第三段的开头数据";
-    }
-    return _firstAttrText;
-}
 
 - (NSDictionary *)method_1 {
     return @{
-        @"- (instancetype)initWithData:(nullable NSData *)contentData ofType:(nullable NSString *)uti NS_DESIGNATED_INITIALIZER API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0)) API_UNAVAILABLE(watchos);":@{
-            @"method":@"TestProjectTextAttachMent_initWithData_ofType",
-            @"desc":@"此方法不知道怎么使用，获取的数据一片空白"}
+        @"dataModel": @{
+            @"abstract": @"此方法不知道怎么使用，获取的数据一片空白",
+            @"title": @"- (instancetype)initWithData:(nullable NSData *)contentData ofType:(nullable NSString *)uti NS_DESIGNATED_INITIALIZER API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0)) API_UNAVAILABLE(watchos);",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectTextAttachMent_initWithData_ofType],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_2 {
     return @{
-        @"@property (nullable, copy, NS_NONATOMIC_IOSONLY) NSData *contents":@{
-            @"method":@"TestProjectTextAttachMent_property_contents",
-            @"desc":@"此方法不知道怎么使用，获取的数据一片空白"}
+        @"dataModel": @{
+            @"abstract": @"此方法不知道怎么使用，获取的数据一片空白",
+            @"title": @"@property (nullable, copy, NS_NONATOMIC_IOSONLY) NSData *contents",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectTextAttachMent_property_contents],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_3 {
     return @{
-        @"@property (nullable, copy, NS_NONATOMIC_IOSONLY) NSData *fileType":@{
-            @"method":@"TestProjectTextAttachMent_property_fileType",
-            @"desc":@"此方法不知道怎么使用，获取的数据一片空白"}
+        @"dataModel": @{
+            @"abstract": @"此方法不知道怎么使用，获取的数据一片空白",
+            @"title": @"@property (nullable, copy, NS_NONATOMIC_IOSONLY) NSData *fileType",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectTextAttachMent_property_fileType],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_4 {
     return @{
-        @"@property (nullable, strong, NS_NONATOMIC_IOSONLY) UIImage *image API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0)) API_UNAVAILABLE(watchos);":@{
-            @"method":@"TestProjectTextAttachMent_property_image",
-            @"desc":@"设置image内容"}
+        @"dataModel": @{
+            @"abstract": @"设置image内容",
+            @"title": @"@property (nullable, strong, NS_NONATOMIC_IOSONLY) UIImage *image API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0)) API_UNAVAILABLE(watchos);",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectTextAttachMent_property_image],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_5 {
     return @{
-        @"@property (NS_NONATOMIC_IOSONLY) CGRect bounds API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0)) API_UNAVAILABLE(watchos);":@{
-            @"method":@"TestProjectTextAttachMent_property_bounds",
-            @"desc":@"设置占用的bounds"}
+        @"dataModel": @{
+            @"abstract": @"设置占用的bounds",
+            @"title": @"@property (NS_NONATOMIC_IOSONLY) CGRect bounds API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0)) API_UNAVAILABLE(watchos);",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectTextAttachMent_property_bounds],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_6 {
     return @{
-        @"@property CGFloat lineLayoutPadding API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0)) API_UNAVAILABLE(watchos);":@{
-            @"method":@"TestProjectTextAttachMent_property_lineLayoutPadding",
-            @"desc":@"设置间距"}
+        @"dataModel": @{
+            @"abstract": @"设置attachment的padding",
+            @"title": @"@property CGFloat lineLayoutPadding API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0)) API_UNAVAILABLE(watchos);",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectTextAttachMent_property_lineLayoutPadding],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
-
 - (TestProjectAttributeStringFoundationModel *)createAttrStrModelWith:(NSTextAttachment *)attachment {
     TestProjectAttributeStringFoundationModel *attrStrModel = [[TestProjectAttributeStringFoundationModel alloc] init];
+    attrStrModel.isChild = YES;
     NSAttributedString *firstAttrStr = [[NSAttributedString alloc] initWithString:self.firstAttrText];
 
     attrStrModel.titleMutAttrStr = [[NSMutableAttributedString alloc] initWithAttributedString:firstAttrStr];
@@ -84,58 +111,63 @@
     return attrStrModel;
 }
 
-- (void)TestProjectTextAttachMent_property_lineLayoutPadding {
-    UIImage *image = [UIImage imageNamed:@"lyf_1"];
-    NSTextAttachment *attachment1 = [[NSTextAttachment alloc] init];
-    attachment1.image = image;
-    CGRect bounds = CGRectMake(0, 0, 100, 50);
-    attachment1.bounds = bounds;
-    CGFloat lineLayoutPadding = 10;
+- (NSMutableArray *)TestProjectTextAttachMent_property_lineLayoutPadding {
     if (@available(iOS 15.0, *)) {
-        attachment1.lineLayoutPadding = 10;
-    }
-    
-    TestProjectAttributeStringFoundationModel *m1 = [self createAttrStrModelWith:attachment1];
-    m1.desc = [NSString stringWithFormat:@"设置的是lineLayoutPadding:%f attrText:%@", lineLayoutPadding, m1.titleMutAttrStr];
-    
-    for (TestProjectAttributeStringFoundationModel *model in self.dataMutArr) {
-        [model calculDataViewHeight];
+        NSArray *arr = @[@(10), @(-10), @(100), @(-100)];
+        for (NSNumber *num in arr) {
+            UIImage *image = [UIImage imageNamed:@"lyf_1"];
+            NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
+            attachment.image = image;
+            CGRect bounds = CGRectMake(0, 0, 100, 50);
+            attachment.bounds = bounds;
+            CGFloat lineLayoutPadding = num.integerValue;
+            attachment.lineLayoutPadding = lineLayoutPadding;
+            TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWith:attachment];
+            m.desc = [NSString stringWithFormat:@"设置的是lineLayoutPadding:%f attrText:%@", lineLayoutPadding, m.titleMutAttrStr];
+            [m calculDataViewHeight];
+        }
     }
 
-    self.tableView.dataSourceArray = self.dataMutArr;
+    return self.dataMutArr;
 }
 
-- (void)TestProjectTextAttachMent_property_bounds {
+- (NSMutableArray *)TestProjectTextAttachMent_property_bounds {
     UIImage *image = [UIImage imageNamed:@"lyf_1"];
-    NSTextAttachment *attachment1 = [[NSTextAttachment alloc] init];
-    attachment1.image = image;
+    NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
+    attachment.image = image;
     CGRect bounds = CGRectMake(0, 0, 100, 50);
-    attachment1.bounds = bounds;
+    attachment.bounds = bounds;
     
-    TestProjectAttributeStringFoundationModel *m1 = [self createAttrStrModelWith:attachment1];
-    m1.desc = [NSString stringWithFormat:@"设置的是bounds:%@ attrText:%@", NSStringFromCGRect(bounds), m1.titleMutAttrStr];
-    
-    for (TestProjectAttributeStringFoundationModel *model in self.dataMutArr) {
-        [model calculDataViewHeight];
-    }
+    TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWith:attachment];
+    m.desc = [NSString stringWithFormat:@"设置的是bounds:%@ attrText:%@", NSStringFromCGRect(bounds), m.titleMutAttrStr];
+    [m calculDataViewHeight];
 
-    self.tableView.dataSourceArray = self.dataMutArr;
+    return self.dataMutArr;
 }
 
-- (void)TestProjectTextAttachMent_property_image {
+- (NSMutableArray *)TestProjectTextAttachMent_property_image {
     UIImage *image = [UIImage imageNamed:@"lyf_1"];
-    NSTextAttachment *attachment1 = [[NSTextAttachment alloc] init];
-    attachment1.image = image;
-    attachment1.bounds = CGRectMake(0, 0, 100, 50);
+    NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
+    attachment.image = image;
+    attachment.bounds = CGRectMake(0, 0, 100, 50);
     
-    TestProjectAttributeStringFoundationModel *m1 = [self createAttrStrModelWith:attachment1];
-    m1.desc = [NSString stringWithFormat:@"设置的是image:%@ attrText:%@", image, m1.titleMutAttrStr];
-    
-    for (TestProjectAttributeStringFoundationModel *model in self.dataMutArr) {
-        [model calculDataViewHeight];
-    }
+    TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWith:attachment];
+    m.desc = [NSString stringWithFormat:@"设置的是image:%@ attrText:%@", image, m.titleMutAttrStr];
+    [m calculDataViewHeight];
 
-    self.tableView.dataSourceArray = self.dataMutArr;
+    return self.dataMutArr;
+}
+
+- (NSMutableArray *)TestProjectTextAttachMent_property_fileType {
+    return self.dataMutArr;
+}
+
+- (NSMutableArray *)TestProjectTextAttachMent_property_contents {
+    return self.dataMutArr;
+}
+
+- (NSMutableArray *)TestProjectTextAttachMent_initWithData_ofType {
+    return self.dataMutArr;
 }
 
 @end

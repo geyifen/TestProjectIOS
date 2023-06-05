@@ -30,23 +30,31 @@ NS_ASSUME_NONNULL_BEGIN
 @public
     CGFloat _titleHeight;
     CGFloat _descHeight;
+    CGFloat _abstractHeight;
+    CGFloat _dataViewHeight;
     NSMutableAttributedString *_titleAttr;
     NSMutableAttributedString *_descAttr;
+    NSMutableAttributedString *_abstractAttr;
 }
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *desc;
+@property (nonatomic, copy) NSString *abstract;
+@property (nonatomic, assign) BOOL isDataModelExpand;
+@property (nonatomic, assign) BOOL isTitleExpand;
+@property (nonatomic, assign) BOOL isDescExpand;
+@property (nonatomic, assign) BOOL isChild;
+@property (nonatomic, strong) NSMutableArray *childItems;
+@property (nonatomic, strong) id compareViewModel;
+@property (nonatomic, copy) void(^clickBlock)(void);
 @property (nonatomic, strong) NSMutableAttributedString *titleMutAttrStr;
 @property (nonatomic, strong) NSMutableAttributedString *descMutAttrStr;
-@property (nonatomic, copy) NSString *method;
-@property (nonatomic, copy) NSString *viewKey;
-@property (nonatomic, copy) void(^clickBlock)(void);
-@property (nonatomic, assign) TestProjectJumpType jumpType;
-@property (nonatomic, strong) TestProjectJumpModel *jumpModel;
 
-@property (nonatomic, strong) TestProjectBaseModel *childTableModel;
+- (BOOL)needAutoCalculViewHeight;
 
 - (void)calculDataViewHeight;
+
+- (CGFloat)calculDataModelViewHeight;
 
 @end
 

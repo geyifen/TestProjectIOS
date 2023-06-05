@@ -5,20 +5,20 @@
 //  Created by 李文凡 on 2023/2/25.
 //
 
+#import "TestProjectTableModel.h"
 #import "TestProjectBaseTableViewCell.h"
 
 @interface TestProjectUIColorModel : TestProjectTableModel
 
-@property (nonatomic, strong) UIColor *backgroundColor;
-@property (nonatomic, assign) BOOL isSection;
-@property (nonatomic, strong) UIColor *textColor;
-@property (nonatomic) CGColorRef cgColor;
+@property (nonatomic, strong) UIColor * _Nullable backgroundColor;
 
 @end
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TestProjectUIColorCell : TestProjectBaseTableViewCell
+@interface TestProjectUIColorCell : TestProjectBaseTableViewCell <TestProjectViewProtocol>
+
+@property (nonatomic, strong) TestProjectUIColorModel *viewModel;
 
 @end
 

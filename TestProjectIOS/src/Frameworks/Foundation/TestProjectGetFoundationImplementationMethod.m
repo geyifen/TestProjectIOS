@@ -9,36 +9,42 @@
 
 @implementation TestProjectGetFoundationImplementationMethod
 
++ (NSArray *)itemChilds {
+    return @[
+        [self NSAttributedString]
+    ];
+}
+
 + (NSDictionary *)project_Foundation {
-    return @{@"Foundation": @{
-        @"itemChilds": @[
-            [self NSAttributedString],
-        ],
-    }, };
+    return @{
+        @"title": @"Foundation",
+        @"atIndex": @0,
+        @"itemChilds": [self itemChilds],
+    };
 }
 
 + (NSDictionary *)NSAttributedString {
     return @{
-        @"NSAttributedString": @{
-            @"itemChilds": @[@{
-                @"NSMutableAttributedString(NSExtendedMutableAttributedString)": @{
-                    @"viewKey": @"TestProjectMutableAttributedStringExtended"
-                },
-            }, @{
-                @"NSMutableAttributedString": @{
-                    @"viewKey": @"TestProjectMutableAttributedString"
-                },
-            }, @{
-                @"NSAttributedString(NSExtendedAttributedString)": @{
-                    @"viewKey": @"TestProjectAttributeStringExtendedString"
-                },
-            }, @{
-                @"NSAttributedString": @{
-                    @"viewKey": @"TestProjectAttributeStringFoundation"
-                },
-            }, ],
-            @"atIndex": @0,
-        }
+        @"title": @"NSAttributedString",
+        @"atIndex": @0,
+        @"itemChilds": @[
+            @{
+                @"title": @"NSMutableAttributedString\n(NSExtendedMutableAttributedString)",
+                @"viewKey": @"TestProjectMutableAttributedStringExtended",
+            },
+            @{
+                @"title": @"NSMutableAttributedString",
+                @"viewKey": @"TestProjectMutableAttributedString",
+            },
+            @{
+                @"title": @"NSAttributedString\n(NSExtendedAttributedString)",
+                @"viewKey": @"TestProjectAttributeStringExtendedString",
+            },
+            @{
+                @"title": @"NSAttributedString",
+                @"viewKey": @"TestProjectAttributeStringFoundation",
+            },
+        ]
     };
 }
 

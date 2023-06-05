@@ -7,93 +7,90 @@
 
 #import "TestProjectShadow.h"
 
-#import "TestProjectAttributeStringFoundationCell.h"
-
-@interface TestProjectShadow ()
-
-@property (nonatomic, copy) NSString *firstAttrText;
-@property (nonatomic, strong) NSShadow *shadow;
-
-@end
-
 @implementation TestProjectShadow
-
-- (NSString *)firstAttrText {
-    if (!_firstAttrText) {
-        _firstAttrText = @"我是第一个段落的开头的数据\n我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据我是第二段的内容数据\n我是第三段的开头数据";
-    }
-    return _firstAttrText;
-}
-
-- (NSShadow *)shadow {
-    if (!_shadow) {
-        _shadow = [[NSShadow alloc] init];
-    }
-    return _shadow;
-}
 
 - (NSDictionary *)method_1 {
     return @{
-        @"@property (nonatomic, assign) CGSize shadowOffset;":@{
-            @"method":@"TestProjectShadow_property_shadowOffset",
-            @"desc":@"设置或者获取NSShadow的属性shadowOffset(阴影偏移量) CGSize"}
+        @"dataModel": @{
+            @"abstract": @"设置或者获取NSShadow的属性shadowOffset(阴影偏移量) CGSize",
+            @"title": @"@property (nonatomic, assign) CGSize shadowOffset;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectShadow_property_shadowOffset],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_2 {
     return @{
-        @"@property (nonatomic, assign) CGFloat shadowBlurRadius;":@{
-            @"method":@"TestProjectShadow_property_shadowBlurRadius",
-            @"desc":@"设置或者获取NSShadow的属性shadowBlurRadius(阴影扩散度) CGFloat"}
+        @"dataModel": @{
+            @"abstract": @"设置或者获取NSShadow的属性shadowBlurRadius(阴影扩散度) CGFloat \n 设置负数无效",
+            @"title": @"@property (nonatomic, assign) CGFloat shadowBlurRadius;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectShadow_property_shadowBlurRadius],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_3 {
     return @{
-        @"@property (nullable, nonatomic, strong) id shadowColor;":@{
-            @"method":@"TestProjectShadow_property_shadowColor",
-            @"desc":@"设置或者获取NSShadow的属性shadowColor(阴影颜色) UIColor"}
+        @"dataModel": @{
+            @"abstract": @"设置或者获取NSShadow的属性shadowColor(阴影颜色) UIColor",
+            @"title": @"@property (nullable, nonatomic, strong) id shadowColor;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectShadow_property_shadowColor],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
-
-- (TestProjectAttributeStringFoundationModel *)createAttrStrModel {
-    TestProjectAttributeStringFoundationModel *attrStrModel = [[TestProjectAttributeStringFoundationModel alloc] init];
-    NSAttributedString *firstAttrStr = [[NSAttributedString alloc] initWithString:self.firstAttrText attributes:@{NSShadowAttributeName: self.shadow}];
-
-    attrStrModel.titleMutAttrStr = [[NSMutableAttributedString alloc] initWithAttributedString:firstAttrStr];
-    [self.dataMutArr addObject:attrStrModel];
-    return attrStrModel;
+- (void)createAttrStrModelWithShadowProperty:(NSString *)key value:(id)value {
+    NSShadow *shadow = [[NSShadow alloc] init];
+    if (key && value) {
+        [shadow setValue:value forKey:key];
+    }
+    if ([key isEqualToString:@"shadowColor"]) {
+        shadow.shadowOffset = CGSizeMake(0, 5);
+        shadow.shadowBlurRadius = 5;
+    } else {
+        shadow.shadowColor = [UIColor redColor];
+    }
+    
+    TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithAttributes:@{NSShadowAttributeName: shadow}];
+    m.isTitleExpand = YES;
+    m.desc = [NSString stringWithFormat:@"设置的阴影值为:(%@-%@)，得到的attrText:\n%@", key, value, m.titleMutAttrStr];
+    [m calculDataViewHeight];
 }
 
-- (void)TestProjectShadow_property_shadowColor {
-    self.shadow.shadowColor = [UIColor redColor];
-    self.shadow.shadowOffset = CGSizeMake(0, 5);
-    self.shadow.shadowBlurRadius = 5;
-
-    TestProjectAttributeStringFoundationModel *m1 = [self createAttrStrModel];
-    m1.desc = [NSString stringWithFormat:@"获取的属性shadowColor：%@ attrText:%@", self.shadow.shadowColor, m1.titleMutAttrStr];
-    [m1 calculDataViewHeight];
-    
-    self.tableView.dataSourceArray = self.dataMutArr;
+- (NSMutableArray *)TestProjectShadow_property_shadowColor {
+    [self createAttrStrModelWithShadowProperty:@"shadowColor" value:[UIColor redColor]];
+    return self.dataMutArr;
 }
 
-- (void)TestProjectShadow_property_shadowBlurRadius {
-    self.shadow.shadowBlurRadius = 5;
-    TestProjectAttributeStringFoundationModel *m1 = [self createAttrStrModel];
-    m1.desc = [NSString stringWithFormat:@"获取的属性shadowBlurRadius：%f attrText:%@", self.shadow.shadowBlurRadius, m1.titleMutAttrStr];
-    [m1 calculDataViewHeight];
-    
-    self.tableView.dataSourceArray = self.dataMutArr;
+- (NSMutableArray *)TestProjectShadow_property_shadowBlurRadius {
+    NSArray *arr = @[@5, @-5];
+    for (NSNumber *num in arr) {
+        [self createAttrStrModelWithShadowProperty:@"shadowBlurRadius" value:num];
+    }
+    return self.dataMutArr;
 }
 
-- (void)TestProjectShadow_property_shadowOffset {
-    self.shadow.shadowOffset = CGSizeMake(0, 5);
-    TestProjectAttributeStringFoundationModel *m1 = [self createAttrStrModel];
-    m1.desc = [NSString stringWithFormat:@"获取的属性shadowOffset：%@ attrText:%@", NSStringFromCGSize(self.shadow.shadowOffset), m1.titleMutAttrStr];
-    [m1 calculDataViewHeight];
-    
-    self.tableView.dataSourceArray = self.dataMutArr;
+- (NSMutableArray *)TestProjectShadow_property_shadowOffset {
+    NSArray *arr = @[[NSValue valueWithCGSize:CGSizeMake(0, 5)], [NSValue valueWithCGSize:CGSizeMake(0, -5)]];
+    for (NSValue *value in arr) {
+        [self createAttrStrModelWithShadowProperty:@"shadowOffset" value:value];
+    }
+    return self.dataMutArr;
 }
 
 

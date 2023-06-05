@@ -5,13 +5,14 @@
 //  Created by zjrcumac on 2023/4/6.
 //
 
-#import "TestProjectDetailObjectController.h"
+#import "TestProjectBaseVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TestProjectTestVC : TestProjectDetailObjectController
+@interface TestProjectTestVC : TestProjectBaseVC
 
 @property (nonatomic, assign) NSInteger atFloor;
+@property (nonatomic, copy) Class childViewClass;
 
 @property (nonatomic, copy) void(^returnDataBlock)(id data);
 

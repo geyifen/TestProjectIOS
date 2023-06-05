@@ -5,13 +5,18 @@
 //  Created by zjrcumac on 2023/3/31.
 //
 
-#import "TestProjectViewTable.h"
-
-#import "TestProjectUIViewCell.h"
+#import "TestProjectViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TestProjectUIView : TestProjectViewTable
+@interface TestProjectUIChildView : UIView
+
+@end
+
+@interface TestProjectUIView : TestProjectViewController
+
+@property (nonatomic, strong) TestProjectUIChildView *childView;
+@property (nonatomic, strong) UILabel *grandChildView;
 
 @end
 

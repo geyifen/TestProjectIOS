@@ -21,55 +21,103 @@
     CGFloat _viewHeight;
 }
 
+- (instancetype)init {
+    if (self = [super init]) {
+        self.isTitleExpand = YES;
+        self.isDescExpand = YES;
+    }
+    return self;
+}
+
 - (NSString *)viewIdentifier {
-    return @"TestProjectBaseTableViewCell";
+    return @"TestProjectBaseTableViewTableCell";
 }
 
 - (CGFloat)viewHeight {
-    return _viewHeight;
+    CGFloat viewHeight = _viewHeight;
+    if (_titleHeight > 0 && !self.isTitleExpand) {
+        viewHeight -= _titleHeight;
+    }
+    if (_dataViewHeight > 0 && !self.isDataModelExpand) {
+        viewHeight -= _dataViewHeight;
+    }
+    if (_descHeight > 0 && !self.isDescExpand) {
+        viewHeight -= _descHeight;
+    }
+    return viewHeight;
 }
 
-- (id)copyWithZone:(NSZone *)zone {
-    TestProjectTableModel *m = [[TestProjectTableModel alloc] init];
-    m.title = self.title;
-    m.desc = self.desc;
-    if (self.childTableModel) {
-        m.childTableModel = [self.childTableModel copy];
+- (BOOL)needAutoCalculViewHeight {
+    return YES;
+}
+
+- (CGFloat)calculDataModelViewHeight {
+    CGFloat childViewHeight = 0;
+    if (self.childItems.count > 0) {
+        for (TestProjectTableModel *tabModel in self.childItems) {
+            CGFloat viewHeight = tabModel->_viewHeight;
+            if (viewHeight <= 0 && [tabModel viewHeight]) {
+                viewHeight += [tabModel viewHeight];
+            }
+            childViewHeight += viewHeight;
+        }
     }
-    if (self.jumpModel) {
-        m.jumpModel = [self.jumpModel copy];
-    }
-    return m;
+    return childViewHeight;
 }
 
 - (void)calculDataViewHeight {
-    CGSize size = CGSizeMake([UIScreen mainScreen].bounds.size.width - 30, CGFLOAT_MAX);
-    UILabel *titleLabel = [[UILabel alloc] init];
-    titleLabel.numberOfLines = 0;
+    CGFloat bankHeight = 15;
+    CGFloat borderWidth = _isChild ? 60 : 30;
+    CGSize size = CGSizeMake([UIScreen mainScreen].bounds.size.width - borderWidth, CGFLOAT_MAX);
+    
+    if (_abstract) {
+        _abstractAttr = [[NSMutableAttributedString alloc] initWithString:self.abstract];
+        [_abstractAttr addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:24 weight:UIFontWeightBold], NSForegroundColorAttributeName:[UIColor blackColor]} range:NSMakeRange(0, self.abstract.length)];
+    }
+    if (_abstractAttr) {
+        UILabel *abstractLabel = [[UILabel alloc] init];
+        abstractLabel.numberOfLines = 0;
+        abstractLabel.attributedText = _abstractAttr;
+        _abstractHeight = [abstractLabel sizeThatFits:size].height;
+        bankHeight += 15;
+    }
+
     if (self.titleMutAttrStr) {
         _titleAttr = self.titleMutAttrStr;
     } else if (self.title) {
         _titleAttr = [[NSMutableAttributedString alloc] initWithString:self.title];
-        [_titleAttr addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:23], NSForegroundColorAttributeName:[UIColor blackColor]} range:NSMakeRange(0, self.title.length)];
+        [_titleAttr addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:22 weight:UIFontWeightMedium], NSForegroundColorAttributeName:[UIColor blackColor]} range:NSMakeRange(0, self.title.length)];
     }
+    
     if (_titleAttr) {
+        UILabel *titleLabel = [[UILabel alloc] init];
+        titleLabel.numberOfLines = 0;
         titleLabel.attributedText = _titleAttr;
         _titleHeight = [titleLabel sizeThatFits:size].height;
+        bankHeight += 15;
     }
 
+    if (self.dataModel && [self.dataModel respondsToSelector:@selector(calculDataModelViewHeight)]) {
+        _dataViewHeight = [self.dataModel calculDataModelViewHeight];
+        bankHeight += 15;
+    }
+    
     if (self.descMutAttrStr) {
         _descAttr = self.descMutAttrStr;
     } else if (self.desc) {
         _descAttr = [[NSMutableAttributedString alloc] initWithString:self.desc];
-        [_descAttr addAttributes:@{NSForegroundColorAttributeName:[UIColor lightGrayColor], NSFontAttributeName:[UIFont systemFontOfSize:18]} range:NSMakeRange(0, self.desc.length)];
+        [_descAttr addAttributes:@{NSForegroundColorAttributeName:[UIColor lightGrayColor], NSFontAttributeName:[UIFont systemFontOfSize:20]} range:NSMakeRange(0, self.desc.length)];
     }
+
     if (_descAttr) {
         UILabel *descLabel = [[UILabel alloc] init];
         descLabel.numberOfLines = 0;
         descLabel.attributedText = _descAttr;
         _descHeight = [descLabel sizeThatFits:size].height;
+        bankHeight += 15;
     }
-    _viewHeight = _titleHeight + _descHeight + 30;
+    bankHeight += 2;
+    _viewHeight = _abstractHeight + _titleHeight + _descHeight + _dataViewHeight + bankHeight;
 }
 
 @end

@@ -96,22 +96,33 @@
     if (isCellRow) {
         idView = [tableView dequeueReusableCellWithIdentifier:identifier];
         if (!idView) {
-            NSString *path = [[NSBundle mainBundle] pathForResource:identifier ofType:@"nib"];
+            NSString *viewClassName = identifier;
+            if ([viewModel respondsToSelector:@selector(viewClassName)]) {
+                viewClassName = [viewModel viewClassName];
+                viewClassName = viewClassName ?:identifier;
+            }
+            NSString *path = [[NSBundle mainBundle] pathForResource:viewClassName ofType:@"nib"];
             if (path.length > 0) {
-                [tableView registerNib:[UINib nibWithNibName:identifier bundle:nil] forCellReuseIdentifier:identifier];
+                [tableView registerNib:[UINib nibWithNibName:viewClassName bundle:nil] forCellReuseIdentifier:identifier];
             } else {
-                [tableView registerClass:NSClassFromString(identifier) forCellReuseIdentifier:identifier];
+                [tableView registerClass:NSClassFromString(viewClassName) forCellReuseIdentifier:identifier];
             }
             idView = [tableView dequeueReusableCellWithIdentifier:identifier];
         }
     } else {
         idView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:identifier];
         if (!idView) {
-            NSString *path = [[NSBundle mainBundle] pathForResource:identifier ofType:@"nib"];
+            NSString *viewClassName = identifier;
+            if ([viewModel respondsToSelector:@selector(viewClassName)]) {
+                viewClassName = [viewModel viewClassName];
+                viewClassName = viewClassName ?:identifier;
+            }
+
+            NSString *path = [[NSBundle mainBundle] pathForResource:viewClassName ofType:@"nib"];
             if (path.length > 0) {
-                [tableView registerNib:[UINib nibWithNibName:identifier bundle:nil] forHeaderFooterViewReuseIdentifier:identifier];
+                [tableView registerNib:[UINib nibWithNibName:viewClassName bundle:nil] forHeaderFooterViewReuseIdentifier:identifier];
             } else {
-                [tableView registerClass:NSClassFromString(identifier) forHeaderFooterViewReuseIdentifier:identifier];
+                [tableView registerClass:NSClassFromString(viewClassName) forHeaderFooterViewReuseIdentifier:identifier];
             }
             idView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:identifier];
         }

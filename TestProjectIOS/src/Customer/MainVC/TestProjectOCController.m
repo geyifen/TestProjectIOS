@@ -34,28 +34,11 @@
 
 - (NSMutableArray *)converToModel:(NSArray *)arr tabType:(TestProjectTabType)tabType {
     NSMutableArray *mutArr = [NSMutableArray array];
-    for (NSInteger j = 0; j < arr.count; j++) {
-        NSDictionary *dic = arr[j];
-        NSArray *allKeys = [dic allKeys];
-        for (NSInteger i = 0; i < allKeys.count; i++) {
-            NSString *key = allKeys[i];
-            UIColor *color = j % 2 == 0 ? [UIColor redColor] : [UIColor blueColor];
-            TestProjectViewModelTab *tabViewModel = [[TestProjectViewModelTab alloc] init];
-            tabViewModel.tabType = tabType;
-            tabViewModel.backgroundColor = color;
-            [mutArr addObject:tabViewModel];
-            tabViewModel.title = key;
-            
-            NSDictionary *dataDic = [dic objectForKey:key];
-            NSArray *itemChilds = [dataDic objectForKey:@"itemChilds"];
-            if (itemChilds && itemChilds.count > 0) {
-                tabViewModel.itemChilds = [self converToModel:itemChilds tabType:TestProjectTab_AutoDivede];
-            } else {
-                NSString *viewKey = [dataDic objectForKey:@"viewKey"];
-                tabViewModel.viewKey = viewKey;
-            }
-            tabViewModel.atIndex = [[dataDic objectForKey:@"atIndex"] integerValue];
-        }
+    for (NSInteger i = 0; i < arr.count; i++) {
+        NSDictionary *dic = arr[i];
+        TestProjectViewModelTab *tabViewModel = [TestProjectViewModelTab yy_modelWithDictionary:dic];
+        tabViewModel.tabType = tabType;
+        [mutArr addObject:tabViewModel];
     }
     return mutArr;
 }
@@ -65,13 +48,14 @@
 }
 
 - (NSDictionary *)FrameWork {
-    return @{@"Frameworks": @{
-        @"itemChilds":@[
+    return @{
+        @"title": @"Frameworks",
+        @"atIndex": @0,
+        @"itemChilds": @[
             [TestProjectGetUIKitMethod getImplementationProject],
             [TestProjectGetFoundationImplementationMethod getImplementationProject],
-        ],
-        @"atIndex": @0,
-    }, };
+        ]
+    };
 }
 
 @end

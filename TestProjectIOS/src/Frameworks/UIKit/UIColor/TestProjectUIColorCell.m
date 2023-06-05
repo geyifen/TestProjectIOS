@@ -14,29 +14,54 @@
 }
 
 - (CGFloat)viewHeight {
-    CGFloat viewHeight = [super viewHeight] + (self.isSection ? 20 : 0);
-    return viewHeight;
+    if (self.childItems.count > 0) {
+        return self.childItems.count * 60;
+    }
+    return 60;
 }
 
 @end
 
 @interface TestProjectUIColorCell ()
 
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UIView *view;
+
 @end
 
 @implementation TestProjectUIColorCell
 
 - (void)setViewModel:(TestProjectUIColorModel *)viewModel {
-    [super setViewModel:viewModel];
-    self.backgroundColor = viewModel.backgroundColor;
-    self.titleLabel.textColor = viewModel.textColor ? viewModel.textColor : (viewModel.isSection ? [UIColor blackColor] : [UIColor blueColor]);
-    [self.descLabel testproject_updateConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
-        make.top.equal(self).offset(viewModel.isSection ? 20 : 0);
-    }];
-    if (viewModel.cgColor) {
-        self.layer.backgroundColor = viewModel.cgColor;
+    self.titleLabel.text = viewModel.title;
+    self.view.backgroundColor = viewModel.backgroundColor;
+}
+
+- (UILabel *)titleLabel {
+    if (!_titleLabel) {
+        _titleLabel = [[UILabel alloc] init];
+        _titleLabel.textColor = [UIColor blackColor];
+        _titleLabel.numberOfLines = 0;
+        [self addSubview:_titleLabel];
+        [_titleLabel testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+            make.top.leading.equal(self);
+            make.trainling.equal(self.view.leading);
+        }];
     }
-    
+    return _titleLabel;
+}
+
+- (UIView *)view {
+    if (!_view) {
+        _view = [[UIView alloc] init];
+        _view.layer.borderWidth = 2;
+        _view.layer.borderColor = [UIColor redColor].CGColor;
+        [self addSubview:_view];
+        [_view testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+            make.width.height.equal(@40);
+            make.bottom.trainling.equal(self).offset(-5);
+        }];
+    }
+    return _view;
 }
 
 @end

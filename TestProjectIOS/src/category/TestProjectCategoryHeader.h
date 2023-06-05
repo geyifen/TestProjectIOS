@@ -16,5 +16,6 @@
 #import "UIColor+TestProject.h"
 #import "NSMutableArray+TestProject.h"
 #import "NSArray+TestProject.h"
+#import "UIAlertController+TestProject.h"
 
 #endif /* TestProjectCategoryHeader_h */

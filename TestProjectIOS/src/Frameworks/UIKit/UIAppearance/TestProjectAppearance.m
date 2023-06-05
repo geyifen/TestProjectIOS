@@ -7,7 +7,26 @@
 
 #import "TestProjectAppearance.h"
 
-#import "TestProjectUIViewCell.h"
+#import "TestProjectBaseTableViewCell.h"
+#import "TestProjectCategoryHeader.h"
+
+@interface TestProjectAppearanceCellModel : TestProjectTableModel
+
+@property (nonatomic, copy) UIColor *viewColor;
+
+@end
+
+@implementation TestProjectAppearanceCellModel
+
+- (NSString *)viewIdentifier {
+    return @"TestProjectAppearanceCell";
+}
+
+- (CGFloat)viewHeight {
+    return 200;
+}
+
+@end
 
 @interface TestProjectAppearanceView : UIView
 
@@ -18,6 +37,7 @@
 @implementation TestProjectAppearanceView
 
 - (void)setViewColor:(UIColor *)viewColor {
+    NSLog(@"%@__%@", self, viewColor);
     _viewColor = viewColor;
     self.backgroundColor = viewColor;
 }
@@ -32,27 +52,26 @@
 
 @end
 
-@interface TestProjectAppearanceCellView : UIView <TestProjectViewProtocol>
-
-@property (nonatomic, strong) id viewModel;
+@interface TestProjectAppearanceCell : TestProjectBaseTableViewCell <TestProjectViewProtocol>
 
 @property (nonatomic, strong) TestProjectAppearanceView *leftView;
 @property (nonatomic, strong) TestProjectAppearanceSubView *rightView;
+@property (nonatomic, strong) TestProjectAppearanceCellModel *viewModel;
 
 @end
 
-@implementation TestProjectAppearanceCellView
+@implementation TestProjectAppearanceCell
 
-- (instancetype)init {
-    if (self = [super init]) {
-        self.rightView.hidden = NO;
-    }
-    return self;
+- (void)setViewModel:(TestProjectAppearanceCellModel *)viewModel {
+    self.leftView.hidden = NO;
+    self.rightView.hidden = NO;
 }
 
 - (TestProjectAppearanceView *)leftView {
     if (!_leftView) {
+
         _leftView = [[TestProjectAppearanceView alloc] init];
+
         [self addSubview:_leftView];
         [_leftView testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
             make.height.width.equal(@50);
@@ -82,44 +101,54 @@
 
 - (NSDictionary *)method_1 {
     return @{
-        @"- check_appearance":@{
-            @"method":@"TestProjectAppearance_check_appearance",
-            @"desc":@"通过设置appearce查看视图对比结果"}
+        @"dataModel": @{
+            @"abstract": @"在即将出现的时候，会调用属性方法并把值传入",
+            @"title": @"+ (instancetype)appearance;",
+            @"desc": @"如果紧接着有该属性设置这不会执行appearance",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAppearanceCellModel.class,
+                @"childItems": [self TestProjectAppearance_appearance],
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_2 {
     return @{
-        @"+ (instancetype)appearance;":@{
-            @"method":@"TestProjectAppearance_appearance",
-            @"jumpType": @(TestProjectJumpTypeOfClick),
-            @"desc":@"设置appearance的颜色为[UIColor redColor] \n 它的优先级低于+ (instancetype)appearanceWhenContainedInInstancesOfClasses:(NSArray<Class <UIAppearanceContainer>> *)containerTypes API_AVAILABLE(ios(9.0));方法"}
+        @"dataModel": @{
+            @"abstract": @"在即将出现的时候，会调用属性方法并把值传入",
+            @"title": @"+ (instancetype)appearanceWhenContainedInInstancesOfClasses:(NSArray<Class <UIAppearanceContainer>> *)containerTypes API_AVAILABLE(ios(9.0));",
+            @"desc": @"如果紧接着有该属性设置这不会执行appearance \n@param containerTypes 只会在该容器下才会调用属性方法，其它的容器下不会调用属性方法",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAppearanceCellModel.class,
+                @"childItems": [self TestProjectAppearance_appearanceWhenContainedInInstancesOfClasses],
+            }
+        },
     };
 }
 
-- (NSDictionary *)method_3 {
-    return @{
-        @"+ (instancetype)appearanceWhenContainedInInstancesOfClasses:(NSArray<Class <UIAppearanceContainer>> *)containerTypes API_AVAILABLE(ios(9.0));":@{
-            @"method":@"TestProjectAppearance_appearanceWhenContainedInInstancesOfClasses",
-            @"jumpType": @(TestProjectJumpTypeOfClick),
-            @"desc":@"只设置了子视图的appearance的颜色为[UIColor blackColor] \n 它的优先级高于+ (instancetype)appearance;方法 \n param containerTypes : 必须是一个实例对象的class而且使用的appearance视图必须在这个实例对象class里生成"}
+- (NSMutableArray *)TestProjectAppearance_appearanceWhenContainedInInstancesOfClasses {
+    TestProjectAppearanceCellModel *m = [[TestProjectAppearanceCellModel alloc] init];
+    m.clickBlock = ^{
+        [UIAlertController alertWithTitle:@"TestProjectAppearanceSubView的appear的时候调用该方法" message:@"确定后退出重进" cancelTitle:@"取消" cancelBlock:nil sureTitle:@"确定" sureBlock:^{
+            [TestProjectAppearanceView appearanceWhenContainedInInstancesOfClasses:@[self.class]].viewColor = [UIColor blackColor];
+        }];
     };
+    [self.dataMutArr addObject:m];
+    return self.dataMutArr;
 }
 
-- (void)TestProjectAppearance_appearanceWhenContainedInInstancesOfClasses {
-    [TestProjectAppearanceSubView appearanceWhenContainedInInstancesOfClasses:@[self.class]].viewColor = [UIColor blackColor];
-}
-
-- (void)TestProjectAppearance_appearance {
-    [TestProjectAppearanceView appearance].viewColor = [UIColor redColor];
-}
-
-- (void)TestProjectAppearance_check_appearance {
-    TestProjectUIViewModel *vm = [[TestProjectUIViewModel alloc] init];
-    vm.viewKey = @"TestProjectAppearanceCellView";
-
-    [self.dataMutArr addObject:vm];
-    self.tableView.dataSourceArray = self.dataMutArr;
+- (NSMutableArray *)TestProjectAppearance_appearance {
+    TestProjectAppearanceCellModel *m = [[TestProjectAppearanceCellModel alloc] init];
+    m.clickBlock = ^{
+        [UIAlertController alertWithTitle:@"TestProjectAppearanceView的appear的时候调用该方法" message:@"确定后退出重进" cancelTitle:@"取消" cancelBlock:nil sureTitle:@"确定" sureBlock:^{
+            [TestProjectAppearanceView appearance].viewColor = [UIColor redColor];
+        }];
+    };
+    [self.dataMutArr addObject:m];
+    return self.dataMutArr;
 }
 
 @end

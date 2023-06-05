@@ -37,7 +37,7 @@
 }
 
 - (void)finallyExceptionMethodOC:(id)args, ... {
-    NSLog(@"未实现的：self:%@, cmd:%@", self, NSStringFromSelector(_cmd));
+    NSLogC(@"未实现的：self:%@, cmd:%@", self, NSStringFromSelector(_cmd));
     if (args) {
         va_list list;
         NSMutableString *appendStr = [NSMutableString stringWithFormat:@":%@", args];
@@ -45,13 +45,13 @@
 //        id obj = va_arg(list, id);
 //        [appendStr appendFormat:@":%@", obj];
 //        va_end(list);
-        NSLog(@"参数为%@", appendStr);
+        NSLogC(@"参数为%@", appendStr);
     }
 }
 
 
 void finallyExceptionMethodC(id objc, SEL cmd, id args, ...) {
-    NSLog(@"未实现的：self:%@, cmd:%@", objc, NSStringFromSelector(cmd));
+    NSLogC(@"未实现的：self:%@, cmd:%@", objc, NSStringFromSelector(cmd));
     if (args) {
         va_list list;
         NSMutableString *appendStr = [NSMutableString stringWithFormat:@":%@", args];
@@ -59,7 +59,7 @@ void finallyExceptionMethodC(id objc, SEL cmd, id args, ...) {
         id obj = va_arg(list, id);
         [appendStr appendFormat:@":%@", obj];
         va_end(list);
-        NSLog(@"参数为%@", appendStr);
+        NSLogC(@"参数为%@", appendStr);
     }
 }
 
@@ -126,14 +126,15 @@ void finallyExceptionMethodC(id objc, SEL cmd, id args, ...) {
 //    NSLog(@"NSObject methodSignatureForSelector: %@ %@", self, NSStringFromSelector(aSelector));
 ////    return nil;
 //    //这个没有执行第三步就会崩溃
-//    return [NSMethodSignature methodSignatureForSelector:aSelector];
+////    return [NSMethodSignature methodSignatureForSelector:aSelector];
+//    return [NSMethodSignature signatureWithObjCTypes:"v@:@"];
 //}
 
 ////重写了这个方法[doesNotRecognizeSelector:]就不会调用，否则就调用
 //- (void)forwardInvocation:(NSInvocation *)anInvocation {
-////    NSLog(@"NSObject forwardInvocation: %@ %@ target:%@", self, NSStringFromSelector(anInvocation.selector), anInvocation.target);
+//    NSLog(@"NSObject forwardInvocation: %@ %@ target:%@", self, NSStringFromSelector(anInvocation.selector), anInvocation.target);
 //}
-//
+
 //- (void)doesNotRecognizeSelector:(SEL)aSelector {
 //    NSLog(@"NSObject doesNotRecognizeSelector");
 //
@@ -153,12 +154,30 @@ void finallyExceptionMethodC(id objc, SEL cmd, id args, ...) {
     object_setIvar(self, ivar, value);
 }
 
-+ (void)exchangeSameClassMethod:(NSString *)methodName {
-    SEL s1 = NSSelectorFromString(methodName);
-    SEL s2 = NSSelectorFromString([NSString stringWithFormat:@"testProject_%@", methodName]);
-    Method m1 = class_getInstanceMethod(self.class, s1);
-    Method m2 = class_getInstanceMethod(self.class, s2);
-    method_exchangeImplementations(m1, m2);
++ (void)exchangeInstanceClassMethod:(NSArray *)classMethodNameList
+              exchangeInstanceClass:(Class)exchangeInstanceClass
+               replaceInstanceClass:(Class)replaceInstanceClass {
+    for (NSString *instanceMethodStr in classMethodNameList) {
+        SEL exchangeSel = NSSelectorFromString(instanceMethodStr);
+        SEL replaceSel = NSSelectorFromString([NSString stringWithFormat:@"testProject_%@", instanceMethodStr]);
+        Method exchangeMethod = class_getInstanceMethod(exchangeInstanceClass, exchangeSel);
+        Method replaceMethod = class_getInstanceMethod(replaceInstanceClass, replaceSel);
+        method_exchangeImplementations(exchangeMethod, replaceMethod);
+    }
+}
+
++ (void)dealClassCrashData {
+    
+}
+
+- (void)dealInstanceCrashData:(NSString *)crashInfo {
+#ifdef DEBUG
+    NSLog(@"================================TestProject Start==================================");
+    NSLog(@"Class--->%@ crashInfo--->%@", self.class, crashInfo);
+    NSArray* callStack = [NSThread callStackSymbols];
+    NSLog(@"%@", callStack);
+    NSLog(@"================================TestProject End==================================");
+#endif
 }
 
 @end

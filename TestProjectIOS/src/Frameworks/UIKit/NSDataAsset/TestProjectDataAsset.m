@@ -11,86 +11,72 @@
 
 - (NSDictionary *)method_1 {
     return @{
-        @"- (nullable instancetype)initWithName:(NSDataAssetName)name;":@{
-            @"method":@"TestProjectDataAsset_initWithName",
-            @"desc":@"从asset 获取Data set"}
+        @"dataModel": @{
+            @"abstract": @"获取NSDataAsset的name",
+            @"title": @"@property (nonatomic, readonly, copy) NSDataAssetName name;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectDataAsset_property_name],
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_2 {
     return @{
-        @"@property (nonatomic, readonly, copy) NSDataAssetName name;":@{
-            @"method":@"TestProjectDataAsset_property_name",
-            @"desc":@"获取NSDataAsset的name"}
+        @"dataModel": @{
+            @"abstract": @"获取NSDataAsset的data",
+            @"title": @"@property (nonatomic, readonly, copy) NSData *data;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectDataAsset_property_data],
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_3 {
     return @{
-        @"@property (nonatomic, readonly, copy) NSData *data;":@{
-            @"method":@"TestProjectDataAsset_property_data",
-            @"desc":@"获取NSDataAsset的name"}
+        @"dataModel": @{
+            @"abstract": @"获取NSDataAsset的typeIdentifier",
+            @"title": @"property (nonatomic, readonly, copy) NSString *typeIdentifier;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectDataAsset_property_typeIdentifier],
+            }
+        },
     };
 }
 
-- (NSDictionary *)method_4 {
-    return @{
-        @"property (nonatomic, readonly, copy) NSString *typeIdentifier;":@{
-            @"method":@"TestProjectDataAsset_property_typeIdentifier",
-            @"desc":@"获取NSDataAsset的typeIdentifier"}
-    };
-}
+- (NSMutableArray *)createDataAssetModelWithProperty:(NSString *)key {
+    NSDataAsset *dataAsset = [[NSDataAsset alloc] initWithName:@"Data"];
+    TestProjectAttributeStringFoundationModel *m = [[TestProjectAttributeStringFoundationModel alloc] init];
+    m.titleMutAttrStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"我是一个dataAsset: %@ 是一张图片组成的NSData，展示如下\n", dataAsset]];
+    NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
+    attachment.image = [UIImage imageWithData:dataAsset.data];
+    attachment.bounds = CGRectMake(0, 0, 100, 50);
+    NSAttributedString *attrStr = [NSAttributedString attributedStringWithAttachment:attachment];
+    [m.titleMutAttrStr appendAttributedString:attrStr];
+    m.desc = [NSString stringWithFormat:@"我是属性%@:%@", key, [dataAsset valueForKey:key]];
 
-- (void)TestProjectDataAsset_property_typeIdentifier {
-    NSDataAsset *dataAsset = [[NSDataAsset alloc] initWithName:@"data1"];
-    TestProjectTableModel *m = [[TestProjectTableModel alloc] init];
-    m.title = [NSString stringWithFormat:@"我是一个dataAsset: %@", dataAsset];
-    m.desc = [NSString stringWithFormat:@"我是属性typeIdentifier:%@", dataAsset.typeIdentifier];
     [m calculDataViewHeight];
     [self.dataMutArr addObject:m];
-    self.tableView.dataSourceArray = self.dataMutArr;
+    return self.dataMutArr;
 }
 
-- (void)TestProjectDataAsset_property_data {
-    NSDataAsset *dataAsset = [[NSDataAsset alloc] initWithName:@"data1"];
-    
-    TestProjectTableModel *m1 = [[TestProjectTableModel alloc] init];
-    m1.title = [NSString stringWithFormat:@"我是一个dataAsset: %@", dataAsset];
-    m1.desc = [NSString stringWithFormat:@"我是属性data.length:%ld", dataAsset.data.length];
-    [m1 calculDataViewHeight];
-    [self.dataMutArr addObject:m1];
-    
-    UIImage *image = [UIImage imageWithData:dataAsset.data];
-    NSTextAttachment *textAttachment = [[NSTextAttachment alloc] init];
-    textAttachment.bounds = CGRectMake(0, 0, 100, 50);
-    textAttachment.image = image;
-
-    TestProjectTableModel *m2 = [[TestProjectTableModel alloc] init];
-    m2.titleMutAttrStr = [NSMutableAttributedString attributedStringWithAttachment:textAttachment];
-    [m2.titleMutAttrStr appendAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"我是一个dataAsset: %@", dataAsset]]];
-    [m2 calculDataViewHeight];
-    [self.dataMutArr addObject:m2];
-    
-    self.tableView.dataSourceArray = self.dataMutArr;
+- (NSMutableArray *)TestProjectDataAsset_property_typeIdentifier {
+    return [self createDataAssetModelWithProperty:@"typeIdentifier"];
 }
 
-- (void)TestProjectDataAsset_property_name {
-    NSDataAsset *dataAsset = [[NSDataAsset alloc] initWithName:@"data1"];
-    TestProjectTableModel *m = [[TestProjectTableModel alloc] init];
-    m.title = [NSString stringWithFormat:@"我是一个dataAsset: %@", dataAsset];
-    m.desc = [NSString stringWithFormat:@"我是属性name:%@", dataAsset.name];
-    [m calculDataViewHeight];
-    [self.dataMutArr addObject:m];
-    self.tableView.dataSourceArray = self.dataMutArr;
+- (NSMutableArray *)TestProjectDataAsset_property_data {
+    return [self createDataAssetModelWithProperty:@"data"];
 }
 
-- (void)TestProjectDataAsset_initWithName {
-    NSDataAsset *dataAsset = [[NSDataAsset alloc] initWithName:@"data1"];
-    TestProjectTableModel *m = [[TestProjectTableModel alloc] init];
-    m.title = [NSString stringWithFormat:@"我是一个dataAsset: %@", dataAsset];
-    [m calculDataViewHeight];
-    [self.dataMutArr addObject:m];
-    self.tableView.dataSourceArray = self.dataMutArr;
+- (NSMutableArray *)TestProjectDataAsset_property_name {
+    return [self createDataAssetModelWithProperty:@"name"];
 }
 
 @end

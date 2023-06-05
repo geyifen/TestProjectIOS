@@ -7,10 +7,17 @@
 
 #import "TestProjectGetUIKitMethod.h"
 
+#import "TestProjectViewModelTab.h"
+
 @implementation TestProjectGetUIKitMethod
 
 + (NSArray *)oldItemChilds {
     return @[
+        [self UIBarButtonItem],
+        [self UINavigationItem],
+        [self UINavigationBarAppearance],
+        [self UIBarAppearance],
+        [self UINavigationBar],
         [self UINavigationController],
         [self UIViewController],
         [self UIAppearance],
@@ -23,16 +30,16 @@
         [self NSAttributedString],
         [self UIFont],
         [self UIColor],
-        [self CIColor],
+//        [self CIColor],
     ];
 }
 
 + (NSArray *)newItemChilds {
     return @[
-        [self UIBarAppearance],
-        [self UINavigationBarAppearance],
-        [self UINavigationBar],
-        [self UINavigationItem],
+//        [self UIButton],
+        [self UIControl],
+        [self UIView],
+        [self UIResponder],
     ];
 }
 
@@ -45,210 +52,319 @@
 }
 
 + (NSDictionary *)project_UIKit {
-    return @{@"UIKit": @{
+    return @{
+        @"title": @"UIKit",
+        @"atIndex": @0,
         @"itemChilds": [self itemChilds],
-        @"atIndex": @2,
-    }, };
-}
-
-+ (NSDictionary *)UIBarAppearance {
-    return @{
-        @"UIBarAppearance":@{
-            @"viewKey":@"TestProjectBarAppearance"
-        },
     };
 }
 
-+ (NSDictionary *)UINavigationBarAppearance {
++ (NSDictionary *)UIButton {
     return @{
-        @"UINavigationBarAppearance":@{
-            @"viewKey":@"TestProjectNavigationBarAppearance"
-        },
+        @"title": @"UIButton",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectButton",
     };
 }
 
-+ (NSDictionary *)UINavigationBar {
++ (NSDictionary *)UIControl {
     return @{
-        @"UINavigationBar":@{
-            @"viewKey":@"TestProjectNavigationBar"
-        },
+        @"title": @"UIControl",
+        @"atIndex": @0,
+        @"itemChilds": @[
+            @{
+                @"title": @"UIControl",
+                @"viewKey": @"TestProjectControl",
+            },
+            @{
+                @"title": @"UIControl\n(还有其它的)",
+                @"viewKey": @"TestProjectControl",
+            },
+        ]
+    };
+}
+
++ (NSDictionary *)UIView {
+    return @{
+        @"title": @"UIView",
+        @"atIndex": @0,
+        @"itemChilds": @[
+            @{
+                @"title": @"UIView\n(UIContentSizeCategoryLimit)",
+                @"viewKey": @"TestProjectViewContentSizeCategoryLimit",
+            },
+            @{
+                @"title": @"UIView\n(UISnapshotting)",
+                @"viewKey": @"TestProjectViewSnapshotting",
+            },
+            @{
+                @"title": @"UIView\n(UIViewKeyframeAnimations)",
+                @"viewKey": @"TestProjectViewViewKeyframeAnimations",
+            },
+            @{
+                @"title": @"UIView\n(UIViewAnimationWithBlocks)",
+                @"viewKey": @"TestProjectViewViewAnimationWithBlocks",
+            },
+            @{
+                @"title": @"UIView\n(UIViewRendering)",
+                @"viewKey": @"TestProjectViewViewRendering",
+            },
+            @{
+                @"title": @"UIView\n(UIViewHierarchy)",
+                @"viewKey": @"TestProjectViewViewHierarchy",
+            },
+            @{
+                @"title": @"UIView\n(UIViewViewGeometry)",
+                @"viewKey": @"TestProjectViewViewGeometry",
+            },
+            @{
+                @"title": @"UIView",
+                @"viewKey": @"TestProjectUIView",
+            },
+            @{
+                @"title": @"UIView\n(还有其它的)",
+                @"viewKey": @"TestProjectUIView",
+            },
+        ]
+    };
+}
+
++ (NSDictionary *)UIResponder {
+    return @{
+        @"title": @"UIResponder",
+        @"atIndex": @0,
+        @"itemChilds": @[
+            @{
+                @"title": @"UIResponder",
+                @"viewKey": @"TestProjectResponder",
+            },
+            @{
+                @"title": @"UIResponder\n(还有其它的)",
+                @"viewKey": @"TestProjectResponder",
+            },
+        ]
+    };
+}
+
++ (NSDictionary *)UIBarButtonItem {
+    return @{
+        @"title": @"UIBarButtonItem",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectBarButtonItem",
     };
 }
 
 + (NSDictionary *)UINavigationItem {
     return @{
-        @"UINavigationItem":@{
-            @"viewKey":@"TestProjectNavigationItem"
-        },
+        @"title": @"UINavigationItem",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectNavigationItem",
+    };
+}
+
++ (NSDictionary *)UINavigationBarAppearance {
+    return @{
+        @"title": @"UINavigationBarAppearance",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectNavigationBarAppearance",
+    };
+}
+
++ (NSDictionary *)UIBarAppearance {
+    return @{
+        @"title": @"UIBarAppearance",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectBarAppearance",
+    };
+}
+
++ (NSDictionary *)UINavigationBar {
+    return @{
+        @"title": @"UINavigationBar",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectNavigationBar",
     };
 }
 
 + (NSDictionary *)UINavigationController {
     return @{
-        @"UINavigationController":@{
-            @"itemChilds":@[@{
-                @"UIViewController(UINavigationControllerItem)":@{
-                    @"viewKey":@"TestProjectViewControllerNavigationControllerItem"
-                },
-                @"UINavigationController":@{
-                    @"viewKey":@"TestProjectNavigationController"
-                },
-            }, ],
-            @"atIndex": @0,
-        },
+        @"title": @"UINavigationController",
+        @"atIndex": @0,
+        @"itemChilds": @[
+            @{
+                @"title": @"UIViewController\n(UINavigationControllerItem)",
+                @"viewKey": @"TestProjectViewControllerNavigationControllerItem",
+            },
+            @{
+                @"title": @"UINavigationController",
+                @"viewKey": @"TestProjectNavigationController",
+            },
+            @{
+                @"title": @"UINavigationController\n(还有其它的)",
+                @"viewKey": @"TestProjectNavigationController",
+            },
+        ]
     };
 }
 
 + (NSDictionary *)UIViewController {
     return @{
-        @"UIViewController":@{
-            @"itemChilds":@[@{
-                @"UIViewController":@{
-                    @"viewKey":@"TestProjectViewController"
-                },
-            }, ],
-            @"atIndex": @0,
-        },
+        @"title": @"UIViewController",
+        @"atIndex": @0,
+        @"itemChilds": @[
+            @{
+                @"title": @"UIViewController",
+                @"viewKey": @"TestProjectViewController",
+            },
+            @{
+                @"title": @"UIViewController\n(还有其它的)",
+                @"viewKey": @"TestProjectViewController",
+            },
+        ]
     };
 }
 
 + (NSDictionary *)UIAppearance {
     return @{
-        @"UIAppearance":@{
-            @"viewKey":@"TestProjectAppearance"
-        },
+        @"title": @"UIAppearance",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectAppearance",
     };
 }
 
 + (NSDictionary *)UIAlertController {
     return @{
-        @"UIAlertController":@{
-            @"viewKey":@"TestProjectAlertController"
-        },
+        @"title": @"UIAlertController",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectAlertController",
     };
 }
 
 + (NSDictionary *)ActivityIndicatorView {
     return @{
-        @"UIActivityIndicatorView":@{
-            @"viewKey":@"TestProjectActivityIndicatorView"
-        },
+        @"title": @"UIActivityIndicatorView",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectActivityIndicatorView",
     };
 }
 
 + (NSDictionary *)NSDataAsset {
     return @{
-        @"NSDataAsset":@{
-            @"viewKey":@"TestProjectDataAsset"
-        },
+        @"title": @"NSDataAsset",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectDataAsset",
     };
 }
 
 + (NSDictionary *)NSShadow {
     return @{
-        @"NSShadow":@{
-            @"viewKey":@"TestProjectShadow"
-        },
+        @"title": @"NSShadow",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectShadow",
     };
 }
 
 + (NSDictionary *)NSParagraphStyle {
     return @{
-        @"NSParagraphStyle":@{
-            @"itemChilds":@[@{
-                @"NSParagraphStyle":@{
-                    @"viewKey":@"TestProjectParagraphStyle"
-                },
-                @"NSMutableParagraphStyle":@{
-                    @"viewKey":@"TestProjectMutableParagraphStyle"
-                },
-            }, ],
-            @"atIndex": @1,
-        },
+        @"title": @"NSParagraphStyle",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectMutableParagraphStyle",
     };
 }
 
 + (NSDictionary *)NSTextAttachment {
     return @{
-        @"NSTextAttachment":@{
-            @"itemChilds":@[@{
-                @"NSTextAttachment": @{
-                    @"viewKey":@"TestProjectTextAttachment"
-                },
-            }, ],
-        },
+        @"title": @"NSTextAttachment",
+        @"atIndex": @0,
+        @"itemChilds": @[
+            @{
+                @"title": @"NSTextAttachment",
+                @"viewKey": @"TestProjectTextAttachment",
+            },
+            @{
+                @"title": @"NSTextAttachment\n(还有其它的)",
+                @"viewKey": @"TestProjectTextAttachment",
+            },
+        ]
     };
 }
 
 + (NSDictionary *)NSAttributedString {
     return @{
-        @"NSAttributedString":@{
-            @"itemChilds":@[@{
-                @"NSAttributedString": @{
-                    @"viewKey":@"TestProjectAttributeStringKit"
-                },
-            }, @{
-                @"NSMutableAttributedString(NSAttributedStringAttributeFixing)": @{
-                    @"viewKey":@"TestProjectMutableAttributedStringAttributeFixing"
-                },
-            }, @{
-                @"NSAttributedString(NSAttributedStringDocumentFormats)": @{
-                    @"viewKey":@"TestProjectAttributedStringDocumentFormats"
-                },
-            }, ],
-        },
+        @"title": @"NSAttributedString",
+        @"atIndex": @0,
+        @"itemChilds": @[
+            @{
+                @"title": @"NSAttributedString\n(NSAttributedStringDocumentFormats)",
+                @"viewKey": @"TestProjectAttributedStringDocumentFormats",
+            },
+            @{
+                @"title": @"NSMutableAttributedString\n(NSAttributedStringAttributeFixing)",
+                @"viewKey": @"TestProjectMutableAttributedStringAttributeFixing",
+            },
+            @{
+                @"title": @"NSAttributedString",
+                @"viewKey": @"TestProjectAttributeStringKit",
+            },
+            @{
+                @"title": @"NSAttributedString\n(还有其它的)",
+                @"viewKey": @"TestProjectAttributeStringKit",
+            },
+        ]
     };
 }
 
 + (NSDictionary *)UIFont {
     return @{
-        @"UIFont":@{
-            @"itemChilds":@[@{
-                @"UIFont": @{
-                    @"viewKey":@"TestProjectFont"
-                },
-            }, ],
-        },
+        @"title": @"UIFont",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectFont",
     };
 }
 
 + (NSDictionary *)UIColor {
     return @{
-        @"UIColor": @{
-            @"itemChilds":@[@{
-                @"UIColor(TestProject)":@{
-                    @"viewKey":@"TestProjectUIColorCategory",
-                },
-            }, @{
-                @"CIColor(UIKitAdditions)":@{
-                    @"viewKey":@"TestProjectCIColorKitAdditions",
-                },
-            }, @{
-                @"UIColor":@{
-                    @"viewKey":@"TestProjectUIColor",
-                },
-            }, @{
-                @"UIColor(UIColorNamedColors)":@{
-                    @"viewKey":@"TestProjectUIColorNamedColors",
-                },
-            }, @{
-                @"UIColor(DynamicColors)":@{
-                    @"viewKey":@"TestProjectUIColorDynamicdColors",
-                },
-            }, ]
-        },
+        @"title": @"UIColor",
+        @"atIndex": @0,
+        @"itemChilds": @[
+            @{
+                @"title": @"UIColor\n(UIKitAdditions)",
+                @"viewKey": @"TestProjectCIColorKitAdditions",
+            },
+            @{
+                @"title": @"UIColor\n(TestProject)",
+                @"viewKey": @"TestProjectUIColorCategory",
+            },
+            @{
+                @"title": @"UIColor\n(DynamicColors)",
+                @"viewKey": @"TestProjectUIColorDynamicdColors",
+            },
+            @{
+                @"title": @"UIColor\n(UIColorNamedColors)",
+                @"viewKey": @"TestProjectUIColorNamedColors",
+            },
+            @{
+                @"title": @"UIColor",
+                @"viewKey": @"TestProjectUIColor",
+            },
+            @{
+                @"title": @"UIColor\n(还有其它的)",
+                @"viewKey": @"TestProjectUIColor",
+            },
+        ]
     };
 }
 
 + (NSDictionary *)CIColor {
     return @{
-        @"CIColor": @{
-            @"itemChilds":@[@{
-                @"CIColor":@{
-                    @"viewKey":@"TestProjectCIColor",
-                },
-            }, ],
-        }
+        @"title": @"CIColor",
+        @"atIndex": @0,
+        @"itemChilds": @[
+            @{
+                @"title": @"CIColor",
+                @"viewKey": @"TestProjectCIColor",
+            },
+        ]
     };
 }
 

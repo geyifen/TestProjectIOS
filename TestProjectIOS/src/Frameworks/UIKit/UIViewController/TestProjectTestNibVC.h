@@ -5,11 +5,11 @@
 //  Created by zjrcumac on 2023/4/6.
 //
 
-#import "TestProjectDetailObjectController.h"
+#import "TestProjectBaseVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TestProjectTestNibVC : TestProjectDetailObjectController
+@interface TestProjectTestNibVC : TestProjectBaseVC
 
 @end
 

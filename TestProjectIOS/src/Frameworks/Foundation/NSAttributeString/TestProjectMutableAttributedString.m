@@ -11,109 +11,93 @@
 
 @interface TestProjectMutableAttributedString ()
 
-@property (nonatomic, copy) NSString *firstAttrText;
-@property (nonatomic, copy) NSString *secondAttrText;
-@property (nonatomic, copy) NSString *thirdAttrText;
-
 @end
 
 @implementation TestProjectMutableAttributedString
 
-- (NSString *)firstAttrText {
-    if (!_firstAttrText) {
-        _firstAttrText = @"我是第一个firstAttrText测试数据及解决";
-    }
-    return _firstAttrText;
-}
-
-- (NSString *)secondAttrText {
-    if (!_secondAttrText) {
-        _secondAttrText = @"我是第二个secondAttrText";
-    }
-    return _secondAttrText;
-}
-
-- (NSString *)thirdAttrText {
-    if (!_thirdAttrText) {
-        _thirdAttrText = @"我是第三个secondAttrText";
-    }
-    return _thirdAttrText;
-}
-
 - (NSDictionary *)method_1 {
     return @{
-        @"- (void)replaceCharactersInRange:(NSRange)range withString:(NSString *)str;":@{
-            @"method":@"TestProjectMutableAttributedString_replaceCharactersInRange_withString",
-            @"desc":@" 用NSString替换在range范围内的attrText \n 替换的字符串的样式是默认的 \n 异常崩溃：range不在文字的范围内会崩溃"}
+        @"dataModel": @{
+            @"abstract": @"用NSString替换在range范围内的attrText",
+            @"title": @"- (void)replaceCharactersInRange:(NSRange)range withString:(NSString *)str;",
+            @"desc": @" 替换的字符串的样式是默认的 \n 异常崩溃：range不在文字的范围内会崩溃",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectMutableAttributedString_replaceCharactersInRange_withString],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_2 {
     return @{
-        @"- (void)setAttributes:(nullable NSDictionary<NSAttributedStringKey, id> *)attrs range:(NSRange)range;":@{
-            @"method":@"TestProjectMutableAttributedString_setAttributes_range",
-            @"desc":@" 在range范围内替换NSAttributedStringKey \n 异常崩溃：range不在文字的范围内会崩溃"}
+        @"dataModel": @{
+            @"abstract": @"在range范围内替换NSAttributedStringKey",
+            @"title": @"- (void)setAttributes:(nullable NSDictionary<NSAttributedStringKey, id> *)attrs range:(NSRange)range;",
+            @"desc": @"异常崩溃：range不在文字的范围内会崩溃",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAttributeStringFoundationModel.class,
+                @"childItems": [self TestProjectMutableAttributedString_setAttributes_range],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
     };
 }
 
-- (TestProjectAttributeStringFoundationModel *)createAttrStrModel {
-    TestProjectAttributeStringFoundationModel *attrStrModel = [[TestProjectAttributeStringFoundationModel alloc] init];
-    NSAttributedString *firstAttrStr = [[NSAttributedString alloc] initWithString:self.firstAttrText attributes:@{NSForegroundColorAttributeName:[UIColor colorFromString:@"#333"], NSFontAttributeName:[UIFont systemFontOfSize:11]}];
-    NSAttributedString *secondAttrStr = [[NSAttributedString alloc] initWithString:self.secondAttrText attributes:@{NSForegroundColorAttributeName:[UIColor colorFromString:@"#F33"], NSFontAttributeName:[UIFont systemFontOfSize:22]}];
-
-    attrStrModel.titleMutAttrStr = [[NSMutableAttributedString alloc] initWithAttributedString:firstAttrStr];
-    [attrStrModel.titleMutAttrStr appendAttributedString:secondAttrStr];
-    return attrStrModel;
+- (NSMutableArray *)TestProjectMutableAttributedString_setAttributes_range {
+    NSArray *arr = @[
+        @{
+            @"location": @0,
+            @"length": @(self.firstAttrText.length - 2),
+        },
+        @{
+            @"location": @0,
+            @"length": @(self.firstAttrText.length + 2),
+        }
+    ];
+    for (NSDictionary *dic in arr) {
+        NSInteger location = [dic[@"location"] integerValue];
+        NSInteger length = [dic[@"length"] integerValue];
+        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithNeedAdd:YES];
+        NSRange range = NSMakeRange(location, length);
+        TestProjectAttributeStringFoundationModel *rm = [self createAttrStrModelWithNeedAdd:NO];
+        [rm.titleMutAttrStr setAttributes:@{NSForegroundColorAttributeName: [UIColor colorFromString:@"#00ff00"]} range:range];
+        m.titleMutAttrStr = rm.titleMutAttrStr;
+        m.desc = [NSString stringWithFormat:@"被替换的range:%@", NSStringFromRange(range)];
+        [m calculDataViewHeight];
+    }
+    return self.dataMutArr;
 }
 
-- (void)TestProjectMutableAttributedString_setAttributes_range {
-    NSMutableArray *mutDataArr = [NSMutableArray array];
-    
-    TestProjectAttributeStringFoundationModel *m1 = [self createAttrStrModel];
-    NSRange set_range1 = NSMakeRange(0, self.firstAttrText.length - 2);
-    NSDictionary *dic1 = [m1.titleMutAttrStr attributesAtIndex:0 effectiveRange:nil];
-    [m1.titleMutAttrStr setAttributes:@{NSForegroundColorAttributeName: [UIColor colorFromString:@"#00ff00"]} range:set_range1];
-    NSDictionary *set_dic1 = [m1.titleMutAttrStr attributesAtIndex:0 effectiveRange:nil];
-    m1.desc = [[NSString alloc] initWithFormat:@"被替换的是第一段的少两个字符的range:%@\n 被替换的是第一段的少两个字符的attrTextColor:%@\n 替换的attrTextColor:%@", NSStringFromRange(set_range1), dic1, set_dic1];
-
-    [m1 calculDataViewHeight];
-    [mutDataArr addObject:m1];
-    
-    TestProjectAttributeStringFoundationModel *m2 = [self createAttrStrModel];
-    NSRange set_range2 = NSMakeRange(3, m2.titleMutAttrStr.length - 3);
-    NSInteger atIndex2 = self.firstAttrText.length;
-    NSDictionary *dic2 = [m2.titleMutAttrStr attributesAtIndex:atIndex2 effectiveRange:nil];
-    [m2.titleMutAttrStr setAttributes:@{NSForegroundColorAttributeName: [UIColor colorFromString:@"#00ff00"]} range:set_range2];
-    NSDictionary *set_dic2 = [m2.titleMutAttrStr attributesAtIndex:0 effectiveRange:nil];
-    m2.desc = [[NSString alloc] initWithFormat:@"被替换的是全段的少三个字符的range:%@ 被替换的是全段的少三个字符的attrTextColor:%@  替换的attrTextColor:%@", NSStringFromRange(set_range2), dic2, set_dic2];
-    [m2 calculDataViewHeight];
-    [mutDataArr addObject:m2];
-
-    self.tableView.dataSourceArray = mutDataArr;
-}
-
-- (void)TestProjectMutableAttributedString_replaceCharactersInRange_withString {
-    NSMutableArray *mutDataArr = [NSMutableArray array];
-    
-    NSRange range1 = NSMakeRange(0, self.firstAttrText.length - 2);
-    TestProjectAttributeStringFoundationModel *m1 = [self createAttrStrModel];
-    m1.descMutAttrStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"被替换的是第一段的少两个字符的range:%@ 替换的文字是:%@ 被替换的attrText:", NSStringFromRange(range1), self.thirdAttrText]];
-    [m1.descMutAttrStr appendAttributedString:m1.titleMutAttrStr];
-
-    [m1.titleMutAttrStr replaceCharactersInRange:range1 withString:self.thirdAttrText];
-    [m1 calculDataViewHeight];
-    [mutDataArr addObject:m1];
-    
-    NSRange range2 = NSMakeRange(0, self.firstAttrText.length + 2);
-    TestProjectAttributeStringFoundationModel *m2 = [self createAttrStrModel];
-    m2.descMutAttrStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"是第一段的多两个字符的range:%@ 替换的文字是:%@ 被替换的attrText:", NSStringFromRange(range2), self.thirdAttrText]];
-    [m2.descMutAttrStr appendAttributedString:m2.titleMutAttrStr];
-
-    [m2.titleMutAttrStr replaceCharactersInRange:range2 withString:self.thirdAttrText];
-    [m2 calculDataViewHeight];
-    [mutDataArr addObject:m2];
-
-    self.tableView.dataSourceArray = mutDataArr;
+- (NSMutableArray *)TestProjectMutableAttributedString_replaceCharactersInRange_withString {
+    NSArray *arr = @[
+        @{
+            @"location": @0,
+            @"length": @(self.firstAttrText.length - 2),
+            @"text": self.thirdAttrText,
+        },
+        @{
+            @"location": @0,
+            @"length": @(self.firstAttrText.length + 2),
+            @"text": self.thirdAttrText,
+        }
+    ];
+    for (NSDictionary *dic in arr) {
+        NSInteger location = [dic[@"location"] integerValue];
+        NSInteger length = [dic[@"length"] integerValue];
+        NSString *text = dic[@"text"];
+        TestProjectAttributeStringFoundationModel *rm = [self createAttrStrModelWithNeedAdd:NO];
+        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModel];
+        NSRange range = NSMakeRange(location, length);
+        [rm.titleMutAttrStr replaceCharactersInRange:range withString:text];
+        m.desc = [NSString stringWithFormat:@"被替换的range:%@ 被替换的文字是:%@", NSStringFromRange(range), text];
+        m.titleMutAttrStr = rm.titleMutAttrStr;
+        [m calculDataViewHeight];
+    }
+    return self.dataMutArr;
 }
 
 @end

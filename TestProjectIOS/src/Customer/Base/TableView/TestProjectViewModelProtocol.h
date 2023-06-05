@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @optional
 - (CGFloat)viewHeight;
+- (NSString *)viewClassName;
 
 @end
 

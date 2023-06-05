@@ -7,9 +7,9 @@
 
 #import "TestProjectActivityIndicatorView.h"
 
-#import "TestProjectUIViewCell.h"
+#import "TestProjectBaseTableViewCell.h"
 
-@interface TestProjectActivityIndicatorViewModel : NSObject
+@interface TestProjectActivityIndicatorViewModel : TestProjectTableModel
 
 @property (nonatomic, assign) UIActivityIndicatorViewStyle style;
 @property (nonatomic) BOOL hidesWhenStopped;
@@ -21,19 +21,28 @@
 
 @implementation TestProjectActivityIndicatorViewModel
 
+- (NSString *)viewIdentifier {
+    return @"TestProjectActivityIndicatorCell";
+}
+
+- (CGFloat)viewHeight {
+    return 200;
+}
+
 @end
 
-@interface TestProjectActivityIndicatorCellView : UIView <TestProjectViewProtocol>
+@interface TestProjectActivityIndicatorCell : TestProjectBaseTableViewCell <TestProjectViewProtocol>
 
 @property (nonatomic, strong) TestProjectActivityIndicatorViewModel *viewModel;
 @property (nonatomic, strong) UIActivityIndicatorView *activityIndicatorView;
 @property (nonatomic, strong) UIButton *changeColorBtn;
 @property (nonatomic, strong) UIButton *startBtn;
 @property (nonatomic, strong) UIButton *whenStopBtn;
+@property (nonatomic, strong) UILabel *titleLabel;
 
 @end
 
-@implementation TestProjectActivityIndicatorCellView
+@implementation TestProjectActivityIndicatorCell
 
 - (void)setViewModel:(TestProjectActivityIndicatorViewModel *)viewModel {
     _viewModel = viewModel;
@@ -42,6 +51,7 @@
     } else if (!viewModel.isAnimated && self.activityIndicatorView.animating) {
         [self.activityIndicatorView stopAnimating];
     }
+    self.titleLabel.text = viewModel.title;
     self.activityIndicatorView.hidesWhenStopped = viewModel.hidesWhenStopped;
     self.activityIndicatorView.color = viewModel.color;
     [self setBtnTitle:self.startBtn];
@@ -159,59 +169,82 @@
     return _activityIndicatorView;
 }
 
+- (UILabel *)titleLabel {
+    if (!_titleLabel) {
+        _titleLabel = [[UILabel alloc] init];
+        _titleLabel.textColor = [UIColor blackColor];
+        [self addSubview:_titleLabel];
+        [_titleLabel testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+            make.height.equal(@20);
+            make.leading.equal(self);
+            make.top.equal(self).offset(15);
+        }];
+    }
+    return _titleLabel;
+}
+
 @end
 
 @implementation TestProjectActivityIndicatorView
 
 - (NSDictionary *)method_1 {
     return @{
-        @"- (instancetype)initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyle)style NS_DESIGNATED_INITIALIZER;":@{
-            @"method":@"TestProjectActivityIndicatorView_initWithName",
-            @"desc":@"通过style设置转圈视图"}
+        @"dataModel": @{
+            @"abstract": @"通过frame设置转圈视图",
+            @"title": @"- (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;",
+            @"desc": @"设置frame无效,样式还是中等的",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectActivityIndicatorViewModel.class,
+                @"childItems": [self TestProjectActivityIndicatorView_initWithFrame],
+            }
+        },
     };
 }
 
 - (NSDictionary *)method_2 {
     return @{
-        @"- (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;":@{
-            @"method":@"TestProjectActivityIndicatorView_initWithFrame",
-            @"desc":@"通过frame设置转圈视图 \n 样式还是中等的，设置frame无效"}
+        @"dataModel": @{
+            @"abstract": @"通过style设置转圈视图",
+            @"title": @"- (instancetype)initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyle)style NS_DESIGNATED_INITIALIZER;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectActivityIndicatorViewModel.class,
+                @"childItems": [self TestProjectActivityIndicatorView_initWithActivityIndicatorStyle],
+            }
+        },
     };
 }
 
-- (TestProjectUIViewModel *)createViewModelWith:(TestProjectActivityIndicatorViewModel *)vm {
-    TestProjectUIViewModel *m = [[TestProjectUIViewModel alloc] init];
-    m.viewKey = @"TestProjectActivityIndicatorCellView";
-    m.cellViewModel = vm;
-    m.cellViewHeight = 200;
-    [self.dataMutArr addObject:m];
-    return m;
-}
-
-- (void)TestProjectActivityIndicatorView_initWithName {
+- (NSMutableArray *)TestProjectActivityIndicatorView_initWithActivityIndicatorStyle {
     NSArray *styles = @[
-    @{@(UIActivityIndicatorViewStyleMedium):@"样式是中等的"},
-    @{@(UIActivityIndicatorViewStyleLarge):@"样式是大的"}, ];
+        @{
+            @"title": @"样式是中等的",
+            @"style": @(UIActivityIndicatorViewStyleMedium),
+        },
+        @{
+            @"title": @"样式是大的",
+            @"style": @(UIActivityIndicatorViewStyleLarge),
+        },
+    ];
     for (NSDictionary *dic in styles) {
-        NSNumber *num = dic.allKeys.firstObject;
-        TestProjectActivityIndicatorViewModel *vm = [[TestProjectActivityIndicatorViewModel alloc] init];
-        vm.style = (UIActivityIndicatorViewStyle)[num integerValue];
-        
-        TestProjectUIViewModel *m = [self createViewModelWith:vm];
-        m.title = [dic objectForKey:num];
-        [m calculDataViewHeight];
+        NSString *title = dic[@"title"];
+        UIActivityIndicatorViewStyle style = [dic[@"style"] integerValue];
+
+        TestProjectActivityIndicatorViewModel *m = [[TestProjectActivityIndicatorViewModel alloc] init];
+        m.title = [NSString stringWithFormat:@"我是通过style创建的，%@", title];
+        m.style = style;
+        [self.dataMutArr addObject:m];
     }
-    self.tableView.dataSourceArray = self.dataMutArr;
+    return self.dataMutArr;
 }
 
-- (void)TestProjectActivityIndicatorView_initWithFrame {
-    TestProjectActivityIndicatorViewModel *vm = [[TestProjectActivityIndicatorViewModel alloc] init];
-    vm.rect = CGRectMake(0, 0, 1, 1);
-    
-    TestProjectUIViewModel *m = [self createViewModelWith:vm];
-    m.title = [NSString stringWithFormat:@"当前的frame：%@", NSStringFromCGRect(vm.rect)];
-    [m calculDataViewHeight];
-    self.tableView.dataSourceArray = self.dataMutArr;
+- (NSMutableArray *)TestProjectActivityIndicatorView_initWithFrame {
+    TestProjectActivityIndicatorViewModel *m = [[TestProjectActivityIndicatorViewModel alloc] init];
+    m.rect = CGRectMake(0, 0, 1, 1);
+    m.title = [NSString stringWithFormat:@"我是通过frame创建的，当前的frame：%@", NSStringFromCGRect(m.rect)];
+    [self.dataMutArr addObject:m];
+    return self.dataMutArr;
 }
 
 @end

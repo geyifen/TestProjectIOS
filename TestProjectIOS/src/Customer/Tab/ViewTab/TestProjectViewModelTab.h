@@ -18,7 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *viewKey;
 @property (nonatomic, assign) TestProjectTabType tabType;
 @property (nonatomic, assign) NSInteger atIndex;
-@property (nonatomic, strong) UIColor *backgroundColor;
 @property (nonatomic, strong) NSMutableArray<TestProjectViewModelTab *> *itemChilds;
 
 @end
