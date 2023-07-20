@@ -21,13 +21,13 @@
 - (BOOL)touchesShouldBegin:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event inContentView:(UIView *)view {
     BOOL superRes = [super touchesShouldBegin:touches withEvent:event inContentView:view];
     NSLog(@"%@ superRes:%u touches:%@ event:%@ view:%@", NSStringFromSelector(_cmd), superRes, touches, event, view);
-    return superRes;
+    return NO;
 }
 
 - (BOOL)touchesShouldCancelInContentView:(UIView *)view {
     BOOL superRes = [super touchesShouldCancelInContentView:view];
     NSLog(@"%@ superRes:%u view:%@", NSStringFromSelector(_cmd), superRes, view);
-    return superRes;
+    return YES;
 }
 
 @end
@@ -44,6 +44,10 @@
 
 @property (nonatomic, strong) UIScrollView *centerScrollView;
 @property (nonatomic, strong) UIView *centerGrandView;
+
+@property (nonatomic, strong) UITextField *textField;
+
+@property (nonatomic, strong) UIView *redDotView;
 
 @end
 
@@ -63,10 +67,14 @@
         [self.rightScrollView setContentSize:CGSizeMake([UIScreen mainScreen].bounds.size.width/2.0, 500)];
         self.rightGrandView.backgroundColor = [UIColor yellowColor];
         self.rightSecondGrandView.backgroundColor = [UIColor purpleColor];
+        self.redDotView.backgroundColor = [UIColor redColor];
         
         self.centerScrollView.backgroundColor = [UIColor brownColor];
         self.centerGrandView.backgroundColor = [UIColor whiteColor];
         [self.centerScrollView setContentSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, 500)];
+        
+        self.textField.layer.borderColor = [UIColor blackColor].CGColor;
+        self.textField.layer.borderWidth = 2;
     }
     return self;
 }
@@ -139,6 +147,14 @@
     return _rightSecondGrandView;
 }
 
+- (UIView *)redDotView {
+    if (!_redDotView) {
+        _redDotView = [[UIView alloc] initWithFrame:CGRectMake(120, 10, 4, 4)];
+        [self.rightScrollView addSubview:_redDotView];
+    }
+    return _redDotView;
+}
+
 - (UIScrollView *)centerScrollView {
     if (!_centerScrollView) {
         CGFloat width = [UIScreen mainScreen].bounds.size.width;
@@ -154,6 +170,20 @@
         [self.centerScrollView addSubview:_centerGrandView];
     }
     return _centerGrandView;
+}
+
+- (UITextField *)textField {
+    if (!_textField) {
+        _textField = [[UITextField alloc] init];
+        [self addSubview:_textField];
+        [_textField testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+            make.top.equal(self).offset(270);
+            make.centerX.equal(self);
+            make.height.equal(@30);
+            make.width.equal(@50);
+        }];
+    }
+    return _textField;
 }
 
 - (id)setPropertyValueObject {
@@ -1212,6 +1242,10 @@
 - (NSMutableArray *)TestProjectScrollView_property_maximumZoomScale:(NSInteger)index {
     NSArray *arr = @[
         @{
+            @"title": @"要设置最大的缩放比例是1.0",
+            @"value": @1.0,
+        },
+        @{
             @"title": @"要设置最大的缩放比例是1.2",
             @"value": @1.2,
         },
@@ -1289,7 +1323,7 @@
 - (NSDictionary *)method_37:(NSInteger)index {
     return @{
         @"dataModel": @{
-            @"abstract": @"执行UIScrollView的方法",
+            @"abstract": @"执行UIScrollView的方法, 设置子视图的缩放比例",
             @"title": @"- (void)setZoomScale:(CGFloat)scale animated:(BOOL)animated API_AVAILABLE(ios(3.0));",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
@@ -1349,25 +1383,17 @@
 - (NSMutableArray *)TestProjectScrollView_zoomToRect_animated:(NSInteger)index {
     NSArray *arr = @[
         @{
-            @"title": @"要设置正常的缩放比例是0.2",
-            @"value": [NSValue valueWithCGRect:CGRectMake(0, 0, 100, 50)],
+            @"value": [NSValue valueWithCGRect:CGRectMake(120, 10, 4, 4)],
         },
         @{
-            @"title": @"要设置正常的缩放比例是1.6",
-            @"value": [NSValue valueWithCGRect:CGRectMake(0, 0, 100, 50)],
+            @"value": [NSValue valueWithCGRect:CGRectMake(0, 0, 10, 10)],
         },
         @{
-            @"title": @"要设置正常的缩放比例是2.0",
-            @"value": [NSValue valueWithCGRect:CGRectMake(0, 0, 100, 50)],
-        },
-        @{
-            @"title": @"要设置正常的缩放比例是4.0",
             @"value": [NSValue valueWithCGRect:CGRectMake(0, 0, 100, 50)],
         },
     ];
     WS(wSelf);
     for (NSDictionary *dic in arr) {
-        NSString *title = dic[@"title"];
         NSValue *value = dic[@"value"];
         CGRect rect = value.CGRectValue;
         [self createModelWithIndex:index title:[NSString stringWithFormat:@"要设置的范围是:%@", NSStringFromCGRect(rect)] block:^{
@@ -1559,23 +1585,23 @@
 - (NSMutableArray *)TestProjectScrollView_property_keyboardDismissMode:(NSInteger)index {
     NSArray *arr = @[
         @{
-            @"title": [NSString stringWithFormat:@"设置的属性值是UIScrollViewKeyboardDismissModeNone(%ld)", UIScrollViewKeyboardDismissModeNone],
+            @"title": [NSString stringWithFormat:@"设置的属性值是UIScrollViewKeyboardDismissModeNone(%ld)，无效果，键盘不消失", UIScrollViewKeyboardDismissModeNone],
             @"value": @(UIScrollViewKeyboardDismissModeNone),
         },
         @{
-            @"title": [NSString stringWithFormat:@"设置的属性值是UIScrollViewKeyboardDismissModeOnDrag(%ld)", UIScrollViewKeyboardDismissModeOnDrag],
+            @"title": [NSString stringWithFormat:@"设置的属性值是UIScrollViewKeyboardDismissModeOnDrag(%ld)，在拖拽的时候键盘会消失", UIScrollViewKeyboardDismissModeOnDrag],
             @"value": @(UIScrollViewKeyboardDismissModeOnDrag),
         },
         @{
-            @"title": [NSString stringWithFormat:@"设置的属性值是UIScrollViewKeyboardDismissModeInteractive(%ld)", UIScrollViewKeyboardDismissModeInteractive],
+            @"title": [NSString stringWithFormat:@"设置的属性值是UIScrollViewKeyboardDismissModeInteractive(%ld)，无效果，键盘不消失", UIScrollViewKeyboardDismissModeInteractive],
             @"value": @(UIScrollViewKeyboardDismissModeInteractive),
         },
         @{
-            @"title": [NSString stringWithFormat:@"设置的属性值是UIScrollViewKeyboardDismissModeOnDragWithAccessory(%ld)", UIScrollViewKeyboardDismissModeOnDragWithAccessory],
+            @"title": [NSString stringWithFormat:@"设置的属性值是UIScrollViewKeyboardDismissModeOnDragWithAccessory(%ld)，在拖拽的时候键盘会消失", UIScrollViewKeyboardDismissModeOnDragWithAccessory],
             @"value": @(UIScrollViewKeyboardDismissModeOnDragWithAccessory),
         },
         @{
-            @"title": [NSString stringWithFormat:@"设置的属性值是UIScrollViewKeyboardDismissModeInteractiveWithAccessory(%ld)", UIScrollViewKeyboardDismissModeInteractiveWithAccessory],
+            @"title": [NSString stringWithFormat:@"设置的属性值是UIScrollViewKeyboardDismissModeInteractiveWithAccessory(%ld)，无效果，键盘不消失", UIScrollViewKeyboardDismissModeInteractiveWithAccessory],
             @"value": @(UIScrollViewKeyboardDismissModeInteractiveWithAccessory),
         },
     ];
@@ -1637,14 +1663,14 @@
     if (scrollView != self.rightScrollView) {
         return;
     }
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-    NSLog(@"%@ offset:%@ tracking:%u dragging:%u decelerating:%u", NSStringFromSelector(_cmd), NSStringFromCGPoint(scrollView.contentOffset), scrollView.tracking, scrollView.dragging, scrollView.decelerating);
+//    NSLog(@"%@", NSStringFromSelector(_cmd));
+//    NSLog(@"%@ offset:%@ tracking:%u dragging:%u decelerating:%u", NSStringFromSelector(_cmd), NSStringFromCGPoint(scrollView.contentOffset), scrollView.tracking, scrollView.dragging, scrollView.decelerating);
 }
 
 - (NSDictionary *)method_48:(NSInteger)index {
     return @{
         @"dataModel": @{
-            @"abstract": @"UIScrollView的UIScrollViewDelegate执行",
+            @"abstract": @"UIScrollView的UIScrollViewDelegate执行，在进行缩放，会执行多次",
             @"title": @"- (void)scrollViewDidZoom:(UIScrollView *)scrollView API_AVAILABLE(ios(3.2));",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
@@ -1681,8 +1707,8 @@
 
 // called on start of dragging (may require some time and or distance to move)
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-    NSLog(@"%@ offset:%@ tracking:%u dragging:%u decelerating:%u", NSStringFromSelector(_cmd), NSStringFromCGPoint(scrollView.contentOffset), scrollView.tracking, scrollView.dragging, scrollView.decelerating);
+//    NSLog(@"%@", NSStringFromSelector(_cmd));
+//    NSLog(@"%@ offset:%@ tracking:%u dragging:%u decelerating:%u", NSStringFromSelector(_cmd), NSStringFromCGPoint(scrollView.contentOffset), scrollView.tracking, scrollView.dragging, scrollView.decelerating);
 }
 
 - (NSDictionary *)method_50:(NSInteger)index {
@@ -1704,8 +1730,8 @@
 
 // called on finger up if the user dragged. velocity is in points/millisecond. targetContentOffset may be changed to adjust where the scroll view comes to rest
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset API_AVAILABLE(ios(5.0)) {
-    NSLog(@"%@ velocity:%@ targetContentOffset:%@", NSStringFromSelector(_cmd), NSStringFromCGPoint(velocity), NSStringFromCGPoint(*targetContentOffset));
-    NSLog(@"%@ offset:%@ tracking:%u dragging:%u decelerating:%u", NSStringFromSelector(_cmd), NSStringFromCGPoint(scrollView.contentOffset), scrollView.tracking, scrollView.dragging, scrollView.decelerating);
+//    NSLog(@"%@ velocity:%@ targetContentOffset:%@", NSStringFromSelector(_cmd), NSStringFromCGPoint(velocity), NSStringFromCGPoint(*targetContentOffset));
+//    NSLog(@"%@ offset:%@ tracking:%u dragging:%u decelerating:%u", NSStringFromSelector(_cmd), NSStringFromCGPoint(scrollView.contentOffset), scrollView.tracking, scrollView.dragging, scrollView.decelerating);
 }
 
 - (NSDictionary *)method_51:(NSInteger)index {
@@ -1727,8 +1753,8 @@
 
 // called on finger up if the user dragged. decelerate is true if it will continue moving afterwards
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-    NSLog(@"%@ offset:%@ tracking:%u dragging:%u decelerating:%u", NSStringFromSelector(_cmd), NSStringFromCGPoint(scrollView.contentOffset), scrollView.tracking, scrollView.dragging, scrollView.decelerating);
+//    NSLog(@"%@", NSStringFromSelector(_cmd));
+//    NSLog(@"%@ offset:%@ tracking:%u dragging:%u decelerating:%u", NSStringFromSelector(_cmd), NSStringFromCGPoint(scrollView.contentOffset), scrollView.tracking, scrollView.dragging, scrollView.decelerating);
 }
 
 - (NSDictionary *)method_52:(NSInteger)index {
@@ -1749,8 +1775,8 @@
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-    NSLog(@"%@ offset:%@ tracking:%u dragging:%u decelerating:%u", NSStringFromSelector(_cmd), NSStringFromCGPoint(scrollView.contentOffset), scrollView.tracking, scrollView.dragging, scrollView.decelerating);
+//    NSLog(@"%@", NSStringFromSelector(_cmd));
+//    NSLog(@"%@ offset:%@ tracking:%u dragging:%u decelerating:%u", NSStringFromSelector(_cmd), NSStringFromCGPoint(scrollView.contentOffset), scrollView.tracking, scrollView.dragging, scrollView.decelerating);
 }   // called on finger up as we are moving
 
 - (NSDictionary *)method_53:(NSInteger)index {
@@ -1771,8 +1797,8 @@
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-    NSLog(@"%@ offset:%@ tracking:%u dragging:%u decelerating:%u", NSStringFromSelector(_cmd), NSStringFromCGPoint(scrollView.contentOffset), scrollView.tracking, scrollView.dragging, scrollView.decelerating);
+//    NSLog(@"%@", NSStringFromSelector(_cmd));
+//    NSLog(@"%@ offset:%@ tracking:%u dragging:%u decelerating:%u", NSStringFromSelector(_cmd), NSStringFromCGPoint(scrollView.contentOffset), scrollView.tracking, scrollView.dragging, scrollView.decelerating);
 }      // called when scroll view grinds to a halt
 
 - (NSDictionary *)method_54:(NSInteger)index {
@@ -1799,7 +1825,7 @@
 - (NSDictionary *)method_55:(NSInteger)index {
     return @{
         @"dataModel": @{
-            @"abstract": @"UIScrollView的UIScrollViewDelegate执行",
+            @"abstract": @"UIScrollView的UIScrollViewDelegate执行, 这个在缩放视图的时候一直执行，会多次",
             @"title": @"- (nullable UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
@@ -1821,7 +1847,7 @@
 - (NSDictionary *)method_56:(NSInteger)index {
     return @{
         @"dataModel": @{
-            @"abstract": @"UIScrollView的UIScrollViewDelegate执行",
+            @"abstract": @"UIScrollView的UIScrollViewDelegate执行，开始缩放子视图，只会执行一次",
             @"title": @"- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view API_AVAILABLE(ios(3.2));",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
@@ -1842,7 +1868,7 @@
 - (NSDictionary *)method_57:(NSInteger)index {
     return @{
         @"dataModel": @{
-            @"abstract": @"UIScrollView的UIScrollViewDelegate执行",
+            @"abstract": @"UIScrollView的UIScrollViewDelegate执行，这个是结束子视图缩放，只会执行一次",
             @"title": @"- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view atScale:(CGFloat)scale;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
