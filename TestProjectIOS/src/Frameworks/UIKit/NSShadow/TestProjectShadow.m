@@ -16,7 +16,6 @@
             @"title": @"@property (nonatomic, assign) CGSize shadowOffset;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectShadow_property_shadowOffset],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -31,7 +30,6 @@
             @"title": @"@property (nonatomic, assign) CGFloat shadowBlurRadius;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectShadow_property_shadowBlurRadius],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -46,7 +44,6 @@
             @"title": @"@property (nullable, nonatomic, strong) id shadowColor;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectShadow_property_shadowColor],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -66,7 +63,7 @@
         shadow.shadowColor = [UIColor redColor];
     }
     
-    TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithAttributes:@{NSShadowAttributeName: shadow}];
+    TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSShadowAttributeName: shadow}];
     m.isTitleExpand = YES;
     m.desc = [NSString stringWithFormat:@"设置的阴影值为:(%@-%@)，得到的attrText:\n%@", key, value, m.titleMutAttrStr];
     [m calculDataViewHeight];

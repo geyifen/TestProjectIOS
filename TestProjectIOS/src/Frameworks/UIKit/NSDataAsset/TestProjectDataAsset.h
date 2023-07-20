@@ -5,7 +5,7 @@
 //  Created by zjrcumac on 2023/3/15.
 //
 
-#import "TestProjectAttributeStringFoundationCell.h"
+#import "TestProjectAttributeStringFoundViewTable.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -7,7 +7,7 @@
 
 #import "TestProjectMutableAttributedString.h"
 
-#import "TestProjectAttributeStringFoundationCell.h"
+#import "TestProjectAttributeStringFoundViewTable.h"
 
 @interface TestProjectMutableAttributedString ()
 
@@ -23,7 +23,6 @@
             @"desc": @" 替换的字符串的样式是默认的 \n 异常崩溃：range不在文字的范围内会崩溃",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableAttributedString_replaceCharactersInRange_withString],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -39,7 +38,6 @@
             @"desc": @"异常崩溃：range不在文字的范围内会崩溃",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableAttributedString_setAttributes_range],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -61,9 +59,9 @@
     for (NSDictionary *dic in arr) {
         NSInteger location = [dic[@"location"] integerValue];
         NSInteger length = [dic[@"length"] integerValue];
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithNeedAdd:YES];
+        TestProjectTableModel *m = [self createAttrStrModelWithNeedAdd:YES];
         NSRange range = NSMakeRange(location, length);
-        TestProjectAttributeStringFoundationModel *rm = [self createAttrStrModelWithNeedAdd:NO];
+        TestProjectTableModel *rm = [self createAttrStrModelWithNeedAdd:NO];
         [rm.titleMutAttrStr setAttributes:@{NSForegroundColorAttributeName: [UIColor colorFromString:@"#00ff00"]} range:range];
         m.titleMutAttrStr = rm.titleMutAttrStr;
         m.desc = [NSString stringWithFormat:@"被替换的range:%@", NSStringFromRange(range)];
@@ -89,8 +87,8 @@
         NSInteger location = [dic[@"location"] integerValue];
         NSInteger length = [dic[@"length"] integerValue];
         NSString *text = dic[@"text"];
-        TestProjectAttributeStringFoundationModel *rm = [self createAttrStrModelWithNeedAdd:NO];
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModel];
+        TestProjectTableModel *rm = [self createAttrStrModelWithNeedAdd:NO];
+        TestProjectTableModel *m = [self createAttrStrModel];
         NSRange range = NSMakeRange(location, length);
         [rm.titleMutAttrStr replaceCharactersInRange:range withString:text];
         m.desc = [NSString stringWithFormat:@"被替换的range:%@ 被替换的文字是:%@", NSStringFromRange(range), text];

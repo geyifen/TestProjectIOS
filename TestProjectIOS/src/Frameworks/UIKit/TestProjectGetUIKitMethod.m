@@ -11,35 +11,12 @@
 
 @implementation TestProjectGetUIKitMethod
 
-+ (NSArray *)oldItemChilds {
-    return @[
-        [self UIBarButtonItem],
-        [self UINavigationItem],
-        [self UINavigationBarAppearance],
-        [self UIBarAppearance],
-        [self UINavigationBar],
-        [self UINavigationController],
-        [self UIViewController],
-        [self UIAppearance],
-        [self UIAlertController],
-        [self ActivityIndicatorView],
-        [self NSDataAsset],
-        [self NSShadow],
-        [self NSParagraphStyle],
-        [self NSTextAttachment],
-        [self NSAttributedString],
-        [self UIFont],
-        [self UIColor],
-//        [self CIColor],
-    ];
-}
-
 + (NSArray *)newItemChilds {
     return @[
-//        [self UIButton],
-        [self UIControl],
-        [self UIView],
-        [self UIResponder],
+//        [self UIBezierPath],
+//        [self UITextField],
+//        [self UICollectionView],
+        [self UIScrollView],
     ];
 }
 
@@ -56,6 +33,173 @@
         @"title": @"UIKit",
         @"atIndex": @0,
         @"itemChilds": [self itemChilds],
+    };
+}
+
++ (NSDictionary *)UICollectionView {
+    return @{
+        @"title": @"UICollectionView",
+        @"atIndex": @0,
+        @"itemChilds": @[
+            @{
+                @"title": @"UICollectionView",
+                @"viewKey": @"TestProjectCollectionView",
+            },
+        ]
+    };
+}
+
++ (NSDictionary *)UIScrollView {
+    return @{
+        @"title": @"UIScrollView",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectScrollView",
+    };
+}
+
++ (NSDictionary *)UICloudSharingController {
+    return @{
+        @"title": @"UICloudSharingController",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectCloudSharingController",
+    };
+}
+
++ (NSDictionary *)UITextField {
+    return @{
+        @"title": @"UITextField",
+        @"atIndex": @0,
+        @"itemChilds": @[
+//            @{
+//                @"title": @"NSValue\n(NSValueUIGeometryExtensions)",
+//                @"viewKey": @"TestProjectValueUIGeometryExtensions",
+//            },
+            @{
+                @"title": @"UITextField",
+                @"viewKey": @"TestProjectTextField",
+            },
+        ]
+    };
+}
+
++ (NSDictionary *)UIStepper {
+    return @{
+        @"title": @"UIStepper",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectStepper",
+    };
+}
+
++ (NSDictionary *)UISlider {
+    return @{
+        @"title": @"UISlider",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectSlider",
+    };
+}
+
++ (NSDictionary *)UIProgressView {
+    return @{
+        @"title": @"UIProgressView",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectProgressView",
+    };
+}
+
++ (NSDictionary *)UISwitch {
+    return @{
+        @"title": @"UISwitch",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectSwitch",
+    };
+}
+
++ (NSDictionary *)UILabel {
+    return @{
+        @"title": @"UILabel",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectLabel",
+    };
+}
+
++ (NSDictionary *)UIGeometry {
+    return @{
+        @"title": @"UIGeometry",
+        @"atIndex": @0,
+        @"itemChilds": @[
+            @{
+                @"title": @"NSValue\n(NSValueUIGeometryExtensions)",
+                @"viewKey": @"TestProjectValueUIGeometryExtensions",
+            },
+            @{
+                @"title": @"UIGeometry",
+                @"viewKey": @"TestProjectGeometry",
+            },
+        ]
+    };
+}
+
++ (NSDictionary *)UIDevice {
+    return @{
+        @"title": @"UIDevice",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectDevice",
+    };
+}
+
++ (NSDictionary *)UIDatePicker {
+    return @{
+        @"title": @"UIDatePicker",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectDatePicker",
+    };
+}
+
++ (NSDictionary *)UIColorWell {
+    return @{
+        @"title": @"UIColorWell",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectColorWell",
+    };
+}
+
++ (NSDictionary *)UIColorPickerViewController {
+    return @{
+        @"title": @"UIColorPickerViewController",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectColorPickerViewController",
+    };
+}
+
++ (NSDictionary *)UICalendarSelectionSingleDate {
+    return @{
+        @"title": @"UICalendarSelectionSingleDate",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectCalendarSelectionSingleDate",
+    };
+}
+
++ (NSDictionary *)UICalendarSelectionMultiDate {
+    return @{
+        @"title": @"UICalendarSelectionMultiDate",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectCalendarSelectionMultiDate",
+    };
+}
+
++ (NSDictionary *)UICalendarView {
+    return @{
+        @"title": @"UICalendarView",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectCalendarView",
+    };
+}
+
++ (NSDictionary *)UIBezierPath {
+    return @{
+        @"title": @"UIBezierPath",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectBezierPath",
     };
 }
 
@@ -314,6 +458,30 @@
     };
 }
 
++ (NSDictionary *)UIFontPickerViewControllerConfiguration {
+    return @{
+        @"title": @"UIFontPickerViewControllerConfiguration",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectFontPickerViewControllerConfiguration",
+    };
+}
+
++ (NSDictionary *)UIFontPickerViewController {
+    return @{
+        @"title": @"UIFontPickerViewController",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectFontPickerViewController",
+    };
+}
+
++ (NSDictionary *)UIFontDescriptor {
+    return @{
+        @"title": @"UIFontDescriptor",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectFontDescriptor",
+    };
+}
+
 + (NSDictionary *)UIFont {
     return @{
         @"title": @"UIFont",
@@ -366,6 +534,50 @@
             },
         ]
     };
+}
+
++ (NSArray *)oldItemChilds {
+    return @[
+        [self UICloudSharingController],
+        [self UIStepper],
+        [self UISlider],
+        [self UIProgressView],
+        [self UISwitch],
+        [self UILabel],
+        [self UIGeometry],
+        [self UIDevice],
+        [self UIDatePicker],
+        [self UIColorWell],
+        [self UIColorPickerViewController],
+        [self UICalendarSelectionMultiDate],
+        [self UICalendarSelectionSingleDate],
+        [self UICalendarView],
+        [self UIButton],
+        [self UIControl],
+        [self UIView],
+        [self UIResponder],
+        [self UIBarButtonItem],
+        [self UINavigationItem],
+        [self UINavigationBarAppearance],
+        [self UIBarAppearance],
+        [self UINavigationBar],
+        [self UINavigationController],
+        [self UIViewController],
+        [self UIAppearance],
+        [self UIAlertController],
+        [self ActivityIndicatorView],
+        [self NSDataAsset],
+        [self NSShadow],
+        [self NSParagraphStyle],
+        [self NSTextAttachment],
+        [self NSAttributedString],
+        [self UIFontPickerViewControllerConfiguration],
+        [self UIFontPickerViewController],
+        [self UIFontDescriptor],
+        [self UIFont],
+        [self UIColor],
+        //        [self CIColor],
+    ];
 }
 
 @end

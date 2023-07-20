@@ -11,7 +11,12 @@
 
 + (NSArray *)itemChilds {
     return @[
-        [self NSAttributedString]
+        [self NSDateFormatter],
+        [self NSDate],
+        [self NSLocale],
+        [self NSTimeZone],
+        [self NSCalendar],
+        [self NSAttributedString],
     ];
 }
 
@@ -20,6 +25,90 @@
         @"title": @"Foundation",
         @"atIndex": @0,
         @"itemChilds": [self itemChilds],
+    };
+}
+
++ (NSDictionary *)NSDateFormatter {
+    return @{
+        @"atIndex": @0,
+        @"title": @"NSDateFormatter",
+        @"viewKey": @"TestProjectDateFormatter",
+    };
+}
+
++ (NSDictionary *)NSDate {
+    return @{
+        @"title": @"NSDate",
+        @"atIndex": @0,
+        @"itemChilds": @[
+            @{
+                @"title": @"NSDate\n(NSDateCreation)",
+                @"viewKey": @"TestProjectDateCreation",
+            },
+            @{
+                @"title": @"NSDate\n(NSExtendedDate)",
+                @"viewKey": @"TestProjectExtendedDate",
+            },
+        ]
+    };
+}
+
++ (NSDictionary *)NSLocale {
+    return @{
+        @"title": @"NSLocale",
+        @"atIndex": @0,
+        @"itemChilds": @[
+            @{
+                @"title": @"NSLocale\n(NSLocaleGeneralInfo)",
+                @"viewKey": @"TestProjectLocaleGeneralInfo",
+            },
+            @{
+                @"title": @"NSLocale\n(NSLocaleCreation)",
+                @"viewKey": @"TestProjectLocaleCreation",
+            },
+            @{
+                @"title": @"NSLocale\n(NSExtendedLocale)",
+                @"viewKey": @"TestProjectExtendedLocale",
+            },
+            @{
+                @"title": @"NSLocale",
+                @"viewKey": @"TestProjectLocale",
+            },
+        ]
+    };
+}
+
++ (NSDictionary *)NSTimeZone {
+    return @{
+        @"title": @"NSTimeZone",
+        @"atIndex": @0,
+        @"itemChilds": @[
+            @{
+                @"title": @"NSTimeZone\n(NSExtendedTimeZone)",
+                @"viewKey": @"TestProjectExtendedTimeZone",
+            },
+            @{
+                @"title": @"NSTimeZone",
+                @"viewKey": @"TestProjectTimeZone",
+            },
+        ]
+    };
+}
+
++ (NSDictionary *)NSCalendar {
+    return @{
+        @"title": @"NSCalendar",
+        @"atIndex": @0,
+        @"itemChilds": @[
+            @{
+                @"title": @"NSDateComponents",
+                @"viewKey": @"TestProjectDateComponents",
+            },
+            @{
+                @"title": @"NSCalendar",
+                @"viewKey": @"TestProjectCalendar",
+            },
+        ]
     };
 }
 

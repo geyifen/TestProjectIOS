@@ -232,7 +232,7 @@
             @"isDataModelExpand": @(YES),
             @"desc": @"设置负数无效",
             @"dataModel": @{
-                @"childItems": [self TestProjectBarButtonItem_add_fixedSpaceItemOfWidth],
+                @"childItems": [self TestProjectBarButtonItem_class_fixedSpaceItemOfWidth],
             }
         },
     };
@@ -245,7 +245,7 @@
             @"title": @"+ (instancetype)flexibleSpaceItem API_AVAILABLE(ios(14.0));",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectBarButtonItem_add_flexibleSpaceItem],
+                @"childItems": [self TestProjectBarButtonItem_class_flexibleSpaceItem],
             }
         },
     };
@@ -312,7 +312,7 @@
     return [self createClickSetSingleArrayTableModelWithProperty:@"rightBarButtonItem" value:self.barBtnItem];
 }
 
-- (NSMutableArray *)TestProjectBarButtonItem_add_flexibleSpaceItem {
+- (NSMutableArray *)TestProjectBarButtonItem_class_flexibleSpaceItem {
     NSArray *arr;
     if (@available(iOS 16.0, *)) {
         UIBarButtonItem *barItem1 = [[UIBarButtonItem alloc] initWithTitle:@"r1" style:UIBarButtonItemStyleDone target:self action:@selector(gotoBack)];
@@ -325,7 +325,7 @@
     return [self createClickSetSingleArrayTableModelWithProperty:@"rightBarButtonItems" value:arr];
 }
 
-- (NSMutableArray *)TestProjectBarButtonItem_add_fixedSpaceItemOfWidth {
+- (NSMutableArray *)TestProjectBarButtonItem_class_fixedSpaceItemOfWidth {
     NSArray *arr = @[
         @{
             @"title": @"设置的值是-30",

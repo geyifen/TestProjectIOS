@@ -7,10 +7,20 @@
 
 #import "TestProjectTestVCViewTable.h"
 
+@interface TestProjectTestVCViewTable ()
+
+@property (nonatomic, copy) NSString *desc;
+
+@end
+
 @implementation TestProjectTestVCViewTable
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"%@_%@", self.parentVC.title, self];
+    if (!_desc) {
+        _desc = @"";
+        _desc = [NSString stringWithFormat:@"%@_%@", self.parentVC.title, self];
+    }
+    return _desc;
 }
 
 - (instancetype)initCreate {

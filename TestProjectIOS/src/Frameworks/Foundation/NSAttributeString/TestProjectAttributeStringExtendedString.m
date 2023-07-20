@@ -7,7 +7,7 @@
 
 #import "TestProjectAttributeStringExtendedString.h"
 
-#import "TestProjectAttributeStringFoundationCell.h"
+#import "TestProjectAttributeStringFoundViewTable.h"
 
 @interface TestProjectAttributeStringExtendedString ()
 
@@ -23,7 +23,6 @@
             @"title": @"@property (readonly) NSUInteger length;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringFoundation_property_length],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -39,7 +38,6 @@
             @"desc":[NSString stringWithFormat:@"获取到location所在位置的attrText字段，如果有则返回，没有也不往后继续寻找并且返回为null \n @param location :匹配到在哪段attrText中 \n @param range :根据匹配的字段字符返回range \n异常崩溃条件: location超过字符长度 \nfirstTextLength:%ld, secondTextLength:%ld, thirdAttrTextLength:%ld, fourthAttrLength:%ld, fivthAttrTextLength:%ld, sixthAttrTextLength:%ld", self.firstAttrText.length, self.secondAttrText.length, self.thirdAttrText.length, self.fourthAttrText.length, self.fivthAttrText.length, self.sixthAttrText.length],
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringFoundation_attribute_atIndex_effectiveRange],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -55,7 +53,6 @@
             @"desc":[NSString stringWithFormat:@" 根据range从attrText获取子串 \n 崩溃异常条件：range的范围必须在attrText范围中，否则崩溃 \n  @param range :获取子字符串的范围 \n firstTextLength:%ld, secondTextLength:%ld", self.firstAttrText.length,  self.secondAttrText.length],
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringFoundation_attributedSubstringFromRange],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -71,7 +68,6 @@
             @"desc":@"先根据location查到是第几段attribute，没设置则返回空的字典；如果查到的attribute不是最后一段，则rangeLimit无效；如果是最后一段，则attribute的长度是否在rangeLimit限制中，不符合的崩溃；range则看attribute是否在rangeLimit中，在则返回attribute的range，不在返回NSMakeRange(0, 0) \n 崩溃异常条件：1、location超过文字长度 2、location在最后一段attrText字段中并且rangeLimit超过文字长度 \n @param location :从哪个位置开始 \n @param range :根据匹配的字段字符返回range \n @param rangeLimit: 配合location返回effRange",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringFoundation_attributesAtIndex_longestEffectiveRange_inRange],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -87,7 +83,6 @@
             @"desc":@"先根据location查到是第几段attribute，没设置则返回null；range则看查到的attribute是否在rangeLimit中，在则返回attribute的range，不在返回NSMakeRange(0, 0) \n 异常崩溃：location超过全段文字的长度 \n @param attrName :要获取的NSAttributedStringKey信息 \n @param location :匹配在哪段attrText中 \n @param range :根据匹配的字段字符返回range，如果location不在rangeLimit范围中，返回NSMakeRange(0, 0) \n @param rangeLimit: 根据匹配的字段字符返回range ",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringFoundation_attribute_atIndex_longestEffectiveRange_inRange],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -102,7 +97,6 @@
             @"title": @"- (BOOL)isEqualToAttributedString:(NSAttributedString *)other;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringFoundation_isEqualToAttributedString],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -117,7 +111,6 @@
             @"title": @"- (instancetype)initWithString:(NSString *)str;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringFoundation_initWithString],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -132,7 +125,6 @@
             @"title": @"- (instancetype)initWithString:(NSString *)str attributes:(nullable NSDictionary<NSAttributedStringKey, id> *)attrs;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringFoundation_initWithString_attributes],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -147,7 +139,6 @@
             @"title": @"- (instancetype)initWithAttributedString:(NSAttributedString *)attrStr;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringFoundation_initWithAttributedString],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -163,7 +154,6 @@
             @"desc": @"@param enumerationRange :查询的范围 \n @paramoptions :倒序还是顺序输出 \n @param block :输出的block",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringFoundation_enumerateAttributesInRange_options_usingBlock],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -179,7 +169,6 @@
             @"desc": @"@param attrName :查询的NSAttributedStringKey\n@param enumerationRange :查询的范围 \n @paramoptions :倒序还是顺序输出 \n @param block :输出的block \n NSAttributedStringEnumerationReverse倒序输出，会把连续相同的放在一起输出；NSAttributedStringEnumerationLongestEffectiveRangeNotRequired正序输出，连续相同的不会在一起输出",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringFoundation_enumerateAttribute_inRange_options_usingBlock],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -217,7 +206,7 @@
         NSString *desc = dic[@"desc"];
         NSRange range = NSMakeRange(0, length);
         
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModel];
+        TestProjectTableModel *m = [self createAttrStrModel];
         NSMutableString *mutStr = [[NSMutableString alloc] initWithString:desc];
 
         [self.compareViewModel.titleMutAttrStr enumerateAttribute:NSForegroundColorAttributeName inRange:range options:options usingBlock:^(NSDictionary<NSAttributedStringKey,id> * _Nonnull attrs, NSRange range, BOOL * _Nonnull stop) {
@@ -258,7 +247,7 @@
         NSString *desc = dic[@"desc"];
         NSRange range = NSMakeRange(0, length);
         
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModel];
+        TestProjectTableModel *m = [self createAttrStrModel];
         NSMutableString *mutStr = [[NSMutableString alloc] initWithString:desc];
         
         [self.compareViewModel.titleMutAttrStr enumerateAttributesInRange:range options:options usingBlock:^(NSDictionary<NSAttributedStringKey,id> * _Nonnull attrs, NSRange range, BOOL * _Nonnull stop) {
@@ -271,7 +260,7 @@
 }
 
 - (NSMutableArray *)TestProjectAttributeStringFoundation_initWithAttributedString {
-    TestProjectAttributeStringFoundationModel *m = [[TestProjectAttributeStringFoundationModel alloc] init];
+    TestProjectTableModel *m = [[TestProjectTableModel alloc] init];
     m.titleMutAttrStr = [[NSMutableAttributedString alloc] initWithAttributedString:self.compareViewModel.titleMutAttrStr];
     NSRange range;
     NSDictionary *dic = [m.titleMutAttrStr attributesAtIndex:0 effectiveRange:&range];
@@ -283,7 +272,7 @@
 }
 
 - (NSMutableArray *)TestProjectAttributeStringFoundation_initWithString_attributes {
-    TestProjectAttributeStringFoundationModel *m = [[TestProjectAttributeStringFoundationModel alloc] init];
+    TestProjectTableModel *m = [[TestProjectTableModel alloc] init];
     m.titleMutAttrStr = [[NSMutableAttributedString alloc] initWithString:self.firstAttrText attributes:@{NSForegroundColorAttributeName:[UIColor colorFromString:@"#223322"], NSFontAttributeName:[UIFont systemFontOfSize:20]}];
     NSRange range;
     NSDictionary *dic = [m.titleMutAttrStr attributesAtIndex:0 effectiveRange:&range];
@@ -295,7 +284,7 @@
 }
 
 - (NSMutableArray *)TestProjectAttributeStringFoundation_initWithString {
-    TestProjectAttributeStringFoundationModel *m = [[TestProjectAttributeStringFoundationModel alloc] init];
+    TestProjectTableModel *m = [[TestProjectTableModel alloc] init];
     m.titleMutAttrStr = [[NSMutableAttributedString alloc] initWithString:self.firstAttrText];
     NSRange range;
     NSDictionary *dic = [m.titleMutAttrStr attributesAtIndex:0 effectiveRange:&range];
@@ -307,8 +296,8 @@
 }
 
 - (NSMutableArray *)TestProjectAttributeStringFoundation_isEqualToAttributedString {
-    TestProjectAttributeStringFoundationModel *m1 = [self createAttrStrModelWithNeedAdd:NO];
-    TestProjectAttributeStringFoundationModel *m2 = [self createAttrStrModelWithNeedAdd:NO];
+    TestProjectTableModel *m1 = [self createAttrStrModelWithNeedAdd:NO];
+    TestProjectTableModel *m2 = [self createAttrStrModelWithNeedAdd:NO];
     NSArray *arr = @[
         @{
             @"location1": @(self.firstAttrText.length),
@@ -349,7 +338,7 @@
         NSAttributedString *attrS2 = [m2.titleMutAttrStr attributedSubstringFromRange:range2];
         
         BOOL ret = [attrS1 isEqualToAttributedString:attrS2];
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModel];
+        TestProjectTableModel *m = [self createAttrStrModel];
         m.desc = [NSString stringWithFormat:@"第一个的第%ld段的标题和第二个的第%ld段的标题比较：是否相同：%u", atIndex1, atIndex2, ret];
         [m calculDataViewHeight];
     }
@@ -357,7 +346,7 @@
 }
 
 - (NSMutableArray *)TestProjectAttributeStringFoundation_attribute_atIndex_longestEffectiveRange_inRange {
-    NSInteger totalLength = ((TestProjectAttributeStringFoundationModel *)self.compareViewModel).titleMutAttrStr.length;
+    NSInteger totalLength = ((TestProjectTableModel *)self.compareViewModel).titleMutAttrStr.length;
     NSArray *arr = @[
         @{
             @"location": @0,
@@ -410,7 +399,7 @@
         NSInteger atIndex = [dic[@"atIndex"] integerValue];
         NSString *stringKey = dic[@"stringKey"];
         NSString *key = dic[@"key"];
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModel];
+        TestProjectTableModel *m = [self createAttrStrModel];
         NSRange range = NSMakeRange(start > 0 ? start : location, length);
         NSRange effRange;
         NSDictionary *itemDic = [self.compareViewModel.titleMutAttrStr attribute:stringKey atIndex:location longestEffectiveRange:&effRange inRange:range];
@@ -421,7 +410,7 @@
 }
 
 - (NSMutableArray *)TestProjectAttributeStringFoundation_attributesAtIndex_longestEffectiveRange_inRange {
-    NSInteger totalLength = ((TestProjectAttributeStringFoundationModel *)self.compareViewModel).titleMutAttrStr.length;
+    NSInteger totalLength = ((TestProjectTableModel *)self.compareViewModel).titleMutAttrStr.length;
     NSArray *arr = @[
         @{
             @"location": @0,
@@ -450,7 +439,7 @@
         NSInteger atIndex = [dic[@"atIndex"] integerValue];
         NSRange range = NSMakeRange(location, length);
         NSRange effRange;
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModel];
+        TestProjectTableModel *m = [self createAttrStrModel];
         
         NSDictionary *itemDic = [self.compareViewModel.titleMutAttrStr attributesAtIndex:location longestEffectiveRange:&effRange inRange:range];
         m.desc = [NSString stringWithFormat:@"我是在第%ld段内的atIndex:%ld 获取的是在第%ld段内的effecRange:%@ 我是%ld段内的inRange:%@ 获取的是在第%ld段内的NSAttributedStringKey的集合：%@", atIndex, location, atIndex, NSStringFromRange(effRange), atIndex, NSStringFromRange(range), atIndex, itemDic];
@@ -460,7 +449,7 @@
 }
 
 - (NSMutableArray *)TestProjectAttributeStringFoundation_attributedSubstringFromRange {
-    TestProjectAttributeStringFoundationModel *m = [self createAttrStrModel];
+    TestProjectTableModel *m = [self createAttrStrModel];
     NSRange range = NSMakeRange(0, 24);
     m.descMutAttrStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"获取范围%@的attrText的是：\n", NSStringFromRange(range)]];
     [m.descMutAttrStr appendAttributedString:[self.compareViewModel.titleMutAttrStr attributedSubstringFromRange:range]];
@@ -469,7 +458,7 @@
 }
 
 - (NSMutableArray *)TestProjectAttributeStringFoundation_attribute_atIndex_effectiveRange {
-    NSInteger totalLength = ((TestProjectAttributeStringFoundationModel *)self.compareViewModel).titleMutAttrStr.length;
+    NSInteger totalLength = ((TestProjectTableModel *)self.compareViewModel).titleMutAttrStr.length;
     NSArray *arr = @[
         @{
             @"location": @0,
@@ -514,7 +503,7 @@
         NSInteger atIndex = [dic[@"atIndex"] integerValue];
         NSString *stringKey = dic[@"stringKey"];
         NSString *key = dic[@"key"];
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModel];
+        TestProjectTableModel *m = [self createAttrStrModel];
         
         NSDictionary *itemDic = [self.compareViewModel.titleMutAttrStr attribute:stringKey atIndex:location effectiveRange:&range];
         m.desc = [NSString stringWithFormat:@"我是第%ld段的atIndex:%ld 获取的是在第%ld段内的range:%@ 获取的是在第%ld段内的NSAttributedStringKey(%@-%@)集合信息%@", atIndex, location, atIndex, NSStringFromRange(range), atIndex, key, stringKey, itemDic];
@@ -524,7 +513,7 @@
 }
 
 - (NSMutableArray *)TestProjectAttributeStringFoundation_property_length {
-    TestProjectAttributeStringFoundationModel *m = [self createAttrStrModel];
+    TestProjectTableModel *m = [self createAttrStrModel];
     m.desc = [NSString stringWithFormat:@"NSAttributeString.length是：%ld", self.compareViewModel.titleMutAttrStr.length];
     [m calculDataViewHeight];
     return self.dataMutArr;

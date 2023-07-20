@@ -222,9 +222,9 @@
 
         [self addSubview:_titleExpandBtn];
         [_titleExpandBtn testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
-            make.top.equal(self.titleLabel).offset(-15);
+            make.top.equal(self.titleLabel).offset(30);
             make.height.width.equal(@15);
-            make.trainling.equal(self);
+            make.leading.equal(self);
         }];
     }
     return _titleExpandBtn;
@@ -264,12 +264,13 @@
         _canClickLabel = [[UILabel alloc] init];
         _canClickLabel.text = @"click";
         _canClickLabel.clipsToBounds = YES;
+        _canClickLabel.textAlignment = NSTextAlignmentCenter;
         _canClickLabel.font = [UIFont systemFontOfSize:10];
-        _canClickLabel.layer.cornerRadius = 5;
+        _canClickLabel.layer.cornerRadius = 15;
         _canClickLabel.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.3];
         [self addSubview:_canClickLabel];
         [_canClickLabel testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
-            make.height.width.equal(@10);
+            make.height.width.equal(@30);
             make.top.centerX.equal(self);
         }];
     }

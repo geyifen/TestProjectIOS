@@ -17,7 +17,6 @@
             @"desc": @"NSMutableAttributedString提供若干方法，即可以修改字符串，又可以修改字符串的属性。经过多次修改后，有些信息可能变的不一致了，为了让信息保持一致，可以使用下面的方法 \n 异常崩溃条件：range超过文字的范围 \n NSVerticalGlyphFormAttributeName 为1的时候英文字母是横着放向的，0的时候是竖着方向的",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributedStringDocumentFormats_initWithURL_options_documentAttributes_error],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -31,8 +30,8 @@
     };
 }
 
-- (TestProjectAttributeStringFoundationModel *)createAttrStrModelWith:(NSDictionary *)keyValue {
-    TestProjectAttributeStringFoundationModel *attrStrModel = [[TestProjectAttributeStringFoundationModel alloc] init];
+- (TestProjectTableModel *)createAttrStrModelWith:(NSDictionary *)keyValue {
+    TestProjectTableModel *attrStrModel = [[TestProjectTableModel alloc] init];
 //    NSAttributedString *firstAttrStr = [[NSAttributedString alloc] initWithString:self.firstAttrText attributes:keyValue];
 //    NSAttributedString *secondAttrStr = [[NSAttributedString alloc] initWithString:self.secondAttrText attributes:@{NSForegroundColorAttributeName:[UIColor colorFromString:@"#F33"], NSFontAttributeName:[UIFont systemFontOfSize:22]}];
 //
@@ -64,7 +63,7 @@
         NSInteger atIndex = [dic[@"atIndex"] integerValue];
         NSNumber *value = dic[@"value"];
         NSRange range = NSMakeRange(location, length);
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithAttributes:@{NSVerticalGlyphFormAttributeName:value}];
+        TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSVerticalGlyphFormAttributeName:value}];
         NSError *err;
         NSAttributedString *attr = [[NSAttributedString alloc] initWithURL:[NSURL URLWithString:@"file://www.baidu.com"] options:nil documentAttributes:nil error:&err];
         if (!err && attr) {

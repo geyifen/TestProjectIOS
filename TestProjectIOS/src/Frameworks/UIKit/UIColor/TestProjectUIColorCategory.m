@@ -11,91 +11,96 @@
 
 @implementation TestProjectUIColorCategory
 
-- (NSDictionary *)method_1 {
+- (Class)createTableModelClass {
+    return TestProjectUIColorModel.class;
+}
+
+- (NSDictionary *)method_1:(NSInteger)index {
     return @{
         @"dataModel": @{
-            @"abstract": @"根据#AARRGGBB,#RRGGBB,#ARGB,#RGB获得UIColor",
+            @"abstract": @"执行UIColor的calss方法, 根据#AARRGGBB,#RRGGBB,#ARGB,#RGB获得UIColor",
             @"title": @"+ (UIColor *)colorFromString:(NSString *)string;", 
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectUIColorModel.class,
-                @"childItems": [self TestProjectColorCategory_colorFromString],
+                @"childItems": [self TestProjectColorCategory_class_colorFromString:index],
             }
         },
     };
 }
 
-- (NSDictionary *)method_2 {
+- (NSDictionary *)method_2:(NSInteger)index {
     return @{
         @"dataModel": @{
-            @"abstract": @"根据数值获取颜色，alpha默认为1",
+            @"abstract": @"执行UIColor的calss方法, 根据数值获取颜色，alpha默认为1",
             @"title": @"+ (UIColor*)colorWithHex:(long)hexColor;", 
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectUIColorModel.class,
-                @"childItems": [self TestProjectColorCategory_colorWithHex],
+                @"childItems": [self TestProjectColorCategory_class_colorWithHex:index],
             }
         },
     };
 }
 
-- (NSDictionary *)method_3 {
+- (NSDictionary *)method_3:(NSInteger)index {
     return @{
         @"dataModel": @{
-            @"abstract": @"根据数值获取颜色",
+            @"abstract": @"执行UIColor的calss方法, 根据数值获取颜色",
             @"title": @"+ (UIColor *)colorWithHex:(long)hexColor alpha:(float)opacity;", 
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectUIColorModel.class,
-                @"childItems": [self TestProjectColorCategory_colorWithHex_alpha],
+                @"childItems": [self TestProjectColorCategory_class_colorWithHex_alpha:index],
             }
         },
     };
 }
 
-- (NSDictionary *)method_4 {
+- (NSDictionary *)method_4:(NSInteger)index {
     return @{
         @"dataModel": @{
             @"abstract": @"根据颜色获取字符串",
             @"title": @"- (NSString *)colorString;", 
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectUIColorModel.class,
-                @"childItems": [self TestProjectColorCategory_colorString],
+                @"childItems": [self TestProjectColorCategory_colorString:index],
             }
         },
     };
 }
 
-- (void)createColorModel:(UIColor *)color text:(NSString *)text {
-    TestProjectUIColorModel *colorModel = [[TestProjectUIColorModel alloc] init];
-    colorModel.title = text;
-    colorModel.backgroundColor = color;
-    [self.dataMutArr addObject:colorModel];
-}
-
-- (NSMutableArray *)TestProjectColorCategory_colorString {
+- (NSMutableArray *)TestProjectColorCategory_colorString:(NSInteger)index {
     UIColor *color = [UIColor colorFromString:@"#90ff3333"];
     NSString *colorStr = [color colorString];
-    [self createColorModel:color text:[NSString stringWithFormat:@"从@\"#ff3333\"颜色得到的颜色字符串%@", colorStr]];
+    [self createModelWithIndex:index
+                         title:[NSString stringWithFormat:@"从@\"#ff3333\"颜色得到的颜色字符串%@", colorStr]
+                 modelKeyValue:@{@"backgroundColor": color}
+                         block:nil];
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectColorCategory_colorWithHex_alpha {
+- (NSMutableArray *)TestProjectColorCategory_class_colorWithHex_alpha:(NSInteger)index {
     UIColor *color = [UIColor colorWithHex:0xff3333 alpha:0.5];
-    [self createColorModel:color text:@"从0xff3333 alpha为0.5得到颜色"];
+    [self createModelWithIndex:index
+                         title:@"从0xff3333 alpha为0.5得到颜色"
+                 modelKeyValue:@{@"backgroundColor": color}
+                         block:nil];
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectColorCategory_colorWithHex {
+- (NSMutableArray *)TestProjectColorCategory_class_colorWithHex:(NSInteger)index {
     UIColor *color = [UIColor colorWithHex:0xff3333];
-    [self createColorModel:color text:@"从0xff3333得到颜色"];
+    [self createModelWithIndex:index
+                         title:@"从0xff3333得到颜色"
+                 modelKeyValue:@{@"backgroundColor": color}
+                         block:nil];
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectColorCategory_colorFromString {
+- (NSMutableArray *)TestProjectColorCategory_class_colorFromString:(NSInteger)index {
     UIColor *color = [UIColor colorFromString:@"#ff3333"];
-    [self createColorModel:color text:@"从@\"#ff3333\"得到颜色"];
+    [self createModelWithIndex:index
+                         title:@"从@\"#ff3333\"得到颜色"
+                 modelKeyValue:@{@"backgroundColor": color}
+                         block:nil];
     return self.dataMutArr;
 }
 

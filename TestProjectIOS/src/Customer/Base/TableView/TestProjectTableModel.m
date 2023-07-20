@@ -72,7 +72,8 @@
     
     if (_abstract) {
         _abstractAttr = [[NSMutableAttributedString alloc] initWithString:self.abstract];
-        [_abstractAttr addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:24 weight:UIFontWeightBold], NSForegroundColorAttributeName:[UIColor blackColor]} range:NSMakeRange(0, self.abstract.length)];
+        UIColor *color = self.isChild ? [UIColor purpleColor] : [UIColor redColor];
+        [_abstractAttr addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:24 weight:UIFontWeightBold], NSForegroundColorAttributeName:color} range:NSMakeRange(0, self.abstract.length)];
     }
     if (_abstractAttr) {
         UILabel *abstractLabel = [[UILabel alloc] init];
@@ -86,7 +87,8 @@
         _titleAttr = self.titleMutAttrStr;
     } else if (self.title) {
         _titleAttr = [[NSMutableAttributedString alloc] initWithString:self.title];
-        [_titleAttr addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:22 weight:UIFontWeightMedium], NSForegroundColorAttributeName:[UIColor blackColor]} range:NSMakeRange(0, self.title.length)];
+        UIColor *color = self.isChild ? [UIColor purpleColor] : [UIColor blackColor];
+        [_titleAttr addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:22 weight:UIFontWeightMedium], NSForegroundColorAttributeName:color} range:NSMakeRange(0, self.title.length)];
     }
     
     if (_titleAttr) {

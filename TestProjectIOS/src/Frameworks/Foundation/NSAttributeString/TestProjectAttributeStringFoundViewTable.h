@@ -1,5 +1,5 @@
 //
-//  TestProjectAttributeStringFoundationCell.h
+//  TestProjectAttributeStringFoundViewTable.h
 //  TestProjectIOS
 //
 //  Created by zjrcumac on 2023/3/3.
@@ -12,14 +12,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TestProjectAttributeStringFoundationModel : TestProjectTableModel
-
-@end
-
-@interface TestProjectAttributeStringFoundationCell : TestProjectBaseTableViewTableCell
-
-@end
-
 @interface TestProjectAttributeStringFoundViewTable : TestProjectViewTable
 
 @property (nonatomic, copy) NSString *firstAttrText;
@@ -29,13 +21,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *fivthAttrText;
 @property (nonatomic, copy) NSString *sixthAttrText;
 
-- (TestProjectAttributeStringFoundationModel *)createAttrStrModel;
+- (TestProjectTableModel *)createAttrStrModel;
 
-- (TestProjectAttributeStringFoundationModel *)createAttrStrModelWithAttributes:(NSDictionary *)keyValue;
+- (TestProjectTableModel *)createAttrStrModelWithAttributes:(NSDictionary *)keyValue;
 
-- (TestProjectAttributeStringFoundationModel *)compareViewModel;
+- (TestProjectTableModel *)compareViewModel;
 
-- (TestProjectAttributeStringFoundationModel *)createAttrStrModelWithNeedAdd:(BOOL)needAdd;
+- (TestProjectTableModel *)createAttrStrModelWithNeedAdd:(BOOL)needAdd;
 
 @end
 

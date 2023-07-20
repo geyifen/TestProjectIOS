@@ -16,7 +16,6 @@
             @"title": @"- (instancetype)initWithData:(nullable NSData *)contentData ofType:(nullable NSString *)uti NS_DESIGNATED_INITIALIZER API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0)) API_UNAVAILABLE(watchos);",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectTextAttachMent_initWithData_ofType],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -31,7 +30,6 @@
             @"title": @"@property (nullable, copy, NS_NONATOMIC_IOSONLY) NSData *contents",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectTextAttachMent_property_contents],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -46,7 +44,6 @@
             @"title": @"@property (nullable, copy, NS_NONATOMIC_IOSONLY) NSData *fileType",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectTextAttachMent_property_fileType],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -61,7 +58,6 @@
             @"title": @"@property (nullable, strong, NS_NONATOMIC_IOSONLY) UIImage *image API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0)) API_UNAVAILABLE(watchos);",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectTextAttachMent_property_image],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -76,7 +72,6 @@
             @"title": @"@property (NS_NONATOMIC_IOSONLY) CGRect bounds API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0)) API_UNAVAILABLE(watchos);",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectTextAttachMent_property_bounds],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -91,7 +86,6 @@
             @"title": @"@property CGFloat lineLayoutPadding API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0)) API_UNAVAILABLE(watchos);",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectTextAttachMent_property_lineLayoutPadding],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -99,8 +93,8 @@
     };
 }
 
-- (TestProjectAttributeStringFoundationModel *)createAttrStrModelWith:(NSTextAttachment *)attachment {
-    TestProjectAttributeStringFoundationModel *attrStrModel = [[TestProjectAttributeStringFoundationModel alloc] init];
+- (TestProjectTableModel *)createAttrStrModelWith:(NSTextAttachment *)attachment {
+    TestProjectTableModel *attrStrModel = [[TestProjectTableModel alloc] init];
     attrStrModel.isChild = YES;
     NSAttributedString *firstAttrStr = [[NSAttributedString alloc] initWithString:self.firstAttrText];
 
@@ -122,7 +116,7 @@
             attachment.bounds = bounds;
             CGFloat lineLayoutPadding = num.integerValue;
             attachment.lineLayoutPadding = lineLayoutPadding;
-            TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWith:attachment];
+            TestProjectTableModel *m = [self createAttrStrModelWith:attachment];
             m.desc = [NSString stringWithFormat:@"设置的是lineLayoutPadding:%f attrText:%@", lineLayoutPadding, m.titleMutAttrStr];
             [m calculDataViewHeight];
         }
@@ -138,7 +132,7 @@
     CGRect bounds = CGRectMake(0, 0, 100, 50);
     attachment.bounds = bounds;
     
-    TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWith:attachment];
+    TestProjectTableModel *m = [self createAttrStrModelWith:attachment];
     m.desc = [NSString stringWithFormat:@"设置的是bounds:%@ attrText:%@", NSStringFromCGRect(bounds), m.titleMutAttrStr];
     [m calculDataViewHeight];
 
@@ -151,7 +145,7 @@
     attachment.image = image;
     attachment.bounds = CGRectMake(0, 0, 100, 50);
     
-    TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWith:attachment];
+    TestProjectTableModel *m = [self createAttrStrModelWith:attachment];
     m.desc = [NSString stringWithFormat:@"设置的是image:%@ attrText:%@", image, m.titleMutAttrStr];
     [m calculDataViewHeight];
 

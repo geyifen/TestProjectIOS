@@ -20,7 +20,6 @@
             @"title": @"NSFontAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringKit_key_NSFontAttributeName],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -35,7 +34,6 @@
             @"title": @"NSParagraphStyleAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringKit_key_NSParagraphStyleAttributeName],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -50,7 +48,6 @@
             @"title": @"NSForegroundColorAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringKit_key_NSForegroundColorAttributeName],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -65,7 +62,6 @@
             @"title": @"NSBackgroundColorAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringKit_key_NSBackgroundColorAttributeName],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -81,7 +77,6 @@
             @"desc": @"value 0表示没有连体字符，1表示使用默认的联通字符，一般中文用不到，在英文中可能出现相邻的字母连笔的情况",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringKit_key_NSLigatureAttributeName],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -96,7 +91,6 @@
             @"title": @"NSKernAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringKit_key_NSKernAttributeName],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -111,7 +105,6 @@
             @"title": @"NSTrackingAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringKit_key_NSTrackingAttributeName],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -126,7 +119,6 @@
             @"title": @"NSStrikethroughStyleAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringKit_key_NSStrikethroughStyleAttributeName],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -141,7 +133,6 @@
             @"title": @"NSUnderlineStyleAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringKit_key_NSUnderlineStyleAttributeName],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -156,7 +147,6 @@
             @"title": @"NSStrokeColorAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringKit_key_NSStrokeColorAttributeName],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -171,7 +161,6 @@
             @"title": @"NSStrokeWidthAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringKit_key_NSStrokeWidthAttributeName],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -186,7 +175,6 @@
             @"title": @"NSShadowAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringKit_key_NSShadowAttributeName],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -201,7 +189,6 @@
             @"title": @"NSTextEffectAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringKit_key_NSTextEffectAttributeName],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -216,7 +203,6 @@
             @"title": @"NSAttachmentAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringKit_key_NSAttachmentAttributeName],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -232,7 +218,6 @@
             @"desc": @"这个只能UITextView可用UITextView的代理方法中shouldInteractWithURL返回true可用",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringKit_key_NSLinkAttributeName],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -247,7 +232,6 @@
             @"title": @"NSBaselineOffsetAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringKit_key_NSBaselineOffsetAttributeName],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -262,7 +246,6 @@
             @"title": @"NSUnderlineColorAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringKit_key_NSUnderlineColorAttributeName],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -277,7 +260,6 @@
             @"title": @"NSStrikethroughColorAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringKit_key_NSStrikethroughColorAttributeName],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -292,7 +274,6 @@
             @"title": @"NSObliquenessAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringKit_key_NSObliquenessAttributeName],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -307,7 +288,6 @@
             @"title": @"NSExpansionAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringKit_key_NSExpansionAttributeName],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -323,7 +303,6 @@
             @"desc": @"NSWritingDirectionLeftToRight从左到右书写，NSWritingDirectionRightToLeft从右到左书写",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringKit_key_NSWritingDirectionAttributeName],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -339,7 +318,6 @@
             @"desc": @"value 0表示水平，1表示垂直，但在iOS中，只能以横向排版 \n 搜素这个方法[fixAttributesInRange], 设置1的时候，英文的方向是横着的",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringKit_key_NSVerticalGlyphFormAttributeName],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -350,7 +328,7 @@
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSVerticalGlyphFormAttributeName {
     NSArray *arr = @[@1, @0];
     for (NSNumber *num in arr) {
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithAttributes:@{NSVerticalGlyphFormAttributeName:num}];
+        TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSVerticalGlyphFormAttributeName:num}];
         m.desc = [NSString stringWithFormat:@"设置的是@{NSVerticalGlyphFormAttributeName: @%ld} \n attrText:%@", num.integerValue, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -385,7 +363,7 @@
         NSString *title = dic[@"title"];
         NSString *stringValue = dic[@"stringValue"];
         NSArray *value = dic[@"value"];
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithAttributes:@{NSWritingDirectionAttributeName:value}];
+        TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSWritingDirectionAttributeName:value}];
         m.desc = [NSString stringWithFormat:@"%@\n设置的是@{NSWritingDirectionAttributeName: @(%@-%@)} \n attrText:%@", title, stringValue, value, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -396,7 +374,7 @@
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSExpansionAttributeName {
     NSArray *arr = @[@1, @-1];
     for (NSNumber *num in arr) {
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithAttributes:@{NSExpansionAttributeName:num}];
+        TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSExpansionAttributeName:num}];
         m.desc = [NSString stringWithFormat:@"设置的是@{NSExpansionAttributeName: @%ld} \n attrText:%@", num.integerValue, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -407,7 +385,7 @@
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSObliquenessAttributeName {
     NSArray *arr = @[@1, @-1];
     for (NSNumber *num in arr) {
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithAttributes:@{NSObliquenessAttributeName:num}];
+        TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSObliquenessAttributeName:num}];
         m.desc = [NSString stringWithFormat:@"设置的是@{NSObliquenessAttributeName: @%ld} \n attrText:%@", num.integerValue, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -416,7 +394,7 @@
 }
 
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSStrikethroughColorAttributeName {
-    TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithAttributes:@{NSStrikethroughColorAttributeName: [UIColor colorFromString:@"#ff0000"], NSStrikethroughStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle | NSUnderlinePatternDashDot], NSBaselineOffsetAttributeName:@0}];
+    TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSStrikethroughColorAttributeName: [UIColor colorFromString:@"#ff0000"], NSStrikethroughStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle | NSUnderlinePatternDashDot], NSBaselineOffsetAttributeName:@0}];
     m.desc = [NSString stringWithFormat:@"设置的是@{NSStrikethroughColorAttributeName: [UIColor colorFromString:@\"#33ffff\"]} \n attrText:%@", m.titleMutAttrStr];
     [m calculDataViewHeight];
 
@@ -424,7 +402,7 @@
 }
 
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSUnderlineColorAttributeName {
-    TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithAttributes:@{NSUnderlineColorAttributeName: [UIColor colorFromString:@"#33ffff"], NSUnderlineStyleAttributeName: @(NSUnderlineStyleDouble)}];
+    TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSUnderlineColorAttributeName: [UIColor colorFromString:@"#33ffff"], NSUnderlineStyleAttributeName: @(NSUnderlineStyleDouble)}];
     m.desc = [NSString stringWithFormat:@"设置的是@{NSUnderlineColorAttributeName: [UIColor colorFromString:@\"#33ffff\"]} \n attrText:%@", m.titleMutAttrStr];
     [m calculDataViewHeight];
 
@@ -434,7 +412,7 @@
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSBaselineOffsetAttributeName {
     NSArray *arr = @[@10, @-10, @100, @-100];
     for (NSNumber *num in arr) {
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithAttributes:@{NSBackgroundColorAttributeName: [UIColor colorFromString:@"#ff0000"], NSBaselineOffsetAttributeName:num}];
+        TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSBackgroundColorAttributeName: [UIColor colorFromString:@"#ff0000"], NSBaselineOffsetAttributeName:num}];
         m.desc = [NSString stringWithFormat:@"设置的是@{NSBaselineOffsetAttributeName: %ld} \n attrText:%@", num.integerValue, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -442,7 +420,7 @@
 }
 
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSLinkAttributeName {
-    TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithAttributes:@{NSLinkAttributeName: [NSURL URLWithString:@"https://www.baidu.com"]}];
+    TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSLinkAttributeName: [NSURL URLWithString:@"https://www.baidu.com"]}];
     m.desc = [NSString stringWithFormat:@"设置的是@{NSLinkAttributeName: [NSURL URLWithString:@\"https://www.baidu.com\"]} \n attrText:%@", m.titleMutAttrStr];
     [m calculDataViewHeight];
 
@@ -453,7 +431,7 @@
     NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
     attachment.image = [UIImage imageNamed:@"lyf_1"];
     attachment.bounds = CGRectMake(0, 0, 100, 50);
-    TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithAttributes:nil];
+    TestProjectTableModel *m = [self createAttrStrModelWithAttributes:nil];
     NSAttributedString *attachmentAttrText = [NSAttributedString attributedStringWithAttachment:attachment];
     [m.titleMutAttrStr appendAttributedString:attachmentAttrText];
     m.desc = [NSString stringWithFormat:@"设置图片的attachment \n attrText:%@", m.titleMutAttrStr];
@@ -463,7 +441,7 @@
 }
 
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSTextEffectAttributeName {
-    TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithAttributes:@{NSTextEffectAttributeName: NSTextEffectLetterpressStyle}];
+    TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSTextEffectAttributeName: NSTextEffectLetterpressStyle}];
     m.desc = [NSString stringWithFormat:@"设置的是@{NSTextEffectAttributeName: NSTextEffectLetterpressStyle} \n attrText:%@", m.titleMutAttrStr];
     [m calculDataViewHeight];
 
@@ -503,7 +481,7 @@
         NSString *key = dic[@"key"];
         NSString *stringKey = dic[@"stringKey"];
 
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithAttributes:@{NSShadowAttributeName: shadow, key:value}];
+        TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSShadowAttributeName: shadow, key:value}];
         m.desc = [NSString stringWithFormat:@"shadow是%@ 设置的值@{(%@-%@): %@} 展示的效果是:%@ \n attrText:%@", shadow, stringKey, key, value, title, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -513,7 +491,7 @@
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSStrokeWidthAttributeName {
     NSArray *arr = @[@3, @-3, @100, @-100];
     for (NSNumber *num in arr) {
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithAttributes:@{NSStrokeColorAttributeName: [UIColor colorFromString:@"#33ffff"], NSStrokeWidthAttributeName:num}];
+        TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSStrokeColorAttributeName: [UIColor colorFromString:@"#33ffff"], NSStrokeWidthAttributeName:num}];
         m.desc = [NSString stringWithFormat:@"没有设置NSStrokeWidthAttributeName则文字描边无效@{NSStrokeColorAttributeName: [UIColor colorFromString:@\"#33ffff\"]} \n attrText:%@", m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -523,7 +501,7 @@
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSStrokeColorAttributeName {
     NSArray *arr = @[@3, @-3, @100, @-100];
     for (NSNumber *num in arr) {
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithAttributes:@{NSStrokeColorAttributeName: [UIColor colorFromString:@"#33ffff"], NSStrokeWidthAttributeName:num}];
+        TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSStrokeColorAttributeName: [UIColor colorFromString:@"#33ffff"], NSStrokeWidthAttributeName:num}];
         m.desc = [NSString stringWithFormat:@"没有设置NSStrokeWidthAttributeName则文字描边无效@{NSStrokeColorAttributeName: [UIColor colorFromString:@\"#33ffff\"]} \n attrText:%@", m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -582,7 +560,7 @@
         NSString *title = dic[@"title"];
         NSString *stringKey = dic[@"stringKey"];
         NSNumber *value = dic[@"value"];
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithAttributes:@{key: value, NSStrikethroughColorAttributeName: [UIColor colorFromString:@"#00ffff"]}];
+        TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{key: value, NSStrikethroughColorAttributeName: [UIColor colorFromString:@"#00ffff"]}];
         m.desc = [NSString stringWithFormat:@"设置的是%@ @{%@: @(%@-%ld)} \n attrText:%@", title, keyStr, stringKey, value.integerValue, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -602,7 +580,7 @@
     if (@available(iOS 14.0, *)) {
         NSArray *arr = @[@10, @0, @-10];
         for (NSNumber *num in arr) {
-            TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithAttributes:@{NSTrackingAttributeName: num}];
+            TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSTrackingAttributeName: num}];
             m.desc = [NSString stringWithFormat:@"设置的是@{NSTrackingAttributeName: @%ld} attrText:%@", num.integerValue, m.titleMutAttrStr];
             [m calculDataViewHeight];
         }
@@ -613,7 +591,7 @@
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSKernAttributeName {
     NSArray *arr = @[@0, @1, @-100, @10];
     for (NSNumber *num in arr) {
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithAttributes:@{NSKernAttributeName: num}];
+        TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSKernAttributeName: num}];
         m.desc = [NSString stringWithFormat:@"设置的是@{NSKernAttributeName: @%ld} attrText:%@", num.integerValue, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -623,7 +601,7 @@
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSLigatureAttributeName {
     NSArray *arr = @[@0, @1, @-100, @10];
     for (NSNumber *num in arr) {
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithAttributes:@{NSLigatureAttributeName: num}];
+        TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSLigatureAttributeName: num}];
         m.desc = [NSString stringWithFormat:@"设置的是@{NSLigatureAttributeName: @%ld} attrText:%@", num.integerValue, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -631,7 +609,7 @@
 }
 
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSBackgroundColorAttributeName {
-    TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithAttributes:@{NSBackgroundColorAttributeName: [UIColor colorFromString:@"#33ffff"]}];
+    TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSBackgroundColorAttributeName: [UIColor colorFromString:@"#33ffff"]}];
     m.desc = [NSString stringWithFormat:@"设置的是@{NSBackgroundColorAttributeName: [UIColor colorFromString:@\"#33ffff\"]} \n attrText:%@", m.titleMutAttrStr];
     [m calculDataViewHeight];
 
@@ -639,7 +617,7 @@
 }
 
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSForegroundColorAttributeName {
-    TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithAttributes:@{NSForegroundColorAttributeName: [UIColor colorFromString:@"#33ffff"]}];
+    TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSForegroundColorAttributeName: [UIColor colorFromString:@"#33ffff"]}];
     m.desc = [NSString stringWithFormat:@"设置的是@{NSForegroundColorAttributeName: [UIColor colorFromString:@\"#33ffff\"]} \n attrText:%@", m.titleMutAttrStr];
     [m calculDataViewHeight];
 
@@ -648,7 +626,7 @@
 
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSParagraphStyleAttributeName {
     NSParagraphStyle *style = [NSParagraphStyle defaultParagraphStyle];
-    TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithAttributes:@{NSParagraphStyleAttributeName: style}];
+    TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSParagraphStyleAttributeName: style}];
     m.desc = [NSString stringWithFormat:@"设置的是@{NSParagraphStyleAttributeName: [NSParagraphStyle defaultParagraphStyle]} \n attrText:%@", m.titleMutAttrStr];
     [m calculDataViewHeight];
 
@@ -656,7 +634,7 @@
 }
 
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSFontAttributeName {
-    TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:40]}];
+    TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:40]}];
     m.desc = [NSString stringWithFormat:@"设置的是@{NSFontAttributeName: [UIFont systemFontOfSize:40]} \n attrText:%@", m.titleMutAttrStr];
     [m calculDataViewHeight];
 

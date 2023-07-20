@@ -9,14 +9,27 @@
 /* Begin PBXBuildFile section */
 		27A585E85C033FBF09E7B973 /* Pods_TestProjectIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044E49489342EC595D627E86 /* Pods_TestProjectIOS.framework */; };
 		34032F512A0E35A100122D77 /* TestProjectViewViewGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 34032F502A0E35A100122D77 /* TestProjectViewViewGeometry.m */; };
+		3408F9762A52A786006F33B6 /* TestProjectProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3408F9752A52A786006F33B6 /* TestProjectProgressView.m */; };
 		340DC4B82A0CEC250089D175 /* TestProjectResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 340DC4B72A0CEC250089D175 /* TestProjectResponder.m */; };
 		340E9F992975378600C1D440 /* TestProjectSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 340E9F982975378600C1D440 /* TestProjectSignal.m */; };
 		3412005929C7FD46007338D0 /* TestProjectTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3412005829C7FD46007338D0 /* TestProjectTextAttachment.m */; };
 		3412005B29C843F1007338D0 /* lyf_2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3412005A29C843F1007338D0 /* lyf_2.jpeg */; };
 		3412005D29C846B7007338D0 /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3412005C29C846B7007338D0 /* test.txt */; };
 		3412006129C8531D007338D0 /* TestProjectFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 3412006029C8531D007338D0 /* TestProjectFont.m */; };
+		3412E6E72A64CF5F00945BCE /* TestProjectCalendarSelectionSingleDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3412E6E62A64CF5F00945BCE /* TestProjectCalendarSelectionSingleDate.m */; };
+		341791542A4193FB0052DD90 /* TestProjectFontDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 341791532A4193FB0052DD90 /* TestProjectFontDescriptor.m */; };
 		3418071B29C1C94700F095C6 /* TestProjectDataAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 3418071A29C1C94700F095C6 /* TestProjectDataAsset.m */; };
+		3425BE1C2A4ABCBC00D0D625 /* TestProjectValueUIGeometryExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3425BE1B2A4ABCBC00D0D625 /* TestProjectValueUIGeometryExtensions.m */; };
+		3425BE202A4ACBC300D0D625 /* TestProjectLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3425BE1F2A4ACBC300D0D625 /* TestProjectLabel.m */; };
 		3428C1D429C3073600CF06B1 /* TestProjectMutableParagraphStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3428C1D329C3073600CF06B1 /* TestProjectMutableParagraphStyle.m */; };
+		34292E792A37FB8E003884E2 /* TestProjectDateComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 34292E782A37FB8E003884E2 /* TestProjectDateComponents.m */; };
+		34292E7D2A380AF6003884E2 /* NSDateComponents+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 34292E7C2A380AF6003884E2 /* NSDateComponents+TestProject.m */; };
+		34292E802A38129B003884E2 /* TestProjectTimeZone.m in Sources */ = {isa = PBXBuildFile; fileRef = 34292E7F2A38129B003884E2 /* TestProjectTimeZone.m */; };
+		34292E832A384992003884E2 /* TestProjectExtendedTimeZone.m in Sources */ = {isa = PBXBuildFile; fileRef = 34292E822A384992003884E2 /* TestProjectExtendedTimeZone.m */; };
+		34292E872A3861D6003884E2 /* TestProjectLocale.m in Sources */ = {isa = PBXBuildFile; fileRef = 34292E862A3861D6003884E2 /* TestProjectLocale.m */; };
+		34292E8A2A386991003884E2 /* TestProjectExtendedLocale.m in Sources */ = {isa = PBXBuildFile; fileRef = 34292E892A386991003884E2 /* TestProjectExtendedLocale.m */; };
+		34292E8D2A38787B003884E2 /* TestProjectLocaleCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 34292E8C2A38787B003884E2 /* TestProjectLocaleCreation.m */; };
+		34333D442A4D2ABD00DEDA79 /* TestProjectSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 34333D432A4D2ABD00DEDA79 /* TestProjectSwitch.m */; };
 		344012A62A1E057100D25366 /* TestProjectViewViewRendering.m in Sources */ = {isa = PBXBuildFile; fileRef = 344012A52A1E057100D25366 /* TestProjectViewViewRendering.m */; };
 		344012A92A1E1AB500D25366 /* TestProjectViewViewAnimationWithBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 344012A82A1E1AB500D25366 /* TestProjectViewViewAnimationWithBlocks.m */; };
 		344106E229E8027800683950 /* NSMutableArray+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 344106E129E8027800683950 /* NSMutableArray+TestProject.m */; };
@@ -29,6 +42,7 @@
 		3447EE02280E8EBD001AE2F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3447EE01280E8EBD001AE2F0 /* Assets.xcassets */; };
 		3447EE05280E8EBD001AE2F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3447EE03280E8EBD001AE2F0 /* LaunchScreen.storyboard */; };
 		3447EE08280E8EBD001AE2F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EE07280E8EBD001AE2F0 /* main.m */; };
+		3450F9282A3BFB54006048D8 /* NSDate+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3450F9272A3BFB54006048D8 /* NSDate+TestProject.m */; };
 		345BA75828BF46CD00ED6C5C /* TestProjectDModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 345BA75728BF46CD00ED6C5C /* TestProjectDModel.m */; };
 		345C814E29BF2E7A00AE3D07 /* TestProjectMutableAttributedStringExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 345C814D29BF2E7A00AE3D07 /* TestProjectMutableAttributedStringExtended.m */; };
 		345CDF022A209FC2003C1FF3 /* TestProjectViewSnapshotting.m in Sources */ = {isa = PBXBuildFile; fileRef = 345CDF012A209FC2003C1FF3 /* TestProjectViewSnapshotting.m */; };
@@ -44,12 +58,20 @@
 		345E44C629F9476E00BBED12 /* UIAlertController+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 345E44C529F9476E00BBED12 /* UIAlertController+TestProject.m */; };
 		345EC4BE286548D100F61F2E /* TestProjectCustomModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 345EC4BD286548D100F61F2E /* TestProjectCustomModel.m */; };
 		346083CA2A1F68B300096DD2 /* TestProjectViewViewKeyframeAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 346083C92A1F68B300096DD2 /* TestProjectViewViewKeyframeAnimations.m */; };
+		34624F052A3C0F6E00045544 /* TestProjectColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34624F042A3C0F6E00045544 /* TestProjectColorPickerViewController.m */; };
+		346268CC2A3956C800449570 /* TestProjectLocaleGeneralInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 346268CB2A3956C800449570 /* TestProjectLocaleGeneralInfo.m */; };
+		346268D02A39A65C00449570 /* TestProjectExtendedDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 346268CF2A39A65C00449570 /* TestProjectExtendedDate.m */; };
+		346268D32A39B5A400449570 /* TestProjectDateCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 346268D22A39B5A400449570 /* TestProjectDateCreation.m */; };
+		346268D72A39C66C00449570 /* TestProjectDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 346268D62A39C66C00449570 /* TestProjectDateFormatter.m */; };
 		346B744E29933A2F00C06A99 /* TestProjectNestScrollTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 346B744D29933A2F00C06A99 /* TestProjectNestScrollTabController.m */; };
 		346B745129938CAC00C06A99 /* TestProjectObjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 346B745029938CAC00C06A99 /* TestProjectObjectController.m */; };
 		347338DC28BDB85600B921EC /* TestProjectAModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 347338DB28BDB85600B921EC /* TestProjectAModel.m */; };
 		347338DF28BDB86700B921EC /* TestProjectBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 347338DE28BDB86700B921EC /* TestProjectBModel.m */; };
 		347338E228BDB87E00B921EC /* TestProjectCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 347338E128BDB87E00B921EC /* TestProjectCModel.m */; };
 		347AAA162A24A39A00F0C475 /* TestProjectControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 347AAA152A24A39A00F0C475 /* TestProjectControl.m */; };
+		347B44CB2A3FEA3E001061A5 /* TestProjectColorWell.m in Sources */ = {isa = PBXBuildFile; fileRef = 347B44CA2A3FEA3E001061A5 /* TestProjectColorWell.m */; };
+		347B44CF2A3FFA05001061A5 /* TestProjectDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 347B44CE2A3FFA05001061A5 /* TestProjectDatePicker.m */; };
+		347B44D32A405C08001061A5 /* TestProjectDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 347B44D22A405C08001061A5 /* TestProjectDevice.m */; };
 		347DCC4E29E6AE3E005A3D44 /* TestProjectNavigationBarAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 347DCC4D29E6AE3E005A3D44 /* TestProjectNavigationBarAppearance.m */; };
 		347DCC5229E6AFBC005A3D44 /* TestProjectBarAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 347DCC5129E6AFBC005A3D44 /* TestProjectBarAppearance.m */; };
 		3480AA5A29B76C0D00D9C957 /* TestProjectMutableAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3480AA5929B76C0D00D9C957 /* TestProjectMutableAttributedString.m */; };
@@ -65,6 +87,7 @@
 		349801DA29E58C6200C2B5E1 /* TestProjectNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 349801D929E58C6200C2B5E1 /* TestProjectNavigationBar.m */; };
 		34A0686C29E7D5CF003B115C /* TestProjectBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A0686B29E7D5CF003B115C /* TestProjectBaseModel.m */; };
 		34A0686F29E7E41E003B115C /* TestProjectViewModelTab.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A0686E29E7E41E003B115C /* TestProjectViewModelTab.m */; };
+		34A285D12A6136BB006C49D4 /* TestProjectTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A285D02A6136BB006C49D4 /* TestProjectTextField.m */; };
 		34A5C40A29B096DA00E61F65 /* UIColor+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A5C40929B096DA00E61F65 /* UIColor+TestProject.m */; };
 		34A5C40D29B0976600E61F65 /* TestProjectUIColorCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A5C40C29B0976600E61F65 /* TestProjectUIColorCategory.m */; };
 		34A5C41529B1976500E61F65 /* TestProjectAttributeStringKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A5C41429B1976500E61F65 /* TestProjectAttributeStringKit.m */; };
@@ -72,16 +95,23 @@
 		34A5C41C29B1C55400E61F65 /* TestProjectGetImplementationMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A5C41B29B1C55400E61F65 /* TestProjectGetImplementationMethod.m */; };
 		34A5C42029B1CC8600E61F65 /* TestProjectGetUIKitMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A5C41F29B1CC8600E61F65 /* TestProjectGetUIKitMethod.m */; };
 		34A5C42329B1D06E00E61F65 /* TestProjectGetFoundationImplementationMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A5C42229B1D06E00E61F65 /* TestProjectGetFoundationImplementationMethod.m */; };
-		34A5C42729B1DA2400E61F65 /* TestProjectAttributeStringFoundationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A5C42629B1DA2400E61F65 /* TestProjectAttributeStringFoundationCell.m */; };
+		34A5C42729B1DA2400E61F65 /* TestProjectAttributeStringFoundViewTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A5C42629B1DA2400E61F65 /* TestProjectAttributeStringFoundViewTable.m */; };
 		34A5C42A29B1F06400E61F65 /* TestProjectAttributeStringExtendedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A5C42929B1F06400E61F65 /* TestProjectAttributeStringExtendedString.m */; };
+		34A9C9242A497715000B0CD6 /* TestProjectFontPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A9C9232A497715000B0CD6 /* TestProjectFontPickerViewController.m */; };
+		34A9C9292A497B6C000B0CD6 /* TestProjectFontPickerViewControllerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A9C9282A497B6C000B0CD6 /* TestProjectFontPickerViewControllerConfiguration.m */; };
+		34A9C92D2A498BAA000B0CD6 /* TestProjectGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A9C92C2A498BAA000B0CD6 /* TestProjectGeometry.m */; };
 		34B1A5DE2A289FB100766B44 /* TestProjectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B1A5DD2A289FB100766B44 /* TestProjectButton.m */; };
-		34B1A5E12A28B57800766B44 /* TestProjectUIButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B1A5E02A28B57800766B44 /* TestProjectUIButtonCell.m */; };
 		34B20F0A2988A9A5009B4EFD /* TestProjectHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B20F092988A9A5009B4EFD /* TestProjectHomeController.m */; };
 		34B20F0D2988A9CB009B4EFD /* TestProjectMyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B20F0C2988A9CB009B4EFD /* TestProjectMyController.m */; };
 		34B4C16D29DEA1B1001728DC /* TestProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B4C16C29DEA1B1001728DC /* TestProjectViewController.m */; };
 		34B4C17029DEA75C001728DC /* TestProjectTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B4C16F29DEA75C001728DC /* TestProjectTestVC.m */; };
 		34B4C17429DEB611001728DC /* TestProjectTestNibVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B4C17229DEB611001728DC /* TestProjectTestNibVC.m */; };
 		34B4C17529DEB611001728DC /* TestProjectTestNibVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34B4C17329DEB611001728DC /* TestProjectTestNibVC.xib */; };
+		34B4C2F42A5BED5C007F019F /* TestProjectStepper.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B4C2F32A5BED5C007F019F /* TestProjectStepper.m */; };
+		34B4C2F82A5BF6A5007F019F /* UIView+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B4C2F72A5BF6A5007F019F /* UIView+TestProject.m */; };
+		34B4C2FC2A5BF9A9007F019F /* UIWindow+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B4C2FB2A5BF9A9007F019F /* UIWindow+TestProject.m */; };
+		34B4C3002A5BFFB6007F019F /* UIResponder+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B4C2FF2A5BFFB6007F019F /* UIResponder+TestProject.m */; };
+		34B4DFD92A308CB000F2DB23 /* TestProjectBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B4DFD82A308CB000F2DB23 /* TestProjectBezierPath.m */; };
 		34BA4AB92A1CBE6800997CC4 /* TestProjectViewViewHierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BA4AB82A1CBE6800997CC4 /* TestProjectViewViewHierarchy.m */; };
 		34BB4A6E28D2BF1E00E79698 /* NSObject+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BB4A6D28D2BF1E00E79698 /* NSObject+TestProject.m */; };
 		34BE0C92283F0FA80003317D /* TestProjectMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BE0C91283F0FA80003317D /* TestProjectMath.m */; };
@@ -100,12 +130,19 @@
 		34D77A4028C19FBB00A0CE9F /* TestProjectXModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D77A3F28C19FBB00A0CE9F /* TestProjectXModel.m */; };
 		34D77A4328C19FD100A0CE9F /* TestProjectZModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D77A4228C19FD100A0CE9F /* TestProjectZModel.m */; };
 		34D77A4628C1A1FF00A0CE9F /* TestProjectUModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D77A4528C1A1FF00A0CE9F /* TestProjectUModel.m */; };
+		34DBB28E2A5407CF00A5D8AD /* TestProjectSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DBB28D2A5407CF00A5D8AD /* TestProjectSlider.m */; };
 		34DDB787296C0FA3009D56B8 /* TestProjectPThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDB786296C0FA3009D56B8 /* TestProjectPThread.m */; };
 		34E2548929DBC2EB002CF4B0 /* TestProjectAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E2548829DBC2EB002CF4B0 /* TestProjectAppearance.m */; };
 		34E5D44B2990865100FD4F71 /* UIView+TestProject_Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E5D44A2990865100FD4F71 /* UIView+TestProject_Frame.m */; };
 		34E5D4542990E48C00FD4F71 /* TestProjectScrollTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E5D4532990E48C00FD4F71 /* TestProjectScrollTabController.m */; };
 		34EC4DD128532604000AEF1E /* TestProjectObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EC4DD028532604000AEF1E /* TestProjectObjc.m */; };
+		34EE5C1E2A316FF800B1C5D8 /* TestProjectCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EE5C1D2A316FF800B1C5D8 /* TestProjectCalendarView.m */; };
+		34EE5C222A31B41100B1C5D8 /* TestProjectCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EE5C212A31B41100B1C5D8 /* TestProjectCalendar.m */; };
 		34EF82AF28571B3B0046F4C3 /* TestProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EF82AE28571B3B0046F4C3 /* TestProjectModel.m */; };
+		34F24D672A64E7290004BC62 /* TestProjectCalendarSelectionMultiDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F24D662A64E7290004BC62 /* TestProjectCalendarSelectionMultiDate.m */; };
+		34F24D6B2A6520B40004BC62 /* TestProjectCloudSharingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F24D6A2A6520B40004BC62 /* TestProjectCloudSharingController.m */; };
+		34F24D6F2A6532350004BC62 /* TestProjectCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F24D6E2A6532350004BC62 /* TestProjectCollectionView.m */; };
+		34F24D732A6534340004BC62 /* TestProjectScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F24D722A6534340004BC62 /* TestProjectScrollView.m */; };
 		34F378712A0B8A4700CFC8E6 /* TestProjectBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F378702A0B8A4700CFC8E6 /* TestProjectBarButtonItem.m */; };
 		E2392A3829AB762D00638D25 /* TestProjectUIColorNamedColors.m in Sources */ = {isa = PBXBuildFile; fileRef = E2392A3729AB762D00638D25 /* TestProjectUIColorNamedColors.m */; };
 		E2392A3B29AB7E1400638D25 /* TestProjectUIColorDynamicdColors.m in Sources */ = {isa = PBXBuildFile; fileRef = E2392A3A29AB7E1400638D25 /* TestProjectUIColorDynamicdColors.m */; };
@@ -125,6 +162,8 @@
 		044E49489342EC595D627E86 /* Pods_TestProjectIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestProjectIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34032F4F2A0E35A100122D77 /* TestProjectViewViewGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectViewViewGeometry.h; sourceTree = "<group>"; };
 		34032F502A0E35A100122D77 /* TestProjectViewViewGeometry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectViewViewGeometry.m; sourceTree = "<group>"; };
+		3408F9742A52A786006F33B6 /* TestProjectProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectProgressView.h; sourceTree = "<group>"; };
+		3408F9752A52A786006F33B6 /* TestProjectProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectProgressView.m; sourceTree = "<group>"; };
 		340DC4B62A0CEC250089D175 /* TestProjectResponder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectResponder.h; sourceTree = "<group>"; };
 		340DC4B72A0CEC250089D175 /* TestProjectResponder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectResponder.m; sourceTree = "<group>"; };
 		340E9F972975378600C1D440 /* TestProjectSignal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectSignal.h; sourceTree = "<group>"; };
@@ -135,11 +174,35 @@
 		3412005C29C846B7007338D0 /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
 		3412005F29C8531D007338D0 /* TestProjectFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectFont.h; sourceTree = "<group>"; };
 		3412006029C8531D007338D0 /* TestProjectFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectFont.m; sourceTree = "<group>"; };
+		3412E6E52A64CF5F00945BCE /* TestProjectCalendarSelectionSingleDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectCalendarSelectionSingleDate.h; sourceTree = "<group>"; };
+		3412E6E62A64CF5F00945BCE /* TestProjectCalendarSelectionSingleDate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectCalendarSelectionSingleDate.m; sourceTree = "<group>"; };
+		341791522A4193FB0052DD90 /* TestProjectFontDescriptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectFontDescriptor.h; sourceTree = "<group>"; };
+		341791532A4193FB0052DD90 /* TestProjectFontDescriptor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectFontDescriptor.m; sourceTree = "<group>"; };
 		3418071929C1C94700F095C6 /* TestProjectDataAsset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDataAsset.h; sourceTree = "<group>"; };
 		3418071A29C1C94700F095C6 /* TestProjectDataAsset.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDataAsset.m; sourceTree = "<group>"; };
 		3419D90829B5767700CDF493 /* TestProjectConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectConfig.h; sourceTree = "<group>"; };
+		3425BE1A2A4ABCBC00D0D625 /* TestProjectValueUIGeometryExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectValueUIGeometryExtensions.h; sourceTree = "<group>"; };
+		3425BE1B2A4ABCBC00D0D625 /* TestProjectValueUIGeometryExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectValueUIGeometryExtensions.m; sourceTree = "<group>"; };
+		3425BE1E2A4ACBC300D0D625 /* TestProjectLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectLabel.h; sourceTree = "<group>"; };
+		3425BE1F2A4ACBC300D0D625 /* TestProjectLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectLabel.m; sourceTree = "<group>"; };
 		3428C1D229C3073600CF06B1 /* TestProjectMutableParagraphStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectMutableParagraphStyle.h; sourceTree = "<group>"; };
 		3428C1D329C3073600CF06B1 /* TestProjectMutableParagraphStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectMutableParagraphStyle.m; sourceTree = "<group>"; };
+		34292E772A37FB8E003884E2 /* TestProjectDateComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDateComponents.h; sourceTree = "<group>"; };
+		34292E782A37FB8E003884E2 /* TestProjectDateComponents.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDateComponents.m; sourceTree = "<group>"; };
+		34292E7B2A380AF6003884E2 /* NSDateComponents+TestProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDateComponents+TestProject.h"; sourceTree = "<group>"; };
+		34292E7C2A380AF6003884E2 /* NSDateComponents+TestProject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDateComponents+TestProject.m"; sourceTree = "<group>"; };
+		34292E7E2A38129B003884E2 /* TestProjectTimeZone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectTimeZone.h; sourceTree = "<group>"; };
+		34292E7F2A38129B003884E2 /* TestProjectTimeZone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectTimeZone.m; sourceTree = "<group>"; };
+		34292E812A384992003884E2 /* TestProjectExtendedTimeZone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectExtendedTimeZone.h; sourceTree = "<group>"; };
+		34292E822A384992003884E2 /* TestProjectExtendedTimeZone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectExtendedTimeZone.m; sourceTree = "<group>"; };
+		34292E852A3861D6003884E2 /* TestProjectLocale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectLocale.h; sourceTree = "<group>"; };
+		34292E862A3861D6003884E2 /* TestProjectLocale.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectLocale.m; sourceTree = "<group>"; };
+		34292E882A386991003884E2 /* TestProjectExtendedLocale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectExtendedLocale.h; sourceTree = "<group>"; };
+		34292E892A386991003884E2 /* TestProjectExtendedLocale.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectExtendedLocale.m; sourceTree = "<group>"; };
+		34292E8B2A38787B003884E2 /* TestProjectLocaleCreation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectLocaleCreation.h; sourceTree = "<group>"; };
+		34292E8C2A38787B003884E2 /* TestProjectLocaleCreation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectLocaleCreation.m; sourceTree = "<group>"; };
+		34333D422A4D2ABD00DEDA79 /* TestProjectSwitch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectSwitch.h; sourceTree = "<group>"; };
+		34333D432A4D2ABD00DEDA79 /* TestProjectSwitch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectSwitch.m; sourceTree = "<group>"; };
 		344012A42A1E057100D25366 /* TestProjectViewViewRendering.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectViewViewRendering.h; sourceTree = "<group>"; };
 		344012A52A1E057100D25366 /* TestProjectViewViewRendering.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectViewViewRendering.m; sourceTree = "<group>"; };
 		344012A72A1E1AB500D25366 /* TestProjectViewViewAnimationWithBlocks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectViewViewAnimationWithBlocks.h; sourceTree = "<group>"; };
@@ -162,6 +225,8 @@
 		3447EE04280E8EBD001AE2F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3447EE06280E8EBD001AE2F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3447EE07280E8EBD001AE2F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3450F9262A3BFB54006048D8 /* NSDate+TestProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+TestProject.h"; sourceTree = "<group>"; };
+		3450F9272A3BFB54006048D8 /* NSDate+TestProject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TestProject.m"; sourceTree = "<group>"; };
 		345BA75628BF46CD00ED6C5C /* TestProjectDModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDModel.h; sourceTree = "<group>"; };
 		345BA75728BF46CD00ED6C5C /* TestProjectDModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDModel.m; sourceTree = "<group>"; };
 		345C814C29BF2E7A00AE3D07 /* TestProjectMutableAttributedStringExtended.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectMutableAttributedStringExtended.h; sourceTree = "<group>"; };
@@ -193,6 +258,16 @@
 		345EC4BD286548D100F61F2E /* TestProjectCustomModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectCustomModel.m; sourceTree = "<group>"; };
 		346083C82A1F68B300096DD2 /* TestProjectViewViewKeyframeAnimations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectViewViewKeyframeAnimations.h; sourceTree = "<group>"; };
 		346083C92A1F68B300096DD2 /* TestProjectViewViewKeyframeAnimations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectViewViewKeyframeAnimations.m; sourceTree = "<group>"; };
+		34624F032A3C0F6E00045544 /* TestProjectColorPickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectColorPickerViewController.h; sourceTree = "<group>"; };
+		34624F042A3C0F6E00045544 /* TestProjectColorPickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectColorPickerViewController.m; sourceTree = "<group>"; };
+		346268CA2A3956C800449570 /* TestProjectLocaleGeneralInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectLocaleGeneralInfo.h; sourceTree = "<group>"; };
+		346268CB2A3956C800449570 /* TestProjectLocaleGeneralInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectLocaleGeneralInfo.m; sourceTree = "<group>"; };
+		346268CE2A39A65C00449570 /* TestProjectExtendedDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectExtendedDate.h; sourceTree = "<group>"; };
+		346268CF2A39A65C00449570 /* TestProjectExtendedDate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectExtendedDate.m; sourceTree = "<group>"; };
+		346268D12A39B5A400449570 /* TestProjectDateCreation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDateCreation.h; sourceTree = "<group>"; };
+		346268D22A39B5A400449570 /* TestProjectDateCreation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDateCreation.m; sourceTree = "<group>"; };
+		346268D52A39C66C00449570 /* TestProjectDateFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDateFormatter.h; sourceTree = "<group>"; };
+		346268D62A39C66C00449570 /* TestProjectDateFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDateFormatter.m; sourceTree = "<group>"; };
 		346920AA28517F5100E0F769 /* TestProjectIgnoreWarningDefmacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectIgnoreWarningDefmacro.h; sourceTree = "<group>"; };
 		346B744C29933A2F00C06A99 /* TestProjectNestScrollTabController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectNestScrollTabController.h; sourceTree = "<group>"; };
 		346B744D29933A2F00C06A99 /* TestProjectNestScrollTabController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectNestScrollTabController.m; sourceTree = "<group>"; };
@@ -206,6 +281,12 @@
 		347338E128BDB87E00B921EC /* TestProjectCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectCModel.m; sourceTree = "<group>"; };
 		347AAA142A24A39A00F0C475 /* TestProjectControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectControl.h; sourceTree = "<group>"; };
 		347AAA152A24A39A00F0C475 /* TestProjectControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectControl.m; sourceTree = "<group>"; };
+		347B44C92A3FEA3E001061A5 /* TestProjectColorWell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectColorWell.h; sourceTree = "<group>"; };
+		347B44CA2A3FEA3E001061A5 /* TestProjectColorWell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectColorWell.m; sourceTree = "<group>"; };
+		347B44CD2A3FFA05001061A5 /* TestProjectDatePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDatePicker.h; sourceTree = "<group>"; };
+		347B44CE2A3FFA05001061A5 /* TestProjectDatePicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDatePicker.m; sourceTree = "<group>"; };
+		347B44D12A405C08001061A5 /* TestProjectDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDevice.h; sourceTree = "<group>"; };
+		347B44D22A405C08001061A5 /* TestProjectDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDevice.m; sourceTree = "<group>"; };
 		347DCC4C29E6AE3E005A3D44 /* TestProjectNavigationBarAppearance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectNavigationBarAppearance.h; sourceTree = "<group>"; };
 		347DCC4D29E6AE3E005A3D44 /* TestProjectNavigationBarAppearance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectNavigationBarAppearance.m; sourceTree = "<group>"; };
 		347DCC5029E6AFBC005A3D44 /* TestProjectBarAppearance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectBarAppearance.h; sourceTree = "<group>"; };
@@ -238,6 +319,8 @@
 		34A0686B29E7D5CF003B115C /* TestProjectBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectBaseModel.m; sourceTree = "<group>"; };
 		34A0686D29E7E41E003B115C /* TestProjectViewModelTab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProjectViewModelTab.h; sourceTree = "<group>"; };
 		34A0686E29E7E41E003B115C /* TestProjectViewModelTab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestProjectViewModelTab.m; sourceTree = "<group>"; };
+		34A285CF2A6136BB006C49D4 /* TestProjectTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectTextField.h; sourceTree = "<group>"; };
+		34A285D02A6136BB006C49D4 /* TestProjectTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectTextField.m; sourceTree = "<group>"; };
 		34A5C40829B096DA00E61F65 /* UIColor+TestProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+TestProject.h"; sourceTree = "<group>"; };
 		34A5C40929B096DA00E61F65 /* UIColor+TestProject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+TestProject.m"; sourceTree = "<group>"; };
 		34A5C40B29B0976600E61F65 /* TestProjectUIColorCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectUIColorCategory.h; sourceTree = "<group>"; };
@@ -252,14 +335,18 @@
 		34A5C41F29B1CC8600E61F65 /* TestProjectGetUIKitMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectGetUIKitMethod.m; sourceTree = "<group>"; };
 		34A5C42129B1D06E00E61F65 /* TestProjectGetFoundationImplementationMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectGetFoundationImplementationMethod.h; sourceTree = "<group>"; };
 		34A5C42229B1D06E00E61F65 /* TestProjectGetFoundationImplementationMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectGetFoundationImplementationMethod.m; sourceTree = "<group>"; };
-		34A5C42529B1DA2400E61F65 /* TestProjectAttributeStringFoundationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectAttributeStringFoundationCell.h; sourceTree = "<group>"; };
-		34A5C42629B1DA2400E61F65 /* TestProjectAttributeStringFoundationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectAttributeStringFoundationCell.m; sourceTree = "<group>"; };
+		34A5C42529B1DA2400E61F65 /* TestProjectAttributeStringFoundViewTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectAttributeStringFoundViewTable.h; sourceTree = "<group>"; };
+		34A5C42629B1DA2400E61F65 /* TestProjectAttributeStringFoundViewTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectAttributeStringFoundViewTable.m; sourceTree = "<group>"; };
 		34A5C42829B1F06400E61F65 /* TestProjectAttributeStringExtendedString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectAttributeStringExtendedString.h; sourceTree = "<group>"; };
 		34A5C42929B1F06400E61F65 /* TestProjectAttributeStringExtendedString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectAttributeStringExtendedString.m; sourceTree = "<group>"; };
+		34A9C9222A497715000B0CD6 /* TestProjectFontPickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectFontPickerViewController.h; sourceTree = "<group>"; };
+		34A9C9232A497715000B0CD6 /* TestProjectFontPickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectFontPickerViewController.m; sourceTree = "<group>"; };
+		34A9C9272A497B6C000B0CD6 /* TestProjectFontPickerViewControllerConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectFontPickerViewControllerConfiguration.h; sourceTree = "<group>"; };
+		34A9C9282A497B6C000B0CD6 /* TestProjectFontPickerViewControllerConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectFontPickerViewControllerConfiguration.m; sourceTree = "<group>"; };
+		34A9C92B2A498BAA000B0CD6 /* TestProjectGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectGeometry.h; sourceTree = "<group>"; };
+		34A9C92C2A498BAA000B0CD6 /* TestProjectGeometry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectGeometry.m; sourceTree = "<group>"; };
 		34B1A5DC2A289FB100766B44 /* TestProjectButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectButton.h; sourceTree = "<group>"; };
 		34B1A5DD2A289FB100766B44 /* TestProjectButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectButton.m; sourceTree = "<group>"; };
-		34B1A5DF2A28B57800766B44 /* TestProjectUIButtonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectUIButtonCell.h; sourceTree = "<group>"; };
-		34B1A5E02A28B57800766B44 /* TestProjectUIButtonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectUIButtonCell.m; sourceTree = "<group>"; };
 		34B20F082988A9A5009B4EFD /* TestProjectHomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectHomeController.h; sourceTree = "<group>"; };
 		34B20F092988A9A5009B4EFD /* TestProjectHomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectHomeController.m; sourceTree = "<group>"; };
 		34B20F0B2988A9CB009B4EFD /* TestProjectMyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectMyController.h; sourceTree = "<group>"; };
@@ -271,6 +358,16 @@
 		34B4C17129DEB611001728DC /* TestProjectTestNibVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectTestNibVC.h; sourceTree = "<group>"; };
 		34B4C17229DEB611001728DC /* TestProjectTestNibVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectTestNibVC.m; sourceTree = "<group>"; };
 		34B4C17329DEB611001728DC /* TestProjectTestNibVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestProjectTestNibVC.xib; sourceTree = "<group>"; };
+		34B4C2F22A5BED5C007F019F /* TestProjectStepper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectStepper.h; sourceTree = "<group>"; };
+		34B4C2F32A5BED5C007F019F /* TestProjectStepper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectStepper.m; sourceTree = "<group>"; };
+		34B4C2F62A5BF6A5007F019F /* UIView+TestProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+TestProject.h"; sourceTree = "<group>"; };
+		34B4C2F72A5BF6A5007F019F /* UIView+TestProject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+TestProject.m"; sourceTree = "<group>"; };
+		34B4C2FA2A5BF9A9007F019F /* UIWindow+TestProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIWindow+TestProject.h"; sourceTree = "<group>"; };
+		34B4C2FB2A5BF9A9007F019F /* UIWindow+TestProject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+TestProject.m"; sourceTree = "<group>"; };
+		34B4C2FE2A5BFFB6007F019F /* UIResponder+TestProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIResponder+TestProject.h"; sourceTree = "<group>"; };
+		34B4C2FF2A5BFFB6007F019F /* UIResponder+TestProject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+TestProject.m"; sourceTree = "<group>"; };
+		34B4DFD72A308CB000F2DB23 /* TestProjectBezierPath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectBezierPath.h; sourceTree = "<group>"; };
+		34B4DFD82A308CB000F2DB23 /* TestProjectBezierPath.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectBezierPath.m; sourceTree = "<group>"; };
 		34BA4AB72A1CBE6800997CC4 /* TestProjectViewViewHierarchy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectViewViewHierarchy.h; sourceTree = "<group>"; };
 		34BA4AB82A1CBE6800997CC4 /* TestProjectViewViewHierarchy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectViewViewHierarchy.m; sourceTree = "<group>"; };
 		34BB4A6C28D2BF1E00E79698 /* NSObject+TestProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+TestProject.h"; sourceTree = "<group>"; };
@@ -307,6 +404,8 @@
 		34D77A4228C19FD100A0CE9F /* TestProjectZModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectZModel.m; sourceTree = "<group>"; };
 		34D77A4428C1A1FF00A0CE9F /* TestProjectUModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectUModel.h; sourceTree = "<group>"; };
 		34D77A4528C1A1FF00A0CE9F /* TestProjectUModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectUModel.m; sourceTree = "<group>"; };
+		34DBB28C2A5407CF00A5D8AD /* TestProjectSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectSlider.h; sourceTree = "<group>"; };
+		34DBB28D2A5407CF00A5D8AD /* TestProjectSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectSlider.m; sourceTree = "<group>"; };
 		34DDB785296C0FA3009D56B8 /* TestProjectPThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectPThread.h; sourceTree = "<group>"; };
 		34DDB786296C0FA3009D56B8 /* TestProjectPThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectPThread.m; sourceTree = "<group>"; };
 		34E2548729DBC2EB002CF4B0 /* TestProjectAppearance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectAppearance.h; sourceTree = "<group>"; };
@@ -317,8 +416,20 @@
 		34E5D4532990E48C00FD4F71 /* TestProjectScrollTabController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectScrollTabController.m; sourceTree = "<group>"; };
 		34EC4DCF28532604000AEF1E /* TestProjectObjc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectObjc.h; sourceTree = "<group>"; };
 		34EC4DD028532604000AEF1E /* TestProjectObjc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectObjc.m; sourceTree = "<group>"; };
+		34EE5C1C2A316FF800B1C5D8 /* TestProjectCalendarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectCalendarView.h; sourceTree = "<group>"; };
+		34EE5C1D2A316FF800B1C5D8 /* TestProjectCalendarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectCalendarView.m; sourceTree = "<group>"; };
+		34EE5C202A31B41100B1C5D8 /* TestProjectCalendar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectCalendar.h; sourceTree = "<group>"; };
+		34EE5C212A31B41100B1C5D8 /* TestProjectCalendar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectCalendar.m; sourceTree = "<group>"; };
 		34EF82AD28571B3B0046F4C3 /* TestProjectModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectModel.h; sourceTree = "<group>"; };
 		34EF82AE28571B3B0046F4C3 /* TestProjectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectModel.m; sourceTree = "<group>"; };
+		34F24D652A64E7290004BC62 /* TestProjectCalendarSelectionMultiDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectCalendarSelectionMultiDate.h; sourceTree = "<group>"; };
+		34F24D662A64E7290004BC62 /* TestProjectCalendarSelectionMultiDate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectCalendarSelectionMultiDate.m; sourceTree = "<group>"; };
+		34F24D692A6520B40004BC62 /* TestProjectCloudSharingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectCloudSharingController.h; sourceTree = "<group>"; };
+		34F24D6A2A6520B40004BC62 /* TestProjectCloudSharingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectCloudSharingController.m; sourceTree = "<group>"; };
+		34F24D6D2A6532350004BC62 /* TestProjectCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectCollectionView.h; sourceTree = "<group>"; };
+		34F24D6E2A6532350004BC62 /* TestProjectCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectCollectionView.m; sourceTree = "<group>"; };
+		34F24D712A6534340004BC62 /* TestProjectScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectScrollView.h; sourceTree = "<group>"; };
+		34F24D722A6534340004BC62 /* TestProjectScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectScrollView.m; sourceTree = "<group>"; };
 		34F3786F2A0B8A4700CFC8E6 /* TestProjectBarButtonItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectBarButtonItem.h; sourceTree = "<group>"; };
 		34F378702A0B8A4700CFC8E6 /* TestProjectBarButtonItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectBarButtonItem.m; sourceTree = "<group>"; };
 		4C0C719FA4BA50B72430BEFF /* Pods-TestProjectIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProjectIOS.debug.xcconfig"; path = "Target Support Files/Pods-TestProjectIOS/Pods-TestProjectIOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -370,6 +481,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		3408F9732A52A6D6006F33B6 /* UIProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				3408F9742A52A786006F33B6 /* TestProjectProgressView.h */,
+				3408F9752A52A786006F33B6 /* TestProjectProgressView.m */,
+			);
+			path = UIProgressView;
+			sourceTree = "<group>";
+		};
 		340DC4B52A0CEBF90089D175 /* UIResponder */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,6 +517,24 @@
 			path = UIFont;
 			sourceTree = "<group>";
 		};
+		3412E6E42A64CEBD00945BCE /* UICalendarSelectionSingleDate */ = {
+			isa = PBXGroup;
+			children = (
+				3412E6E52A64CF5F00945BCE /* TestProjectCalendarSelectionSingleDate.h */,
+				3412E6E62A64CF5F00945BCE /* TestProjectCalendarSelectionSingleDate.m */,
+			);
+			path = UICalendarSelectionSingleDate;
+			sourceTree = "<group>";
+		};
+		341791512A41933B0052DD90 /* UIFontDescriptor */ = {
+			isa = PBXGroup;
+			children = (
+				341791522A4193FB0052DD90 /* TestProjectFontDescriptor.h */,
+				341791532A4193FB0052DD90 /* TestProjectFontDescriptor.m */,
+			);
+			path = UIFontDescriptor;
+			sourceTree = "<group>";
+		};
 		3418071829C1C90900F095C6 /* NSDataAsset */ = {
 			isa = PBXGroup;
 			children = (
@@ -406,6 +544,15 @@
 			path = NSDataAsset;
 			sourceTree = "<group>";
 		};
+		3425BE1D2A4ACACF00D0D625 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				3425BE1E2A4ACBC300D0D625 /* TestProjectLabel.h */,
+				3425BE1F2A4ACBC300D0D625 /* TestProjectLabel.m */,
+			);
+			path = UILabel;
+			sourceTree = "<group>";
+		};
 		3428C1CE29C3065600CF06B1 /* NSParagraphStyle */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,6 +560,39 @@
 				3428C1D329C3073600CF06B1 /* TestProjectMutableParagraphStyle.m */,
 			);
 			path = NSParagraphStyle;
+			sourceTree = "<group>";
+		};
+		34292E7A2A380AC4003884E2 /* UICalendar */ = {
+			isa = PBXGroup;
+			children = (
+				34292E7B2A380AF6003884E2 /* NSDateComponents+TestProject.h */,
+				34292E7C2A380AF6003884E2 /* NSDateComponents+TestProject.m */,
+			);
+			path = UICalendar;
+			sourceTree = "<group>";
+		};
+		34292E842A38617E003884E2 /* NSLocale */ = {
+			isa = PBXGroup;
+			children = (
+				34292E852A3861D6003884E2 /* TestProjectLocale.h */,
+				34292E862A3861D6003884E2 /* TestProjectLocale.m */,
+				34292E882A386991003884E2 /* TestProjectExtendedLocale.h */,
+				34292E892A386991003884E2 /* TestProjectExtendedLocale.m */,
+				34292E8B2A38787B003884E2 /* TestProjectLocaleCreation.h */,
+				34292E8C2A38787B003884E2 /* TestProjectLocaleCreation.m */,
+				346268CA2A3956C800449570 /* TestProjectLocaleGeneralInfo.h */,
+				346268CB2A3956C800449570 /* TestProjectLocaleGeneralInfo.m */,
+			);
+			path = NSLocale;
+			sourceTree = "<group>";
+		};
+		34333D412A4D2A9F00DEDA79 /* UISwitch */ = {
+			isa = PBXGroup;
+			children = (
+				34333D422A4D2ABD00DEDA79 /* TestProjectSwitch.h */,
+				34333D432A4D2ABD00DEDA79 /* TestProjectSwitch.m */,
+			);
+			path = UISwitch;
 			sourceTree = "<group>";
 		};
 		344106DF29E8024700683950 /* NSArray */ = {
@@ -463,6 +643,15 @@
 				E2FF19FC29AA5B7300A6F325 /* images.xcassets */,
 			);
 			path = TestProjectIOS;
+			sourceTree = "<group>";
+		};
+		3450F9252A3BFB22006048D8 /* NSDate */ = {
+			isa = PBXGroup;
+			children = (
+				3450F9262A3BFB54006048D8 /* NSDate+TestProject.h */,
+				3450F9272A3BFB54006048D8 /* NSDate+TestProject.m */,
+			);
+			path = NSDate;
 			sourceTree = "<group>";
 		};
 		345D97DD2824F43E002D0A83 /* src */ = {
@@ -530,6 +719,35 @@
 			path = UIAlertController;
 			sourceTree = "<group>";
 		};
+		34624F022A3C0F4A00045544 /* UIColorPickerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				34624F032A3C0F6E00045544 /* TestProjectColorPickerViewController.h */,
+				34624F042A3C0F6E00045544 /* TestProjectColorPickerViewController.m */,
+			);
+			path = UIColorPickerViewController;
+			sourceTree = "<group>";
+		};
+		346268CD2A39A4D600449570 /* NSDate */ = {
+			isa = PBXGroup;
+			children = (
+				346268CE2A39A65C00449570 /* TestProjectExtendedDate.h */,
+				346268CF2A39A65C00449570 /* TestProjectExtendedDate.m */,
+				346268D12A39B5A400449570 /* TestProjectDateCreation.h */,
+				346268D22A39B5A400449570 /* TestProjectDateCreation.m */,
+			);
+			path = NSDate;
+			sourceTree = "<group>";
+		};
+		346268D42A39C60800449570 /* NSDateFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				346268D52A39C66C00449570 /* TestProjectDateFormatter.h */,
+				346268D62A39C66C00449570 /* TestProjectDateFormatter.m */,
+			);
+			path = NSDateFormatter;
+			sourceTree = "<group>";
+		};
 		347AAA132A24344700F0C475 /* UIControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -537,6 +755,33 @@
 				347AAA152A24A39A00F0C475 /* TestProjectControl.m */,
 			);
 			path = UIControl;
+			sourceTree = "<group>";
+		};
+		347B44C82A3FE9F9001061A5 /* UIColorWell */ = {
+			isa = PBXGroup;
+			children = (
+				347B44C92A3FEA3E001061A5 /* TestProjectColorWell.h */,
+				347B44CA2A3FEA3E001061A5 /* TestProjectColorWell.m */,
+			);
+			path = UIColorWell;
+			sourceTree = "<group>";
+		};
+		347B44CC2A3FF9E7001061A5 /* UIDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				347B44CD2A3FFA05001061A5 /* TestProjectDatePicker.h */,
+				347B44CE2A3FFA05001061A5 /* TestProjectDatePicker.m */,
+			);
+			path = UIDatePicker;
+			sourceTree = "<group>";
+		};
+		347B44D02A405B7A001061A5 /* UIDevice */ = {
+			isa = PBXGroup;
+			children = (
+				347B44D12A405C08001061A5 /* TestProjectDevice.h */,
+				347B44D22A405C08001061A5 /* TestProjectDevice.m */,
+			);
+			path = UIDevice;
 			sourceTree = "<group>";
 		};
 		347DCC4B29E6AE17005A3D44 /* UINavigationBarAppearance */ = {
@@ -583,6 +828,10 @@
 			isa = PBXGroup;
 			children = (
 				348799822988B75D00032E22 /* TestProjectCategoryHeader.h */,
+				34B4C2FD2A5BFF9C007F019F /* UIResponder */,
+				34B4C2F92A5BF98C007F019F /* UIWindon */,
+				3450F9252A3BFB22006048D8 /* NSDate */,
+				34292E7A2A380AC4003884E2 /* UICalendar */,
 				345E44C329F946C600BBED12 /* UIAlertController */,
 				34D2993629E3EED2002F7A37 /* UIViewController */,
 				3487998D2988B7BB00032E22 /* NSObject */,
@@ -601,6 +850,8 @@
 				348799852988B75D00032E22 /* UIView+TestProject_Constrain.m */,
 				34E5D4492990865100FD4F71 /* UIView+TestProject_Frame.h */,
 				34E5D44A2990865100FD4F71 /* UIView+TestProject_Frame.m */,
+				34B4C2F62A5BF6A5007F019F /* UIView+TestProject.h */,
+				34B4C2F72A5BF6A5007F019F /* UIView+TestProject.m */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -687,6 +938,15 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
+		34A285CE2A61363B006C49D4 /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				34A285CF2A6136BB006C49D4 /* TestProjectTextField.h */,
+				34A285D02A6136BB006C49D4 /* TestProjectTextField.m */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
 		34A5C40729B08F1C00E61F65 /* UIColor */ = {
 			isa = PBXGroup;
 			children = (
@@ -714,6 +974,11 @@
 			children = (
 				34A5C42129B1D06E00E61F65 /* TestProjectGetFoundationImplementationMethod.h */,
 				34A5C42229B1D06E00E61F65 /* TestProjectGetFoundationImplementationMethod.m */,
+				346268D42A39C60800449570 /* NSDateFormatter */,
+				346268CD2A39A4D600449570 /* NSDate */,
+				34292E842A38617E003884E2 /* NSLocale */,
+				34EE5C232A31C37C00B1C5D8 /* NSTimeZone */,
+				34EE5C1F2A31B2E800B1C5D8 /* NSCalendar */,
 				34A5C42429B1D1A400E61F65 /* NSAttributeString */,
 			);
 			path = Foundation;
@@ -734,8 +999,8 @@
 		34A5C42429B1D1A400E61F65 /* NSAttributeString */ = {
 			isa = PBXGroup;
 			children = (
-				34A5C42529B1DA2400E61F65 /* TestProjectAttributeStringFoundationCell.h */,
-				34A5C42629B1DA2400E61F65 /* TestProjectAttributeStringFoundationCell.m */,
+				34A5C42529B1DA2400E61F65 /* TestProjectAttributeStringFoundViewTable.h */,
+				34A5C42629B1DA2400E61F65 /* TestProjectAttributeStringFoundViewTable.m */,
 				34A5C41729B1992500E61F65 /* TestProjectAttributeStringFoundation.h */,
 				34A5C41829B1992500E61F65 /* TestProjectAttributeStringFoundation.m */,
 				34A5C42829B1F06400E61F65 /* TestProjectAttributeStringExtendedString.h */,
@@ -748,11 +1013,38 @@
 			path = NSAttributeString;
 			sourceTree = "<group>";
 		};
+		34A9C9212A4976E3000B0CD6 /* UIFontPickerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				34A9C9222A497715000B0CD6 /* TestProjectFontPickerViewController.h */,
+				34A9C9232A497715000B0CD6 /* TestProjectFontPickerViewController.m */,
+			);
+			path = UIFontPickerViewController;
+			sourceTree = "<group>";
+		};
+		34A9C9252A497B09000B0CD6 /* UIFontPickerViewControllerConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				34A9C9272A497B6C000B0CD6 /* TestProjectFontPickerViewControllerConfiguration.h */,
+				34A9C9282A497B6C000B0CD6 /* TestProjectFontPickerViewControllerConfiguration.m */,
+			);
+			path = UIFontPickerViewControllerConfiguration;
+			sourceTree = "<group>";
+		};
+		34A9C92A2A498B8A000B0CD6 /* UIGeometry */ = {
+			isa = PBXGroup;
+			children = (
+				34A9C92B2A498BAA000B0CD6 /* TestProjectGeometry.h */,
+				34A9C92C2A498BAA000B0CD6 /* TestProjectGeometry.m */,
+				3425BE1A2A4ABCBC00D0D625 /* TestProjectValueUIGeometryExtensions.h */,
+				3425BE1B2A4ABCBC00D0D625 /* TestProjectValueUIGeometryExtensions.m */,
+			);
+			path = UIGeometry;
+			sourceTree = "<group>";
+		};
 		34B1A5DB2A289F8C00766B44 /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
-				34B1A5DF2A28B57800766B44 /* TestProjectUIButtonCell.h */,
-				34B1A5E02A28B57800766B44 /* TestProjectUIButtonCell.m */,
 				34B1A5DC2A289FB100766B44 /* TestProjectButton.h */,
 				34B1A5DD2A289FB100766B44 /* TestProjectButton.m */,
 			);
@@ -773,6 +1065,42 @@
 				34B4C17329DEB611001728DC /* TestProjectTestNibVC.xib */,
 			);
 			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		34B4C2F12A5BED31007F019F /* UIStepper */ = {
+			isa = PBXGroup;
+			children = (
+				34B4C2F22A5BED5C007F019F /* TestProjectStepper.h */,
+				34B4C2F32A5BED5C007F019F /* TestProjectStepper.m */,
+			);
+			path = UIStepper;
+			sourceTree = "<group>";
+		};
+		34B4C2F92A5BF98C007F019F /* UIWindon */ = {
+			isa = PBXGroup;
+			children = (
+				34B4C2FA2A5BF9A9007F019F /* UIWindow+TestProject.h */,
+				34B4C2FB2A5BF9A9007F019F /* UIWindow+TestProject.m */,
+			);
+			path = UIWindon;
+			sourceTree = "<group>";
+		};
+		34B4C2FD2A5BFF9C007F019F /* UIResponder */ = {
+			isa = PBXGroup;
+			children = (
+				34B4C2FE2A5BFFB6007F019F /* UIResponder+TestProject.h */,
+				34B4C2FF2A5BFFB6007F019F /* UIResponder+TestProject.m */,
+			);
+			path = UIResponder;
+			sourceTree = "<group>";
+		};
+		34B4DFD62A308C7600F2DB23 /* UIBezierPath */ = {
+			isa = PBXGroup;
+			children = (
+				34B4DFD72A308CB000F2DB23 /* TestProjectBezierPath.h */,
+				34B4DFD82A308CB000F2DB23 /* TestProjectBezierPath.m */,
+			);
+			path = UIBezierPath;
 			sourceTree = "<group>";
 		};
 		34C3E5C929D6759A00BC4C7D /* UIActivityIndicatorView */ = {
@@ -830,6 +1158,24 @@
 			children = (
 				34A5C41E29B1CC8600E61F65 /* TestProjectGetUIKitMethod.h */,
 				34A5C41F29B1CC8600E61F65 /* TestProjectGetUIKitMethod.m */,
+				34F24D6C2A6532110004BC62 /* UICollectionView */,
+				34F24D702A6534210004BC62 /* UIScrollView */,
+				34F24D682A6520A10004BC62 /* UICloudSharingController */,
+				34A285CE2A61363B006C49D4 /* UITextField */,
+				34B4C2F12A5BED31007F019F /* UIStepper */,
+				34DBB28B2A5407B300A5D8AD /* UISlider */,
+				3408F9732A52A6D6006F33B6 /* UIProgressView */,
+				34333D412A4D2A9F00DEDA79 /* UISwitch */,
+				3425BE1D2A4ACACF00D0D625 /* UILabel */,
+				34A9C92A2A498B8A000B0CD6 /* UIGeometry */,
+				347B44D02A405B7A001061A5 /* UIDevice */,
+				347B44CC2A3FF9E7001061A5 /* UIDatePicker */,
+				347B44C82A3FE9F9001061A5 /* UIColorWell */,
+				34624F022A3C0F4A00045544 /* UIColorPickerViewController */,
+				3412E6E42A64CEBD00945BCE /* UICalendarSelectionSingleDate */,
+				34F24D642A64E6EF0004BC62 /* UICalendarSelectionMultiDate */,
+				34EE5C1B2A316ED000B1C5D8 /* UICalendarView */,
+				34B4DFD62A308C7600F2DB23 /* UIBezierPath */,
 				34B1A5DB2A289F8C00766B44 /* UIButton */,
 				347AAA132A24344700F0C475 /* UIControl */,
 				34C3E5CA29D675F500BC4C7D /* UIView */,
@@ -849,6 +1195,9 @@
 				3412005629C7FD04007338D0 /* NSTextAttachment */,
 				3428C1CE29C3065600CF06B1 /* NSParagraphStyle */,
 				34A5C40F29B193B300E61F65 /* NSAttributedString */,
+				34A9C9252A497B09000B0CD6 /* UIFontPickerViewControllerConfiguration */,
+				34A9C9212A4976E3000B0CD6 /* UIFontPickerViewController */,
+				341791512A41933B0052DD90 /* UIFontDescriptor */,
 				3412005E29C852D3007338D0 /* UIFont */,
 				34D52F0A29A5B49C00F5F9C2 /* UIColor */,
 				E2392A3C29AB90BE00638D25 /* CIColor */,
@@ -884,6 +1233,15 @@
 			path = UIApplication;
 			sourceTree = "<group>";
 		};
+		34DBB28B2A5407B300A5D8AD /* UISlider */ = {
+			isa = PBXGroup;
+			children = (
+				34DBB28C2A5407CF00A5D8AD /* TestProjectSlider.h */,
+				34DBB28D2A5407CF00A5D8AD /* TestProjectSlider.m */,
+			);
+			path = UISlider;
+			sourceTree = "<group>";
+		};
 		34E2548629DBC2BA002CF4B0 /* UIAppearance */ = {
 			isa = PBXGroup;
 			children = (
@@ -915,6 +1273,37 @@
 			path = objc;
 			sourceTree = "<group>";
 		};
+		34EE5C1B2A316ED000B1C5D8 /* UICalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				34EE5C1C2A316FF800B1C5D8 /* TestProjectCalendarView.h */,
+				34EE5C1D2A316FF800B1C5D8 /* TestProjectCalendarView.m */,
+			);
+			path = UICalendarView;
+			sourceTree = "<group>";
+		};
+		34EE5C1F2A31B2E800B1C5D8 /* NSCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				34EE5C202A31B41100B1C5D8 /* TestProjectCalendar.h */,
+				34EE5C212A31B41100B1C5D8 /* TestProjectCalendar.m */,
+				34292E772A37FB8E003884E2 /* TestProjectDateComponents.h */,
+				34292E782A37FB8E003884E2 /* TestProjectDateComponents.m */,
+			);
+			path = NSCalendar;
+			sourceTree = "<group>";
+		};
+		34EE5C232A31C37C00B1C5D8 /* NSTimeZone */ = {
+			isa = PBXGroup;
+			children = (
+				34292E7E2A38129B003884E2 /* TestProjectTimeZone.h */,
+				34292E7F2A38129B003884E2 /* TestProjectTimeZone.m */,
+				34292E812A384992003884E2 /* TestProjectExtendedTimeZone.h */,
+				34292E822A384992003884E2 /* TestProjectExtendedTimeZone.m */,
+			);
+			path = NSTimeZone;
+			sourceTree = "<group>";
+		};
 		34EF82AC28571B260046F4C3 /* mode */ = {
 			isa = PBXGroup;
 			children = (
@@ -940,6 +1329,42 @@
 				34D77A4528C1A1FF00A0CE9F /* TestProjectUModel.m */,
 			);
 			path = mode;
+			sourceTree = "<group>";
+		};
+		34F24D642A64E6EF0004BC62 /* UICalendarSelectionMultiDate */ = {
+			isa = PBXGroup;
+			children = (
+				34F24D652A64E7290004BC62 /* TestProjectCalendarSelectionMultiDate.h */,
+				34F24D662A64E7290004BC62 /* TestProjectCalendarSelectionMultiDate.m */,
+			);
+			path = UICalendarSelectionMultiDate;
+			sourceTree = "<group>";
+		};
+		34F24D682A6520A10004BC62 /* UICloudSharingController */ = {
+			isa = PBXGroup;
+			children = (
+				34F24D692A6520B40004BC62 /* TestProjectCloudSharingController.h */,
+				34F24D6A2A6520B40004BC62 /* TestProjectCloudSharingController.m */,
+			);
+			path = UICloudSharingController;
+			sourceTree = "<group>";
+		};
+		34F24D6C2A6532110004BC62 /* UICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				34F24D6D2A6532350004BC62 /* TestProjectCollectionView.h */,
+				34F24D6E2A6532350004BC62 /* TestProjectCollectionView.m */,
+			);
+			path = UICollectionView;
+			sourceTree = "<group>";
+		};
+		34F24D702A6534210004BC62 /* UIScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				34F24D712A6534340004BC62 /* TestProjectScrollView.h */,
+				34F24D722A6534340004BC62 /* TestProjectScrollView.m */,
+			);
+			path = UIScrollView;
 			sourceTree = "<group>";
 		};
 		34F3786E2A0B8A1000CFC8E6 /* UIBarButtonItem */ = {
@@ -1129,15 +1554,20 @@
 				34A5C42329B1D06E00E61F65 /* TestProjectGetFoundationImplementationMethod.m in Sources */,
 				3493CF0329767261008B7CA7 /* TestProjectString.m in Sources */,
 				34A5C41529B1976500E61F65 /* TestProjectAttributeStringKit.m in Sources */,
+				3425BE202A4ACBC300D0D625 /* TestProjectLabel.m in Sources */,
 				34D52F0629A5AA1500F5F9C2 /* TestProjectOCController.m in Sources */,
 				34BB4A6E28D2BF1E00E79698 /* NSObject+TestProject.m in Sources */,
+				3408F9762A52A786006F33B6 /* TestProjectProgressView.m in Sources */,
 				347338DC28BDB85600B921EC /* TestProjectAModel.m in Sources */,
 				348799862988B75D00032E22 /* TestProjectBaseTableView.m in Sources */,
 				345E44C629F9476E00BBED12 /* UIAlertController+TestProject.m in Sources */,
+				347B44D32A405C08001061A5 /* TestProjectDevice.m in Sources */,
 				34B4C17029DEA75C001728DC /* TestProjectTestVC.m in Sources */,
+				34A9C92D2A498BAA000B0CD6 /* TestProjectGeometry.m in Sources */,
 				347338DF28BDB86700B921EC /* TestProjectBModel.m in Sources */,
 				34DDB787296C0FA3009D56B8 /* TestProjectPThread.m in Sources */,
 				34B1A5DE2A289FB100766B44 /* TestProjectButton.m in Sources */,
+				347B44CF2A3FFA05001061A5 /* TestProjectDatePicker.m in Sources */,
 				34D52F1029A5EEFA00F5F9C2 /* TestProjectViewTable.m in Sources */,
 				34A5C41929B1992500E61F65 /* TestProjectAttributeStringFoundation.m in Sources */,
 				344106E529E8094200683950 /* NSArray+TestProject.m in Sources */,
@@ -1147,16 +1577,23 @@
 				34EF82AF28571B3B0046F4C3 /* TestProjectModel.m in Sources */,
 				E27FE81B29C5A02D00C77298 /* TestProjectAttributedStringDocumentFormats.m in Sources */,
 				34032F512A0E35A100122D77 /* TestProjectViewViewGeometry.m in Sources */,
+				34292E792A37FB8E003884E2 /* TestProjectDateComponents.m in Sources */,
 				345E44C229F914D400BBED12 /* TestProjectBaseTableViewCell.m in Sources */,
 				34D52F1329A602A700F5F9C2 /* TestProjectBaseTableViewTableCell.m in Sources */,
 				34D2993929E3EF03002F7A37 /* UIViewController+TestProject.m in Sources */,
+				34EE5C1E2A316FF800B1C5D8 /* TestProjectCalendarView.m in Sources */,
 				345CDF022A209FC2003C1FF3 /* TestProjectViewSnapshotting.m in Sources */,
 				E2783EA629A9B51C0035900C /* TestProjectUIColorCell.m in Sources */,
 				34A0686C29E7D5CF003B115C /* TestProjectBaseModel.m in Sources */,
+				346268D32A39B5A400449570 /* TestProjectDateCreation.m in Sources */,
 				34A5C42A29B1F06400E61F65 /* TestProjectAttributeStringExtendedString.m in Sources */,
 				345EC4BE286548D100F61F2E /* TestProjectCustomModel.m in Sources */,
 				349801D229E57F1A00C2B5E1 /* TestProjectViewControllerNavigationControllerItem.m in Sources */,
+				34B4C2F82A5BF6A5007F019F /* UIView+TestProject.m in Sources */,
+				34624F052A3C0F6E00045544 /* TestProjectColorPickerViewController.m in Sources */,
 				E297EFA22979350C005B2877 /* TestProjectBaseTabBarController.m in Sources */,
+				34DBB28E2A5407CF00A5D8AD /* TestProjectSlider.m in Sources */,
+				34292E802A38129B003884E2 /* TestProjectTimeZone.m in Sources */,
 				3412006129C8531D007338D0 /* TestProjectFont.m in Sources */,
 				34E5D44B2990865100FD4F71 /* UIView+TestProject_Frame.m in Sources */,
 				34D77A4628C1A1FF00A0CE9F /* TestProjectUModel.m in Sources */,
@@ -1167,13 +1604,20 @@
 				34D77A3D28C19FA100A0CE9F /* TestProjectYModel.m in Sources */,
 				34D52F1729A606F400F5F9C2 /* TestProjectTableModel.m in Sources */,
 				34D77A4328C19FD100A0CE9F /* TestProjectZModel.m in Sources */,
+				34F24D732A6534340004BC62 /* TestProjectScrollView.m in Sources */,
 				3447EE08280E8EBD001AE2F0 /* main.m in Sources */,
 				34D52F0D29A5B4D400F5F9C2 /* TestProjectUIColor.m in Sources */,
 				344106E229E8027800683950 /* NSMutableArray+TestProject.m in Sources */,
 				345CDF052A20AFF8003C1FF3 /* TestProjectViewContentSizeCategoryLimit.m in Sources */,
+				34292E832A384992003884E2 /* TestProjectExtendedTimeZone.m in Sources */,
 				E297EF9F297934B5005B2877 /* TestProjectBaseVC.m in Sources */,
 				344012A62A1E057100D25366 /* TestProjectViewViewRendering.m in Sources */,
 				34F378712A0B8A4700CFC8E6 /* TestProjectBarButtonItem.m in Sources */,
+				346268D72A39C66C00449570 /* TestProjectDateFormatter.m in Sources */,
+				34292E8D2A38787B003884E2 /* TestProjectLocaleCreation.m in Sources */,
+				3412E6E72A64CF5F00945BCE /* TestProjectCalendarSelectionSingleDate.m in Sources */,
+				3425BE1C2A4ABCBC00D0D625 /* TestProjectValueUIGeometryExtensions.m in Sources */,
+				34292E872A3861D6003884E2 /* TestProjectLocale.m in Sources */,
 				3447EDF7280E8EBC001AE2F0 /* AppDelegate.m in Sources */,
 				34C3E5CD29D6768C00BC4C7D /* TestProjectUIView.m in Sources */,
 				34E5D4542990E48C00FD4F71 /* TestProjectScrollTabController.m in Sources */,
@@ -1181,8 +1625,15 @@
 				E2392A3F29AB90DA00638D25 /* TestProjectCIColor.m in Sources */,
 				347DCC4E29E6AE3E005A3D44 /* TestProjectNavigationBarAppearance.m in Sources */,
 				E25412D929D86AFE00B960A0 /* TestProjectAlertController.m in Sources */,
+				34EE5C222A31B41100B1C5D8 /* TestProjectCalendar.m in Sources */,
+				34B4C2F42A5BED5C007F019F /* TestProjectStepper.m in Sources */,
+				346268D02A39A65C00449570 /* TestProjectExtendedDate.m in Sources */,
+				34292E8A2A386991003884E2 /* TestProjectExtendedLocale.m in Sources */,
 				34B20F0D2988A9CB009B4EFD /* TestProjectMyController.m in Sources */,
+				34333D442A4D2ABD00DEDA79 /* TestProjectSwitch.m in Sources */,
 				34D2993C29E3F262002F7A37 /* TestProjectNavigationController.m in Sources */,
+				341791542A4193FB0052DD90 /* TestProjectFontDescriptor.m in Sources */,
+				34A9C9292A497B6C000B0CD6 /* TestProjectFontPickerViewControllerConfiguration.m in Sources */,
 				348799872988B75D00032E22 /* TestProjectViewTab.m in Sources */,
 				34947538282E396A00D4A567 /* TestProjectDispatchSemaphore.m in Sources */,
 				348799752988B74900032E22 /* TestProjectSectionViewTab.m in Sources */,
@@ -1190,6 +1641,7 @@
 				34BA4AB92A1CBE6800997CC4 /* TestProjectViewViewHierarchy.m in Sources */,
 				340DC4B82A0CEC250089D175 /* TestProjectResponder.m in Sources */,
 				34C3E5D329D679FB00BC4C7D /* TestProjectActivityIndicatorView.m in Sources */,
+				34A285D12A6136BB006C49D4 /* TestProjectTextField.m in Sources */,
 				34EC4DD128532604000AEF1E /* TestProjectObjc.m in Sources */,
 				349801D729E58C3700C2B5E1 /* TestProjectNavigationItem.m in Sources */,
 				34A5C41C29B1C55400E61F65 /* TestProjectGetImplementationMethod.m in Sources */,
@@ -1197,26 +1649,36 @@
 				345D97F02824F43E002D0A83 /* TestProjectDispatchGroup.m in Sources */,
 				347AAA162A24A39A00F0C475 /* TestProjectControl.m in Sources */,
 				345C814E29BF2E7A00AE3D07 /* TestProjectMutableAttributedStringExtended.m in Sources */,
+				34F24D6B2A6520B40004BC62 /* TestProjectCloudSharingController.m in Sources */,
+				34B4DFD92A308CB000F2DB23 /* TestProjectBezierPath.m in Sources */,
 				E297EFAA2979371B005B2877 /* TestProjectBaseNavigationController.m in Sources */,
 				345D97F728250609002D0A83 /* TestProjectDispatchOnce.m in Sources */,
 				347DCC5229E6AFBC005A3D44 /* TestProjectBarAppearance.m in Sources */,
 				3482D9A129D16B83008E3D98 /* TestProjectShadow.m in Sources */,
 				34B4C17429DEB611001728DC /* TestProjectTestNibVC.m in Sources */,
-				34B1A5E12A28B57800766B44 /* TestProjectUIButtonCell.m in Sources */,
+				346268CC2A3956C800449570 /* TestProjectLocaleGeneralInfo.m in Sources */,
+				3450F9282A3BFB54006048D8 /* NSDate+TestProject.m in Sources */,
 				345D97EF2824F43E002D0A83 /* TestProjectDispatchObject.m in Sources */,
+				34F24D6F2A6532350004BC62 /* TestProjectCollectionView.m in Sources */,
 				346083CA2A1F68B300096DD2 /* TestProjectViewViewKeyframeAnimations.m in Sources */,
 				3480AA5A29B76C0D00D9C957 /* TestProjectMutableAttributedString.m in Sources */,
 				3445299C2831E701003EFFA1 /* TestProjectDispatchSource.m in Sources */,
+				34A9C9242A497715000B0CD6 /* TestProjectFontPickerViewController.m in Sources */,
 				34C034752A035F7100C9F6EA /* TestProjectTestVCViewTable.m in Sources */,
 				34A5C40D29B0976600E61F65 /* TestProjectUIColorCategory.m in Sources */,
+				34B4C2FC2A5BF9A9007F019F /* UIWindow+TestProject.m in Sources */,
 				346B745129938CAC00C06A99 /* TestProjectObjectController.m in Sources */,
 				345D97F12824F43E002D0A83 /* TestProjectDispatchIO.m in Sources */,
 				34E2548929DBC2EB002CF4B0 /* TestProjectAppearance.m in Sources */,
 				3412005929C7FD46007338D0 /* TestProjectTextAttachment.m in Sources */,
 				E2392A3B29AB7E1400638D25 /* TestProjectUIColorDynamicdColors.m in Sources */,
+				34292E7D2A380AF6003884E2 /* NSDateComponents+TestProject.m in Sources */,
+				34B4C3002A5BFFB6007F019F /* UIResponder+TestProject.m in Sources */,
 				349801DA29E58C6200C2B5E1 /* TestProjectNavigationBar.m in Sources */,
+				34F24D672A64E7290004BC62 /* TestProjectCalendarSelectionMultiDate.m in Sources */,
 				3447EDFA280E8EBC001AE2F0 /* SceneDelegate.m in Sources */,
 				34A5C40A29B096DA00E61F65 /* UIColor+TestProject.m in Sources */,
+				347B44CB2A3FEA3E001061A5 /* TestProjectColorWell.m in Sources */,
 				340E9F992975378600C1D440 /* TestProjectSignal.m in Sources */,
 				345D97F22824F43E002D0A83 /* TestProjectDispatchBlock.m in Sources */,
 				346B744E29933A2F00C06A99 /* TestProjectNestScrollTabController.m in Sources */,
@@ -1227,7 +1689,7 @@
 				34A0686F29E7E41E003B115C /* TestProjectViewModelTab.m in Sources */,
 				34D52F1E29A62AC600F5F9C2 /* UIApplication+TestProject.m in Sources */,
 				345D97EE2824F43E002D0A83 /* TestProjectDispatchQueue.m in Sources */,
-				34A5C42729B1DA2400E61F65 /* TestProjectAttributeStringFoundationCell.m in Sources */,
+				34A5C42729B1DA2400E61F65 /* TestProjectAttributeStringFoundViewTable.m in Sources */,
 				E2392A4229AB911200638D25 /* TestProjectCIColorKitAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,32 +1,20 @@
 //
-//  TestProjectAttributeStringFoundationCell.m
+//  TestProjectAttributeStringFoundViewTable.m
 //  TestProjectIOS
 //
 //  Created by zjrcumac on 2023/3/3.
 //
 
-#import "TestProjectAttributeStringFoundationCell.h"
-
-@implementation TestProjectAttributeStringFoundationModel
-
-- (NSString *)viewIdentifier {
-    return @"TestProjectAttributeStringFoundationCell";
-}
-
-@end
-
-@implementation TestProjectAttributeStringFoundationCell
-
-@end
+#import "TestProjectAttributeStringFoundViewTable.h"
 
 @implementation TestProjectAttributeStringFoundViewTable
 
-- (TestProjectAttributeStringFoundationModel *)createAttrStrModel {
+- (TestProjectTableModel *)createAttrStrModel {
     return [self createAttrStrModelWithNeedAdd:YES];
 }
 
-- (TestProjectAttributeStringFoundationModel *)createAttrStrModelWithNeedAdd:(BOOL)needAdd {
-    TestProjectAttributeStringFoundationModel *attrStrModel = [[TestProjectAttributeStringFoundationModel alloc] init];
+- (TestProjectTableModel *)createAttrStrModelWithNeedAdd:(BOOL)needAdd {
+    TestProjectTableModel *attrStrModel = [[TestProjectTableModel alloc] init];
     attrStrModel.isTitleExpand = NO;
     
     NSAttributedString *firstAttrStr = [[NSAttributedString alloc] initWithString:self.firstAttrText attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18]}];
@@ -50,8 +38,8 @@
     return attrStrModel;
 }
 
-- (TestProjectAttributeStringFoundationModel *)createAttrStrModelWithAttributes:(NSDictionary *)keyValue {
-    TestProjectAttributeStringFoundationModel *attrStrModel = [[TestProjectAttributeStringFoundationModel alloc] init];
+- (TestProjectTableModel *)createAttrStrModelWithAttributes:(NSDictionary *)keyValue {
+    TestProjectTableModel *attrStrModel = [[TestProjectTableModel alloc] init];
     attrStrModel.isChild = YES;
     attrStrModel.isTitleExpand = NO;
     NSAttributedString *firstAttrStr = [[NSAttributedString alloc] initWithString:self.firstAttrText attributes:keyValue];
@@ -108,9 +96,9 @@
 
 @synthesize compareViewModel = _compareViewModel;
 
-- (TestProjectAttributeStringFoundationModel *)compareViewModel {
+- (TestProjectTableModel *)compareViewModel {
     if (!_compareViewModel) {
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithNeedAdd:NO];
+        TestProjectTableModel *m = [self createAttrStrModelWithNeedAdd:NO];
         m.isChild = NO;
         m.desc = [NSString stringWithFormat:@"%@", m.titleMutAttrStr];
         m.isTitleExpand = YES;

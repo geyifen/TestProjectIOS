@@ -19,7 +19,6 @@
             @"abstract": @"获取NSMutableAttributedString的mutableString",
             @"title": @"@property (readonly, retain) NSMutableString *mutableString;",
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableAttributedStringExtended_property_mutableString],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -34,7 +33,6 @@
             @"title": @"- (void)addAttribute:(NSAttributedStringKey)name value:(id)value range:(NSRange)range;",
             @"desc": @"在range范围的attrText如果NSAttributedStringKey相同则替换，否则添加 \n 崩溃异常: range不在整个attrText的范围内 \n @param name :给定NSAttributedStringKey值 \n @param value :给定NSAttributedStringKey值的value \n @parma range :给定范围",
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableAttributedStringExtended_addAttribute_value_range],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -49,7 +47,6 @@
             @"title": @"- (void)addAttributes:(NSDictionary<NSAttributedStringKey, id> *)attrs range:(NSRange)range;",
             @"desc": @"在range范围的attrText如果NSAttributedStringKey相同则替换，否则添加 \n 崩溃异常: range不在整个attrText的范围内 \n @param name :给定NSAttributedStringKey集合信息 \n @parma range :给定范围",
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableAttributedStringExtended_addAttributes_range],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -64,7 +61,6 @@
             @"title": @"- (void)removeAttribute:(NSAttributedStringKey)name range:(NSRange)range;",
             @"desc": @"在range范围的attrText如果NSAttributedStringKey相同则移除，否则保持原有信息 \n 崩溃异常: range不在整个attrText的范围内 \n @param name :给定NSAttributedStringKey单个信息 \n @parma range :给定范围",
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableAttributedStringExtended_removeAttribute_range],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -79,7 +75,6 @@
             @"title": @"- (void)replaceCharactersInRange:(NSRange)range withAttributedString:(NSAttributedString *)attrString;",
             @"desc": @"在range范围的attrText替换新的attrText信息，包含文字和所有NSAttributedStringKey信息 \n 崩溃异常: range不在整个attrText的范围内 \n @parma range :给定范围 \n @param attrString :给定attrString信息",
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableAttributedStringExtended_replaceCharactersInRange_withAttributedString],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -94,7 +89,6 @@
             @"title": @"- (void)insertAttributedString:(NSAttributedString *)attrString atIndex:(NSUInteger)loc;",
             @"desc": @"在attrText第atIndex后的位置添加新的attrText信息 \n 崩溃异常: atIndex不在整个attrText的范围内 \n @param attrString :给定attrString信息 \n @parma loc :给定添加的位置",
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableAttributedStringExtended_insertAttributedString_atIndex],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -109,7 +103,6 @@
             @"title": @"- (void)appendAttributedString:(NSAttributedString *)attrString;",
             @"desc": @"在attrText最后的位置添加新的attrText信息 \n @param attrString :给定attrString信息 ",
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableAttributedStringExtended_appendAttributedString],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -124,7 +117,6 @@
             @"title": @"- (void)deleteCharactersInRange:(NSRange)range;",
             @"desc": @"在range范围内把attrText删除掉 \n 崩溃异常: range不在整个attrText的范围内 \n @parma range :给定范围 \n",
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableAttributedStringExtended_deleteCharactersInRange],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -139,7 +131,6 @@
             @"title": @"- (void)setAttributedString:(NSAttributedString *)attrString;",
             @"desc": @"在range范围的attrText如果NSAttributedStringKey相同则替换，否则添加 \n 崩溃异常: range不在整个attrText的范围内 \n @param name :给定NSAttributedStringKey值 \n @param value :给定NSAttributedStringKey值的value \n @parma range :给定范围",
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableAttributedStringExtended_setAttributedString],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -151,7 +142,7 @@
 - (NSMutableArray *)TestProjectMutableAttributedStringExtended_setAttributedString {
     NSAttributedString *sixAttrStr = [[NSAttributedString alloc] initWithString:self.sixthAttrText attributes:@{NSForegroundColorAttributeName:[UIColor colorFromString:@"#FF3"], NSFontAttributeName:[UIFont systemFontOfSize:22]}];
 
-    TestProjectAttributeStringFoundationModel *m = [self createAttrStrModel];
+    TestProjectTableModel *m = [self createAttrStrModel];
     [m.titleMutAttrStr setAttributedString:sixAttrStr];
     m.desc = [NSString stringWithFormat:@"替换所有字符的key:NSForegroundColorAttributeName, value:[UIColor colorFromString:@\"#ffff33\"] 得到的是所有字符的attrText:%@", m.titleMutAttrStr];
     m.titleMutAttrStr = m.titleMutAttrStr;
@@ -161,7 +152,7 @@
 }
 
 - (NSMutableArray *)TestProjectMutableAttributedStringExtended_deleteCharactersInRange {
-    NSInteger totalLength = ((TestProjectAttributeStringFoundationModel *)self.compareViewModel).titleMutAttrStr.length;
+    NSInteger totalLength = ((TestProjectTableModel *)self.compareViewModel).titleMutAttrStr.length;
     NSArray *arr = @[
         @{
             @"location": @0,
@@ -185,7 +176,7 @@
         NSInteger atIndex = [dic[@"atIndex"] integerValue];
         NSRange range = NSMakeRange(location, length);
 
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModel];
+        TestProjectTableModel *m = [self createAttrStrModel];
         [m.titleMutAttrStr deleteCharactersInRange:range];
         m.desc = [NSString stringWithFormat:@"移除的是第%ld段字符的range:%@ 移除的是在第%ld段的attrText:%@", atIndex, NSStringFromRange(range), atIndex, m.titleMutAttrStr];
         m.titleMutAttrStr = m.titleMutAttrStr;
@@ -197,7 +188,7 @@
 - (NSMutableArray *)TestProjectMutableAttributedStringExtended_appendAttributedString {
     NSAttributedString *sixAttrStr = [[NSAttributedString alloc] initWithString:self.sixthAttrText attributes:@{NSForegroundColorAttributeName:[UIColor colorFromString:@"#FF3"], NSFontAttributeName:[UIFont systemFontOfSize:22]}];
 
-    TestProjectAttributeStringFoundationModel *m = [self createAttrStrModel];
+    TestProjectTableModel *m = [self createAttrStrModel];
     [m.titleMutAttrStr appendAttributedString:sixAttrStr];
     m.desc = [NSString stringWithFormat:@"添加在末尾的key:NSForegroundColorAttributeName, value:[UIColor colorFromString:@\"#ffff33\"] 得到的是在在末尾attrText:%@", m.titleMutAttrStr];
     m.titleMutAttrStr = m.titleMutAttrStr;
@@ -207,7 +198,7 @@
 }
 
 - (NSMutableArray *)TestProjectMutableAttributedStringExtended_insertAttributedString_atIndex {
-    NSInteger totalLength = ((TestProjectAttributeStringFoundationModel *)self.compareViewModel).titleMutAttrStr.length;
+    NSInteger totalLength = ((TestProjectTableModel *)self.compareViewModel).titleMutAttrStr.length;
     NSArray *arr = @[
         @{
             @"location": @0,
@@ -233,7 +224,7 @@
         
         NSAttributedString *sixAttrStr = [[NSAttributedString alloc] initWithString:self.sixthAttrText attributes:@{stringKey:value, NSFontAttributeName:[UIFont systemFontOfSize:22]}];
 
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModel];
+        TestProjectTableModel *m = [self createAttrStrModel];
         [m.titleMutAttrStr insertAttributedString:sixAttrStr atIndex:location];
         m.desc = [NSString stringWithFormat:@"插入的是位置%ld 插入的是第%ld段字符key:(%@-%@), value:%@ 插入的是在第%ld段的attrText:%@", location, atIndex, key, stringKey, value, atIndex, m.titleMutAttrStr];
         m.titleMutAttrStr = m.titleMutAttrStr;
@@ -243,7 +234,7 @@
 }
 
 - (NSMutableArray *)TestProjectMutableAttributedStringExtended_replaceCharactersInRange_withAttributedString {
-    NSInteger totalLength = ((TestProjectAttributeStringFoundationModel *)self.compareViewModel).titleMutAttrStr.length;
+    NSInteger totalLength = ((TestProjectTableModel *)self.compareViewModel).titleMutAttrStr.length;
     NSArray *arr = @[
         @{
             @"location": @0,
@@ -281,7 +272,7 @@
         
         NSAttributedString *sixAttrStr = [[NSAttributedString alloc] initWithString:self.sixthAttrText attributes:@{stringKey:value, NSFontAttributeName:[UIFont systemFontOfSize:22]}];
 
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModel];
+        TestProjectTableModel *m = [self createAttrStrModel];
         [m.titleMutAttrStr replaceCharactersInRange:range withAttributedString:sixAttrStr];
         m.desc = [NSString stringWithFormat:@"替换的是第%ld段字符的range:%@ 替换的是第%ld段字符key:(%@-%@), value:%@ 替换的是在第%ld段的attrText:%@", atIndex, NSStringFromRange(range), atIndex, key, stringKey, value, atIndex, m.titleMutAttrStr];
         m.titleMutAttrStr = m.titleMutAttrStr;
@@ -291,7 +282,7 @@
 }
 
 - (NSMutableArray *)TestProjectMutableAttributedStringExtended_removeAttribute_range {
-    NSInteger totalLength = ((TestProjectAttributeStringFoundationModel *)self.compareViewModel).titleMutAttrStr.length;
+    NSInteger totalLength = ((TestProjectTableModel *)self.compareViewModel).titleMutAttrStr.length;
     NSArray *arr = @[
         @{
             @"location": @0,
@@ -323,7 +314,7 @@
         NSString *key = dic[@"key"];
         NSRange range = NSMakeRange(location, length);
 
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModel];
+        TestProjectTableModel *m = [self createAttrStrModel];
         [m.titleMutAttrStr removeAttribute:stringKey range:range];
         m.desc = [NSString stringWithFormat:@"移除的是第%ld段字符的range:%@ 移除的是第%ld段字符key:(%@-%@) 移除的是在第%ld段的attrText:%@", atIndex, NSStringFromRange(range), atIndex, key, stringKey, atIndex, m.titleMutAttrStr];
         m.titleMutAttrStr = m.titleMutAttrStr;
@@ -333,7 +324,7 @@
 }
 
 - (NSMutableArray *)TestProjectMutableAttributedStringExtended_addAttributes_range {
-    NSInteger totalLength = ((TestProjectAttributeStringFoundationModel *)self.compareViewModel).titleMutAttrStr.length;
+    NSInteger totalLength = ((TestProjectTableModel *)self.compareViewModel).titleMutAttrStr.length;
     NSArray *arr = @[
         @{
             @"location": @0,
@@ -365,7 +356,7 @@
         NSArray *attributesString = dic[@"attributesString"];
         NSRange range = NSMakeRange(location, length);
 
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModel];
+        TestProjectTableModel *m = [self createAttrStrModel];
         [m.titleMutAttrStr addAttributes:attributes range:range];
         m.desc = [NSString stringWithFormat:@"添加的是第%ld段字符的range:%@ 添加的是第%ld段字符key:%@ 得到的是在第%ld段的attrText:%@", atIndex, NSStringFromRange(range), atIndex, attributesString, atIndex, m.titleMutAttrStr];
         m.titleMutAttrStr = m.titleMutAttrStr;
@@ -375,7 +366,7 @@
 }
 
 - (NSMutableArray *)TestProjectMutableAttributedStringExtended_addAttribute_value_range {
-    NSInteger totalLength = ((TestProjectAttributeStringFoundationModel *)self.compareViewModel).titleMutAttrStr.length;
+    NSInteger totalLength = ((TestProjectTableModel *)self.compareViewModel).titleMutAttrStr.length;
     NSArray *arr = @[
         @{
             @"location": @0,
@@ -411,7 +402,7 @@
         id value = dic[@"value"];
         NSRange range = NSMakeRange(location, length);
 
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModel];
+        TestProjectTableModel *m = [self createAttrStrModel];
         [m.titleMutAttrStr addAttribute:stringKey value:value range:range];
         m.desc = [NSString stringWithFormat:@"添加的是第%ld段字符的range:%@ 添加的是第%ld段字符key:(%@-%@), value:%@ 得到的是在第%ld段的attrText:%@", atIndex, NSStringFromRange(range), atIndex, key, stringKey, value, atIndex, m.titleMutAttrStr];
         m.titleMutAttrStr = m.titleMutAttrStr;
@@ -421,7 +412,7 @@
 }
 
 - (NSMutableArray *)TestProjectMutableAttributedStringExtended_property_mutableString {
-    TestProjectAttributeStringFoundationModel *m = [self createAttrStrModel];
+    TestProjectTableModel *m = [self createAttrStrModel];
     NSAttributedString *abstractAttr = [[NSAttributedString alloc] initWithString:@"获取到的mutableString：\n" attributes:@{NSForegroundColorAttributeName: [UIColor redColor]}];
     m.descMutAttrStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@", [self.compareViewModel.titleMutAttrStr mutableString]]];
     [m.descMutAttrStr insertAttributedString:abstractAttr atIndex:0];

@@ -7,7 +7,7 @@
 
 #import "TestProjectAttributeStringFoundation.h"
 
-#import "TestProjectAttributeStringFoundationCell.h"
+#import "TestProjectAttributeStringFoundViewTable.h"
 
 @implementation TestProjectAttributeStringFoundation
 
@@ -18,7 +18,6 @@
             @"title": @"@property (readonly, copy) NSString *string;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringFoundation_property_string],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -34,7 +33,6 @@
             @"desc": @"根据location匹配，返回这段文字的所有NSAttributedStringKey，如果没有匹配到则返回空的dictionary \n @param location :匹配的在哪段attrText \n @param range :根据匹配的字段字符返回range",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectAttributeStringFoundation_attributesAtIndex_effectiveRange],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -58,7 +56,7 @@
         NSRange range;
         NSInteger location = [dic[@"location"] integerValue];
         NSInteger atIndex = [dic[@"atIndex"] integerValue];
-        TestProjectAttributeStringFoundationModel *m = [self createAttrStrModel];
+        TestProjectTableModel *m = [self createAttrStrModel];
         
         NSDictionary *itemDic = [m.titleMutAttrStr attributesAtIndex:location effectiveRange:&range];
         m.desc = [NSString stringWithFormat:@"我是第%ld段的atIndex:%ld 获取的是在第%ld段内的range:%@ 获取的是在第%ld段内的NSAttributedStringKey集合信息%@", atIndex, location, atIndex, NSStringFromRange(range), atIndex, itemDic];
@@ -68,7 +66,7 @@
 }
 
 - (NSMutableArray *)TestProjectAttributeStringFoundation_property_string {
-    TestProjectAttributeStringFoundationModel *m = [self createAttrStrModel];
+    TestProjectTableModel *m = [self createAttrStrModel];
     m.desc = [NSString stringWithFormat:@"获取的NSAttributeString.string是：\n%@", self.compareViewModel.titleMutAttrStr.string];
     [m calculDataViewHeight];
     return self.dataMutArr;

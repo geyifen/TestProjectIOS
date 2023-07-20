@@ -17,7 +17,6 @@
             @"desc": @"获取NSMutableParagraphStyle的属性lineSpacing CGFloat \n设置负数没有用",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableParagraphStyle_property_lineSpacing],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -33,7 +32,6 @@
             @"desc": @"获取NSMutableParagraphStyle的属性paragraphSpacing CGFloat \n设置负数会与上一段重叠",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableParagraphStyle_property_paragraphSpacing],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -49,7 +47,6 @@
             @"desc": @"获取NSMutableParagraphStyle的属性alignment NSTextAlignment",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableParagraphStyle_property_alignment],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -65,7 +62,6 @@
             @"desc": @"获取NSMutableParagraphStyle的属性headIndent CGFloat \n设置负数没有用",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableParagraphStyle_property_headIndent],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -81,7 +77,6 @@
             @"desc": @"获取NSMutableParagraphStyle的属性tailIndent CGFloat \n设置负数没有用， 设置正数，每个字符占领一行整的",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableParagraphStyle_property_tailIndent],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -97,7 +92,6 @@
             @"desc": @"获取NSMutableParagraphStyle的属性firstLineHeadIndent CGFloat \n设置负数没有用",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableParagraphStyle_property_firstLineHeadIndent],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -113,7 +107,6 @@
             @"desc": @"获取NSMutableParagraphStyle的属性minimumLineHeight CGFloat \n设置负数没有用，每行的高度大于这个值也是无效果的",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableParagraphStyle_property_minimumLineHeight],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -129,7 +122,6 @@
             @"desc": @"获取NSMutableParagraphStyle的属性maximumLineHeight CGFloat \n设置负数没有用，每行的高度小于这个值也是无效果的",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableParagraphStyle_property_maximumLineHeight],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -145,7 +137,6 @@
             @"desc": @"获取NSMutableParagraphStyle的属性lineBreakMode NSLineBreakMode",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableParagraphStyle_property_lineBreakMode],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -161,7 +152,6 @@
             @"desc": @"获取NSMutableParagraphStyle的属性baseWritingDirection NSWritingDirection \n优先级比alignment低",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableParagraphStyle_property_baseWritingDirection],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -177,7 +167,6 @@
             @"desc": @"获取NSMutableParagraphStyle的属性lineHeightMultiple CGFloat \n设置负数没有用",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableParagraphStyle_property_lineHeightMultiple],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -193,7 +182,6 @@
             @"desc": @"获取NSMutableParagraphStyle的属性paragraphSpacingBefore CGFloat \n设置负数，后面段落会前面段落重叠",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableParagraphStyle_property_paragraphSpacingBefore],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -209,7 +197,6 @@
             @"desc": @"获取NSMutableParagraphStyle的属性hyphenationFactor float \n设置负数无效，要么是1，要么是0，设置其它值也是属于这两个有效值里的",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableParagraphStyle_property_hyphenationFactor],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -225,7 +212,6 @@
             @"desc": @"获取NSMutableParagraphStyle的属性usesDefaultHyphenation BOOL",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableParagraphStyle_property_usesDefaultHyphenation],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -241,7 +227,6 @@
             @"desc": @"获取NSMutableParagraphStyle的属性tabStops NSArray<NSTextTab *> *",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableParagraphStyle_property_tabStops],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -257,7 +242,6 @@
             @"desc": @"获取NSMutableParagraphStyle的属性defaultTabInterval CGFloat",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableParagraphStyle_property_defaultTabInterval],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -273,7 +257,6 @@
             @"desc": @"获取NSMutableParagraphStyle的属性textLists NSArray<NSTextList *> *",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableParagraphStyle_property_textLists],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -289,7 +272,6 @@
             @"desc": @"获取NSMutableParagraphStyle的属性allowsDefaultTighteningForTruncation BOOL",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableParagraphStyle_property_allowsDefaultTighteningForTruncation],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -305,7 +287,6 @@
             @"desc": @"获取NSMutableParagraphStyle的属性lineBreakStrategy NSLineBreakStrateg",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"modelClass": TestProjectAttributeStringFoundationModel.class,
                 @"childItems": [self TestProjectMutableParagraphStyle_property_lineBreakStrategy],
                 @"compareViewModel": self.compareViewModel,
             }
@@ -313,7 +294,7 @@
     };
 }
 
-- (TestProjectAttributeStringFoundationModel *)createStyleWithProperty:(NSString *)key value:(id)value desc:(NSString *)desc {
+- (TestProjectTableModel *)createStyleWithProperty:(NSString *)key value:(id)value desc:(NSString *)desc {
     NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
     if (key && value) {
         [style setValue:value forKey:key];
@@ -324,7 +305,7 @@
     } else {
         desc = @"";
     }
-    TestProjectAttributeStringFoundationModel *m = [self createAttrStrModelWithAttributes:@{NSParagraphStyleAttributeName: style, NSBackgroundColorAttributeName:[UIColor redColor]}];
+    TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSParagraphStyleAttributeName: style, NSBackgroundColorAttributeName:[UIColor redColor]}];
     m.isTitleExpand = YES;
     m.isDescExpand = NO;
     m.desc = [NSString stringWithFormat:@"%@获取的属性%@：%@ attrText:%@", desc, key, [style valueForKey:key], m.titleMutAttrStr];
@@ -523,7 +504,7 @@
         NSString *stringKey = dic[@"stringKey"];
         NSNumber *value = dic[@"value"];
         NSString *desc = [NSString stringWithFormat:@"%@\n设置的是(%@-%ld)", title, stringKey, value.integerValue];
-        TestProjectAttributeStringFoundationModel *m = [self createStyleWithProperty:@"lineBreakMode" value:value desc:desc];
+        TestProjectTableModel *m = [self createStyleWithProperty:@"lineBreakMode" value:value desc:desc];
         CGFloat _viewHeight = [[m valueForKey:@"_viewHeight"] floatValue];
         CGFloat _titleHeight = [[m valueForKey:@"_titleHeight"] floatValue];
         CGFloat height = 100;

@@ -12,7 +12,6 @@
 @implementation NSMutableArray (TestProject)
 
 + (void)load {
-    
     NSArray *exchangeInstanceMethodList = @[@"addObject:"];
     Class exchangeInstanceClass = NSClassFromString(@"__NSArrayM");
     Class replaceInstanceClass = NSMutableArray.class;

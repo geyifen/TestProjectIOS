@@ -18,7 +18,7 @@
 @implementation TestProjectTestVC
 
 - (NSString *)title {
-    return [NSString stringWithFormat:@"%ld_TestProjectTestVC", self.atFloor];
+    return [NSString stringWithFormat:@"%ld_TestProjectTestVC", _atFloor];
 }
 
 - (NSString *)description {

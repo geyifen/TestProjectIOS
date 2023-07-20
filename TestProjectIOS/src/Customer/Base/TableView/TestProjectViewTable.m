@@ -127,6 +127,238 @@
     return TestProjectTableModel.class;
 }
 
+- (TestProjectTableModel *)createModelWithIndex:(NSInteger)index
+                                          title:(NSString *)title
+                                       property:(NSString *)property
+                                          value:(id)value
+                                      operation:(TestProjectCreateModelOperation)operation
+                                          block:(void (^)(void))block {
+    Class class = [self createTableModelClass];
+    __block TestProjectTableModel *m = [[class alloc] init];
+    m.isChild = YES;
+    id object = [self setPropertyValueObject];
+    if (title) {
+        title = [NSString stringWithFormat:@"%@\n", title];
+    } else {
+        title = @"";
+    }
+    NSMutableString *mutstr = [NSMutableString stringWithString:title];
+    if (operation == TestProjectCreateModelOnlyGet || operation == TestProjectCreateModelGetBeforeClickSet || operation == TestProjectCreateModelGetBeforeClickGet || operation == TestProjectCreateModelGetBeforClickGetBeforeClickSet) {
+        [mutstr appendFormat:@"获取的属性值(%@)默认为: %@", property, [object valueForKey:property]];
+    }
+    if (operation == TestProjectCreateModelOnlySet) {
+        [object setValue:value forKey:property];
+        [mutstr appendFormat:@"获取的属性值(%@)设置为: \n%@", property, [object valueForKey:property]];
+    } else if (operation == TestProjectCreateModelGetBeforeClickSet) {
+        [mutstr appendFormat:@"\n想要设置的值为: %@", value];
+    } else if (operation == TestProjectCreateModelOnlyClickSet) {
+        [mutstr appendFormat:@"想要设置的值为: %@", value];
+    }
+    m.title = mutstr;
+
+    if (operation == TestProjectCreateModelOnlyClickSet || operation == TestProjectCreateModelOnlyClickGet || operation == TestProjectCreateModelGetBeforeClickSet || operation == TestProjectCreateModelGetBeforeClickGet || TestProjectCreateModelGetBeforClickGetBeforeClickSet) {
+        WO(wObjc, object);
+        WS(wSelf);
+        WO(wm, m);
+        m.clickBlock = ^{
+            NSString *message;
+            if (operation == TestProjectCreateModelOnlyClickSet || operation == TestProjectCreateModelGetBeforeClickSet || operation == TestProjectCreateModelGetBeforClickGetBeforeClickSet) {
+                message = [NSString stringWithFormat:@"要设置该属性值(%@)为: %@", property, value];
+            } else {
+                message = [NSString stringWithFormat:@"要获取该属性值(%@)为", property];
+            }
+            [UIAlertController alertWithTitle:nil message:message cancelTitle:@"取消" cancelBlock:nil sureTitle:@"确定" sureBlock:^{
+                NSMutableString *mutStr = [NSMutableString string];
+                if (operation == TestProjectCreateModelOnlyClickSet || operation == TestProjectCreateModelGetBeforeClickSet) {
+                    [wObjc setValue:value forKey:property];
+                } else if (operation == TestProjectCreateModelGetBeforClickGetBeforeClickSet) {
+                    [mutStr appendFormat:@"更新之前的上一次数据为(%@): %@", property, [wObjc valueForKey:property]];
+                    [wObjc setValue:value forKey:property];
+                }
+                [mutStr appendFormat:@"\n更新后的属性数据(%@)为: %@", property, [wObjc valueForKey:property]];
+                wm.desc = mutStr;
+                if ([wm needAutoCalculViewHeight]) {
+                    [wm calculDataViewHeight];
+                }
+                NSInteger atIndex = wSelf.tableView.dataSourceArray.count - index -1;
+                TestProjectTableModel *vm = [wSelf.tableView.dataSourceArray objectAtIndex:atIndex];
+                if ([vm needAutoCalculViewHeight]) {
+                    [vm calculDataViewHeight];
+                }
+                [wSelf.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:atIndex inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+                if (block) {
+                    block();
+                }
+            }];
+        };
+    }
+    if ([m needAutoCalculViewHeight]) {
+        [m calculDataViewHeight];
+    }
+    [self.dataMutArr addObject:m];
+    return m;
+
+}
+
+- (NSMutableArray *)createModelSingleArrayWithIndex:(NSInteger)index
+                                              title:(NSString *)title
+                                           property:(NSString *)property
+                                              value:(id)value
+                                          operation:(TestProjectCreateModelOperation)operation
+                                              block:(void (^)(void))block {
+    [self createModelWithIndex:index
+                         title:title
+                      property:property
+                         value:value
+                     operation:operation
+                         block:block];
+    return self.dataMutArr;
+}
+
+- (TestProjectTableModel *)createModelWithIndex:(NSInteger)index
+                                       property:(NSString *)property
+                                          value:(id)value
+                                      operation:(TestProjectCreateModelOperation)operation
+                                          block:(void(^)(void))block {
+    return [self createModelWithIndex:index title:nil property:property value:value operation:operation block:block];
+}
+
+- (NSMutableArray *)createModelSingleArrayWithIndex:(NSInteger)index
+                                           property:(NSString *)property
+                                              value:(id)value
+                                          operation:(TestProjectCreateModelOperation)operation
+                                              block:(void(^)(void))block {
+    [self createModelWithIndex:index property:property value:value operation:operation block:block];
+    return self.dataMutArr;
+}
+
+- (TestProjectTableModel *)createModelWithIndex:(NSInteger)index
+                                          title:(NSString *)title
+                                    methodBlock:(NSString *(^)(void))methodBlock {
+    Class class = [self createTableModelClass];
+    __block TestProjectTableModel *m = [[class alloc] init];
+    m.isChild = YES;
+    m.title = [NSString stringWithFormat:@"%@\n点击后获取的描述信息:\n", title];
+    if ([m needAutoCalculViewHeight]) {
+        [m calculDataViewHeight];
+    }
+    WS(wSelf);
+    WO(wm, m);
+    m.clickBlock = ^{
+        NSString *desc = nil;
+        if (methodBlock) {
+            desc = methodBlock();
+        }
+        wm.desc = desc;
+        if (!desc) {
+            return;
+        }
+        if ([wm needAutoCalculViewHeight]) {
+            [wm calculDataViewHeight];
+        }
+        NSInteger atIndex = wSelf.tableView.dataSourceArray.count - index -1;
+        TestProjectTableModel *vm = [wSelf.tableView.dataSourceArray objectAtIndex:atIndex];
+        if ([vm needAutoCalculViewHeight]) {
+            [vm calculDataViewHeight];
+        }
+        [wSelf.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:atIndex inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+    };
+    [self.dataMutArr addObject:m];
+    return m;
+}
+
+- (NSMutableArray *)createModelSingleArrayWithIndex:(NSInteger)index
+                                              title:(NSString *)title
+                                        methodBlock:(NSString *(^)(void))methodBlock {
+    [self createModelWithIndex:index
+                         title:title
+                   methodBlock:methodBlock];
+    return self.dataMutArr;
+}
+
+- (TestProjectTableModel *)createModelWithIndex:(NSInteger)index
+                                          title:(NSString *)title
+                                          block:(void(^)(void))block {
+    return [self createModelWithIndex:index
+                                title:title
+                        modelKeyValue:nil
+                                block:block];
+}
+
+- (NSMutableArray *)createModelSingleArrayWithIndex:(NSInteger)index
+                                              title:(NSString *)title
+                                              block:(void (^)(void))block {
+    return [self createModelSingleArrayWithIndex:index
+                                           title:title
+                                   modelKeyValue:nil
+                                           block:block];
+}
+
+- (TestProjectTableModel *)createModelWithIndex:(NSInteger)index
+                                 attributeTitle:(NSAttributedString *)attributeTitle
+                                          block:(void (^)(void))block {
+    Class class = [self createTableModelClass];
+    TestProjectTableModel *m = [[class alloc] init];
+    m.titleMutAttrStr = [[NSMutableAttributedString alloc] initWithAttributedString:attributeTitle];
+    m.isChild = YES;
+    if (block) {
+        m.clickBlock = ^{
+            [UIAlertController alertWithTitle:attributeTitle.string message:nil cancelTitle:@"取消" cancelBlock:nil sureTitle:@"确定" sureBlock:block];
+        };
+    }
+    if ([m needAutoCalculViewHeight]) {
+        [m calculDataViewHeight];
+    }
+    [self.dataMutArr addObject:m];
+    return m;
+}
+
+- (NSMutableArray *)createModelSingleArrayWithIndex:(NSInteger)index
+                                     attributeTitle:(NSAttributedString *)attributeTitle
+                                              block:(void (^)(void))block {
+    [self createModelWithIndex:index attributeTitle:attributeTitle block:block];
+    return self.dataMutArr;
+}
+
+- (TestProjectTableModel *)createModelWithIndex:(NSInteger)index
+                                          title:(NSString *)title
+                                  modelKeyValue:(NSDictionary *)modelKeyValue
+                                          block:(void(^)(void))block {
+    Class class = [self createTableModelClass];
+    TestProjectTableModel *m = [[class alloc] init];
+    m.title = title;
+    m.isChild = YES;
+    if (modelKeyValue) {
+        for (NSString *key in modelKeyValue.allKeys) {
+            [m setValue:modelKeyValue[key] forKey:key];
+        }
+    }
+    if (block) {
+        m.clickBlock = ^{
+            [UIAlertController alertWithTitle:title message:nil cancelTitle:@"取消" cancelBlock:nil sureTitle:@"确定" sureBlock:block];
+        };
+    }
+    if ([m needAutoCalculViewHeight]) {
+        [m calculDataViewHeight];
+    }
+    [self.dataMutArr addObject:m];
+    return m;
+}
+
+- (NSMutableArray *)createModelSingleArrayWithIndex:(NSInteger)index
+                                              title:(NSString *)title
+                                      modelKeyValue:(NSDictionary *)modelKeyValue
+                                              block:(void (^)(void))block {
+    [self createModelWithIndex:index title:title block:block];
+    return self.dataMutArr;
+}
+
+
+
+
+
+
+
 - (TestProjectTableModel *)createClickSetTableModelWithProperty:(NSString *)property value:(id)value {
     return [self createClickSetTableModelWithProperty:property value:value block:nil];
 }
@@ -137,9 +369,21 @@
 }
 
 - (TestProjectTableModel *)createClickSetTableModelWithProperty:(NSString *)property value:(id)value block:(nullable void (^)(void))block {
+    return [self createClickSetTableModelWithProperty:property value:value before:NO block:block];
+}
+
+- (NSMutableArray *)createClickSetSingleArrayTableModelBeforeWithProperty:(NSString *)property value:(id)value {
+    [self createClickSetTableModelWithProperty:property value:value before:YES block:nil];
+    return self.dataMutArr;
+}
+
+- (TestProjectTableModel *)createClickSetTableModelWithProperty:(NSString *)property value:(id)value before:(BOOL)before block:(nullable void (^)(void))block {
     Class class = [self createTableModelClass];
     TestProjectTableModel *m = [[class alloc] init];
     id object = [self setPropertyValueObject];
+    if (before) {
+        m.abstract = [NSString stringWithFormat:@"获取的属性值(%@)为：\n%@", property, [object valueForKey:property]];;
+    }
     NSString *title = [NSString stringWithFormat:@"设置的属性值(%@)为：%@", property, value];
     m.title = title;
     m.isChild = YES;
@@ -231,10 +475,18 @@
 }
 
 - (NSMutableArray *)createTableModelSingleArrayWithProperty:(NSString *)property index:(NSInteger)index {
+    return [self createTableModelSingleArrayWithProperty:property index:index before:NO];
+}
+
+- (NSMutableArray *)createTableModelSingleArrayWithProperty:(NSString *)property index:(NSInteger)index before:(BOOL)before {
     Class class = [self createTableModelClass];
     __block TestProjectTableModel *m = [[class alloc] init];
     m.isChild = YES;
     m.title = [NSString stringWithFormat:@"点击后获取的属性值(%@)为：\n", property];
+    if (before) {
+        id object = [self setPropertyValueObject];
+        m.desc = [NSString stringWithFormat:@"%@", [object valueForKey:property]];
+    }
     if ([m needAutoCalculViewHeight]) {
         [m calculDataViewHeight];
     }
@@ -254,6 +506,11 @@
         [wSelf.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:atIndex inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
     };
     [self.dataMutArr addObject:m];
+    return self.dataMutArr;
+}
+
+- (NSMutableArray *)createTableModelSingleArrayWithMethodBlock:(NSString *(^)(void))methodBlock title:(NSString *)title index:(NSInteger)index {
+    [self createTableModelSingleArrayWithMethodBlock:methodBlock title:title index:index];
     return self.dataMutArr;
 }
 
@@ -285,6 +542,11 @@
     };
     [self.dataMutArr addObject:m];
     return m;
+}
+
+- (void)addNotificationWithName:(NSString *)name selector:(SEL)selector {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:name object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:selector name:name object:nil];
 }
 
 - (TestProjectBaseTableView *)tableView {

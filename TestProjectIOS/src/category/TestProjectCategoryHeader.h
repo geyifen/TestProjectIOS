@@ -17,5 +17,7 @@
 #import "NSMutableArray+TestProject.h"
 #import "NSArray+TestProject.h"
 #import "UIAlertController+TestProject.h"
+#import "NSDateComponents+TestProject.h"
+#import "NSDate+TestProject.h"
 
 #endif /* TestProjectCategoryHeader_h */

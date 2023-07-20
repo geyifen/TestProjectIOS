@@ -132,7 +132,7 @@
             @"title": @"@property(class, nonatomic, readonly) Class layerClass;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectUIView_property_layerClass],
+                @"childItems": [self TestProjectUIView_class_property_layerClass],
             }
         },
     };
@@ -326,7 +326,7 @@
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectUIView_property_layerClass {
+- (NSMutableArray *)TestProjectUIView_class_property_layerClass {
     return [self createTableModelSingleArrayWithTitle:[NSString stringWithFormat:@"获取的是UIView的class属性layerClass(%@)", UIView.layerClass] block:nil];
 }
 

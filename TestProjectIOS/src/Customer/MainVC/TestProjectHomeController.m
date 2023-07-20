@@ -10,6 +10,10 @@
 #import "TestProjectCategoryHeader.h"
 #import "TestProjectOCController.h"
 
+#import "TestProjectBaseTableView.h"
+#import "TestProjectTableModel.h"
+#import "TestProjectBaseTableViewTableCell.h"
+
 @interface TestProjectHomeController ()
 
 @end
@@ -39,3 +43,4 @@
 }
 
 @end
+
