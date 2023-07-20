@@ -1,20 +1,24 @@
 PODS:
   - Masonry (1.1.0)
+  - MJRefresh (3.7.5)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
-  - Masonry (~> 1.1.0)
-  - YYModel (~> 1.0.4)
+  - Masonry (= 1.1.0)
+  - MJRefresh (= 3.7.5)
+  - YYModel (= 1.0.4)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Masonry
+    - MJRefresh
     - YYModel
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: a62b50a4bb4e39c621bf886fbf969308c79c476c
+PODFILE CHECKSUM: b05fff7b93a9655f0eb6368b09a7ac5f5f888f30
 
 COCOAPODS: 1.11.3
