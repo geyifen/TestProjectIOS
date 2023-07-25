@@ -11,10 +11,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (TestProject_Frame)
 
-- (CGFloat)viewWidth;
-- (CGFloat)viewHeight;
-- (CGFloat)viewX;
-- (CGFloat)viewY;
+@property (nonatomic, assign) CGFloat viewWidth;
+@property (nonatomic, assign) CGFloat viewHeight;
+@property (nonatomic, assign) CGFloat viewX;
+@property (nonatomic, assign) CGFloat viewY;
+
 - (CGFloat)viewRightX;
 - (CGFloat)viewBottomY;
 - (CGFloat)viewCenterX;

@@ -30,6 +30,8 @@
 		34292E8A2A386991003884E2 /* TestProjectExtendedLocale.m in Sources */ = {isa = PBXBuildFile; fileRef = 34292E892A386991003884E2 /* TestProjectExtendedLocale.m */; };
 		34292E8D2A38787B003884E2 /* TestProjectLocaleCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 34292E8C2A38787B003884E2 /* TestProjectLocaleCreation.m */; };
 		34333D442A4D2ABD00DEDA79 /* TestProjectSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 34333D432A4D2ABD00DEDA79 /* TestProjectSwitch.m */; };
+		34351D692A692FE200BD665A /* UIScrollView+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 34351D682A692FE200BD665A /* UIScrollView+TestProject.m */; };
+		34351D6C2A6930F800BD665A /* TestProjectRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34351D6B2A6930F800BD665A /* TestProjectRefreshView.m */; };
 		344012A62A1E057100D25366 /* TestProjectViewViewRendering.m in Sources */ = {isa = PBXBuildFile; fileRef = 344012A52A1E057100D25366 /* TestProjectViewViewRendering.m */; };
 		344012A92A1E1AB500D25366 /* TestProjectViewViewAnimationWithBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 344012A82A1E1AB500D25366 /* TestProjectViewViewAnimationWithBlocks.m */; };
 		344106E229E8027800683950 /* NSMutableArray+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 344106E129E8027800683950 /* NSMutableArray+TestProject.m */; };
@@ -43,6 +45,7 @@
 		3447EE05280E8EBD001AE2F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3447EE03280E8EBD001AE2F0 /* LaunchScreen.storyboard */; };
 		3447EE08280E8EBD001AE2F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EE07280E8EBD001AE2F0 /* main.m */; };
 		3450F9282A3BFB54006048D8 /* NSDate+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3450F9272A3BFB54006048D8 /* NSDate+TestProject.m */; };
+		3458CB142A6E756900465440 /* TestProjectSampleRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3458CB132A6E756900465440 /* TestProjectSampleRefreshView.m */; };
 		345BA75828BF46CD00ED6C5C /* TestProjectDModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 345BA75728BF46CD00ED6C5C /* TestProjectDModel.m */; };
 		345C814E29BF2E7A00AE3D07 /* TestProjectMutableAttributedStringExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 345C814D29BF2E7A00AE3D07 /* TestProjectMutableAttributedStringExtended.m */; };
 		345CDF022A209FC2003C1FF3 /* TestProjectViewSnapshotting.m in Sources */ = {isa = PBXBuildFile; fileRef = 345CDF012A209FC2003C1FF3 /* TestProjectViewSnapshotting.m */; };
@@ -85,6 +88,8 @@
 		349801D229E57F1A00C2B5E1 /* TestProjectViewControllerNavigationControllerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 349801D129E57F1A00C2B5E1 /* TestProjectViewControllerNavigationControllerItem.m */; };
 		349801D729E58C3700C2B5E1 /* TestProjectNavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 349801D629E58C3700C2B5E1 /* TestProjectNavigationItem.m */; };
 		349801DA29E58C6200C2B5E1 /* TestProjectNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 349801D929E58C6200C2B5E1 /* TestProjectNavigationBar.m */; };
+		3498AB992A693964008C0344 /* TestProjectGetCategoryMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 3498AB982A693964008C0344 /* TestProjectGetCategoryMethod.m */; };
+		3498AB9D2A693AB5008C0344 /* TestProjectScrollViewRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 3498AB9C2A693AB5008C0344 /* TestProjectScrollViewRefresh.m */; };
 		34A0686C29E7D5CF003B115C /* TestProjectBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A0686B29E7D5CF003B115C /* TestProjectBaseModel.m */; };
 		34A0686F29E7E41E003B115C /* TestProjectViewModelTab.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A0686E29E7E41E003B115C /* TestProjectViewModelTab.m */; };
 		34A285D12A6136BB006C49D4 /* TestProjectTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A285D02A6136BB006C49D4 /* TestProjectTextField.m */; };
@@ -203,6 +208,10 @@
 		34292E8C2A38787B003884E2 /* TestProjectLocaleCreation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectLocaleCreation.m; sourceTree = "<group>"; };
 		34333D422A4D2ABD00DEDA79 /* TestProjectSwitch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectSwitch.h; sourceTree = "<group>"; };
 		34333D432A4D2ABD00DEDA79 /* TestProjectSwitch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectSwitch.m; sourceTree = "<group>"; };
+		34351D672A692FE200BD665A /* UIScrollView+TestProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TestProject.h"; sourceTree = "<group>"; };
+		34351D682A692FE200BD665A /* UIScrollView+TestProject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TestProject.m"; sourceTree = "<group>"; };
+		34351D6A2A6930F800BD665A /* TestProjectRefreshView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectRefreshView.h; sourceTree = "<group>"; };
+		34351D6B2A6930F800BD665A /* TestProjectRefreshView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectRefreshView.m; sourceTree = "<group>"; };
 		344012A42A1E057100D25366 /* TestProjectViewViewRendering.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectViewViewRendering.h; sourceTree = "<group>"; };
 		344012A52A1E057100D25366 /* TestProjectViewViewRendering.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectViewViewRendering.m; sourceTree = "<group>"; };
 		344012A72A1E1AB500D25366 /* TestProjectViewViewAnimationWithBlocks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectViewViewAnimationWithBlocks.h; sourceTree = "<group>"; };
@@ -227,6 +236,8 @@
 		3447EE07280E8EBD001AE2F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3450F9262A3BFB54006048D8 /* NSDate+TestProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+TestProject.h"; sourceTree = "<group>"; };
 		3450F9272A3BFB54006048D8 /* NSDate+TestProject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TestProject.m"; sourceTree = "<group>"; };
+		3458CB122A6E756900465440 /* TestProjectSampleRefreshView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectSampleRefreshView.h; sourceTree = "<group>"; };
+		3458CB132A6E756900465440 /* TestProjectSampleRefreshView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectSampleRefreshView.m; sourceTree = "<group>"; };
 		345BA75628BF46CD00ED6C5C /* TestProjectDModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDModel.h; sourceTree = "<group>"; };
 		345BA75728BF46CD00ED6C5C /* TestProjectDModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDModel.m; sourceTree = "<group>"; };
 		345C814C29BF2E7A00AE3D07 /* TestProjectMutableAttributedStringExtended.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectMutableAttributedStringExtended.h; sourceTree = "<group>"; };
@@ -315,6 +326,10 @@
 		349801D629E58C3700C2B5E1 /* TestProjectNavigationItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectNavigationItem.m; sourceTree = "<group>"; };
 		349801D829E58C6200C2B5E1 /* TestProjectNavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectNavigationBar.h; sourceTree = "<group>"; };
 		349801D929E58C6200C2B5E1 /* TestProjectNavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectNavigationBar.m; sourceTree = "<group>"; };
+		3498AB972A693964008C0344 /* TestProjectGetCategoryMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectGetCategoryMethod.h; sourceTree = "<group>"; };
+		3498AB982A693964008C0344 /* TestProjectGetCategoryMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectGetCategoryMethod.m; sourceTree = "<group>"; };
+		3498AB9B2A693AB5008C0344 /* TestProjectScrollViewRefresh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectScrollViewRefresh.h; sourceTree = "<group>"; };
+		3498AB9C2A693AB5008C0344 /* TestProjectScrollViewRefresh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectScrollViewRefresh.m; sourceTree = "<group>"; };
 		34A0686A29E7D5CF003B115C /* TestProjectBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectBaseModel.h; sourceTree = "<group>"; };
 		34A0686B29E7D5CF003B115C /* TestProjectBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectBaseModel.m; sourceTree = "<group>"; };
 		34A0686D29E7E41E003B115C /* TestProjectViewModelTab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProjectViewModelTab.h; sourceTree = "<group>"; };
@@ -595,6 +610,26 @@
 			path = UISwitch;
 			sourceTree = "<group>";
 		};
+		34351D652A692EB700BD665A /* Refresh */ = {
+			isa = PBXGroup;
+			children = (
+				34351D6A2A6930F800BD665A /* TestProjectRefreshView.h */,
+				34351D6B2A6930F800BD665A /* TestProjectRefreshView.m */,
+				3458CB122A6E756900465440 /* TestProjectSampleRefreshView.h */,
+				3458CB132A6E756900465440 /* TestProjectSampleRefreshView.m */,
+			);
+			path = Refresh;
+			sourceTree = "<group>";
+		};
+		34351D662A692FB100BD665A /* UIScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				34351D672A692FE200BD665A /* UIScrollView+TestProject.h */,
+				34351D682A692FE200BD665A /* UIScrollView+TestProject.m */,
+			);
+			path = UIScrollView;
+			sourceTree = "<group>";
+		};
 		344106DF29E8024700683950 /* NSArray */ = {
 			isa = PBXGroup;
 			children = (
@@ -828,6 +863,7 @@
 			isa = PBXGroup;
 			children = (
 				348799822988B75D00032E22 /* TestProjectCategoryHeader.h */,
+				34351D662A692FB100BD665A /* UIScrollView */,
 				34B4C2FD2A5BFF9C007F019F /* UIResponder */,
 				34B4C2F92A5BF98C007F019F /* UIWindon */,
 				3450F9252A3BFB22006048D8 /* NSDate */,
@@ -894,9 +930,29 @@
 			path = UINavigationBar;
 			sourceTree = "<group>";
 		};
+		3498AB962A6938E0008C0344 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				3498AB972A693964008C0344 /* TestProjectGetCategoryMethod.h */,
+				3498AB982A693964008C0344 /* TestProjectGetCategoryMethod.m */,
+				3498AB9A2A693A9D008C0344 /* UIScrollView */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		3498AB9A2A693A9D008C0344 /* UIScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				3498AB9B2A693AB5008C0344 /* TestProjectScrollViewRefresh.h */,
+				3498AB9C2A693AB5008C0344 /* TestProjectScrollViewRefresh.m */,
+			);
+			path = UIScrollView;
+			sourceTree = "<group>";
+		};
 		34A0686729E7D27B003B115C /* Customer */ = {
 			isa = PBXGroup;
 			children = (
+				34351D652A692EB700BD665A /* Refresh */,
 				E2783E9F29A9A3EE0035900C /* Tab */,
 				E297EFA729793574005B2877 /* MainVC */,
 				34A0686829E7D299003B115C /* Base */,
@@ -1149,6 +1205,7 @@
 			children = (
 				34A5C41629B1990700E61F65 /* Foundation */,
 				34D52F0929A5B49400F5F9C2 /* UIKit */,
+				3498AB962A6938E0008C0344 /* Category */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -1568,6 +1625,7 @@
 				34DDB787296C0FA3009D56B8 /* TestProjectPThread.m in Sources */,
 				34B1A5DE2A289FB100766B44 /* TestProjectButton.m in Sources */,
 				347B44CF2A3FFA05001061A5 /* TestProjectDatePicker.m in Sources */,
+				34351D6C2A6930F800BD665A /* TestProjectRefreshView.m in Sources */,
 				34D52F1029A5EEFA00F5F9C2 /* TestProjectViewTable.m in Sources */,
 				34A5C41929B1992500E61F65 /* TestProjectAttributeStringFoundation.m in Sources */,
 				344106E529E8094200683950 /* NSArray+TestProject.m in Sources */,
@@ -1580,6 +1638,7 @@
 				34292E792A37FB8E003884E2 /* TestProjectDateComponents.m in Sources */,
 				345E44C229F914D400BBED12 /* TestProjectBaseTableViewCell.m in Sources */,
 				34D52F1329A602A700F5F9C2 /* TestProjectBaseTableViewTableCell.m in Sources */,
+				3498AB992A693964008C0344 /* TestProjectGetCategoryMethod.m in Sources */,
 				34D2993929E3EF03002F7A37 /* UIViewController+TestProject.m in Sources */,
 				34EE5C1E2A316FF800B1C5D8 /* TestProjectCalendarView.m in Sources */,
 				345CDF022A209FC2003C1FF3 /* TestProjectViewSnapshotting.m in Sources */,
@@ -1588,6 +1647,7 @@
 				346268D32A39B5A400449570 /* TestProjectDateCreation.m in Sources */,
 				34A5C42A29B1F06400E61F65 /* TestProjectAttributeStringExtendedString.m in Sources */,
 				345EC4BE286548D100F61F2E /* TestProjectCustomModel.m in Sources */,
+				3458CB142A6E756900465440 /* TestProjectSampleRefreshView.m in Sources */,
 				349801D229E57F1A00C2B5E1 /* TestProjectViewControllerNavigationControllerItem.m in Sources */,
 				34B4C2F82A5BF6A5007F019F /* UIView+TestProject.m in Sources */,
 				34624F052A3C0F6E00045544 /* TestProjectColorPickerViewController.m in Sources */,
@@ -1605,6 +1665,7 @@
 				34D52F1729A606F400F5F9C2 /* TestProjectTableModel.m in Sources */,
 				34D77A4328C19FD100A0CE9F /* TestProjectZModel.m in Sources */,
 				34F24D732A6534340004BC62 /* TestProjectScrollView.m in Sources */,
+				34351D692A692FE200BD665A /* UIScrollView+TestProject.m in Sources */,
 				3447EE08280E8EBD001AE2F0 /* main.m in Sources */,
 				34D52F0D29A5B4D400F5F9C2 /* TestProjectUIColor.m in Sources */,
 				344106E229E8027800683950 /* NSMutableArray+TestProject.m in Sources */,
@@ -1632,6 +1693,7 @@
 				34B20F0D2988A9CB009B4EFD /* TestProjectMyController.m in Sources */,
 				34333D442A4D2ABD00DEDA79 /* TestProjectSwitch.m in Sources */,
 				34D2993C29E3F262002F7A37 /* TestProjectNavigationController.m in Sources */,
+				3498AB9D2A693AB5008C0344 /* TestProjectScrollViewRefresh.m in Sources */,
 				341791542A4193FB0052DD90 /* TestProjectFontDescriptor.m in Sources */,
 				34A9C9292A497B6C000B0CD6 /* TestProjectFontPickerViewControllerConfiguration.m in Sources */,
 				348799872988B75D00032E22 /* TestProjectViewTab.m in Sources */,

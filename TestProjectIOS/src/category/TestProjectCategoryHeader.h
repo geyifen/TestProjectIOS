@@ -19,5 +19,6 @@
 #import "UIAlertController+TestProject.h"
 #import "NSDateComponents+TestProject.h"
 #import "NSDate+TestProject.h"
+#import "UIScrollView+TestProject.h"
 
 #endif /* TestProjectCategoryHeader_h */

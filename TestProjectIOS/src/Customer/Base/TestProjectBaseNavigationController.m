@@ -34,6 +34,10 @@
         self.navigationBar.standardAppearance = appearance;
         self.navigationBar.scrollEdgeAppearance = appearance;
     }
+    if (@available(iOS 15.0, *)) {
+        //在ios15之后UITableView的sectionHeader会有一个默认的padding
+        UITableView.appearance.sectionHeaderTopPadding = 0;
+    }
 }
 
 #pragma - UIGestureRecognizerDelegate

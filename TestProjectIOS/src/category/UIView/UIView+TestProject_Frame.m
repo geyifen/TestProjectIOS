@@ -9,16 +9,40 @@
 
 @implementation UIView (TestProject_Frame)
 
+- (void)setViewWidth:(CGFloat)viewWidth {
+    CGRect rect = self.frame;
+    rect.size.width = viewWidth;
+    self.frame = rect;
+}
+
 - (CGFloat)viewWidth {
     return self.frame.size.width;
+}
+
+- (void)setViewHeight:(CGFloat)viewHeight {
+    CGRect rect = self.frame;
+    rect.size.height = viewHeight;
+    self.frame = rect;
 }
 
 - (CGFloat)viewHeight {
     return self.frame.size.height;
 }
 
+- (void)setViewX:(CGFloat)viewX {
+    CGRect rect = self.frame;
+    rect.origin.x = viewX;
+    self.frame = rect;
+}
+
 - (CGFloat)viewX {
     return self.frame.origin.x;
+}
+
+- (void)setViewY:(CGFloat)viewY {
+    CGRect rect = self.frame;
+    rect.origin.y = viewY;
+    self.frame = rect;
 }
 
 - (CGFloat)viewY {
