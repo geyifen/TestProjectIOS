@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (TestProjectViewConstrainProperty *)centerY;
 - (TestProjectViewConstrainProperty *(^)(CGFloat))offset;
 - (TestProjectViewConstrainProperty *(^)(id))equal;
+- (TestProjectViewConstrainProperty *(^)(id))greaterThanOrEqual;
+- (TestProjectViewConstrainProperty *(^)(id))lessThanOrEqual;
 - (void)uninstall;
 
 @end

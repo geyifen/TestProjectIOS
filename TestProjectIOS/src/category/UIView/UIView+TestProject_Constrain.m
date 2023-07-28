@@ -80,6 +80,22 @@
     };
 }
 
+- (TestProjectViewConstrainProperty *(^)(id))greaterThanOrEqual {
+    return ^id(id property) {
+        self.relation = NSLayoutRelationGreaterThanOrEqual;
+        self.secondProperty = property;
+        return self;
+    };
+}
+
+- (TestProjectViewConstrainProperty *(^)(id))lessThanOrEqual {
+    return ^id(id property) {
+        self.relation = NSLayoutRelationLessThanOrEqual;
+        self.secondProperty = property;
+        return self;
+    };
+}
+
 - (TestProjectViewConstrainProperty *(^)(CGFloat))offset {
     return ^(CGFloat offset) {
         self.constant = offset;

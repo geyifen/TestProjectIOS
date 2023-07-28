@@ -156,7 +156,7 @@
     }
     m.title = mutstr;
 
-    if (operation == TestProjectCreateModelOnlyClickSet || operation == TestProjectCreateModelOnlyClickGet || operation == TestProjectCreateModelGetBeforeClickSet || operation == TestProjectCreateModelGetBeforeClickGet || TestProjectCreateModelGetBeforClickGetBeforeClickSet) {
+    if (operation == TestProjectCreateModelOnlyClickSet || operation == TestProjectCreateModelOnlyClickGet || operation == TestProjectCreateModelGetBeforeClickSet || operation == TestProjectCreateModelGetBeforeClickGet || operation == TestProjectCreateModelGetBeforClickGetBeforeClickSet) {
         WO(wObjc, object);
         WS(wSelf);
         WO(wm, m);

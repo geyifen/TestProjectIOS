@@ -53,9 +53,9 @@
         @"title": @"Frameworks",
         @"atIndex": @0,
         @"itemChilds": @[
-            [TestProjectGetCategoryMethod getImplementationProject],
             [TestProjectGetUIKitMethod getImplementationProject],
             [TestProjectGetFoundationImplementationMethod getImplementationProject],
+            [TestProjectGetCategoryMethod getImplementationProject],
         ]
     };
 }

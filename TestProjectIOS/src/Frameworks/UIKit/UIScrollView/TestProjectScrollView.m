@@ -41,13 +41,14 @@
 @property (nonatomic, strong) TestProjectChildScrollView *rightScrollView;
 @property (nonatomic, strong) UIButton *rightGrandView;
 @property (nonatomic, strong) UIView *rightSecondGrandView;
+@property (nonatomic, strong) UIView *rightFirstGrandView;
 
 @property (nonatomic, strong) UIScrollView *centerScrollView;
 @property (nonatomic, strong) UIView *centerGrandView;
 
 @property (nonatomic, strong) UITextField *textField;
-
 @property (nonatomic, strong) UIView *redDotView;
+
 
 @end
 
@@ -58,20 +59,22 @@
         [self.tableView testproject_updateConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
             make.height.equal(self).offset(-300);
         }];
+        CGFloat width = [UIScreen mainScreen].bounds.size.width/3.0;
         self.childScrollView.delegate = self;
         self.childScrollView.backgroundColor = [UIColor redColor];
         self.grandView.backgroundColor = [UIColor blackColor];
-        [self.childScrollView setContentSize:CGSizeMake([UIScreen mainScreen].bounds.size.width/2.0, 500)];
+        [self.childScrollView setContentSize:CGSizeMake(width, 500)];
        
         self.rightScrollView.backgroundColor = [UIColor blueColor];
-        [self.rightScrollView setContentSize:CGSizeMake([UIScreen mainScreen].bounds.size.width/2.0, 500)];
+        [self.rightScrollView setContentSize:CGSizeMake(width, 500)];
         self.rightGrandView.backgroundColor = [UIColor yellowColor];
         self.rightSecondGrandView.backgroundColor = [UIColor purpleColor];
+        self.rightFirstGrandView.backgroundColor = [UIColor cyanColor];
         self.redDotView.backgroundColor = [UIColor redColor];
         
         self.centerScrollView.backgroundColor = [UIColor brownColor];
         self.centerGrandView.backgroundColor = [UIColor whiteColor];
-        [self.centerScrollView setContentSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, 500)];
+        [self.centerScrollView setContentSize:CGSizeMake(width, 500)];
         
         self.textField.layer.borderColor = [UIColor blackColor].CGColor;
         self.textField.layer.borderWidth = 2;
@@ -87,7 +90,7 @@
         [_childScrollView testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
             make.top.leading.equal(self);
             make.width.equal(self.rightScrollView);
-            make.trainling.equal(self.rightScrollView.leading);
+            make.trainling.equal(self.centerScrollView.leading);
             make.height.equal(@300);
         }];
     }
@@ -134,6 +137,19 @@
     return _rightGrandView;
 }
 
+- (UIView *)rightFirstGrandView {
+    if (!_rightFirstGrandView) {
+        _rightFirstGrandView = [[UIView alloc] init];
+        [self.rightScrollView addSubview:_rightFirstGrandView];
+        [_rightFirstGrandView testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+            make.leading.width.equal(self.rightScrollView);
+            make.top.equal(self.rightScrollView);
+            make.height.equal(@50);
+        }];
+    }
+    return _rightFirstGrandView;
+}
+
 - (UIView *)rightSecondGrandView {
     if (!_rightSecondGrandView) {
         _rightSecondGrandView = [[UIView alloc] init];
@@ -149,7 +165,7 @@
 
 - (UIView *)redDotView {
     if (!_redDotView) {
-        _redDotView = [[UIView alloc] initWithFrame:CGRectMake(120, 10, 4, 4)];
+        _redDotView = [[UIView alloc] initWithFrame:CGRectMake(120, 60, 4, 4)];
         [self.rightScrollView addSubview:_redDotView];
     }
     return _redDotView;
@@ -158,7 +174,7 @@
 - (UIScrollView *)centerScrollView {
     if (!_centerScrollView) {
         CGFloat width = [UIScreen mainScreen].bounds.size.width;
-        _centerScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(width/2 - 50, 0, 100, 100)];
+        _centerScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(width/3, 0, width/3, 100)];
         [self addSubview:_centerScrollView];
     }
     return _centerScrollView;
@@ -184,6 +200,13 @@
         }];
     }
     return _textField;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (self.rightScrollView != scrollView) {
+        return;
+    }
+    NSLog(@"contentOffset:%@", NSStringFromCGPoint(scrollView.contentOffset));
 }
 
 - (id)setPropertyValueObject {
@@ -246,7 +269,7 @@
 - (NSMutableArray *)TestProjectScrollView_property_contentInset:(NSInteger)index {
     return [self createModelSingleArrayWithIndex:index
                                         property:@"contentInset"
-                                           value:[NSValue valueWithUIEdgeInsets:UIEdgeInsetsMake(5, 10, 15, 20)]
+                                           value:[NSValue valueWithUIEdgeInsets:UIEdgeInsetsMake(5, 10, 15, 10)]
                                        operation:TestProjectCreateModelGetBeforClickGetBeforeClickSet
                                            block:nil];
 }
@@ -1383,7 +1406,7 @@
 - (NSMutableArray *)TestProjectScrollView_zoomToRect_animated:(NSInteger)index {
     NSArray *arr = @[
         @{
-            @"value": [NSValue valueWithCGRect:CGRectMake(120, 10, 4, 4)],
+            @"value": [NSValue valueWithCGRect:CGRectMake(120, 60, 4, 4)],
         },
         @{
             @"value": [NSValue valueWithCGRect:CGRectMake(0, 0, 10, 10)],
@@ -1639,317 +1662,6 @@
                                            value:control
                                        operation:TestProjectCreateModelGetBeforeClickSet
                                            block:nil];
-}
-
-#pragma mark - UIScrollViewDelegate
-- (NSDictionary *)method_47:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"UIScrollView的UIScrollViewDelegate执行, 在滚动的时候调用，会执行很多次",
-            @"title": @"- (void)scrollViewDidScroll:(UIScrollView *)scrollView;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectScrollView_UIScrollViewDelegate_scrollViewDidScroll:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectScrollView_UIScrollViewDelegate_scrollViewDidScroll:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView != self.rightScrollView) {
-        return;
-    }
-//    NSLog(@"%@", NSStringFromSelector(_cmd));
-//    NSLog(@"%@ offset:%@ tracking:%u dragging:%u decelerating:%u", NSStringFromSelector(_cmd), NSStringFromCGPoint(scrollView.contentOffset), scrollView.tracking, scrollView.dragging, scrollView.decelerating);
-}
-
-- (NSDictionary *)method_48:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"UIScrollView的UIScrollViewDelegate执行，在进行缩放，会执行多次",
-            @"title": @"- (void)scrollViewDidZoom:(UIScrollView *)scrollView API_AVAILABLE(ios(3.2));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectScrollView_UIScrollViewDelegate_scrollViewDidZoom:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectScrollView_UIScrollViewDelegate_scrollViewDidZoom:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
-}
-
-- (void)scrollViewDidZoom:(UIScrollView *)scrollView API_AVAILABLE(ios(3.2)) {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-}
-
-- (NSDictionary *)method_49:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"UIScrollView的UIScrollViewDelegate执行，UIScrollView开始拖拽，在一轮滚动的结束之前只执行一次",
-            @"title": @"- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectScrollView_UIScrollViewDelegate_scrollViewWillBeginDragging:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectScrollView_UIScrollViewDelegate_scrollViewWillBeginDragging:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
-}
-
-// called on start of dragging (may require some time and or distance to move)
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-//    NSLog(@"%@", NSStringFromSelector(_cmd));
-//    NSLog(@"%@ offset:%@ tracking:%u dragging:%u decelerating:%u", NSStringFromSelector(_cmd), NSStringFromCGPoint(scrollView.contentOffset), scrollView.tracking, scrollView.dragging, scrollView.decelerating);
-}
-
-- (NSDictionary *)method_50:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"UIScrollView的UIScrollViewDelegate执行，UIScrollView即将结束拖拽，在一轮滚动的结束之前只执行一次",
-            @"title": @"- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset API_AVAILABLE(ios(5.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectScrollView_UIScrollViewDelegate_scrollViewWillEndDragging_withVelocity_targetContentOffset:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectScrollView_UIScrollViewDelegate_scrollViewWillEndDragging_withVelocity_targetContentOffset:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
-}
-
-// called on finger up if the user dragged. velocity is in points/millisecond. targetContentOffset may be changed to adjust where the scroll view comes to rest
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset API_AVAILABLE(ios(5.0)) {
-//    NSLog(@"%@ velocity:%@ targetContentOffset:%@", NSStringFromSelector(_cmd), NSStringFromCGPoint(velocity), NSStringFromCGPoint(*targetContentOffset));
-//    NSLog(@"%@ offset:%@ tracking:%u dragging:%u decelerating:%u", NSStringFromSelector(_cmd), NSStringFromCGPoint(scrollView.contentOffset), scrollView.tracking, scrollView.dragging, scrollView.decelerating);
-}
-
-- (NSDictionary *)method_51:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"UIScrollView的UIScrollViewDelegate执行，UIScrollView结束拖拽并且即将滑行，在一轮滚动的结束之前只执行一次",
-            @"title": @"- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectScrollView_UIScrollViewDelegate_scrollViewDidEndDragging_willDecelerate:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectScrollView_UIScrollViewDelegate_scrollViewDidEndDragging_willDecelerate:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
-}
-
-// called on finger up if the user dragged. decelerate is true if it will continue moving afterwards
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-//    NSLog(@"%@", NSStringFromSelector(_cmd));
-//    NSLog(@"%@ offset:%@ tracking:%u dragging:%u decelerating:%u", NSStringFromSelector(_cmd), NSStringFromCGPoint(scrollView.contentOffset), scrollView.tracking, scrollView.dragging, scrollView.decelerating);
-}
-
-- (NSDictionary *)method_52:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"UIScrollView的UIScrollViewDelegate执行，UIScrollView开始滑行，在一轮滚动的结束之前只执行一次",
-            @"title": @"- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectScrollView_UIScrollViewDelegate_scrollViewWillBeginDecelerating:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectScrollView_UIScrollViewDelegate_scrollViewWillBeginDecelerating:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
-}
-
-- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
-//    NSLog(@"%@", NSStringFromSelector(_cmd));
-//    NSLog(@"%@ offset:%@ tracking:%u dragging:%u decelerating:%u", NSStringFromSelector(_cmd), NSStringFromCGPoint(scrollView.contentOffset), scrollView.tracking, scrollView.dragging, scrollView.decelerating);
-}   // called on finger up as we are moving
-
-- (NSDictionary *)method_53:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"UIScrollView的UIScrollViewDelegate执行，UIScrollView结束滑行，在一轮滚动的结束之前只执行一次",
-            @"title": @"- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectScrollView_UIScrollViewDelegate_scrollViewDidEndDecelerating:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectScrollView_UIScrollViewDelegate_scrollViewDidEndDecelerating:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-//    NSLog(@"%@", NSStringFromSelector(_cmd));
-//    NSLog(@"%@ offset:%@ tracking:%u dragging:%u decelerating:%u", NSStringFromSelector(_cmd), NSStringFromCGPoint(scrollView.contentOffset), scrollView.tracking, scrollView.dragging, scrollView.decelerating);
-}      // called when scroll view grinds to a halt
-
-- (NSDictionary *)method_54:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"UIScrollView的UIScrollViewDelegate执行",
-            @"title": @"- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectScrollView_UIScrollViewDelegate_scrollViewDidEndScrollingAnimation:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectScrollView_UIScrollViewDelegate_scrollViewDidEndScrollingAnimation:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
-}
-
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-} // called when setContentOffset/scrollRectVisible:animated: finishes. not called if not animating
-
-- (NSDictionary *)method_55:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"UIScrollView的UIScrollViewDelegate执行, 这个在缩放视图的时候一直执行，会多次",
-            @"title": @"- (nullable UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectScrollView_UIScrollViewDelegate_viewForZoomingInScrollView:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectScrollView_UIScrollViewDelegate_viewForZoomingInScrollView:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
-}
-
-- (nullable UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-    return self.rightGrandView;
-}     // return a view that will be scaled. if delegate returns nil, nothing happens
-
-- (NSDictionary *)method_56:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"UIScrollView的UIScrollViewDelegate执行，开始缩放子视图，只会执行一次",
-            @"title": @"- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view API_AVAILABLE(ios(3.2));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectScrollView_UIScrollViewDelegate_scrollViewWillBeginZooming_withView:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectScrollView_UIScrollViewDelegate_scrollViewWillBeginZooming_withView:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
-}
-
-- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view API_AVAILABLE(ios(3.2)) {
-    NSLog(@"%@ view:%@", NSStringFromSelector(_cmd), view);
-} // called before the scroll view begins zooming its content
-
-- (NSDictionary *)method_57:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"UIScrollView的UIScrollViewDelegate执行，这个是结束子视图缩放，只会执行一次",
-            @"title": @"- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view atScale:(CGFloat)scale;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectScrollView_UIScrollViewDelegate_scrollViewDidEndZooming_withView_atScale:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectScrollView_UIScrollViewDelegate_scrollViewDidEndZooming_withView_atScale:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
-}
-
-- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view atScale:(CGFloat)scale {
-    NSLog(@"%@ view:%@ scale:%f", NSStringFromSelector(_cmd), view, scale);
-} // scale between minimum and maximum. called after any 'bounce' animations
-
-- (NSDictionary *)method_58:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"UIScrollView的UIScrollViewDelegate执行，点击导航栏是否可以滑动到顶部",
-            @"title": @"- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectScrollView_UIScrollViewDelegate_scrollViewShouldScrollToTop:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectScrollView_UIScrollViewDelegate_scrollViewShouldScrollToTop:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
-}
-
-- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-    return YES;
-}   // return a yes if you want to scroll to the top. if not defined, assumes YES
-
-- (NSDictionary *)method_59:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"UIScrollView的UIScrollViewDelegate执行，滑到顶部结束的回调",
-            @"title": @"- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectScrollView_UIScrollViewDelegate_scrollViewDidScrollToTop:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectScrollView_UIScrollViewDelegate_scrollViewDidScrollToTop:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
-}
-
-- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-}      // called when scrolling animation finished. may be called immediately if already at top
-
-- (NSDictionary *)method_60:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"UIScrollView的UIScrollViewDelegate执行",
-            @"title": @"- (void)scrollViewDidChangeAdjustedContentInset:(UIScrollView *)scrollView API_AVAILABLE(ios(11.0), tvos(11.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectScrollView_UIScrollViewDelegate_scrollViewDidChangeAdjustedContentInset:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectScrollView_UIScrollViewDelegate_scrollViewDidChangeAdjustedContentInset:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
-}
-
-/* Also see -[UIScrollView adjustedContentInsetDidChange]
- */
-- (void)scrollViewDidChangeAdjustedContentInset:(UIScrollView *)scrollView API_AVAILABLE(ios(11.0), tvos(11.0)) {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
 }
 
 @end

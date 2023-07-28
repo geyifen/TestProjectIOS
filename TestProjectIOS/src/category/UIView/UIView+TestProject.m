@@ -18,7 +18,7 @@
 }
 
 - (UIView *)testProject_hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-    [self endEditing:NO];
+//    [self endEditing:NO];
     return [self testProject_hitTest:point withEvent:event];
 }
 

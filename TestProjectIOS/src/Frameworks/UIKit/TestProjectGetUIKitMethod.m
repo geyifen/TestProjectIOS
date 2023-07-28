@@ -15,7 +15,7 @@
     return @[
 //        [self UIBezierPath],
 //        [self UITextField],
-//        [self UICollectionView],
+        [self UICollectionView],
         [self UIScrollView],
     ];
 }
@@ -52,8 +52,17 @@
 + (NSDictionary *)UIScrollView {
     return @{
         @"title": @"UIScrollView",
-        @"atIndex": @0,
-        @"viewKey": @"TestProjectScrollView",
+        @"atIndex": @1,
+        @"itemChilds": @[
+            @{
+                @"title": @"UIScrollView\n(UIScrollViewDelegate)",
+                @"viewKey": @"TestProjectScrollViewDelegate",
+            },
+            @{
+                @"title": @"UIScrollView",
+                @"viewKey": @"TestProjectScrollView",
+            },
+        ]
     };
 }
 
