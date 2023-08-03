@@ -30,6 +30,14 @@
 //}
     self.view.backgroundColor = [UIColor whiteColor];
     NSLog(@"%@ %@ %p %@", NSStringFromSelector(_cmd), NSStringFromClass(self.class), self, self.title)
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 0)];
+    [btn setImage:[UIImage imageNamed:@"nav_goback"] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(gotoBack:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+}
+
+- (void)gotoBack:(UIButton *)btn {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (BOOL)canDrag {

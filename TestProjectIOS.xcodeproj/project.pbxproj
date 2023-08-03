@@ -74,6 +74,7 @@
 		347338DC28BDB85600B921EC /* TestProjectAModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 347338DB28BDB85600B921EC /* TestProjectAModel.m */; };
 		347338DF28BDB86700B921EC /* TestProjectBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 347338DE28BDB86700B921EC /* TestProjectBModel.m */; };
 		347338E228BDB87E00B921EC /* TestProjectCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 347338E128BDB87E00B921EC /* TestProjectCModel.m */; };
+		34792F1A2A7B870900D275B8 /* TestProjectCollectionViewDragVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 34792F192A7B870900D275B8 /* TestProjectCollectionViewDragVC.m */; };
 		347AAA162A24A39A00F0C475 /* TestProjectControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 347AAA152A24A39A00F0C475 /* TestProjectControl.m */; };
 		347B44CB2A3FEA3E001061A5 /* TestProjectColorWell.m in Sources */ = {isa = PBXBuildFile; fileRef = 347B44CA2A3FEA3E001061A5 /* TestProjectColorWell.m */; };
 		347B44CF2A3FFA05001061A5 /* TestProjectDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 347B44CE2A3FFA05001061A5 /* TestProjectDatePicker.m */; };
@@ -82,6 +83,9 @@
 		347DCC5229E6AFBC005A3D44 /* TestProjectBarAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 347DCC5129E6AFBC005A3D44 /* TestProjectBarAppearance.m */; };
 		3480AA5A29B76C0D00D9C957 /* TestProjectMutableAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3480AA5929B76C0D00D9C957 /* TestProjectMutableAttributedString.m */; };
 		3482D9A129D16B83008E3D98 /* TestProjectShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3482D9A029D16B83008E3D98 /* TestProjectShadow.m */; };
+		3484F3242A7791260080FA5C /* TestProjectCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3484F3232A7791260080FA5C /* TestProjectCollectionViewDataSource.m */; };
+		3484F3282A77BB030080FA5C /* TestProjectFunctionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3484F3272A77BB030080FA5C /* TestProjectFunctionController.m */; };
+		3484F32C2A77C1D90080FA5C /* TestProjectRefreshSampleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3484F32B2A77C1D90080FA5C /* TestProjectRefreshSampleVC.m */; };
 		348799752988B74900032E22 /* TestProjectSectionViewTab.m in Sources */ = {isa = PBXBuildFile; fileRef = 348799742988B74900032E22 /* TestProjectSectionViewTab.m */; };
 		348799862988B75D00032E22 /* TestProjectBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 348799782988B75D00032E22 /* TestProjectBaseTableView.m */; };
 		348799872988B75D00032E22 /* TestProjectViewTab.m in Sources */ = {isa = PBXBuildFile; fileRef = 348799802988B75D00032E22 /* TestProjectViewTab.m */; };
@@ -91,8 +95,6 @@
 		349801D229E57F1A00C2B5E1 /* TestProjectViewControllerNavigationControllerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 349801D129E57F1A00C2B5E1 /* TestProjectViewControllerNavigationControllerItem.m */; };
 		349801D729E58C3700C2B5E1 /* TestProjectNavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 349801D629E58C3700C2B5E1 /* TestProjectNavigationItem.m */; };
 		349801DA29E58C6200C2B5E1 /* TestProjectNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 349801D929E58C6200C2B5E1 /* TestProjectNavigationBar.m */; };
-		3498AB992A693964008C0344 /* TestProjectGetCategoryMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 3498AB982A693964008C0344 /* TestProjectGetCategoryMethod.m */; };
-		3498AB9D2A693AB5008C0344 /* TestProjectScrollViewRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 3498AB9C2A693AB5008C0344 /* TestProjectScrollViewRefresh.m */; };
 		34A0686C29E7D5CF003B115C /* TestProjectBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A0686B29E7D5CF003B115C /* TestProjectBaseModel.m */; };
 		34A0686F29E7E41E003B115C /* TestProjectViewModelTab.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A0686E29E7E41E003B115C /* TestProjectViewModelTab.m */; };
 		34A285D12A6136BB006C49D4 /* TestProjectTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A285D02A6136BB006C49D4 /* TestProjectTextField.m */; };
@@ -299,6 +301,8 @@
 		347338DE28BDB86700B921EC /* TestProjectBModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectBModel.m; sourceTree = "<group>"; };
 		347338E028BDB87E00B921EC /* TestProjectCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectCModel.h; sourceTree = "<group>"; };
 		347338E128BDB87E00B921EC /* TestProjectCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectCModel.m; sourceTree = "<group>"; };
+		34792F182A7B870900D275B8 /* TestProjectCollectionViewDragVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectCollectionViewDragVC.h; sourceTree = "<group>"; };
+		34792F192A7B870900D275B8 /* TestProjectCollectionViewDragVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectCollectionViewDragVC.m; sourceTree = "<group>"; };
 		347AAA142A24A39A00F0C475 /* TestProjectControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectControl.h; sourceTree = "<group>"; };
 		347AAA152A24A39A00F0C475 /* TestProjectControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectControl.m; sourceTree = "<group>"; };
 		347B44C92A3FEA3E001061A5 /* TestProjectColorWell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectColorWell.h; sourceTree = "<group>"; };
@@ -315,6 +319,12 @@
 		3480AA5929B76C0D00D9C957 /* TestProjectMutableAttributedString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectMutableAttributedString.m; sourceTree = "<group>"; };
 		3482D99F29D16B83008E3D98 /* TestProjectShadow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectShadow.h; sourceTree = "<group>"; };
 		3482D9A029D16B83008E3D98 /* TestProjectShadow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectShadow.m; sourceTree = "<group>"; };
+		3484F3222A7791260080FA5C /* TestProjectCollectionViewDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectCollectionViewDataSource.h; sourceTree = "<group>"; };
+		3484F3232A7791260080FA5C /* TestProjectCollectionViewDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectCollectionViewDataSource.m; sourceTree = "<group>"; };
+		3484F3262A77BB030080FA5C /* TestProjectFunctionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectFunctionController.h; sourceTree = "<group>"; };
+		3484F3272A77BB030080FA5C /* TestProjectFunctionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectFunctionController.m; sourceTree = "<group>"; };
+		3484F32A2A77C1D90080FA5C /* TestProjectRefreshSampleVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectRefreshSampleVC.h; sourceTree = "<group>"; };
+		3484F32B2A77C1D90080FA5C /* TestProjectRefreshSampleVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectRefreshSampleVC.m; sourceTree = "<group>"; };
 		348799732988B74900032E22 /* TestProjectSectionViewTab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProjectSectionViewTab.h; sourceTree = "<group>"; };
 		348799742988B74900032E22 /* TestProjectSectionViewTab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestProjectSectionViewTab.m; sourceTree = "<group>"; };
 		348799782988B75D00032E22 /* TestProjectBaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestProjectBaseTableView.m; sourceTree = "<group>"; };
@@ -335,10 +345,6 @@
 		349801D629E58C3700C2B5E1 /* TestProjectNavigationItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectNavigationItem.m; sourceTree = "<group>"; };
 		349801D829E58C6200C2B5E1 /* TestProjectNavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectNavigationBar.h; sourceTree = "<group>"; };
 		349801D929E58C6200C2B5E1 /* TestProjectNavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectNavigationBar.m; sourceTree = "<group>"; };
-		3498AB972A693964008C0344 /* TestProjectGetCategoryMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectGetCategoryMethod.h; sourceTree = "<group>"; };
-		3498AB982A693964008C0344 /* TestProjectGetCategoryMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectGetCategoryMethod.m; sourceTree = "<group>"; };
-		3498AB9B2A693AB5008C0344 /* TestProjectScrollViewRefresh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectScrollViewRefresh.h; sourceTree = "<group>"; };
-		3498AB9C2A693AB5008C0344 /* TestProjectScrollViewRefresh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectScrollViewRefresh.m; sourceTree = "<group>"; };
 		34A0686A29E7D5CF003B115C /* TestProjectBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectBaseModel.h; sourceTree = "<group>"; };
 		34A0686B29E7D5CF003B115C /* TestProjectBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectBaseModel.m; sourceTree = "<group>"; };
 		34A0686D29E7E41E003B115C /* TestProjectViewModelTab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProjectViewModelTab.h; sourceTree = "<group>"; };
@@ -801,6 +807,17 @@
 			path = NSDateFormatter;
 			sourceTree = "<group>";
 		};
+		34792F172A7B86C100D275B8 /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				3484F32A2A77C1D90080FA5C /* TestProjectRefreshSampleVC.h */,
+				3484F32B2A77C1D90080FA5C /* TestProjectRefreshSampleVC.m */,
+				34792F182A7B870900D275B8 /* TestProjectCollectionViewDragVC.h */,
+				34792F192A7B870900D275B8 /* TestProjectCollectionViewDragVC.m */,
+			);
+			path = Sample;
+			sourceTree = "<group>";
+		};
 		347AAA132A24344700F0C475 /* UIControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -948,28 +965,10 @@
 			path = UINavigationBar;
 			sourceTree = "<group>";
 		};
-		3498AB962A6938E0008C0344 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				3498AB972A693964008C0344 /* TestProjectGetCategoryMethod.h */,
-				3498AB982A693964008C0344 /* TestProjectGetCategoryMethod.m */,
-				3498AB9A2A693A9D008C0344 /* UIScrollView */,
-			);
-			path = Category;
-			sourceTree = "<group>";
-		};
-		3498AB9A2A693A9D008C0344 /* UIScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				3498AB9B2A693AB5008C0344 /* TestProjectScrollViewRefresh.h */,
-				3498AB9C2A693AB5008C0344 /* TestProjectScrollViewRefresh.m */,
-			);
-			path = UIScrollView;
-			sourceTree = "<group>";
-		};
 		34A0686729E7D27B003B115C /* Customer */ = {
 			isa = PBXGroup;
 			children = (
+				34792F172A7B86C100D275B8 /* Sample */,
 				340D69D62A7205C7001BFB43 /* Toast */,
 				34351D652A692EB700BD665A /* Refresh */,
 				E2783E9F29A9A3EE0035900C /* Tab */,
@@ -1224,7 +1223,6 @@
 			children = (
 				34A5C41629B1990700E61F65 /* Foundation */,
 				34D52F0929A5B49400F5F9C2 /* UIKit */,
-				3498AB962A6938E0008C0344 /* Category */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -1432,6 +1430,8 @@
 				340D69D42A710924001BFB43 /* TestProjectCollectionCell.m */,
 				34F24D6D2A6532350004BC62 /* TestProjectCollectionView.h */,
 				34F24D6E2A6532350004BC62 /* TestProjectCollectionView.m */,
+				3484F3222A7791260080FA5C /* TestProjectCollectionViewDataSource.h */,
+				3484F3232A7791260080FA5C /* TestProjectCollectionViewDataSource.m */,
 			);
 			path = UICollectionView;
 			sourceTree = "<group>";
@@ -1496,6 +1496,8 @@
 			children = (
 				34B20F082988A9A5009B4EFD /* TestProjectHomeController.h */,
 				34B20F092988A9A5009B4EFD /* TestProjectHomeController.m */,
+				3484F3262A77BB030080FA5C /* TestProjectFunctionController.h */,
+				3484F3272A77BB030080FA5C /* TestProjectFunctionController.m */,
 				34B20F0B2988A9CB009B4EFD /* TestProjectMyController.h */,
 				34B20F0C2988A9CB009B4EFD /* TestProjectMyController.m */,
 				34D52F0429A5AA1500F5F9C2 /* TestProjectOCController.h */,
@@ -1630,6 +1632,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3484F32C2A77C1D90080FA5C /* TestProjectRefreshSampleVC.m in Sources */,
 				E27FE81829C597C400C77298 /* TestProjectMutableAttributedStringAttributeFixing.m in Sources */,
 				34A5C42329B1D06E00E61F65 /* TestProjectGetFoundationImplementationMethod.m in Sources */,
 				3493CF0329767261008B7CA7 /* TestProjectString.m in Sources */,
@@ -1642,6 +1645,7 @@
 				348799862988B75D00032E22 /* TestProjectBaseTableView.m in Sources */,
 				345E44C629F9476E00BBED12 /* UIAlertController+TestProject.m in Sources */,
 				347B44D32A405C08001061A5 /* TestProjectDevice.m in Sources */,
+				34792F1A2A7B870900D275B8 /* TestProjectCollectionViewDragVC.m in Sources */,
 				34B4C17029DEA75C001728DC /* TestProjectTestVC.m in Sources */,
 				34A9C92D2A498BAA000B0CD6 /* TestProjectGeometry.m in Sources */,
 				347338DF28BDB86700B921EC /* TestProjectBModel.m in Sources */,
@@ -1662,7 +1666,6 @@
 				345E44C229F914D400BBED12 /* TestProjectBaseTableViewCell.m in Sources */,
 				34D52F1329A602A700F5F9C2 /* TestProjectBaseTableViewTableCell.m in Sources */,
 				340D69D92A7205EB001BFB43 /* TestProjectToast.m in Sources */,
-				3498AB992A693964008C0344 /* TestProjectGetCategoryMethod.m in Sources */,
 				34D2993929E3EF03002F7A37 /* UIViewController+TestProject.m in Sources */,
 				34EE5C1E2A316FF800B1C5D8 /* TestProjectCalendarView.m in Sources */,
 				345CDF022A209FC2003C1FF3 /* TestProjectViewSnapshotting.m in Sources */,
@@ -1692,6 +1695,7 @@
 				34351D692A692FE200BD665A /* UIScrollView+TestProject.m in Sources */,
 				3447EE08280E8EBD001AE2F0 /* main.m in Sources */,
 				34D52F0D29A5B4D400F5F9C2 /* TestProjectUIColor.m in Sources */,
+				3484F3282A77BB030080FA5C /* TestProjectFunctionController.m in Sources */,
 				344106E229E8027800683950 /* NSMutableArray+TestProject.m in Sources */,
 				345CDF052A20AFF8003C1FF3 /* TestProjectViewContentSizeCategoryLimit.m in Sources */,
 				34292E832A384992003884E2 /* TestProjectExtendedTimeZone.m in Sources */,
@@ -1717,7 +1721,6 @@
 				34B20F0D2988A9CB009B4EFD /* TestProjectMyController.m in Sources */,
 				34333D442A4D2ABD00DEDA79 /* TestProjectSwitch.m in Sources */,
 				34D2993C29E3F262002F7A37 /* TestProjectNavigationController.m in Sources */,
-				3498AB9D2A693AB5008C0344 /* TestProjectScrollViewRefresh.m in Sources */,
 				341791542A4193FB0052DD90 /* TestProjectFontDescriptor.m in Sources */,
 				34A9C9292A497B6C000B0CD6 /* TestProjectFontPickerViewControllerConfiguration.m in Sources */,
 				340D69D52A710924001BFB43 /* TestProjectCollectionCell.m in Sources */,
@@ -1733,6 +1736,7 @@
 				349801D729E58C3700C2B5E1 /* TestProjectNavigationItem.m in Sources */,
 				34A5C41C29B1C55400E61F65 /* TestProjectGetImplementationMethod.m in Sources */,
 				34B20F0A2988A9A5009B4EFD /* TestProjectHomeController.m in Sources */,
+				3484F3242A7791260080FA5C /* TestProjectCollectionViewDataSource.m in Sources */,
 				345D97F02824F43E002D0A83 /* TestProjectDispatchGroup.m in Sources */,
 				347AAA162A24A39A00F0C475 /* TestProjectControl.m in Sources */,
 				345C814E29BF2E7A00AE3D07 /* TestProjectMutableAttributedStringExtended.m in Sources */,

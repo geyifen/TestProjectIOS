@@ -1,13 +1,13 @@
 //
-//  TestProjectScrollViewRefresh.m
+//  TestProjectRefreshSampleVC.m
 //  TestProjectIOS
 //
-//  Created by zjrcumac on 2023/7/20.
+//  Created by zjrcumac on 2023/7/31.
 //
 
-#import "TestProjectScrollViewRefresh.h"
+#import "TestProjectRefreshSampleVC.h"
 
-#import "TestProjectSampleRefreshView.h"
+#import "TestProjectCustomerHeader.h"
 
 @interface TestProjectRefreshHeaderFooterView : UITableViewHeaderFooterView
 
@@ -31,21 +31,20 @@
 
 @end
 
-@interface TestProjectScrollViewRefresh () <UITableViewDelegate, UITableViewDataSource>
+@interface TestProjectRefreshSampleVC () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UITableView *rightTableView;
 
 @end
 
-@implementation TestProjectScrollViewRefresh
+@implementation TestProjectRefreshSampleVC
 
-- (instancetype)init {
-    if (self = [super init]) {
-        [self setTableViewProperty:self.tableView];
-        [self setTableViewProperty:self.rightTableView];
-    }
-    return self;
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    [self setTableViewProperty:self.tableView];
+    [self setTableViewProperty:self.rightTableView];
 }
 
 - (void)setTableViewProperty:(UITableView *)tableView {
@@ -135,9 +134,9 @@
         _tableView.estimatedSectionHeaderHeight = 0;
         [_tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"UITableViewCell"];
         [_tableView registerClass:TestProjectRefreshHeaderFooterView.class forHeaderFooterViewReuseIdentifier:@"TestProjectRefreshHeaderFooterView"];
-        [self addSubview:_tableView];
+        [self.view addSubview:_tableView];
         [_tableView testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
-            make.top.leading.bottom.equal(self);
+            make.top.leading.bottom.equal(self.view);
             make.width.equal(self.rightTableView);
             make.trainling.equal(self.rightTableView.leading);
         }];
@@ -161,12 +160,13 @@
         _rightTableView.tableFooterView = view;
         [_rightTableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"UITableViewCell"];
         [_rightTableView registerClass:TestProjectRefreshHeaderFooterView.class forHeaderFooterViewReuseIdentifier:@"TestProjectRefreshHeaderFooterView"];
-        [self addSubview:_rightTableView];
+        [self.view addSubview:_rightTableView];
         [_rightTableView testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
-            make.top.bottom.trainling.equal(self);
+            make.top.bottom.trainling.equal(self.view);
         }];
     }
     return _rightTableView;
 }
 
 @end
+

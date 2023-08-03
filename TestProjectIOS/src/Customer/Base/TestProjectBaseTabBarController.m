@@ -9,6 +9,7 @@
 
 #import "TestProjectBaseNavigationController.h"
 #import "TestProjectMyController.h"
+#import "TestProjectFunctionController.h"
 #import "TestProjectHomeController.h"
 
 @interface TestProjectBaseTabBarController ()
@@ -29,11 +30,15 @@
     TestProjectBaseNavigationController *homeNavController = [[TestProjectBaseNavigationController alloc] initWithRootViewController:homeVC];
     homeNavController.navigationBarHidden = YES;
     
+    TestProjectFunctionController *functionVC = [[TestProjectFunctionController alloc] init];
+    TestProjectBaseNavigationController *functionNavController = [[TestProjectBaseNavigationController alloc] initWithRootViewController:functionVC];
+    functionNavController.navigationBarHidden = YES;
+    
     TestProjectMyController *myVC = [[TestProjectMyController alloc] init];
     TestProjectBaseNavigationController *myNavController = [[TestProjectBaseNavigationController alloc] initWithRootViewController:myVC];
     myNavController.navigationBarHidden = YES;
     
-    self.viewControllers = @[homeNavController, myNavController];
+    self.viewControllers = @[functionNavController, homeNavController, myNavController];
 //    self.viewControllers = @[homeVC, myVC];
 }
 

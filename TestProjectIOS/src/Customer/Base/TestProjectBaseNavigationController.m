@@ -40,6 +40,10 @@
     }
 }
 
+- (BOOL)enableLog {
+    return NO;
+}
+
 #pragma - UIGestureRecognizerDelegate
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     return self.topViewController.canDrag;

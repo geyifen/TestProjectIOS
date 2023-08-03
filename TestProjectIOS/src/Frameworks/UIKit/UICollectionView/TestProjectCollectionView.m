@@ -1584,6 +1584,7 @@
             @"abstract": @"执行UICollectionView的方法, 开始排序移动，暂时不了解",
             @"title": @"- (BOOL)beginInteractiveMovementForItemAtIndexPath:(NSIndexPath *)indexPath API_AVAILABLE(ios(9.0));",
             @"isDataModelExpand": @(YES),
+            @"desc": @"必须要实现该代理方法才能执行- (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath",
             @"dataModel": @{
                 @"childItems": [self TestProjectCollectionView_beginInteractiveMovementForItemAtIndexPath:index],
             }
@@ -1591,10 +1592,14 @@
     };
 }
 
+- (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+    
+}
+
 - (NSMutableArray *)TestProjectCollectionView_beginInteractiveMovementForItemAtIndexPath:(NSInteger)index {
     WS(wSelf);
     return [self createModelSingleArrayWithIndex:index title:@"beginInteractiveMovementForItemAtIndexPath" methodBlock:^NSString * _Nonnull{
-        BOOL res = [wSelf.collectionView beginInteractiveMovementForItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+        BOOL res = [wSelf.collectionView beginInteractiveMovementForItemAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
         return [NSString stringWithFormat:@"%u", res];
     }];
 }

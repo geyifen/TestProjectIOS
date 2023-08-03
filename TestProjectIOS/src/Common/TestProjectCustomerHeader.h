@@ -11,6 +11,7 @@
 #import "TestProjectCategoryHeader.h"
 #import "TestProjectViewModelProtocol.h"
 #import "TestProjectConfig.h"
+#import "TestProjectSampleRefreshView.h"
 #import "TestProjectToast.h"
 
 #endif /* TestProjectCustomerHeader_h */

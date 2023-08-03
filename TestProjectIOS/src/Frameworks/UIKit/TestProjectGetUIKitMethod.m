@@ -42,6 +42,10 @@
         @"atIndex": @0,
         @"itemChilds": @[
             @{
+                @"title": @"UICollectionView\n(UICollectionViewDataSource)",
+                @"viewKey": @"TestProjectCollectionViewDataSource",
+            },
+            @{
                 @"title": @"UICollectionView",
                 @"viewKey": @"TestProjectCollectionView",
             },
