@@ -38,7 +38,7 @@
     TestProjectBaseNavigationController *myNavController = [[TestProjectBaseNavigationController alloc] initWithRootViewController:myVC];
     myNavController.navigationBarHidden = YES;
     
-    self.viewControllers = @[functionNavController, homeNavController, myNavController];
+    self.viewControllers = @[homeNavController, functionNavController, homeNavController, myNavController];
 //    self.viewControllers = @[homeVC, myVC];
 }
 

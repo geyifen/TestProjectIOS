@@ -24,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self createModelWithTitle:@"瀑布流布局" vcClassName:@"TestProjectWaterfallLayoutVC"];
     [self createModelWithTitle:@"UICollectionView拖动" vcClassName:@"TestProjectCollectionViewDragVC"];
     [self createModelWithTitle:@"页面刷新功能" vcClassName:@"TestProjectRefreshSampleVC"];
     self.viewTable.tableView.dataSourceArray = self.viewTable.dataMutArr;

@@ -20,5 +20,6 @@
 #import "NSDateComponents+TestProject.h"
 #import "NSDate+TestProject.h"
 #import "UIScrollView+TestProject.h"
+#import "UIGeometry+TestProject.h"
 
 #endif /* TestProjectCategoryHeader_h */

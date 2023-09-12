@@ -10,6 +10,7 @@
 		27A585E85C033FBF09E7B973 /* Pods_TestProjectIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044E49489342EC595D627E86 /* Pods_TestProjectIOS.framework */; };
 		34032F512A0E35A100122D77 /* TestProjectViewViewGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 34032F502A0E35A100122D77 /* TestProjectViewViewGeometry.m */; };
 		3408F9762A52A786006F33B6 /* TestProjectProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3408F9752A52A786006F33B6 /* TestProjectProgressView.m */; };
+		340CCD232A8A1381009D1897 /* TestProjectCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 340CCD222A8A1381009D1897 /* TestProjectCollectionViewController.m */; };
 		340D69D22A70B6D3001BFB43 /* TestProjectScrollViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 340D69D12A70B6D3001BFB43 /* TestProjectScrollViewDelegate.m */; };
 		340D69D52A710924001BFB43 /* TestProjectCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 340D69D42A710924001BFB43 /* TestProjectCollectionCell.m */; };
 		340D69D92A7205EB001BFB43 /* TestProjectToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 340D69D82A7205EB001BFB43 /* TestProjectToast.m */; };
@@ -47,6 +48,7 @@
 		3447EE02280E8EBD001AE2F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3447EE01280E8EBD001AE2F0 /* Assets.xcassets */; };
 		3447EE05280E8EBD001AE2F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3447EE03280E8EBD001AE2F0 /* LaunchScreen.storyboard */; };
 		3447EE08280E8EBD001AE2F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EE07280E8EBD001AE2F0 /* main.m */; };
+		344D0BD02A8240AF00488BE5 /* TestProjectCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 344D0BCF2A8240AF00488BE5 /* TestProjectCollectionViewFlowLayout.m */; };
 		3450F9282A3BFB54006048D8 /* NSDate+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3450F9272A3BFB54006048D8 /* NSDate+TestProject.m */; };
 		3458CB142A6E756900465440 /* TestProjectSampleRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3458CB132A6E756900465440 /* TestProjectSampleRefreshView.m */; };
 		345BA75828BF46CD00ED6C5C /* TestProjectDModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 345BA75728BF46CD00ED6C5C /* TestProjectDModel.m */; };
@@ -92,9 +94,12 @@
 		348799882988B75D00032E22 /* UIView+TestProject_Constrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 348799852988B75D00032E22 /* UIView+TestProject_Constrain.m */; };
 		3493CF0329767261008B7CA7 /* TestProjectString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3493CF0229767261008B7CA7 /* TestProjectString.m */; };
 		34947538282E396A00D4A567 /* TestProjectDispatchSemaphore.m in Sources */ = {isa = PBXBuildFile; fileRef = 34947537282E396A00D4A567 /* TestProjectDispatchSemaphore.m */; };
+		349498F62A84E27D006078A2 /* TestProjectWaterfallLayoutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 349498F52A84E27D006078A2 /* TestProjectWaterfallLayoutVC.m */; };
 		349801D229E57F1A00C2B5E1 /* TestProjectViewControllerNavigationControllerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 349801D129E57F1A00C2B5E1 /* TestProjectViewControllerNavigationControllerItem.m */; };
 		349801D729E58C3700C2B5E1 /* TestProjectNavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 349801D629E58C3700C2B5E1 /* TestProjectNavigationItem.m */; };
 		349801DA29E58C6200C2B5E1 /* TestProjectNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 349801D929E58C6200C2B5E1 /* TestProjectNavigationBar.m */; };
+		349CDC822A8322D500BFD360 /* TestProjectCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 349CDC812A8322D500BFD360 /* TestProjectCollectionViewLayout.m */; };
+		349CDC862A8370B600BFD360 /* TestProjectCollectionViewCustomLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 349CDC852A8370B600BFD360 /* TestProjectCollectionViewCustomLayout.m */; };
 		34A0686C29E7D5CF003B115C /* TestProjectBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A0686B29E7D5CF003B115C /* TestProjectBaseModel.m */; };
 		34A0686F29E7E41E003B115C /* TestProjectViewModelTab.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A0686E29E7E41E003B115C /* TestProjectViewModelTab.m */; };
 		34A285D12A6136BB006C49D4 /* TestProjectTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A285D02A6136BB006C49D4 /* TestProjectTextField.m */; };
@@ -110,6 +115,7 @@
 		34A9C9242A497715000B0CD6 /* TestProjectFontPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A9C9232A497715000B0CD6 /* TestProjectFontPickerViewController.m */; };
 		34A9C9292A497B6C000B0CD6 /* TestProjectFontPickerViewControllerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A9C9282A497B6C000B0CD6 /* TestProjectFontPickerViewControllerConfiguration.m */; };
 		34A9C92D2A498BAA000B0CD6 /* TestProjectGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A9C92C2A498BAA000B0CD6 /* TestProjectGeometry.m */; };
+		34AB20E02A80DC3D007BDA81 /* TestProjectCollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AB20DF2A80DC3D007BDA81 /* TestProjectCollectionViewDelegate.m */; };
 		34B1A5DE2A289FB100766B44 /* TestProjectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B1A5DD2A289FB100766B44 /* TestProjectButton.m */; };
 		34B20F0A2988A9A5009B4EFD /* TestProjectHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B20F092988A9A5009B4EFD /* TestProjectHomeController.m */; };
 		34B20F0D2988A9CB009B4EFD /* TestProjectMyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B20F0C2988A9CB009B4EFD /* TestProjectMyController.m */; };
@@ -142,6 +148,7 @@
 		34D77A4628C1A1FF00A0CE9F /* TestProjectUModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D77A4528C1A1FF00A0CE9F /* TestProjectUModel.m */; };
 		34DBB28E2A5407CF00A5D8AD /* TestProjectSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DBB28D2A5407CF00A5D8AD /* TestProjectSlider.m */; };
 		34DDB787296C0FA3009D56B8 /* TestProjectPThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDB786296C0FA3009D56B8 /* TestProjectPThread.m */; };
+		34E15A4D2A861FC7001CE5FC /* UIGeometry+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E15A4C2A861FC7001CE5FC /* UIGeometry+TestProject.m */; };
 		34E2548929DBC2EB002CF4B0 /* TestProjectAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E2548829DBC2EB002CF4B0 /* TestProjectAppearance.m */; };
 		34E5D44B2990865100FD4F71 /* UIView+TestProject_Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E5D44A2990865100FD4F71 /* UIView+TestProject_Frame.m */; };
 		34E5D4542990E48C00FD4F71 /* TestProjectScrollTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E5D4532990E48C00FD4F71 /* TestProjectScrollTabController.m */; };
@@ -174,6 +181,8 @@
 		34032F502A0E35A100122D77 /* TestProjectViewViewGeometry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectViewViewGeometry.m; sourceTree = "<group>"; };
 		3408F9742A52A786006F33B6 /* TestProjectProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectProgressView.h; sourceTree = "<group>"; };
 		3408F9752A52A786006F33B6 /* TestProjectProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectProgressView.m; sourceTree = "<group>"; };
+		340CCD212A8A1381009D1897 /* TestProjectCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectCollectionViewController.h; sourceTree = "<group>"; };
+		340CCD222A8A1381009D1897 /* TestProjectCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectCollectionViewController.m; sourceTree = "<group>"; };
 		340D69D02A70B6D3001BFB43 /* TestProjectScrollViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectScrollViewDelegate.h; sourceTree = "<group>"; };
 		340D69D12A70B6D3001BFB43 /* TestProjectScrollViewDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectScrollViewDelegate.m; sourceTree = "<group>"; };
 		340D69D32A710924001BFB43 /* TestProjectCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectCollectionCell.h; sourceTree = "<group>"; };
@@ -245,6 +254,8 @@
 		3447EE04280E8EBD001AE2F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3447EE06280E8EBD001AE2F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3447EE07280E8EBD001AE2F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		344D0BCE2A8240AF00488BE5 /* TestProjectCollectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		344D0BCF2A8240AF00488BE5 /* TestProjectCollectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		3450F9262A3BFB54006048D8 /* NSDate+TestProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+TestProject.h"; sourceTree = "<group>"; };
 		3450F9272A3BFB54006048D8 /* NSDate+TestProject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TestProject.m"; sourceTree = "<group>"; };
 		3458CB122A6E756900465440 /* TestProjectSampleRefreshView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectSampleRefreshView.h; sourceTree = "<group>"; };
@@ -339,12 +350,18 @@
 		3493CF0229767261008B7CA7 /* TestProjectString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectString.m; sourceTree = "<group>"; };
 		34947536282E396A00D4A567 /* TestProjectDispatchSemaphore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDispatchSemaphore.h; sourceTree = "<group>"; };
 		34947537282E396A00D4A567 /* TestProjectDispatchSemaphore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectDispatchSemaphore.m; sourceTree = "<group>"; };
+		349498F42A84E27D006078A2 /* TestProjectWaterfallLayoutVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectWaterfallLayoutVC.h; sourceTree = "<group>"; };
+		349498F52A84E27D006078A2 /* TestProjectWaterfallLayoutVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectWaterfallLayoutVC.m; sourceTree = "<group>"; };
 		349801D029E57F1A00C2B5E1 /* TestProjectViewControllerNavigationControllerItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectViewControllerNavigationControllerItem.h; sourceTree = "<group>"; };
 		349801D129E57F1A00C2B5E1 /* TestProjectViewControllerNavigationControllerItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectViewControllerNavigationControllerItem.m; sourceTree = "<group>"; };
 		349801D529E58C3700C2B5E1 /* TestProjectNavigationItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectNavigationItem.h; sourceTree = "<group>"; };
 		349801D629E58C3700C2B5E1 /* TestProjectNavigationItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectNavigationItem.m; sourceTree = "<group>"; };
 		349801D829E58C6200C2B5E1 /* TestProjectNavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectNavigationBar.h; sourceTree = "<group>"; };
 		349801D929E58C6200C2B5E1 /* TestProjectNavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectNavigationBar.m; sourceTree = "<group>"; };
+		349CDC802A8322D500BFD360 /* TestProjectCollectionViewLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectCollectionViewLayout.h; sourceTree = "<group>"; };
+		349CDC812A8322D500BFD360 /* TestProjectCollectionViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectCollectionViewLayout.m; sourceTree = "<group>"; };
+		349CDC842A8370B600BFD360 /* TestProjectCollectionViewCustomLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectCollectionViewCustomLayout.h; sourceTree = "<group>"; };
+		349CDC852A8370B600BFD360 /* TestProjectCollectionViewCustomLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectCollectionViewCustomLayout.m; sourceTree = "<group>"; };
 		34A0686A29E7D5CF003B115C /* TestProjectBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectBaseModel.h; sourceTree = "<group>"; };
 		34A0686B29E7D5CF003B115C /* TestProjectBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectBaseModel.m; sourceTree = "<group>"; };
 		34A0686D29E7E41E003B115C /* TestProjectViewModelTab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProjectViewModelTab.h; sourceTree = "<group>"; };
@@ -375,6 +392,8 @@
 		34A9C9282A497B6C000B0CD6 /* TestProjectFontPickerViewControllerConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectFontPickerViewControllerConfiguration.m; sourceTree = "<group>"; };
 		34A9C92B2A498BAA000B0CD6 /* TestProjectGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectGeometry.h; sourceTree = "<group>"; };
 		34A9C92C2A498BAA000B0CD6 /* TestProjectGeometry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectGeometry.m; sourceTree = "<group>"; };
+		34AB20DE2A80DC3D007BDA81 /* TestProjectCollectionViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectCollectionViewDelegate.h; sourceTree = "<group>"; };
+		34AB20DF2A80DC3D007BDA81 /* TestProjectCollectionViewDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectCollectionViewDelegate.m; sourceTree = "<group>"; };
 		34B1A5DC2A289FB100766B44 /* TestProjectButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectButton.h; sourceTree = "<group>"; };
 		34B1A5DD2A289FB100766B44 /* TestProjectButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectButton.m; sourceTree = "<group>"; };
 		34B20F082988A9A5009B4EFD /* TestProjectHomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectHomeController.h; sourceTree = "<group>"; };
@@ -438,6 +457,8 @@
 		34DBB28D2A5407CF00A5D8AD /* TestProjectSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectSlider.m; sourceTree = "<group>"; };
 		34DDB785296C0FA3009D56B8 /* TestProjectPThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectPThread.h; sourceTree = "<group>"; };
 		34DDB786296C0FA3009D56B8 /* TestProjectPThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectPThread.m; sourceTree = "<group>"; };
+		34E15A4B2A861FC7001CE5FC /* UIGeometry+TestProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIGeometry+TestProject.h"; sourceTree = "<group>"; };
+		34E15A4C2A861FC7001CE5FC /* UIGeometry+TestProject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIGeometry+TestProject.m"; sourceTree = "<group>"; };
 		34E2548729DBC2EB002CF4B0 /* TestProjectAppearance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectAppearance.h; sourceTree = "<group>"; };
 		34E2548829DBC2EB002CF4B0 /* TestProjectAppearance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectAppearance.m; sourceTree = "<group>"; };
 		34E5D4492990865100FD4F71 /* UIView+TestProject_Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+TestProject_Frame.h"; sourceTree = "<group>"; };
@@ -518,6 +539,15 @@
 				3408F9752A52A786006F33B6 /* TestProjectProgressView.m */,
 			);
 			path = UIProgressView;
+			sourceTree = "<group>";
+		};
+		340CCD202A8A1363009D1897 /* UICollectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				340CCD212A8A1381009D1897 /* TestProjectCollectionViewController.h */,
+				340CCD222A8A1381009D1897 /* TestProjectCollectionViewController.m */,
+			);
+			path = UICollectionViewController;
 			sourceTree = "<group>";
 		};
 		340D69D62A7205C7001BFB43 /* Toast */ = {
@@ -704,6 +734,15 @@
 			path = TestProjectIOS;
 			sourceTree = "<group>";
 		};
+		344D0BCD2A823FF200488BE5 /* UICollectionViewFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				344D0BCE2A8240AF00488BE5 /* TestProjectCollectionViewFlowLayout.h */,
+				344D0BCF2A8240AF00488BE5 /* TestProjectCollectionViewFlowLayout.m */,
+			);
+			path = UICollectionViewFlowLayout;
+			sourceTree = "<group>";
+		};
 		3450F9252A3BFB22006048D8 /* NSDate */ = {
 			isa = PBXGroup;
 			children = (
@@ -814,6 +853,8 @@
 				3484F32B2A77C1D90080FA5C /* TestProjectRefreshSampleVC.m */,
 				34792F182A7B870900D275B8 /* TestProjectCollectionViewDragVC.h */,
 				34792F192A7B870900D275B8 /* TestProjectCollectionViewDragVC.m */,
+				349498F42A84E27D006078A2 /* TestProjectWaterfallLayoutVC.h */,
+				349498F52A84E27D006078A2 /* TestProjectWaterfallLayoutVC.m */,
 			);
 			path = Sample;
 			sourceTree = "<group>";
@@ -898,6 +939,7 @@
 			isa = PBXGroup;
 			children = (
 				348799822988B75D00032E22 /* TestProjectCategoryHeader.h */,
+				34E15A4A2A861F98001CE5FC /* UIGeometry */,
 				34351D662A692FB100BD665A /* UIScrollView */,
 				34B4C2FD2A5BFF9C007F019F /* UIResponder */,
 				34B4C2F92A5BF98C007F019F /* UIWindon */,
@@ -965,10 +1007,29 @@
 			path = UINavigationBar;
 			sourceTree = "<group>";
 		};
+		349CDC7F2A83223D00BFD360 /* UICollectionViewLayout */ = {
+			isa = PBXGroup;
+			children = (
+				349CDC802A8322D500BFD360 /* TestProjectCollectionViewLayout.h */,
+				349CDC812A8322D500BFD360 /* TestProjectCollectionViewLayout.m */,
+			);
+			path = UICollectionViewLayout;
+			sourceTree = "<group>";
+		};
+		349CDC832A83708000BFD360 /* UICollectionViewLayout */ = {
+			isa = PBXGroup;
+			children = (
+				349CDC842A8370B600BFD360 /* TestProjectCollectionViewCustomLayout.h */,
+				349CDC852A8370B600BFD360 /* TestProjectCollectionViewCustomLayout.m */,
+			);
+			path = UICollectionViewLayout;
+			sourceTree = "<group>";
+		};
 		34A0686729E7D27B003B115C /* Customer */ = {
 			isa = PBXGroup;
 			children = (
 				34792F172A7B86C100D275B8 /* Sample */,
+				349CDC832A83708000BFD360 /* UICollectionViewLayout */,
 				340D69D62A7205C7001BFB43 /* Toast */,
 				34351D652A692EB700BD665A /* Refresh */,
 				E2783E9F29A9A3EE0035900C /* Tab */,
@@ -1232,6 +1293,10 @@
 			children = (
 				34A5C41E29B1CC8600E61F65 /* TestProjectGetUIKitMethod.h */,
 				34A5C41F29B1CC8600E61F65 /* TestProjectGetUIKitMethod.m */,
+				34B4DFD62A308C7600F2DB23 /* UIBezierPath */,
+				340CCD202A8A1363009D1897 /* UICollectionViewController */,
+				349CDC7F2A83223D00BFD360 /* UICollectionViewLayout */,
+				344D0BCD2A823FF200488BE5 /* UICollectionViewFlowLayout */,
 				34F24D6C2A6532110004BC62 /* UICollectionView */,
 				34F24D702A6534210004BC62 /* UIScrollView */,
 				34F24D682A6520A10004BC62 /* UICloudSharingController */,
@@ -1249,7 +1314,6 @@
 				3412E6E42A64CEBD00945BCE /* UICalendarSelectionSingleDate */,
 				34F24D642A64E6EF0004BC62 /* UICalendarSelectionMultiDate */,
 				34EE5C1B2A316ED000B1C5D8 /* UICalendarView */,
-				34B4DFD62A308C7600F2DB23 /* UIBezierPath */,
 				34B1A5DB2A289F8C00766B44 /* UIButton */,
 				347AAA132A24344700F0C475 /* UIControl */,
 				34C3E5CA29D675F500BC4C7D /* UIView */,
@@ -1314,6 +1378,15 @@
 				34DBB28D2A5407CF00A5D8AD /* TestProjectSlider.m */,
 			);
 			path = UISlider;
+			sourceTree = "<group>";
+		};
+		34E15A4A2A861F98001CE5FC /* UIGeometry */ = {
+			isa = PBXGroup;
+			children = (
+				34E15A4B2A861FC7001CE5FC /* UIGeometry+TestProject.h */,
+				34E15A4C2A861FC7001CE5FC /* UIGeometry+TestProject.m */,
+			);
+			path = UIGeometry;
 			sourceTree = "<group>";
 		};
 		34E2548629DBC2BA002CF4B0 /* UIAppearance */ = {
@@ -1432,6 +1505,8 @@
 				34F24D6E2A6532350004BC62 /* TestProjectCollectionView.m */,
 				3484F3222A7791260080FA5C /* TestProjectCollectionViewDataSource.h */,
 				3484F3232A7791260080FA5C /* TestProjectCollectionViewDataSource.m */,
+				34AB20DE2A80DC3D007BDA81 /* TestProjectCollectionViewDelegate.h */,
+				34AB20DF2A80DC3D007BDA81 /* TestProjectCollectionViewDelegate.m */,
 			);
 			path = UICollectionView;
 			sourceTree = "<group>";
@@ -1697,12 +1772,16 @@
 				34D52F0D29A5B4D400F5F9C2 /* TestProjectUIColor.m in Sources */,
 				3484F3282A77BB030080FA5C /* TestProjectFunctionController.m in Sources */,
 				344106E229E8027800683950 /* NSMutableArray+TestProject.m in Sources */,
+				349498F62A84E27D006078A2 /* TestProjectWaterfallLayoutVC.m in Sources */,
 				345CDF052A20AFF8003C1FF3 /* TestProjectViewContentSizeCategoryLimit.m in Sources */,
+				349CDC862A8370B600BFD360 /* TestProjectCollectionViewCustomLayout.m in Sources */,
 				34292E832A384992003884E2 /* TestProjectExtendedTimeZone.m in Sources */,
 				E297EF9F297934B5005B2877 /* TestProjectBaseVC.m in Sources */,
+				34E15A4D2A861FC7001CE5FC /* UIGeometry+TestProject.m in Sources */,
 				344012A62A1E057100D25366 /* TestProjectViewViewRendering.m in Sources */,
 				34F378712A0B8A4700CFC8E6 /* TestProjectBarButtonItem.m in Sources */,
 				346268D72A39C66C00449570 /* TestProjectDateFormatter.m in Sources */,
+				34AB20E02A80DC3D007BDA81 /* TestProjectCollectionViewDelegate.m in Sources */,
 				34292E8D2A38787B003884E2 /* TestProjectLocaleCreation.m in Sources */,
 				3412E6E72A64CF5F00945BCE /* TestProjectCalendarSelectionSingleDate.m in Sources */,
 				3425BE1C2A4ABCBC00D0D625 /* TestProjectValueUIGeometryExtensions.m in Sources */,
@@ -1715,6 +1794,7 @@
 				347DCC4E29E6AE3E005A3D44 /* TestProjectNavigationBarAppearance.m in Sources */,
 				E25412D929D86AFE00B960A0 /* TestProjectAlertController.m in Sources */,
 				34EE5C222A31B41100B1C5D8 /* TestProjectCalendar.m in Sources */,
+				349CDC822A8322D500BFD360 /* TestProjectCollectionViewLayout.m in Sources */,
 				34B4C2F42A5BED5C007F019F /* TestProjectStepper.m in Sources */,
 				346268D02A39A65C00449570 /* TestProjectExtendedDate.m in Sources */,
 				34292E8A2A386991003884E2 /* TestProjectExtendedLocale.m in Sources */,
@@ -1761,6 +1841,7 @@
 				34B4C2FC2A5BF9A9007F019F /* UIWindow+TestProject.m in Sources */,
 				346B745129938CAC00C06A99 /* TestProjectObjectController.m in Sources */,
 				345D97F12824F43E002D0A83 /* TestProjectDispatchIO.m in Sources */,
+				344D0BD02A8240AF00488BE5 /* TestProjectCollectionViewFlowLayout.m in Sources */,
 				34E2548929DBC2EB002CF4B0 /* TestProjectAppearance.m in Sources */,
 				3412005929C7FD46007338D0 /* TestProjectTextAttachment.m in Sources */,
 				E2392A3B29AB7E1400638D25 /* TestProjectUIColorDynamicdColors.m in Sources */,
@@ -1780,6 +1861,7 @@
 				345D97ED2824F43E002D0A83 /* TestProjectDispatchData.m in Sources */,
 				34A0686F29E7E41E003B115C /* TestProjectViewModelTab.m in Sources */,
 				34D52F1E29A62AC600F5F9C2 /* UIApplication+TestProject.m in Sources */,
+				340CCD232A8A1381009D1897 /* TestProjectCollectionViewController.m in Sources */,
 				345D97EE2824F43E002D0A83 /* TestProjectDispatchQueue.m in Sources */,
 				34A5C42729B1DA2400E61F65 /* TestProjectAttributeStringFoundViewTable.m in Sources */,
 				E2392A4229AB911200638D25 /* TestProjectCIColorKitAdditions.m in Sources */,

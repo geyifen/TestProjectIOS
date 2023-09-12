@@ -68,6 +68,51 @@
     return cell;
 }
 
+- (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%@ indexPath:%@", NSStringFromSelector(_cmd), indexPath);
+    return YES;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+    NSLog(@"%@ sourceIndexPath:%@ destinationIndexPath:%@", NSStringFromSelector(_cmd), sourceIndexPath, destinationIndexPath);
+    NSMutableArray *moveArray = self.itemCountArray[sourceIndexPath.section];
+    NSMutableArray *toArray = self.itemCountArray[destinationIndexPath.section];
+    id moveObj = moveArray[sourceIndexPath.row];
+    //这是移动到
+    [moveArray removeObjectAtIndex:sourceIndexPath.row];
+    [toArray insertObject:moveObj atIndex:destinationIndexPath.row];
+//        //这是交换
+//        id toObj = toArray[destinationIndexPath.row];
+//        [moveArray replaceObjectAtIndex:sourceIndexPath.row withObject:toObj];
+//        [toArray replaceObjectAtIndex:destinationIndexPath.row withObject:moveObj];
+    [self.collectionView reloadData];
+}
+
+- (void)longGesEvent:(UILongPressGestureRecognizer *)ges {
+    switch (ges.state) {
+        case UIGestureRecognizerStateBegan: {
+            CGPoint point = [ges locationInView:ges.view];
+            NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:point];
+            BOOL res = [self.collectionView beginInteractiveMovementForItemAtIndexPath:indexPath];
+            NSLog(@"%@ indexPath:%@ res:%u", NSStringFromClass(self.class), indexPath, res);
+        } break;
+        case UIGestureRecognizerStateChanged: {
+            CGPoint point = [ges locationInView:ges.view];
+//            NSLog(@"%@ %@", NSStringFromClass(self.class), NSStringFromCGPoint(point));
+            [self.collectionView updateInteractiveMovementTargetPosition:point];
+        } break;
+        case UIGestureRecognizerStateCancelled: {
+            [self.collectionView cancelInteractiveMovement];
+        } break;
+        case UIGestureRecognizerStateEnded:
+        case UIGestureRecognizerStateFailed: {
+            [self.collectionView endInteractiveMovement];
+        } break;
+        default:
+            break;
+    }
+}
+
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
@@ -84,6 +129,8 @@
         [_collectionView registerClass:TestProjectCollectionCell.class forCellWithReuseIdentifier:@"TestProjectCollectionCell"];
         [_collectionView registerClass:TestProjectCollectionReusableView.class forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"TestProjectCollectionReusableView"];
         [_collectionView registerClass:TestProjectCollectionReusableView.class forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"TestProjectCollectionReusableView"];
+        UILongPressGestureRecognizer *longGes = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longGesEvent:)];
+        [_collectionView addGestureRecognizer:longGes];
         [self.view addSubview:_collectionView];
         [_collectionView testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
             make.top.leading.trainling.equal(self.view);

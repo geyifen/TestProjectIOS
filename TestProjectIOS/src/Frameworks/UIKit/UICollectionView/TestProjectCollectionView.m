@@ -751,6 +751,7 @@
             @"abstract": @"执行UICollectionView的方法, 选中并滚动到某个cell下",
             @"title": @"- (void)selectItemAtIndexPath:(nullable NSIndexPath *)indexPath animated:(BOOL)animated scrollPosition:(UICollectionViewScrollPosition)scrollPosition;",
             @"isDataModelExpand": @(YES),
+            @"desc": @"不会触发- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath",
             @"dataModel": @{
                 @"childItems": [self TestProjectCollectionView_selectItemAtIndexPath_animated_scrollPosition:index],
             }
@@ -1581,7 +1582,7 @@
 - (NSDictionary *)method_57:(NSInteger)index {
     return @{
         @"dataModel": @{
-            @"abstract": @"执行UICollectionView的方法, 开始排序移动，暂时不了解",
+            @"abstract": @"执行UICollectionView的方法, 开始排序移动",
             @"title": @"- (BOOL)beginInteractiveMovementForItemAtIndexPath:(NSIndexPath *)indexPath API_AVAILABLE(ios(9.0));",
             @"isDataModelExpand": @(YES),
             @"desc": @"必须要实现该代理方法才能执行- (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath",
@@ -1593,7 +1594,13 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
-    
+    NSMutableArray *moveArray = self.itemCountArray[sourceIndexPath.section];
+    NSMutableArray *toArray = self.itemCountArray[destinationIndexPath.section];
+    id moveObj = moveArray[sourceIndexPath.row];
+    //这是移动到
+    [moveArray removeObjectAtIndex:sourceIndexPath.row];
+    [toArray insertObject:moveObj atIndex:destinationIndexPath.row];
+    [self.collectionView reloadData];
 }
 
 - (NSMutableArray *)TestProjectCollectionView_beginInteractiveMovementForItemAtIndexPath:(NSInteger)index {
@@ -1607,7 +1614,7 @@
 - (NSDictionary *)method_58:(NSInteger)index {
     return @{
         @"dataModel": @{
-            @"abstract": @"执行UICollectionView的方法, 更新排序移动位置，暂时不了解",
+            @"abstract": @"执行UICollectionView的方法, 更新排序移动位置, 会把标记的cell移动到手指的指向的cell位置上",
             @"title": @"- (void)updateInteractiveMovementTargetPosition:(CGPoint)targetPosition API_AVAILABLE(ios(9.0));",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
@@ -1627,7 +1634,7 @@
 - (NSDictionary *)method_59:(NSInteger)index {
     return @{
         @"dataModel": @{
-            @"abstract": @"执行UICollectionView的方法, 结束排序移动，暂时不了解",
+            @"abstract": @"执行UICollectionView的方法, 结束排序移动，结束cell的移动，并且会把标记的cell放到最后的手指指向位置上并且会调用- (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath",
             @"title": @"- (void)endInteractiveMovement API_AVAILABLE(ios(9.0));",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
@@ -1647,7 +1654,7 @@
 - (NSDictionary *)method_60:(NSInteger)index {
     return @{
         @"dataModel": @{
-            @"abstract": @"执行UICollectionView的方法, 取消排序移动，暂时不了解",
+            @"abstract": @"执行UICollectionView的方法, 取消排序移动，会把标记的cell原位放回不会调用该方法- (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath)",
             @"title": @"- (void)cancelInteractiveMovement API_AVAILABLE(ios(9.0));",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{

@@ -17,6 +17,13 @@
 
 @implementation TestProjectCollectionCell
 
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        self.backgroundColor = [UIColor redColor];
+    }
+    return self;
+}
+
 - (void)setTitle:(NSString *)title {
     self.titleLabel.text = title;
 }
@@ -43,6 +50,13 @@
 @end
 
 @implementation TestProjectCollectionReusableView
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        self.backgroundColor = [UIColor yellowColor];
+    }
+    return self;
+}
 
 - (void)setTitle:(NSString *)title {
     self.titleLabel.text = title;

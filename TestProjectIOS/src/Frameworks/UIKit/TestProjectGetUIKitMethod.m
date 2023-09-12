@@ -13,8 +13,11 @@
 
 + (NSArray *)newItemChilds {
     return @[
-//        [self UIBezierPath],
 //        [self UITextField],
+        [self UIBezierPath],
+        [self UICollectionViewController],
+        [self UICollectionViewLayout],
+        [self UICollectionViewFlowLayout],
         [self UICollectionView],
         [self UIScrollView],
     ];
@@ -36,11 +39,65 @@
     };
 }
 
++ (NSDictionary *)UIBezierPath {
+    return @{
+        @"title": @"UIBezierPath",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectBezierPath",
+    };
+}
+
++ (NSDictionary *)UICollectionViewController {
+    return @{
+        @"title": @"UICollectionViewController",
+        @"atIndex": @0,
+        @"viewKey": @"TestProjectCollectionViewController",
+    };
+}
+
++ (NSDictionary *)UICollectionViewLayout {
+    return @{
+        @"title": @"UICollectionViewLayout",
+        @"atIndex": @0,
+        @"itemChilds": @[
+            @{
+                @"title": @"UICollectionViewLayout",
+                @"viewKey": @"TestProjectCollectionViewLayout",
+            },
+            @{
+                @"title": @"UICollectionViewLayout\n(还有其它的)",
+                @"viewKey": @"TestProjectCollectionViewLayout",
+            },
+        ]
+    };
+}
+
++ (NSDictionary *)UICollectionViewFlowLayout {
+    return @{
+        @"title": @"UICollectionViewFlowLayout",
+        @"atIndex": @0,
+        @"itemChilds": @[
+            @{
+                @"title": @"UICollectionViewFlowLayout",
+                @"viewKey": @"TestProjectCollectionViewFlowLayout",
+            },
+            @{
+                @"title": @"UICollectionViewFlowLayout\n(还有其它的)",
+                @"viewKey": @"TestProjectCollectionViewFlowLayout",
+            },
+        ]
+    };
+}
+
 + (NSDictionary *)UICollectionView {
     return @{
         @"title": @"UICollectionView",
         @"atIndex": @0,
         @"itemChilds": @[
+            @{
+                @"title": @"UICollectionView\n(UICollectionViewDelegate)",
+                @"viewKey": @"TestProjectCollectionViewDelegate",
+            },
             @{
                 @"title": @"UICollectionView\n(UICollectionViewDataSource)",
                 @"viewKey": @"TestProjectCollectionViewDataSource",
@@ -205,14 +262,6 @@
         @"title": @"UICalendarView",
         @"atIndex": @0,
         @"viewKey": @"TestProjectCalendarView",
-    };
-}
-
-+ (NSDictionary *)UIBezierPath {
-    return @{
-        @"title": @"UIBezierPath",
-        @"atIndex": @0,
-        @"viewKey": @"TestProjectBezierPath",
     };
 }
 

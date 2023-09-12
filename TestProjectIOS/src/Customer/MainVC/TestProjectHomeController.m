@@ -34,7 +34,7 @@
         make.top.leading.equal(self.view);
         make.width.height.equal(@100);
     }];
-//    [self click];
+    [self click];
 }
 
 - (void)click {
