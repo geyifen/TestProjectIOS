@@ -2,7 +2,7 @@
 //  TestProjectViewSnapshotting.m
 //  TestProjectIOS
 //
-//  Created by zjrcumac on 2023/5/26.
+//  Created by liwenfan on 2023/5/26.
 //
 
 #import "TestProjectViewSnapshotting.h"

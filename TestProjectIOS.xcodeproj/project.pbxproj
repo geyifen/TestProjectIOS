@@ -50,6 +50,8 @@
 		3447EE08280E8EBD001AE2F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EE07280E8EBD001AE2F0 /* main.m */; };
 		344D0BD02A8240AF00488BE5 /* TestProjectCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 344D0BCF2A8240AF00488BE5 /* TestProjectCollectionViewFlowLayout.m */; };
 		3450F9282A3BFB54006048D8 /* NSDate+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3450F9272A3BFB54006048D8 /* NSDate+TestProject.m */; };
+		345163A12AB0674E00E432AA /* TestProjectScrollViewNestEventVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 345163A02AB0674E00E432AA /* TestProjectScrollViewNestEventVC.m */; };
+		345163A42AB2B43D00E432AA /* TestProjectTableNestTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 345163A32AB2B43D00E432AA /* TestProjectTableNestTableVC.m */; };
 		3458CB142A6E756900465440 /* TestProjectSampleRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3458CB132A6E756900465440 /* TestProjectSampleRefreshView.m */; };
 		345BA75828BF46CD00ED6C5C /* TestProjectDModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 345BA75728BF46CD00ED6C5C /* TestProjectDModel.m */; };
 		345C814E29BF2E7A00AE3D07 /* TestProjectMutableAttributedStringExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 345C814D29BF2E7A00AE3D07 /* TestProjectMutableAttributedStringExtended.m */; };
@@ -258,6 +260,10 @@
 		344D0BCF2A8240AF00488BE5 /* TestProjectCollectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		3450F9262A3BFB54006048D8 /* NSDate+TestProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+TestProject.h"; sourceTree = "<group>"; };
 		3450F9272A3BFB54006048D8 /* NSDate+TestProject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TestProject.m"; sourceTree = "<group>"; };
+		3451639F2AB0674E00E432AA /* TestProjectScrollViewNestEventVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectScrollViewNestEventVC.h; sourceTree = "<group>"; };
+		345163A02AB0674E00E432AA /* TestProjectScrollViewNestEventVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectScrollViewNestEventVC.m; sourceTree = "<group>"; };
+		345163A22AB2B43D00E432AA /* TestProjectTableNestTableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectTableNestTableVC.h; sourceTree = "<group>"; };
+		345163A32AB2B43D00E432AA /* TestProjectTableNestTableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectTableNestTableVC.m; sourceTree = "<group>"; };
 		3458CB122A6E756900465440 /* TestProjectSampleRefreshView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectSampleRefreshView.h; sourceTree = "<group>"; };
 		3458CB132A6E756900465440 /* TestProjectSampleRefreshView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectSampleRefreshView.m; sourceTree = "<group>"; };
 		345BA75628BF46CD00ED6C5C /* TestProjectDModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectDModel.h; sourceTree = "<group>"; };
@@ -752,6 +758,17 @@
 			path = NSDate;
 			sourceTree = "<group>";
 		};
+		3451639D2AB0664100E432AA /* ScrollViewNestEvent */ = {
+			isa = PBXGroup;
+			children = (
+				3451639F2AB0674E00E432AA /* TestProjectScrollViewNestEventVC.h */,
+				345163A02AB0674E00E432AA /* TestProjectScrollViewNestEventVC.m */,
+				345163A22AB2B43D00E432AA /* TestProjectTableNestTableVC.h */,
+				345163A32AB2B43D00E432AA /* TestProjectTableNestTableVC.m */,
+			);
+			path = ScrollViewNestEvent;
+			sourceTree = "<group>";
+		};
 		345D97DD2824F43E002D0A83 /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -849,6 +866,7 @@
 		34792F172A7B86C100D275B8 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				3451639D2AB0664100E432AA /* ScrollViewNestEvent */,
 				3484F32A2A77C1D90080FA5C /* TestProjectRefreshSampleVC.h */,
 				3484F32B2A77C1D90080FA5C /* TestProjectRefreshSampleVC.m */,
 				34792F182A7B870900D275B8 /* TestProjectCollectionViewDragVC.h */,
@@ -1834,6 +1852,7 @@
 				34F24D6F2A6532350004BC62 /* TestProjectCollectionView.m in Sources */,
 				346083CA2A1F68B300096DD2 /* TestProjectViewViewKeyframeAnimations.m in Sources */,
 				3480AA5A29B76C0D00D9C957 /* TestProjectMutableAttributedString.m in Sources */,
+				345163A12AB0674E00E432AA /* TestProjectScrollViewNestEventVC.m in Sources */,
 				3445299C2831E701003EFFA1 /* TestProjectDispatchSource.m in Sources */,
 				34A9C9242A497715000B0CD6 /* TestProjectFontPickerViewController.m in Sources */,
 				34C034752A035F7100C9F6EA /* TestProjectTestVCViewTable.m in Sources */,
@@ -1852,6 +1871,7 @@
 				3447EDFA280E8EBC001AE2F0 /* SceneDelegate.m in Sources */,
 				34A5C40A29B096DA00E61F65 /* UIColor+TestProject.m in Sources */,
 				347B44CB2A3FEA3E001061A5 /* TestProjectColorWell.m in Sources */,
+				345163A42AB2B43D00E432AA /* TestProjectTableNestTableVC.m in Sources */,
 				340E9F992975378600C1D440 /* TestProjectSignal.m in Sources */,
 				345D97F22824F43E002D0A83 /* TestProjectDispatchBlock.m in Sources */,
 				346B744E29933A2F00C06A99 /* TestProjectNestScrollTabController.m in Sources */,

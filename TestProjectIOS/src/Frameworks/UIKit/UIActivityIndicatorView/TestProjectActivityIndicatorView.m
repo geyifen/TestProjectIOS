@@ -2,7 +2,7 @@
 //  TestProjectActivityIndicatorView.m
 //  TestProjectIOS
 //
-//  Created by zjrcumac on 2023/3/31.
+//  Created by liwenfan on 2023/3/31.
 //
 
 #import "TestProjectActivityIndicatorView.h"
