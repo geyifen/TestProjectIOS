@@ -142,12 +142,12 @@
 
 - (CGFloat)returnViewHeightWithViewModel:(id)viewModel isCellRow:(BOOL)isCellRow {
     if (!viewModel) {
-        return isCellRow ? 0 : 0;
+        return isCellRow ? 0 : 0.01;
     }
     if ([viewModel respondsToSelector:@selector(viewHeight)]) {
         return [viewModel viewHeight];
     }
-    return isCellRow ? 0 : 0;
+    return isCellRow ? 0 : 0.01;
 }
 
 #pragma mark - UITableViewDelegate

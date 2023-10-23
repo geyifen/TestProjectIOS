@@ -32,12 +32,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _scrollTabController = [[TestProjectScrollTabController alloc] initWithTabType:self.tabType viewModelList:(NSArray<TestProjectTabViewModelProtocol> *)self.dataItems];
+    _scrollTabController = [[TestProjectScrollTabController alloc] initWithTabType:self.tabType];
     _scrollTabController.atIndex = self.atIndex;
     _scrollTabController.pageTitle = self.pageTitle;
     _scrollTabController.delegate = self;
     _scrollTabController.isNestChildVC = self.isNestVCType;
     _scrollTabController.isNeedRelationNestChildVCScroll = YES;
+    [_scrollTabController resetData:(NSArray<TestProjectTabViewModelProtocol> *)self.dataItems];
     [self addChildViewController:_scrollTabController];
     [self.view addSubview:_scrollTabController.view];
 }

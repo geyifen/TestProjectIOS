@@ -33,11 +33,9 @@
     CGFloat _nestChildVCViewWidth;
 }
 
-- (instancetype)initWithTabType:(TestProjectTabType)tabType
-                  viewModelList:(NSArray<TestProjectTabViewModelProtocol> *)viewModelList {
+- (instancetype)initWithTabType:(TestProjectTabType)tabType {
     if (self = [super init]) {
         self.tabType = tabType;
-        self.viewModelList = viewModelList;
     }
     return self;
 }
@@ -50,8 +48,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.clipsToBounds = YES;
-    [self.tabView resetData:self.viewModelList atIndex:self.atIndex];
     self.selfViewWidth = self.view.viewWidth;
+}
+
+- (void)resetData:(NSArray<TestProjectTabViewModelProtocol> *)viewModelList {
+    self.viewModelList = viewModelList;
+    [self.tabView resetData:self.viewModelList atIndex:self.atIndex];
 }
 
 - (NSString *)vcKeyWithViewModel:(id)viewModel {
@@ -309,8 +311,11 @@
 }
 #pragma mark - TestProjectTabViewProtocol
 - (void)clickTabView:(TestProjectViewTab *)tabView atIndex:(NSInteger)atIndex viewModel:(id)viewModel {
-    [self addChildControllerAtIndex:atIndex viewModel:viewModel];
+    UIViewController *childVC = [self addChildControllerAtIndex:atIndex viewModel:viewModel];
     [self setContainerViewLeading:-atIndex * self.view.viewWidth animated:NO completed:nil];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didTapItemViewWithController:childVC:atIndex:)]) {
+        [self.delegate didTapItemViewWithController:self childVC:childVC atIndex:atIndex];
+    }
 }
 
 #pragma mark - TestProjectNestScrollTabChildControllerProtocol

@@ -18,6 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (TestProjectBaseVC *)didTapItemViewWithController:(TestProjectScrollTabController *)scrollTabController
                                             atIndex:(NSInteger)atIndex
                                           viewModel:(id)viewModel;
+@optional
+- (void)didTapItemViewWithController:(TestProjectScrollTabController *)scrollTabController
+                             childVC:(UIViewController *)childVC
+                             atIndex:(NSInteger)index;
 
 @end
 
@@ -53,10 +57,12 @@ NS_ASSUME_NONNULL_BEGIN
  请根据gesState判断当前页面手势滚动的状态，不要根据pan.state判断
  如果当前页面滑动的点超出父容器，则返回NO，其它一律返回YES
  **/
-- (BOOL)handlePanGestureEvent:(UIPanGestureRecognizer *)pan gesState:(UIGestureRecognizerState)gesState moveX:(CGFloat)moveX;
+- (BOOL)handlePanGestureEvent:(UIPanGestureRecognizer *)pan
+                     gesState:(UIGestureRecognizerState)gesState moveX:(CGFloat)moveX;
+/**重置数据**/
+- (void)resetData:(NSArray<TestProjectTabViewModelProtocol> *)viewModelList;
 
-- (instancetype)initWithTabType:(TestProjectTabType)tabType
-                  viewModelList:(NSArray<TestProjectTabViewModelProtocol> *)viewModelList;
+- (instancetype)initWithTabType:(TestProjectTabType)tabType;
 
 @end
 
