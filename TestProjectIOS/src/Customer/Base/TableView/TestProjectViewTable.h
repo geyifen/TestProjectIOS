@@ -37,7 +37,8 @@ typedef NS_ENUM(NSInteger, TestProjectCreateModelOperation) {
 @property (nonatomic, strong) id viewModel;
 @property (nonatomic, strong) id compareViewModel;
 @property (nonatomic, strong) NSMutableArray *dataMutArr;
-@property (nonatomic, weak) id delegate;
+@property (nonatomic, weak) id<UITableViewDelegate> delegate;
+@property (nonatomic, weak) id<UITableViewDataSource> dataSource;
 
 - (NSArray *)viewDataArray;
 

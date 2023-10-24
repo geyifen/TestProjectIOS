@@ -7,10 +7,27 @@
 
 #import "TestProjectBaseTableView.h"
 
+#import <objc/runtime.h>
+
+#import "TestProjectModel.h"
+
 #define kUITableViewCell @"UITableViewCell"
 #define kUITableViewHeaderFooterView @"UITableViewHeaderFooterView"
 
 @interface TestProjectBaseTableView () <UITableViewDelegate, UITableViewDataSource>
+
+/**外部自定义的delegate**/
+@property (nonatomic, weak) id<UITableViewDelegate> customerDelegate;
+/**外部自定义的dataSource**/
+@property (nonatomic, weak) id<UITableViewDataSource> customerDataSource;
+/**是否实现delegate的字典**/
+@property (nonatomic, strong) NSMutableDictionary *delegateRespondDic;
+/**转发实现delegate的字典**/
+@property (nonatomic, strong) NSMutableDictionary *delegateForwardDic;
+/**是否实现dataSource的字典**/
+@property (nonatomic, strong) NSMutableDictionary *dataSourceRespondDic;
+/**转发实现dataSource的字典**/
+@property (nonatomic, strong) NSMutableDictionary *dataSourceForwardDic;
 
 @end
 
@@ -51,6 +68,52 @@
     return self;
 }
 
+- (instancetype)initWithFrame:(CGRect)frame
+                        style:(UITableViewStyle)style
+                     delegate:(nonnull id<UITableViewDelegate>)delegate
+                   dataSource:(nonnull id<UITableViewDataSource>)dataSource {
+    if (self = [super initWithFrame:frame style:style]) {
+        if (delegate) {
+            self.customerDelegate = delegate;
+            self.delegateRespondDic = [self findRespondSelectWithObject:delegate protocol:@protocol(UITableViewDelegate)];
+            self.delegateForwardDic = [NSMutableDictionary dictionaryWithDictionary:self.delegateRespondDic];
+        }
+        if (dataSource) {
+            self.customerDataSource = dataSource;
+            self.dataSourceRespondDic = [self findRespondSelectWithObject:dataSource protocol:@protocol(UITableViewDataSource)];
+            self.dataSourceForwardDic = [NSMutableDictionary dictionaryWithDictionary:self.dataSourceRespondDic];
+        }
+        [self prepareView];
+    }
+    return self;
+}
+
+- (NSMutableDictionary *)findRespondSelectWithObject:(id)object protocol:(Protocol *)protocol {
+    unsigned int pCount = 0;
+    Protocol *__unsafe_unretained *pList = protocol_copyProtocolList(protocol, &pCount);
+    NSMutableDictionary *mutDic = [NSMutableDictionary dictionary];
+    for (NSInteger i = 0; i < pCount; i++) {
+        Protocol *p = pList[i];
+        if (protocol_isEqual(p, @protocol(NSObject))) {
+            continue;
+        }
+        if (![object conformsToProtocol:p]) {
+            continue;
+        }
+        unsigned int pMethodCount = 0;
+        struct objc_method_description *pMethodList = protocol_copyMethodDescriptionList(p, NO, YES, &pMethodCount);
+        for (NSInteger j = 0; j < pMethodCount; j++) {
+            struct objc_method_description pMethod = pMethodList[j];
+            if ([object respondsToSelector:pMethod.name]) {
+                [mutDic setObject:object forKey:NSStringFromSelector(pMethod.name)];
+            }
+        }
+        free(pMethodList);
+    }
+    free(pList);
+    return mutDic;
+}
+
 - (void)prepareView {
     self.backgroundColor = [UIColor whiteColor];
     self.dataSource = self;
@@ -65,6 +128,50 @@
     [self registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:kUITableViewHeaderFooterView];
 }
 
+- (void)setDelegate:(id<UITableViewDelegate>)delegate {
+    [super setDelegate:self];
+}
+
+- (void)setDataSource:(id<UITableViewDataSource>)dataSource {
+    [super setDataSource:self];
+}
+
+- (BOOL)respondsToSelector:(SEL)aSelector {
+    BOOL res = [super respondsToSelector:aSelector];
+    if (!res && self.customerDelegate && self.delegateRespondDic.count > 0) {
+        NSString *key = NSStringFromSelector(aSelector);
+        if ([self.delegateRespondDic objectForKey:key]) {
+            [self.delegateRespondDic removeObjectForKey:key];
+            return YES;
+        }
+    }
+    if (!res && self.customerDataSource && self.dataSourceRespondDic.count > 0) {
+        NSString *key = NSStringFromSelector(aSelector);
+        if ([self.dataSourceRespondDic objectForKey:key]) {
+            [self.dataSourceRespondDic removeObjectForKey:key];
+            return YES;
+        }
+    }
+    return res;
+}
+
+- (id)forwardingTargetForSelector:(SEL)aSelector {
+    if (self.customerDelegate && self.delegateForwardDic.count > 0) {
+        NSString *key = NSStringFromSelector(aSelector);
+        if ([self.delegateForwardDic objectForKey:key]) {
+            return [self.delegateForwardDic objectForKey:key];
+        }
+    }
+    if (self.customerDataSource && self.dataSourceForwardDic.count > 0) {
+        NSString *key = NSStringFromSelector(aSelector);
+        if ([self.dataSourceForwardDic objectForKey:key]) {
+            return [self.dataSourceForwardDic objectForKey:key];
+        }
+    }
+    return [super forwardingTargetForSelector:aSelector];
+}
+
+
 - (id<TestProjectViewModelProtocol>)getViewModel:(NSIndexPath *)indexPath {
     if ([self tableViewDelegateRespondsToSelector:@selector(viewModelAtIndexPath:)]) {
         return [self.tableViewDelegate viewModelAtIndexPath:indexPath];
@@ -78,7 +185,14 @@
 }
 
 - (BOOL)tableViewDelegateRespondsToSelector:(SEL)sel {
-    if (self.tableViewDelegate && [self.tableViewDelegate respondsToSelector:sel]) {
+    if (self.customerDelegate && [self.customerDelegate respondsToSelector:sel]) {
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)tableViewDataSourceRespondsToSelector:(SEL)sel {
+    if (self.customerDataSource && [self.customerDataSource respondsToSelector:sel]) {
         return YES;
     }
     return NO;
@@ -154,7 +268,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([self tableViewDelegateRespondsToSelector:_cmd]) {
-        return [self.tableViewDelegate tableView:tableView heightForRowAtIndexPath:indexPath];
+        return [self.customerDelegate tableView:tableView heightForRowAtIndexPath:indexPath];
     }
     id<TestProjectViewModelProtocol> cellModel = [self getViewModel:indexPath];
     return [self returnViewHeightWithViewModel:cellModel isCellRow:YES];
@@ -162,7 +276,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([self tableViewDelegateRespondsToSelector:_cmd]) {
-        [self.tableViewDelegate tableView:tableView didSelectRowAtIndexPath:indexPath];
+        [self.customerDelegate tableView:tableView didSelectRowAtIndexPath:indexPath];
     } else if ([self.tableViewDelegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:viewModel:)]) {
         id<TestProjectViewModelProtocol> cellModel = [self getViewModel:indexPath];
         [self.tableViewDelegate tableView:tableView didSelectRowAtIndexPath:indexPath viewModel:cellModel];
@@ -171,7 +285,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if ([self tableViewDelegateRespondsToSelector:_cmd]) {
-        return [self.tableViewDelegate tableView:tableView viewForHeaderInSection:section];
+        return [self.customerDelegate tableView:tableView viewForHeaderInSection:section];
     }
     id<TestProjectViewModelProtocol> cellModel = [self.dataSourceHeaderArray objectAtIndex:section];
     return [self returnViewWithTableView:tableView viewModel:cellModel isCellRowView:NO];
@@ -179,7 +293,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if ([self tableViewDelegateRespondsToSelector:_cmd]) {
-        return [self.tableViewDelegate tableView:tableView heightForHeaderInSection:section];
+        return [self.customerDelegate tableView:tableView heightForHeaderInSection:section];
     }
     id<TestProjectViewModelProtocol> cellModel = [self.dataSourceHeaderArray objectAtIndex:section];
     return [self returnViewHeightWithViewModel:cellModel isCellRow:NO];
@@ -187,7 +301,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     if ([self tableViewDelegateRespondsToSelector:_cmd]) {
-        return [self.tableViewDelegate tableView:tableView viewForFooterInSection:section];
+        return [self.customerDelegate tableView:tableView viewForFooterInSection:section];
     }
     id<TestProjectViewModelProtocol> cellModel = [self.dataSourceFooterArray objectAtIndex:section];
     return [self returnViewWithTableView:tableView viewModel:cellModel isCellRowView:NO];
@@ -195,28 +309,16 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     if ([self tableViewDelegateRespondsToSelector:_cmd]) {
-        return [self.tableViewDelegate tableView:tableView heightForFooterInSection:section];
+        return [self.customerDelegate tableView:tableView heightForFooterInSection:section];
     }
     id<TestProjectViewModelProtocol> cellModel = [self.dataSourceFooterArray objectAtIndex:section];
     return [self returnViewHeightWithViewModel:cellModel isCellRow:NO];
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([self tableViewDelegateRespondsToSelector:_cmd]) {
-        return [self.tableViewDelegate tableView:tableView willDisplayCell:cell forRowAtIndexPath:indexPath];
-    }
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if ([self tableViewDelegateRespondsToSelector:_cmd]) {
-        [self.tableViewDelegate scrollViewDidScroll:scrollView];
-    }
-}
 #pragma mark - UITableViewDataSource
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    if ([self tableViewDelegateRespondsToSelector:_cmd]) {
-        return [self.tableViewDelegate numberOfSectionsInTableView:tableView];
+    if ([self tableViewDataSourceRespondsToSelector:_cmd]) {
+        return [self.customerDataSource numberOfSectionsInTableView:tableView];
     }
     if (self.isMultipleSection) {
         return self.dataSourceArray.count;
@@ -226,8 +328,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if ([self tableViewDelegateRespondsToSelector:_cmd]) {
-        return [self.tableViewDelegate tableView:tableView numberOfRowsInSection:section];
+    if ([self tableViewDataSourceRespondsToSelector:_cmd]) {
+        return [self.customerDataSource tableView:tableView numberOfRowsInSection:section];
     }
     if (self.isMultipleSection) {
         NSArray *array = self.dataSourceArray[section];
@@ -238,67 +340,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([self tableViewDelegateRespondsToSelector:_cmd]) {
-        return [self.tableViewDelegate tableView:tableView cellForRowAtIndexPath:indexPath];
+    if ([self tableViewDataSourceRespondsToSelector:_cmd]) {
+        return [self.customerDataSource tableView:tableView cellForRowAtIndexPath:indexPath];
     }
     id<TestProjectViewModelProtocol> cellModel = [self getViewModel:indexPath];
     UITableViewCell *cell = [self returnViewWithTableView:tableView viewModel:cellModel isCellRowView:YES];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
-}
-
-- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if ([self tableViewDelegateRespondsToSelector:_cmd]) {
-        return [self.tableViewDelegate tableView:tableView titleForHeaderInSection:section];
-    }
-    return nil;
-}
-
-- (nullable NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
-    if ([self tableViewDelegateRespondsToSelector:_cmd]) {
-        return [self.tableViewDelegate tableView:tableView titleForFooterInSection:section];
-    }
-    return nil;
-}
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([self tableViewDelegateRespondsToSelector:_cmd]) {
-        return [self.tableViewDelegate tableView:tableView canEditRowAtIndexPath:indexPath];
-    }
-    return NO;
-}
-
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([self tableViewDelegateRespondsToSelector:_cmd]) {
-        return [self.tableViewDelegate tableView:tableView canMoveRowAtIndexPath:indexPath];
-    }
-    return NO;
-}
-
-- (nullable NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-    if ([self tableViewDelegateRespondsToSelector:_cmd]) {
-        return [self.tableViewDelegate sectionIndexTitlesForTableView:tableView];
-    }
-    return nil;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
-    if ([self tableViewDelegateRespondsToSelector:_cmd]) {
-        return [self.tableViewDelegate tableView:tableView sectionForSectionIndexTitle:title atIndex:index];
-    }
-    return index;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([self tableViewDelegateRespondsToSelector:_cmd]) {
-        [self.tableViewDelegate tableView:tableView commitEditingStyle:editingStyle forRowAtIndexPath:indexPath];
-    }
-}
-
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
-    if ([self tableViewDelegateRespondsToSelector:_cmd]) {
-        [self.tableViewDelegate tableView:tableView moveRowAtIndexPath:sourceIndexPath toIndexPath:destinationIndexPath];
-    }
 }
 
 @end

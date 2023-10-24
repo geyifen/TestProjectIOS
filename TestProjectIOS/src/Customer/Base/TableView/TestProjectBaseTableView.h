@@ -10,7 +10,7 @@
 #import "TestProjectViewModelProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
-@protocol TestProjectBaseTableViewProtocol <UITableViewDelegate>
+@protocol TestProjectBaseTableViewProtocol <NSObject>
 
 @optional
 /**
@@ -21,21 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 /**获取对应的indexPath viewModel*/
 - (id<TestProjectViewModelProtocol>)viewModelAtIndexPath:(NSIndexPath *)indexPath;
 
-/**UITableViewDataSource的协议*/
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
-- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section;
-- (nullable NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section;
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath;
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath;
-- (nullable NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView;
-- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index;
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath;
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath;
-
 @end
 
+/**改tableView的delegate以及dataSource在外部设置是无效的，得使用提供的方法进行实现**/
 @interface TestProjectBaseTableView : UITableView
 
 @property (nonatomic, strong) NSMutableArray *dataSourceArray;
@@ -47,12 +35,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 //给cell设置代理
 @property (nonatomic, weak) id cellDelegate;
-//提供外面原生方法的代理,如果想自己实现原来的方法可以遵循这个代理
+//提供外面原生方法的代理
 @property (nonatomic, weak) id<TestProjectBaseTableViewProtocol> tableViewDelegate;
 
 - (instancetype)initWithStyle:(UITableViewStyle)style;
 
 - (instancetype)initWithStyleGrouped;
+
+/**如果想自己实现系统的代理方法，可以通过这个方法进行设置**/
+- (instancetype)initWithFrame:(CGRect)frame
+                        style:(UITableViewStyle)style
+                     delegate:(id<UITableViewDelegate>)delegate
+                   dataSource:(id<UITableViewDataSource>)dataSource;
 
 @end
 

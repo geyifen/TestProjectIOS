@@ -93,14 +93,6 @@
     }
 }
 
-- (void)reloadData:(id)viewModel {
-    NSInteger index = [self.tableView.dataSourceArray indexOfObject:viewModel];
-    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
-//    if (self.delegate && [self.delegate respondsToSelector:@selector(reloadData)]) {
-//        [self.delegate performSelector:@selector(reloadData)];
-//    }
-}
-
 - (void)reloadAllDataModel {
     self.dataModelExpandBtn.selected = !self.dataModelExpandBtn.selected;
     for (TestProjectTableModel *m in self.tableView.dataSourceArray) {
@@ -551,7 +543,10 @@
 
 - (TestProjectBaseTableView *)tableView {
     if (!_tableView) {
-        _tableView = [[TestProjectBaseTableView alloc] init];
+        _tableView = [[TestProjectBaseTableView alloc] initWithFrame:CGRectZero
+                                                               style:UITableViewStyleGrouped
+                                                            delegate:self.delegate
+                                                          dataSource:self.dataSource];
         _tableView.cellDelegate = self;
         _tableView.tableViewDelegate = self;
         [self addSubview:_tableView];
