@@ -9,12 +9,12 @@
 
 @implementation TestProjectAttributeStringFoundViewTable
 
-- (TestProjectTableModel *)createAttrStrModel {
+- (TestProjectTableViewModel *)createAttrStrModel {
     return [self createAttrStrModelWithNeedAdd:YES];
 }
 
-- (TestProjectTableModel *)createAttrStrModelWithNeedAdd:(BOOL)needAdd {
-    TestProjectTableModel *attrStrModel = [[TestProjectTableModel alloc] init];
+- (TestProjectTableViewModel *)createAttrStrModelWithNeedAdd:(BOOL)needAdd {
+    TestProjectTableViewModel *attrStrModel = [[TestProjectTableViewModel alloc] init];
     attrStrModel.isTitleExpand = NO;
     
     NSAttributedString *firstAttrStr = [[NSAttributedString alloc] initWithString:self.firstAttrText attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18]}];
@@ -38,8 +38,8 @@
     return attrStrModel;
 }
 
-- (TestProjectTableModel *)createAttrStrModelWithAttributes:(NSDictionary *)keyValue {
-    TestProjectTableModel *attrStrModel = [[TestProjectTableModel alloc] init];
+- (TestProjectTableViewModel *)createAttrStrModelWithAttributes:(NSDictionary *)keyValue {
+    TestProjectTableViewModel *attrStrModel = [[TestProjectTableViewModel alloc] init];
     attrStrModel.isChild = YES;
     attrStrModel.isTitleExpand = NO;
     NSAttributedString *firstAttrStr = [[NSAttributedString alloc] initWithString:self.firstAttrText attributes:keyValue];
@@ -96,9 +96,9 @@
 
 @synthesize compareViewModel = _compareViewModel;
 
-- (TestProjectTableModel *)compareViewModel {
+- (TestProjectTableViewModel *)compareViewModel {
     if (!_compareViewModel) {
-        TestProjectTableModel *m = [self createAttrStrModelWithNeedAdd:NO];
+        TestProjectTableViewModel *m = [self createAttrStrModelWithNeedAdd:NO];
         m.isChild = NO;
         m.desc = [NSString stringWithFormat:@"%@", m.titleMutAttrStr];
         m.isTitleExpand = YES;

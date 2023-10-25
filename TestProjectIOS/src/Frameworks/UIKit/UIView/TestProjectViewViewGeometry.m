@@ -305,14 +305,14 @@
 }
 
 - (NSMutableArray *)TestProjectViewViewGeometry_sizeThatFits:(NSInteger)index {
-    __block TestProjectTableModel *m;
+    __block TestProjectTableViewModel *m;
     WS(wSelf);
     m = [self createTableModelWithTitle:@"获取合适的size" block:^{
         CGSize size = [wSelf.grandChildView sizeThatFits:CGSizeMake(30, 40)];
         m.desc = [NSString stringWithFormat:@"获取的size为:%@", NSStringFromCGSize(size)];
         [m calculDataViewHeight];
         NSInteger atIndex = wSelf.tableView.dataSourceArray.count - index -1;
-        TestProjectTableModel *vm = [wSelf.tableView.dataSourceArray objectAtIndex:atIndex];
+        TestProjectTableViewModel *vm = [wSelf.tableView.dataSourceArray objectAtIndex:atIndex];
         [vm calculDataViewHeight];
         [wSelf.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:atIndex inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
     }];

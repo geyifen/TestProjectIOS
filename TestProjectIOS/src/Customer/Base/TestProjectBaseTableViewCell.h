@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 
 #import "TestProjectViewModelProtocol.h"
-#import "TestProjectTableModel.h"
+#import "TestProjectTableViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

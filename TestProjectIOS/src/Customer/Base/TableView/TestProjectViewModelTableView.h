@@ -1,5 +1,5 @@
 //
-//  TestProjectBaseTableView.h
+//  TestProjectViewModelTableView.h
 //  TestProjectIOS
 //
 //  Created by liwenfan on 2023/1/29.
@@ -10,7 +10,7 @@
 #import "TestProjectViewModelProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
-@protocol TestProjectBaseTableViewProtocol <NSObject>
+@protocol TestProjectViewModelTableViewProtocol <NSObject>
 
 @optional
 /**
@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /**改tableView的delegate以及dataSource在外部设置是无效的，得使用提供的方法进行实现**/
-@interface TestProjectBaseTableView : UITableView
+@interface TestProjectViewModelTableView : UITableView
 
 @property (nonatomic, strong) NSMutableArray *dataSourceArray;
 @property (nonatomic, strong) NSMutableArray *dataSourceHeaderArray;
@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 //给cell设置代理
 @property (nonatomic, weak) id cellDelegate;
 //提供外面原生方法的代理
-@property (nonatomic, weak) id<TestProjectBaseTableViewProtocol> tableViewDelegate;
+@property (nonatomic, weak) id<TestProjectViewModelTableViewProtocol> tableViewDelegate;
 
 - (instancetype)initWithStyle:(UITableViewStyle)style;
 

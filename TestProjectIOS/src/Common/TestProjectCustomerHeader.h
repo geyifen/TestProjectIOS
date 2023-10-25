@@ -17,8 +17,8 @@
 #import "TestProjectViewModelTab.h"
 #import "TestProjectScrollTabController.h"
 
-#import "TestProjectTableModel.h"
-#import "TestProjectBaseTableView.h"
+#import "TestProjectTableViewModel.h"
+#import "TestProjectViewModelTableView.h"
 
 #import "TestProjectTestTableVC.h"
 

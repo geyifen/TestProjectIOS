@@ -30,8 +30,8 @@
     };
 }
 
-- (TestProjectTableModel *)createAttrStrModelWith:(NSDictionary *)keyValue {
-    TestProjectTableModel *attrStrModel = [[TestProjectTableModel alloc] init];
+- (TestProjectTableViewModel *)createAttrStrModelWith:(NSDictionary *)keyValue {
+    TestProjectTableViewModel *attrStrModel = [[TestProjectTableViewModel alloc] init];
 //    NSAttributedString *firstAttrStr = [[NSAttributedString alloc] initWithString:self.firstAttrText attributes:keyValue];
 //    NSAttributedString *secondAttrStr = [[NSAttributedString alloc] initWithString:self.secondAttrText attributes:@{NSForegroundColorAttributeName:[UIColor colorFromString:@"#F33"], NSFontAttributeName:[UIFont systemFontOfSize:22]}];
 //
@@ -63,7 +63,7 @@
         NSInteger atIndex = [dic[@"atIndex"] integerValue];
         NSNumber *value = dic[@"value"];
         NSRange range = NSMakeRange(location, length);
-        TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSVerticalGlyphFormAttributeName:value}];
+        TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSVerticalGlyphFormAttributeName:value}];
         NSError *err;
         NSAttributedString *attr = [[NSAttributedString alloc] initWithURL:[NSURL URLWithString:@"file://www.baidu.com"] options:nil documentAttributes:nil error:&err];
         if (!err && attr) {

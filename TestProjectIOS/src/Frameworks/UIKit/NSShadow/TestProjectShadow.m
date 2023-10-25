@@ -63,7 +63,7 @@
         shadow.shadowColor = [UIColor redColor];
     }
     
-    TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSShadowAttributeName: shadow}];
+    TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSShadowAttributeName: shadow}];
     m.isTitleExpand = YES;
     m.desc = [NSString stringWithFormat:@"设置的阴影值为:(%@-%@)，得到的attrText:\n%@", key, value, m.titleMutAttrStr];
     [m calculDataViewHeight];

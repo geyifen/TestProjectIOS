@@ -5,9 +5,9 @@
 //  Created by liwenfan on 2023/3/3.
 //
 
-#import "TestProjectTableModel.h"
+#import "TestProjectTableViewModel.h"
 
-#import "TestProjectBaseTableViewTableCell.h"
+#import "TestProjectViewModelTableViewCell.h"
 #import "TestProjectViewTable.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -21,13 +21,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *fivthAttrText;
 @property (nonatomic, copy) NSString *sixthAttrText;
 
-- (TestProjectTableModel *)createAttrStrModel;
+- (TestProjectTableViewModel *)createAttrStrModel;
 
-- (TestProjectTableModel *)createAttrStrModelWithAttributes:(NSDictionary *)keyValue;
+- (TestProjectTableViewModel *)createAttrStrModelWithAttributes:(NSDictionary *)keyValue;
 
-- (TestProjectTableModel *)compareViewModel;
+- (TestProjectTableViewModel *)compareViewModel;
 
-- (TestProjectTableModel *)createAttrStrModelWithNeedAdd:(BOOL)needAdd;
+- (TestProjectTableViewModel *)createAttrStrModelWithNeedAdd:(BOOL)needAdd;
 
 @end
 

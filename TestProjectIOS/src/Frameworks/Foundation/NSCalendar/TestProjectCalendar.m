@@ -921,7 +921,7 @@
 - (NSMutableArray *)TestProjectCalendar_enumerateDatesStartingAfterDate_matchingComponents_options_usingBlock:(NSInteger)index {
     NSDate *date = [NSDate date];
     NSDateComponents *dateComponents = [self.childCalendar components:NSCalendarUnitDay | NSCalendarUnitMonth fromDate:date];
-    __block TestProjectTableModel *m = nil;
+    __block TestProjectTableViewModel *m = nil;
     WS(wSelf);
     m = [self createTableModelWithMethodBlock:^NSString * _Nonnull{
         __block NSMutableString *mutStr = [NSMutableString string];

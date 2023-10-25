@@ -72,7 +72,7 @@
 
 @interface TestProjectTableNestTableVC () <UIScrollViewDelegate, TestProjectScrollTabControllerProtocol>
 
-@property (nonatomic, strong) TestProjectBaseTableView *tableView;
+@property (nonatomic, strong) TestProjectViewModelTableView *tableView;
 @property (nonatomic, strong) TestProjectNestScrollView *scrollView;
 @property (nonatomic, strong) UIView *scrollContentView;
 @property (nonatomic, strong) TestProjectTestTableFooterView *footerView;
@@ -95,7 +95,7 @@
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSMutableArray *dataSourceMutArr = [NSMutableArray array];
         for (NSInteger i = 0; i < 20; i++) {
-            TestProjectTableModel *tableModel = [[TestProjectTableModel alloc] init];
+            TestProjectTableViewModel *tableModel = [[TestProjectTableViewModel alloc] init];
             tableModel.title = [NSString stringWithFormat:@"title_%ld", i];
             [tableModel calculDataViewHeight];
             [dataSourceMutArr addObject:tableModel];
@@ -194,9 +194,9 @@
     }];
 }
 
-- (TestProjectBaseTableView *)tableView {
+- (TestProjectViewModelTableView *)tableView {
     if (!_tableView) {
-        _tableView = [[TestProjectBaseTableView alloc] initWithStyleGrouped];
+        _tableView = [[TestProjectViewModelTableView alloc] initWithStyleGrouped];
         _tableView.scrollEnabled = NO;
         [self.scrollContentView addSubview:_tableView];
         [_tableView testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {

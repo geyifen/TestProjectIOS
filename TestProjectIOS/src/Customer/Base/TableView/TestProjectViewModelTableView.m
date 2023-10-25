@@ -1,11 +1,11 @@
 //
-//  TestProjectBaseTableView.m
+//  TestProjectViewModelTableView.m
 //  TestProjectIOS
 //
 //  Created by liwenfan on 2023/1/29.
 //
 
-#import "TestProjectBaseTableView.h"
+#import "TestProjectViewModelTableView.h"
 
 #import <objc/runtime.h>
 
@@ -14,7 +14,7 @@
 #define kUITableViewCell @"UITableViewCell"
 #define kUITableViewHeaderFooterView @"UITableViewHeaderFooterView"
 
-@interface TestProjectBaseTableView () <UITableViewDelegate, UITableViewDataSource>
+@interface TestProjectViewModelTableView () <UITableViewDelegate, UITableViewDataSource>
 
 /**外部自定义的delegate**/
 @property (nonatomic, weak) id<UITableViewDelegate> customerDelegate;
@@ -31,7 +31,7 @@
 
 @end
 
-@implementation TestProjectBaseTableView
+@implementation TestProjectViewModelTableView
 
 - (instancetype)initWithCoder:(NSCoder *)coder {
     if (self = [super initWithCoder:coder]) {

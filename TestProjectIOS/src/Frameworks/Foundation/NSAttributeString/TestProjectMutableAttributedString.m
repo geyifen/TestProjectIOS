@@ -59,9 +59,9 @@
     for (NSDictionary *dic in arr) {
         NSInteger location = [dic[@"location"] integerValue];
         NSInteger length = [dic[@"length"] integerValue];
-        TestProjectTableModel *m = [self createAttrStrModelWithNeedAdd:YES];
+        TestProjectTableViewModel *m = [self createAttrStrModelWithNeedAdd:YES];
         NSRange range = NSMakeRange(location, length);
-        TestProjectTableModel *rm = [self createAttrStrModelWithNeedAdd:NO];
+        TestProjectTableViewModel *rm = [self createAttrStrModelWithNeedAdd:NO];
         [rm.titleMutAttrStr setAttributes:@{NSForegroundColorAttributeName: [UIColor colorFromString:@"#00ff00"]} range:range];
         m.titleMutAttrStr = rm.titleMutAttrStr;
         m.desc = [NSString stringWithFormat:@"被替换的range:%@", NSStringFromRange(range)];
@@ -87,8 +87,8 @@
         NSInteger location = [dic[@"location"] integerValue];
         NSInteger length = [dic[@"length"] integerValue];
         NSString *text = dic[@"text"];
-        TestProjectTableModel *rm = [self createAttrStrModelWithNeedAdd:NO];
-        TestProjectTableModel *m = [self createAttrStrModel];
+        TestProjectTableViewModel *rm = [self createAttrStrModelWithNeedAdd:NO];
+        TestProjectTableViewModel *m = [self createAttrStrModel];
         NSRange range = NSMakeRange(location, length);
         [rm.titleMutAttrStr replaceCharactersInRange:range withString:text];
         m.desc = [NSString stringWithFormat:@"被替换的range:%@ 被替换的文字是:%@", NSStringFromRange(range), text];

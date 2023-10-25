@@ -5,10 +5,10 @@
 //  Created by 李文凡 on 2023/2/25.
 //
 
-#import "TestProjectTableModel.h"
+#import "TestProjectTableViewModel.h"
 #import "TestProjectBaseTableViewCell.h"
 
-@interface TestProjectUIColorModel : TestProjectTableModel
+@interface TestProjectUIColorModel : TestProjectTableViewModel
 
 @property (nonatomic, strong) UIColor * _Nullable backgroundColor;
 

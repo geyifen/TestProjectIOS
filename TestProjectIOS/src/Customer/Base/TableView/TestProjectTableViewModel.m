@@ -1,11 +1,11 @@
 //
-//  TestProjectTableModel.m
+//  TestProjectTableViewModel.m
 //  TestProjectIOS
 //
 //  Created by liwenfan on 2023/2/22.
 //
 
-#import "TestProjectTableModel.h"
+#import "TestProjectTableViewModel.h"
 
 @implementation TestProjectJumpModel
 
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation TestProjectTableModel {
+@implementation TestProjectTableViewModel {
     CGFloat _viewHeight;
 }
 
@@ -30,7 +30,7 @@
 }
 
 - (NSString *)viewIdentifier {
-    return @"TestProjectBaseTableViewTableCell";
+    return @"TestProjectViewModelTableViewCell";
 }
 
 - (CGFloat)viewHeight {
@@ -54,7 +54,7 @@
 - (CGFloat)calculDataModelViewHeight {
     CGFloat childViewHeight = 0;
     if (self.childItems.count > 0) {
-        for (TestProjectTableModel *tabModel in self.childItems) {
+        for (TestProjectTableViewModel *tabModel in self.childItems) {
             CGFloat viewHeight = tabModel->_viewHeight;
             if (viewHeight <= 0 && [tabModel viewHeight]) {
                 viewHeight += [tabModel viewHeight];

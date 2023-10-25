@@ -1,17 +1,17 @@
 //
-//  TestProjectBaseTableViewTableCell.m
+//  TestProjectViewModelTableViewCell.m
 //  TestProjectIOS
 //
 //  Created by liwenfan on 2023/2/22.
 //
 
-#import "TestProjectBaseTableViewTableCell.h"
+#import "TestProjectViewModelTableViewCell.h"
 
 #import "TestProjectCategoryHeader.h"
 #import "TestProjectViewModelProtocol.h"
 #import "TestProjectViewTable.h"
 
-@interface TestProjectBaseTableViewTableCell ()
+@interface TestProjectViewModelTableViewCell ()
 
 @property (nonatomic, strong) UIView *bottomLineView;
 @property (nonatomic, strong) UILabel *titleLabel;
@@ -22,14 +22,14 @@
 @property (nonatomic, strong) UIButton *descExpandBtn;
 @property (nonatomic, strong) UIButton *compareBtn;
 @property (nonatomic, strong) TestProjectViewTable *dataModelView;
-@property (nonatomic, strong) TestProjectTableModel *dataModel;
+@property (nonatomic, strong) TestProjectTableViewModel *dataModel;
 @property (nonatomic, strong) UILabel *canClickLabel;
 
 @end
 
-@implementation TestProjectBaseTableViewTableCell
+@implementation TestProjectViewModelTableViewCell
 
-- (void)setViewModel:(TestProjectTableModel *)viewModel {
+- (void)setViewModel:(TestProjectTableViewModel *)viewModel {
     _viewModel = viewModel;
     self.abstractLabel.attributedText = viewModel->_abstractAttr;
     self.titleLabel.attributedText = viewModel->_titleAttr;

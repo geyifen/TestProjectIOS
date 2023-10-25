@@ -127,9 +127,9 @@
     };
 }
 
-- (TestProjectTableModel *)createChildVCTableModelWithProperty:(NSString *)key value:(id)value title:(NSString *)title {
+- (TestProjectTableViewModel *)createChildVCTableModelWithProperty:(NSString *)key value:(id)value title:(NSString *)title {
     WS(wSelf);
-    TestProjectTableModel *m = [self createClickSetTableModelWithProperty:key value:value title:title block:^{
+    TestProjectTableViewModel *m = [self createClickSetTableModelWithProperty:key value:value title:title block:^{
         [wSelf.tVC setValue:value forKey:key];
         [UIApplication.rootCurrentController presentViewController:wSelf.tVC animated:YES completion:nil];
     }];
@@ -138,7 +138,7 @@
 
 - (NSMutableArray *)TestProjectTestVCViewTable_push_VC:(BOOL)isPush {
     self.dataMutArr = [NSMutableArray array];
-    TestProjectTableModel *m = [[TestProjectTableModel alloc] init];
+    TestProjectTableViewModel *m = [[TestProjectTableViewModel alloc] init];
     m.title = isPush ? @"点击我push到tVC里去" : @"点击我present到tVC里去";
     WS(wSelf);
     m.clickBlock = ^{
@@ -168,7 +168,7 @@
 
 - (NSMutableArray *)TestProjectTestVCViewTable_pop_VC:(BOOL)isPop {
     self.dataMutArr = [NSMutableArray array];
-    TestProjectTableModel *m = [[TestProjectTableModel alloc] init];
+    TestProjectTableViewModel *m = [[TestProjectTableViewModel alloc] init];
     m.title = isPop ? @"点击我pop vc" : @"点击我dismiss vc";
     WS(wSelf);
     m.clickBlock = ^{

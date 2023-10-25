@@ -70,7 +70,7 @@
 
 - (NSMutableArray *)TestProjectViewController_push_VC:(BOOL)isNib {
     self.dataMutArr = [NSMutableArray array];
-    TestProjectTableModel *m = [[TestProjectTableModel alloc] init];
+    TestProjectTableViewModel *m = [[TestProjectTableViewModel alloc] init];
     m.title = isNib ? @"点击我push到tNibVC里去" : @"点击我push到tVC里去";
     WS(wSelf);
     m.clickBlock = ^{

@@ -9,7 +9,7 @@
 
 #import "TestProjectBaseTableViewCell.h"
 
-@interface TestProjectActivityIndicatorViewModel : TestProjectTableModel
+@interface TestProjectActivityIndicatorViewModel : TestProjectTableViewModel
 
 @property (nonatomic, assign) UIActivityIndicatorViewStyle style;
 @property (nonatomic) BOOL hidesWhenStopped;

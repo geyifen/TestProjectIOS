@@ -341,13 +341,13 @@
 }
 
 - (NSMutableArray *)TestProjectChildNavigationController_toolbar:(NSInteger)index {
-    __block TestProjectTableModel *m;
+    __block TestProjectTableViewModel *m;
     WS(wSelf);
     m = [self createTableModelWithTitle:@"点击之后获取该属性" block:^{
         m.desc = [NSString stringWithFormat:@"获取的toolbar为:%@", wSelf.parentVC.navigationController.toolbar];
         [m calculDataViewHeight];
         NSInteger atIndex = wSelf.tableView.dataSourceArray.count - index -1;
-        TestProjectTableModel *vm = [wSelf.tableView.dataSourceArray objectAtIndex:atIndex];
+        TestProjectTableViewModel *vm = [wSelf.tableView.dataSourceArray objectAtIndex:atIndex];
         [vm calculDataViewHeight];
         [wSelf.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:atIndex inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
     }];

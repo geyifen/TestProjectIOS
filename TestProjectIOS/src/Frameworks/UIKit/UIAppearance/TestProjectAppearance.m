@@ -10,7 +10,7 @@
 #import "TestProjectBaseTableViewCell.h"
 #import "TestProjectCategoryHeader.h"
 
-@interface TestProjectAppearanceCellModel : TestProjectTableModel
+@interface TestProjectAppearanceCellModel : TestProjectTableViewModel
 
 @property (nonatomic, copy) UIColor *viewColor;
 

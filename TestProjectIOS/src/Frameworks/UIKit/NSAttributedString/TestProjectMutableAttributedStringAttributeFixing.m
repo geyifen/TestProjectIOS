@@ -45,7 +45,7 @@
         NSInteger atIndex = [dic[@"atIndex"] integerValue];
         NSNumber *value = dic[@"value"];
         NSRange range = NSMakeRange(location, length);
-        TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSVerticalGlyphFormAttributeName:value}];
+        TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSVerticalGlyphFormAttributeName:value}];
         m.desc = [NSString stringWithFormat:@"我是在第%ld段的range:%@ attrText:%@", atIndex, NSStringFromRange(range),  m.titleMutAttrStr];
         [m.titleMutAttrStr fixAttributesInRange:range];
         [m calculDataViewHeight];

@@ -7,7 +7,7 @@
 
 #import "TestProjectAlertController.h"
 
-@interface TestProjectAlertControllerViewModel : TestProjectTableModel
+@interface TestProjectAlertControllerViewModel : TestProjectTableViewModel
 
 @property (nonatomic, assign) UIAlertControllerStyle style;
 

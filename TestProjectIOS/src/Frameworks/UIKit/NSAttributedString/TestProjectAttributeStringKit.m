@@ -328,7 +328,7 @@
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSVerticalGlyphFormAttributeName {
     NSArray *arr = @[@1, @0];
     for (NSNumber *num in arr) {
-        TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSVerticalGlyphFormAttributeName:num}];
+        TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSVerticalGlyphFormAttributeName:num}];
         m.desc = [NSString stringWithFormat:@"设置的是@{NSVerticalGlyphFormAttributeName: @%ld} \n attrText:%@", num.integerValue, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -363,7 +363,7 @@
         NSString *title = dic[@"title"];
         NSString *stringValue = dic[@"stringValue"];
         NSArray *value = dic[@"value"];
-        TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSWritingDirectionAttributeName:value}];
+        TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSWritingDirectionAttributeName:value}];
         m.desc = [NSString stringWithFormat:@"%@\n设置的是@{NSWritingDirectionAttributeName: @(%@-%@)} \n attrText:%@", title, stringValue, value, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -374,7 +374,7 @@
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSExpansionAttributeName {
     NSArray *arr = @[@1, @-1];
     for (NSNumber *num in arr) {
-        TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSExpansionAttributeName:num}];
+        TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSExpansionAttributeName:num}];
         m.desc = [NSString stringWithFormat:@"设置的是@{NSExpansionAttributeName: @%ld} \n attrText:%@", num.integerValue, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -385,7 +385,7 @@
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSObliquenessAttributeName {
     NSArray *arr = @[@1, @-1];
     for (NSNumber *num in arr) {
-        TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSObliquenessAttributeName:num}];
+        TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSObliquenessAttributeName:num}];
         m.desc = [NSString stringWithFormat:@"设置的是@{NSObliquenessAttributeName: @%ld} \n attrText:%@", num.integerValue, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -394,7 +394,7 @@
 }
 
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSStrikethroughColorAttributeName {
-    TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSStrikethroughColorAttributeName: [UIColor colorFromString:@"#ff0000"], NSStrikethroughStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle | NSUnderlinePatternDashDot], NSBaselineOffsetAttributeName:@0}];
+    TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSStrikethroughColorAttributeName: [UIColor colorFromString:@"#ff0000"], NSStrikethroughStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle | NSUnderlinePatternDashDot], NSBaselineOffsetAttributeName:@0}];
     m.desc = [NSString stringWithFormat:@"设置的是@{NSStrikethroughColorAttributeName: [UIColor colorFromString:@\"#33ffff\"]} \n attrText:%@", m.titleMutAttrStr];
     [m calculDataViewHeight];
 
@@ -402,7 +402,7 @@
 }
 
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSUnderlineColorAttributeName {
-    TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSUnderlineColorAttributeName: [UIColor colorFromString:@"#33ffff"], NSUnderlineStyleAttributeName: @(NSUnderlineStyleDouble)}];
+    TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSUnderlineColorAttributeName: [UIColor colorFromString:@"#33ffff"], NSUnderlineStyleAttributeName: @(NSUnderlineStyleDouble)}];
     m.desc = [NSString stringWithFormat:@"设置的是@{NSUnderlineColorAttributeName: [UIColor colorFromString:@\"#33ffff\"]} \n attrText:%@", m.titleMutAttrStr];
     [m calculDataViewHeight];
 
@@ -412,7 +412,7 @@
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSBaselineOffsetAttributeName {
     NSArray *arr = @[@10, @-10, @100, @-100];
     for (NSNumber *num in arr) {
-        TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSBackgroundColorAttributeName: [UIColor colorFromString:@"#ff0000"], NSBaselineOffsetAttributeName:num}];
+        TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSBackgroundColorAttributeName: [UIColor colorFromString:@"#ff0000"], NSBaselineOffsetAttributeName:num}];
         m.desc = [NSString stringWithFormat:@"设置的是@{NSBaselineOffsetAttributeName: %ld} \n attrText:%@", num.integerValue, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -420,7 +420,7 @@
 }
 
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSLinkAttributeName {
-    TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSLinkAttributeName: [NSURL URLWithString:@"https://www.baidu.com"]}];
+    TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSLinkAttributeName: [NSURL URLWithString:@"https://www.baidu.com"]}];
     m.desc = [NSString stringWithFormat:@"设置的是@{NSLinkAttributeName: [NSURL URLWithString:@\"https://www.baidu.com\"]} \n attrText:%@", m.titleMutAttrStr];
     [m calculDataViewHeight];
 
@@ -431,7 +431,7 @@
     NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
     attachment.image = [UIImage imageNamed:@"lyf_1"];
     attachment.bounds = CGRectMake(0, 0, 100, 50);
-    TestProjectTableModel *m = [self createAttrStrModelWithAttributes:nil];
+    TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:nil];
     NSAttributedString *attachmentAttrText = [NSAttributedString attributedStringWithAttachment:attachment];
     [m.titleMutAttrStr appendAttributedString:attachmentAttrText];
     m.desc = [NSString stringWithFormat:@"设置图片的attachment \n attrText:%@", m.titleMutAttrStr];
@@ -441,7 +441,7 @@
 }
 
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSTextEffectAttributeName {
-    TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSTextEffectAttributeName: NSTextEffectLetterpressStyle}];
+    TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSTextEffectAttributeName: NSTextEffectLetterpressStyle}];
     m.desc = [NSString stringWithFormat:@"设置的是@{NSTextEffectAttributeName: NSTextEffectLetterpressStyle} \n attrText:%@", m.titleMutAttrStr];
     [m calculDataViewHeight];
 
@@ -481,7 +481,7 @@
         NSString *key = dic[@"key"];
         NSString *stringKey = dic[@"stringKey"];
 
-        TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSShadowAttributeName: shadow, key:value}];
+        TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSShadowAttributeName: shadow, key:value}];
         m.desc = [NSString stringWithFormat:@"shadow是%@ 设置的值@{(%@-%@): %@} 展示的效果是:%@ \n attrText:%@", shadow, stringKey, key, value, title, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -491,7 +491,7 @@
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSStrokeWidthAttributeName {
     NSArray *arr = @[@3, @-3, @100, @-100];
     for (NSNumber *num in arr) {
-        TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSStrokeColorAttributeName: [UIColor colorFromString:@"#33ffff"], NSStrokeWidthAttributeName:num}];
+        TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSStrokeColorAttributeName: [UIColor colorFromString:@"#33ffff"], NSStrokeWidthAttributeName:num}];
         m.desc = [NSString stringWithFormat:@"没有设置NSStrokeWidthAttributeName则文字描边无效@{NSStrokeColorAttributeName: [UIColor colorFromString:@\"#33ffff\"]} \n attrText:%@", m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -501,7 +501,7 @@
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSStrokeColorAttributeName {
     NSArray *arr = @[@3, @-3, @100, @-100];
     for (NSNumber *num in arr) {
-        TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSStrokeColorAttributeName: [UIColor colorFromString:@"#33ffff"], NSStrokeWidthAttributeName:num}];
+        TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSStrokeColorAttributeName: [UIColor colorFromString:@"#33ffff"], NSStrokeWidthAttributeName:num}];
         m.desc = [NSString stringWithFormat:@"没有设置NSStrokeWidthAttributeName则文字描边无效@{NSStrokeColorAttributeName: [UIColor colorFromString:@\"#33ffff\"]} \n attrText:%@", m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -560,7 +560,7 @@
         NSString *title = dic[@"title"];
         NSString *stringKey = dic[@"stringKey"];
         NSNumber *value = dic[@"value"];
-        TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{key: value, NSStrikethroughColorAttributeName: [UIColor colorFromString:@"#00ffff"]}];
+        TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{key: value, NSStrikethroughColorAttributeName: [UIColor colorFromString:@"#00ffff"]}];
         m.desc = [NSString stringWithFormat:@"设置的是%@ @{%@: @(%@-%ld)} \n attrText:%@", title, keyStr, stringKey, value.integerValue, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -580,7 +580,7 @@
     if (@available(iOS 14.0, *)) {
         NSArray *arr = @[@10, @0, @-10];
         for (NSNumber *num in arr) {
-            TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSTrackingAttributeName: num}];
+            TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSTrackingAttributeName: num}];
             m.desc = [NSString stringWithFormat:@"设置的是@{NSTrackingAttributeName: @%ld} attrText:%@", num.integerValue, m.titleMutAttrStr];
             [m calculDataViewHeight];
         }
@@ -591,7 +591,7 @@
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSKernAttributeName {
     NSArray *arr = @[@0, @1, @-100, @10];
     for (NSNumber *num in arr) {
-        TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSKernAttributeName: num}];
+        TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSKernAttributeName: num}];
         m.desc = [NSString stringWithFormat:@"设置的是@{NSKernAttributeName: @%ld} attrText:%@", num.integerValue, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -601,7 +601,7 @@
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSLigatureAttributeName {
     NSArray *arr = @[@0, @1, @-100, @10];
     for (NSNumber *num in arr) {
-        TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSLigatureAttributeName: num}];
+        TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSLigatureAttributeName: num}];
         m.desc = [NSString stringWithFormat:@"设置的是@{NSLigatureAttributeName: @%ld} attrText:%@", num.integerValue, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -609,7 +609,7 @@
 }
 
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSBackgroundColorAttributeName {
-    TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSBackgroundColorAttributeName: [UIColor colorFromString:@"#33ffff"]}];
+    TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSBackgroundColorAttributeName: [UIColor colorFromString:@"#33ffff"]}];
     m.desc = [NSString stringWithFormat:@"设置的是@{NSBackgroundColorAttributeName: [UIColor colorFromString:@\"#33ffff\"]} \n attrText:%@", m.titleMutAttrStr];
     [m calculDataViewHeight];
 
@@ -617,7 +617,7 @@
 }
 
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSForegroundColorAttributeName {
-    TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSForegroundColorAttributeName: [UIColor colorFromString:@"#33ffff"]}];
+    TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSForegroundColorAttributeName: [UIColor colorFromString:@"#33ffff"]}];
     m.desc = [NSString stringWithFormat:@"设置的是@{NSForegroundColorAttributeName: [UIColor colorFromString:@\"#33ffff\"]} \n attrText:%@", m.titleMutAttrStr];
     [m calculDataViewHeight];
 
@@ -626,7 +626,7 @@
 
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSParagraphStyleAttributeName {
     NSParagraphStyle *style = [NSParagraphStyle defaultParagraphStyle];
-    TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSParagraphStyleAttributeName: style}];
+    TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSParagraphStyleAttributeName: style}];
     m.desc = [NSString stringWithFormat:@"设置的是@{NSParagraphStyleAttributeName: [NSParagraphStyle defaultParagraphStyle]} \n attrText:%@", m.titleMutAttrStr];
     [m calculDataViewHeight];
 
@@ -634,7 +634,7 @@
 }
 
 - (NSMutableArray *)TestProjectAttributeStringKit_key_NSFontAttributeName {
-    TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:40]}];
+    TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:40]}];
     m.desc = [NSString stringWithFormat:@"设置的是@{NSFontAttributeName: [UIFont systemFontOfSize:40]} \n attrText:%@", m.titleMutAttrStr];
     [m calculDataViewHeight];
 

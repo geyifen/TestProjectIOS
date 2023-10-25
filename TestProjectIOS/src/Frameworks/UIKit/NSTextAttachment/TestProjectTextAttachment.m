@@ -93,8 +93,8 @@
     };
 }
 
-- (TestProjectTableModel *)createAttrStrModelWith:(NSTextAttachment *)attachment {
-    TestProjectTableModel *attrStrModel = [[TestProjectTableModel alloc] init];
+- (TestProjectTableViewModel *)createAttrStrModelWith:(NSTextAttachment *)attachment {
+    TestProjectTableViewModel *attrStrModel = [[TestProjectTableViewModel alloc] init];
     attrStrModel.isChild = YES;
     NSAttributedString *firstAttrStr = [[NSAttributedString alloc] initWithString:self.firstAttrText];
 
@@ -116,7 +116,7 @@
             attachment.bounds = bounds;
             CGFloat lineLayoutPadding = num.integerValue;
             attachment.lineLayoutPadding = lineLayoutPadding;
-            TestProjectTableModel *m = [self createAttrStrModelWith:attachment];
+            TestProjectTableViewModel *m = [self createAttrStrModelWith:attachment];
             m.desc = [NSString stringWithFormat:@"设置的是lineLayoutPadding:%f attrText:%@", lineLayoutPadding, m.titleMutAttrStr];
             [m calculDataViewHeight];
         }
@@ -132,7 +132,7 @@
     CGRect bounds = CGRectMake(0, 0, 100, 50);
     attachment.bounds = bounds;
     
-    TestProjectTableModel *m = [self createAttrStrModelWith:attachment];
+    TestProjectTableViewModel *m = [self createAttrStrModelWith:attachment];
     m.desc = [NSString stringWithFormat:@"设置的是bounds:%@ attrText:%@", NSStringFromCGRect(bounds), m.titleMutAttrStr];
     [m calculDataViewHeight];
 
@@ -145,7 +145,7 @@
     attachment.image = image;
     attachment.bounds = CGRectMake(0, 0, 100, 50);
     
-    TestProjectTableModel *m = [self createAttrStrModelWith:attachment];
+    TestProjectTableViewModel *m = [self createAttrStrModelWith:attachment];
     m.desc = [NSString stringWithFormat:@"设置的是image:%@ attrText:%@", image, m.titleMutAttrStr];
     [m calculDataViewHeight];
 

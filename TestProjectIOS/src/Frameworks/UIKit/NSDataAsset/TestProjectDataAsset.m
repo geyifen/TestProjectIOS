@@ -50,7 +50,7 @@
 
 - (NSMutableArray *)createDataAssetModelWithProperty:(NSString *)key {
     NSDataAsset *dataAsset = [[NSDataAsset alloc] initWithName:@"Data"];
-    TestProjectTableModel *m = [[TestProjectTableModel alloc] init];
+    TestProjectTableViewModel *m = [[TestProjectTableViewModel alloc] init];
     m.titleMutAttrStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"我是一个dataAsset: %@ 是一张图片组成的NSData，展示如下\n", dataAsset]];
     NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
     attachment.image = [UIImage imageWithData:dataAsset.data];

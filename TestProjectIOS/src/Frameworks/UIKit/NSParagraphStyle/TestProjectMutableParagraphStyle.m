@@ -294,7 +294,7 @@
     };
 }
 
-- (TestProjectTableModel *)createStyleWithProperty:(NSString *)key value:(id)value desc:(NSString *)desc {
+- (TestProjectTableViewModel *)createStyleWithProperty:(NSString *)key value:(id)value desc:(NSString *)desc {
     NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
     if (key && value) {
         [style setValue:value forKey:key];
@@ -305,7 +305,7 @@
     } else {
         desc = @"";
     }
-    TestProjectTableModel *m = [self createAttrStrModelWithAttributes:@{NSParagraphStyleAttributeName: style, NSBackgroundColorAttributeName:[UIColor redColor]}];
+    TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSParagraphStyleAttributeName: style, NSBackgroundColorAttributeName:[UIColor redColor]}];
     m.isTitleExpand = YES;
     m.isDescExpand = NO;
     m.desc = [NSString stringWithFormat:@"%@获取的属性%@：%@ attrText:%@", desc, key, [style valueForKey:key], m.titleMutAttrStr];
@@ -504,7 +504,7 @@
         NSString *stringKey = dic[@"stringKey"];
         NSNumber *value = dic[@"value"];
         NSString *desc = [NSString stringWithFormat:@"%@\n设置的是(%@-%ld)", title, stringKey, value.integerValue];
-        TestProjectTableModel *m = [self createStyleWithProperty:@"lineBreakMode" value:value desc:desc];
+        TestProjectTableViewModel *m = [self createStyleWithProperty:@"lineBreakMode" value:value desc:desc];
         CGFloat _viewHeight = [[m valueForKey:@"_viewHeight"] floatValue];
         CGFloat _titleHeight = [[m valueForKey:@"_titleHeight"] floatValue];
         CGFloat height = 100;

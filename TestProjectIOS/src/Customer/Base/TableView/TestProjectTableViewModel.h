@@ -1,5 +1,5 @@
 //
-//  TestProjectTableModel.h
+//  TestProjectTableViewModel.h
 //  TestProjectIOS
 //
 //  Created by liwenfan on 2023/2/22.
@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface TestProjectTableModel : TestProjectBaseModel <TestProjectViewModelProtocol, NSCopying> {
+@interface TestProjectTableViewModel : TestProjectBaseModel <TestProjectViewModelProtocol, NSCopying> {
 
 @public
     CGFloat _titleHeight;

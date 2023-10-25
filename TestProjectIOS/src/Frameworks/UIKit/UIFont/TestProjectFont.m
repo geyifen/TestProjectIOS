@@ -353,8 +353,8 @@
     };
 }
 
-- (TestProjectTableModel *)createAttrStrModelWithFont:(UIFont *)font {
-    TestProjectTableModel *m = [[TestProjectTableModel alloc] init];
+- (TestProjectTableViewModel *)createAttrStrModelWithFont:(UIFont *)font {
+    TestProjectTableViewModel *m = [[TestProjectTableViewModel alloc] init];
     m.isChild = YES;
     m.isTitleExpand = NO;
     m.titleMutAttrStr = [[NSMutableAttributedString alloc] initWithString:self.firstAttrText attributes:@{NSFontAttributeName: font}];
@@ -365,7 +365,7 @@
 - (NSMutableArray *)TestProjectFont_class_fontWithDescriptor_size {
     UIFontDescriptor *desc = [UIFontDescriptor fontDescriptorWithName:@".SFUI-Regular" size:12];
     UIFont *font1 = [UIFont fontWithDescriptor:desc size:18];
-    TestProjectTableModel *m = [self createAttrStrModelWithFont:font1];
+    TestProjectTableViewModel *m = [self createAttrStrModelWithFont:font1];
     m.desc = [NSString stringWithFormat:@"FontDescriptor:%@\nattrText:%@", desc, m.titleMutAttrStr];
     [m calculDataViewHeight];
 
@@ -374,7 +374,7 @@
 
 - (NSMutableArray *)TestProjectFont_property_get:(NSString *)property value:(id)value {
     UIFont *font = [UIFont systemFontOfSize:18];
-    TestProjectTableModel *m = [self createAttrStrModelWithFont:font];
+    TestProjectTableViewModel *m = [self createAttrStrModelWithFont:font];
     if (value) {
         [font setValue:value forKey:property];
     }
@@ -390,7 +390,7 @@
 - (NSMutableArray *)TestProjectFont_fontWithSize {
     UIFont *font = [UIFont systemFontOfSize:18];
     [font fontWithSize:12];
-    TestProjectTableModel *m = [self createAttrStrModelWithFont:font];
+    TestProjectTableViewModel *m = [self createAttrStrModelWithFont:font];
     m.desc = [NSString stringWithFormat:@"设置字体大小为12\nattrText:%@", m.titleMutAttrStr];
     return self.dataMutArr;
 }
@@ -436,7 +436,7 @@
     for (NSInteger i = 0; i < 10; i++) {
         NSInteger size = 20 + i;
         UIFont *font = [UIFont monospacedSystemFontOfSize:size weight:UIFontWeightBold];
-        TestProjectTableModel *m = [self createAttrStrModelWithFont:font];
+        TestProjectTableViewModel *m = [self createAttrStrModelWithFont:font];
         m.desc = [NSString stringWithFormat:@"[UIFont monospacedSystemFontOfSize:%ld weight:UIFontWeightBold]设置字体的大小为：\n%@", size, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -450,7 +450,7 @@
         for (NSInteger i = 0; i < widths.count; i++) {
             UIFontWeight width = [widths[i] floatValue];
             UIFont *font = [UIFont systemFontOfSize:14 weight:UIFontWeightBold width:width];
-            TestProjectTableModel *m = [self createAttrStrModelWithFont:font];
+            TestProjectTableViewModel *m = [self createAttrStrModelWithFont:font];
             m.desc = [NSString stringWithFormat:@"设置字体的粗重为：\n%@", m.titleMutAttrStr];
             [m calculDataViewHeight];
         }
@@ -463,7 +463,7 @@
     for (NSInteger i = 0; i < 10; i++) {
         NSInteger size = 20 + i;
         UIFont *font = [UIFont monospacedDigitSystemFontOfSize:size weight:UIFontWeightBold];
-        TestProjectTableModel *m = [self createAttrStrModelWithFont:font];
+        TestProjectTableViewModel *m = [self createAttrStrModelWithFont:font];
         m.desc = [NSString stringWithFormat:@"[UIFont monospacedSystemFontOfSize:%ld weight:UIFontWeightBold]设置字体的大小为：\n%@", size, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -476,7 +476,7 @@
     for (NSInteger i = 0; i < weights.count; i++) {
         UIFontWeight weight = [weights[i] floatValue];
         UIFont *font = [UIFont systemFontOfSize:14 weight:weight];
-        TestProjectTableModel *m = [self createAttrStrModelWithFont:font];
+        TestProjectTableViewModel *m = [self createAttrStrModelWithFont:font];
         m.desc = [NSString stringWithFormat:@"设置字体的粗重为：\n%@", m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -488,7 +488,7 @@
     for (NSInteger i = 0; i < 10; i++) {
         NSInteger size = 20 + i;
         UIFont *font = [UIFont italicSystemFontOfSize:size];
-        TestProjectTableModel *m = [self createAttrStrModelWithFont:font];
+        TestProjectTableViewModel *m = [self createAttrStrModelWithFont:font];
         m.desc = [NSString stringWithFormat:@"[UIFont italicSystemFontOfSize:%ld]设置字体的大小为：\n%@", size, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -500,7 +500,7 @@
     for (NSInteger i = 0; i < 10; i++) {
         NSInteger size = 20 + i;
         UIFont *font = [UIFont boldSystemFontOfSize:size];
-        TestProjectTableModel *m = [self createAttrStrModelWithFont:font];
+        TestProjectTableViewModel *m = [self createAttrStrModelWithFont:font];
         m.desc = [NSString stringWithFormat:@"[UIFont boldSystemFontOfSize:%ld]设置字体的大小为：\n%@", size, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -512,7 +512,7 @@
     for (NSInteger i = 0; i < 10; i++) {
         NSInteger size = 20 + i;
         UIFont *font = [UIFont systemFontOfSize:size];
-        TestProjectTableModel *m = [self createAttrStrModelWithFont:font];
+        TestProjectTableViewModel *m = [self createAttrStrModelWithFont:font];
         m.desc = [NSString stringWithFormat:@"[UIFont systemFontOfSize:%ld]设置字体的大小为：\n%@", size, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -524,7 +524,7 @@
     NSArray *font_familyNames = [UIFont familyNames];
     for (NSString *fontName in font_familyNames) {
         NSArray *fontNames = [UIFont fontNamesForFamilyName:fontName];
-        TestProjectTableModel *m = [[TestProjectTableModel alloc] init];
+        TestProjectTableViewModel *m = [[TestProjectTableViewModel alloc] init];
         m.desc = [NSString stringWithFormat:@"获取%@字体的可以搭配的属性：\n%@", fontName, fontNames];
         [m calculDataViewHeight];
     }
@@ -534,7 +534,7 @@
 
 - (NSMutableArray *)TestProjectFont_class_property_familyNames {
     NSArray *font_familyNames = [UIFont familyNames];
-    TestProjectTableModel *m = [self createAttrStrModelWithFont:[UIFont systemFontOfSize:17]];
+    TestProjectTableViewModel *m = [self createAttrStrModelWithFont:[UIFont systemFontOfSize:17]];
     m.desc = [NSString stringWithFormat:@"获取UIFont所有字体: 总个数为:%ld \n %@", font_familyNames.count, font_familyNames];
     [m calculDataViewHeight];
     return self.dataMutArr;
@@ -544,7 +544,7 @@
     NSArray *font_familyNames = [UIFont familyNames];
     for (NSString *fontName in font_familyNames) {
         UIFont *font = [UIFont fontWithName:fontName size:14];
-        TestProjectTableModel *m = [self createAttrStrModelWithFont:font];
+        TestProjectTableViewModel *m = [self createAttrStrModelWithFont:font];
         m.desc = [NSString stringWithFormat:@"设置的字体是[UIFont fontWithName:@\"%@\" size:18] attrText:%@", fontName, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -614,7 +614,7 @@
         NSString *styleValue = dic[@"styleValue"];
         UIFontTextStyle style = dic[@"style"];
         UIFont *font = [UIFont preferredFontForTextStyle:style compatibleWithTraitCollection:nil];
-        TestProjectTableModel *m = [self createAttrStrModelWithFont:font];
+        TestProjectTableViewModel *m = [self createAttrStrModelWithFont:font];
         m.desc = [NSString stringWithFormat:@"设置的是%@ style 取的值(%@) attrText:\n%@", desc, styleValue, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }
@@ -684,7 +684,7 @@
         NSString *styleValue = dic[@"styleValue"];
         UIFontTextStyle style = dic[@"style"];
         UIFont *font = [UIFont preferredFontForTextStyle:style];
-        TestProjectTableModel *m = [self createAttrStrModelWithFont:font];
+        TestProjectTableViewModel *m = [self createAttrStrModelWithFont:font];
         m.desc = [NSString stringWithFormat:@"设置的是%@ style 取的值(%@) attrText:\n%@", desc, styleValue, m.titleMutAttrStr];
         [m calculDataViewHeight];
     }

@@ -229,13 +229,13 @@
 }
 
 - (NSMutableArray *)TestProjectResponder_property_isFirstResponder:(NSInteger)index {
-    __block TestProjectTableModel *m;
+    __block TestProjectTableViewModel *m;
     WS(wSelf);
     m = [self createTableModelWithTitle:@"点击之后获取该属性" block:^{
         m.desc = [NSString stringWithFormat:@"获取的isFirstResponder为:%u", wSelf.isFirstResponder];
         [m calculDataViewHeight];
         NSInteger atIndex = wSelf.tableView.dataSourceArray.count - index -1;
-        TestProjectTableModel *vm = [wSelf.tableView.dataSourceArray objectAtIndex:atIndex];
+        TestProjectTableViewModel *vm = [wSelf.tableView.dataSourceArray objectAtIndex:atIndex];
         [vm calculDataViewHeight];
         [wSelf.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:atIndex inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
     }];

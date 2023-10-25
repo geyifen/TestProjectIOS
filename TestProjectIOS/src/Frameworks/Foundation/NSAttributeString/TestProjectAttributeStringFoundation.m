@@ -56,7 +56,7 @@
         NSRange range;
         NSInteger location = [dic[@"location"] integerValue];
         NSInteger atIndex = [dic[@"atIndex"] integerValue];
-        TestProjectTableModel *m = [self createAttrStrModel];
+        TestProjectTableViewModel *m = [self createAttrStrModel];
         
         NSDictionary *itemDic = [m.titleMutAttrStr attributesAtIndex:location effectiveRange:&range];
         m.desc = [NSString stringWithFormat:@"我是第%ld段的atIndex:%ld 获取的是在第%ld段内的range:%@ 获取的是在第%ld段内的NSAttributedStringKey集合信息%@", atIndex, location, atIndex, NSStringFromRange(range), atIndex, itemDic];
@@ -66,7 +66,7 @@
 }
 
 - (NSMutableArray *)TestProjectAttributeStringFoundation_property_string {
-    TestProjectTableModel *m = [self createAttrStrModel];
+    TestProjectTableViewModel *m = [self createAttrStrModel];
     m.desc = [NSString stringWithFormat:@"获取的NSAttributeString.string是：\n%@", self.compareViewModel.titleMutAttrStr.string];
     [m calculDataViewHeight];
     return self.dataMutArr;

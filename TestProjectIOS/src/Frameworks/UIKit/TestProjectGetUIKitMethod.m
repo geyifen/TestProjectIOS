@@ -14,6 +14,7 @@
 + (NSArray *)newItemChilds {
     return @[
 //        [self UITextField],
+        [self UIImage],
         [self UIBezierPath],
         [self UICollectionViewController],
         [self UICollectionViewLayout],
@@ -36,6 +37,23 @@
         @"title": @"UIKit",
         @"atIndex": @0,
         @"itemChilds": [self itemChilds],
+    };
+}
+
++ (NSDictionary *)UIImage {
+    return @{
+        @"title": @"UIImage",
+        @"atIndex": @0,
+        @"itemChilds": @[
+            @{
+                @"title": @"UIImage",
+                @"viewKey": @"TestProjectImage",
+            },
+            @{
+                @"title": @"UIImage\n(还有其它的)",
+                @"viewKey": @"TestProjectCollectionViewLayout",
+            },
+        ]
     };
 }
 

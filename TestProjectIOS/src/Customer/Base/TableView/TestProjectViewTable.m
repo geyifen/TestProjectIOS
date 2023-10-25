@@ -7,7 +7,7 @@
 
 #import "TestProjectViewTable.h"
 
-#import "TestProjectTableModel.h"
+#import "TestProjectTableViewModel.h"
 #import "TestProjectCategoryHeader.h"
 
 #import <objc/message.h>
@@ -55,7 +55,7 @@
         NSArray *viewDataArray = [self viewDataArray];
         for (NSInteger i = 0; i < viewDataArray.count; i++) {
             NSDictionary *dic = [viewDataArray objectAtIndex:i];
-            TestProjectTableModel *tableModel = [TestProjectTableModel yy_modelWithDictionary:dic].dataModel;
+            TestProjectTableViewModel *tableModel = [TestProjectTableViewModel yy_modelWithDictionary:dic].dataModel;
             [tableModel calculDataViewHeight];
             [mutArr addObject:tableModel];
         }
@@ -67,7 +67,7 @@
     });
 }
 
-- (void)setViewModel:(TestProjectTableModel *)viewModel {
+- (void)setViewModel:(TestProjectTableViewModel *)viewModel {
     _viewModel = viewModel;
     self.tableView.dataSourceArray = viewModel.childItems;
     [self.tableView reloadData];
@@ -85,7 +85,7 @@
     return view;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath viewModel:(TestProjectTableModel *)viewModel {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath viewModel:(TestProjectTableViewModel *)viewModel {
     if (viewModel.clickBlock) {
         viewModel.clickBlock();
     } else {
@@ -95,7 +95,7 @@
 
 - (void)reloadAllDataModel {
     self.dataModelExpandBtn.selected = !self.dataModelExpandBtn.selected;
-    for (TestProjectTableModel *m in self.tableView.dataSourceArray) {
+    for (TestProjectTableViewModel *m in self.tableView.dataSourceArray) {
         m.isDataModelExpand = !self.dataModelExpandBtn.selected;
     }
     [self.tableView reloadData];
@@ -116,17 +116,17 @@
 }
 
 - (Class)createTableModelClass {
-    return TestProjectTableModel.class;
+    return TestProjectTableViewModel.class;
 }
 
-- (TestProjectTableModel *)createModelWithIndex:(NSInteger)index
+- (TestProjectTableViewModel *)createModelWithIndex:(NSInteger)index
                                           title:(NSString *)title
                                        property:(NSString *)property
                                           value:(id)value
                                       operation:(TestProjectCreateModelOperation)operation
                                           block:(void (^)(void))block {
     Class class = [self createTableModelClass];
-    __block TestProjectTableModel *m = [[class alloc] init];
+    __block TestProjectTableViewModel *m = [[class alloc] init];
     m.isChild = YES;
     id object = [self setPropertyValueObject];
     if (title) {
@@ -173,7 +173,7 @@
                     [wm calculDataViewHeight];
                 }
                 NSInteger atIndex = wSelf.tableView.dataSourceArray.count - index -1;
-                TestProjectTableModel *vm = [wSelf.tableView.dataSourceArray objectAtIndex:atIndex];
+                TestProjectTableViewModel *vm = [wSelf.tableView.dataSourceArray objectAtIndex:atIndex];
                 if ([vm needAutoCalculViewHeight]) {
                     [vm calculDataViewHeight];
                 }
@@ -207,7 +207,7 @@
     return self.dataMutArr;
 }
 
-- (TestProjectTableModel *)createModelWithIndex:(NSInteger)index
+- (TestProjectTableViewModel *)createModelWithIndex:(NSInteger)index
                                        property:(NSString *)property
                                           value:(id)value
                                       operation:(TestProjectCreateModelOperation)operation
@@ -224,11 +224,11 @@
     return self.dataMutArr;
 }
 
-- (TestProjectTableModel *)createModelWithIndex:(NSInteger)index
+- (TestProjectTableViewModel *)createModelWithIndex:(NSInteger)index
                                           title:(NSString *)title
                                     methodBlock:(NSString *(^)(void))methodBlock {
     Class class = [self createTableModelClass];
-    __block TestProjectTableModel *m = [[class alloc] init];
+    __block TestProjectTableViewModel *m = [[class alloc] init];
     m.isChild = YES;
     m.title = [NSString stringWithFormat:@"%@\n点击后获取的描述信息:\n", title];
     if ([m needAutoCalculViewHeight]) {
@@ -249,7 +249,7 @@
             [wm calculDataViewHeight];
         }
         NSInteger atIndex = wSelf.tableView.dataSourceArray.count - index -1;
-        TestProjectTableModel *vm = [wSelf.tableView.dataSourceArray objectAtIndex:atIndex];
+        TestProjectTableViewModel *vm = [wSelf.tableView.dataSourceArray objectAtIndex:atIndex];
         if ([vm needAutoCalculViewHeight]) {
             [vm calculDataViewHeight];
         }
@@ -268,7 +268,7 @@
     return self.dataMutArr;
 }
 
-- (TestProjectTableModel *)createModelWithIndex:(NSInteger)index
+- (TestProjectTableViewModel *)createModelWithIndex:(NSInteger)index
                                           title:(NSString *)title
                                           block:(void(^)(void))block {
     return [self createModelWithIndex:index
@@ -286,11 +286,11 @@
                                            block:block];
 }
 
-- (TestProjectTableModel *)createModelWithIndex:(NSInteger)index
+- (TestProjectTableViewModel *)createModelWithIndex:(NSInteger)index
                                  attributeTitle:(NSAttributedString *)attributeTitle
                                           block:(void (^)(void))block {
     Class class = [self createTableModelClass];
-    TestProjectTableModel *m = [[class alloc] init];
+    TestProjectTableViewModel *m = [[class alloc] init];
     m.titleMutAttrStr = [[NSMutableAttributedString alloc] initWithAttributedString:attributeTitle];
     m.isChild = YES;
     if (block) {
@@ -312,12 +312,12 @@
     return self.dataMutArr;
 }
 
-- (TestProjectTableModel *)createModelWithIndex:(NSInteger)index
+- (TestProjectTableViewModel *)createModelWithIndex:(NSInteger)index
                                           title:(NSString *)title
                                   modelKeyValue:(NSDictionary *)modelKeyValue
                                           block:(void(^)(void))block {
     Class class = [self createTableModelClass];
-    TestProjectTableModel *m = [[class alloc] init];
+    TestProjectTableViewModel *m = [[class alloc] init];
     m.title = title;
     m.isChild = YES;
     if (modelKeyValue) {
@@ -351,7 +351,7 @@
 
 
 
-- (TestProjectTableModel *)createClickSetTableModelWithProperty:(NSString *)property value:(id)value {
+- (TestProjectTableViewModel *)createClickSetTableModelWithProperty:(NSString *)property value:(id)value {
     return [self createClickSetTableModelWithProperty:property value:value block:nil];
 }
 
@@ -360,7 +360,7 @@
     return self.dataMutArr;
 }
 
-- (TestProjectTableModel *)createClickSetTableModelWithProperty:(NSString *)property value:(id)value block:(nullable void (^)(void))block {
+- (TestProjectTableViewModel *)createClickSetTableModelWithProperty:(NSString *)property value:(id)value block:(nullable void (^)(void))block {
     return [self createClickSetTableModelWithProperty:property value:value before:NO block:block];
 }
 
@@ -369,9 +369,9 @@
     return self.dataMutArr;
 }
 
-- (TestProjectTableModel *)createClickSetTableModelWithProperty:(NSString *)property value:(id)value before:(BOOL)before block:(nullable void (^)(void))block {
+- (TestProjectTableViewModel *)createClickSetTableModelWithProperty:(NSString *)property value:(id)value before:(BOOL)before block:(nullable void (^)(void))block {
     Class class = [self createTableModelClass];
-    TestProjectTableModel *m = [[class alloc] init];
+    TestProjectTableViewModel *m = [[class alloc] init];
     id object = [self setPropertyValueObject];
     if (before) {
         m.abstract = [NSString stringWithFormat:@"获取的属性值(%@)为：\n%@", property, [object valueForKey:property]];;
@@ -397,9 +397,9 @@
     return m;
 }
 
-- (TestProjectTableModel *)createClickSetTableModelWithProperty:(NSString *)property value:(id)value title:(NSString *)title block:(void(^)(void))block {
+- (TestProjectTableViewModel *)createClickSetTableModelWithProperty:(NSString *)property value:(id)value title:(NSString *)title block:(void(^)(void))block {
     Class class = [self createTableModelClass];
-    TestProjectTableModel *m = [[class alloc] init];
+    TestProjectTableViewModel *m = [[class alloc] init];
     m.title = title;
     m.isChild = YES;
     WS(wSelf);
@@ -422,9 +422,9 @@
     return m;
 }
 
-- (TestProjectTableModel *)createTableModelWithTitle:(NSString *)title block:(void(^)(void))block {
+- (TestProjectTableViewModel *)createTableModelWithTitle:(NSString *)title block:(void(^)(void))block {
     Class class = [self createTableModelClass];
-    TestProjectTableModel *m = [[class alloc] init];
+    TestProjectTableViewModel *m = [[class alloc] init];
     m.title = title;
     m.isChild = YES;
     if (block) {
@@ -444,9 +444,9 @@
     return self.dataMutArr;
 }
 
-- (TestProjectTableModel *)createTableModelWithProperty:(NSString *)property value:(id)value {
+- (TestProjectTableViewModel *)createTableModelWithProperty:(NSString *)property value:(id)value {
     Class class = [self createTableModelClass];
-    TestProjectTableModel *m = [[class alloc] init];
+    TestProjectTableViewModel *m = [[class alloc] init];
     m.isChild = YES;
     id object = [self setPropertyValueObject];
 
@@ -472,7 +472,7 @@
 
 - (NSMutableArray *)createTableModelSingleArrayWithProperty:(NSString *)property index:(NSInteger)index before:(BOOL)before {
     Class class = [self createTableModelClass];
-    __block TestProjectTableModel *m = [[class alloc] init];
+    __block TestProjectTableViewModel *m = [[class alloc] init];
     m.isChild = YES;
     m.title = [NSString stringWithFormat:@"点击后获取的属性值(%@)为：\n", property];
     if (before) {
@@ -491,7 +491,7 @@
             [wObjc calculDataViewHeight];
         }
         NSInteger atIndex = wSelf.tableView.dataSourceArray.count - index -1;
-        TestProjectTableModel *vm = [wSelf.tableView.dataSourceArray objectAtIndex:atIndex];
+        TestProjectTableViewModel *vm = [wSelf.tableView.dataSourceArray objectAtIndex:atIndex];
         if ([vm needAutoCalculViewHeight]) {
             [vm calculDataViewHeight];
         }
@@ -506,9 +506,9 @@
     return self.dataMutArr;
 }
 
-- (TestProjectTableModel *)createTableModelWithMethodBlock:(NSString *(^)(void))methodBlock title:(NSString *)title index:(NSInteger)index {
+- (TestProjectTableViewModel *)createTableModelWithMethodBlock:(NSString *(^)(void))methodBlock title:(NSString *)title index:(NSInteger)index {
     Class class = [self createTableModelClass];
-    __block TestProjectTableModel *m = [[class alloc] init];
+    __block TestProjectTableViewModel *m = [[class alloc] init];
     m.isChild = YES;
     m.title = [NSString stringWithFormat:@"%@\n点击后获取的描述信息:\n", title];
     if ([m needAutoCalculViewHeight]) {
@@ -526,7 +526,7 @@
             [wObjc calculDataViewHeight];
         }
         NSInteger atIndex = wSelf.tableView.dataSourceArray.count - index -1;
-        TestProjectTableModel *vm = [wSelf.tableView.dataSourceArray objectAtIndex:atIndex];
+        TestProjectTableViewModel *vm = [wSelf.tableView.dataSourceArray objectAtIndex:atIndex];
         if ([vm needAutoCalculViewHeight]) {
             [vm calculDataViewHeight];
         }
@@ -541,9 +541,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:selector name:name object:nil];
 }
 
-- (TestProjectBaseTableView *)tableView {
+- (TestProjectViewModelTableView *)tableView {
     if (!_tableView) {
-        _tableView = [[TestProjectBaseTableView alloc] initWithFrame:CGRectZero
+        _tableView = [[TestProjectViewModelTableView alloc] initWithFrame:CGRectZero
                                                                style:UITableViewStyleGrouped
                                                             delegate:self.delegate
                                                           dataSource:self.dataSource];
