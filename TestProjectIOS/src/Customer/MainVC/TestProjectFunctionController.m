@@ -7,11 +7,11 @@
 
 #import "TestProjectFunctionController.h"
 
-#import "TestProjectViewTable.h"
+#import "TestProjectTableViewView.h"
 
 @interface TestProjectFunctionController ()
 
-@property (nonatomic, strong) TestProjectViewTable *viewTable;
+@property (nonatomic, strong) TestProjectTableViewView *viewTable;
 
 @end
 
@@ -32,9 +32,9 @@
     [self.viewTable.tableView reloadData];
 }
 
-- (TestProjectViewTable *)viewTable {
+- (TestProjectTableViewView *)viewTable {
     if (!_viewTable) {
-        _viewTable = [TestProjectViewTable initCreateByViewModel];
+        _viewTable = [TestProjectTableViewView initCreateByViewModel];
         [self.view addSubview:_viewTable];
         [_viewTable testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
             make.top.bottom.leading.trainling.equal(self.view);

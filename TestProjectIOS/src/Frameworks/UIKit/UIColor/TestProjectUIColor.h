@@ -7,11 +7,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "TestProjectViewTable.h"
+#import "TestProjectTableViewView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TestProjectUIColor : TestProjectViewTable
+@interface TestProjectUIColor : TestProjectTableViewView
 
 @end
 

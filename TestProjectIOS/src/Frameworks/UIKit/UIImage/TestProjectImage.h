@@ -5,11 +5,11 @@
 //  Created by zjrcumac on 2023/10/25.
 //
 
-#import "TestProjectViewTable.h"
+#import "TestProjectTableViewView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TestProjectImage : TestProjectViewTable
+@interface TestProjectImage : TestProjectTableViewView
 
 @end
 

@@ -51,7 +51,7 @@
             },
             @{
                 @"title": @"UIImage\n(还有其它的)",
-                @"viewKey": @"TestProjectCollectionViewLayout",
+                @"viewKey": @"TestProjectUICollectionViewLayout",
             },
         ]
     };
@@ -61,7 +61,7 @@
     return @{
         @"title": @"UIBezierPath",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectBezierPath",
+        @"viewKey": @"TestProjectUIBezierPath",
     };
 }
 
@@ -69,7 +69,7 @@
     return @{
         @"title": @"UICollectionViewController",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectCollectionViewController",
+        @"viewKey": @"TestProjectUICollectionViewController",
     };
 }
 
@@ -80,11 +80,11 @@
         @"itemChilds": @[
             @{
                 @"title": @"UICollectionViewLayout",
-                @"viewKey": @"TestProjectCollectionViewLayout",
+                @"viewKey": @"TestProjectUICollectionViewLayout",
             },
             @{
                 @"title": @"UICollectionViewLayout\n(还有其它的)",
-                @"viewKey": @"TestProjectCollectionViewLayout",
+                @"viewKey": @"TestProjectUICollectionViewLayout",
             },
         ]
     };
@@ -97,11 +97,11 @@
         @"itemChilds": @[
             @{
                 @"title": @"UICollectionViewFlowLayout",
-                @"viewKey": @"TestProjectCollectionViewFlowLayout",
+                @"viewKey": @"TestProjectUICollectionViewFlowLayout",
             },
             @{
                 @"title": @"UICollectionViewFlowLayout\n(还有其它的)",
-                @"viewKey": @"TestProjectCollectionViewFlowLayout",
+                @"viewKey": @"TestProjectUICollectionViewFlowLayout",
             },
         ]
     };
@@ -114,15 +114,15 @@
         @"itemChilds": @[
             @{
                 @"title": @"UICollectionView\n(UICollectionViewDelegate)",
-                @"viewKey": @"TestProjectCollectionViewDelegate",
+                @"viewKey": @"TestProjectUICollectionViewDelegate",
             },
             @{
                 @"title": @"UICollectionView\n(UICollectionViewDataSource)",
-                @"viewKey": @"TestProjectCollectionViewDataSource",
+                @"viewKey": @"TestProjectUICollectionViewDataSource",
             },
             @{
                 @"title": @"UICollectionView",
-                @"viewKey": @"TestProjectCollectionView",
+                @"viewKey": @"TestProjectUICollectionView",
             },
         ]
     };
@@ -135,11 +135,11 @@
         @"itemChilds": @[
             @{
                 @"title": @"UIScrollView\n(UIScrollViewDelegate)",
-                @"viewKey": @"TestProjectScrollViewDelegate",
+                @"viewKey": @"TestProjectUIScrollViewDelegate",
             },
             @{
                 @"title": @"UIScrollView",
-                @"viewKey": @"TestProjectScrollView",
+                @"viewKey": @"TestProjectUIScrollView",
             },
         ]
     };
@@ -149,7 +149,7 @@
     return @{
         @"title": @"UICloudSharingController",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectCloudSharingController",
+        @"viewKey": @"TestProjectUICloudSharingController",
     };
 }
 
@@ -164,7 +164,7 @@
 //            },
             @{
                 @"title": @"UITextField",
-                @"viewKey": @"TestProjectTextField",
+                @"viewKey": @"TestProjectUITextField",
             },
         ]
     };
@@ -174,7 +174,7 @@
     return @{
         @"title": @"UIStepper",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectStepper",
+        @"viewKey": @"TestProjectUIStepper",
     };
 }
 
@@ -182,7 +182,7 @@
     return @{
         @"title": @"UISlider",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectSlider",
+        @"viewKey": @"TestProjectUISlider",
     };
 }
 
@@ -190,7 +190,7 @@
     return @{
         @"title": @"UIProgressView",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectProgressView",
+        @"viewKey": @"TestProjectUIProgressView",
     };
 }
 
@@ -198,7 +198,7 @@
     return @{
         @"title": @"UISwitch",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectSwitch",
+        @"viewKey": @"TestProjectUISwitch",
     };
 }
 
@@ -206,7 +206,7 @@
     return @{
         @"title": @"UILabel",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectLabel",
+        @"viewKey": @"TestProjectUILabel",
     };
 }
 
@@ -221,7 +221,7 @@
             },
             @{
                 @"title": @"UIGeometry",
-                @"viewKey": @"TestProjectGeometry",
+                @"viewKey": @"TestProjectUIGeometry",
             },
         ]
     };
@@ -231,7 +231,7 @@
     return @{
         @"title": @"UIDevice",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectDevice",
+        @"viewKey": @"TestProjectUIDevice",
     };
 }
 
@@ -239,7 +239,7 @@
     return @{
         @"title": @"UIDatePicker",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectDatePicker",
+        @"viewKey": @"TestProjectUIDatePicker",
     };
 }
 
@@ -247,7 +247,7 @@
     return @{
         @"title": @"UIColorWell",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectColorWell",
+        @"viewKey": @"TestProjectColorUIWell",
     };
 }
 
@@ -255,7 +255,7 @@
     return @{
         @"title": @"UIColorPickerViewController",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectColorPickerViewController",
+        @"viewKey": @"TestProjectUIColorPickerViewController",
     };
 }
 
@@ -263,7 +263,7 @@
     return @{
         @"title": @"UICalendarSelectionSingleDate",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectCalendarSelectionSingleDate",
+        @"viewKey": @"TestProjectUICalendarSelectionSingleDate",
     };
 }
 
@@ -271,7 +271,7 @@
     return @{
         @"title": @"UICalendarSelectionMultiDate",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectCalendarSelectionMultiDate",
+        @"viewKey": @"TestProjectUICalendarSelectionMultiDate",
     };
 }
 
@@ -279,7 +279,7 @@
     return @{
         @"title": @"UICalendarView",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectCalendarView",
+        @"viewKey": @"TestProjectUICalendarView",
     };
 }
 
@@ -287,7 +287,7 @@
     return @{
         @"title": @"UIButton",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectButton",
+        @"viewKey": @"TestProjectUIButton",
     };
 }
 
@@ -298,11 +298,11 @@
         @"itemChilds": @[
             @{
                 @"title": @"UIControl",
-                @"viewKey": @"TestProjectControl",
+                @"viewKey": @"TestProjectUIControl",
             },
             @{
                 @"title": @"UIControl\n(还有其它的)",
-                @"viewKey": @"TestProjectControl",
+                @"viewKey": @"TestProjectUIControl",
             },
         ]
     };
@@ -315,31 +315,31 @@
         @"itemChilds": @[
             @{
                 @"title": @"UIView\n(UIContentSizeCategoryLimit)",
-                @"viewKey": @"TestProjectViewContentSizeCategoryLimit",
+                @"viewKey": @"TestProjectUIContentSizeCategoryLimit",
             },
             @{
                 @"title": @"UIView\n(UISnapshotting)",
-                @"viewKey": @"TestProjectViewSnapshotting",
+                @"viewKey": @"TestProjectUISnapshotting",
             },
             @{
                 @"title": @"UIView\n(UIViewKeyframeAnimations)",
-                @"viewKey": @"TestProjectViewViewKeyframeAnimations",
+                @"viewKey": @"TestProjectUIViewKeyframeAnimations",
             },
             @{
                 @"title": @"UIView\n(UIViewAnimationWithBlocks)",
-                @"viewKey": @"TestProjectViewViewAnimationWithBlocks",
+                @"viewKey": @"TestProjectUIViewAnimationWithBlocks",
             },
             @{
                 @"title": @"UIView\n(UIViewRendering)",
-                @"viewKey": @"TestProjectViewViewRendering",
+                @"viewKey": @"TestProjectUIViewRendering",
             },
             @{
                 @"title": @"UIView\n(UIViewHierarchy)",
-                @"viewKey": @"TestProjectViewViewHierarchy",
+                @"viewKey": @"TestProjectUIViewHierarchy",
             },
             @{
                 @"title": @"UIView\n(UIViewViewGeometry)",
-                @"viewKey": @"TestProjectViewViewGeometry",
+                @"viewKey": @"TestProjectUIViewViewGeometry",
             },
             @{
                 @"title": @"UIView",
@@ -360,11 +360,11 @@
         @"itemChilds": @[
             @{
                 @"title": @"UIResponder",
-                @"viewKey": @"TestProjectResponder",
+                @"viewKey": @"TestProjectUIResponder",
             },
             @{
                 @"title": @"UIResponder\n(还有其它的)",
-                @"viewKey": @"TestProjectResponder",
+                @"viewKey": @"TestProjectUIResponder",
             },
         ]
     };
@@ -374,7 +374,7 @@
     return @{
         @"title": @"UIBarButtonItem",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectBarButtonItem",
+        @"viewKey": @"TestProjectUIBarButtonItem",
     };
 }
 
@@ -382,7 +382,7 @@
     return @{
         @"title": @"UINavigationItem",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectNavigationItem",
+        @"viewKey": @"TestProjectUINavigationItem",
     };
 }
 
@@ -390,7 +390,7 @@
     return @{
         @"title": @"UINavigationBarAppearance",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectNavigationBarAppearance",
+        @"viewKey": @"TestProjectUINavigationBarAppearance",
     };
 }
 
@@ -398,7 +398,7 @@
     return @{
         @"title": @"UIBarAppearance",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectBarAppearance",
+        @"viewKey": @"TestProjectUIBarAppearance",
     };
 }
 
@@ -406,7 +406,7 @@
     return @{
         @"title": @"UINavigationBar",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectNavigationBar",
+        @"viewKey": @"TestProjectUINavigationBar",
     };
 }
 
@@ -417,15 +417,15 @@
         @"itemChilds": @[
             @{
                 @"title": @"UIViewController\n(UINavigationControllerItem)",
-                @"viewKey": @"TestProjectViewControllerNavigationControllerItem",
+                @"viewKey": @"TestProjectUINavigationControllerItem",
             },
             @{
                 @"title": @"UINavigationController",
-                @"viewKey": @"TestProjectNavigationController",
+                @"viewKey": @"TestProjectUINavigationController",
             },
             @{
                 @"title": @"UINavigationController\n(还有其它的)",
-                @"viewKey": @"TestProjectNavigationController",
+                @"viewKey": @"TestProjectUINavigationController",
             },
         ]
     };
@@ -438,11 +438,11 @@
         @"itemChilds": @[
             @{
                 @"title": @"UIViewController",
-                @"viewKey": @"TestProjectViewController",
+                @"viewKey": @"TestProjectUIViewController",
             },
             @{
                 @"title": @"UIViewController\n(还有其它的)",
-                @"viewKey": @"TestProjectViewController",
+                @"viewKey": @"TestProjectUIViewController",
             },
         ]
     };
@@ -452,7 +452,7 @@
     return @{
         @"title": @"UIAppearance",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectAppearance",
+        @"viewKey": @"TestProjectUIAppearance",
     };
 }
 
@@ -460,7 +460,7 @@
     return @{
         @"title": @"UIAlertController",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectAlertController",
+        @"viewKey": @"TestProjectUIAlertController",
     };
 }
 
@@ -468,7 +468,7 @@
     return @{
         @"title": @"UIActivityIndicatorView",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectActivityIndicatorView",
+        @"viewKey": @"TestProjectUIActivityIndicatorView",
     };
 }
 
@@ -476,7 +476,7 @@
     return @{
         @"title": @"NSDataAsset",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectDataAsset",
+        @"viewKey": @"TestProjectNSDataAsset",
     };
 }
 
@@ -484,7 +484,7 @@
     return @{
         @"title": @"NSShadow",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectShadow",
+        @"viewKey": @"TestProjectNSShadow",
     };
 }
 
@@ -492,7 +492,7 @@
     return @{
         @"title": @"NSParagraphStyle",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectMutableParagraphStyle",
+        @"viewKey": @"TestProjectNSMutableParagraphStyle",
     };
 }
 
@@ -503,11 +503,11 @@
         @"itemChilds": @[
             @{
                 @"title": @"NSTextAttachment",
-                @"viewKey": @"TestProjectTextAttachment",
+                @"viewKey": @"TestProjectNSTextAttachment",
             },
             @{
                 @"title": @"NSTextAttachment\n(还有其它的)",
-                @"viewKey": @"TestProjectTextAttachment",
+                @"viewKey": @"TestProjectNSTextAttachment",
             },
         ]
     };
@@ -520,19 +520,19 @@
         @"itemChilds": @[
             @{
                 @"title": @"NSAttributedString\n(NSAttributedStringDocumentFormats)",
-                @"viewKey": @"TestProjectAttributedStringDocumentFormats",
+                @"viewKey": @"TestProjectNSAttributedStringDocumentFormats",
             },
             @{
                 @"title": @"NSMutableAttributedString\n(NSAttributedStringAttributeFixing)",
-                @"viewKey": @"TestProjectMutableAttributedStringAttributeFixing",
+                @"viewKey": @"TestProjectNSAttributedStringAttributeFixing",
             },
             @{
                 @"title": @"NSAttributedString",
-                @"viewKey": @"TestProjectAttributeStringKit",
+                @"viewKey": @"TestProjectNSAttributeStringKit",
             },
             @{
                 @"title": @"NSAttributedString\n(还有其它的)",
-                @"viewKey": @"TestProjectAttributeStringKit",
+                @"viewKey": @"TestProjectNSAttributeStringKit",
             },
         ]
     };
@@ -542,7 +542,7 @@
     return @{
         @"title": @"UIFontPickerViewControllerConfiguration",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectFontPickerViewControllerConfiguration",
+        @"viewKey": @"TestProjectUIFontPickerViewControllerConfiguration",
     };
 }
 
@@ -550,7 +550,7 @@
     return @{
         @"title": @"UIFontPickerViewController",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectFontPickerViewController",
+        @"viewKey": @"TestProjectUIFontPickerViewController",
     };
 }
 
@@ -558,7 +558,7 @@
     return @{
         @"title": @"UIFontDescriptor",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectFontDescriptor",
+        @"viewKey": @"TestProjectUIFontDescriptor",
     };
 }
 
@@ -566,7 +566,7 @@
     return @{
         @"title": @"UIFont",
         @"atIndex": @0,
-        @"viewKey": @"TestProjectFont",
+        @"viewKey": @"TestProjectUIFont",
     };
 }
 

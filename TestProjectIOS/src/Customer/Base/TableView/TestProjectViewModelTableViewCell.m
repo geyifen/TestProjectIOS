@@ -9,7 +9,7 @@
 
 #import "TestProjectCategoryHeader.h"
 #import "TestProjectViewModelProtocol.h"
-#import "TestProjectViewTable.h"
+#import "TestProjectTableViewView.h"
 
 @interface TestProjectViewModelTableViewCell ()
 
@@ -21,7 +21,7 @@
 @property (nonatomic, strong) UIButton *titleExpandBtn;
 @property (nonatomic, strong) UIButton *descExpandBtn;
 @property (nonatomic, strong) UIButton *compareBtn;
-@property (nonatomic, strong) TestProjectViewTable *dataModelView;
+@property (nonatomic, strong) TestProjectTableViewView *dataModelView;
 @property (nonatomic, strong) TestProjectTableViewModel *dataModel;
 @property (nonatomic, strong) UILabel *canClickLabel;
 
@@ -159,9 +159,9 @@
     return _titleLabel;
 }
 
-- (TestProjectViewTable *)dataModelView {
+- (TestProjectTableViewView *)dataModelView {
     if (!_dataModelView) {
-        _dataModelView = [TestProjectViewTable initCreateByViewModel];
+        _dataModelView = [TestProjectTableViewView initCreateByViewModel];
         _dataModelView.layer.borderWidth = 0.5;
         _dataModelView.layer.borderColor = [UIColor redColor].CGColor;
 //        _dataModelView.delegate = self;

@@ -5,11 +5,11 @@
 //  Created by liwenfan on 2023/6/27.
 //
 
-#import "TestProjectViewTable.h"
+#import "TestProjectTableViewView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TestProjectValueUIGeometryExtensions : TestProjectViewTable
+@interface TestProjectValueUIGeometryExtensions : TestProjectTableViewView
 
 @end
 

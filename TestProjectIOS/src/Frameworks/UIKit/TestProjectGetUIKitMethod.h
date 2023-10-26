@@ -7,7 +7,7 @@
 
 #import "TestProjectGetImplementationMethod.h"
 
-#import "TestProjectNavigationController.h"
+#import "TestProjectUINavigationController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

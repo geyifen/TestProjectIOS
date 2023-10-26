@@ -9,7 +9,8 @@
 
 #import "TestProjectNestScrollTabController.h"
 #import "TestProjectGetUIKitMethod.h"
-#import "TestProjectGetFoundationImplementationMethod.h"
+#import "TestProjectGetFoundationMethod.h"
+#import "TestProjectGetCoreGraphicsMethod.h"
 
 #import <YYModel/YYModel.h>
 
@@ -53,7 +54,8 @@
         @"atIndex": @0,
         @"itemChilds": @[
             [TestProjectGetUIKitMethod getImplementationProject],
-            [TestProjectGetFoundationImplementationMethod getImplementationProject],
+            [TestProjectGetFoundationMethod getImplementationProject],
+            [TestProjectGetCoreGraphicsMethod getImplementationProject],
         ]
     };
 }

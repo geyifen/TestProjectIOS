@@ -5,7 +5,7 @@
 //  Created by liwenfan on 2023/3/31.
 //
 
-#import "TestProjectViewController.h"
+#import "TestProjectUIViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface TestProjectUIView : TestProjectViewController
+@interface TestProjectUIView : TestProjectUIViewController
 
 @property (nonatomic, strong) TestProjectUIChildView *childView;
 @property (nonatomic, strong) UILabel *grandChildView;

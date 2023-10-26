@@ -7,7 +7,7 @@
 
 #import "TestProjectWaterfallLayoutVC.h"
 
-#import "TestProjectCollectionCell.h"
+#import "TestProjectUICollectionCell.h"
 #import "TestProjectCollectionViewCustomLayout.h"
 #import "UIView+TestProject_Constrain.h"
 
@@ -94,7 +94,7 @@
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-    TestProjectCollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"TestProjectCollectionReusableView" forIndexPath:indexPath];
+    TestProjectUICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"TestProjectUICollectionReusableView" forIndexPath:indexPath];
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         [view setTitle:self.headerSectionArray[indexPath.section]];
     } else {
@@ -112,7 +112,7 @@
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    TestProjectCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TestProjectCollectionCell" forIndexPath:indexPath];
+    TestProjectUICollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TestProjectUICollectionCell" forIndexPath:indexPath];
     [cell setTitle:self.itemCountArray[indexPath.section][indexPath.item]];
     return cell;
 }
@@ -154,9 +154,9 @@
         [self.layout invalidateLayoutWithContext:context];
         
         
-        [_collectionView registerClass:TestProjectCollectionCell.class forCellWithReuseIdentifier:@"TestProjectCollectionCell"];
-        [_collectionView registerClass:TestProjectCollectionReusableView.class forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"TestProjectCollectionReusableView"];
-        [_collectionView registerClass:TestProjectCollectionReusableView.class forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"TestProjectCollectionReusableView"];
+        [_collectionView registerClass:TestProjectUICollectionCell.class forCellWithReuseIdentifier:@"TestProjectUICollectionCell"];
+        [_collectionView registerClass:TestProjectUICollectionReusableView.class forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"TestProjectUICollectionReusableView"];
+        [_collectionView registerClass:TestProjectUICollectionReusableView.class forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"TestProjectUICollectionReusableView"];
         [self.view addSubview:_collectionView];
         [_collectionView testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
             make.top.leading.trainling.equal(self.view);
@@ -184,9 +184,9 @@
         _bottomCollectionView.delegate = self;
         _bottomCollectionView.dataSource = self;
         
-        [_bottomCollectionView registerClass:TestProjectCollectionCell.class forCellWithReuseIdentifier:@"TestProjectCollectionCell"];
-        [_bottomCollectionView registerClass:TestProjectCollectionReusableView.class forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"TestProjectCollectionReusableView"];
-        [_bottomCollectionView registerClass:TestProjectCollectionReusableView.class forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"TestProjectCollectionReusableView"];
+        [_bottomCollectionView registerClass:TestProjectUICollectionCell.class forCellWithReuseIdentifier:@"TestProjectUICollectionCell"];
+        [_bottomCollectionView registerClass:TestProjectUICollectionReusableView.class forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"TestProjectUICollectionReusableView"];
+        [_bottomCollectionView registerClass:TestProjectUICollectionReusableView.class forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"TestProjectUICollectionReusableView"];
         [self.view addSubview:_bottomCollectionView];
         [_bottomCollectionView testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
             make.leading.trainling.equal(self.view);

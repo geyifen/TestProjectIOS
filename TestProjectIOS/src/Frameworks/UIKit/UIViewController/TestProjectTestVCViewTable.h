@@ -5,13 +5,13 @@
 //  Created by liwenfan on 2023/5/4.
 //
 
-#import "TestProjectViewTable.h"
+#import "TestProjectTableViewView.h"
 
 #import "TestProjectTestVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TestProjectTestVCViewTable : TestProjectViewTable
+@interface TestProjectTestVCViewTable : TestProjectTableViewView
 
 @property (nonatomic, weak) TestProjectTestVC *parentVC;
 @property (nonatomic, strong) TestProjectTestVC *tVC;
