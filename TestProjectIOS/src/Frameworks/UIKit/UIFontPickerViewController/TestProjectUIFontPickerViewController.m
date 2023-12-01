@@ -38,7 +38,7 @@
     return _fontPickerVC;
 }
 
-- (id)setPropertyValueObject {
+- (id)setPropertyValueObject:(TestProjectTableViewParams *)params {
     return self.fontPickerVC;
 }
 
@@ -51,67 +51,67 @@
     NSLog(@"%@ selectedFontDescriptor:%@", NSStringFromSelector(_cmd), viewController.selectedFontDescriptor);
 }
 
-- (NSDictionary *)method_1:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取TestProjectFontPickerViewController的属性configuration",
-            @"title": @"@property (readonly, copy, nonatomic) UIFontPickerViewControllerConfiguration *configuration;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectFontPickerViewController_property_configuration:index],
-            }
-        },
-    };
+- (NSMutableArray *)TestProjectFontPickerViewController_property_selectedFontDescriptor:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"selectedFontDescriptor"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSDictionary *)method_2:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取TestProjectFontPickerViewController的属性delegate",
-            @"title": @"@property (nullable, weak, nonatomic) id<UIFontPickerViewControllerDelegate> delegate;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectFontPickerViewController_property_delegate:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_3:(NSInteger)index {
+- (NSDictionary *)method_3:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
             @"abstract": @"获取TestProjectFontPickerViewController的属性selectedFontDescriptor",
             @"title": @"@property (nullable, strong, nonatomic) UIFontDescriptor *selectedFontDescriptor;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectFontPickerViewController_property_selectedFontDescriptor:index],
+                @"childItems": [self TestProjectFontPickerViewController_property_selectedFontDescriptor:params],
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectFontPickerViewController_property_selectedFontDescriptor:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"selectedFontDescriptor"
-                                           value:nil
-                                       operation:TestProjectCreateModelGetBeforeClickGet
-                                           block:nil];
+- (NSMutableArray *)TestProjectFontPickerViewController_property_delegate:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"delegate"
+                                            value:nil
+                                        operation:TestProjectCreateModelOnlyGet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectFontPickerViewController_property_delegate:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"delegate"
-                                           value:nil
-                                       operation:TestProjectCreateModelOnlyGet
-                                           block:nil];
+- (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取TestProjectFontPickerViewController的属性delegate",
+            @"title": @"@property (nullable, weak, nonatomic) id<UIFontPickerViewControllerDelegate> delegate;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectFontPickerViewController_property_delegate:params],
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectFontPickerViewController_property_configuration:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"configuration"
-                                           value:nil
-                                       operation:TestProjectCreateModelOnlyGet
-                                           block:nil];
+- (NSMutableArray *)TestProjectFontPickerViewController_property_configuration:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"configuration"
+                                            value:nil
+                                        operation:TestProjectCreateModelOnlyGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取TestProjectFontPickerViewController的属性configuration",
+            @"title": @"@property (readonly, copy, nonatomic) UIFontPickerViewControllerConfiguration *configuration;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectFontPickerViewController_property_configuration:params],
+            }
+        },
+    };
 }
 
 @end

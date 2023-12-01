@@ -9,21 +9,19 @@
 
 @implementation TestProjectUIViewKeyframeAnimations
 
-- (NSDictionary *)method_1 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"UIView执行动画",
-            @"title": @"+ (void)animateKeyframesWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay options:(UIViewKeyframeAnimationOptions)options animations:(void (^)(void))animations completion:(void (^ __nullable)(BOOL finished))completion API_AVAILABLE(ios(7.0));",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"@param duration: 动画执行的时间\n@param delay: 动画延迟执行的时间\n@param options: 动画执行的效果\n@param animations: 动画执行的动作变化\n@param completion: 动画执行完后的回调",
-            @"dataModel": @{
-                @"childItems": [self TestProjectViewViewKeyframeAnimations_animateKeyframesWithDuration_delay_options_animations_completion],
-            }
-        },
-    };
+- (NSMutableArray *)TestProjectViewViewKeyframeAnimations_addKeyframeWithRelativeStartTime_relativeDuration_animations:(TestProjectTableViewParams *)params {
+    CGRect rect = self.childView.frame;
+    rect.origin.x = 100;
+    WS(wSelf);
+    [self createModelWithParams:params title:@"addKeyframeWithRelativeStartTime_relativeDuration_animations" block:^{
+        [UIView addKeyframeWithRelativeStartTime:3 relativeDuration:5 animations:^{
+            wSelf.childView.frame = rect;
+        }];
+    }];
+    return self.dataMutArr;
 }
 
-- (NSDictionary *)method_2 {
+- (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
             @"abstract": @"UIView执行动画",
@@ -31,22 +29,10 @@
             @"isDataModelExpand": @(YES),
             @"desc": @"@param duration: 动画执行的时间\n@param delay: 动画延迟执行的时间\n@param options: 动画执行的效果\n@param animations: 动画执行的动作变化\n@param completion: 动画执行完后的回调",
             @"dataModel": @{
-                @"childItems": [self TestProjectViewViewKeyframeAnimations_addKeyframeWithRelativeStartTime_relativeDuration_animations],
+                @"childItems": [self TestProjectViewViewKeyframeAnimations_addKeyframeWithRelativeStartTime_relativeDuration_animations:params],
             }
         },
     };
-}
-
-- (NSMutableArray *)TestProjectViewViewKeyframeAnimations_addKeyframeWithRelativeStartTime_relativeDuration_animations {
-    CGRect rect = self.childView.frame;
-    rect.origin.x = 100;
-    WS(wSelf);
-    [self createTableModelWithTitle:@"addKeyframeWithRelativeStartTime_relativeDuration_animations" block:^{
-        [UIView addKeyframeWithRelativeStartTime:3 relativeDuration:5 animations:^{
-            wSelf.childView.frame = rect;
-        }];
-    }];
-    return self.dataMutArr;
 }
 
 //typedef NS_OPTIONS(NSUInteger, UIViewKeyframeAnimationOptions) {
@@ -65,7 +51,7 @@
 //    UIViewKeyframeAnimationOptionCalculationModeCubicPaced = 4 << 10
 //} API_AVAILABLE(ios(7.0));
 
-- (NSMutableArray *)TestProjectViewViewKeyframeAnimations_animateKeyframesWithDuration_delay_options_animations_completion {
+- (NSMutableArray *)TestProjectViewViewKeyframeAnimations_animateKeyframesWithDuration_delay_options_animations_completion:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": [NSString stringWithFormat:@"设置的是UIViewKeyframeAnimationOptionLayoutSubviews(%ld)", UIViewKeyframeAnimationOptionLayoutSubviews],
@@ -124,7 +110,7 @@
         i++;
         rect.origin.x = i * 10;
         WS(wSelf);
-        [self createTableModelWithTitle:title block:^{
+        [self createModelWithParams:params title:title block:^{
             [UIView animateKeyframesWithDuration:5 delay:1 options:options animations:^{
                 wSelf.childView.frame = rect;
             } completion:^(BOOL finished) {
@@ -133,6 +119,20 @@
         }];
     }
     return self.dataMutArr;
+}
+
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"UIView执行动画",
+            @"title": @"+ (void)animateKeyframesWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay options:(UIViewKeyframeAnimationOptions)options animations:(void (^)(void))animations completion:(void (^ __nullable)(BOOL finished))completion API_AVAILABLE(ios(7.0));",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"@param duration: 动画执行的时间\n@param delay: 动画延迟执行的时间\n@param options: 动画执行的效果\n@param animations: 动画执行的动作变化\n@param completion: 动画执行完后的回调",
+            @"dataModel": @{
+                @"childItems": [self TestProjectViewViewKeyframeAnimations_animateKeyframesWithDuration_delay_options_animations_completion:params],
+            }
+        },
+    };
 }
 
 @end

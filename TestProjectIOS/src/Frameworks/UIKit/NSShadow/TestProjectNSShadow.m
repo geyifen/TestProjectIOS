@@ -9,48 +9,6 @@
 
 @implementation TestProjectNSShadow
 
-- (NSDictionary *)method_1 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置或者获取NSShadow的属性shadowOffset(阴影偏移量) CGSize",
-            @"title": @"@property (nonatomic, assign) CGSize shadowOffset;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectShadow_property_shadowOffset],
-                @"compareViewModel": self.compareViewModel,
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_2 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置或者获取NSShadow的属性shadowBlurRadius(阴影扩散度) CGFloat \n 设置负数无效",
-            @"title": @"@property (nonatomic, assign) CGFloat shadowBlurRadius;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectShadow_property_shadowBlurRadius],
-                @"compareViewModel": self.compareViewModel,
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_3 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置或者获取NSShadow的属性shadowColor(阴影颜色) UIColor",
-            @"title": @"@property (nullable, nonatomic, strong) id shadowColor;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectShadow_property_shadowColor],
-                @"compareViewModel": self.compareViewModel,
-            }
-        },
-    };
-}
-
 - (void)createAttrStrModelWithShadowProperty:(NSString *)key value:(id)value {
     NSShadow *shadow = [[NSShadow alloc] init];
     if (key && value) {
@@ -74,12 +32,40 @@
     return self.dataMutArr;
 }
 
+- (NSDictionary *)method_3:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置或者获取NSShadow的属性shadowColor(阴影颜色) UIColor",
+            @"title": @"@property (nullable, nonatomic, strong) id shadowColor;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectShadow_property_shadowColor],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
+    };
+}
+
 - (NSMutableArray *)TestProjectShadow_property_shadowBlurRadius {
     NSArray *arr = @[@5, @-5];
     for (NSNumber *num in arr) {
         [self createAttrStrModelWithShadowProperty:@"shadowBlurRadius" value:num];
     }
     return self.dataMutArr;
+}
+
+- (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置或者获取NSShadow的属性shadowBlurRadius(阴影扩散度) CGFloat \n 设置负数无效",
+            @"title": @"@property (nonatomic, assign) CGFloat shadowBlurRadius;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectShadow_property_shadowBlurRadius],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
+    };
 }
 
 - (NSMutableArray *)TestProjectShadow_property_shadowOffset {
@@ -90,5 +76,18 @@
     return self.dataMutArr;
 }
 
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置或者获取NSShadow的属性shadowOffset(阴影偏移量) CGSize",
+            @"title": @"@property (nonatomic, assign) CGSize shadowOffset;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectShadow_property_shadowOffset],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
+    };
+}
 
 @end

@@ -101,208 +101,79 @@
     return _collectionView;
 }
 
-- (id)setPropertyValueObject {
+- (id)setPropertyValueObject:(TestProjectTableViewParams *)params {
     return self.layout;
 }
 
-- (NSDictionary *)method_1:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UICollectionViewFlowLayout的属性minimumLineSpacing，最小的行间距",
-            @"title": @"@property (nonatomic) CGFloat minimumInteritemSpacing;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewFlowLayout_property_minimumLineSpacing:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectCollectionViewFlowLayout_property_minimumLineSpacing:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"minimumLineSpacing"
-                                           value:@"20"
-                                       operation:TestProjectCreateModelGetBeforeClickSet
-                                           block:nil];
-}
-
-- (NSDictionary *)method_2:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UICollectionViewFlowLayout的属性minimumInteritemSpacing，最小的水平间距",
-            @"title": @"@property (nonatomic) CGFloat minimumInteritemSpacing;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewFlowLayout_property_minimumInteritemSpacing:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectCollectionViewFlowLayout_property_minimumInteritemSpacing:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"minimumInteritemSpacing"
-                                           value:@"50"
-                                       operation:TestProjectCreateModelGetBeforeClickSet
-                                           block:nil];
-}
-
-
-- (NSDictionary *)method_3:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UICollectionViewFlowLayout的属性itemSize，cell的size",
-            @"title": @"@property (nonatomic) CGSize itemSize;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewFlowLayout_property_itemSize:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectCollectionViewFlowLayout_property_itemSize:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"itemSize"
-                                           value:[NSValue valueWithCGSize:CGSizeMake(100, 20)]
-                                       operation:TestProjectCreateModelGetBeforeClickSet
-                                           block:nil];
-}
-
-- (NSDictionary *)method_4:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UICollectionViewFlowLayout的属性estimatedItemSize，预处理的cell的size",
-            @"title": @"@property (nonatomic) CGSize estimatedItemSize API_AVAILABLE(ios(8.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewFlowLayout_property_estimatedItemSize:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectCollectionViewFlowLayout_property_estimatedItemSize:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"estimatedItemSize"
-                                           value:[NSValue valueWithCGSize:CGSizeMake(100, 120)]
-                                       operation:TestProjectCreateModelGetBeforeClickSet
-                                           block:nil];
-}
-
-- (NSDictionary *)method_5:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UICollectionViewFlowLayout的属性scrollDirection，滚动的方向",
-            @"title": @"@property (nonatomic) UICollectionViewScrollDirection scrollDirection;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewFlowLayout_property_scrollDirection:index],
-            }
-        },
-    };
-}
-
-//typedef NS_ENUM(NSInteger, UICollectionViewScrollDirection) {
-//    UICollectionViewScrollDirectionVertical,
-//    UICollectionViewScrollDirectionHorizontal
-//};
-
-- (NSMutableArray *)TestProjectCollectionViewFlowLayout_property_scrollDirection:(NSInteger)index {
+- (NSMutableArray *)TestProjectCollectionViewFlowLayout_property_sectionFootersPinToVisibleBounds:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
-            @"title": [NSString stringWithFormat:@"设置的属性值是UICollectionViewScrollDirectionVertical(%ld)，垂直方向滚动", UICollectionViewScrollDirectionVertical],
-            @"value": @(UICollectionViewScrollDirectionVertical),
+            @"title": [NSString stringWithFormat:@"设置的属性值是YES, sectionFooter需要停留在UICollection页面上"],
+            @"value": @(YES),
         },
         @{
-            @"title": [NSString stringWithFormat:@"设置的属性值是UICollectionViewScrollDirectionHorizontal(%ld)，水平方向滚动", UICollectionViewScrollDirectionHorizontal],
-            @"value": @(UICollectionViewScrollDirectionHorizontal),
+            @"title": [NSString stringWithFormat:@"设置的属性值是NO, sectionFooter不需要停留在UICollection页面上"],
+            @"value": @(NO),
         },
     ];
     for (NSDictionary *dic in arr) {
         NSString *title = dic[@"title"];
         NSNumber *value = dic[@"value"];
-        [self createModelWithIndex:index
-                             title:title
-                          property:@"scrollDirection"
-                             value:value
-                         operation:TestProjectCreateModelGetBeforeClickSet
-                             block:nil];
+        [self createModelWithParams:params
+                              title:title
+                           property:@"sectionFootersPinToVisibleBounds"
+                              value:value
+                          operation:TestProjectCreateModelGetBeforeClickSet
+                              block:nil];
     }
     return self.dataMutArr;
 }
 
-- (NSDictionary *)method_6:(NSInteger)index {
+- (NSDictionary *)method_11:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"设置获取UICollectionViewFlowLayout的属性headerReferenceSize，headerSection的高度",
-            @"title": @"@property (nonatomic) CGSize headerReferenceSize;",
+            @"abstract": @"设置获取UICollectionViewFlowLayout的属性sectionFootersPinToVisibleBounds，sectionFooter需要停留在UICollection页面上",
+            @"title": @"@property (nonatomic) BOOL sectionFootersPinToVisibleBounds API_AVAILABLE(ios(9.0));",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewFlowLayout_property_headerReferenceSize:index],
+                @"childItems": [self TestProjectCollectionViewFlowLayout_property_sectionFootersPinToVisibleBounds:params],
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectCollectionViewFlowLayout_property_headerReferenceSize:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"headerReferenceSize"
-                                           value:[NSValue valueWithCGSize:CGSizeMake(0, 120)]
-                                       operation:TestProjectCreateModelGetBeforeClickSet
-                                           block:nil];
-}
-
-- (NSDictionary *)method_7:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UICollectionViewFlowLayout的属性footerReferenceSize，footerSection的高度",
-            @"title": @"@property (nonatomic) CGSize footerReferenceSize;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewFlowLayout_property_footerReferenceSize:index],
-            }
+- (NSMutableArray *)TestProjectCollectionViewFlowLayout_property_sectionHeadersPinToVisibleBounds:(TestProjectTableViewParams *)params {
+    NSArray *arr = @[
+        @{
+            @"title": [NSString stringWithFormat:@"设置的属性值是YES，sectionHeader需要停留在UICollection页面上"],
+            @"value": @(YES),
         },
-    };
-}
-
-- (NSMutableArray *)TestProjectCollectionViewFlowLayout_property_footerReferenceSize:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"footerReferenceSize"
-                                           value:[NSValue valueWithCGSize:CGSizeMake(0, 120)]
-                                       operation:TestProjectCreateModelGetBeforeClickSet
-                                           block:nil];
-}
-
-- (NSDictionary *)method_8:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UICollectionViewFlowLayout的属性sectionInset，展示cell的contentView内边距",
-            @"title": @"@property (nonatomic) UIEdgeInsets sectionInset;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewFlowLayout_property_sectionInset:index],
-            }
+        @{
+            @"title": [NSString stringWithFormat:@"设置的属性值是NO，sectionHeader不需要停留在UICollection页面上"],
+            @"value": @(NO),
         },
-    };
+    ];
+    for (NSDictionary *dic in arr) {
+        NSString *title = dic[@"title"];
+        NSNumber *value = dic[@"value"];
+        [self createModelWithParams:params
+                              title:title
+                           property:@"sectionHeadersPinToVisibleBounds"
+                              value:value
+                          operation:TestProjectCreateModelGetBeforeClickSet
+                              block:nil];
+    }
+    return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectCollectionViewFlowLayout_property_sectionInset:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"sectionInset"
-                                           value:[NSValue valueWithUIEdgeInsets:UIEdgeInsetsMake(10, 10, 10, 10)]
-                                       operation:TestProjectCreateModelGetBeforeClickSet
-                                           block:nil];
-}
-
-- (NSDictionary *)method_9:(NSInteger)index {
+- (NSDictionary *)method_10:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"设置获取UICollectionViewFlowLayout的属性sectionInsetReference",
-            @"title": @"@property (nonatomic) UICollectionViewFlowLayoutSectionInsetReference sectionInsetReference API_AVAILABLE(ios(11.0), tvos(11.0)) API_UNAVAILABLE(watchos);",
+            @"abstract": @"设置获取UICollectionViewFlowLayout的属性sectionHeadersPinToVisibleBounds，sectionHeader是否要停留在UICollection页面上",
+            @"title": @"@property (nonatomic) BOOL sectionHeadersPinToVisibleBounds API_AVAILABLE(ios(9.0));",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewFlowLayout_property_sectionInsetReference:index],
+                @"childItems": [self TestProjectCollectionViewFlowLayout_property_sectionHeadersPinToVisibleBounds:params],
             }
         },
     };
@@ -314,7 +185,7 @@
 //    UICollectionViewFlowLayoutSectionInsetFromLayoutMargins
 //} API_AVAILABLE(ios(11.0), tvos(11.0)) API_UNAVAILABLE(watchos);
 
-- (NSMutableArray *)TestProjectCollectionViewFlowLayout_property_sectionInsetReference:(NSInteger)index {
+- (NSMutableArray *)TestProjectCollectionViewFlowLayout_property_sectionInsetReference:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": [NSString stringWithFormat:@"设置的属性值是UICollectionViewFlowLayoutSectionInsetFromContentInset(%ld)", UICollectionViewFlowLayoutSectionInsetFromContentInset],
@@ -332,88 +203,216 @@
     for (NSDictionary *dic in arr) {
         NSString *title = dic[@"title"];
         NSNumber *value = dic[@"value"];
-        [self createModelWithIndex:index
-                             title:title
-                          property:@"sectionInsetReference"
-                             value:value
-                         operation:TestProjectCreateModelGetBeforeClickSet
-                             block:nil];
+        [self createModelWithParams:params
+                              title:title
+                           property:@"sectionInsetReference"
+                              value:value
+                          operation:TestProjectCreateModelGetBeforeClickSet
+                              block:nil];
     }
     return self.dataMutArr;
 }
 
-- (NSDictionary *)method_10:(NSInteger)index {
+- (NSDictionary *)method_9:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"设置获取UICollectionViewFlowLayout的属性sectionHeadersPinToVisibleBounds，sectionHeader是否要停留在UICollection页面上",
-            @"title": @"@property (nonatomic) BOOL sectionHeadersPinToVisibleBounds API_AVAILABLE(ios(9.0));",
+            @"abstract": @"设置获取UICollectionViewFlowLayout的属性sectionInsetReference",
+            @"title": @"@property (nonatomic) UICollectionViewFlowLayoutSectionInsetReference sectionInsetReference API_AVAILABLE(ios(11.0), tvos(11.0)) API_UNAVAILABLE(watchos);",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewFlowLayout_property_sectionHeadersPinToVisibleBounds:index],
+                @"childItems": [self TestProjectCollectionViewFlowLayout_property_sectionInsetReference:params],
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectCollectionViewFlowLayout_property_sectionHeadersPinToVisibleBounds:(NSInteger)index {
-    NSArray *arr = @[
-        @{
-            @"title": [NSString stringWithFormat:@"设置的属性值是YES，sectionHeader需要停留在UICollection页面上"],
-            @"value": @(YES),
-        },
-        @{
-            @"title": [NSString stringWithFormat:@"设置的属性值是NO，sectionHeader不需要停留在UICollection页面上"],
-            @"value": @(NO),
-        },
-    ];
-    for (NSDictionary *dic in arr) {
-        NSString *title = dic[@"title"];
-        NSNumber *value = dic[@"value"];
-        [self createModelWithIndex:index
-                             title:title
-                          property:@"sectionHeadersPinToVisibleBounds"
-                             value:value
-                         operation:TestProjectCreateModelGetBeforeClickSet
-                             block:nil];
-    }
-    return self.dataMutArr;
+- (NSMutableArray *)TestProjectCollectionViewFlowLayout_property_sectionInset:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"sectionInset"
+                                            value:[NSValue valueWithUIEdgeInsets:UIEdgeInsetsMake(10, 10, 10, 10)]
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
 }
 
-- (NSDictionary *)method_11:(NSInteger)index {
+- (NSDictionary *)method_8:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"设置获取UICollectionViewFlowLayout的属性sectionFootersPinToVisibleBounds，sectionFooter需要停留在UICollection页面上",
-            @"title": @"@property (nonatomic) BOOL sectionFootersPinToVisibleBounds API_AVAILABLE(ios(9.0));",
+            @"abstract": @"设置获取UICollectionViewFlowLayout的属性sectionInset，展示cell的contentView内边距",
+            @"title": @"@property (nonatomic) UIEdgeInsets sectionInset;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewFlowLayout_property_sectionFootersPinToVisibleBounds:index],
+                @"childItems": [self TestProjectCollectionViewFlowLayout_property_sectionInset:params],
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectCollectionViewFlowLayout_property_sectionFootersPinToVisibleBounds:(NSInteger)index {
+- (NSMutableArray *)TestProjectCollectionViewFlowLayout_property_footerReferenceSize:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"footerReferenceSize"
+                                            value:[NSValue valueWithCGSize:CGSizeMake(0, 120)]
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_7:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UICollectionViewFlowLayout的属性footerReferenceSize，footerSection的高度",
+            @"title": @"@property (nonatomic) CGSize footerReferenceSize;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCollectionViewFlowLayout_property_footerReferenceSize:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCollectionViewFlowLayout_property_headerReferenceSize:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"headerReferenceSize"
+                                            value:[NSValue valueWithCGSize:CGSizeMake(0, 120)]
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_6:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UICollectionViewFlowLayout的属性headerReferenceSize，headerSection的高度",
+            @"title": @"@property (nonatomic) CGSize headerReferenceSize;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCollectionViewFlowLayout_property_headerReferenceSize:params],
+            }
+        },
+    };
+}
+
+//typedef NS_ENUM(NSInteger, UICollectionViewScrollDirection) {
+//    UICollectionViewScrollDirectionVertical,
+//    UICollectionViewScrollDirectionHorizontal
+//};
+
+- (NSMutableArray *)TestProjectCollectionViewFlowLayout_property_scrollDirection:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
-            @"title": [NSString stringWithFormat:@"设置的属性值是YES, sectionFooter需要停留在UICollection页面上"],
-            @"value": @(YES),
+            @"title": [NSString stringWithFormat:@"设置的属性值是UICollectionViewScrollDirectionVertical(%ld)，垂直方向滚动", UICollectionViewScrollDirectionVertical],
+            @"value": @(UICollectionViewScrollDirectionVertical),
         },
         @{
-            @"title": [NSString stringWithFormat:@"设置的属性值是NO, sectionFooter不需要停留在UICollection页面上"],
-            @"value": @(NO),
+            @"title": [NSString stringWithFormat:@"设置的属性值是UICollectionViewScrollDirectionHorizontal(%ld)，水平方向滚动", UICollectionViewScrollDirectionHorizontal],
+            @"value": @(UICollectionViewScrollDirectionHorizontal),
         },
     ];
     for (NSDictionary *dic in arr) {
         NSString *title = dic[@"title"];
         NSNumber *value = dic[@"value"];
-        [self createModelWithIndex:index
-                             title:title
-                          property:@"sectionFootersPinToVisibleBounds"
-                             value:value
-                         operation:TestProjectCreateModelGetBeforeClickSet
-                             block:nil];
+        [self createModelWithParams:params
+                              title:title
+                           property:@"scrollDirection"
+                              value:value
+                          operation:TestProjectCreateModelGetBeforeClickSet
+                              block:nil];
     }
     return self.dataMutArr;
+}
+
+- (NSDictionary *)method_5:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UICollectionViewFlowLayout的属性scrollDirection，滚动的方向",
+            @"title": @"@property (nonatomic) UICollectionViewScrollDirection scrollDirection;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCollectionViewFlowLayout_property_scrollDirection:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCollectionViewFlowLayout_property_estimatedItemSize:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"estimatedItemSize"
+                                            value:[NSValue valueWithCGSize:CGSizeMake(100, 120)]
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_4:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UICollectionViewFlowLayout的属性estimatedItemSize，预处理的cell的size",
+            @"title": @"@property (nonatomic) CGSize estimatedItemSize API_AVAILABLE(ios(8.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCollectionViewFlowLayout_property_estimatedItemSize:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCollectionViewFlowLayout_property_itemSize:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"itemSize"
+                                            value:[NSValue valueWithCGSize:CGSizeMake(100, 20)]
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_3:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UICollectionViewFlowLayout的属性itemSize，cell的size",
+            @"title": @"@property (nonatomic) CGSize itemSize;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCollectionViewFlowLayout_property_itemSize:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCollectionViewFlowLayout_property_minimumInteritemSpacing:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"minimumInteritemSpacing"
+                                            value:@"50"
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UICollectionViewFlowLayout的属性minimumInteritemSpacing，最小的水平间距",
+            @"title": @"@property (nonatomic) CGFloat minimumInteritemSpacing;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCollectionViewFlowLayout_property_minimumInteritemSpacing:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCollectionViewFlowLayout_property_minimumLineSpacing:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"minimumLineSpacing"
+                                            value:@"20"
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UICollectionViewFlowLayout的属性minimumLineSpacing，最小的行间距",
+            @"title": @"@property (nonatomic) CGFloat minimumInteritemSpacing;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCollectionViewFlowLayout_property_minimumLineSpacing:params],
+            }
+        },
+    };
 }
 
 @end

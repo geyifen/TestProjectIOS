@@ -68,74 +68,263 @@
     return _textField;
 }
 
-- (id)setPropertyValueObject {
+- (id)setPropertyValueObject:(TestProjectTableViewParams *)params {
     return self.childStepper;
 }
 
-- (NSDictionary *)method_1:(NSInteger)index {
+- (NSMutableArray *)TestProjectStepper_decrementImageForState:(TestProjectTableViewParams *)params {
+    WS(wSelf);
+    return [self createModelSingleArrayWithParams:params title:@"decrementImageForState" methodBlock:^NSString * _Nonnull{
+        UIImage *image = [wSelf.childStepper decrementImageForState:UIControlStateNormal];
+        return [NSString stringWithFormat:@"%@", image];
+    }];
+}
+
+- (NSDictionary *)method_15:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"获取UIStepper的属性continuous, 暂不知道什么作用",
-            @"title": @"@property(nonatomic,getter=isContinuous) BOOL continuous;",
+            @"abstract": @"执行UIStepper的方法decrementImageForState:",
+            @"title": @"- (nullable UIImage *)decrementImageForState:(UIControlState)state API_AVAILABLE(ios(6.0)) UI_APPEARANCE_SELECTOR;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectStepper_property_continuous:index],
+                @"childItems": [self TestProjectStepper_decrementImageForState:params],
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectStepper_property_continuous:(NSInteger)index {
-    NSArray *arr = @[@(YES), @(NO)];
-    for (NSNumber *value in arr) {
-        [self createModelWithIndex:index
-                          property:@"continuous"
-                             value:value
-                         operation:TestProjectCreateModelGetBeforeClickSet
-                             block:nil];
-    }
-    return self.dataMutArr;
+- (NSMutableArray *)TestProjectStepper_setDecrementImage_forState:(TestProjectTableViewParams *)params {
+    WS(wSelf);
+    return [self createModelSingleArrayWithParams:params title:@"setDecrementImage_forState" methodBlock:^NSString * _Nonnull{
+        [wSelf.childStepper setDecrementImage:[UIImage imageNamed:@"lyf_2"] forState:UIControlStateNormal];
+        return nil;
+    }];
 }
 
-- (NSDictionary *)method_2:(NSInteger)index {
+- (NSDictionary *)method_14:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"获取UIStepper的属性autorepeat, 暂不知道什么作用",
-            @"title": @"@property(nonatomic) BOOL autorepeat;",
+            @"abstract": @"执行UIStepper的方法setDecrementImage_forState",
+            @"title": @"- (void)setDecrementImage:(nullable UIImage *)image forState:(UIControlState)state API_AVAILABLE(ios(6.0)) UI_APPEARANCE_SELECTOR;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectStepper_property_autorepeat:index],
+                @"childItems": [self TestProjectStepper_setDecrementImage_forState:params],
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectStepper_property_autorepeat:(NSInteger)index {
-    NSArray *arr = @[@(YES), @(NO)];
-    for (NSNumber *value in arr) {
-        [self createModelWithIndex:index
-                          property:@"autorepeat"
-                             value:value
-                         operation:TestProjectCreateModelGetBeforeClickSet
-                             block:nil];
-    }
-    return self.dataMutArr;
+- (NSMutableArray *)TestProjectStepper_incrementImageForState:(TestProjectTableViewParams *)params {
+    WS(wSelf);
+    return [self createModelSingleArrayWithParams:params title:@"incrementImageForState" methodBlock:^NSString * _Nonnull{
+        UIImage *image = [wSelf.childStepper incrementImageForState:UIControlStateNormal];
+        return [NSString stringWithFormat:@"%@", image];
+    }];
 }
 
-- (NSDictionary *)method_3:(NSInteger)index {
+- (NSDictionary *)method_13:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"获取UIStepper的属性wraps",
-            @"title": @"@property(nonatomic) BOOL wraps;",
+            @"abstract": @"执行UIStepper的方法incrementImageForState:",
+            @"title": @"- (nullable UIImage *)incrementImageForState:(UIControlState)state API_AVAILABLE(ios(6.0)) UI_APPEARANCE_SELECTOR;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectStepper_property_wraps:index],
+                @"childItems": [self TestProjectStepper_incrementImageForState:params],
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectStepper_property_wraps:(NSInteger)index {
+- (NSMutableArray *)TestProjectStepper_setIncrementImage_forState:(TestProjectTableViewParams *)params {
+    WS(wSelf);
+    return [self createModelSingleArrayWithParams:params title:@"setIncrementImage_forState" methodBlock:^NSString * _Nonnull{
+        [wSelf.childStepper setIncrementImage:[UIImage imageNamed:@"lyf_2"] forState:UIControlStateNormal];
+        return nil;
+    }];
+}
+
+- (NSDictionary *)method_12:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行UIStepper的方法setIncrementImage_forState",
+            @"title": @"- (void)setIncrementImage:(nullable UIImage *)image forState:(UIControlState)state API_AVAILABLE(ios(6.0)) UI_APPEARANCE_SELECTOR;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectStepper_setIncrementImage_forState:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectStepper_dividerImageForLeftSegmentState_rightSegmentState:(TestProjectTableViewParams *)params {
+    WS(wSelf);
+    return [self createModelSingleArrayWithParams:params title:@"dividerImageForLeftSegmentState_rightSegmentState" methodBlock:^NSString * _Nonnull{
+        UIImage *image = [wSelf.childStepper dividerImageForLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal];
+        return [NSString stringWithFormat:@"%@", image];
+    }];
+}
+
+- (NSDictionary *)method_11:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行UIStepper的方法dividerImageForLeftSegmentState_rightSegmentState",
+            @"title": @"- (nullable UIImage*)dividerImageForLeftSegmentState:(UIControlState)state rightSegmentState:(UIControlState)state API_AVAILABLE(ios(6.0)) UI_APPEARANCE_SELECTOR;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectStepper_dividerImageForLeftSegmentState_rightSegmentState:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectStepper_setDividerImage_forLeftSegmentState_rightSegmentState:(TestProjectTableViewParams *)params {
+    WS(wSelf);
+    return [self createModelSingleArrayWithParams:params title:@"setDividerImage_forLeftSegmentState_rightSegmentState" methodBlock:^NSString * _Nonnull{
+        [wSelf.childStepper setDividerImage:[UIImage imageNamed:@"lyf_2"] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal];
+        return nil;
+    }];
+}
+
+- (NSDictionary *)method_10:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行UIStepper的方法setDividerImage_forLeftSegmentState_rightSegmentState",
+            @"title": @"- (void)setDividerImage:(nullable UIImage*)image forLeftSegmentState:(UIControlState)leftState rightSegmentState:(UIControlState)rightState API_AVAILABLE(ios(6.0)) UI_APPEARANCE_SELECTOR;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectStepper_setDividerImage_forLeftSegmentState_rightSegmentState:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectStepper_backgroundImageForState:(TestProjectTableViewParams *)params {
+    WS(wSelf);
+    return [self createModelSingleArrayWithParams:params title:@"backgroundImageForState" methodBlock:^NSString * _Nonnull{
+        UIImage *image = [wSelf.childStepper backgroundImageForState:UIControlStateNormal];
+        return [NSString stringWithFormat:@"%@", image];
+    }];
+}
+
+- (NSDictionary *)method_9:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行UIStepper的方法backgroundImageForState:",
+            @"title": @"- (nullable UIImage*)backgroundImageForState:(UIControlState)state API_AVAILABLE(ios(6.0)) UI_APPEARANCE_SELECTOR;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectStepper_backgroundImageForState:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectStepper_setBackgroundImage_forState:(TestProjectTableViewParams *)params {
+    WS(wSelf);
+    return [self createModelSingleArrayWithParams:params title:@"setBackgroundImage_forState" methodBlock:^NSString * _Nonnull{
+        [wSelf.childStepper setBackgroundImage:[UIImage imageNamed:@"lyf_2"] forState:UIControlStateNormal];
+        return nil;
+    }];
+}
+
+- (NSDictionary *)method_8:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行UIStepper的方法setBackgroundImage_forState",
+            @"title": @"- (void)setBackgroundImage:(nullable UIImage*)image forState:(UIControlState)state API_AVAILABLE(ios(6.0)) UI_APPEARANCE_SELECTOR;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectStepper_setBackgroundImage_forState:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectStepper_property_stepValue:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"stepValue"
+                                            value:@5
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_7:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取UIStepper的属性stepValue, 每次加或者减多少",
+            @"title": @"@property(nonatomic) double stepValue;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectStepper_property_stepValue:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectStepper_property_maximumValue:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"maximumValue"
+                                            value:@10
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_6:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取UIStepper的属性maximumValue",
+            @"title": @"@property(nonatomic) double maximumValue;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectStepper_property_maximumValue:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectStepper_property_minimumValue:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"minimumValue"
+                                            value:@-5
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_5:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取UIStepper的属性minimumValue",
+            @"title": @"@property(nonatomic) double minimumValue;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectStepper_property_minimumValue:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectStepper_property_value:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"value"
+                                            value:@5
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_4:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取UIStepper的属性value，这个直接设置，值的变化不会发生通知",
+            @"title": @"@property(nonatomic) double value;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectStepper_property_value:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectStepper_property_wraps:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": @"设置的属性值是YES, 当小于最小时，值会变成最大的；当大于最大的时，值会变成最小值",
@@ -149,266 +338,77 @@
     for (NSDictionary *dic in arr) {
         NSString *title = dic[@"title"];
         NSNumber *value = dic[@"value"];
-        [self createModelWithIndex:index
-                             title:title
-                          property:@"wraps"
-                             value:value
-                         operation:TestProjectCreateModelGetBeforeClickSet
-                             block:nil];
+        [self createModelWithParams:params
+                              title:title
+                           property:@"wraps"
+                              value:value
+                          operation:TestProjectCreateModelGetBeforeClickSet
+                              block:nil];
     }
     return self.dataMutArr;
 }
 
-- (NSDictionary *)method_4:(NSInteger)index {
+- (NSDictionary *)method_3:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"获取UIStepper的属性value，这个直接设置，值的变化不会发生通知",
-            @"title": @"@property(nonatomic) double value;",
+            @"abstract": @"获取UIStepper的属性wraps",
+            @"title": @"@property(nonatomic) BOOL wraps;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectStepper_property_value:index],
+                @"childItems": [self TestProjectStepper_property_wraps:params],
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectStepper_property_value:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"value"
-                                           value:@5
-                                       operation:TestProjectCreateModelGetBeforeClickSet
-                                           block:nil];
+- (NSMutableArray *)TestProjectStepper_property_autorepeat:(TestProjectTableViewParams *)params {
+    NSArray *arr = @[@(YES), @(NO)];
+    for (NSNumber *value in arr) {
+        [self createModelWithParams:params
+                           property:@"autorepeat"
+                              value:value
+                          operation:TestProjectCreateModelGetBeforeClickSet
+                              block:nil];
+    }
+    return self.dataMutArr;
 }
 
-- (NSDictionary *)method_5:(NSInteger)index {
+- (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"获取UIStepper的属性minimumValue",
-            @"title": @"@property(nonatomic) double minimumValue;",
+            @"abstract": @"获取UIStepper的属性autorepeat, 暂不知道什么作用",
+            @"title": @"@property(nonatomic) BOOL autorepeat;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectStepper_property_minimumValue:index],
+                @"childItems": [self TestProjectStepper_property_autorepeat:params],
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectStepper_property_minimumValue:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"minimumValue"
-                                           value:@-5
-                                       operation:TestProjectCreateModelGetBeforeClickSet
-                                           block:nil];
+- (NSMutableArray *)TestProjectStepper_property_continuous:(TestProjectTableViewParams *)params {
+    NSArray *arr = @[@(YES), @(NO)];
+    for (NSNumber *value in arr) {
+        [self createModelWithParams:params
+                           property:@"continuous"
+                              value:value
+                          operation:TestProjectCreateModelGetBeforeClickSet
+                              block:nil];
+    }
+    return self.dataMutArr;
 }
 
-- (NSDictionary *)method_6:(NSInteger)index {
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"获取UIStepper的属性maximumValue",
-            @"title": @"@property(nonatomic) double maximumValue;",
+            @"abstract": @"获取UIStepper的属性continuous, 暂不知道什么作用",
+            @"title": @"@property(nonatomic,getter=isContinuous) BOOL continuous;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectStepper_property_maximumValue:index],
+                @"childItems": [self TestProjectStepper_property_continuous:params],
             }
         },
     };
-}
-
-- (NSMutableArray *)TestProjectStepper_property_maximumValue:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"maximumValue"
-                                           value:@10
-                                       operation:TestProjectCreateModelGetBeforeClickSet
-                                           block:nil];
-}
-
-- (NSDictionary *)method_7:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取UIStepper的属性stepValue, 每次加或者减多少",
-            @"title": @"@property(nonatomic) double stepValue;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectStepper_property_stepValue:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectStepper_property_stepValue:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"stepValue"
-                                           value:@5
-                                       operation:TestProjectCreateModelGetBeforeClickSet
-                                           block:nil];
-}
-
-- (NSDictionary *)method_8:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UIStepper的方法setBackgroundImage_forState",
-            @"title": @"- (void)setBackgroundImage:(nullable UIImage*)image forState:(UIControlState)state API_AVAILABLE(ios(6.0)) UI_APPEARANCE_SELECTOR;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectStepper_setBackgroundImage_forState:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectStepper_setBackgroundImage_forState:(NSInteger)index {
-    WS(wSelf);
-    return [self createModelSingleArrayWithIndex:index title:@"setBackgroundImage_forState" methodBlock:^NSString * _Nonnull{
-        [wSelf.childStepper setBackgroundImage:[UIImage imageNamed:@"lyf_2"] forState:UIControlStateNormal];
-        return nil;
-    }];
-}
-
-- (NSDictionary *)method_9:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UIStepper的方法backgroundImageForState:",
-            @"title": @"- (nullable UIImage*)backgroundImageForState:(UIControlState)state API_AVAILABLE(ios(6.0)) UI_APPEARANCE_SELECTOR;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectStepper_backgroundImageForState:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectStepper_backgroundImageForState:(NSInteger)index {
-    WS(wSelf);
-    return [self createModelSingleArrayWithIndex:index title:@"backgroundImageForState" methodBlock:^NSString * _Nonnull{
-        UIImage *image = [wSelf.childStepper backgroundImageForState:UIControlStateNormal];
-        return [NSString stringWithFormat:@"%@", image];
-    }];
-}
-
-- (NSDictionary *)method_10:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UIStepper的方法setDividerImage_forLeftSegmentState_rightSegmentState",
-            @"title": @"- (void)setDividerImage:(nullable UIImage*)image forLeftSegmentState:(UIControlState)leftState rightSegmentState:(UIControlState)rightState API_AVAILABLE(ios(6.0)) UI_APPEARANCE_SELECTOR;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectStepper_setDividerImage_forLeftSegmentState_rightSegmentState:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectStepper_setDividerImage_forLeftSegmentState_rightSegmentState:(NSInteger)index {
-    WS(wSelf);
-    return [self createModelSingleArrayWithIndex:index title:@"setDividerImage_forLeftSegmentState_rightSegmentState" methodBlock:^NSString * _Nonnull{
-        [wSelf.childStepper setDividerImage:[UIImage imageNamed:@"lyf_2"] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal];
-        return nil;
-    }];
-}
-
-- (NSDictionary *)method_11:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UIStepper的方法dividerImageForLeftSegmentState_rightSegmentState",
-            @"title": @"- (nullable UIImage*)dividerImageForLeftSegmentState:(UIControlState)state rightSegmentState:(UIControlState)state API_AVAILABLE(ios(6.0)) UI_APPEARANCE_SELECTOR;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectStepper_dividerImageForLeftSegmentState_rightSegmentState:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectStepper_dividerImageForLeftSegmentState_rightSegmentState:(NSInteger)index {
-    WS(wSelf);
-    return [self createModelSingleArrayWithIndex:index title:@"dividerImageForLeftSegmentState_rightSegmentState" methodBlock:^NSString * _Nonnull{
-        UIImage *image = [wSelf.childStepper dividerImageForLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal];
-        return [NSString stringWithFormat:@"%@", image];
-    }];
-}
-
-- (NSDictionary *)method_12:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UIStepper的方法setIncrementImage_forState",
-            @"title": @"- (void)setIncrementImage:(nullable UIImage *)image forState:(UIControlState)state API_AVAILABLE(ios(6.0)) UI_APPEARANCE_SELECTOR;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectStepper_setIncrementImage_forState:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectStepper_setIncrementImage_forState:(NSInteger)index {
-    WS(wSelf);
-    return [self createModelSingleArrayWithIndex:index title:@"setIncrementImage_forState" methodBlock:^NSString * _Nonnull{
-        [wSelf.childStepper setIncrementImage:[UIImage imageNamed:@"lyf_2"] forState:UIControlStateNormal];
-        return nil;
-    }];
-}
-
-- (NSDictionary *)method_13:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UIStepper的方法incrementImageForState:",
-            @"title": @"- (nullable UIImage *)incrementImageForState:(UIControlState)state API_AVAILABLE(ios(6.0)) UI_APPEARANCE_SELECTOR;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectStepper_incrementImageForState:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectStepper_incrementImageForState:(NSInteger)index {
-    WS(wSelf);
-    return [self createModelSingleArrayWithIndex:index title:@"incrementImageForState" methodBlock:^NSString * _Nonnull{
-        UIImage *image = [wSelf.childStepper incrementImageForState:UIControlStateNormal];
-        return [NSString stringWithFormat:@"%@", image];
-    }];
-}
-
-- (NSDictionary *)method_14:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UIStepper的方法setDecrementImage_forState",
-            @"title": @"- (void)setDecrementImage:(nullable UIImage *)image forState:(UIControlState)state API_AVAILABLE(ios(6.0)) UI_APPEARANCE_SELECTOR;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectStepper_setDecrementImage_forState:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectStepper_setDecrementImage_forState:(NSInteger)index {
-    WS(wSelf);
-    return [self createModelSingleArrayWithIndex:index title:@"setDecrementImage_forState" methodBlock:^NSString * _Nonnull{
-        [wSelf.childStepper setDecrementImage:[UIImage imageNamed:@"lyf_2"] forState:UIControlStateNormal];
-        return nil;
-    }];
-}
-
-- (NSDictionary *)method_15:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UIStepper的方法decrementImageForState:",
-            @"title": @"- (nullable UIImage *)decrementImageForState:(UIControlState)state API_AVAILABLE(ios(6.0)) UI_APPEARANCE_SELECTOR;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectStepper_decrementImageForState:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectStepper_decrementImageForState:(NSInteger)index {
-    WS(wSelf);
-    return [self createModelSingleArrayWithIndex:index title:@"decrementImageForState" methodBlock:^NSString * _Nonnull{
-        UIImage *image = [wSelf.childStepper decrementImageForState:UIControlStateNormal];
-        return [NSString stringWithFormat:@"%@", image];
-    }];
 }
 
 @end

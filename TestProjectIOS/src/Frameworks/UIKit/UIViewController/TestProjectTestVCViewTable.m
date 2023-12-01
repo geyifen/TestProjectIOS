@@ -127,9 +127,17 @@
     };
 }
 
-- (TestProjectTableViewModel *)createChildVCTableModelWithProperty:(NSString *)key value:(id)value title:(NSString *)title {
+- (TestProjectTableViewModel *)createChildVCTableModelWithParams:(TestProjectTableViewParams *)params
+                                                        property:(NSString *)key
+                                                           value:(id)value
+                                                           title:(NSString *)title {
     WS(wSelf);
-    TestProjectTableViewModel *m = [self createClickSetTableModelWithProperty:key value:value title:title block:^{
+    TestProjectTableViewModel *m = [self createModelWithParams:params
+                                                         title:title
+                                                      property:key
+                                                         value:value
+                                                     operation:TestProjectCreateModelGetBeforeClickSet
+                                                         block:^{
         [wSelf.tVC setValue:value forKey:key];
         [UIApplication.rootCurrentController presentViewController:wSelf.tVC animated:YES completion:nil];
     }];

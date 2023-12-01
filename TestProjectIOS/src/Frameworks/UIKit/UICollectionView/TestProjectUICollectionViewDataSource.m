@@ -71,145 +71,62 @@
     return _collectionView;
 }
 
-- (NSDictionary *)method_1:(NSInteger)index {
+- (NSMutableArray *)TestProjectCollectionViewDataSource_optional_collectionView_indexPathForIndexTitle_atIndex:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params title:nil block:nil];
+}
+
+/// Returns the index path that corresponds to the given title / index. (e.g. "B",1)
+/// Return an index path with a single index to indicate an entire section, instead of a specific item.
+- (NSIndexPath *)collectionView:(UICollectionView *)collectionView indexPathForIndexTitle:(NSString *)title atIndex:(NSInteger)index API_AVAILABLE(ios(14.0), tvos(10.2)) {
+    NSLog(@"%@ title:%@ index:%ld", NSStringFromSelector(_cmd), title, index);
+    return [NSIndexPath indexPathForRow:0 inSection:index * 2];
+}
+
+- (NSDictionary *)method_8:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"执行UICollectionViewDataSource的@required方法, 每个section返回多少个cell的数量",
-            @"title": @"- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section;",
+            @"abstract": @"执行UICollectionViewDataSource的@optional方法, UICollectionView侧边展示的标题的点击事件",
+            @"title": @"- (NSIndexPath *)collectionView:(UICollectionView *)collectionView indexPathForIndexTitle:(NSString *)title atIndex:(NSInteger)index API_AVAILABLE(ios(14.0), tvos(10.2));",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewDataSource_required_collectionView_numberOfItemsInSection:index],
+                @"childItems": [self TestProjectCollectionViewDataSource_optional_collectionView_indexPathForIndexTitle_atIndex:params],
             }
         },
     };
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.itemCountArray objectAtIndex:section].count;
+- (NSMutableArray *)TestProjectCollectionViewDataSource_optional_indexTitlesForCollectionView:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params title:nil block:nil];
 }
 
-- (NSMutableArray *)TestProjectCollectionViewDataSource_required_collectionView_numberOfItemsInSection:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
-}
-
-- (NSDictionary *)method_2:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UICollectionViewDataSource的@required方法, 每个cell的展示样式",
-            @"title": @"- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewDataSource_required_collectionView_cellForItemAtIndexPath:index],
-            }
-        },
-    };
-}
-
-- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    TestProjectUICollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TestProjectUICollectionCell" forIndexPath:indexPath];
-    [cell setTitle:self.itemCountArray[indexPath.section][indexPath.item]];
-    if (indexPath.row == 5) {
-        self.cell = cell;
+/// Returns a list of index titles to display in the index view (e.g. ["A", "B", "C" ... "Z", "#"])
+- (nullable NSArray<NSString *> *)indexTitlesForCollectionView:(UICollectionView *)collectionView API_AVAILABLE(ios(14.0), tvos(10.2)) {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    NSMutableArray *arr = [NSMutableArray array];
+    for (NSInteger i = 0; i < self.sectionCount - 1; i++) {
+        [arr addObject:[NSString stringWithFormat:@"%ld", i * 11]];
     }
-    return cell;
+    return arr;
 }
 
-- (NSMutableArray *)TestProjectCollectionViewDataSource_required_collectionView_cellForItemAtIndexPath:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
-}
-
-- (NSDictionary *)method_3:(NSInteger)index {
+- (NSDictionary *)method_7:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"执行UICollectionViewDataSource的@optional方法, 返回多少个section",
-            @"title": @"- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView;",
+            @"abstract": @"执行UICollectionViewDataSource的@optional方法, UICollectionView侧边展示的标题",
+            @"title": @"- (nullable NSArray<NSString *> *)indexTitlesForCollectionView:(UICollectionView *)collectionView API_AVAILABLE(ios(14.0), tvos(10.2));",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewDataSource_optional_numberOfSectionsInCollectionView:index],
+                @"childItems": [self TestProjectCollectionViewDataSource_optional_indexTitlesForCollectionView:params],
             }
         },
     };
 }
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return self.sectionCount;
-}
-
-- (NSMutableArray *)TestProjectCollectionViewDataSource_optional_numberOfSectionsInCollectionView:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
-}
-
-- (NSDictionary *)method_4:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UICollectionViewDataSource的@optional方法, 返回每个section的header和footer视图",
-            @"title": @"- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewDataSource_optional_collectionView_viewForSupplementaryElementOfKind_atIndexPath:index],
-            }
-        },
-    };
-}
-
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-    TestProjectUICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"TestProjectUICollectionReusableView" forIndexPath:indexPath];
-    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
-        [view setTitle:self.headerSectionArray[indexPath.section]];
-    } else {
-        [view setTitle:self.footerSectionArray[indexPath.section]];
-    }
-    return view;
-}
-
-- (NSMutableArray *)TestProjectCollectionViewDataSource_optional_collectionView_viewForSupplementaryElementOfKind_atIndexPath:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
-}
-
-- (NSDictionary *)method_5:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UICollectionViewDataSource的@optional方法, 每个cell是否能够移动",
-            @"title": @"- (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath API_AVAILABLE(ios(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewDataSource_optional_collectionView_canMoveItemAtIndexPath:index],
-            }
-        },
-    };
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath API_AVAILABLE(ios(9.0)) {
-    NSLog(@"%@ indexPath:%@", NSStringFromSelector(_cmd), indexPath);
-    return YES;
-}
-
-- (NSMutableArray *)TestProjectCollectionViewDataSource_optional_collectionView_canMoveItemAtIndexPath:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
-}
-
-- (NSDictionary *)method_6:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UICollectionViewDataSource的@optional方法, 每个cell的移动的回调",
-            @"title": @"- (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath*)destinationIndexPath API_AVAILABLE(ios(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewDataSource_optional_collectionView_moveItemAtIndexPath_toIndexPath:index],
-            }
-        },
-    };
-}
-
-- (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath*)destinationIndexPath API_AVAILABLE(ios(9.0)) {
-    NSLog(@"%@ sourceIndexPath:%@ destinationIndexPath:%@", NSStringFromSelector(_cmd), sourceIndexPath, destinationIndexPath);
-}
-
-- (NSMutableArray *)TestProjectCollectionViewDataSource_optional_collectionView_moveItemAtIndexPath_toIndexPath:(NSInteger)index {
+- (NSMutableArray *)TestProjectCollectionViewDataSource_optional_collectionView_moveItemAtIndexPath_toIndexPath:(TestProjectTableViewParams *)params {
     NSIndexPath *moveIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     NSIndexPath *toIndexPath = [NSIndexPath indexPathForRow:0 inSection:1];
     WS(wSelf);
-    return [self createModelSingleArrayWithIndex:index title:[NSString stringWithFormat:@"moveIndexPath:%@ toIndexPath:%@", moveIndexPath, toIndexPath] block:^{
+    return [self createModelSingleArrayWithParams:params title:[NSString stringWithFormat:@"moveIndexPath:%@ toIndexPath:%@", moveIndexPath, toIndexPath] block:^{
         NSMutableArray *moveArray = self.itemCountArray[moveIndexPath.section];
         NSMutableArray *toArray = self.itemCountArray[toIndexPath.section];
         id moveObj = moveArray[moveIndexPath.row];
@@ -224,55 +141,138 @@
     }];
 }
 
-- (NSDictionary *)method_7:(NSInteger)index {
+- (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath*)destinationIndexPath API_AVAILABLE(ios(9.0)) {
+    NSLog(@"%@ sourceIndexPath:%@ destinationIndexPath:%@", NSStringFromSelector(_cmd), sourceIndexPath, destinationIndexPath);
+}
+
+- (NSDictionary *)method_6:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"执行UICollectionViewDataSource的@optional方法, UICollectionView侧边展示的标题",
-            @"title": @"- (nullable NSArray<NSString *> *)indexTitlesForCollectionView:(UICollectionView *)collectionView API_AVAILABLE(ios(14.0), tvos(10.2));",
+            @"abstract": @"执行UICollectionViewDataSource的@optional方法, 每个cell的移动的回调",
+            @"title": @"- (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath*)destinationIndexPath API_AVAILABLE(ios(9.0));",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewDataSource_optional_indexTitlesForCollectionView:index],
+                @"childItems": [self TestProjectCollectionViewDataSource_optional_collectionView_moveItemAtIndexPath_toIndexPath:params],
             }
         },
     };
 }
 
-/// Returns a list of index titles to display in the index view (e.g. ["A", "B", "C" ... "Z", "#"])
-- (nullable NSArray<NSString *> *)indexTitlesForCollectionView:(UICollectionView *)collectionView API_AVAILABLE(ios(14.0), tvos(10.2)) {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-    NSMutableArray *arr = [NSMutableArray array];
-    for (NSInteger i = 0; i < self.sectionCount - 1; i++) {
-        [arr addObject:[NSString stringWithFormat:@"%ld", i * 11]];
+- (NSMutableArray *)TestProjectCollectionViewDataSource_optional_collectionView_canMoveItemAtIndexPath:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params title:nil block:nil];
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath API_AVAILABLE(ios(9.0)) {
+    NSLog(@"%@ indexPath:%@", NSStringFromSelector(_cmd), indexPath);
+    return YES;
+}
+
+- (NSDictionary *)method_5:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行UICollectionViewDataSource的@optional方法, 每个cell是否能够移动",
+            @"title": @"- (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath API_AVAILABLE(ios(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCollectionViewDataSource_optional_collectionView_canMoveItemAtIndexPath:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCollectionViewDataSource_optional_collectionView_viewForSupplementaryElementOfKind_atIndexPath:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params title:nil block:nil];
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    TestProjectUICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"TestProjectUICollectionReusableView" forIndexPath:indexPath];
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        [view setTitle:self.headerSectionArray[indexPath.section]];
+    } else {
+        [view setTitle:self.footerSectionArray[indexPath.section]];
     }
-    return arr;
+    return view;
 }
 
-- (NSMutableArray *)TestProjectCollectionViewDataSource_optional_indexTitlesForCollectionView:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
-}
-
-- (NSDictionary *)method_8:(NSInteger)index {
+- (NSDictionary *)method_4:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"执行UICollectionViewDataSource的@optional方法, UICollectionView侧边展示的标题的点击事件",
-            @"title": @"- (NSIndexPath *)collectionView:(UICollectionView *)collectionView indexPathForIndexTitle:(NSString *)title atIndex:(NSInteger)index API_AVAILABLE(ios(14.0), tvos(10.2));",
+            @"abstract": @"执行UICollectionViewDataSource的@optional方法, 返回每个section的header和footer视图",
+            @"title": @"- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewDataSource_optional_collectionView_indexPathForIndexTitle_atIndex:index],
+                @"childItems": [self TestProjectCollectionViewDataSource_optional_collectionView_viewForSupplementaryElementOfKind_atIndexPath:params],
             }
         },
     };
 }
 
-/// Returns the index path that corresponds to the given title / index. (e.g. "B",1)
-/// Return an index path with a single index to indicate an entire section, instead of a specific item.
-- (NSIndexPath *)collectionView:(UICollectionView *)collectionView indexPathForIndexTitle:(NSString *)title atIndex:(NSInteger)index API_AVAILABLE(ios(14.0), tvos(10.2)) {
-    NSLog(@"%@ title:%@ index:%ld", NSStringFromSelector(_cmd), title, index);
-    return [NSIndexPath indexPathForRow:0 inSection:index * 2];
+- (NSMutableArray *)TestProjectCollectionViewDataSource_optional_numberOfSectionsInCollectionView:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params title:nil block:nil];
 }
 
-- (NSMutableArray *)TestProjectCollectionViewDataSource_optional_collectionView_indexPathForIndexTitle_atIndex:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return self.sectionCount;
+}
+
+- (NSDictionary *)method_3:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行UICollectionViewDataSource的@optional方法, 返回多少个section",
+            @"title": @"- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCollectionViewDataSource_optional_numberOfSectionsInCollectionView:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCollectionViewDataSource_required_collectionView_cellForItemAtIndexPath:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params title:nil block:nil];
+}
+
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    TestProjectUICollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TestProjectUICollectionCell" forIndexPath:indexPath];
+    [cell setTitle:self.itemCountArray[indexPath.section][indexPath.item]];
+    if (indexPath.row == 5) {
+        self.cell = cell;
+    }
+    return cell;
+}
+
+- (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行UICollectionViewDataSource的@required方法, 每个cell的展示样式",
+            @"title": @"- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCollectionViewDataSource_required_collectionView_cellForItemAtIndexPath:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCollectionViewDataSource_required_collectionView_numberOfItemsInSection:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params title:nil block:nil];
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [self.itemCountArray objectAtIndex:section].count;
+}
+
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行UICollectionViewDataSource的@required方法, 每个section返回多少个cell的数量",
+            @"title": @"- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCollectionViewDataSource_required_collectionView_numberOfItemsInSection:params],
+            }
+        },
+    };
 }
 
 @end

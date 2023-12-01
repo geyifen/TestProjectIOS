@@ -15,7 +15,7 @@
 
 @implementation TestProjectNSLocaleCreation
 
-- (id)setPropertyValueObject {
+- (id)setPropertyValueObject:(TestProjectTableViewParams *)params {
     return self.childLocale;
 }
 
@@ -26,86 +26,84 @@
     return _childLocale;
 }
 
-- (NSDictionary *)method_1:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSLocale的属性autoupdatingCurrentLocale",
-            @"title": @"@property (class, readonly, strong) NSLocale *autoupdatingCurrentLocale API_AVAILABLE(macos(10.5), ios(2.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectLocaleCreation_class_property_autoupdatingCurrentLocale:index],
-            }
-        },
-    };
+
+- (NSMutableArray *)TestProjectLocaleCreation_class_localeWithLocaleIdentifier:(TestProjectTableViewParams *)params {
+    NSArray *arr = [NSLocale availableLocaleIdentifiers];
+    for (NSString *identifier in arr) {
+        NSLocale *locale = [NSLocale localeWithLocaleIdentifier:identifier];
+        [self createModelWithParams:params title:[NSString stringWithFormat:@"%@", [locale objectForKey:NSLocaleIdentifier]] block:nil];
+    }
+    return self.dataMutArr;
 }
 
-- (NSDictionary *)method_2:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSLocale的属性currentLocale",
-            @"title": @"@property (class, readonly, copy) NSLocale *currentLocale;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectLocaleCreation_class_property_currentLocale:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_3:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSLocale的属性systemLocale",
-            @"title": @"@property (class, readonly, copy) NSLocale *systemLocale;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectLocaleCreation_class_property_systemLocale:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_6 {
+- (NSDictionary *)method_6:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
             @"abstract": @"获取NSLocale的class方法localeWithLocaleIdentifier:",
             @"title": @"+ (instancetype)localeWithLocaleIdentifier:(NSString *)ident API_AVAILABLE(macos(10.6), ios(4.0), watchos(2.0), tvos(9.0));",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectLocaleCreation_class_localeWithLocaleIdentifier],
+                @"childItems": [self TestProjectLocaleCreation_class_localeWithLocaleIdentifier:params],
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectLocaleCreation_class_localeWithLocaleIdentifier {
-    NSArray *arr = [NSLocale availableLocaleIdentifiers];
-    for (NSString *identifier in arr) {
-        NSLocale *locale = [NSLocale localeWithLocaleIdentifier:identifier];
-        [self createTableModelWithTitle:[NSString stringWithFormat:@"%@", [locale objectForKey:NSLocaleIdentifier]] block:nil];
-    }
-    return self.dataMutArr;
-}
-
-- (NSMutableArray *)TestProjectLocaleCreation_class_property_systemLocale:(NSInteger)index {
-    [self createTableModelWithMethodBlock:^NSString * _Nonnull{
+- (NSMutableArray *)TestProjectLocaleCreation_class_property_systemLocale:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params title:@"[NSLocale systemLocale]" methodBlock:^NSString * _Nonnull{
         return [NSString stringWithFormat:@"%@", [NSLocale systemLocale]];
-    } title:@"[NSLocale systemLocale]" index:index];
-    return self.dataMutArr;
+    }];
 }
 
-- (NSMutableArray *)TestProjectLocaleCreation_class_property_currentLocale:(NSInteger)index {
-    [self createTableModelWithMethodBlock:^NSString * _Nonnull{
+- (NSDictionary *)method_3:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSLocale的属性systemLocale",
+            @"title": @"@property (class, readonly, copy) NSLocale *systemLocale;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectLocaleCreation_class_property_systemLocale:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectLocaleCreation_class_property_currentLocale:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params title:@"[NSLocale currentLocale]" methodBlock:^NSString * _Nonnull{
         return [NSString stringWithFormat:@"%@", [NSLocale currentLocale]];
-    } title:@"[NSLocale currentLocale]" index:index];
-    return self.dataMutArr;
+    }];
 }
 
-- (NSMutableArray *)TestProjectLocaleCreation_class_property_autoupdatingCurrentLocale:(NSInteger)index {
-    [self createTableModelWithMethodBlock:^NSString * _Nonnull{
+- (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSLocale的属性currentLocale",
+            @"title": @"@property (class, readonly, copy) NSLocale *currentLocale;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectLocaleCreation_class_property_currentLocale:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectLocaleCreation_class_property_autoupdatingCurrentLocale:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params title:@"[NSLocale autoupdatingCurrentLocale]" methodBlock:^NSString * _Nonnull{
         return [NSString stringWithFormat:@"%@", [NSLocale autoupdatingCurrentLocale]];
-    } title:@"[NSLocale autoupdatingCurrentLocale]" index:index];
-    return self.dataMutArr;
+    }];
+}
+
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSLocale的属性autoupdatingCurrentLocale",
+            @"title": @"@property (class, readonly, strong) NSLocale *autoupdatingCurrentLocale API_AVAILABLE(macos(10.5), ios(2.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectLocaleCreation_class_property_autoupdatingCurrentLocale:params],
+            }
+        },
+    };
 }
 
 @end

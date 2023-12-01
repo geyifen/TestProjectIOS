@@ -32,18 +32,26 @@
 - (NSArray *)viewDataArray {
     unsigned int methodCount = 0;
     Method *methodList = class_copyMethodList(self.class, &methodCount);
-    NSMutableArray *mutArr = [NSMutableArray array];
-    NSInteger j = 0;
+    NSMutableArray *methodArr = [NSMutableArray array];
+    NSString *methodPrefix = @"method_";
     for (NSInteger i = 0; i < methodCount; i++) {
         Method m = methodList[i];
         SEL sel = method_getName(m);
         NSString *methodName = NSStringFromSelector(sel);
-        if ([methodName hasPrefix:@"method_"]) {
-            NSDictionary *dic = ((NSDictionary *(*)(id, SEL, NSInteger))objc_msgSend)(self, sel, j);
-            [mutArr insertObject:dic atIndex:0];
-            self.dataMutArr = [NSMutableArray array];
-            j++;
+        if ([methodName hasPrefix:methodPrefix]) {
+            [methodArr addObject:methodName];
         }
+    }
+    NSInteger count = methodArr.count;
+    NSMutableArray *mutArr = [NSMutableArray arrayWithArray:methodArr];
+    for (NSInteger j = 0; j < count; j++) {
+        NSString *methodName = methodArr[j];
+        TestProjectTableViewParams *params = [[TestProjectTableViewParams alloc] init];
+        params.methodIndex = [[methodName substringFromIndex:methodPrefix.length] integerValue];
+        params.selectIndex = params.methodIndex;
+        NSDictionary *dic = ((NSDictionary *(*)(id, SEL, TestProjectTableViewParams *))objc_msgSend)(self, NSSelectorFromString(methodName), params);
+        [mutArr replaceObjectAtIndex:count - params.selectIndex withObject:dic];
+        self.dataMutArr = [NSMutableArray array];
     }
     free(methodList);
     return [mutArr copy];
@@ -111,24 +119,24 @@
     }
 }
 
-- (id)setPropertyValueObject {
+- (id)setPropertyValueObject:(TestProjectTableViewParams *)params {
     return nil;
 }
 
-- (Class)createTableModelClass {
+- (Class)createTableModelClass:(TestProjectTableViewParams *)params {
     return TestProjectTableViewModel.class;
 }
 
-- (TestProjectTableViewModel *)createModelWithIndex:(NSInteger)index
-                                          title:(NSString *)title
-                                       property:(NSString *)property
-                                          value:(id)value
-                                      operation:(TestProjectCreateModelOperation)operation
-                                          block:(void (^)(void))block {
-    Class class = [self createTableModelClass];
+- (TestProjectTableViewModel *)createModelWithParams:(TestProjectTableViewParams *)params
+                                               title:(NSString *)title
+                                            property:(NSString *)property
+                                               value:(id)value
+                                           operation:(TestProjectCreateModelOperation)operation
+                                               block:(void (^)(void))block {
+    Class class = [self createTableModelClass:params];
     __block TestProjectTableViewModel *m = [[class alloc] init];
     m.isChild = YES;
-    id object = [self setPropertyValueObject];
+    id object = [self setPropertyValueObject:params];
     if (title) {
         title = [NSString stringWithFormat:@"%@\n", title];
     } else {
@@ -172,7 +180,7 @@
                 if ([wm needAutoCalculViewHeight]) {
                     [wm calculDataViewHeight];
                 }
-                NSInteger atIndex = wSelf.tableView.dataSourceArray.count - index -1;
+                NSInteger atIndex = wSelf.tableView.dataSourceArray.count - params.selectIndex -1;
                 TestProjectTableViewModel *vm = [wSelf.tableView.dataSourceArray objectAtIndex:atIndex];
                 if ([vm needAutoCalculViewHeight]) {
                     [vm calculDataViewHeight];
@@ -192,13 +200,13 @@
 
 }
 
-- (NSMutableArray *)createModelSingleArrayWithIndex:(NSInteger)index
-                                              title:(NSString *)title
-                                           property:(NSString *)property
-                                              value:(id)value
-                                          operation:(TestProjectCreateModelOperation)operation
-                                              block:(void (^)(void))block {
-    [self createModelWithIndex:index
+- (NSMutableArray *)createModelSingleArrayWithParams:(TestProjectTableViewParams *)params
+                                               title:(NSString *)title
+                                            property:(NSString *)property
+                                               value:(id)value
+                                           operation:(TestProjectCreateModelOperation)operation
+                                               block:(void (^)(void))block {
+    [self createModelWithParams:params
                          title:title
                       property:property
                          value:value
@@ -207,27 +215,27 @@
     return self.dataMutArr;
 }
 
-- (TestProjectTableViewModel *)createModelWithIndex:(NSInteger)index
-                                       property:(NSString *)property
-                                          value:(id)value
-                                      operation:(TestProjectCreateModelOperation)operation
-                                          block:(void(^)(void))block {
-    return [self createModelWithIndex:index title:nil property:property value:value operation:operation block:block];
+- (TestProjectTableViewModel *)createModelWithParams:params
+                                            property:(NSString *)property
+                                               value:(id)value
+                                           operation:(TestProjectCreateModelOperation)operation
+                                               block:(void(^)(void))block {
+    return [self createModelWithParams:params title:nil property:property value:value operation:operation block:block];
 }
 
-- (NSMutableArray *)createModelSingleArrayWithIndex:(NSInteger)index
-                                           property:(NSString *)property
-                                              value:(id)value
-                                          operation:(TestProjectCreateModelOperation)operation
-                                              block:(void(^)(void))block {
-    [self createModelWithIndex:index property:property value:value operation:operation block:block];
+- (NSMutableArray *)createModelSingleArrayWithParams:(TestProjectTableViewParams *)params
+                                            property:(NSString *)property
+                                               value:(id)value
+                                           operation:(TestProjectCreateModelOperation)operation
+                                               block:(void(^)(void))block {
+    [self createModelWithParams:params property:property value:value operation:operation block:block];
     return self.dataMutArr;
 }
 
-- (TestProjectTableViewModel *)createModelWithIndex:(NSInteger)index
-                                          title:(NSString *)title
-                                    methodBlock:(NSString *(^)(void))methodBlock {
-    Class class = [self createTableModelClass];
+- (TestProjectTableViewModel *)createModelWithParams:(TestProjectTableViewParams *)params
+                                               title:(NSString *)title
+                                         methodBlock:(NSString *(^)(void))methodBlock {
+    Class class = [self createTableModelClass:params];
     __block TestProjectTableViewModel *m = [[class alloc] init];
     m.isChild = YES;
     m.title = [NSString stringWithFormat:@"%@\n点击后获取的描述信息:\n", title];
@@ -248,7 +256,7 @@
         if ([wm needAutoCalculViewHeight]) {
             [wm calculDataViewHeight];
         }
-        NSInteger atIndex = wSelf.tableView.dataSourceArray.count - index -1;
+        NSInteger atIndex = wSelf.tableView.dataSourceArray.count - params.selectIndex -1;
         TestProjectTableViewModel *vm = [wSelf.tableView.dataSourceArray objectAtIndex:atIndex];
         if ([vm needAutoCalculViewHeight]) {
             [vm calculDataViewHeight];
@@ -259,37 +267,37 @@
     return m;
 }
 
-- (NSMutableArray *)createModelSingleArrayWithIndex:(NSInteger)index
-                                              title:(NSString *)title
-                                        methodBlock:(NSString *(^)(void))methodBlock {
-    [self createModelWithIndex:index
+- (NSMutableArray *)createModelSingleArrayWithParams:(TestProjectTableViewParams *)params
+                                               title:(NSString *)title
+                                         methodBlock:(NSString *(^)(void))methodBlock {
+    [self createModelWithParams:params
                          title:title
                    methodBlock:methodBlock];
     return self.dataMutArr;
 }
 
-- (TestProjectTableViewModel *)createModelWithIndex:(NSInteger)index
-                                          title:(NSString *)title
-                                          block:(void(^)(void))block {
-    return [self createModelWithIndex:index
-                                title:title
+- (TestProjectTableViewModel *)createModelWithParams:params
+                                               title:(NSString *)title
+                                               block:(void(^)(void))block {
+    return [self createModelWithParams:params
+                                 title:title
                         modelKeyValue:nil
-                                block:block];
+                                 block:block];
 }
 
-- (NSMutableArray *)createModelSingleArrayWithIndex:(NSInteger)index
-                                              title:(NSString *)title
-                                              block:(void (^)(void))block {
-    return [self createModelSingleArrayWithIndex:index
-                                           title:title
-                                   modelKeyValue:nil
-                                           block:block];
+- (NSMutableArray *)createModelSingleArrayWithParams:(TestProjectTableViewParams *)params
+                                               title:(NSString *)title
+                                               block:(void (^)(void))block {
+    return [self createModelSingleArrayWithParams:params
+                                            title:title
+                                    modelKeyValue:nil
+                                            block:block];
 }
 
-- (TestProjectTableViewModel *)createModelWithIndex:(NSInteger)index
-                                 attributeTitle:(NSAttributedString *)attributeTitle
-                                          block:(void (^)(void))block {
-    Class class = [self createTableModelClass];
+- (TestProjectTableViewModel *)createModelWithParams:params
+                                      attributeTitle:(NSAttributedString *)attributeTitle
+                                               block:(void (^)(void))block {
+    Class class = [self createTableModelClass:params];
     TestProjectTableViewModel *m = [[class alloc] init];
     m.titleMutAttrStr = [[NSMutableAttributedString alloc] initWithAttributedString:attributeTitle];
     m.isChild = YES;
@@ -305,25 +313,33 @@
     return m;
 }
 
-- (NSMutableArray *)createModelSingleArrayWithIndex:(NSInteger)index
-                                     attributeTitle:(NSAttributedString *)attributeTitle
-                                              block:(void (^)(void))block {
-    [self createModelWithIndex:index attributeTitle:attributeTitle block:block];
+- (NSMutableArray *)createModelSingleArrayWithParams:(TestProjectTableViewParams *)params
+                                      attributeTitle:(NSAttributedString *)attributeTitle
+                                               block:(void (^)(void))block {
+    [self createModelWithParams:params attributeTitle:attributeTitle block:block];
     return self.dataMutArr;
 }
 
-- (TestProjectTableViewModel *)createModelWithIndex:(NSInteger)index
-                                          title:(NSString *)title
-                                  modelKeyValue:(NSDictionary *)modelKeyValue
-                                          block:(void(^)(void))block {
-    Class class = [self createTableModelClass];
+- (TestProjectTableViewModel *)createModelWithParams:params
+                                               title:(NSString *)title
+                                       modelKeyValue:(NSDictionary *)modelKeyValue
+                                               block:(void(^)(void))block {
+    Class class = [self createTableModelClass:params];
     TestProjectTableViewModel *m = [[class alloc] init];
     m.title = title;
     m.isChild = YES;
     if (modelKeyValue) {
+        NSMutableString *mutTitle = [NSMutableString stringWithString:title];
         for (NSString *key in modelKeyValue.allKeys) {
-            [m setValue:modelKeyValue[key] forKey:key];
+            id value = modelKeyValue[key];
+            [m setValue:value forKey:key];
+            if (mutTitle.length > 0) {
+                [mutTitle appendFormat:@"\n设置的属性是:%@ 值是:%@", key, value];
+            } else {
+                [mutTitle appendFormat:@"设置的属性是:%@ 值是:%@", key, value];
+            }
         }
+        m.title = mutTitle;
     }
     if (block) {
         m.clickBlock = ^{
@@ -337,203 +353,19 @@
     return m;
 }
 
-- (NSMutableArray *)createModelSingleArrayWithIndex:(NSInteger)index
-                                              title:(NSString *)title
-                                      modelKeyValue:(NSDictionary *)modelKeyValue
-                                              block:(void (^)(void))block {
-    [self createModelWithIndex:index title:title modelKeyValue:modelKeyValue block:block];
+- (NSMutableArray *)createModelSingleArrayWithParams:(TestProjectTableViewParams *)params
+                                               title:(NSString *)title
+                                       modelKeyValue:(NSDictionary *)modelKeyValue
+                                               block:(void (^)(void))block {
+    [self createModelWithParams:params title:title modelKeyValue:modelKeyValue block:block];
     return self.dataMutArr;
 }
 
-
-
-
-
-
-
-- (TestProjectTableViewModel *)createClickSetTableModelWithProperty:(NSString *)property value:(id)value {
-    return [self createClickSetTableModelWithProperty:property value:value block:nil];
-}
-
-- (NSMutableArray *)createClickSetSingleArrayTableModelWithProperty:(NSString *)property value:(id)value {
-    [self createClickSetTableModelWithProperty:property value:value];
+- (NSMutableArray *)createModelSingleArrayWithParams:(TestProjectTableViewParams *)params
+                                       modelKeyValue:(NSDictionary *)modelKeyValue
+                                               block:(void (^)(void))block {
+    [self createModelWithParams:params title:nil modelKeyValue:modelKeyValue block:block];
     return self.dataMutArr;
-}
-
-- (TestProjectTableViewModel *)createClickSetTableModelWithProperty:(NSString *)property value:(id)value block:(nullable void (^)(void))block {
-    return [self createClickSetTableModelWithProperty:property value:value before:NO block:block];
-}
-
-- (NSMutableArray *)createClickSetSingleArrayTableModelBeforeWithProperty:(NSString *)property value:(id)value {
-    [self createClickSetTableModelWithProperty:property value:value before:YES block:nil];
-    return self.dataMutArr;
-}
-
-- (TestProjectTableViewModel *)createClickSetTableModelWithProperty:(NSString *)property value:(id)value before:(BOOL)before block:(nullable void (^)(void))block {
-    Class class = [self createTableModelClass];
-    TestProjectTableViewModel *m = [[class alloc] init];
-    id object = [self setPropertyValueObject];
-    if (before) {
-        m.abstract = [NSString stringWithFormat:@"获取的属性值(%@)为：\n%@", property, [object valueForKey:property]];;
-    }
-    NSString *title = [NSString stringWithFormat:@"设置的属性值(%@)为：%@", property, value];
-    m.title = title;
-    m.isChild = YES;
-    WO(wObjc, object);
-    if (property && value) {
-        m.clickBlock = ^{
-            [UIAlertController alertWithTitle:title message:nil cancelTitle:@"取消" cancelBlock:nil sureTitle:@"确定" sureBlock:^{
-                [wObjc setValue:value forKey:property];
-                if (block) {
-                    block();
-                }
-            }];
-        };
-    }
-    if ([m needAutoCalculViewHeight]) {
-        [m calculDataViewHeight];
-    }
-    [self.dataMutArr addObject:m];
-    return m;
-}
-
-- (TestProjectTableViewModel *)createClickSetTableModelWithProperty:(NSString *)property value:(id)value title:(NSString *)title block:(void(^)(void))block {
-    Class class = [self createTableModelClass];
-    TestProjectTableViewModel *m = [[class alloc] init];
-    m.title = title;
-    m.isChild = YES;
-    WS(wSelf);
-    if (property && value) {
-        m.clickBlock = ^{
-            [UIAlertController alertWithTitle:title message:nil cancelTitle:@"取消" cancelBlock:nil sureTitle:@"确定" sureBlock:^{
-                id object = [wSelf setPropertyValueObject];
-                [object setValue:value forKey:property];
-                if (block) {
-                    block();
-                }
-            }];
-        };
-    }
-   
-    if ([m needAutoCalculViewHeight]) {
-        [m calculDataViewHeight];
-    }
-    [self.dataMutArr addObject:m];
-    return m;
-}
-
-- (TestProjectTableViewModel *)createTableModelWithTitle:(NSString *)title block:(void(^)(void))block {
-    Class class = [self createTableModelClass];
-    TestProjectTableViewModel *m = [[class alloc] init];
-    m.title = title;
-    m.isChild = YES;
-    if (block) {
-        m.clickBlock = ^{
-            [UIAlertController alertWithTitle:title message:nil cancelTitle:@"取消" cancelBlock:nil sureTitle:@"确定" sureBlock:block];
-        };
-    }
-    if ([m needAutoCalculViewHeight]) {
-        [m calculDataViewHeight];
-    }
-    [self.dataMutArr addObject:m];
-    return m;
-}
-
-- (NSMutableArray *)createTableModelSingleArrayWithTitle:(NSString *)title block:(void(^)(void))block {
-    [self createTableModelWithTitle:title block:block];
-    return self.dataMutArr;
-}
-
-- (TestProjectTableViewModel *)createTableModelWithProperty:(NSString *)property value:(id)value {
-    Class class = [self createTableModelClass];
-    TestProjectTableViewModel *m = [[class alloc] init];
-    m.isChild = YES;
-    id object = [self setPropertyValueObject];
-
-    if (property && value) {
-        [object setValue:value forKey:property];
-    }
-    m.title = [NSString stringWithFormat:@"获取的属性值(%@)为：\n%@", property, [object valueForKey:property]];
-    if ([m needAutoCalculViewHeight]) {
-        [m calculDataViewHeight];
-    }
-    [self.dataMutArr addObject:m];
-    return m;
-}
-
-- (NSMutableArray *)createTableModelSingleArrayWithProperty:(NSString *)property value:(id)value {
-    [self createTableModelWithProperty:property value:value];
-    return self.dataMutArr;
-}
-
-- (NSMutableArray *)createTableModelSingleArrayWithProperty:(NSString *)property index:(NSInteger)index {
-    return [self createTableModelSingleArrayWithProperty:property index:index before:NO];
-}
-
-- (NSMutableArray *)createTableModelSingleArrayWithProperty:(NSString *)property index:(NSInteger)index before:(BOOL)before {
-    Class class = [self createTableModelClass];
-    __block TestProjectTableViewModel *m = [[class alloc] init];
-    m.isChild = YES;
-    m.title = [NSString stringWithFormat:@"点击后获取的属性值(%@)为：\n", property];
-    if (before) {
-        id object = [self setPropertyValueObject];
-        m.desc = [NSString stringWithFormat:@"%@", [object valueForKey:property]];
-    }
-    if ([m needAutoCalculViewHeight]) {
-        [m calculDataViewHeight];
-    }
-    WS(wSelf);
-    WO(wObjc, m);
-    m.clickBlock = ^{
-        id object = [wSelf setPropertyValueObject];
-        wObjc.desc = [NSString stringWithFormat:@"%@", [object valueForKey:property]];
-        if ([wObjc needAutoCalculViewHeight]) {
-            [wObjc calculDataViewHeight];
-        }
-        NSInteger atIndex = wSelf.tableView.dataSourceArray.count - index -1;
-        TestProjectTableViewModel *vm = [wSelf.tableView.dataSourceArray objectAtIndex:atIndex];
-        if ([vm needAutoCalculViewHeight]) {
-            [vm calculDataViewHeight];
-        }
-        [wSelf.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:atIndex inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
-    };
-    [self.dataMutArr addObject:m];
-    return self.dataMutArr;
-}
-
-- (NSMutableArray *)createTableModelSingleArrayWithMethodBlock:(NSString *(^)(void))methodBlock title:(NSString *)title index:(NSInteger)index {
-    [self createTableModelSingleArrayWithMethodBlock:methodBlock title:title index:index];
-    return self.dataMutArr;
-}
-
-- (TestProjectTableViewModel *)createTableModelWithMethodBlock:(NSString *(^)(void))methodBlock title:(NSString *)title index:(NSInteger)index {
-    Class class = [self createTableModelClass];
-    __block TestProjectTableViewModel *m = [[class alloc] init];
-    m.isChild = YES;
-    m.title = [NSString stringWithFormat:@"%@\n点击后获取的描述信息:\n", title];
-    if ([m needAutoCalculViewHeight]) {
-        [m calculDataViewHeight];
-    }
-    WS(wSelf);
-    WO(wObjc, m);
-    m.clickBlock = ^{
-        NSString *desc = nil;
-        if (methodBlock) {
-            desc = methodBlock();
-        }
-        wObjc.desc = desc;
-        if ([wObjc needAutoCalculViewHeight]) {
-            [wObjc calculDataViewHeight];
-        }
-        NSInteger atIndex = wSelf.tableView.dataSourceArray.count - index -1;
-        TestProjectTableViewModel *vm = [wSelf.tableView.dataSourceArray objectAtIndex:atIndex];
-        if ([vm needAutoCalculViewHeight]) {
-            [vm calculDataViewHeight];
-        }
-        [wSelf.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:atIndex inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
-    };
-    [self.dataMutArr addObject:m];
-    return m;
 }
 
 - (void)addNotificationWithName:(NSString *)name selector:(SEL)selector {
@@ -544,9 +376,9 @@
 - (TestProjectViewModelTableView *)tableView {
     if (!_tableView) {
         _tableView = [[TestProjectViewModelTableView alloc] initWithFrame:CGRectZero
-                                                               style:UITableViewStyleGrouped
-                                                            delegate:self.delegate
-                                                          dataSource:self.dataSource];
+                                                                    style:UITableViewStyleGrouped
+                                                                 delegate:self.delegate
+                                                               dataSource:self.dataSource];
         _tableView.cellDelegate = self;
         _tableView.tableViewDelegate = self;
         [self addSubview:_tableView];

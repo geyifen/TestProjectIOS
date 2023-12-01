@@ -44,7 +44,7 @@
 }
 
 - (void)createModelWithTitle:(NSString *)title vcClassName:(NSString *)vcClassName {
-    [self.viewTable createModelWithIndex:0 title:title block:^{
+    [self.viewTable createModelWithParams:nil title:title block:^{
         Class vcClass = NSClassFromString(vcClassName);
         UIViewController *vc = [[vcClass alloc] init];
         vc.title = title;

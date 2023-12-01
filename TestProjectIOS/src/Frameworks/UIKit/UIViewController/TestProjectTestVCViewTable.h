@@ -16,7 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) TestProjectTestVC *parentVC;
 @property (nonatomic, strong) TestProjectTestVC *tVC;
 
-- (TestProjectTableViewModel *)createChildVCTableModelWithProperty:(NSString *)key value:(id)value title:(NSString *)title;
+- (TestProjectTableViewModel *)createChildVCTableModelWithParams:(TestProjectTableViewParams *)params
+                                                        property:(NSString *)key
+                                                           value:(id)value
+                                                           title:(NSString *)title;
 
 - (BOOL)isOnlyPush;
 

@@ -19,36 +19,6 @@
 
 @implementation TestProjectUIAlertController
 
-- (NSDictionary *)method_1 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"通过style设置alert或者sheet弹窗",
-            @"title": @"+ (instancetype)alertControllerWithTitle:(nullable NSString *)title message:(nullable NSString *)message preferredStyle:(UIAlertControllerStyle)preferredStyle;",
-            @"desc": @"只能设置一个UIAlertActionStyleCancel样式，多了则会崩溃",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"modelClass": TestProjectAlertControllerViewModel.class,
-                @"childItems": [self TestProjectAlertController_alertControllerWithTitle_message_preferredStyle],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_2 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"alert或者sheet弹窗上添加一个UITextField",
-            @"title": @"- (void)addTextFieldWithConfigurationHandler:(void (^ __nullable)(UITextField *textField))configurationHandler;",
-            @"desc": @"sheet不支持添加UITextField \n 只能设置一个UIAlertActionStyleCancel样式，多了则会崩溃",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"modelClass": TestProjectAlertControllerViewModel.class,
-                @"childItems": [self TestProjectAlertController_addTextFieldWithConfigurationHandler],
-            }
-        },
-    };
-}
-
 - (void)createTabModelWith:(NSString *)title style:(UIAlertControllerStyle)style isAddText:(BOOL)isAddText {
     TestProjectAlertControllerViewModel *m = [[TestProjectAlertControllerViewModel alloc] init];
     m.title = title;
@@ -103,8 +73,38 @@
     return [self createAlertController_isAddText:NO];
 }
 
+- (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"alert或者sheet弹窗上添加一个UITextField",
+            @"title": @"- (void)addTextFieldWithConfigurationHandler:(void (^ __nullable)(UITextField *textField))configurationHandler;",
+            @"desc": @"sheet不支持添加UITextField \n 只能设置一个UIAlertActionStyleCancel样式，多了则会崩溃",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAlertControllerViewModel.class,
+                @"childItems": [self TestProjectAlertController_addTextFieldWithConfigurationHandler],
+            }
+        },
+    };
+}
+
 - (NSMutableArray *)TestProjectAlertController_addTextFieldWithConfigurationHandler {
     return [self createAlertController_isAddText:YES];
+}
+
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"通过style设置alert或者sheet弹窗",
+            @"title": @"+ (instancetype)alertControllerWithTitle:(nullable NSString *)title message:(nullable NSString *)message preferredStyle:(UIAlertControllerStyle)preferredStyle;",
+            @"desc": @"只能设置一个UIAlertActionStyleCancel样式，多了则会崩溃",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAlertControllerViewModel.class,
+                @"childItems": [self TestProjectAlertController_alertControllerWithTitle_message_preferredStyle],
+            }
+        },
+    };
 }
 
 @end

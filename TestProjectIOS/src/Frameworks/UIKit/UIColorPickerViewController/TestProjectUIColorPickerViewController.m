@@ -41,7 +41,7 @@ API_AVAILABLE(ios(14.0))
     return _colorPickerVC;
 }
 
-- (id)setPropertyValueObject {
+- (id)setPropertyValueObject:(TestProjectTableViewParams *)params {
     return self.colorPickerVC;
 }
 
@@ -54,46 +54,7 @@ API_AVAILABLE(ios(14.0))
     NSLog(@"%@", NSStringFromSelector(_cmd));
 }
 
-- (NSDictionary *)method_1 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIColorPickerViewController的属性delegate",
-            @"title": @"@property (nullable, weak, nonatomic) id<UIColorPickerViewControllerDelegate> delegate;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectColorPickerViewController_property_delegate],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_2:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIColorPickerViewController的属性selectedColor",
-            @"title": @"@property (strong, nonatomic) UIColor *selectedColor;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectColorPickerViewController_property_selectedColor:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_3 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIColorPickerViewController的属性supportsAlpha, 是否支持透明度",
-            @"title": @"@property (nonatomic) BOOL supportsAlpha",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectColorPickerViewController_property_supportsAlpha],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectColorPickerViewController_property_supportsAlpha {
+- (NSMutableArray *)TestProjectColorPickerViewController_property_supportsAlpha:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": @"设置的属性是YES, 有透明度选项",
@@ -107,17 +68,69 @@ API_AVAILABLE(ios(14.0))
     for (NSDictionary *dic in arr) {
         NSString *title = dic[@"title"];
         NSNumber *value = dic[@"value"];
-        [self createClickSetTableModelWithProperty:@"supportsAlpha" value:value title:title block:nil];
+        [self createModelWithParams:params
+                              title:title
+                           property:@"supportsAlpha"
+                              value:value
+                          operation:TestProjectCreateModelGetBeforeClickSet
+                              block:nil];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectColorPickerViewController_property_selectedColor:(NSInteger)index {
-    return [self createTableModelSingleArrayWithProperty:@"selectedColor" index:index];
+- (NSDictionary *)method_3:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIColorPickerViewController的属性supportsAlpha, 是否支持透明度",
+            @"title": @"@property (nonatomic) BOOL supportsAlpha",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectColorPickerViewController_property_supportsAlpha:params],
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectColorPickerViewController_property_delegate {
-    return [self createTableModelSingleArrayWithProperty:@"delegate" value:nil];
+- (NSMutableArray *)TestProjectColorPickerViewController_property_selectedColor:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"selectedColor"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIColorPickerViewController的属性selectedColor",
+            @"title": @"@property (strong, nonatomic) UIColor *selectedColor;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectColorPickerViewController_property_selectedColor:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectColorPickerViewController_property_delegate:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"delegate"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIColorPickerViewController的属性delegate",
+            @"title": @"@property (nullable, weak, nonatomic) id<UIColorPickerViewControllerDelegate> delegate;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectColorPickerViewController_property_delegate:params],
+            }
+        },
+    };
 }
 
 @end

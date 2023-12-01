@@ -48,91 +48,52 @@
     return _vcDic;
 }
 
-- (id)setPropertyValueObject {
+- (id)setPropertyValueObject:(TestProjectTableViewParams *)params {
     return self.configuration;
 }
 
-- (NSDictionary *)method_1:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIFontPickerViewControllerConfiguration的属性includeFaces",
-            @"title": @"@property (nonatomic) BOOL includeFaces;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectFontPickerViewControllerConfiguration_property_includeFaces:index],
-            }
-        },
-    };
+- (NSMutableArray *)TestProjectFontPickerViewControllerConfiguration_class_filterPredicateForFilteredLanguages:(TestProjectTableViewParams *)params {
+    NSPredicate *predicate = [UIFontPickerViewControllerConfiguration filterPredicateForFilteredLanguages:@[@"AI Nile"]];
+    return [self createModelSingleArrayWithParams:params title:[NSString stringWithFormat:@"%@", predicate] block:nil];
 }
 
-- (NSDictionary *)method_2:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIFontPickerViewControllerConfiguration的属性displayUsingSystemFont",
-            @"title": @"@property (nonatomic) BOOL displayUsingSystemFont;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectFontPickerViewControllerConfiguration_property_displayUsingSystemFont:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_3:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIFontPickerViewControllerConfiguration的属性filteredTraits",
-            @"title": @"@property (nonatomic) UIFontDescriptorSymbolicTraits filteredTraits;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectFontPickerViewControllerConfiguration_property_filteredTraits:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_4:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIFontPickerViewControllerConfiguration的属性filteredLanguagesPredicate, 暂不知道怎么用",
-            @"title": @"@property (nullable, copy, nonatomic) NSPredicate *filteredLanguagesPredicate;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectFontPickerViewControllerConfiguration_property_filteredLanguagesPredicate:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_5:(NSInteger)index {
+- (NSDictionary *)method_5:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
             @"abstract": @"设置获取UIFontPickerViewControllerConfiguration的class方法filterPredicateForFilteredLanguages:",
             @"title": @"+ (nullable NSPredicate *)filterPredicateForFilteredLanguages:(NSArray<NSString *> *)filteredLanguages;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectFontPickerViewControllerConfiguration_class_filterPredicateForFilteredLanguages:index],
+                @"childItems": [self TestProjectFontPickerViewControllerConfiguration_class_filterPredicateForFilteredLanguages:params],
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectFontPickerViewControllerConfiguration_class_filterPredicateForFilteredLanguages:(NSInteger)index {
-    NSPredicate *predicate = [UIFontPickerViewControllerConfiguration filterPredicateForFilteredLanguages:@[@"AI Nile"]];
-    return [self createTableModelSingleArrayWithTitle:[NSString stringWithFormat:@"%@", predicate] block:nil];
-}
-
-- (NSMutableArray *)TestProjectFontPickerViewControllerConfiguration_property_filteredLanguagesPredicate:(NSInteger)index {
+- (NSMutableArray *)TestProjectFontPickerViewControllerConfiguration_property_filteredLanguagesPredicate:(TestProjectTableViewParams *)params {
     NSPredicate *predicate = [UIFontPickerViewControllerConfiguration filterPredicateForFilteredLanguages:@[@"Symbol"]];
     UIFontPickerViewControllerConfiguration *config = [[UIFontPickerViewControllerConfiguration alloc] init];
     config.filteredLanguagesPredicate = predicate;
     WS(wSelf);
-    return [self createTableModelSingleArrayWithTitle:[NSString stringWithFormat:@"过滤条件:%@\n%@", predicate, config] block:^{
+    return [self createModelSingleArrayWithParams:params title:[NSString stringWithFormat:@"过滤条件:%@\n%@", predicate, config] block:^{
         [wSelf createFontPickerVCWithConfiguration:config];
     }];
 }
 
-- (NSMutableArray *)TestProjectFontPickerViewControllerConfiguration_property_filteredTraits:(NSInteger)index {
+- (NSDictionary *)method_4:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIFontPickerViewControllerConfiguration的属性filteredLanguagesPredicate, 暂不知道怎么用",
+            @"title": @"@property (nullable, copy, nonatomic) NSPredicate *filteredLanguagesPredicate;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectFontPickerViewControllerConfiguration_property_filteredLanguagesPredicate:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectFontPickerViewControllerConfiguration_property_filteredTraits:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": [NSString stringWithFormat:@"设置的属性是:UIFontDescriptorTraitItalic(%u)", UIFontDescriptorTraitItalic],
@@ -226,14 +187,27 @@
         UIFontPickerViewControllerConfiguration *config = [[UIFontPickerViewControllerConfiguration alloc] init];
         config.filteredTraits = value;
         WS(wSelf);
-        [self createTableModelSingleArrayWithTitle:[NSString stringWithFormat:@"%@\n%@", title, config] block:^{
+        [self createModelSingleArrayWithParams:params title:[NSString stringWithFormat:@"%@\n%@", title, config] block:^{
             [wSelf createFontPickerVCWithConfiguration:config];
         }];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectFontPickerViewControllerConfiguration_property_displayUsingSystemFont:(NSInteger)index {
+- (NSDictionary *)method_3:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIFontPickerViewControllerConfiguration的属性filteredTraits",
+            @"title": @"@property (nonatomic) UIFontDescriptorSymbolicTraits filteredTraits;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectFontPickerViewControllerConfiguration_property_filteredTraits:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectFontPickerViewControllerConfiguration_property_displayUsingSystemFont:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": @"设置的属性是YES",
@@ -250,14 +224,27 @@
         UIFontPickerViewControllerConfiguration *config = [[UIFontPickerViewControllerConfiguration alloc] init];
         config.displayUsingSystemFont = value;
         WS(wSelf);
-        [self createTableModelSingleArrayWithTitle:[NSString stringWithFormat:@"%@\n%@", title, config] block:^{
+        [self createModelSingleArrayWithParams:params title:[NSString stringWithFormat:@"%@\n%@", title, config] block:^{
             [wSelf createFontPickerVCWithConfiguration:config];
         }];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectFontPickerViewControllerConfiguration_property_includeFaces:(NSInteger)index {
+- (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIFontPickerViewControllerConfiguration的属性displayUsingSystemFont",
+            @"title": @"@property (nonatomic) BOOL displayUsingSystemFont;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectFontPickerViewControllerConfiguration_property_displayUsingSystemFont:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectFontPickerViewControllerConfiguration_property_includeFaces:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": @"设置的属性是YES",
@@ -274,11 +261,24 @@
         UIFontPickerViewControllerConfiguration *config = [[UIFontPickerViewControllerConfiguration alloc] init];
         config.includeFaces = value;
         WS(wSelf);
-        [self createTableModelSingleArrayWithTitle:[NSString stringWithFormat:@"%@\n%@", title, config] block:^{
+        [self createModelSingleArrayWithParams:params title:[NSString stringWithFormat:@"%@\n%@", title, config] block:^{
             [wSelf createFontPickerVCWithConfiguration:config];
         }];
     }
     return self.dataMutArr;
+}
+
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIFontPickerViewControllerConfiguration的属性includeFaces",
+            @"title": @"@property (nonatomic) BOOL includeFaces;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectFontPickerViewControllerConfiguration_property_includeFaces:params],
+            }
+        },
+    };
 }
 
 @end

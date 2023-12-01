@@ -37,65 +37,90 @@
     return _childSwitch;
 }
 
-- (id)setPropertyValueObject {
+- (id)setPropertyValueObject:(TestProjectTableViewParams *)params {
     return self.childSwitch;
 }
 
-- (NSDictionary *)method_1:(NSInteger)index {
+- (NSMutableArray *)TestProjectSwitch_setOn_animated:(TestProjectTableViewParams *)params {
+    NSArray *arr = @[@(YES), @(NO)];
+    WS(wSelf);
+    for (NSNumber *value in arr) {
+        BOOL vB = [value boolValue];
+        [self createModelWithParams:params title:[NSString stringWithFormat:@"设置的参数(on)为: %u", vB] block:^{
+            [wSelf.childSwitch setOn:vB animated:YES];
+        }];
+    }
+    return self.dataMutArr;
+}
+
+- (NSDictionary *)method_8:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"设置获取UISwitch的属性onTintColor",
-            @"title": @"@property(nullable, nonatomic, strong) UIColor *onTintColor API_AVAILABLE(ios(5.0)) UI_APPEARANCE_SELECTOR;",
+            @"abstract": @"执行UISwitch的方法setOn:animated:",
+            @"title": @"- (void)setOn:(BOOL)on animated:(BOOL)animated;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectSwitch_property_onTintColor:index],
+                @"childItems": [self TestProjectSwitch_setOn_animated:params],
             }
         },
     };
 }
 
-- (NSDictionary *)method_2:(NSInteger)index {
+- (NSMutableArray *)TestProjectSwitch_property_on:(TestProjectTableViewParams *)params {
+    NSArray *arr = @[@(YES), @(NO)];
+    for (NSNumber *value in arr) {
+        [self createModelWithParams:params
+                           property:@"on"
+                              value:value
+                          operation:TestProjectCreateModelGetBeforeClickSet
+                              block:nil];
+    }
+    return self.dataMutArr;
+}
+
+- (NSDictionary *)method_7:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"设置获取UISwitch的属性thumbTintColor",
-            @"title": @"@property(nullable, nonatomic, strong) UIColor *thumbTintColor API_AVAILABLE(ios(6.0)) UI_APPEARANCE_SELECTOR;",
+            @"abstract": @"设置获取UISwitch的属性on",
+            @"title": @"@property(nonatomic,getter=isOn) BOOL on;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectSwitch_property_thumbTintColor:index],
+                @"childItems": [self TestProjectSwitch_property_on:params],
             }
         },
     };
 }
 
-- (NSDictionary *)method_3:(NSInteger)index {
+- (NSMutableArray *)TestProjectSwitch_property_style:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"style"
+                                            value:nil
+                                        operation:TestProjectCreateModelOnlyGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_6:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"设置获取UISwitch的属性onImage",
-            @"title": @"@property(nullable, nonatomic, strong) UIImage *onImage API_AVAILABLE(ios(6.0)) UI_APPEARANCE_SELECTOR;",
+            @"abstract": @"设置获取UISwitch的属性style",
+            @"title": @"@property(nonatomic, readonly) UISwitchStyle style API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(tvos);",
             @"isDataModelExpand": @(YES),
-            @"desc": @"设置无效，暂时不知道作用",
             @"dataModel": @{
-                @"childItems": [self TestProjectSwitch_property_onImage:index],
+                @"childItems": [self TestProjectSwitch_property_style:params],
             }
         },
     };
 }
 
-- (NSDictionary *)method_4:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UISwitch的属性offImage",
-            @"title": @"@property(nullable, nonatomic, strong) UIImage *offImage API_AVAILABLE(ios(6.0)) UI_APPEARANCE_SELECTOR;",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"设置无效，暂时不知道作用",
-            @"dataModel": @{
-                @"childItems": [self TestProjectSwitch_property_offImage:index],
-            }
-        },
-    };
+- (NSMutableArray *)TestProjectSwitch_property_title:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"title"
+                                            value:@"t_switch"
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
 }
 
-- (NSDictionary *)method_5:(NSInteger)index {
+- (NSDictionary *)method_5:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
             @"abstract": @"设置获取UISwitch的属性title",
@@ -103,121 +128,96 @@
             @"isDataModelExpand": @(YES),
             @"desc": @"setTitle: on UISwitch is only supported when running Catalyst apps in the Mac Idiom.",
             @"dataModel": @{
-                @"childItems": [self TestProjectSwitch_property_title:index],
+                @"childItems": [self TestProjectSwitch_property_title:params],
             }
         },
     };
 }
 
-- (NSDictionary *)method_6:(NSInteger)index {
+- (NSMutableArray *)TestProjectSwitch_property_offImage:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"offImage"
+                                            value:[UIImage imageNamed:@"arrow_up"]
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_4:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"设置获取UISwitch的属性style",
-            @"title": @"@property(nonatomic, readonly) UISwitchStyle style API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(tvos);",
+            @"abstract": @"设置获取UISwitch的属性offImage",
+            @"title": @"@property(nullable, nonatomic, strong) UIImage *offImage API_AVAILABLE(ios(6.0)) UI_APPEARANCE_SELECTOR;",
             @"isDataModelExpand": @(YES),
+            @"desc": @"设置无效，暂时不知道作用",
             @"dataModel": @{
-                @"childItems": [self TestProjectSwitch_property_style:index],
+                @"childItems": [self TestProjectSwitch_property_offImage:params],
             }
         },
     };
 }
 
-- (NSDictionary *)method_7:(NSInteger)index {
+- (NSMutableArray *)TestProjectSwitch_property_onImage:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"onImage"
+                                            value:[UIImage imageNamed:@"arrow_down"]
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_3:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"设置获取UISwitch的属性on",
-            @"title": @"@property(nonatomic,getter=isOn) BOOL on;",
+            @"abstract": @"设置获取UISwitch的属性onImage",
+            @"title": @"@property(nullable, nonatomic, strong) UIImage *onImage API_AVAILABLE(ios(6.0)) UI_APPEARANCE_SELECTOR;",
             @"isDataModelExpand": @(YES),
+            @"desc": @"设置无效，暂时不知道作用",
             @"dataModel": @{
-                @"childItems": [self TestProjectSwitch_property_on:index],
+                @"childItems": [self TestProjectSwitch_property_onImage:params],
             }
         },
     };
 }
 
-- (NSDictionary *)method_8:(NSInteger)index {
+- (NSMutableArray *)TestProjectSwitch_property_thumbTintColor:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"thumbTintColor"
+                                            value:[UIColor yellowColor]
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"执行UISwitch的方法setOn:animated:",
-            @"title": @"- (void)setOn:(BOOL)on animated:(BOOL)animated;",
+            @"abstract": @"设置获取UISwitch的属性thumbTintColor",
+            @"title": @"@property(nullable, nonatomic, strong) UIColor *thumbTintColor API_AVAILABLE(ios(6.0)) UI_APPEARANCE_SELECTOR;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectSwitch_setOn_animated:index],
+                @"childItems": [self TestProjectSwitch_property_thumbTintColor:params],
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectSwitch_setOn_animated:(NSInteger)index {
-    NSArray *arr = @[@(YES), @(NO)];
-    WS(wSelf);
-    for (NSNumber *value in arr) {
-        BOOL vB = [value boolValue];
-        [self createModelWithIndex:index title:[NSString stringWithFormat:@"设置的参数(on)为: %u", vB] block:^{
-            [wSelf.childSwitch setOn:vB animated:YES];
-        }];
-    }
-    return self.dataMutArr;
+- (NSMutableArray *)TestProjectSwitch_property_onTintColor:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"onTintColor"
+                                            value:[UIColor purpleColor]
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectSwitch_property_on:(NSInteger)index {
-    NSArray *arr = @[@(YES), @(NO)];
-    for (NSNumber *value in arr) {
-        [self createModelWithIndex:index
-                          property:@"on"
-                             value:value
-                         operation:TestProjectCreateModelGetBeforeClickSet
-                             block:nil];
-    }
-    return self.dataMutArr;
-}
-
-- (NSMutableArray *)TestProjectSwitch_property_style:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"style"
-                                           value:nil
-                                       operation:TestProjectCreateModelOnlyGet
-                                           block:nil];
-}
-
-- (NSMutableArray *)TestProjectSwitch_property_title:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"title"
-                                           value:@"t_switch"
-                                       operation:TestProjectCreateModelGetBeforeClickSet
-                                           block:nil];
-}
-
-- (NSMutableArray *)TestProjectSwitch_property_offImage:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"offImage"
-                                           value:[UIImage imageNamed:@"arrow_up"]
-                                       operation:TestProjectCreateModelGetBeforeClickSet
-                                           block:nil];
-}
-
-- (NSMutableArray *)TestProjectSwitch_property_onImage:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"onImage"
-                                           value:[UIImage imageNamed:@"arrow_down"]
-                                       operation:TestProjectCreateModelGetBeforeClickSet
-                                           block:nil];
-}
-
-- (NSMutableArray *)TestProjectSwitch_property_thumbTintColor:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"thumbTintColor"
-                                           value:[UIColor yellowColor]
-                                       operation:TestProjectCreateModelGetBeforeClickSet
-                                           block:nil];
-}
-
-- (NSMutableArray *)TestProjectSwitch_property_onTintColor:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"onTintColor"
-                                           value:[UIColor purpleColor]
-                                       operation:TestProjectCreateModelGetBeforeClickSet
-                                           block:nil];
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UISwitch的属性onTintColor",
+            @"title": @"@property(nullable, nonatomic, strong) UIColor *onTintColor API_AVAILABLE(ios(5.0)) UI_APPEARANCE_SELECTOR;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectSwitch_property_onTintColor:params],
+            }
+        },
+    };
 }
 
 @end

@@ -9,45 +9,6 @@
 
 @implementation TestProjectNSDataAsset
 
-- (NSDictionary *)method_1 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSDataAsset的name",
-            @"title": @"@property (nonatomic, readonly, copy) NSDataAssetName name;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectDataAsset_property_name],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_2 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSDataAsset的data",
-            @"title": @"@property (nonatomic, readonly, copy) NSData *data;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectDataAsset_property_data],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_3 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSDataAsset的typeIdentifier",
-            @"title": @"property (nonatomic, readonly, copy) NSString *typeIdentifier;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectDataAsset_property_typeIdentifier],
-            }
-        },
-    };
-}
-
 - (NSMutableArray *)createDataAssetModelWithProperty:(NSString *)key {
     NSDataAsset *dataAsset = [[NSDataAsset alloc] initWithName:@"Data"];
     TestProjectTableViewModel *m = [[TestProjectTableViewModel alloc] init];
@@ -68,12 +29,51 @@
     return [self createDataAssetModelWithProperty:@"typeIdentifier"];
 }
 
+- (NSDictionary *)method_3:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSDataAsset的typeIdentifier",
+            @"title": @"property (nonatomic, readonly, copy) NSString *typeIdentifier;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectDataAsset_property_typeIdentifier],
+            }
+        },
+    };
+}
+
 - (NSMutableArray *)TestProjectDataAsset_property_data {
     return [self createDataAssetModelWithProperty:@"data"];
 }
 
+- (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSDataAsset的data",
+            @"title": @"@property (nonatomic, readonly, copy) NSData *data;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectDataAsset_property_data],
+            }
+        },
+    };
+}
+
 - (NSMutableArray *)TestProjectDataAsset_property_name {
     return [self createDataAssetModelWithProperty:@"name"];
+}
+
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSDataAsset的name",
+            @"title": @"@property (nonatomic, readonly, copy) NSDataAssetName name;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectDataAsset_property_name],
+            }
+        },
+    };
 }
 
 @end

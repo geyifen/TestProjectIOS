@@ -334,126 +334,28 @@
     return _collectionView;
 }
 
-- (NSDictionary *)method_1:(NSInteger)index {
+- (NSMutableArray *)TestProjectCollectionViewFlowLayout_UISubclassingHooks_targetContentOffsetForProposedContentOffset_withScrollingVelocity:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params title:nil block:nil];
+}
+
+- (NSDictionary *)method_9:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"设置获取UICollectionViewFlowLayout(UISubclassingHooks)的class属性layoutAttributesClass，每个item的属性class",
-            @"title": @"@property(class, nonatomic, readonly) Class layoutAttributesClass;",
+            @"abstract": @"执行UICollectionViewFlowLayout(UISubclassingHooks)的方法",
+            @"title": @"- (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewFlowLayout_UISubclassingHooks_class_property_layoutAttributesClass:index],
+                @"childItems": [self TestProjectCollectionViewFlowLayout_UISubclassingHooks_targetContentOffsetForProposedContentOffset_withScrollingVelocity:params],
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectCollectionViewFlowLayout_UISubclassingHooks_class_property_layoutAttributesClass:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
+- (NSMutableArray *)TestProjectCollectionViewFlowLayout_UISubclassingHooks_shouldInvalidateLayoutForBoundsChange:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params title:nil block:nil];
 }
 
-- (NSDictionary *)method_2:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UICollectionViewFlowLayout(UISubclassingHooks)的class属性invalidationContextClass",
-            @"title": @"@property(class, nonatomic, readonly) Class invalidationContextClass API_AVAILABLE(ios(7.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewFlowLayout_UISubclassingHooks_class_property_invalidationContextClass:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectCollectionViewFlowLayout_UISubclassingHooks_class_property_invalidationContextClass:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
-}
-
-- (NSDictionary *)method_3:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UICollectionViewFlowLayout(UISubclassingHooks)的属性collectionViewContentSize，UICollectionView的contentSize",
-            @"title": @"@property(nonatomic, readonly) CGSize collectionViewContentSize;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewFlowLayout_UISubclassingHooks_property_collectionViewContentSize:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectCollectionViewFlowLayout_UISubclassingHooks_property_collectionViewContentSize:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
-}
-
-- (NSDictionary *)method_4:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UICollectionViewFlowLayout(UISubclassingHooks)的属性developmentLayoutDirection",
-            @"title": @"@property (nonatomic, readonly) UIUserInterfaceLayoutDirection developmentLayoutDirection;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewFlowLayout_UISubclassingHooks_property_developmentLayoutDirection:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectCollectionViewFlowLayout_UISubclassingHooks_property_developmentLayoutDirection:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
-}
-
-- (NSDictionary *)method_5:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UICollectionViewFlowLayout(UISubclassingHooks)的属性flipsHorizontallyInOppositeLayoutDirection",
-            @"title": @"@property(nonatomic, readonly) BOOL flipsHorizontallyInOppositeLayoutDirection;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewFlowLayout_UISubclassingHooks_property_flipsHorizontallyInOppositeLayoutDirection:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectCollectionViewFlowLayout_UISubclassingHooks_property_flipsHorizontallyInOppositeLayoutDirection:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
-}
-
-- (NSDictionary *)method_6:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UICollectionViewFlowLayout(UISubclassingHooks)的方法，准备layout阶段",
-            @"title": @"- (void)prepareLayout;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewFlowLayout_UISubclassingHooks_prepareLayout:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectCollectionViewFlowLayout_UISubclassingHooks_prepareLayout:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
-}
-
-- (NSDictionary *)method_7:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UICollectionViewFlowLayout(UISubclassingHooks)的方法，给出整个布局的信息",
-            @"title": @"- (nullable NSArray<__kindof UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewFlowLayout_UISubclassingHooks_layoutAttributesForElementsInRect:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectCollectionViewFlowLayout_UISubclassingHooks_layoutAttributesForElementsInRect:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
-}
-
-- (NSDictionary *)method_8:(NSInteger)index {
+- (NSDictionary *)method_8:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
             @"abstract": @"执行UICollectionViewFlowLayout(UISubclassingHooks)的方法",
@@ -461,31 +363,129 @@
             @"isDataModelExpand": @(YES),
             @"desc": @"返回YES，需要重新计算layout，会执行多次方法- (void)prepareLayout;",
             @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewFlowLayout_UISubclassingHooks_shouldInvalidateLayoutForBoundsChange:index],
+                @"childItems": [self TestProjectCollectionViewFlowLayout_UISubclassingHooks_shouldInvalidateLayoutForBoundsChange:params],
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectCollectionViewFlowLayout_UISubclassingHooks_shouldInvalidateLayoutForBoundsChange:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
+- (NSMutableArray *)TestProjectCollectionViewFlowLayout_UISubclassingHooks_layoutAttributesForElementsInRect:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params title:nil block:nil];
 }
 
-- (NSDictionary *)method_9:(NSInteger)index {
+- (NSDictionary *)method_7:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"执行UICollectionViewFlowLayout(UISubclassingHooks)的方法",
-            @"title": @"- (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity;",
+            @"abstract": @"执行UICollectionViewFlowLayout(UISubclassingHooks)的方法，给出整个布局的信息",
+            @"title": @"- (nullable NSArray<__kindof UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectCollectionViewFlowLayout_UISubclassingHooks_targetContentOffsetForProposedContentOffset_withScrollingVelocity:index],
+                @"childItems": [self TestProjectCollectionViewFlowLayout_UISubclassingHooks_layoutAttributesForElementsInRect:params],
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectCollectionViewFlowLayout_UISubclassingHooks_targetContentOffsetForProposedContentOffset_withScrollingVelocity:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index title:nil block:nil];
+- (NSMutableArray *)TestProjectCollectionViewFlowLayout_UISubclassingHooks_prepareLayout:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params title:nil block:nil];
+}
+
+- (NSDictionary *)method_6:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行UICollectionViewFlowLayout(UISubclassingHooks)的方法，准备layout阶段",
+            @"title": @"- (void)prepareLayout;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCollectionViewFlowLayout_UISubclassingHooks_prepareLayout:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCollectionViewFlowLayout_UISubclassingHooks_property_flipsHorizontallyInOppositeLayoutDirection:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params title:nil block:nil];
+}
+
+- (NSDictionary *)method_5:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UICollectionViewFlowLayout(UISubclassingHooks)的属性flipsHorizontallyInOppositeLayoutDirection",
+            @"title": @"@property(nonatomic, readonly) BOOL flipsHorizontallyInOppositeLayoutDirection;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCollectionViewFlowLayout_UISubclassingHooks_property_flipsHorizontallyInOppositeLayoutDirection:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCollectionViewFlowLayout_UISubclassingHooks_property_developmentLayoutDirection:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params title:nil block:nil];
+}
+
+- (NSDictionary *)method_4:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UICollectionViewFlowLayout(UISubclassingHooks)的属性developmentLayoutDirection",
+            @"title": @"@property (nonatomic, readonly) UIUserInterfaceLayoutDirection developmentLayoutDirection;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCollectionViewFlowLayout_UISubclassingHooks_property_developmentLayoutDirection:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCollectionViewFlowLayout_UISubclassingHooks_property_collectionViewContentSize:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params title:nil block:nil];
+}
+
+- (NSDictionary *)method_3:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UICollectionViewFlowLayout(UISubclassingHooks)的属性collectionViewContentSize，UICollectionView的contentSize",
+            @"title": @"@property(nonatomic, readonly) CGSize collectionViewContentSize;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCollectionViewFlowLayout_UISubclassingHooks_property_collectionViewContentSize:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCollectionViewFlowLayout_UISubclassingHooks_class_property_invalidationContextClass:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params title:nil block:nil];
+}
+
+- (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UICollectionViewFlowLayout(UISubclassingHooks)的class属性invalidationContextClass",
+            @"title": @"@property(class, nonatomic, readonly) Class invalidationContextClass API_AVAILABLE(ios(7.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCollectionViewFlowLayout_UISubclassingHooks_class_property_invalidationContextClass:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCollectionViewFlowLayout_UISubclassingHooks_class_property_layoutAttributesClass:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params title:nil block:nil];
+}
+
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UICollectionViewFlowLayout(UISubclassingHooks)的class属性layoutAttributesClass，每个item的属性class",
+            @"title": @"@property(class, nonatomic, readonly) Class layoutAttributesClass;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCollectionViewFlowLayout_UISubclassingHooks_class_property_layoutAttributesClass:params],
+            }
+        },
+    };
 }
 
 @end

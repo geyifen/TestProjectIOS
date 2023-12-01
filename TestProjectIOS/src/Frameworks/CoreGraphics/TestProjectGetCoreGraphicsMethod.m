@@ -11,6 +11,8 @@
 
 + (NSArray *)itemChilds {
     return @[
+//        [self CGContext],
+//        [self CIImage],
         [self CGImage],
     ];
 }
@@ -20,6 +22,22 @@
         @"title": @"CoreGraphics",
         @"atIndex": @0,
         @"itemChilds": [self itemChilds],
+    };
+}
+
++ (NSDictionary *)CGContext {
+    return @{
+        @"atIndex": @0,
+        @"title": @"CGContext",
+        @"viewKey": @"TestProjectCGContext",
+    };
+}
+
++ (NSDictionary *)CIImage {
+    return @{
+        @"atIndex": @0,
+        @"title": @"CIImage",
+        @"viewKey": @"TestProjectCIImage",
     };
 }
 

@@ -5,7 +5,7 @@
 //  Created by zjrcumac on 2023/10/25.
 //
 
-#import "TestProjectViewModelTableViewCell.h"
+#import "TestProjectBaseChildTableViewCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,9 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface TestProjectUIImageCell : TestProjectBaseTableViewCell <TestProjectViewProtocol>
-
-@property (nonatomic, strong) TestProjectUIImageModel *viewModel;
+@interface TestProjectUIImageCell : TestProjectBaseChildTableViewCell
 
 @end
 

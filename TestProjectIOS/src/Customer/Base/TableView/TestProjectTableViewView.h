@@ -42,112 +42,73 @@ typedef NS_ENUM(NSInteger, TestProjectCreateModelOperation) {
 
 - (NSArray *)viewDataArray;
 
-- (id)setPropertyValueObject;
+- (id)setPropertyValueObject:(TestProjectTableViewParams *)params;
 
-- (Class)createTableModelClass;
+- (Class)createTableModelClass:(TestProjectTableViewParams *)params;
 
-- (TestProjectTableViewModel *)createModelWithIndex:(NSInteger)index
-                                          title:(nullable NSString *)title
-                                       property:(nullable NSString *)property
-                                          value:(nullable id)value
-                                      operation:(TestProjectCreateModelOperation)operation
-                                          block:(nullable void (^)(void))block;
+- (TestProjectTableViewModel *)createModelWithParams:params
+                                               title:(nullable NSString *)title
+                                            property:(nullable NSString *)property
+                                               value:(nullable id)value
+                                           operation:(TestProjectCreateModelOperation)operation
+                                               block:(nullable void (^)(void))block;
 
-- (NSMutableArray *)createModelSingleArrayWithIndex:(NSInteger)index
-                                              title:(nullable NSString *)title
-                                           property:(nullable NSString *)property
-                                              value:(nullable id)value
-                                          operation:(TestProjectCreateModelOperation)operation
-                                              block:(nullable void (^)(void))block;
+- (NSMutableArray *)createModelSingleArrayWithParams:(TestProjectTableViewParams *)params
+                                               title:(nullable NSString *)title
+                                            property:(nullable NSString *)property
+                                               value:(nullable id)value
+                                           operation:(TestProjectCreateModelOperation)operation
+                                               block:(nullable void (^)(void))block;
 
-- (TestProjectTableViewModel *)createModelWithIndex:(NSInteger)index
-                                       property:(nullable NSString *)property
-                                          value:(nullable id)value
-                                      operation:(TestProjectCreateModelOperation)operation
-                                          block:(nullable void(^)(void))block;
-
-- (NSMutableArray *)createModelSingleArrayWithIndex:(NSInteger)index
-                                           property:(nullable NSString *)property
-                                              value:(nullable id)value
-                                          operation:(TestProjectCreateModelOperation)operation
-                                              block:(nullable void(^)(void))block;
-
-- (TestProjectTableViewModel *)createModelWithIndex:(NSInteger)index
-                                          title:(nullable NSString *)title
-                                    methodBlock:(nullable NSString *(^)(void))methodBlock;
-
-- (NSMutableArray *)createModelSingleArrayWithIndex:(NSInteger)index
-                                              title:(nullable NSString *)title
-                                        methodBlock:(nullable NSString *(^)(void))methodBlock;
-
-- (TestProjectTableViewModel *)createModelWithIndex:(NSInteger)index
-                                          title:(nullable NSString *)title
-                                          block:(nullable void(^)(void))block;
-
-- (NSMutableArray *)createModelSingleArrayWithIndex:(NSInteger)index
-                                              title:(nullable NSString *)title
-                                              block:(nullable void(^)(void))block;
-
-- (TestProjectTableViewModel *)createModelWithIndex:(NSInteger)index
-                                 attributeTitle:(nullable NSAttributedString *)attributeTitle
-                                          block:(nullable void (^)(void))block;
-
-- (NSMutableArray *)createModelSingleArrayWithIndex:(NSInteger)index
-                                     attributeTitle:(nullable NSAttributedString *)attributeTitle
-                                              block:(nullable void (^)(void))block;
-
-- (TestProjectTableViewModel *)createModelWithIndex:(NSInteger)index
-                                          title:(nullable NSString *)title
-                                  modelKeyValue:(nullable NSDictionary *)modelKeyValue
-                                          block:(nullable void(^)(void))block;
-
-- (NSMutableArray *)createModelSingleArrayWithIndex:(NSInteger)index
-                                              title:(nullable NSString *)title
-                                      modelKeyValue:(nullable NSDictionary *)modelKeyValue
-                                              block:(nullable void (^)(void))block;
-
-
-/**内部根据property和value已经组装title，在点击的时候会设置对象属性，不会有block回调**/
-- (TestProjectTableViewModel *)createClickSetTableModelWithProperty:(NSString *)property
-                                                          value:(nullable id)value;
-/**内部根据property和value已经组装title，在点击的时候会设置对象属性，不会有block回调,只是对上面的方法返回的是一个单个数据的数组组装而已**/
-- (NSMutableArray *)createClickSetSingleArrayTableModelWithProperty:(NSString *)property
-                                                              value:(id)value;
-/**内部根据property和value已经组装title，在点击的时候会设置对象属性，会有block回调**/
-- (TestProjectTableViewModel *)createClickSetTableModelWithProperty:(NSString *)property
-                                                          value:(id)value
-                                                          block:(nullable void(^)(void))block;
-/**内部根据property和value已经组装title, 在执行的时候会获取property属性组装abstract，在点击的时候会设置对象属性，不会有block回调**/
-- (NSMutableArray *)createClickSetSingleArrayTableModelBeforeWithProperty:(NSString *)property
-                                                                    value:(id)value;
-/**在点击的时候会设置对象属性，会有block回调**/
-- (TestProjectTableViewModel *)createClickSetTableModelWithProperty:(NSString *)property
-                                                          value:(id)value
-                                                          title:(NSString *)title
-                                                          block:(nullable void(^)(void))block;
-/**在点击的时候会有block回调**/
-- (TestProjectTableViewModel *)createTableModelWithTitle:(NSString *)title
+- (TestProjectTableViewModel *)createModelWithParams:params
+                                            property:(nullable NSString *)property
+                                               value:(nullable id)value
+                                           operation:(TestProjectCreateModelOperation)operation
                                                block:(nullable void(^)(void))block;
-/**在点击的时候会有block回调，只是对上面的方法返回的是一个单个数据的数组组装而已**/
-- (NSMutableArray *)createTableModelSingleArrayWithTitle:(NSString *)title
-                                                   block:(nullable void(^)(void) )block;
-/**内部根据property和value已经组装title**/
-- (TestProjectTableViewModel *)createTableModelWithProperty:(NSString *)property
-                                                  value:(id _Nullable)value;
-/**内部根据property和value已经组装title,只是对上面的方法返回的是一个单个数据的数组组装而已**/
-- (NSMutableArray *)createTableModelSingleArrayWithProperty:(NSString *)property
-                                                      value:(id _Nullable)value;
-/**内部根据property已经组装title, 点击后更新描述文本**/
-- (NSMutableArray *)createTableModelSingleArrayWithProperty:(NSString *)property
-                                                      index:(NSInteger)index;
-/**内部根据block回调得到描述信息, 点击后更新描述文本**/
-- (TestProjectTableViewModel *)createTableModelWithMethodBlock:(NSString *(^)(void))methodBlock
-                                                     title:(NSString *)title
-                                                     index:(NSInteger)index;
-/**内部根据block回调得到描述信息, 点击后更新描述文本,只是对上面的方法返回的是一个单个数据的数组组装而已**/
-- (NSMutableArray *)createTableModelSingleArrayWithMethodBlock:(NSString *(^)(void))methodBlock
-                                                         title:(NSString *)title
-                                                         index:(NSInteger)index;
+
+- (NSMutableArray *)createModelSingleArrayWithParams:(TestProjectTableViewParams *)params
+                                            property:(nullable NSString *)property
+                                               value:(nullable id)value
+                                           operation:(TestProjectCreateModelOperation)operation
+                                               block:(nullable void(^)(void))block;
+
+- (TestProjectTableViewModel *)createModelWithParams:params
+                                               title:(nullable NSString *)title
+                                         methodBlock:(nullable NSString *(^)(void))methodBlock;
+
+- (NSMutableArray *)createModelSingleArrayWithParams:(TestProjectTableViewParams *)params
+                                               title:(nullable NSString *)title
+                                         methodBlock:(nullable NSString *(^)(void))methodBlock;
+
+- (TestProjectTableViewModel *)createModelWithParams:params
+                                               title:(nullable NSString *)title
+                                               block:(nullable void(^)(void))block;
+
+- (NSMutableArray *)createModelSingleArrayWithParams:(TestProjectTableViewParams *)params
+                                               title:(nullable NSString *)title
+                                               block:(nullable void(^)(void))block;
+
+- (TestProjectTableViewModel *)createModelWithParams:params
+                                      attributeTitle:(nullable NSAttributedString *)attributeTitle
+                                               block:(nullable void (^)(void))block;
+
+- (NSMutableArray *)createModelSingleArrayWithParams:(TestProjectTableViewParams *)params
+                                      attributeTitle:(nullable NSAttributedString *)attributeTitle
+                                               block:(nullable void (^)(void))block;
+
+- (TestProjectTableViewModel *)createModelWithParams:params 
+                                               title:(nullable NSString *)title
+                                       modelKeyValue:(nullable NSDictionary *)modelKeyValue
+                                               block:(nullable void(^)(void))block;
+
+- (NSMutableArray *)createModelSingleArrayWithParams:(TestProjectTableViewParams *)params
+                                               title:(nullable NSString *)title
+                                       modelKeyValue:(nullable NSDictionary *)modelKeyValue
+                                               block:(nullable void (^)(void))block;
+
+- (NSMutableArray *)createModelSingleArrayWithParams:(TestProjectTableViewParams *)params
+                                       modelKeyValue:(nullable NSDictionary *)modelKeyValue
+                                               block:(nullable void (^)(void))block;
 
 - (void)addNotificationWithName:(NSString *)name selector:(SEL)selector;
 

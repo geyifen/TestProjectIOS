@@ -13,24 +13,11 @@
 
 @implementation TestProjectCIColorKitAdditions
 
-- (Class)createTableModelClass {
+- (Class)createTableModelClass:(TestProjectTableViewParams *)params {
     return TestProjectUIColorModel.class;
 }
 
-- (NSDictionary *)method_1:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"根据UIColor获取CIColor",
-            @"title": @"- (instancetype)initWithColor:(UIColor *)color API_AVAILABLE(ios(5.0));", 
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCIColorKitAdditions_initWithColor:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectCIColorKitAdditions_initWithColor:(NSInteger)index {
+- (NSMutableArray *)TestProjectCIColorKitAdditions_initWithColor:(TestProjectTableViewParams *)params {
     UIColor *color = [UIColor yellowColor];
     id data;
     @try {
@@ -40,11 +27,24 @@
     } @finally {
         
     }
-    [self createModelWithIndex:index
+    [self createModelWithParams:params
                          title:[NSString stringWithFormat:@"%@", data]
                  modelKeyValue:@{@"backgroundColor": color}
                          block:nil];
     return self.dataMutArr;
+}
+
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"根据UIColor获取CIColor",
+            @"title": @"- (instancetype)initWithColor:(UIColor *)color API_AVAILABLE(ios(5.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCIColorKitAdditions_initWithColor:params],
+            }
+        },
+    };
 }
 
 @end

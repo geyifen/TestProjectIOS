@@ -70,232 +70,71 @@
     return _childSlider;
 }
 
-- (id)setPropertyValueObject {
+- (id)setPropertyValueObject:(TestProjectTableViewParams *)params {
     return self.childSlider;
 }
 
-- (NSDictionary *)method_1:(NSInteger)index {
+- (NSMutableArray *)TestProjectSlider_property_currentMaximumTrackImage:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"currentMaximumTrackImage"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_19:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"设置获取UISlider的属性value",
-            @"title": @"@property(nonatomic) float value;",
+            @"abstract": @"获取UISlider的属性currentMaximumTrackImage",
+            @"title": @"@property(nullable,nonatomic,readonly) UIImage *currentMaximumTrackImage;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectSlider_property_value:index],
+                @"childItems": [self TestProjectSlider_property_currentMaximumTrackImage:params],
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectSlider_property_value:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"value"
-                                           value:nil
-                                       operation:TestProjectCreateModelGetBeforeClickGet
-                                           block:nil];
+- (NSMutableArray *)TestProjectSlider_property_currentMinimumTrackImage:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"currentMinimumTrackImage"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSDictionary *)method_2:(NSInteger)index {
+- (NSDictionary *)method_18:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"设置获取UISlider的属性minimumValue",
-            @"title": @"@property(nonatomic) float minimumValue;",
+            @"abstract": @"获取UISlider的属性currentMinimumTrackImage",
+            @"title": @"@property(nullable,nonatomic,readonly) UIImage *currentMinimumTrackImage;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectSlider_property_minimumValue:index],
+                @"childItems": [self TestProjectSlider_property_currentMinimumTrackImage:params],
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectSlider_property_minimumValue:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"minimumValue"
-                                           value:@1
-                                       operation:TestProjectCreateModelGetBeforeClickSet
-                                           block:nil];
+- (NSMutableArray *)TestProjectSlider_property_currentThumbImage:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"currentThumbImage"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSDictionary *)method_3:(NSInteger)index {
+- (NSDictionary *)method_17:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"设置获取UISlider的属性maximumValue",
-            @"title": @"@property(nonatomic) float maximumValue;",
+            @"abstract": @"获取UISlider的属性currentThumbImage",
+            @"title": @"@property(nullable,nonatomic,readonly) UIImage *currentThumbImage;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectSlider_property_maximumValue:index],
+                @"childItems": [self TestProjectSlider_property_currentThumbImage:params],
             }
         },
     };
-}
-
-- (NSMutableArray *)TestProjectSlider_property_maximumValue:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"maximumValue"
-                                           value:@11
-                                       operation:TestProjectCreateModelGetBeforeClickSet
-                                           block:nil];
-}
-
-- (NSDictionary *)method_4:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UISlider的属性minimumValueImage",
-            @"title": @"@property(nullable, nonatomic,strong) UIImage *minimumValueImage;",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"优先级比minimumTrackTintColor高，设置后会覆盖minimumTrackTintColor",
-            @"dataModel": @{
-                @"childItems": [self TestProjectSlider_property_minimumValueImage:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectSlider_property_minimumValueImage:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"minimumValueImage"
-                                           value:[UIImage imageNamed:@"lyf_2"]
-                                       operation:TestProjectCreateModelGetBeforeClickSet
-                                           block:nil];
-}
-
-- (NSDictionary *)method_5:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UISlider的属性maximumValueImage",
-            @"title": @"@property(nullable, nonatomic,strong) UIImage *maximumValueImage;",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"优先级比maximumTrackTintColor高，设置后会覆盖maximumTrackTintColor",
-            @"dataModel": @{
-                @"childItems": [self TestProjectSlider_property_maximumValueImage:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectSlider_property_maximumValueImage:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"maximumValueImage"
-                                           value:[UIImage imageNamed:@"lyf_2"]
-                                       operation:TestProjectCreateModelGetBeforeClickSet
-                                           block:nil];
-}
-
-- (NSDictionary *)method_6:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UISlider的属性continuous",
-            @"title": @"@property(nonatomic,getter=isContinuous) BOOL continuous;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectSlider_property_continuous:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectSlider_property_continuous:(NSInteger)index {
-    NSArray *arr = @[@(YES), @(NO)];
-    for (NSNumber *num in arr) {
-        [self createModelWithIndex:index
-                          property:@"continuous"
-                             value:num
-                         operation:TestProjectCreateModelGetBeforeClickSet
-                             block:nil];
-    }
-    return self.dataMutArr;
-}
-
-- (NSDictionary *)method_7:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UISlider的属性minimumTrackTintColor",
-            @"title": @"@property(nullable, nonatomic,strong) UIColor *minimumTrackTintColor API_AVAILABLE(ios(5.0)) UI_APPEARANCE_SELECTOR;",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"优先级比minimumValueImage低，设置minimumValueImage后会被覆盖",
-            @"dataModel": @{
-                @"childItems": [self TestProjectSlider_property_minimumTrackTintColor:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectSlider_property_minimumTrackTintColor:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"minimumTrackTintColor"
-                                           value:[UIColor purpleColor]
-                                       operation:TestProjectCreateModelGetBeforeClickSet
-                                           block:nil];
-}
-
-- (NSDictionary *)method_8:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UISlider的属性maximumTrackTintColor",
-            @"title": @"@property(nullable, nonatomic,strong) UIColor *maximumTrackTintColor API_AVAILABLE(ios(5.0)) UI_APPEARANCE_SELECTOR;",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"优先级比maximumValueImage低，设置maximumValueImage后会被覆盖",
-            @"dataModel": @{
-                @"childItems": [self TestProjectSlider_property_maximumTrackTintColor:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectSlider_property_maximumTrackTintColor:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"maximumTrackTintColor"
-                                           value:[UIColor yellowColor]
-                                       operation:TestProjectCreateModelGetBeforeClickSet
-                                           block:nil];
-}
-
-- (NSDictionary *)method_9:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UISlider的属性thumbTintColor",
-            @"title": @"@property(nullable, nonatomic,strong) UIColor *thumbTintColor API_AVAILABLE(ios(5.0)) UI_APPEARANCE_SELECTOR;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectSlider_property_thumbTintColor:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectSlider_property_thumbTintColor:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"thumbTintColor"
-                                           value:[UIColor redColor]
-                                       operation:TestProjectCreateModelGetBeforeClickSet
-                                           block:nil];
-}
-
-- (NSDictionary *)method_10:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UISlider的方法setValue:animated:",
-            @"title": @"- (void)setValue:(float)value animated:(BOOL)animated;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectSlider_setValue_animated:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectSlider_setValue_animated:(NSInteger)index {
-    WS(wSelf);
-    NSArray *arr = @[@0, @0.25, @0.5, @0.75, @1];
-    for (NSNumber *num in arr) {
-        CGFloat value = [num floatValue];
-        [self createModelWithIndex:index
-                             title:[NSString stringWithFormat:@"设置的属性值是:%f", value]
-                             block:^{
-            [wSelf.childSlider setValue:value animated:YES];
-        }];
-    }
-    return self.dataMutArr;
 }
 
 - (NSArray *)getControlStateList {
@@ -332,164 +171,13 @@
     return arr;
 }
 
-- (NSDictionary *)method_11:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UISlider的方法setThumbImage:forState:",
-            @"title": @"- (void)setThumbImage:(nullable UIImage *)image forState:(UIControlState)state;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectSlider_setThumbImage_forState:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectSlider_setThumbImage_forState:(NSInteger)index {
+- (NSMutableArray *)TestProjectSlider_maximumTrackImageForState:(TestProjectTableViewParams *)params {
     WS(wSelf);
     NSArray *arr = [self getControlStateList];
     for (NSDictionary *dic in arr) {
         NSString *title = dic[@"title"];
         UIControlState state = [dic[@"value"] integerValue];
-        [self createModelWithIndex:index
-                             title:title
-                             block:^{
-            [wSelf.childSlider setThumbImage:[UIImage imageNamed:@"lyf_2"] forState:state];
-        }];
-    }
-    return self.dataMutArr;
-}
-
-- (NSDictionary *)method_12:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UISlider的方法setMinimumTrackImage:forState:",
-            @"title": @"- (void)setMinimumTrackImage:(nullable UIImage *)image forState:(UIControlState)state;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectSlider_setMinimumTrackImage_forState:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectSlider_setMinimumTrackImage_forState:(NSInteger)index {
-    WS(wSelf);
-    NSArray *arr = [self getControlStateList];
-    for (NSDictionary *dic in arr) {
-        NSString *title = dic[@"title"];
-        UIControlState state = [dic[@"value"] integerValue];
-        [self createModelWithIndex:index
-                             title:title
-                             block:^{
-            [wSelf.childSlider setMinimumTrackImage:[UIImage imageNamed:@"lyf_2"] forState:state];
-        }];
-    }
-    return self.dataMutArr;
-}
-
-- (NSDictionary *)method_13:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UISlider的方法setMaximumTrackImage:forState:",
-            @"title": @"- (void)setMaximumTrackImage:(nullable UIImage *)image forState:(UIControlState)state;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectSlider_setMaximumTrackImage_forState:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectSlider_setMaximumTrackImage_forState:(NSInteger)index {
-    WS(wSelf);
-    NSArray *arr = [self getControlStateList];
-    for (NSDictionary *dic in arr) {
-        NSString *title = dic[@"title"];
-        UIControlState state = [dic[@"value"] integerValue];
-        [self createModelWithIndex:index
-                             title:title
-                             block:^{
-            [wSelf.childSlider setMaximumTrackImage:[UIImage imageNamed:@"lyf_2"] forState:state];
-        }];
-    }
-    return self.dataMutArr;
-}
-
-- (NSDictionary *)method_14:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UISlider的方法thumbImageForState:",
-            @"title": @"- (nullable UIImage *)thumbImageForState:(UIControlState)state;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectSlider_thumbImageForState:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectSlider_thumbImageForState:(NSInteger)index {
-    WS(wSelf);
-    NSArray *arr = [self getControlStateList];
-    for (NSDictionary *dic in arr) {
-        NSString *title = dic[@"title"];
-        UIControlState state = [dic[@"value"] integerValue];
-        [self createModelWithIndex:index title:title methodBlock:^NSString * _Nonnull{
-            UIImage *image = [wSelf.childSlider thumbImageForState:state];
-            return [NSString stringWithFormat:@"%@", image];
-        }];
-    }
-    return self.dataMutArr;
-}
-
-- (NSDictionary *)method_15:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UISlider的方法minimumTrackImageForState:",
-            @"title": @"- (nullable UIImage *)minimumTrackImageForState:(UIControlState)state;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectSlider_minimumTrackImageForState:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectSlider_minimumTrackImageForState:(NSInteger)index {
-    WS(wSelf);
-    NSArray *arr = [self getControlStateList];
-    for (NSDictionary *dic in arr) {
-        NSString *title = dic[@"title"];
-        UIControlState state = [dic[@"value"] integerValue];
-        [self createModelWithIndex:index title:title methodBlock:^NSString * _Nonnull{
-            UIImage *image = [wSelf.childSlider minimumTrackImageForState:state];
-            return [NSString stringWithFormat:@"%@", image];
-        }];
-    }
-    return self.dataMutArr;
-}
-
-- (NSDictionary *)method_16:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UISlider的方法maximumTrackImageForState:",
-            @"title": @"- (nullable UIImage *)maximumTrackImageForState:(UIControlState)state;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectSlider_maximumTrackImageForState:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectSlider_maximumTrackImageForState:(NSInteger)index {
-    WS(wSelf);
-    NSArray *arr = [self getControlStateList];
-    for (NSDictionary *dic in arr) {
-        NSString *title = dic[@"title"];
-        UIControlState state = [dic[@"value"] integerValue];
-        [self createModelWithIndex:index title:title methodBlock:^NSString * _Nonnull{
+        [self createModelWithParams:params title:title methodBlock:^NSString * _Nonnull{
             UIImage *image = [wSelf.childSlider maximumTrackImageForState:state];
             return [NSString stringWithFormat:@"%@", image];
         }];
@@ -497,67 +185,379 @@
     return self.dataMutArr;
 }
 
-- (NSDictionary *)method_17:(NSInteger)index {
+- (NSDictionary *)method_16:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"获取UISlider的属性currentThumbImage",
-            @"title": @"@property(nullable,nonatomic,readonly) UIImage *currentThumbImage;",
+            @"abstract": @"执行UISlider的方法maximumTrackImageForState:",
+            @"title": @"- (nullable UIImage *)maximumTrackImageForState:(UIControlState)state;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectSlider_property_currentThumbImage:index],
+                @"childItems": [self TestProjectSlider_maximumTrackImageForState:params],
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectSlider_property_currentThumbImage:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"currentThumbImage"
-                                           value:nil
-                                       operation:TestProjectCreateModelGetBeforeClickGet
-                                           block:nil];
+- (NSMutableArray *)TestProjectSlider_minimumTrackImageForState:(TestProjectTableViewParams *)params {
+    WS(wSelf);
+    NSArray *arr = [self getControlStateList];
+    for (NSDictionary *dic in arr) {
+        NSString *title = dic[@"title"];
+        UIControlState state = [dic[@"value"] integerValue];
+        [self createModelWithParams:params title:title methodBlock:^NSString * _Nonnull{
+            UIImage *image = [wSelf.childSlider minimumTrackImageForState:state];
+            return [NSString stringWithFormat:@"%@", image];
+        }];
+    }
+    return self.dataMutArr;
 }
 
-- (NSDictionary *)method_18:(NSInteger)index {
+- (NSDictionary *)method_15:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"获取UISlider的属性currentMinimumTrackImage",
-            @"title": @"@property(nullable,nonatomic,readonly) UIImage *currentMinimumTrackImage;",
+            @"abstract": @"执行UISlider的方法minimumTrackImageForState:",
+            @"title": @"- (nullable UIImage *)minimumTrackImageForState:(UIControlState)state;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectSlider_property_currentMinimumTrackImage:index],
+                @"childItems": [self TestProjectSlider_minimumTrackImageForState:params],
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectSlider_property_currentMinimumTrackImage:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"currentMinimumTrackImage"
-                                           value:nil
-                                       operation:TestProjectCreateModelGetBeforeClickGet
-                                           block:nil];
+- (NSMutableArray *)TestProjectSlider_thumbImageForState:(TestProjectTableViewParams *)params {
+    WS(wSelf);
+    NSArray *arr = [self getControlStateList];
+    for (NSDictionary *dic in arr) {
+        NSString *title = dic[@"title"];
+        UIControlState state = [dic[@"value"] integerValue];
+        [self createModelWithParams:params title:title methodBlock:^NSString * _Nonnull{
+            UIImage *image = [wSelf.childSlider thumbImageForState:state];
+            return [NSString stringWithFormat:@"%@", image];
+        }];
+    }
+    return self.dataMutArr;
 }
 
-- (NSDictionary *)method_19:(NSInteger)index {
+- (NSDictionary *)method_14:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"获取UISlider的属性currentMaximumTrackImage",
-            @"title": @"@property(nullable,nonatomic,readonly) UIImage *currentMaximumTrackImage;",
+            @"abstract": @"执行UISlider的方法thumbImageForState:",
+            @"title": @"- (nullable UIImage *)thumbImageForState:(UIControlState)state;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectSlider_property_currentMaximumTrackImage:index],
+                @"childItems": [self TestProjectSlider_thumbImageForState:params],
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectSlider_property_currentMaximumTrackImage:(NSInteger)index {
-    return [self createModelSingleArrayWithIndex:index
-                                        property:@"currentMaximumTrackImage"
-                                           value:nil
-                                       operation:TestProjectCreateModelGetBeforeClickGet
-                                           block:nil];
+- (NSMutableArray *)TestProjectSlider_setMaximumTrackImage_forState:(TestProjectTableViewParams *)params {
+    WS(wSelf);
+    NSArray *arr = [self getControlStateList];
+    for (NSDictionary *dic in arr) {
+        NSString *title = dic[@"title"];
+        UIControlState state = [dic[@"value"] integerValue];
+        [self createModelWithParams:params
+                              title:title
+                              block:^{
+            [wSelf.childSlider setMaximumTrackImage:[UIImage imageNamed:@"lyf_2"] forState:state];
+        }];
+    }
+    return self.dataMutArr;
+}
+
+- (NSDictionary *)method_13:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行UISlider的方法setMaximumTrackImage:forState:",
+            @"title": @"- (void)setMaximumTrackImage:(nullable UIImage *)image forState:(UIControlState)state;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectSlider_setMaximumTrackImage_forState:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectSlider_setMinimumTrackImage_forState:(TestProjectTableViewParams *)params {
+    WS(wSelf);
+    NSArray *arr = [self getControlStateList];
+    for (NSDictionary *dic in arr) {
+        NSString *title = dic[@"title"];
+        UIControlState state = [dic[@"value"] integerValue];
+        [self createModelWithParams:params
+                              title:title
+                              block:^{
+            [wSelf.childSlider setMinimumTrackImage:[UIImage imageNamed:@"lyf_2"] forState:state];
+        }];
+    }
+    return self.dataMutArr;
+}
+
+- (NSDictionary *)method_12:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行UISlider的方法setMinimumTrackImage:forState:",
+            @"title": @"- (void)setMinimumTrackImage:(nullable UIImage *)image forState:(UIControlState)state;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectSlider_setMinimumTrackImage_forState:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectSlider_setThumbImage_forState:(TestProjectTableViewParams *)params {
+    WS(wSelf);
+    NSArray *arr = [self getControlStateList];
+    for (NSDictionary *dic in arr) {
+        NSString *title = dic[@"title"];
+        UIControlState state = [dic[@"value"] integerValue];
+        [self createModelWithParams:params
+                              title:title
+                              block:^{
+            [wSelf.childSlider setThumbImage:[UIImage imageNamed:@"lyf_2"] forState:state];
+        }];
+    }
+    return self.dataMutArr;
+}
+
+- (NSDictionary *)method_11:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行UISlider的方法setThumbImage:forState:",
+            @"title": @"- (void)setThumbImage:(nullable UIImage *)image forState:(UIControlState)state;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectSlider_setThumbImage_forState:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectSlider_setValue_animated:(TestProjectTableViewParams *)params {
+    WS(wSelf);
+    NSArray *arr = @[@0, @0.25, @0.5, @0.75, @1];
+    for (NSNumber *num in arr) {
+        CGFloat value = [num floatValue];
+        [self createModelWithParams:params
+                              title:[NSString stringWithFormat:@"设置的属性值是:%f", value]
+                              block:^{
+            [wSelf.childSlider setValue:value animated:YES];
+        }];
+    }
+    return self.dataMutArr;
+}
+
+- (NSDictionary *)method_10:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行UISlider的方法setValue:animated:",
+            @"title": @"- (void)setValue:(float)value animated:(BOOL)animated;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectSlider_setValue_animated:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectSlider_property_thumbTintColor:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"thumbTintColor"
+                                            value:[UIColor redColor]
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_9:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UISlider的属性thumbTintColor",
+            @"title": @"@property(nullable, nonatomic,strong) UIColor *thumbTintColor API_AVAILABLE(ios(5.0)) UI_APPEARANCE_SELECTOR;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectSlider_property_thumbTintColor:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectSlider_property_maximumTrackTintColor:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"maximumTrackTintColor"
+                                            value:[UIColor yellowColor]
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_8:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UISlider的属性maximumTrackTintColor",
+            @"title": @"@property(nullable, nonatomic,strong) UIColor *maximumTrackTintColor API_AVAILABLE(ios(5.0)) UI_APPEARANCE_SELECTOR;",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"优先级比maximumValueImage低，设置maximumValueImage后会被覆盖",
+            @"dataModel": @{
+                @"childItems": [self TestProjectSlider_property_maximumTrackTintColor:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectSlider_property_minimumTrackTintColor:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"minimumTrackTintColor"
+                                            value:[UIColor purpleColor]
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_7:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UISlider的属性minimumTrackTintColor",
+            @"title": @"@property(nullable, nonatomic,strong) UIColor *minimumTrackTintColor API_AVAILABLE(ios(5.0)) UI_APPEARANCE_SELECTOR;",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"优先级比minimumValueImage低，设置minimumValueImage后会被覆盖",
+            @"dataModel": @{
+                @"childItems": [self TestProjectSlider_property_minimumTrackTintColor:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectSlider_property_continuous:(TestProjectTableViewParams *)params {
+    NSArray *arr = @[@(YES), @(NO)];
+    for (NSNumber *num in arr) {
+        [self createModelWithParams:params
+                           property:@"continuous"
+                              value:num
+                          operation:TestProjectCreateModelGetBeforeClickSet
+                              block:nil];
+    }
+    return self.dataMutArr;
+}
+
+- (NSDictionary *)method_6:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UISlider的属性continuous",
+            @"title": @"@property(nonatomic,getter=isContinuous) BOOL continuous;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectSlider_property_continuous:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectSlider_property_maximumValueImage:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"maximumValueImage"
+                                            value:[UIImage imageNamed:@"lyf_2"]
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_5:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UISlider的属性maximumValueImage",
+            @"title": @"@property(nullable, nonatomic,strong) UIImage *maximumValueImage;",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"优先级比maximumTrackTintColor高，设置后会覆盖maximumTrackTintColor",
+            @"dataModel": @{
+                @"childItems": [self TestProjectSlider_property_maximumValueImage:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectSlider_property_minimumValueImage:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"minimumValueImage"
+                                            value:[UIImage imageNamed:@"lyf_2"]
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_4:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UISlider的属性minimumValueImage",
+            @"title": @"@property(nullable, nonatomic,strong) UIImage *minimumValueImage;",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"优先级比minimumTrackTintColor高，设置后会覆盖minimumTrackTintColor",
+            @"dataModel": @{
+                @"childItems": [self TestProjectSlider_property_minimumValueImage:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectSlider_property_maximumValue:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"maximumValue"
+                                            value:@11
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_3:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UISlider的属性maximumValue",
+            @"title": @"@property(nonatomic) float maximumValue;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectSlider_property_maximumValue:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectSlider_property_minimumValue:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"minimumValue"
+                                            value:@1
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UISlider的属性minimumValue",
+            @"title": @"@property(nonatomic) float minimumValue;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectSlider_property_minimumValue:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectSlider_property_value:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"value"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UISlider的属性value",
+            @"title": @"@property(nonatomic) float value;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectSlider_property_value:params],
+            }
+        },
+    };
 }
 
 @end

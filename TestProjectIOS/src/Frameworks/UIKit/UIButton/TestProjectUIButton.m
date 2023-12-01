@@ -31,7 +31,7 @@
 
 @implementation TestProjectUIButton
 
-- (id)setPropertyValueObject {
+- (id)setPropertyValueObject:(TestProjectTableViewParams *)params {
     return self.childButton;
 }
 
@@ -105,570 +105,6 @@
     return _action;
 }
 
-- (NSDictionary *)method_1 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"通过frame创建UIButton",
-            @"title": @"- (instancetype)initWithFrame:(CGRect)frame",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_initWithFrame],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_2 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"通过frame和UIAction创建UIButton",
-            @"title": @"- (instancetype)initWithFrame:(CGRect)frame primaryAction:(nullable UIAction *)primaryAction API_AVAILABLE(ios(14.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_initWithFrame_primaryAction],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_3 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"通过frame和UIAction创建UIButton",
-            @"title": @"+ (instancetype)buttonWithType:(UIButtonType)buttonType;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_class_buttonWithType],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_4 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"通过image和action创建UIButton",
-            @"title": @"+ (instancetype)systemButtonWithImage:(UIImage *)image target:(nullable id)target action:(nullable SEL)action API_AVAILABLE(ios(13.0), tvos(13.0), watchos(6.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_class_systemButtonWithImage_target_action],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_5 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"通过UIAction创建UIButton",
-            @"title": @"+ (instancetype)systemButtonWithPrimaryAction:(nullable UIAction *)primaryAction API_AVAILABLE(ios(14.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_class_systemButtonWithPrimaryAction],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_6 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"通过UIButtonType和UIAction创建UIButton",
-            @"title": @"+ (instancetype)buttonWithType:(UIButtonType)buttonType primaryAction:(nullable UIAction *)primaryAction API_AVAILABLE(ios(14.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_class_buttonWithType_primaryAction],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_7 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"通过UIButtonConfiguration和UIAction创建UIButton",
-            @"title": @"+ (instancetype)buttonWithConfiguration:(UIButtonConfiguration *)configuration primaryAction:(nullable UIAction *)primaryAction API_AVAILABLE(ios(15.0), tvos(15.0)) API_UNAVAILABLE(watchos);",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_class_buttonWithConfiguration_primaryAction],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_8 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置更改UIButton的Configuration后，需要调用这个方法才会立即刷新，否则要等下个时机才会触发",
-            @"title": @"- (void)setNeedsUpdateConfiguration API_AVAILABLE(ios(15.0), tvos(15.0)) API_UNAVAILABLE(watchos);",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_setNeedsUpdateConfiguration],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_9:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIButton的属性configurationUpdateHandler",
-            @"title": @"@property (nonatomic, readwrite, copy, nullable) UIButtonConfigurationUpdateHandler configurationUpdateHandler API_AVAILABLE(ios(15.0), tvos(15.0)) API_UNAVAILABLE(watchos);",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"当执行updateConfiguration方法后，会执行此回调",
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_property_configurationUpdateHandler:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_10 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIButton的属性automaticallyUpdatesConfiguration,暂时不太知道怎么用",
-            @"title": @"@property (nonatomic, readwrite, assign) BOOL automaticallyUpdatesConfiguration API_AVAILABLE(ios(15.0), tvos(15.0)) API_UNAVAILABLE(watchos);",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_property_automaticallyUpdatesConfiguration],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_11 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIButton的属性tintColor",
-            @"title": @"@property(null_resettable, nonatomic,strong)   UIColor     *tintColor API_AVAILABLE(ios(5.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_property_tintColor],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_12 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIButton的属性buttonType",
-            @"title": @"@property(nonatomic,readonly) UIButtonType buttonType;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_property_buttonType],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_13 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIButton的属性hovered",
-            @"title": @"@property (nonatomic, assign, readonly, getter = isHovered) BOOL hovered API_AVAILABLE(ios(15.0), tvos(15.0), watchos(8.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_property_hovered],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_14 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIButton的属性held",
-            @"title": @"@property (nonatomic, assign, readonly, getter = isHeld) BOOL held API_AVAILABLE(ios(15.0), tvos(15.0), watchos(8.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_property_held],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_15 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIButton的属性role",
-            @"title": @"@property (nonatomic) UIButtonRole role API_AVAILABLE(ios(14.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_property_role],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_16 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIButton的属性pointerStyleProvider",
-            @"title": @"@property (nonatomic, readwrite, copy, nullable) UIButtonPointerStyleProvider pointerStyleProvider API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(watchos, tvos) NS_REFINED_FOR_SWIFT;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_property_pointerStyleProvider],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_17 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIButton的属性menu",
-            @"title": @"@property (nonatomic, readwrite, copy, nullable) UIMenu *menu API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(watchos, tvos);",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_property_menu],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_18 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIButton的属性preferredMenuElementOrder",
-            @"title": @"@property (nonatomic) UIContextMenuConfigurationElementOrder preferredMenuElementOrder API_AVAILABLE(ios(16.0)) API_UNAVAILABLE(watchos, tvos);",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_property_preferredMenuElementOrder],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_19 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIButton的属性changesSelectionAsPrimaryAction",
-            @"title": @"@property (nonatomic, readwrite, assign) BOOL changesSelectionAsPrimaryAction API_AVAILABLE(ios(15.0)) API_UNAVAILABLE(watchos, tvos);",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_property_changesSelectionAsPrimaryAction],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_20 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UIButton的方法，设置title",
-            @"title": @"- (void)setTitle:(nullable NSString *)title forState:(UIControlState)state;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_setTitle_forState],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_21 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UIButton的方法，设置titleColor",
-            @"title": @"- (void)setTitleColor:(nullable UIColor *)color forState:(UIControlState)state UI_APPEARANCE_SELECTOR;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_setTitleColor_forState],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_22 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UIButton的方法，设置titleShadowColor",
-            @"title": @"- (void)setTitleShadowColor:(nullable UIColor *)color forState:(UIControlState)state UI_APPEARANCE_SELECTOR;",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"这个要设置[titleLabel.shadowOffset]效果才显著",
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_setTitleShadowColor_forState],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_23 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UIButton的方法，设置image",
-            @"title": @"- (void)setImage:(nullable UIImage *)image forState:(UIControlState)state;",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"这个图片是在文字的上方",
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_setImage_forState],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_24 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UIButton的方法，设置BackgroundImage",
-            @"title": @"- (void)setBackgroundImage:(nullable UIImage *)image forState:(UIControlState)state UI_APPEARANCE_SELECTOR;",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"这个图片是在文字的下方",
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_setBackgroundImage_forState],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_25 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UIButton的方法，设置PreferredSymbolConfiguration",
-            @"title": @"- (void)setPreferredSymbolConfiguration:(nullable UIImageSymbolConfiguration *)configuration forImageInState:(UIControlState)state UI_APPEARANCE_SELECTOR API_AVAILABLE(ios(13.0), tvos(13.0), watchos(6.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_setPreferredSymbolConfiguration_forImageInState],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_26 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UIButton的方法，设置AttributedTitle",
-            @"title": @"- (void)setAttributedTitle:(nullable NSAttributedString *)title forState:(UIControlState)state API_AVAILABLE(ios(6.0));",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"这个方法会导致setTitleColor和setTitleShadowColor方法失效",
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_setAttributedTitle_forState],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_27:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取UIButton的UIControlState的title属性",
-            @"title": @"- (nullable NSString *)titleForState:(UIControlState)state;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_titleForState:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_28:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取UIButton的UIControlState的titleColor属性",
-            @"title": @"- (nullable UIColor *)titleColorForState:(UIControlState)state;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_titleColorForState:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_29:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取UIButton的UIControlState的titleShadowColor属性",
-            @"title": @"- (nullable UIColor *)titleShadowColorForState:(UIControlState)state;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_titleShadowColorForState:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_30:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取UIButton的UIControlState的image属性",
-            @"title": @"- (nullable UIImage *)imageForState:(UIControlState)state;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_imageForState:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_31:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取UIButton的UIControlState的backgroundImage属性",
-            @"title": @"- (nullable UIImage *)backgroundImageForState:(UIControlState)state;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_backgroundImageForState:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_32:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取UIButton的UIControlState的preferredSymbolConfigurationForImage属性",
-            @"title": @"- (nullable UIImageSymbolConfiguration *)preferredSymbolConfigurationForImageInState:(UIControlState)state API_AVAILABLE(ios(13.0), tvos(13.0), watchos(6.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_preferredSymbolConfigurationForImageInState:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_33:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取UIButton的UIControlState的attributedTitle属性",
-            @"title": @"- (nullable NSAttributedString *)attributedTitleForState:(UIControlState)state API_AVAILABLE(ios(6.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_attributedTitleForState:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_34:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取UIButton的属性currentTitle",
-            @"title": @"@property(nullable, nonatomic,readonly,strong) NSString *currentTitle;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_property_currentTitle:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_35:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取UIButton的属性currentTitleColor",
-            @"title": @"@property(nonatomic,readonly,strong) UIColor  *currentTitleColor;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_property_currentTitleColor:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_36:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取UIButton的属性currentTitleShadowColor",
-            @"title": @"@property(nullable, nonatomic,readonly,strong) UIColor  *currentTitleShadowColor;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_property_currentTitleShadowColor:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_37:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取UIButton的属性currentImage",
-            @"title": @"@property(nullable, nonatomic,readonly,strong) UIImage  *currentImage;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_property_currentImage:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_38:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取UIButton的属性currentBackgroundImage",
-            @"title": @"@property(nullable, nonatomic,readonly,strong) UIImage  *currentBackgroundImage;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_property_currentBackgroundImage:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_39:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取UIButton的属性currentPreferredSymbolConfiguration",
-            @"title": @"@property(nullable, nonatomic,readonly,strong) UIImageSymbolConfiguration *currentPreferredSymbolConfiguration API_AVAILABLE(ios(13.0), tvos(13.0), watchos(6.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_property_currentPreferredSymbolConfiguration:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_40:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取UIButton的属性currentAttributedTitle",
-            @"title": @"@property(nullable, nonatomic,readonly,strong) NSAttributedString *currentAttributedTitle API_AVAILABLE(ios(6.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_property_currentAttributedTitle:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_41:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取UIButton的属性titleLabel",
-            @"title": @"@property(nullable, nonatomic,readonly,strong) UILabel     *titleLabel API_AVAILABLE(ios(3.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_property_titleLabel:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_42:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取UIButton的属性imageView",
-            @"title": @"@property(nullable, nonatomic,readonly,strong) UIImageView *imageView  API_AVAILABLE(ios(3.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_property_imageView:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_43:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取UIButton的属性subtitleLabel",
-            @"title": @"@property(nonatomic, readonly, strong, nullable) UILabel *subtitleLabel API_AVAILABLE(ios(15.0), tvos(15.0), watchos(8.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectButton_property_subtitleLabel:index],
-            }
-        },
-    };
-}
-
 - (void)addBtn:(UIButton *)btn {
     if ([btn isDescendantOfView:self.childButton]) {
         [self.childButton bringSubviewToFront:btn];
@@ -689,44 +125,214 @@
     }
 }
 
-- (NSMutableArray *)TestProjectButton_property_subtitleLabel:(NSInteger)index {
-    return [self createTableModelSingleArrayWithProperty:@"subtitleLabel" index:index];
+- (NSMutableArray *)TestProjectButton_property_subtitleLabel:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"subtitleLabel"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectButton_property_imageView:(NSInteger)index {
-    return [self createTableModelSingleArrayWithProperty:@"imageView" index:index];
+- (NSDictionary *)method_43:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取UIButton的属性subtitleLabel",
+            @"title": @"@property(nonatomic, readonly, strong, nullable) UILabel *subtitleLabel API_AVAILABLE(ios(15.0), tvos(15.0), watchos(8.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_property_subtitleLabel:params],
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectButton_property_titleLabel:(NSInteger)index {
-    return [self createTableModelSingleArrayWithProperty:@"titleLabel" index:index];
+- (NSMutableArray *)TestProjectButton_property_imageView:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"imageView"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectButton_property_currentAttributedTitle:(NSInteger)index {
-    return [self createTableModelSingleArrayWithProperty:@"currentAttributedTitle" index:index];
+- (NSDictionary *)method_42:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取UIButton的属性imageView",
+            @"title": @"@property(nullable, nonatomic,readonly,strong) UIImageView *imageView  API_AVAILABLE(ios(3.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_property_imageView:params],
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectButton_property_currentPreferredSymbolConfiguration:(NSInteger)index {
-    return [self createTableModelSingleArrayWithProperty:@"currentPreferredSymbolConfiguration" index:index];
+- (NSMutableArray *)TestProjectButton_property_titleLabel:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"titleLabel"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectButton_property_currentBackgroundImage:(NSInteger)index {
-    return [self createTableModelSingleArrayWithProperty:@"currentBackgroundImage" index:index];
+- (NSDictionary *)method_41:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取UIButton的属性titleLabel",
+            @"title": @"@property(nullable, nonatomic,readonly,strong) UILabel     *titleLabel API_AVAILABLE(ios(3.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_property_titleLabel:params],
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectButton_property_currentImage:(NSInteger)index {
-    return [self createTableModelSingleArrayWithProperty:@"currentImage" index:index];
+- (NSMutableArray *)TestProjectButton_property_currentAttributedTitle:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"currentAttributedTitle"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectButton_property_currentTitleShadowColor:(NSInteger)index {
-    return [self createTableModelSingleArrayWithProperty:@"currentTitleShadowColor" index:index];
+- (NSDictionary *)method_40:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取UIButton的属性currentAttributedTitle",
+            @"title": @"@property(nullable, nonatomic,readonly,strong) NSAttributedString *currentAttributedTitle API_AVAILABLE(ios(6.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_property_currentAttributedTitle:params],
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectButton_property_currentTitleColor:(NSInteger)index {
-    return [self createTableModelSingleArrayWithProperty:@"currentTitleColor" index:index];
+- (NSMutableArray *)TestProjectButton_property_currentPreferredSymbolConfiguration:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"currentPreferredSymbolConfiguration"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectButton_property_currentTitle:(NSInteger)index {
-    return [self createTableModelSingleArrayWithProperty:@"currentTitle" index:index];
+- (NSDictionary *)method_39:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取UIButton的属性currentPreferredSymbolConfiguration",
+            @"title": @"@property(nullable, nonatomic,readonly,strong) UIImageSymbolConfiguration *currentPreferredSymbolConfiguration API_AVAILABLE(ios(13.0), tvos(13.0), watchos(6.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_property_currentPreferredSymbolConfiguration:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_property_currentBackgroundImage:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"currentBackgroundImage"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_38:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取UIButton的属性currentBackgroundImage",
+            @"title": @"@property(nullable, nonatomic,readonly,strong) UIImage  *currentBackgroundImage;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_property_currentBackgroundImage:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_property_currentImage:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"currentImage"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_37:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取UIButton的属性currentImage",
+            @"title": @"@property(nullable, nonatomic,readonly,strong) UIImage  *currentImage;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_property_currentImage:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_property_currentTitleShadowColor:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"currentTitleShadowColor"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_36:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取UIButton的属性currentTitleShadowColor",
+            @"title": @"@property(nullable, nonatomic,readonly,strong) UIColor  *currentTitleShadowColor;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_property_currentTitleShadowColor:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_property_currentTitleColor:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"currentTitleColor"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_35:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取UIButton的属性currentTitleColor",
+            @"title": @"@property(nonatomic,readonly,strong) UIColor  *currentTitleColor;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_property_currentTitleColor:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_property_currentTitle:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"currentTitle"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_34:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取UIButton的属性currentTitle",
+            @"title": @"@property(nullable, nonatomic,readonly,strong) NSString *currentTitle;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_property_currentTitle:params],
+            }
+        },
+    };
 }
 
 - (NSArray *)getControlStateList {
@@ -763,95 +369,186 @@
     return arr;
 }
 
-- (NSMutableArray *)TestProjectButton_attributedTitleForState:(NSInteger)index {
+- (NSMutableArray *)TestProjectButton_attributedTitleForState:(TestProjectTableViewParams *)params {
     NSArray *arr = [self getControlStateList];
+    WS(wSelf);
     for (NSDictionary *dic in arr) {
         NSString *title = dic[@"title"];
         UIControlState state = [dic[@"value"] integerValue];
-        WS(wSelf);
-        [self createTableModelWithMethodBlock:^NSString * _Nonnull{
+        [self createModelWithParams:params title:title methodBlock:^NSString * _Nonnull{
             return [NSString stringWithFormat:@"%@", [wSelf.childButton attributedTitleForState:state]];
-        } title:title index:index];
+        }];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectButton_preferredSymbolConfigurationForImageInState:(NSInteger)index {
+- (NSDictionary *)method_33:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取UIButton的UIControlState的attributedTitle属性",
+            @"title": @"- (nullable NSAttributedString *)attributedTitleForState:(UIControlState)state API_AVAILABLE(ios(6.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_attributedTitleForState:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_preferredSymbolConfigurationForImageInState:(TestProjectTableViewParams *)params {
     NSArray *arr = [self getControlStateList];
+    WS(wSelf);
     for (NSDictionary *dic in arr) {
         NSString *title = dic[@"title"];
         UIControlState state = [dic[@"value"] integerValue];
-        WS(wSelf);
-        [self createTableModelWithMethodBlock:^NSString * _Nonnull{
+        [self createModelWithParams:params title:title methodBlock:^NSString * _Nonnull{
             return [NSString stringWithFormat:@"%@", [wSelf.childButton preferredSymbolConfigurationForImageInState:state]];
-        } title:title index:index];
+        }];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectButton_backgroundImageForState:(NSInteger)index {
+- (NSDictionary *)method_32:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取UIButton的UIControlState的preferredSymbolConfigurationForImage属性",
+            @"title": @"- (nullable UIImageSymbolConfiguration *)preferredSymbolConfigurationForImageInState:(UIControlState)state API_AVAILABLE(ios(13.0), tvos(13.0), watchos(6.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_preferredSymbolConfigurationForImageInState:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_backgroundImageForState:(TestProjectTableViewParams *)params {
     NSArray *arr = [self getControlStateList];
+    WS(wSelf);
     for (NSDictionary *dic in arr) {
         NSString *title = dic[@"title"];
         UIControlState state = [dic[@"value"] integerValue];
-        WS(wSelf);
-        [self createTableModelWithMethodBlock:^NSString * _Nonnull{
+        [self createModelWithParams:params title:title methodBlock:^NSString * _Nonnull{
             return [NSString stringWithFormat:@"%@", [wSelf.childButton backgroundImageForState:state]];
-        } title:title index:index];
+        }];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectButton_imageForState:(NSInteger)index {
+- (NSDictionary *)method_31:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取UIButton的UIControlState的backgroundImage属性",
+            @"title": @"- (nullable UIImage *)backgroundImageForState:(UIControlState)state;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_backgroundImageForState:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_imageForState:(TestProjectTableViewParams *)params {
     NSArray *arr = [self getControlStateList];
+    WS(wSelf);
     for (NSDictionary *dic in arr) {
         NSString *title = dic[@"title"];
         UIControlState state = [dic[@"value"] integerValue];
-        WS(wSelf);
-        [self createTableModelWithMethodBlock:^NSString * _Nonnull{
+        [self createModelWithParams:params title:title methodBlock:^NSString * _Nonnull{
             return [NSString stringWithFormat:@"%@", [wSelf.childButton imageForState:state]];
-        } title:title index:index];
+        }];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectButton_titleShadowColorForState:(NSInteger)index {
+- (NSDictionary *)method_30:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取UIButton的UIControlState的image属性",
+            @"title": @"- (nullable UIImage *)imageForState:(UIControlState)state;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_imageForState:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_titleShadowColorForState:(TestProjectTableViewParams *)params {
     NSArray *arr = [self getControlStateList];
+    WS(wSelf);
     for (NSDictionary *dic in arr) {
         NSString *title = dic[@"title"];
         UIControlState state = [dic[@"value"] integerValue];
-        WS(wSelf);
-        [self createTableModelWithMethodBlock:^NSString * _Nonnull{
+        [self createModelWithParams:params title:title methodBlock:^NSString * _Nonnull{
             return [NSString stringWithFormat:@"%@", [wSelf.childButton titleShadowColorForState:state]];
-        } title:title index:index];
+        }];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectButton_titleColorForState:(NSInteger)index {
+- (NSDictionary *)method_29:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取UIButton的UIControlState的titleShadowColor属性",
+            @"title": @"- (nullable UIColor *)titleShadowColorForState:(UIControlState)state;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_titleShadowColorForState:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_titleColorForState:(TestProjectTableViewParams *)params {
     NSArray *arr = [self getControlStateList];
+    WS(wSelf);
     for (NSDictionary *dic in arr) {
         NSString *title = dic[@"title"];
         UIControlState state = [dic[@"value"] integerValue];
-        WS(wSelf);
-        [self createTableModelWithMethodBlock:^NSString * _Nonnull{
+        [self createModelWithParams:params title:title methodBlock:^NSString * _Nonnull{
             return [NSString stringWithFormat:@"%@", [wSelf.childButton titleColorForState:state]];
-        } title:title index:index];
+        }];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectButton_titleForState:(NSInteger)index {
+- (NSDictionary *)method_28:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取UIButton的UIControlState的titleColor属性",
+            @"title": @"- (nullable UIColor *)titleColorForState:(UIControlState)state;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_titleColorForState:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_titleForState:(TestProjectTableViewParams *)params {
     NSArray *arr = [self getControlStateList];
+    WS(wSelf);
     for (NSDictionary *dic in arr) {
         NSString *title = dic[@"title"];
         UIControlState state = [dic[@"value"] integerValue];
-        WS(wSelf);
-        [self createTableModelWithMethodBlock:^NSString * _Nonnull{
+        [self createModelWithParams:params title:title methodBlock:^NSString * _Nonnull{
             return [NSString stringWithFormat:@"%@", [wSelf.childButton titleForState:state]];
-        } title:title index:index];
+        }];
     }
     return self.dataMutArr;
+}
+
+- (NSDictionary *)method_27:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取UIButton的UIControlState的title属性",
+            @"title": @"- (nullable NSString *)titleForState:(UIControlState)state;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_titleForState:params],
+            }
+        },
+    };
 }
 
 //typedef NS_OPTIONS(NSUInteger, UIControlState) {
@@ -864,7 +561,7 @@
 //    UIControlStateReserved     = 0xFF000000               // flags reserved for internal framework use
 //};
 
-- (NSMutableArray *)TestProjectButton_setAttributedTitle_forState {
+- (NSMutableArray *)TestProjectButton_setAttributedTitle_forState:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": [NSString stringWithFormat:@"设置的属性值是UIControlStateNormal(%ld)，这个是默认正常状态", UIControlStateNormal],
@@ -908,14 +605,28 @@
         UIControlState state = [dic[@"value"] integerValue];
         UIColor *color = dic[@"color"];
         NSAttributedString *attr = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"state_%ld", state] attributes:@{NSForegroundColorAttributeName:color}];
-        [self createTableModelWithTitle:title block:^{
+        [self createModelWithParams:params title:title block:^{
             [wSelf.childButton setAttributedTitle:attr forState:state];
         }];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectButton_setPreferredSymbolConfiguration_forImageInState {
+- (NSDictionary *)method_26:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行UIButton的方法，设置AttributedTitle",
+            @"title": @"- (void)setAttributedTitle:(nullable NSAttributedString *)title forState:(UIControlState)state API_AVAILABLE(ios(6.0));",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"这个方法会导致setTitleColor和setTitleShadowColor方法失效",
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_setAttributedTitle_forState:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_setPreferredSymbolConfiguration_forImageInState:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": [NSString stringWithFormat:@"设置的属性值是UIControlStateNormal(%ld)，这个是默认正常状态", UIControlStateNormal],
@@ -958,14 +669,27 @@
         NSString *title = dic[@"title"];
         UIControlState state = [dic[@"value"] integerValue];
         UIImageSymbolConfiguration *config = dic[@"config"];
-        [self createTableModelWithTitle:title block:^{
+        [self createModelWithParams:params title:title block:^{
             [wSelf.childButton setPreferredSymbolConfiguration:config forImageInState:state];
         }];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectButton_setBackgroundImage_forState {
+- (NSDictionary *)method_25:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行UIButton的方法，设置PreferredSymbolConfiguration",
+            @"title": @"- (void)setPreferredSymbolConfiguration:(nullable UIImageSymbolConfiguration *)configuration forImageInState:(UIControlState)state UI_APPEARANCE_SELECTOR API_AVAILABLE(ios(13.0), tvos(13.0), watchos(6.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_setPreferredSymbolConfiguration_forImageInState:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_setBackgroundImage_forState:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": [NSString stringWithFormat:@"设置的属性值是UIControlStateNormal(%ld)，这个是默认正常状态", UIControlStateNormal],
@@ -1010,14 +734,28 @@
         UIControlState state = [dic[@"value"] integerValue];
         NSString *imageName = dic[@"imageName"];
         UIImage *image = [UIImage imageNamed:imageName];
-        [self createTableModelWithTitle:title block:^{
+        [self createModelWithParams:params title:title block:^{
             [wSelf.childButton setBackgroundImage:image forState:state];
         }];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectButton_setImage_forState {
+- (NSDictionary *)method_24:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行UIButton的方法，设置BackgroundImage",
+            @"title": @"- (void)setBackgroundImage:(nullable UIImage *)image forState:(UIControlState)state UI_APPEARANCE_SELECTOR;",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"这个图片是在文字的下方",
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_setBackgroundImage_forState:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_setImage_forState:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": [NSString stringWithFormat:@"设置的属性值是UIControlStateNormal(%ld)，这个是默认正常状态", UIControlStateNormal],
@@ -1061,14 +799,28 @@
         UIControlState state = [dic[@"value"] integerValue];
         NSString *imageName = dic[@"imageName"];
         UIImage *image = [UIImage imageNamed:imageName];
-        [self createTableModelWithTitle:title block:^{
+        [self createModelWithParams:params title:title block:^{
             [wSelf.childButton setImage:image forState:state];
         }];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectButton_setTitleShadowColor_forState {
+- (NSDictionary *)method_23:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行UIButton的方法，设置image",
+            @"title": @"- (void)setImage:(nullable UIImage *)image forState:(UIControlState)state;",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"这个图片是在文字的上方",
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_setImage_forState:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_setTitleShadowColor_forState:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": [NSString stringWithFormat:@"设置的属性值是UIControlStateNormal(%ld)，这个是默认正常状态", UIControlStateNormal],
@@ -1111,7 +863,7 @@
         NSString *title = dic[@"title"];
         UIControlState state = [dic[@"value"] integerValue];
         UIColor *color = dic[@"color"];
-        [self createTableModelWithTitle:title block:^{
+        [self createModelWithParams:params title:title block:^{
             //这个shadowOffset[要点击的时候才能设置，否则会导致崩溃]
             wSelf.childButton.titleLabel.shadowOffset = CGSizeMake(1, 5);
             [wSelf.childButton setTitleShadowColor:color forState:state];
@@ -1120,7 +872,21 @@
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectButton_setTitleColor_forState {
+- (NSDictionary *)method_22:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行UIButton的方法，设置titleShadowColor",
+            @"title": @"- (void)setTitleShadowColor:(nullable UIColor *)color forState:(UIControlState)state UI_APPEARANCE_SELECTOR;",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"这个要设置[titleLabel.shadowOffset]效果才显著",
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_setTitleShadowColor_forState:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_setTitleColor_forState:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": [NSString stringWithFormat:@"设置的属性值是UIControlStateNormal(%ld)，这个是默认正常状态", UIControlStateNormal],
@@ -1163,14 +929,27 @@
         NSString *title = dic[@"title"];
         UIControlState state = [dic[@"value"] integerValue];
         UIColor *color = dic[@"color"];
-        [self createTableModelWithTitle:title block:^{
+        [self createModelWithParams:params title:title block:^{
             [wSelf.childButton setTitleColor:color forState:state];
         }];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectButton_setTitle_forState {
+- (NSDictionary *)method_21:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行UIButton的方法，设置titleColor",
+            @"title": @"- (void)setTitleColor:(nullable UIColor *)color forState:(UIControlState)state UI_APPEARANCE_SELECTOR;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_setTitleColor_forState:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_setTitle_forState:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": [NSString stringWithFormat:@"设置的属性值是UIControlStateNormal(%ld)，这个是默认正常状态", UIControlStateNormal],
@@ -1205,7 +984,7 @@
     for (NSDictionary *dic in arr) {
         NSString *title = dic[@"title"];
         UIControlState state = [dic[@"value"] integerValue];
-        [self createTableModelWithTitle:title block:^{
+        [self createModelWithParams:params title:title block:^{
             [wSelf.childButton setTitle:[NSString stringWithFormat:@"state_%ld", state] forState:state];
             BOOL enabled = YES;
             BOOL selected = NO;
@@ -1226,20 +1005,101 @@
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectButton_property_changesSelectionAsPrimaryAction {
-    return [self createTableModelSingleArrayWithProperty:@"changesSelectionAsPrimaryAction" value:nil];
+- (NSDictionary *)method_20:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行UIButton的方法，设置title",
+            @"title": @"- (void)setTitle:(nullable NSString *)title forState:(UIControlState)state;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_setTitle_forState:params],
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectButton_property_preferredMenuElementOrder {
-    return [self createTableModelSingleArrayWithProperty:@"preferredMenuElementOrder" value:nil];
+- (NSMutableArray *)TestProjectButton_property_changesSelectionAsPrimaryAction:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"changesSelectionAsPrimaryAction"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectButton_property_menu {
-    return [self createTableModelSingleArrayWithProperty:@"menu" value:nil];
+- (NSDictionary *)method_19:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIButton的属性changesSelectionAsPrimaryAction",
+            @"title": @"@property (nonatomic, readwrite, assign) BOOL changesSelectionAsPrimaryAction API_AVAILABLE(ios(15.0)) API_UNAVAILABLE(watchos, tvos);",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_property_changesSelectionAsPrimaryAction:params],
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectButton_property_pointerStyleProvider {
-    return [self createTableModelSingleArrayWithProperty:@"pointerStyleProvider" value:nil];
+- (NSMutableArray *)TestProjectButton_property_preferredMenuElementOrder:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"preferredMenuElementOrder"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_18:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIButton的属性preferredMenuElementOrder",
+            @"title": @"@property (nonatomic) UIContextMenuConfigurationElementOrder preferredMenuElementOrder API_AVAILABLE(ios(16.0)) API_UNAVAILABLE(watchos, tvos);",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_property_preferredMenuElementOrder:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_property_menu:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"menu"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_17:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIButton的属性menu",
+            @"title": @"@property (nonatomic, readwrite, copy, nullable) UIMenu *menu API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(watchos, tvos);",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_property_menu:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_property_pointerStyleProvider:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"pointerStyleProvider"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_16:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIButton的属性pointerStyleProvider",
+            @"title": @"@property (nonatomic, readwrite, copy, nullable) UIButtonPointerStyleProvider pointerStyleProvider API_AVAILABLE(ios(13.4)) API_UNAVAILABLE(watchos, tvos) NS_REFINED_FOR_SWIFT;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_property_pointerStyleProvider:params],
+            }
+        },
+    };
 }
 
 //typedef NS_ENUM(NSInteger, UIButtonRole) {
@@ -1249,7 +1109,7 @@
 //    UIButtonRoleDestructive
 //} API_AVAILABLE(ios(14.0));
 
-- (NSMutableArray *)TestProjectButton_property_role {
+- (NSMutableArray *)TestProjectButton_property_role:(TestProjectTableViewParams *)params {
     if (@available(iOS 14.0, *)) {
         NSArray *arr = @[
             @{
@@ -1272,7 +1132,12 @@
         for (NSDictionary *dic in arr) {
             NSString *title = dic[@"title"];
             NSNumber *num = dic[@"value"];
-            [self createClickSetTableModelWithProperty:@"role" value:num title:title block:nil];
+            [self createModelWithParams:params
+                                  title:title
+                               property:@"role"
+                                  value:num
+                              operation:TestProjectCreateModelGetBeforeClickSet
+                                  block:nil];
         }
     } else {
         // Fallback on earlier versions
@@ -1280,40 +1145,133 @@
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectButton_property_held {
-    return [self createTableModelSingleArrayWithProperty:@"held" value:nil];
+- (NSDictionary *)method_15:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIButton的属性role",
+            @"title": @"@property (nonatomic) UIButtonRole role API_AVAILABLE(ios(14.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_property_role:params],
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectButton_property_hovered {
-    return [self createTableModelSingleArrayWithProperty:@"hovered" value:nil];
+- (NSMutableArray *)TestProjectButton_property_held:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"held"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectButton_property_buttonType {
-    return [self createTableModelSingleArrayWithProperty:@"buttonType" value:nil];
+- (NSDictionary *)method_14:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIButton的属性held",
+            @"title": @"@property (nonatomic, assign, readonly, getter = isHeld) BOOL held API_AVAILABLE(ios(15.0), tvos(15.0), watchos(8.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_property_held:params],
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectButton_property_tintColor {
+- (NSMutableArray *)TestProjectButton_property_hovered:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"hovered"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_13:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIButton的属性hovered",
+            @"title": @"@property (nonatomic, assign, readonly, getter = isHovered) BOOL hovered API_AVAILABLE(ios(15.0), tvos(15.0), watchos(8.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_property_hovered:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_property_buttonType:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"buttonType"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_12:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIButton的属性buttonType",
+            @"title": @"@property(nonatomic,readonly) UIButtonType buttonType;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_property_buttonType:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_property_tintColor:(TestProjectTableViewParams *)params {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
     [btn setTitle:@"btn" forState:UIControlStateNormal];
     WS(wSelf);
-    [self createClickSetTableModelWithProperty:@"tintColor" value:[UIColor greenColor] block:^{
+    return [self createModelSingleArrayWithParams:params property:@"tintColor" value:[UIColor greenColor] operation:TestProjectCreateModelGetBeforeClickSet block:^{
         [wSelf addConstantBtn:btn];
     }];
-    return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectButton_property_automaticallyUpdatesConfiguration {
+- (NSDictionary *)method_11:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIButton的属性tintColor",
+            @"title": @"@property(null_resettable, nonatomic,strong)   UIColor     *tintColor API_AVAILABLE(ios(5.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_property_tintColor:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_property_automaticallyUpdatesConfiguration:(TestProjectTableViewParams *)params {
     NSArray *arr = @[@(YES), @(NO)];
     for (NSNumber *num in arr) {
-        [self createClickSetTableModelWithProperty:@"automaticallyUpdatesConfiguration" value:num];
+        [self createModelWithParams:params
+                           property:@"automaticallyUpdatesConfiguration"
+                              value:num
+                          operation:TestProjectCreateModelGetBeforeClickSet
+                              block:nil];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectButton_property_configurationUpdateHandler:(NSInteger)index {
+- (NSDictionary *)method_10:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIButton的属性automaticallyUpdatesConfiguration,暂时不太知道怎么用",
+            @"title": @"@property (nonatomic, readwrite, assign) BOOL automaticallyUpdatesConfiguration API_AVAILABLE(ios(15.0), tvos(15.0)) API_UNAVAILABLE(watchos);",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_property_automaticallyUpdatesConfiguration:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_property_configurationUpdateHandler:(TestProjectTableViewParams *)params {
     __block NSMutableString *mutStr = [NSMutableString string];
     WS(wSelf);
-    [self createTableModelWithMethodBlock:^NSString * _Nonnull{
+    [self createModelWithParams:params title:@"configurationUpdateHandler后buttonSize的展示" methodBlock:^NSString * _Nonnull{
         if (@available(iOS 15.0, *)) {
             if (!wSelf.grandChildButton.configurationUpdateHandler) {
                 wSelf.grandChildButton.configurationUpdateHandler = ^(UIButton *btn){
@@ -1324,15 +1282,28 @@
             // Fallback on earlier versions
         }
         return mutStr;
-    } title:@"configurationUpdateHandler后buttonSize的展示" index:index];
-   
+    }];
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectButton_setNeedsUpdateConfiguration {
+- (NSDictionary *)method_9:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIButton的属性configurationUpdateHandler",
+            @"title": @"@property (nonatomic, readwrite, copy, nullable) UIButtonConfigurationUpdateHandler configurationUpdateHandler API_AVAILABLE(ios(15.0), tvos(15.0)) API_UNAVAILABLE(watchos);",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"当执行updateConfiguration方法后，会执行此回调",
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_property_configurationUpdateHandler:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_setNeedsUpdateConfiguration:(TestProjectTableViewParams *)params {
     WS(wSelf);
     if (@available(iOS 15.0, *)) {
-        [self createTableModelSingleArrayWithTitle:@"setNeedsUpdateConfiguration" block:^{
+        [self createModelSingleArrayWithParams:params title:@"setNeedsUpdateConfiguration" block:^{
             wSelf.config.buttonSize = UIButtonConfigurationSizeLarge;
             wSelf.grandChildButton.configuration = wSelf.config;
             [wSelf.grandChildButton setNeedsUpdateConfiguration];
@@ -1343,7 +1314,20 @@
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectButton_class_buttonWithConfiguration_primaryAction {
+- (NSDictionary *)method_8:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置更改UIButton的Configuration后，需要调用这个方法才会立即刷新，否则要等下个时机才会触发",
+            @"title": @"- (void)setNeedsUpdateConfiguration API_AVAILABLE(ios(15.0), tvos(15.0)) API_UNAVAILABLE(watchos);",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_setNeedsUpdateConfiguration:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_class_buttonWithConfiguration_primaryAction:(TestProjectTableViewParams *)params {
     UIButton *btn;
     if (@available(iOS 15.0, *)) {
         btn = [UIButton buttonWithConfiguration:self.config primaryAction:self.action];
@@ -1354,7 +1338,10 @@
     
     WS(wSelf);
     if (@available(iOS 15.0, *)) {
-        [self createTableModelSingleArrayWithTitle:[NSString stringWithFormat:@"config:%@和UIAction:%@创建UIButton", self.config, self.action] block:^{
+        [self createModelSingleArrayWithParams:params title:@"setNeedsUpdateConfiguration" block:^{
+            
+        }];
+        [self createModelSingleArrayWithParams:params title:[NSString stringWithFormat:@"config:%@和UIAction:%@创建UIButton", self.config, self.action] block:^{
             [wSelf addConstantBtn:btn];
         }];
     } else {
@@ -1363,7 +1350,20 @@
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectButton_class_buttonWithType_primaryAction {
+- (NSDictionary *)method_7:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"通过UIButtonConfiguration和UIAction创建UIButton",
+            @"title": @"+ (instancetype)buttonWithConfiguration:(UIButtonConfiguration *)configuration primaryAction:(nullable UIAction *)primaryAction API_AVAILABLE(ios(15.0), tvos(15.0)) API_UNAVAILABLE(watchos);",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_class_buttonWithConfiguration_primaryAction:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_class_buttonWithType_primaryAction:(TestProjectTableViewParams *)params {
     UIButton *btn;
     if (@available(iOS 14.0, *)) {
         btn = [UIButton buttonWithType:UIButtonTypeInfoLight primaryAction:self.action];
@@ -1371,12 +1371,25 @@
         // Fallback on earlier versions
     }
     WS(wSelf);
-    return [self createTableModelSingleArrayWithTitle:[NSString stringWithFormat:@"UIButtonTypeInfoLight和UIAction:%@创建UIButton", self.action] block:^{
+    return [self createModelSingleArrayWithParams:params title:[NSString stringWithFormat:@"UIButtonTypeInfoLight和UIAction:%@创建UIButton", self.action] block:^{
         [wSelf addConstantBtn:btn];
     }];
 }
 
-- (NSMutableArray *)TestProjectButton_class_systemButtonWithPrimaryAction {
+- (NSDictionary *)method_6:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"通过UIButtonType和UIAction创建UIButton",
+            @"title": @"+ (instancetype)buttonWithType:(UIButtonType)buttonType primaryAction:(nullable UIAction *)primaryAction API_AVAILABLE(ios(14.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_class_buttonWithType_primaryAction:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_class_systemButtonWithPrimaryAction:(TestProjectTableViewParams *)params {
     UIButton *btn;
     if (@available(iOS 14.0, *)) {
         btn = [UIButton systemButtonWithPrimaryAction:self.action];
@@ -1385,19 +1398,45 @@
         // Fallback on earlier versions
     }
     WS(wSelf);
-    return [self createTableModelSingleArrayWithTitle:[NSString stringWithFormat:@"UIAction:%@创建UIButton", self.action] block:^{
+    return [self createModelSingleArrayWithParams:params title:[NSString stringWithFormat:@"UIAction:%@创建UIButton", self.action] block:^{
         [wSelf addConstantBtn:btn];
     }];
 }
 
-- (NSMutableArray *)TestProjectButton_class_systemButtonWithImage_target_action {
+- (NSDictionary *)method_5:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"通过UIAction创建UIButton",
+            @"title": @"+ (instancetype)systemButtonWithPrimaryAction:(nullable UIAction *)primaryAction API_AVAILABLE(ios(14.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_class_systemButtonWithPrimaryAction:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_class_systemButtonWithImage_target_action:(TestProjectTableViewParams *)params {
     UIImage *image = [UIImage imageNamed:@"lyf_2"];
     UIButton *btn = [UIButton systemButtonWithImage:image target:self action:@selector(gotoBack)];
     
     WS(wSelf);
-    return [self createTableModelSingleArrayWithTitle:[NSString stringWithFormat:@"image:%@创建UIButton", image] block:^{
+    return [self createModelSingleArrayWithParams:params title:[NSString stringWithFormat:@"image:%@创建UIButton", image] block:^{
         [wSelf addConstantBtn:btn];
     }];
+}
+
+- (NSDictionary *)method_4:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"通过image和action创建UIButton",
+            @"title": @"+ (instancetype)systemButtonWithImage:(UIImage *)image target:(nullable id)target action:(nullable SEL)action API_AVAILABLE(ios(13.0), tvos(13.0), watchos(6.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_class_systemButtonWithImage_target_action:params],
+            }
+        },
+    };
 }
 
 //typedef NS_ENUM(NSInteger, UIButtonType) {
@@ -1416,7 +1455,7 @@
 //    UIButtonTypeRoundedRect = UIButtonTypeSystem   // Deprecated, use UIButtonTypeSystem instead
 //};
 
-- (NSMutableArray *)TestProjectButton_class_buttonWithType {
+- (NSMutableArray *)TestProjectButton_class_buttonWithType:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": [NSString stringWithFormat:@"设置的属性值是UIButtonTypeCustom(%ld)", UIButtonTypeCustom],
@@ -1449,14 +1488,27 @@
         UIButtonType type = [dic[@"value"] integerValue];
         UIButton *btn = [UIButton buttonWithType:type];
         btn.backgroundColor = [UIColor purpleColor];
-        [self createTableModelWithTitle:title block:^{
+        [self createModelWithParams:params title:title block:^{
             [wSelf addConstantBtn:btn];
         }];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectButton_initWithFrame_primaryAction {
+- (NSDictionary *)method_3:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"通过frame和UIAction创建UIButton",
+            @"title": @"+ (instancetype)buttonWithType:(UIButtonType)buttonType;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_class_buttonWithType:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_initWithFrame_primaryAction:(TestProjectTableViewParams *)params {
     UIAction *action;
     UIButton *btn;
     WS(wSelf);
@@ -1470,20 +1522,46 @@
     } else {
         // Fallback on earlier versions
     }
-    return [self createTableModelSingleArrayWithTitle:@"通过UIAction和frame创建" block:^{
+    return [self createModelSingleArrayWithParams:params title:@"通过UIAction和frame创建" block:^{
         [wSelf addBtn:btn];
     }];
 }
 
-- (NSMutableArray *)TestProjectButton_initWithFrame {
+- (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"通过frame和UIAction创建UIButton",
+            @"title": @"- (instancetype)initWithFrame:(CGRect)frame primaryAction:(nullable UIAction *)primaryAction API_AVAILABLE(ios(14.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_initWithFrame_primaryAction:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectButton_initWithFrame:(TestProjectTableViewParams *)params {
     CGRect rect = CGRectMake([UIScreen mainScreen].bounds.size.width - 50, 0, 50, 50);
     UIButton *btn = [[UIButton alloc] initWithFrame:rect];
     btn.backgroundColor = [UIColor purpleColor];
     
     WS(wSelf);
-    return [self createTableModelSingleArrayWithTitle:[NSString stringWithFormat:@"frame:%@创建UIButton", NSStringFromCGRect(rect)] block:^{
+    return [self createModelSingleArrayWithParams:params title:[NSString stringWithFormat:@"frame:%@创建UIButton", NSStringFromCGRect(rect)] block:^{
         [wSelf addBtn:btn];
     }];
+}
+
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"通过frame创建UIButton",
+            @"title": @"- (instancetype)initWithFrame:(CGRect)frame",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectButton_initWithFrame:params],
+            }
+        },
+    };
 }
 
 @end

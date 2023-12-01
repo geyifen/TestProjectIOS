@@ -9,90 +9,6 @@
 
 @implementation TestProjectNSTextAttachment
 
-- (NSDictionary *)method_1 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"此方法不知道怎么使用，获取的数据一片空白",
-            @"title": @"- (instancetype)initWithData:(nullable NSData *)contentData ofType:(nullable NSString *)uti NS_DESIGNATED_INITIALIZER API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0)) API_UNAVAILABLE(watchos);",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectTextAttachMent_initWithData_ofType],
-                @"compareViewModel": self.compareViewModel,
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_2 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"此方法不知道怎么使用，获取的数据一片空白",
-            @"title": @"@property (nullable, copy, NS_NONATOMIC_IOSONLY) NSData *contents",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectTextAttachMent_property_contents],
-                @"compareViewModel": self.compareViewModel,
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_3 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"此方法不知道怎么使用，获取的数据一片空白",
-            @"title": @"@property (nullable, copy, NS_NONATOMIC_IOSONLY) NSData *fileType",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectTextAttachMent_property_fileType],
-                @"compareViewModel": self.compareViewModel,
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_4 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置image内容",
-            @"title": @"@property (nullable, strong, NS_NONATOMIC_IOSONLY) UIImage *image API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0)) API_UNAVAILABLE(watchos);",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectTextAttachMent_property_image],
-                @"compareViewModel": self.compareViewModel,
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_5 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置占用的bounds",
-            @"title": @"@property (NS_NONATOMIC_IOSONLY) CGRect bounds API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0)) API_UNAVAILABLE(watchos);",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectTextAttachMent_property_bounds],
-                @"compareViewModel": self.compareViewModel,
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_6 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置attachment的padding",
-            @"title": @"@property CGFloat lineLayoutPadding API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0)) API_UNAVAILABLE(watchos);",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectTextAttachMent_property_lineLayoutPadding],
-                @"compareViewModel": self.compareViewModel,
-            }
-        },
-    };
-}
-
 - (TestProjectTableViewModel *)createAttrStrModelWith:(NSTextAttachment *)attachment {
     TestProjectTableViewModel *attrStrModel = [[TestProjectTableViewModel alloc] init];
     attrStrModel.isChild = YES;
@@ -121,8 +37,21 @@
             [m calculDataViewHeight];
         }
     }
-
     return self.dataMutArr;
+}
+
+- (NSDictionary *)method_6:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置attachment的padding",
+            @"title": @"@property CGFloat lineLayoutPadding API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0)) API_UNAVAILABLE(watchos);",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectTextAttachMent_property_lineLayoutPadding],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
+    };
 }
 
 - (NSMutableArray *)TestProjectTextAttachMent_property_bounds {
@@ -139,6 +68,20 @@
     return self.dataMutArr;
 }
 
+- (NSDictionary *)method_5:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置占用的bounds",
+            @"title": @"@property (NS_NONATOMIC_IOSONLY) CGRect bounds API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0)) API_UNAVAILABLE(watchos);",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectTextAttachMent_property_bounds],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
+    };
+}
+
 - (NSMutableArray *)TestProjectTextAttachMent_property_image {
     UIImage *image = [UIImage imageNamed:@"lyf_1"];
     NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
@@ -152,16 +95,72 @@
     return self.dataMutArr;
 }
 
+- (NSDictionary *)method_4:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置image内容",
+            @"title": @"@property (nullable, strong, NS_NONATOMIC_IOSONLY) UIImage *image API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0)) API_UNAVAILABLE(watchos);",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectTextAttachMent_property_image],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
+    };
+}
+
 - (NSMutableArray *)TestProjectTextAttachMent_property_fileType {
     return self.dataMutArr;
+}
+
+- (NSDictionary *)method_3:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"此方法不知道怎么使用，获取的数据一片空白",
+            @"title": @"@property (nullable, copy, NS_NONATOMIC_IOSONLY) NSData *fileType",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectTextAttachMent_property_fileType],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
+    };
 }
 
 - (NSMutableArray *)TestProjectTextAttachMent_property_contents {
     return self.dataMutArr;
 }
 
+- (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"此方法不知道怎么使用，获取的数据一片空白",
+            @"title": @"@property (nullable, copy, NS_NONATOMIC_IOSONLY) NSData *contents",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectTextAttachMent_property_contents],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
+    };
+}
+
 - (NSMutableArray *)TestProjectTextAttachMent_initWithData_ofType {
     return self.dataMutArr;
+}
+
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"此方法不知道怎么使用，获取的数据一片空白",
+            @"title": @"- (instancetype)initWithData:(nullable NSData *)contentData ofType:(nullable NSString *)uti NS_DESIGNATED_INITIALIZER API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0)) API_UNAVAILABLE(watchos);",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectTextAttachMent_initWithData_ofType],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
+    };
 }
 
 @end

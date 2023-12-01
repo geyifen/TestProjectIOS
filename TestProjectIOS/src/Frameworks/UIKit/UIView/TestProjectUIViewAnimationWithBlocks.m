@@ -50,94 +50,11 @@
     return _label2;
 }
 
-- (NSDictionary *)method_1 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"UIView执行动画",
-            @"title": @"+ (void)animateWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^ __nullable)(BOOL finished))completion NS_SWIFT_DISABLE_ASYNC API_AVAILABLE(ios(4.0));",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"@param duration: 动画执行的时间\n@param delay: 动画延迟执行的时间\n@param options: 动画执行的效果\n@param animations: 动画执行的动作变化\n@param completion: 动画执行完后的回调",
-            @"dataModel": @{
-                @"childItems": [self TestProjectViewViewAnimationWithBlocks_animateWithDuration_delay_options_animations_completion],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_2 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"UIView执行动画，动画效果有弹簧效果",
-            @"title": @"+ (void)animateWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay usingSpringWithDamping:(CGFloat)dampingRatio initialSpringVelocity:(CGFloat)velocity options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^ __nullable)(BOOL finished))completion NS_SWIFT_DISABLE_ASYNC API_AVAILABLE(ios(7.0));",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"@param duration: 动画执行的时间\n@param delay: 动画延迟执行的时间\n@param dampingRatio: 动画弹簧效果值\n@param dampingRatio: 动画弹簧的初始速度@param options: 动画执行的效果\n@param animations: 动画执行的动作变化\n@param completion: 动画执行完后的回调",
-            @"dataModel": @{
-                @"childItems": [self TestProjectViewViewAnimationWithBlocks_animateWithDuration_delay_usingSpringWithDamping_initialSpringVelocity_options_animations_completion],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_3 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"UIView执行动画",
-            @"title": @"+ (void)transitionWithView:(UIView *)view duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options animations:(void (^ __nullable)(void))animations completion:(void (^ __nullable)(BOOL finished))completion NS_SWIFT_DISABLE_ASYNC API_AVAILABLE(ios(4.0));",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"@param view: 不知道有什么作用\n@param duration: 动画执行的时间\n@param options: 动画执行的效果\n@param animations: 动画执行的动作变化\n@param completion: 动画执行完后的回调",
-            @"dataModel": @{
-                @"childItems": [self TestProjectViewViewAnimationWithBlocks_transitionWithView_duration_options_animations_completion],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_4 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"UIView执行动画,fromView会消失，不知道怎么使用",
-            @"title": @"+ (void)transitionFromView:(UIView *)fromView toView:(UIView *)toView duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options completion:(void (^ __nullable)(BOOL finished))completion NS_SWIFT_DISABLE_ASYNC API_AVAILABLE(ios(4.0));",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"@param fromView: 动画执行的view\n@param toView: 动画执行到某个view\n@param duration: 动画执行的时间\n@param options: 动画执行的效果\n@param animations: 动画执行的动作变化\n@param completion: 动画执行完后的回调",
-            @"dataModel": @{
-                @"childItems": [self TestProjectViewViewAnimationWithBlocks_transitionFromView_toView_duration_options_completion],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_5 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"UIView执行动画,和普通动画一样",
-            @"title": @"+ (void)performSystemAnimation:(UISystemAnimation)animation onViews:(NSArray<__kindof UIView *> *)views options:(UIViewAnimationOptions)options animations:(void (^ __nullable)(void))parallelAnimations completion:(void (^ __nullable)(BOOL finished))completion NS_SWIFT_DISABLE_ASYNC API_AVAILABLE(ios(7.0));",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"@param fromView: 动画执行的view\n@param toView: 动画执行到某个view\n@param duration: 动画执行的时间\n@param options: 动画执行的效果\n@param animations: 动画执行的动作变化\n@param completion: 动画执行完后的回调",
-            @"dataModel": @{
-                @"childItems": [self TestProjectViewViewAnimationWithBlocks_performSystemAnimation_onViews_options_animations_completion],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_6 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"UIView执行动画,和普通动画一样",
-            @"title": @"+ (void)modifyAnimationsWithRepeatCount:(CGFloat)count autoreverses:(BOOL)autoreverses animations:(void(NS_NOESCAPE ^)(void))animations API_AVAILABLE(ios(13.0),tvos(13.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectViewViewAnimationWithBlocks_modifyAnimationsWithRepeatCount_autoreverses_animations],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectViewViewAnimationWithBlocks_modifyAnimationsWithRepeatCount_autoreverses_animations {
+- (NSMutableArray *)TestProjectViewViewAnimationWithBlocks_modifyAnimationsWithRepeatCount_autoreverses_animations:(TestProjectTableViewParams *)params {
     CGRect rect = self.childView.frame;
     rect.origin.x = 100;
     WS(wSelf);
-    [self createTableModelWithTitle:@"modifyAnimationsWithRepeatCount" block:^{
+    [self createModelWithParams:params title:@"modifyAnimationsWithRepeatCount" block:^{
         [UIView modifyAnimationsWithRepeatCount:3 autoreverses:YES animations:^{
             wSelf.childView.frame = rect;
         }];
@@ -145,12 +62,24 @@
     return self.dataMutArr;
 }
 
+- (NSDictionary *)method_6:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"UIView执行动画,和普通动画一样",
+            @"title": @"+ (void)modifyAnimationsWithRepeatCount:(CGFloat)count autoreverses:(BOOL)autoreverses animations:(void(NS_NOESCAPE ^)(void))animations API_AVAILABLE(ios(13.0),tvos(13.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectViewViewAnimationWithBlocks_modifyAnimationsWithRepeatCount_autoreverses_animations:params],
+            }
+        },
+    };
+}
 
-- (NSMutableArray *)TestProjectViewViewAnimationWithBlocks_performSystemAnimation_onViews_options_animations_completion {
+- (NSMutableArray *)TestProjectViewViewAnimationWithBlocks_performSystemAnimation_onViews_options_animations_completion:(TestProjectTableViewParams *)params {
     CGRect rect = self.childView.frame;
     rect.origin.x = 100;
     WS(wSelf);
-    [self createTableModelWithTitle:@"performSystemAnimation" block:^{
+    [self createModelWithParams:params title:@"performSystemAnimation" block:^{
         [UIView performSystemAnimation:UISystemAnimationDelete onViews:nil options:UIViewAnimationOptionPreferredFramesPerSecondDefault animations:^{
             wSelf.childView.frame = rect;
         } completion:^(BOOL finished) {
@@ -160,10 +89,23 @@
     return self.dataMutArr;
 }
 
+- (NSDictionary *)method_5:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"UIView执行动画,和普通动画一样",
+            @"title": @"+ (void)performSystemAnimation:(UISystemAnimation)animation onViews:(NSArray<__kindof UIView *> *)views options:(UIViewAnimationOptions)options animations:(void (^ __nullable)(void))parallelAnimations completion:(void (^ __nullable)(BOOL finished))completion NS_SWIFT_DISABLE_ASYNC API_AVAILABLE(ios(7.0));",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"@param fromView: 动画执行的view\n@param toView: 动画执行到某个view\n@param duration: 动画执行的时间\n@param options: 动画执行的效果\n@param animations: 动画执行的动作变化\n@param completion: 动画执行完后的回调",
+            @"dataModel": @{
+                @"childItems": [self TestProjectViewViewAnimationWithBlocks_performSystemAnimation_onViews_options_animations_completion:params],
+            }
+        },
+    };
+}
 
-- (NSMutableArray *)TestProjectViewViewAnimationWithBlocks_transitionFromView_toView_duration_options_completion {
+- (NSMutableArray *)TestProjectViewViewAnimationWithBlocks_transitionFromView_toView_duration_options_completion:(TestProjectTableViewParams *)params {
     WS(wSelf);
-    [self createTableModelWithTitle:@"transitionFromView_toView" block:^{
+    [self createModelWithParams:params title:@"transitionFromView_toView" block:^{
         [UIView transitionFromView:wSelf.label2 toView:wSelf.label1 duration:5 options:UIViewAnimationOptionPreferredFramesPerSecondDefault completion:^(BOOL finished) {
             NSLog(@"%@", NSStringFromCGRect(wSelf.label2.frame));
         }];
@@ -171,11 +113,25 @@
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectViewViewAnimationWithBlocks_transitionWithView_duration_options_animations_completion {
+- (NSDictionary *)method_4:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"UIView执行动画,fromView会消失，不知道怎么使用",
+            @"title": @"+ (void)transitionFromView:(UIView *)fromView toView:(UIView *)toView duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options completion:(void (^ __nullable)(BOOL finished))completion NS_SWIFT_DISABLE_ASYNC API_AVAILABLE(ios(4.0));",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"@param fromView: 动画执行的view\n@param toView: 动画执行到某个view\n@param duration: 动画执行的时间\n@param options: 动画执行的效果\n@param animations: 动画执行的动作变化\n@param completion: 动画执行完后的回调",
+            @"dataModel": @{
+                @"childItems": [self TestProjectViewViewAnimationWithBlocks_transitionFromView_toView_duration_options_completion:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectViewViewAnimationWithBlocks_transitionWithView_duration_options_animations_completion:(TestProjectTableViewParams *)params {
     CGRect rect = self.childView.frame;
     rect.origin.x = 100;
     WS(wSelf);
-    [self createTableModelWithTitle:@"transitionWithView" block:^{
+    [self createModelWithParams:params title:@"transitionWithView" block:^{
         [UIView transitionWithView:wSelf.childView duration:5 options:UIViewAnimationOptionPreferredFramesPerSecondDefault animations:^{
             wSelf.childView.frame = rect;
         } completion:^(BOOL finished) {
@@ -185,7 +141,21 @@
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectViewViewAnimationWithBlocks_animateWithDuration_delay_usingSpringWithDamping_initialSpringVelocity_options_animations_completion {
+- (NSDictionary *)method_3:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"UIView执行动画",
+            @"title": @"+ (void)transitionWithView:(UIView *)view duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options animations:(void (^ __nullable)(void))animations completion:(void (^ __nullable)(BOOL finished))completion NS_SWIFT_DISABLE_ASYNC API_AVAILABLE(ios(4.0));",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"@param view: 不知道有什么作用\n@param duration: 动画执行的时间\n@param options: 动画执行的效果\n@param animations: 动画执行的动作变化\n@param completion: 动画执行完后的回调",
+            @"dataModel": @{
+                @"childItems": [self TestProjectViewViewAnimationWithBlocks_transitionWithView_duration_options_animations_completion:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectViewViewAnimationWithBlocks_animateWithDuration_delay_usingSpringWithDamping_initialSpringVelocity_options_animations_completion:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": @"设置的usingSpringWithDamping是0",
@@ -208,7 +178,7 @@
         i++;
         rect.origin.x = i * 20;
         WS(wSelf);
-        [self createTableModelWithTitle:title block:^{
+        [self createModelWithParams:params title:title block:^{
             [UIView animateWithDuration:5 delay:1 usingSpringWithDamping:damping initialSpringVelocity:20 options:UIViewAnimationOptionPreferredFramesPerSecondDefault animations:^{
                 wSelf.childView.frame = rect;
             } completion:^(BOOL finished) {
@@ -218,6 +188,20 @@
     }
 
     return self.dataMutArr;
+}
+
+- (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"UIView执行动画，动画效果有弹簧效果",
+            @"title": @"+ (void)animateWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay usingSpringWithDamping:(CGFloat)dampingRatio initialSpringVelocity:(CGFloat)velocity options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^ __nullable)(BOOL finished))completion NS_SWIFT_DISABLE_ASYNC API_AVAILABLE(ios(7.0));",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"@param duration: 动画执行的时间\n@param delay: 动画延迟执行的时间\n@param dampingRatio: 动画弹簧效果值\n@param dampingRatio: 动画弹簧的初始速度@param options: 动画执行的效果\n@param animations: 动画执行的动作变化\n@param completion: 动画执行完后的回调",
+            @"dataModel": @{
+                @"childItems": [self TestProjectViewViewAnimationWithBlocks_animateWithDuration_delay_usingSpringWithDamping_initialSpringVelocity_options_animations_completion:params],
+            }
+        },
+    };
 }
 
 //typedef NS_OPTIONS(NSUInteger, UIViewAnimationOptions) {
@@ -252,7 +236,7 @@
 //
 //} API_AVAILABLE(ios(4.0));
 
-- (NSMutableArray *)TestProjectViewViewAnimationWithBlocks_animateWithDuration_delay_options_animations_completion {
+- (NSMutableArray *)TestProjectViewViewAnimationWithBlocks_animateWithDuration_delay_options_animations_completion:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": [NSString stringWithFormat:@"设置的是UIViewAnimationOptionLayoutSubviews(%ld)", UIViewAnimationOptionLayoutSubviews],
@@ -367,7 +351,7 @@
         i++;
         rect.origin.x = i * 10;
         WS(wSelf);
-        [self createTableModelWithTitle:title block:^{
+        [self createModelWithParams:params title:title block:^{
             [UIView animateWithDuration:5 delay:1 options:options animations:^{
                 wSelf.childView.frame = rect;
             } completion:^(BOOL finished) {
@@ -376,6 +360,20 @@
         }];
     }
     return self.dataMutArr;
+}
+
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"UIView执行动画",
+            @"title": @"+ (void)animateWithDuration:(NSTimeInterval)duration delay:(NSTimeInterval)delay options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^ __nullable)(BOOL finished))completion NS_SWIFT_DISABLE_ASYNC API_AVAILABLE(ios(4.0));",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"@param duration: 动画执行的时间\n@param delay: 动画延迟执行的时间\n@param options: 动画执行的效果\n@param animations: 动画执行的动作变化\n@param completion: 动画执行完后的回调",
+            @"dataModel": @{
+                @"childItems": [self TestProjectViewViewAnimationWithBlocks_animateWithDuration_delay_options_animations_completion:params],
+            }
+        },
+    };
 }
 
 @end

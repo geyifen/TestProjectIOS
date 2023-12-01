@@ -16,7 +16,7 @@
 
 @implementation TestProjectNSCalendar
 
-- (id)setPropertyValueObject {
+- (id)setPropertyValueObject:(TestProjectTableViewParams *)params {
     return self.childCalendar;
 }
 
@@ -37,830 +37,17 @@
     return _childCalendar;
 }
 
-- (NSDictionary *)method_1 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的class属性currentCalendar",
-            @"title": @"@property (class, readonly, copy) NSCalendar *currentCalendar;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_class_property_currentCalendar],
-            }
-        },
-    };
+- (NSMutableArray *)TestProjectCalendar_date_matchesComponents:(TestProjectTableViewParams *)params {
+    NSDate *date = [NSDate date];
+    NSDateComponents *dateComponents = [self.childCalendar components:NSCalendarUnitDay | NSCalendarUnitMonth fromDate:date];
+    BOOL result = [self.childCalendar date:date matchesComponents:dateComponents];
+    [self createModelWithParams:params
+                          title:[NSString stringWithFormat:@"date:%@ dateComponents:%@ result:%u", date, dateComponents, result]
+                          block:nil];
+    return self.dataMutArr;
 }
 
-- (NSDictionary *)method_2 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的class属性autoupdatingCurrentCalendar",
-            @"title": @"@property (class, readonly, strong) NSCalendar *autoupdatingCurrentCalendar API_AVAILABLE(macos(10.5), ios(2.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_class_property_autoupdatingCurrentCalendar],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_3 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"通过NSCalendarIdentifier获取NSCalendar的实例对象",
-            @"title": @"+ (nullable NSCalendar *)calendarWithIdentifier:(NSCalendarIdentifier)calendarIdentifierConstant API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_class_calendarWithIdentifier],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_4 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的属性autoupdatingCurrentCalendar",
-            @"title": @"@property (readonly, copy) NSCalendarIdentifier calendarIdentifier;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_property_calendarIdentifier],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_5 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的属性locale",
-            @"title": @"@property (nullable, copy) NSLocale *locale;",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"本地化信息",
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_property_locale],
-            }
-        },
-    };
-}
-
-
-- (NSDictionary *)method_6 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的属性timeZone",
-            @"title": @"@property (copy) NSTimeZone *timeZone;",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"时区信息",
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_property_timeZone],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_7 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的属性firstWeekday",
-            @"title": @"@property NSUInteger firstWeekday;",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"在获取weekOfYear或者weekOfMonth的时候起作用\n系统默认的是周日是1，虽然不能改变数值，但我们在取的时候可以进行改变；而该属性就是在取的时候可以从周一进行取值",
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_property_firstWeekday],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_8 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的属性minimumDaysInFirstWeek",
-            @"title": @"@property NSUInteger minimumDaysInFirstWeek;",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"设置第一周最少包含多少天",
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_property_minimumDaysInFirstWeek],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_9 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的属性eraSymbols",
-            @"title": @"@property (readonly, copy) NSArray<NSString *> *eraSymbols      API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_property_eraSymbols],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_10 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的属性longEraSymbols",
-            @"title": @"@property (readonly, copy) NSArray<NSString *> *longEraSymbols  API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_property_longEraSymbols],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_11 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的属性monthSymbols，每个月的完整标识符号",
-            @"title": @"@property (readonly, copy) NSArray<NSString *> *monthSymbols                    API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_property_monthSymbols],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_12 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的属性shortMonthSymbols，每个月的简写标识符号",
-            @"title": @"@property (readonly, copy) NSArray<NSString *> *shortMonthSymbols               API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_property_shortMonthSymbols],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_13 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的属性veryShortMonthSymbols，每个月的英文首字母标识符号",
-            @"title": @"@property (readonly, copy) NSArray<NSString *> *veryShortMonthSymbols           API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_property_veryShortMonthSymbols],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_14 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的属性standaloneMonthSymbols，每个月的标准的完整标识符号",
-            @"title": @"@property (readonly, copy) NSArray<NSString *> *standaloneMonthSymbols          API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_property_standaloneMonthSymbols],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_15 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的属性shortStandaloneMonthSymbols，每个月标准的的简写标识符号",
-            @"title": @"@property (readonly, copy) NSArray<NSString *> *shortStandaloneMonthSymbols     API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_property_shortStandaloneMonthSymbols],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_16 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的属性veryShortStandaloneMonthSymbols，每个月标准的的英文首字母标识符号",
-            @"title": @"@property (readonly, copy) NSArray<NSString *> *veryShortStandaloneMonthSymbols API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_property_veryShortStandaloneMonthSymbols],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_17 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的属性weekdaySymbols，一周的每天英文标识符号",
-            @"title": @"@property (readonly, copy) NSArray<NSString *> *weekdaySymbols                    API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_property_weekdaySymbols],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_18 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的属性shortWeekdaySymbols，一周的每天简写英文标识符号",
-            @"title": @"@property (readonly, copy) NSArray<NSString *> *shortWeekdaySymbols               API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_property_shortWeekdaySymbols],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_19 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的属性veryShortWeekdaySymbols，一周的每天首字母英文标识符号",
-            @"title": @"@property (readonly, copy) NSArray<NSString *> *veryShortWeekdaySymbols           API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_property_veryShortWeekdaySymbols],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_20 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的属性standaloneWeekdaySymbols",
-            @"title": @"@property (readonly, copy) NSArray<NSString *> *standaloneWeekdaySymbols          API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_property_standaloneWeekdaySymbols],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_21 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的属性shortStandaloneWeekdaySymbols",
-            @"title": @"@property (readonly, copy) NSArray<NSString *> *shortStandaloneWeekdaySymbols     API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_property_shortStandaloneWeekdaySymbols],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_22 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的属性veryShortStandaloneWeekdaySymbols",
-            @"title": @"@property (readonly, copy) NSArray<NSString *> *veryShortStandaloneWeekdaySymbols API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_property_veryShortStandaloneWeekdaySymbols],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_23 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的属性quarterSymbols，一年的每个季度英文标识符号",
-            @"title": @"@property (readonly, copy) NSArray<NSString *> *quarterSymbols                 API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_property_quarterSymbols],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_24 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的属性shortQuarterSymbols",
-            @"title": @"@property (readonly, copy) NSArray<NSString *> *shortQuarterSymbols            API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_property_shortQuarterSymbols],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_25 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的属性standaloneQuarterSymbols",
-            @"title": @"@property (readonly, copy) NSArray<NSString *> *standaloneQuarterSymbols       API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_property_standaloneQuarterSymbols],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_26 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的属性shortStandaloneQuarterSymbols",
-            @"title": @"@property (readonly, copy) NSArray<NSString *> *shortStandaloneQuarterSymbols  API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_property_shortStandaloneQuarterSymbols],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_27 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的属性AMSymbol，上午英文标识符号",
-            @"title": @"@property (readonly, copy) NSString *AMSymbol  API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_property_AMSymbol],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_28 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSCalendar的属性PMSymbol，下午英文标识符号",
-            @"title": @"@property (readonly, copy) NSString *PMSymbol  API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_property_PMSymbol],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_29 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行NSCalendar的方法，获取每个限制里最小的取值范围",
-            @"title": @"- (NSRange)minimumRangeOfUnit:(NSCalendarUnit)unit;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_minimumRangeOfUnit],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_30 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行NSCalendar的方法，获取每个限制里最大的取值范围",
-            @"title": @"- (NSRange)maximumRangeOfUnit:(NSCalendarUnit)unit;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_maximumRangeOfUnit],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_31 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行NSCalendar的方法，一个小的时间刻度在一个大的时间刻度的取值范围，有的值在修改firstWeekday或者在修改minimumDaysInFirstWeek里面取的值不同",
-            @"title": @"- (NSRange)rangeOfUnit:(NSCalendarUnit)smaller inUnit:(NSCalendarUnit)larger forDate:(NSDate *)date;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_rangeOfUnit_inUnit_forDate],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_32 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行NSCalendar的方法，一个小的时间刻度在一个大的时间刻度的序数，有的值在修改firstWeekday或者在修改minimumDaysInFirstWeek里面取的值不同",
-            @"title": @"- (NSUInteger)ordinalityOfUnit:(NSCalendarUnit)smaller inUnit:(NSCalendarUnit)larger forDate:(NSDate *)date;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_ordinalityOfUnit_inUnit_forDate],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_33 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"根据传入的限制的值获取该时间的最近的一次值，有点像向下取整的",
-            @"title": @"- (BOOL)rangeOfUnit:(NSCalendarUnit)unit startDate:(NSDate * _Nullable * _Nullable)datep interval:(nullable NSTimeInterval *)tip forDate:(NSDate *)date API_AVAILABLE(macos(10.5), ios(2.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"@params unit:传入的限制的值\n@params datep:得到的结果时间值\n@params tip:得到的时间值和给出的值的时间差\n@params date:传入的时间值\n假设传入的是NSCalendarUnitDay，这获取的是该时间的当天零点时间",
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_rangeOfUnit_startDate_interval_forDate],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_34 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"根据传入的NSDateComponents获取时间值",
-            @"title": @"- (nullable NSDate *)dateFromComponents:(NSDateComponents *)comps;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_dateFromComponents],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_35 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"根据需要传入的key值获取该时间对应的值",
-            @"title": @"- (NSDateComponents *)components:(NSCalendarUnit)unitFlags fromDate:(NSDate *)date;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_components_fromDate],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_36 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"把NSDateComponents和传入的date相对应号的值进行相加获取新的NSDate",
-            @"title": @"- (nullable NSDate *)dateByAddingComponents:(NSDateComponents *)comps toDate:(NSDate *)date options:(NSCalendarOptions)opts;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_dateByAddingComponents_toDate_options],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_37 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"把NSDateComponents和传入的date相对应号的值进行相加获取新的NSDate",
-            @"title": @"- (NSDateComponents *)components:(NSCalendarUnit)unitFlags fromDate:(NSDate *)startingDate toDate:(NSDate *)resultDate options:(NSCalendarOptions)opts;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_components_fromDate_toDate_options],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_38 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSDate的era, year, month, day",
-            @"title": @"- (void)getEra:(out nullable NSInteger *)eraValuePointer year:(out nullable NSInteger *)yearValuePointer month:(out nullable NSInteger *)monthValuePointer day:(out nullable NSInteger *)dayValuePointer fromDate:(NSDate *)date API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_getEra_year_month_day_fromDate],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_39 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSDate的era, yearForWeekOfYear, weekOfYear, weekday",
-            @"title": @"- (void)getEra:(out nullable NSInteger *)eraValuePointer yearForWeekOfYear:(out nullable NSInteger *)yearValuePointer weekOfYear:(out nullable NSInteger *)weekValuePointer weekday:(out nullable NSInteger *)weekdayValuePointer fromDate:(NSDate *)date API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_getEra_yearForWeekOfYear_weekOfYear_weekday_fromDate],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_40 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSDate的hour, minute, second, nanosecond",
-            @"title": @"- (void)getHour:(out nullable NSInteger *)hourValuePointer minute:(out nullable NSInteger *)minuteValuePointer second:(out nullable NSInteger *)secondValuePointer nanosecond:(out nullable NSInteger *)nanosecondValuePointer fromDate:(NSDate *)date API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_getHour_minute_second_nanosecond_fromDate],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_41 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取NSDate的单个key值的信息",
-            @"title": @"- (NSInteger)component:(NSCalendarUnit)unit fromDate:(NSDate *)date API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_component_fromDate],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_42 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"跟据Era year month day hour minute second nanosecond获取NSDate",
-            @"title": @"- (nullable NSDate *)dateWithEra:(NSInteger)eraValue year:(NSInteger)yearValue month:(NSInteger)monthValue day:(NSInteger)dayValue hour:(NSInteger)hourValue minute:(NSInteger)minuteValue second:(NSInteger)secondValue nanosecond:(NSInteger)nanosecondValue API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_dateWithEra_year_month_day_hour_minute_second_nanosecond],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_43 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"跟据Era yearForWeekOfYear weekOfYear weekday hour minute second nanosecond获取NSDate",
-            @"title": @"- (nullable NSDate *)dateWithEra:(NSInteger)eraValue yearForWeekOfYear:(NSInteger)yearValue weekOfYear:(NSInteger)weekValue weekday:(NSInteger)weekdayValue hour:(NSInteger)hourValue minute:(NSInteger)minuteValue second:(NSInteger)secondValue nanosecond:(NSInteger)nanosecondValue API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_dateWithEra_yearForWeekOfYear_weekOfYear_weekday_hour_minute_second_nanosecond],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_44 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取该时间的零点日期",
-            @"title": @"- (NSDate *)startOfDayForDate:(NSDate *)date API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_startOfDayForDate],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_45 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"根据时区和日期获取NSDateComponents",
-            @"title": @"- (NSDateComponents *)componentsInTimeZone:(NSTimeZone *)timezone fromDate:(NSDate *)date API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_componentsInTimeZone_fromDate],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_46 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"取两个日期的等级比传入的NSCalendarUnit高和相等等级进行比较",
-            @"title": @"- (NSComparisonResult)compareDate:(NSDate *)date1 toDate:(NSDate *)date2 toUnitGranularity:(NSCalendarUnit)unit API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"如比较的是day，则会把year和month和day取出进行比较，从高到低优先级进行比较；如果有一个小，则返回-1；都相等则返回0；如果有一个大，则返回1",
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_compareDate_toDate_toUnitGranularity],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_47 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"取两个日期的等级比传入的NSCalendarUnit高和相等等级进行比较，如果都相等，则返回YES，否则返回NO",
-            @"title": @"- (BOOL)isDate:(NSDate *)date1 equalToDate:(NSDate *)date2 toUnitGranularity:(NSCalendarUnit)unit API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"如比较的是day，则会把year和month和day取出进行比较，三者相等则相同，不等则不同",
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_isDate_equalToDate_toUnitGranularity],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_48 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"取两个日期的day等级高和相等等级进行比较，如果都相等，则返回YES，否则返回NO",
-            @"title": @"- (BOOL)isDate:(NSDate *)date1 inSameDayAsDate:(NSDate *)date2 API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_isDate_inSameDayAsDate],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_49 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"取传入的日期和系统默认的今天日期的day等级高和相等等级进行比较，如果都相等，则返回YES，否则返回NO",
-            @"title": @"- (BOOL)isDateInToday:(NSDate *)date API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_isDateInToday],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_50 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"取传入的日期和系统默认的昨天日期的day等级高和相等等级进行比较，如果都相等，则返回YES，否则返回NO",
-            @"title": @"- (BOOL)isDateInYesterday:(NSDate *)date API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_isDateInYesterday],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_51 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"取传入的日期和系统默认的明天日期的day等级高和相等等级进行比较，如果都相等，则返回YES，否则返回NO",
-            @"title": @"- (BOOL)isDateInTomorrow:(NSDate *)date API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_isDateInTomorrow],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_52 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"取传入的日期，判断日期是否是weekend， 是则返回YES，否则返回NO",
-            @"title": @"- (BOOL)isDateInWeekend:(NSDate *)date API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"只有周六和周日返回YES，其它的返回NO",
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_isDateInWeekend],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_53 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"取传入的日期，判断日期是否是weekend， 是则返回YES并返回weekend的startDate和startDate到endDate的日期的时间差；否则返回NO，startDate为null，时间差为0",
-            @"title": @"- (BOOL)rangeOfWeekendStartDate:(out NSDate * _Nullable * _Nullable)datep interval:(out nullable NSTimeInterval *)tip containingDate:(NSDate *)date API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"只有周六和周日返回YES，其它的返回NO",
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_rangeOfWeekendStartDate_interval_containingDate],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_54 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"根据传入的时间返回下一个周末的开始时间",
-            @"title": @"- (BOOL)nextWeekendStartDate:(out NSDate * _Nullable * _Nullable)datep interval:(out nullable NSTimeInterval *)tip options:(NSCalendarOptions)options afterDate:(NSDate *)date API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"只有周六和周日计算的是下一个周末的开始时间，其它的时间计算的是当前周末的开始时间",
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_nextWeekendStartDate_interval_options],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_55 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"比较两个NSDateComponents在某个NSCalendarUnit上的差值",
-            @"title": @"- (NSDateComponents *)components:(NSCalendarUnit)unitFlags fromDateComponents:(NSDateComponents *)startingDateComp toDateComponents:(NSDateComponents *)resultDateComp options:(NSCalendarOptions)options API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_components_fromDateComponents_toDateComponents_options],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_56 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"在传入的日期下在NSCalendarUnit的key值下加上传入的value值，得到新的NSDate",
-            @"title": @"- (nullable NSDate *)dateByAddingUnit:(NSCalendarUnit)unit value:(NSInteger)value toDate:(NSDate *)date options:(NSCalendarOptions)options API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_dateByAddingUnit_value_toDate_options],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_57:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"轮询查询下一次符合的NSDateComponents的日期",
-            @"title": @"- (void)enumerateDatesStartingAfterDate:(NSDate *)start matchingComponents:(NSDateComponents *)comps options:(NSCalendarOptions)opts usingBlock:(void (NS_NOESCAPE ^)(NSDate * _Nullable date, BOOL exactMatch, BOOL *stop))block API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"@param: opts 只能是NSCalendarMatchPreviousTimePreservingSmallerUnits、NSCalendarMatchNextTimePreservingSmallerUnits、NSCalendarMatchNextTime其它的会崩溃",
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_enumerateDatesStartingAfterDate_matchingComponents_options_usingBlock:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_58 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"查询下一次符合的NSDateComponents的开始日期",
-            @"title": @"- (nullable NSDate *)nextDateAfterDate:(NSDate *)date matchingComponents:(NSDateComponents *)comps options:(NSCalendarOptions)options API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"@param: opts 只能是NSCalendarMatchPreviousTimePreservingSmallerUnits、NSCalendarMatchNextTimePreservingSmallerUnits、NSCalendarMatchNextTime其它的会崩溃",
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_nextDateAfterDate_matchingComponents_options],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_59 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"查询下一次符合的NSCalendarUnit的日期",
-            @"title": @"- (nullable NSDate *)nextDateAfterDate:(NSDate *)date matchingUnit:(NSCalendarUnit)unit value:(NSInteger)value options:(NSCalendarOptions)options API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"@param: opts 只能是NSCalendarMatchPreviousTimePreservingSmallerUnits、NSCalendarMatchNextTimePreservingSmallerUnits、NSCalendarMatchNextTime其它的会崩溃",
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_nextDateAfterDate_matchingUnit_value_options],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_60 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"查询下一次符合的hourValue minuteValue secondValue的日期",
-            @"title": @"- (nullable NSDate *)nextDateAfterDate:(NSDate *)date matchingHour:(NSInteger)hourValue minute:(NSInteger)minuteValue second:(NSInteger)secondValue options:(NSCalendarOptions)options API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"@param: opts 只能是NSCalendarMatchPreviousTimePreservingSmallerUnits、NSCalendarMatchNextTimePreservingSmallerUnits、NSCalendarMatchNextTime其它的会崩溃",
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_nextDateAfterDate_matchingComponents_matchingHour_minute_second_options],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_61 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"查询下一次符合NSCalendarUnit的日期",
-            @"title": @"- (nullable NSDate *)dateBySettingUnit:(NSCalendarUnit)unit value:(NSInteger)v ofDate:(NSDate *)date options:(NSCalendarOptions)opts API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"@param: opts 只能是NSCalendarMatchPreviousTimePreservingSmallerUnits、NSCalendarMatchNextTimePreservingSmallerUnits、NSCalendarMatchNextTime其它的会崩溃",
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_dateBySettingUnit_value_ofDate_options],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_62 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"查询下一次符合的hourValue minuteValue secondValue的日期",
-            @"title": @"- (nullable NSDate *)dateBySettingHour:(NSInteger)h minute:(NSInteger)m second:(NSInteger)s ofDate:(NSDate *)date options:(NSCalendarOptions)opts API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"@param: opts 只能是NSCalendarMatchPreviousTimePreservingSmallerUnits、NSCalendarMatchNextTimePreservingSmallerUnits、NSCalendarMatchNextTime其它的会崩溃",
-            @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_dateBySettingHour_minute_second_ofDate_options],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_63 {
+- (NSDictionary *)method_63:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
             @"abstract": @"查询下一次符合的NSDateComponents的日期",
@@ -868,62 +55,135 @@
             @"isDataModelExpand": @(YES),
             @"desc": @"@param: opts 只能是NSCalendarMatchPreviousTimePreservingSmallerUnits、NSCalendarMatchNextTimePreservingSmallerUnits、NSCalendarMatchNextTime其它的会崩溃",
             @"dataModel": @{
-                @"childItems": [self TestProjectCalendar_date_matchesComponents],
+                @"childItems": [self TestProjectCalendar_date_matchesComponents:params],
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectCalendar_date_matchesComponents {
-    NSDate *date = [NSDate date];
-    NSDateComponents *dateComponents = [self.childCalendar components:NSCalendarUnitDay | NSCalendarUnitMonth fromDate:date];
-    BOOL result = [self.childCalendar date:date matchesComponents:dateComponents];
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"date:%@ dateComponents:%@ result:%u", date, dateComponents, result] block:nil];
-    return self.dataMutArr;
-}
-
-- (NSMutableArray *)TestProjectCalendar_dateBySettingHour_minute_second_ofDate_options {
+- (NSMutableArray *)TestProjectCalendar_dateBySettingHour_minute_second_ofDate_options:(TestProjectTableViewParams *)params {
     NSDate *date = [NSDate date];
     NSDate *resultDate = [self.childCalendar dateBySettingHour:2 minute:2 second:2 ofDate:date options:NSCalendarMatchNextTime];
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"date:%@ resultDate:%@", date, resultDate] block:nil];
+    [self createModelWithParams:params
+                          title:[NSString stringWithFormat:@"date:%@ resultDate:%@", date, resultDate]
+                          block:nil];
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectCalendar_dateBySettingUnit_value_ofDate_options {
+- (NSDictionary *)method_62:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"查询下一次符合的hourValue minuteValue secondValue的日期",
+            @"title": @"- (nullable NSDate *)dateBySettingHour:(NSInteger)h minute:(NSInteger)m second:(NSInteger)s ofDate:(NSDate *)date options:(NSCalendarOptions)opts API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"@param: opts 只能是NSCalendarMatchPreviousTimePreservingSmallerUnits、NSCalendarMatchNextTimePreservingSmallerUnits、NSCalendarMatchNextTime其它的会崩溃",
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_dateBySettingHour_minute_second_ofDate_options:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_dateBySettingUnit_value_ofDate_options:(TestProjectTableViewParams *)params {
     NSDate *date = [NSDate date];
     NSDate *resultDate = [self.childCalendar dateBySettingUnit:NSCalendarUnitDay value:2 ofDate:date options:NSCalendarMatchNextTime];
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"date:%@ resultDate:%@", date, resultDate] block:nil];
+    [self createModelWithParams:params
+                          title:[NSString stringWithFormat:@"date:%@ resultDate:%@", date, resultDate]
+                          block:nil];
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectCalendar_nextDateAfterDate_matchingComponents_matchingHour_minute_second_options {
+- (NSDictionary *)method_61:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"查询下一次符合NSCalendarUnit的日期",
+            @"title": @"- (nullable NSDate *)dateBySettingUnit:(NSCalendarUnit)unit value:(NSInteger)v ofDate:(NSDate *)date options:(NSCalendarOptions)opts API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"@param: opts 只能是NSCalendarMatchPreviousTimePreservingSmallerUnits、NSCalendarMatchNextTimePreservingSmallerUnits、NSCalendarMatchNextTime其它的会崩溃",
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_dateBySettingUnit_value_ofDate_options:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_nextDateAfterDate_matchingComponents_matchingHour_minute_second_options:(TestProjectTableViewParams *)params {
     NSDate *date = [NSDate date];
     NSDate *resultDate = [self.childCalendar nextDateAfterDate:date matchingHour:2 minute:2 second:2 options:NSCalendarMatchNextTimePreservingSmallerUnits];
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"date:%@ resultDate:%@", date, resultDate] block:nil];
+    [self createModelWithParams:params
+                          title:[NSString stringWithFormat:@"date:%@ resultDate:%@", date, resultDate]
+                          block:nil];
     return self.dataMutArr;
+    return [self createModelSingleArrayWithParams:params
+                                            title:[NSString stringWithFormat:@"date:%@ resultDate:%@", date, resultDate]
+                                            block:nil];
+
 }
 
-- (NSMutableArray *)TestProjectCalendar_nextDateAfterDate_matchingUnit_value_options {
+- (NSDictionary *)method_60:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"查询下一次符合的hourValue minuteValue secondValue的日期",
+            @"title": @"- (nullable NSDate *)nextDateAfterDate:(NSDate *)date matchingHour:(NSInteger)hourValue minute:(NSInteger)minuteValue second:(NSInteger)secondValue options:(NSCalendarOptions)options API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"@param: opts 只能是NSCalendarMatchPreviousTimePreservingSmallerUnits、NSCalendarMatchNextTimePreservingSmallerUnits、NSCalendarMatchNextTime其它的会崩溃",
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_nextDateAfterDate_matchingComponents_matchingHour_minute_second_options:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_nextDateAfterDate_matchingUnit_value_options:(TestProjectTableViewParams *)params {
     NSDate *date = [NSDate date];
     NSDate *resultDate = [self.childCalendar nextDateAfterDate:date matchingUnit:NSCalendarUnitDay value:2 options:NSCalendarMatchNextTimePreservingSmallerUnits];
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"date:%@ resultDate:%@", date, resultDate] block:nil];
-    return self.dataMutArr;
+    return [self createModelSingleArrayWithParams:params
+                                            title:[NSString stringWithFormat:@"date:%@ resultDate:%@", date, resultDate]
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_nextDateAfterDate_matchingComponents_options {
+- (NSDictionary *)method_59:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"查询下一次符合的NSCalendarUnit的日期",
+            @"title": @"- (nullable NSDate *)nextDateAfterDate:(NSDate *)date matchingUnit:(NSCalendarUnit)unit value:(NSInteger)value options:(NSCalendarOptions)options API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"@param: opts 只能是NSCalendarMatchPreviousTimePreservingSmallerUnits、NSCalendarMatchNextTimePreservingSmallerUnits、NSCalendarMatchNextTime其它的会崩溃",
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_nextDateAfterDate_matchingUnit_value_options:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_nextDateAfterDate_matchingComponents_options:(TestProjectTableViewParams *)params {
     NSDate *date = [NSDate date];
     NSDateComponents *dateComponents = [self.childCalendar components:NSCalendarUnitDay | NSCalendarUnitMonth fromDate:date];
     NSDate *resultDate = [self.childCalendar nextDateAfterDate:date matchingComponents:dateComponents options:NSCalendarMatchNextTimePreservingSmallerUnits];
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"date:%@ dateComponents:%@ resultDate:%@", date, dateComponents, resultDate] block:nil];
-    return self.dataMutArr;
+    return [self createModelSingleArrayWithParams:params
+                                            title:[NSString stringWithFormat:@"date:%@ dateComponents:%@ resultDate:%@", date, dateComponents, resultDate]
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_enumerateDatesStartingAfterDate_matchingComponents_options_usingBlock:(NSInteger)index {
+- (NSDictionary *)method_58:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"查询下一次符合的NSDateComponents的开始日期",
+            @"title": @"- (nullable NSDate *)nextDateAfterDate:(NSDate *)date matchingComponents:(NSDateComponents *)comps options:(NSCalendarOptions)options API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"@param: opts 只能是NSCalendarMatchPreviousTimePreservingSmallerUnits、NSCalendarMatchNextTimePreservingSmallerUnits、NSCalendarMatchNextTime其它的会崩溃",
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_nextDateAfterDate_matchingComponents_options:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_enumerateDatesStartingAfterDate_matchingComponents_options_usingBlock:(TestProjectTableViewParams *)params {
     NSDate *date = [NSDate date];
     NSDateComponents *dateComponents = [self.childCalendar components:NSCalendarUnitDay | NSCalendarUnitMonth fromDate:date];
-    __block TestProjectTableViewModel *m = nil;
     WS(wSelf);
-    m = [self createTableModelWithMethodBlock:^NSString * _Nonnull{
+    return [self createModelSingleArrayWithParams:params title:@"" methodBlock:^NSString * _Nonnull{
         __block NSMutableString *mutStr = [NSMutableString string];
         [wSelf.childCalendar enumerateDatesStartingAfterDate:date matchingComponents:dateComponents options:NSCalendarMatchNextTimePreservingSmallerUnits usingBlock:^(NSDate * _Nullable date, BOOL exactMatch, BOOL * _Nonnull stop) {
             if (exactMatch) {
@@ -932,28 +192,69 @@
             [mutStr appendFormat:@"date:%@ exactMatch:%u stop:%u", date, exactMatch, *stop];
         }];
         return mutStr;
-    } title:[NSString stringWithFormat:@"dateComponents:%@", dateComponents] index:index];
-    return self.dataMutArr;
+    }];
 }
 
-- (NSMutableArray *)TestProjectCalendar_dateByAddingUnit_value_toDate_options {
+- (NSDictionary *)method_57:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"轮询查询下一次符合的NSDateComponents的日期",
+            @"title": @"- (void)enumerateDatesStartingAfterDate:(NSDate *)start matchingComponents:(NSDateComponents *)comps options:(NSCalendarOptions)opts usingBlock:(void (NS_NOESCAPE ^)(NSDate * _Nullable date, BOOL exactMatch, BOOL *stop))block API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"@param: opts 只能是NSCalendarMatchPreviousTimePreservingSmallerUnits、NSCalendarMatchNextTimePreservingSmallerUnits、NSCalendarMatchNextTime其它的会崩溃",
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_enumerateDatesStartingAfterDate_matchingComponents_options_usingBlock:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_dateByAddingUnit_value_toDate_options:(TestProjectTableViewParams *)params {
     NSDate *date = [NSDate date];
     NSDate *resultDate = [self.childCalendar dateByAddingUnit:NSCalendarUnitDay value:2 toDate:date options:NSCalendarSearchBackwards];
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"在日期上添加了2天\ndate:%@\nresultDate:%@", date, resultDate] block:nil];
-    return self.dataMutArr;
+    return [self createModelSingleArrayWithParams:params
+                                            title:[NSString stringWithFormat:@"在日期上添加了2天\ndate:%@\nresultDate:%@", date, resultDate]
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_components_fromDateComponents_toDateComponents_options {
+- (NSDictionary *)method_56:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"在传入的日期下在NSCalendarUnit的key值下加上传入的value值，得到新的NSDate",
+            @"title": @"- (nullable NSDate *)dateByAddingUnit:(NSCalendarUnit)unit value:(NSInteger)value toDate:(NSDate *)date options:(NSCalendarOptions)options API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_dateByAddingUnit_value_toDate_options:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_components_fromDateComponents_toDateComponents_options:(TestProjectTableViewParams *)params {
     NSDate *date = [NSDate date];
     NSDate *compareDate = [date dateByAddingTimeInterval:24 * 3600];
     NSDateComponents *dateComponents = [self.childCalendar components:NSCalendarUnitDay fromDate:date];
     NSDateComponents *compareDateComponents = [self.childCalendar components:NSCalendarUnitDay fromDate:compareDate];
     NSDateComponents *resultDateComponents = [self.childCalendar components:NSCalendarUnitHour | NSCalendarUnitDay fromDateComponents:compareDateComponents toDateComponents:dateComponents options:NSCalendarSearchBackwards];
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"compareDateComponents:%@ dateComponents:%@ resultDateComponents:%@", compareDateComponents, dateComponents, resultDateComponents] block:nil];
-    return self.dataMutArr;
+    return [self createModelSingleArrayWithParams:params
+                                            title:[NSString stringWithFormat:@"compareDateComponents:%@ dateComponents:%@ resultDateComponents:%@", compareDateComponents, dateComponents, resultDateComponents]
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_nextWeekendStartDate_interval_options {
+- (NSDictionary *)method_55:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"比较两个NSDateComponents在某个NSCalendarUnit上的差值",
+            @"title": @"- (NSDateComponents *)components:(NSCalendarUnit)unitFlags fromDateComponents:(NSDateComponents *)startingDateComp toDateComponents:(NSDateComponents *)resultDateComp options:(NSCalendarOptions)options API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_components_fromDateComponents_toDateComponents_options:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_nextWeekendStartDate_interval_options:(TestProjectTableViewParams *)params {
     NSDate *compareDate;
     NSTimeInterval interval = 0;
     NSDate *toDate = [NSDate date];
@@ -976,142 +277,402 @@
         for (NSInteger i = 0; i < 7; i++) {
             NSDate *date = [toDate dateByAddingTimeInterval:24 * 3600 * i];
             BOOL result = [self.childCalendar nextWeekendStartDate:&compareDate interval:&interval options:options afterDate:date];
-            [self createTableModelWithTitle:[NSString stringWithFormat:@"%@\ncompareDate:%@ toDate:%@ interval:%f result:%u", str, compareDate, date, interval, result] block:nil];
+            [self createModelWithParams:params
+                                  title:[NSString stringWithFormat:@"%@\ncompareDate:%@ toDate:%@ interval:%f result:%u", str, compareDate, date, interval, result]
+                                  block:nil];
         }
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectCalendar_rangeOfWeekendStartDate_interval_containingDate {
+- (NSDictionary *)method_54:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"根据传入的时间返回下一个周末的开始时间",
+            @"title": @"- (BOOL)nextWeekendStartDate:(out NSDate * _Nullable * _Nullable)datep interval:(out nullable NSTimeInterval *)tip options:(NSCalendarOptions)options afterDate:(NSDate *)date API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"只有周六和周日计算的是下一个周末的开始时间，其它的时间计算的是当前周末的开始时间",
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_nextWeekendStartDate_interval_options:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_rangeOfWeekendStartDate_interval_containingDate:(TestProjectTableViewParams *)params {
     NSDate *compareDate;
     NSTimeInterval interval = 0;
     NSDate *toDate = [NSDate date];
     for (NSInteger i = 0; i < 7; i++) {
         NSDate *date = [toDate dateByAddingTimeInterval:24 * 3600 * i];
         BOOL result = [self.childCalendar rangeOfWeekendStartDate:&compareDate interval:&interval containingDate:date];
-        [self createTableModelWithTitle:[NSString stringWithFormat:@"compareDate:%@ toDate:%@ interval:%f result:%u", compareDate, date, interval, result] block:nil];
+        [self createModelWithParams:params
+                              title:[NSString stringWithFormat:@"compareDate:%@ toDate:%@ interval:%f result:%u", compareDate, date, interval, result]
+                              block:nil];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectCalendar_isDateInWeekend {
+- (NSDictionary *)method_53:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"取传入的日期，判断日期是否是weekend， 是则返回YES并返回weekend的startDate和startDate到endDate的日期的时间差；否则返回NO，startDate为null，时间差为0",
+            @"title": @"- (BOOL)rangeOfWeekendStartDate:(out NSDate * _Nullable * _Nullable)datep interval:(out nullable NSTimeInterval *)tip containingDate:(NSDate *)date API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"只有周六和周日返回YES，其它的返回NO",
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_rangeOfWeekendStartDate_interval_containingDate:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_isDateInWeekend:(TestProjectTableViewParams *)params {
     NSDate *date = [NSDate now];
     for (NSInteger i = 0; i < 7; i++) {
         NSDate *compareDate = [date dateByAddingTimeInterval:24 * 3600 * i];
         BOOL result = [self.childCalendar isDateInWeekend:compareDate];
-        [self createTableModelWithTitle:[NSString stringWithFormat:@"compareDate:%@ toDate:%@ result:%u", compareDate, date, result] block:nil];
+        [self createModelWithParams:params
+                              title:[NSString stringWithFormat:@"compareDate:%@ toDate:%@ result:%u", compareDate, date, result]
+                              block:nil];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectCalendar_isDateInTomorrow {
+- (NSDictionary *)method_52:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"取传入的日期，判断日期是否是weekend， 是则返回YES，否则返回NO",
+            @"title": @"- (BOOL)isDateInWeekend:(NSDate *)date API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"只有周六和周日返回YES，其它的返回NO",
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_isDateInWeekend:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_isDateInTomorrow:(TestProjectTableViewParams *)params {
     NSDate *date = [NSDate now];
     NSArray *arr = @[date, [date dateByAddingTimeInterval:24 + 24 * 3600] ,[date dateByAddingTimeInterval:24 * 3600 * 2]];
     for (NSDate *compareDate in arr) {
         BOOL result = [self.childCalendar isDateInTomorrow:compareDate];
-        [self createTableModelWithTitle:[NSString stringWithFormat:@"compareDate:%@ toDate:%@ result:%u", compareDate, date, result] block:nil];
+        [self createModelWithParams:params
+                              title:[NSString stringWithFormat:@"compareDate:%@ toDate:%@ result:%u", compareDate, date, result]
+                              block:nil];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectCalendar_isDateInYesterday {
+- (NSDictionary *)method_51:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"取传入的日期和系统默认的明天日期的day等级高和相等等级进行比较，如果都相等，则返回YES，否则返回NO",
+            @"title": @"- (BOOL)isDateInTomorrow:(NSDate *)date API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_isDateInTomorrow:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_isDateInYesterday:(TestProjectTableViewParams *)params {
     NSDate *date = [NSDate now];
     NSArray *arr = @[date, [date dateByAddingTimeInterval:24 - 24 * 3600] ,[date dateByAddingTimeInterval:-24 * 3600 * 2]];
     for (NSDate *compareDate in arr) {
         BOOL result = [self.childCalendar isDateInYesterday:compareDate];
-        [self createTableModelWithTitle:[NSString stringWithFormat:@"compareDate:%@ toDate:%@ result:%u", compareDate, date, result] block:nil];
+        [self createModelWithParams:params
+                              title:[NSString stringWithFormat:@"compareDate:%@ toDate:%@ result:%u", compareDate, date, result]
+                              block:nil];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectCalendar_isDateInToday {
+- (NSDictionary *)method_50:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"取传入的日期和系统默认的昨天日期的day等级高和相等等级进行比较，如果都相等，则返回YES，否则返回NO",
+            @"title": @"- (BOOL)isDateInYesterday:(NSDate *)date API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_isDateInYesterday:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_isDateInToday:(TestProjectTableViewParams *)params {
     NSDate *date = [NSDate now];
     NSArray *arr = @[[date dateByAddingTimeInterval:24 * 3600], [date dateByAddingTimeInterval:24] ,[date dateByAddingTimeInterval:-24 * 3600]];
     for (NSDate *compareDate in arr) {
         BOOL result = [self.childCalendar isDateInToday:compareDate];
-        [self createTableModelWithTitle:[NSString stringWithFormat:@"compareDate:%@ toDate:%@ result:%u", compareDate, date, result] block:nil];
+        [self createModelWithParams:params
+                              title:[NSString stringWithFormat:@"compareDate:%@ toDate:%@ result:%u", compareDate, date, result]
+                              block:nil];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectCalendar_isDate_inSameDayAsDate {
+- (NSDictionary *)method_49:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"取传入的日期和系统默认的今天日期的day等级高和相等等级进行比较，如果都相等，则返回YES，否则返回NO",
+            @"title": @"- (BOOL)isDateInToday:(NSDate *)date API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_isDateInToday:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_isDate_inSameDayAsDate:(TestProjectTableViewParams *)params {
     NSDate *date = [NSDate now];
     NSArray *arr = @[[date dateByAddingTimeInterval:24 * 3600 * 30], [date dateByAddingTimeInterval:24] ,[date dateByAddingTimeInterval:-24 * 3600]];
     for (NSDate *compareDate in arr) {
         BOOL result = [self.childCalendar isDate:compareDate inSameDayAsDate:date];
-        [self createTableModelWithTitle:[NSString stringWithFormat:@"compareDate:%@ toDate:%@ result:%u", compareDate, date, result] block:nil];
+        [self createModelWithParams:params
+                              title:[NSString stringWithFormat:@"compareDate:%@ toDate:%@ result:%u", compareDate, date, result]
+                              block:nil];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectCalendar_isDate_equalToDate_toUnitGranularity {
+- (NSDictionary *)method_48:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"取两个日期的day等级高和相等等级进行比较，如果都相等，则返回YES，否则返回NO",
+            @"title": @"- (BOOL)isDate:(NSDate *)date1 inSameDayAsDate:(NSDate *)date2 API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_isDate_inSameDayAsDate:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_isDate_equalToDate_toUnitGranularity:(TestProjectTableViewParams *)params {
     NSDate *date = [NSDate now];
     NSDate *compareDate = [date dateByAddingTimeInterval:3600 * 24 * 365];
     BOOL result = [self.childCalendar isDate:compareDate equalToDate:date toUnitGranularity:NSCalendarUnitDay];
-    return [self createTableModelSingleArrayWithTitle:[NSString stringWithFormat:@"compareDate:%@ toDate:%@ result:%u", compareDate, date, result] block:nil];
+    return [self createModelSingleArrayWithParams:params
+                                            title:[NSString stringWithFormat:@"compareDate:%@ toDate:%@ result:%u", compareDate, date, result]
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_compareDate_toDate_toUnitGranularity {
+- (NSDictionary *)method_47:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"取两个日期的等级比传入的NSCalendarUnit高和相等等级进行比较，如果都相等，则返回YES，否则返回NO",
+            @"title": @"- (BOOL)isDate:(NSDate *)date1 equalToDate:(NSDate *)date2 toUnitGranularity:(NSCalendarUnit)unit API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"如比较的是day，则会把year和month和day取出进行比较，三者相等则相同，不等则不同",
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_isDate_equalToDate_toUnitGranularity:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_compareDate_toDate_toUnitGranularity:(TestProjectTableViewParams *)params {
     NSDate *date = [NSDate now];
     NSArray *arr = @[[date dateByAddingTimeInterval:24 * 3600], [date dateByAddingTimeInterval:24] ,[date dateByAddingTimeInterval:-24 * 3600]];
     for (NSDate *compareDate in arr) {
         NSComparisonResult result = [self.childCalendar compareDate:compareDate toDate:date toUnitGranularity:NSCalendarUnitDay];
-        [self createTableModelWithTitle:[NSString stringWithFormat:@"compareDate:%@ toDate:%@ result:%ld", compareDate, date, result] block:nil];
+        [self createModelWithParams:params
+                              title:[NSString stringWithFormat:@"compareDate:%@ toDate:%@ result:%ld", compareDate, date, result]
+                              block:nil];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectCalendar_componentsInTimeZone_fromDate {
+- (NSDictionary *)method_46:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"取两个日期的等级比传入的NSCalendarUnit高和相等等级进行比较",
+            @"title": @"- (NSComparisonResult)compareDate:(NSDate *)date1 toDate:(NSDate *)date2 toUnitGranularity:(NSCalendarUnit)unit API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"如比较的是day，则会把year和month和day取出进行比较，从高到低优先级进行比较；如果有一个小，则返回-1；都相等则返回0；如果有一个大，则返回1",
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_compareDate_toDate_toUnitGranularity:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_componentsInTimeZone_fromDate:(TestProjectTableViewParams *)params {
     NSTimeZone *tz = [[NSTimeZone alloc] init];
     NSDate *date = [NSDate now];
     NSDateComponents *dateComponents = [self.childCalendar componentsInTimeZone:tz fromDate:date];
-    return [self createTableModelSingleArrayWithTitle:[NSString stringWithFormat:@"%@", dateComponents] block:nil];
+    return [self createModelSingleArrayWithParams:params
+                                            title:[NSString stringWithFormat:@"%@", dateComponents]
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_startOfDayForDate {
+- (NSDictionary *)method_45:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"根据时区和日期获取NSDateComponents",
+            @"title": @"- (NSDateComponents *)componentsInTimeZone:(NSTimeZone *)timezone fromDate:(NSDate *)date API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_componentsInTimeZone_fromDate:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_startOfDayForDate:(TestProjectTableViewParams *)params {
     NSDate *date = [NSDate now];
     NSDate *getDate = [self.childCalendar startOfDayForDate:date];
-    return [self createTableModelSingleArrayWithTitle:[NSString stringWithFormat:@"%@", getDate] block:nil];
+    return [self createModelSingleArrayWithParams:params
+                                            title:[NSString stringWithFormat:@"%@", getDate]
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_dateWithEra_yearForWeekOfYear_weekOfYear_weekday_hour_minute_second_nanosecond {
+- (NSDictionary *)method_44:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取该时间的零点日期",
+            @"title": @"- (NSDate *)startOfDayForDate:(NSDate *)date API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_startOfDayForDate:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_dateWithEra_yearForWeekOfYear_weekOfYear_weekday_hour_minute_second_nanosecond:(TestProjectTableViewParams *)params {
     NSDate *getDate = [self.childCalendar dateWithEra:self.dateComponents.era yearForWeekOfYear:self.dateComponents.yearForWeekOfYear weekOfYear:self.dateComponents.weekOfYear weekday:self.dateComponents.weekday hour:self.dateComponents.hour minute:self.dateComponents.minute second:self.dateComponents.second nanosecond:self.dateComponents.nanosecond];
-    return [self createTableModelSingleArrayWithTitle:[NSString stringWithFormat:@"%@", getDate] block:nil];
+    return [self createModelSingleArrayWithParams:params
+                                            title:[NSString stringWithFormat:@"%@", getDate]
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_dateWithEra_year_month_day_hour_minute_second_nanosecond {
+- (NSDictionary *)method_43:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"跟据Era yearForWeekOfYear weekOfYear weekday hour minute second nanosecond获取NSDate",
+            @"title": @"- (nullable NSDate *)dateWithEra:(NSInteger)eraValue yearForWeekOfYear:(NSInteger)yearValue weekOfYear:(NSInteger)weekValue weekday:(NSInteger)weekdayValue hour:(NSInteger)hourValue minute:(NSInteger)minuteValue second:(NSInteger)secondValue nanosecond:(NSInteger)nanosecondValue API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_dateWithEra_yearForWeekOfYear_weekOfYear_weekday_hour_minute_second_nanosecond:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_dateWithEra_year_month_day_hour_minute_second_nanosecond:(TestProjectTableViewParams *)params {
     NSDate *getDate = [self.childCalendar dateWithEra:self.dateComponents.era year:self.dateComponents.year month:self.dateComponents.month day:self.dateComponents.day hour:self.dateComponents.hour minute:self.dateComponents.minute second:self.dateComponents.second nanosecond:self.dateComponents.nanosecond];
-    return [self createTableModelSingleArrayWithTitle:[NSString stringWithFormat:@"%@", getDate] block:nil];
+    return [self createModelSingleArrayWithParams:params
+                                            title:[NSString stringWithFormat:@"%@", getDate]
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_component_fromDate {
+- (NSDictionary *)method_42:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"跟据Era year month day hour minute second nanosecond获取NSDate",
+            @"title": @"- (nullable NSDate *)dateWithEra:(NSInteger)eraValue year:(NSInteger)yearValue month:(NSInteger)monthValue day:(NSInteger)dayValue hour:(NSInteger)hourValue minute:(NSInteger)minuteValue second:(NSInteger)secondValue nanosecond:(NSInteger)nanosecondValue API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_dateWithEra_year_month_day_hour_minute_second_nanosecond:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_component_fromDate:(TestProjectTableViewParams *)params {
     NSDate *date = [NSDate now];
     NSInteger index = [self.childCalendar component:NSCalendarUnitDay fromDate:date];
-    return [self createTableModelSingleArrayWithTitle:[NSString stringWithFormat:@"获取的NSCalendarUnitDay：%ld", index] block:nil];
+    return [self createModelSingleArrayWithParams:params
+                                            title:[NSString stringWithFormat:@"获取的NSCalendarUnitDay：%ld", index]
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_getHour_minute_second_nanosecond_fromDate {
+- (NSDictionary *)method_41:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSDate的单个key值的信息",
+            @"title": @"- (NSInteger)component:(NSCalendarUnit)unit fromDate:(NSDate *)date API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_component_fromDate:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_getHour_minute_second_nanosecond_fromDate:(TestProjectTableViewParams *)params {
     NSInteger hour, minute, second, nanosecond;
     NSDate *date = [NSDate now];
     [self.childCalendar getHour:&hour minute:&minute second:&second nanosecond:&nanosecond fromDate:date];
-    return [self createTableModelSingleArrayWithTitle:[NSString stringWithFormat:@"hour:%ld minute:%ld second:%ld nanosecond:%ld", hour, minute, second, nanosecond] block:nil];
+    return [self createModelSingleArrayWithParams:params
+                                            title:[NSString stringWithFormat:@"hour:%ld minute:%ld second:%ld nanosecond:%ld", hour, minute, second, nanosecond]
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_getEra_yearForWeekOfYear_weekOfYear_weekday_fromDate {
+- (NSDictionary *)method_40:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSDate的hour, minute, second, nanosecond",
+            @"title": @"- (void)getHour:(out nullable NSInteger *)hourValuePointer minute:(out nullable NSInteger *)minuteValuePointer second:(out nullable NSInteger *)secondValuePointer nanosecond:(out nullable NSInteger *)nanosecondValuePointer fromDate:(NSDate *)date API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_getHour_minute_second_nanosecond_fromDate:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_getEra_yearForWeekOfYear_weekOfYear_weekday_fromDate:(TestProjectTableViewParams *)params {
     NSInteger era, yearForWeekOfYear, weekOfYear, weekday;
     NSDate *date = [NSDate now];
     [self.childCalendar getEra:&era yearForWeekOfYear:&yearForWeekOfYear weekOfYear:&weekOfYear weekday:&weekday fromDate:date];
-    return [self createTableModelSingleArrayWithTitle:[NSString stringWithFormat:@"era:%ld yearForWeekOfYear:%ld weekOfYear:%ld weekday:%ld", era, yearForWeekOfYear, weekOfYear, weekday] block:nil];
+    return [self createModelSingleArrayWithParams:params
+                                            title:[NSString stringWithFormat:@"era:%ld yearForWeekOfYear:%ld weekOfYear:%ld weekday:%ld", era, yearForWeekOfYear, weekOfYear, weekday]
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_getEra_year_month_day_fromDate {
+- (NSDictionary *)method_39:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSDate的era, yearForWeekOfYear, weekOfYear, weekday",
+            @"title": @"- (void)getEra:(out nullable NSInteger *)eraValuePointer yearForWeekOfYear:(out nullable NSInteger *)yearValuePointer weekOfYear:(out nullable NSInteger *)weekValuePointer weekday:(out nullable NSInteger *)weekdayValuePointer fromDate:(NSDate *)date API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_getEra_yearForWeekOfYear_weekOfYear_weekday_fromDate:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_getEra_year_month_day_fromDate:(TestProjectTableViewParams *)params {
     NSInteger era, year, month, day;
     NSDate *date = [NSDate now];
     [self.childCalendar getEra:&era year:&year month:&month day:&day fromDate:date];
-    return [self createTableModelSingleArrayWithTitle:[NSString stringWithFormat:@"era:%ld year:%ld month:%ld day:%ld", era, year, month, day] block:nil];
+    return [self createModelSingleArrayWithParams:params
+                                            title:[NSString stringWithFormat:@"era:%ld year:%ld month:%ld day:%ld", era, year, month, day]
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_components_fromDate_toDate_options {
+- (NSDictionary *)method_38:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSDate的era, year, month, day",
+            @"title": @"- (void)getEra:(out nullable NSInteger *)eraValuePointer year:(out nullable NSInteger *)yearValuePointer month:(out nullable NSInteger *)monthValuePointer day:(out nullable NSInteger *)dayValuePointer fromDate:(NSDate *)date API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_getEra_year_month_day_fromDate:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_components_fromDate_toDate_options:(TestProjectTableViewParams *)params {
     NSDate *fromDate = [NSDate date];
     NSDate *toDate = [fromDate dateByAddingTimeInterval:-1000 * 24 * 3600];
     NSArray *arr = @[
@@ -1128,9 +689,24 @@
         NSString *title = dic[@"title"];
         NSCalendarUnit unit = [dic[@"value"] integerValue];
         NSDateComponents *dateComponents = [self.childCalendar components:unit fromDate:fromDate toDate:toDate options:NSCalendarMatchFirst];
-        [self createTableModelWithTitle:[NSString stringWithFormat:@"%@\n%@", title, dateComponents] block:nil];
+        [self createModelWithParams:params
+                              title:[NSString stringWithFormat:@"%@\n%@", title, dateComponents]
+                              block:nil];
     }
     return self.dataMutArr;
+}
+
+- (NSDictionary *)method_37:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"把NSDateComponents和传入的date相对应号的值进行相加获取新的NSDate",
+            @"title": @"- (NSDateComponents *)components:(NSCalendarUnit)unitFlags fromDate:(NSDate *)startingDate toDate:(NSDate *)resultDate options:(NSCalendarOptions)opts;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_components_fromDate_toDate_options:params],
+            }
+        },
+    };
 }
 
 //typedef NS_OPTIONS(NSUInteger, NSCalendarOptions) {
@@ -1184,30 +760,75 @@
     ];
 }
 
-- (NSMutableArray *)TestProjectCalendar_dateByAddingComponents_toDate_options {
+- (NSMutableArray *)TestProjectCalendar_dateByAddingComponents_toDate_options:(TestProjectTableViewParams *)params {
     NSDate *date = [NSDate now];
     NSArray *arr = [self getCalendarOptions];
     for (NSDictionary *dic in arr) {
         NSString *title = dic[@"title"];
         NSCalendarOptions options = [dic[@"value"] integerValue];
         NSDate *getDate = [self.childCalendar dateByAddingComponents:self.dateComponents toDate:date options:options];
-        [self createTableModelWithTitle:[NSString stringWithFormat:@"%@\n%@", title, getDate] block:nil];
+        [self createModelWithParams:params
+                              title:[NSString stringWithFormat:@"%@\n%@", title, getDate]
+                              block:nil];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectCalendar_components_fromDate {
+- (NSDictionary *)method_36:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"把NSDateComponents和传入的date相对应号的值进行相加获取新的NSDate",
+            @"title": @"- (nullable NSDate *)dateByAddingComponents:(NSDateComponents *)comps toDate:(NSDate *)date options:(NSCalendarOptions)opts;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_dateByAddingComponents_toDate_options:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_components_fromDate:(TestProjectTableViewParams *)params {
     NSDate *date = [NSDate now];
     NSDateComponents *dateComponents = [self.childCalendar components:NSCalendarUnitDay | NSCalendarUnitHour fromDate:date];
-    return [self createTableModelSingleArrayWithTitle:[NSString stringWithFormat:@"dateComponents%@\n未设置year:%ld", dateComponents, dateComponents.year] block:nil];
+    return [self createModelSingleArrayWithParams:params
+                                            title:[NSString stringWithFormat:@"dateComponents%@\n未设置year:%ld", dateComponents, dateComponents.year]
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_dateFromComponents {
+- (NSDictionary *)method_35:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"根据需要传入的key值获取该时间对应的值",
+            @"title": @"- (NSDateComponents *)components:(NSCalendarUnit)unitFlags fromDate:(NSDate *)date;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_components_fromDate:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_dateFromComponents:(TestProjectTableViewParams *)params {
     NSDate *date = [self.childCalendar dateFromComponents:self.dateComponents];
-    return [self createTableModelSingleArrayWithTitle:[NSString stringWithFormat:@"设置的year=1993,month=11,day=12\n%@", date] block:nil];
+    return [self createModelSingleArrayWithParams:params
+                                            title:[NSString stringWithFormat:@"设置的year=1993,month=11,day=12\n%@", date]
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_rangeOfUnit_startDate_interval_forDate {
+- (NSDictionary *)method_34:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"根据传入的NSDateComponents获取时间值",
+            @"title": @"- (nullable NSDate *)dateFromComponents:(NSDateComponents *)comps;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_dateFromComponents:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_rangeOfUnit_startDate_interval_forDate:(TestProjectTableViewParams *)params {
     NSArray *arr = [self getCalendarUnitArray];
     NSDate *date = [NSDate now];
     NSDate *startDate;
@@ -1218,9 +839,25 @@
         BOOL res = [self.childCalendar rangeOfUnit:unit startDate:&startDate interval:&tip forDate:date];
         NSString *dateStr = [NSString stringWithFormat:@"startDate:%@ forDate:%@", startDate, date];
         NSString *resStr = [NSString stringWithFormat:@"是否在范围内：%u 相差多少时间：%f", res, tip];
-        [self createTableModelWithTitle:[NSString stringWithFormat:@"%@\n%@\n%@", title, dateStr, resStr] block:nil];
+        [self createModelWithParams:params
+                              title:[NSString stringWithFormat:@"%@\n%@\n%@", title, dateStr, resStr]
+                              block:nil];
     }
     return self.dataMutArr;
+}
+
+- (NSDictionary *)method_33:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"根据传入的限制的值获取该时间的最近的一次值，有点像向下取整的",
+            @"title": @"- (BOOL)rangeOfUnit:(NSCalendarUnit)unit startDate:(NSDate * _Nullable * _Nullable)datep interval:(nullable NSTimeInterval *)tip forDate:(NSDate *)date API_AVAILABLE(macos(10.5), ios(2.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"@params unit:传入的限制的值\n@params datep:得到的结果时间值\n@params tip:得到的时间值和给出的值的时间差\n@params date:传入的时间值\n假设传入的是NSCalendarUnitDay，这获取的是该时间的当天零点时间",
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_rangeOfUnit_startDate_interval_forDate:params],
+            }
+        },
+    };
 }
 
 - (NSArray *)getCalendarSmallInLarge:(BOOL)isRange {
@@ -1593,7 +1230,7 @@
     return [mutArr copy];
 }
 
-- (NSMutableArray *)TestProjectCalendar_ordinalityOfUnit_inUnit_forDate {
+- (NSMutableArray *)TestProjectCalendar_ordinalityOfUnit_inUnit_forDate:(TestProjectTableViewParams *)params {
     NSArray *arr = [self getCalendarSmallInLarge:NO];
     NSDate *date = [NSDate now];
     for (NSDictionary *dic in arr) {
@@ -1601,12 +1238,27 @@
         NSCalendarUnit smallUnit = [dic[@"smallValue"] integerValue];
         NSCalendarUnit largeUnit = [dic[@"largeValue"] integerValue];
         NSInteger index = [self.childCalendar ordinalityOfUnit:smallUnit inUnit:largeUnit forDate:date];
-        [self createTableModelWithTitle:[NSString stringWithFormat:@"%@\n%ld", title, index] block:nil];
+        [self createModelWithParams:params
+                              title:[NSString stringWithFormat:@"%@\n%ld", title, index]
+                              block:nil];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectCalendar_rangeOfUnit_inUnit_forDate {
+- (NSDictionary *)method_32:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行NSCalendar的方法，一个小的时间刻度在一个大的时间刻度的序数，有的值在修改firstWeekday或者在修改minimumDaysInFirstWeek里面取的值不同",
+            @"title": @"- (NSUInteger)ordinalityOfUnit:(NSCalendarUnit)smaller inUnit:(NSCalendarUnit)larger forDate:(NSDate *)date;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_ordinalityOfUnit_inUnit_forDate:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_rangeOfUnit_inUnit_forDate:(TestProjectTableViewParams *)params {
     NSArray *arr = [self getCalendarSmallInLarge:YES];
     NSDate *date = [NSDate now];
     for (NSDictionary *dic in arr) {
@@ -1614,31 +1266,76 @@
         NSCalendarUnit smallUnit = [dic[@"smallValue"] integerValue];
         NSCalendarUnit largeUnit = [dic[@"largeValue"] integerValue];
         NSRange range = [self.childCalendar rangeOfUnit:smallUnit inUnit:largeUnit forDate:date];
-        [self createTableModelWithTitle:[NSString stringWithFormat:@"%@\n%@", title, NSStringFromRange(range)] block:nil];
+        [self createModelWithParams:params
+                              title:[NSString stringWithFormat:@"%@\n%@", title, NSStringFromRange(range)]
+                              block:nil];
     }
     return self.dataMutArr;
 }
 
-- (NSArray *)TestProjectCalendar_maximumRangeOfUnit {
+- (NSDictionary *)method_31:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行NSCalendar的方法，一个小的时间刻度在一个大的时间刻度的取值范围，有的值在修改firstWeekday或者在修改minimumDaysInFirstWeek里面取的值不同",
+            @"title": @"- (NSRange)rangeOfUnit:(NSCalendarUnit)smaller inUnit:(NSCalendarUnit)larger forDate:(NSDate *)date;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_rangeOfUnit_inUnit_forDate:params],
+            }
+        },
+    };
+}
+
+- (NSArray *)TestProjectCalendar_maximumRangeOfUnit:(TestProjectTableViewParams *)params {
     NSArray *arr = [self getCalendarUnitArray];
     for (NSDictionary *dic in arr) {
         NSString *title = dic[@"title"];
         NSCalendarUnit unit = [dic[@"value"] integerValue];
         NSRange range = [self.childCalendar maximumRangeOfUnit:unit];
-        [self createTableModelWithTitle:[NSString stringWithFormat:@"%@\n%@", title, NSStringFromRange(range)] block:nil];
+        [self createModelWithParams:params
+                              title:[NSString stringWithFormat:@"%@\n%@", title, NSStringFromRange(range)]
+                              block:nil];
     }
     return self.dataMutArr;
 }
 
-- (NSArray *)TestProjectCalendar_minimumRangeOfUnit {
+- (NSDictionary *)method_30:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行NSCalendar的方法，获取每个限制里最大的取值范围",
+            @"title": @"- (NSRange)maximumRangeOfUnit:(NSCalendarUnit)unit;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_maximumRangeOfUnit:params],
+            }
+        },
+    };
+}
+
+- (NSArray *)TestProjectCalendar_minimumRangeOfUnit:(TestProjectTableViewParams *)params {
     NSArray *arr = [self getCalendarUnitArray];
     for (NSDictionary *dic in arr) {
         NSString *title = dic[@"title"];
         NSCalendarUnit unit = [dic[@"value"] integerValue];
         NSRange range = [self.childCalendar minimumRangeOfUnit:unit];
-        [self createTableModelWithTitle:[NSString stringWithFormat:@"%@\n%@", title, NSStringFromRange(range)] block:nil];
+        [self createModelWithParams:params
+                              title:[NSString stringWithFormat:@"%@\n%@", title, NSStringFromRange(range)]
+                              block:nil];
     }
     return self.dataMutArr;
+}
+
+- (NSDictionary *)method_29:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行NSCalendar的方法，获取每个限制里最小的取值范围",
+            @"title": @"- (NSRange)minimumRangeOfUnit:(NSCalendarUnit)unit;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_minimumRangeOfUnit:params],
+            }
+        },
+    };
 }
 
 - (NSArray *)getCalendarUnitArray {
@@ -1746,104 +1443,533 @@
 //    NSTimeZoneCalendarUnit API_DEPRECATED_WITH_REPLACEMENT("NSCalendarUnitTimeZone", macos(10.7, 10.10), ios(4.0, 8.0), watchos(2.0, 2.0), tvos(9.0, 9.0)) = NSCalendarUnitTimeZone,
 //};
 
-- (NSMutableArray *)TestProjectCalendar_property_PMSymbol {
-    return [self createTableModelSingleArrayWithProperty:@"PMSymbol" value:nil];;
+- (NSMutableArray *)TestProjectCalendar_property_PMSymbol:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"PMSymbol"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_property_AMSymbol {
-    return [self createTableModelSingleArrayWithProperty:@"AMSymbol" value:nil];;
+- (NSDictionary *)method_28:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的属性PMSymbol，下午英文标识符号",
+            @"title": @"@property (readonly, copy) NSString *PMSymbol  API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_property_PMSymbol:params],
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectCalendar_property_shortStandaloneQuarterSymbols {
-    return [self createTableModelSingleArrayWithProperty:@"shortStandaloneQuarterSymbols" value:nil];;
+- (NSMutableArray *)TestProjectCalendar_property_AMSymbol:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"AMSymbol"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_property_standaloneQuarterSymbols {
-    return [self createTableModelSingleArrayWithProperty:@"standaloneQuarterSymbols" value:nil];;
+- (NSDictionary *)method_27:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的属性AMSymbol，上午英文标识符号",
+            @"title": @"@property (readonly, copy) NSString *AMSymbol  API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_property_AMSymbol:params],
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectCalendar_property_shortQuarterSymbols {
-    return [self createTableModelSingleArrayWithProperty:@"shortQuarterSymbols" value:nil];;
+- (NSMutableArray *)TestProjectCalendar_property_shortStandaloneQuarterSymbols:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"shortStandaloneQuarterSymbols"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_property_quarterSymbols {
-    return [self createTableModelSingleArrayWithProperty:@"quarterSymbols" value:nil];;
+- (NSDictionary *)method_26:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的属性shortStandaloneQuarterSymbols",
+            @"title": @"@property (readonly, copy) NSArray<NSString *> *shortStandaloneQuarterSymbols:(TestProjectTableViewParams *)params  API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_property_shortStandaloneQuarterSymbols:params],
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectCalendar_property_veryShortStandaloneWeekdaySymbols {
-    return [self createTableModelSingleArrayWithProperty:@"veryShortStandaloneWeekdaySymbols" value:nil];;
+- (NSMutableArray *)TestProjectCalendar_property_standaloneQuarterSymbols:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"standaloneQuarterSymbols"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_property_shortStandaloneWeekdaySymbols {
-    return [self createTableModelSingleArrayWithProperty:@"shortStandaloneWeekdaySymbols" value:nil];;
+- (NSDictionary *)method_25:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的属性standaloneQuarterSymbols",
+            @"title": @"@property (readonly, copy) NSArray<NSString *> *standaloneQuarterSymbols:(TestProjectTableViewParams *)params       API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_property_standaloneQuarterSymbols:params],
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectCalendar_property_standaloneWeekdaySymbols {
-    return [self createTableModelSingleArrayWithProperty:@"standaloneWeekdaySymbols" value:nil];;
+- (NSMutableArray *)TestProjectCalendar_property_shortQuarterSymbols:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"shortQuarterSymbols"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_property_veryShortWeekdaySymbols {
-    return [self createTableModelSingleArrayWithProperty:@"veryShortWeekdaySymbols" value:nil];;
+- (NSDictionary *)method_24:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的属性shortQuarterSymbols",
+            @"title": @"@property (readonly, copy) NSArray<NSString *> *shortQuarterSymbols:(TestProjectTableViewParams *)params            API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_property_shortQuarterSymbols:params],
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectCalendar_property_shortWeekdaySymbols {
-    return [self createTableModelSingleArrayWithProperty:@"shortWeekdaySymbols" value:nil];;
+- (NSMutableArray *)TestProjectCalendar_property_quarterSymbols:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"quarterSymbols"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_property_weekdaySymbols {
-    return [self createTableModelSingleArrayWithProperty:@"weekdaySymbols" value:nil];;
+- (NSDictionary *)method_23:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的属性quarterSymbols，一年的每个季度英文标识符号",
+            @"title": @"@property (readonly, copy) NSArray<NSString *> *quarterSymbols:(TestProjectTableViewParams *)params                 API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_property_quarterSymbols:params],
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectCalendar_property_veryShortStandaloneMonthSymbols {
-    return [self createTableModelSingleArrayWithProperty:@"veryShortStandaloneMonthSymbols" value:nil];;
+- (NSMutableArray *)TestProjectCalendar_property_veryShortStandaloneWeekdaySymbols:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"veryShortStandaloneWeekdaySymbols"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_property_shortStandaloneMonthSymbols {
-    return [self createTableModelSingleArrayWithProperty:@"shortStandaloneMonthSymbols" value:nil];;
+- (NSDictionary *)method_22:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的属性veryShortStandaloneWeekdaySymbols",
+            @"title": @"@property (readonly, copy) NSArray<NSString *> *veryShortStandaloneWeekdaySymbols:(TestProjectTableViewParams *)params API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_property_veryShortStandaloneWeekdaySymbols:params],
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectCalendar_property_standaloneMonthSymbols {
-    return [self createTableModelSingleArrayWithProperty:@"standaloneMonthSymbols" value:nil];;
+- (NSMutableArray *)TestProjectCalendar_property_shortStandaloneWeekdaySymbols:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"shortStandaloneWeekdaySymbols"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_property_veryShortMonthSymbols {
-    return [self createTableModelSingleArrayWithProperty:@"veryShortMonthSymbols" value:nil];;
+- (NSDictionary *)method_21:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的属性shortStandaloneWeekdaySymbols",
+            @"title": @"@property (readonly, copy) NSArray<NSString *> *shortStandaloneWeekdaySymbols:(TestProjectTableViewParams *)params     API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_property_shortStandaloneWeekdaySymbols:params],
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectCalendar_property_shortMonthSymbols {
-    return [self createTableModelSingleArrayWithProperty:@"shortMonthSymbols" value:nil];;
+- (NSMutableArray *)TestProjectCalendar_property_standaloneWeekdaySymbols:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"standaloneWeekdaySymbols"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_property_monthSymbols {
-    return [self createTableModelSingleArrayWithProperty:@"monthSymbols" value:nil];;
+- (NSDictionary *)method_20:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的属性standaloneWeekdaySymbols",
+            @"title": @"@property (readonly, copy) NSArray<NSString *> *standaloneWeekdaySymbols:(TestProjectTableViewParams *)params          API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_property_standaloneWeekdaySymbols:params],
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectCalendar_property_longEraSymbols {
-    return [self createTableModelSingleArrayWithProperty:@"longEraSymbols" value:nil];;
+- (NSMutableArray *)TestProjectCalendar_property_veryShortWeekdaySymbols:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"veryShortWeekdaySymbols"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_property_eraSymbols {
-    return [self createTableModelSingleArrayWithProperty:@"eraSymbols" value:nil];;
+- (NSDictionary *)method_19:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的属性veryShortWeekdaySymbols，一周的每天首字母英文标识符号",
+            @"title": @"@property (readonly, copy) NSArray<NSString *> *veryShortWeekdaySymbols:(TestProjectTableViewParams *)params           API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_property_veryShortWeekdaySymbols:params],
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectCalendar_property_minimumDaysInFirstWeek {
-    return [self createTableModelSingleArrayWithProperty:@"minimumDaysInFirstWeek" value:nil];;
+- (NSMutableArray *)TestProjectCalendar_property_shortWeekdaySymbols:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"shortWeekdaySymbols"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_property_firstWeekday {
-    return [self createTableModelSingleArrayWithProperty:@"firstWeekday" value:nil];;
+- (NSDictionary *)method_18:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的属性shortWeekdaySymbols，一周的每天简写英文标识符号",
+            @"title": @"@property (readonly, copy) NSArray<NSString *> *shortWeekdaySymbols:(TestProjectTableViewParams *)params               API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_property_shortWeekdaySymbols:params],
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectCalendar_property_timeZone {
-    return [self createTableModelSingleArrayWithProperty:@"timeZone" value:nil];;
+- (NSMutableArray *)TestProjectCalendar_property_weekdaySymbols:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"weekdaySymbols"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectCalendar_property_locale {
-    return [self createTableModelSingleArrayWithProperty:@"locale" value:nil];;
+- (NSDictionary *)method_17:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的属性weekdaySymbols，一周的每天英文标识符号",
+            @"title": @"@property (readonly, copy) NSArray<NSString *> *weekdaySymbols:(TestProjectTableViewParams *)params                    API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_property_weekdaySymbols:params],
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectCalendar_property_calendarIdentifier {
-    return [self createTableModelSingleArrayWithProperty:@"calendarIdentifier" value:nil];;
+- (NSMutableArray *)TestProjectCalendar_property_veryShortStandaloneMonthSymbols:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"veryShortStandaloneMonthSymbols"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_16:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的属性veryShortStandaloneMonthSymbols，每个月标准的的英文首字母标识符号",
+            @"title": @"@property (readonly, copy) NSArray<NSString *> *veryShortStandaloneMonthSymbols:(TestProjectTableViewParams *)params API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_property_veryShortStandaloneMonthSymbols:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_property_shortStandaloneMonthSymbols:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"shortStandaloneMonthSymbols"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_15:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的属性shortStandaloneMonthSymbols，每个月标准的的简写标识符号",
+            @"title": @"@property (readonly, copy) NSArray<NSString *> *shortStandaloneMonthSymbols:(TestProjectTableViewParams *)params     API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_property_shortStandaloneMonthSymbols:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_property_standaloneMonthSymbols:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"standaloneMonthSymbols"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_14:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的属性standaloneMonthSymbols，每个月的标准的完整标识符号",
+            @"title": @"@property (readonly, copy) NSArray<NSString *> *standaloneMonthSymbols:(TestProjectTableViewParams *)params          API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_property_standaloneMonthSymbols:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_property_veryShortMonthSymbols:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"veryShortMonthSymbols"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_13:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的属性veryShortMonthSymbols，每个月的英文首字母标识符号",
+            @"title": @"@property (readonly, copy) NSArray<NSString *> *veryShortMonthSymbols:(TestProjectTableViewParams *)params           API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_property_veryShortMonthSymbols:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_property_shortMonthSymbols:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"shortMonthSymbols"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_12:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的属性shortMonthSymbols，每个月的简写标识符号",
+            @"title": @"@property (readonly, copy) NSArray<NSString *> *shortMonthSymbols:(TestProjectTableViewParams *)params               API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_property_shortMonthSymbols:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_property_monthSymbols:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"monthSymbols"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_11:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的属性monthSymbols，每个月的完整标识符号",
+            @"title": @"@property (readonly, copy) NSArray<NSString *> *monthSymbols:(TestProjectTableViewParams *)params                    API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_property_monthSymbols:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_property_longEraSymbols:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"longEraSymbols"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_10:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的属性longEraSymbols",
+            @"title": @"@property (readonly, copy) NSArray<NSString *> *longEraSymbols:(TestProjectTableViewParams *)params  API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_property_longEraSymbols:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_property_eraSymbols:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"eraSymbols"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_9:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的属性eraSymbols",
+            @"title": @"@property (readonly, copy) NSArray<NSString *> *eraSymbols:(TestProjectTableViewParams *)params      API_AVAILABLE(macos(10.7), ios(5.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_property_eraSymbols:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_property_minimumDaysInFirstWeek:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"minimumDaysInFirstWeek"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_8:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的属性minimumDaysInFirstWeek",
+            @"title": @"@property NSUInteger minimumDaysInFirstWeek;",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"设置第一周最少包含多少天",
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_property_minimumDaysInFirstWeek:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_property_firstWeekday:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"firstWeekday"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_7:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的属性firstWeekday",
+            @"title": @"@property NSUInteger firstWeekday;",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"在获取weekOfYear或者weekOfMonth的时候起作用\n系统默认的是周日是1，虽然不能改变数值，但我们在取的时候可以进行改变；而该属性就是在取的时候可以从周一进行取值",
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_property_firstWeekday:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_property_timeZone:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"timeZone"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_6:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的属性timeZone",
+            @"title": @"@property (copy) NSTimeZone *timeZone;",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"时区信息",
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_property_timeZone:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_property_locale:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"locale"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_5:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的属性locale",
+            @"title": @"@property (nullable, copy) NSLocale *locale;",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"本地化信息",
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_property_locale:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_property_calendarIdentifier:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"calendarIdentifier"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_4:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的属性autoupdatingCurrentCalendar",
+            @"title": @"@property (readonly, copy) NSCalendarIdentifier calendarIdentifier;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_property_calendarIdentifier:params],
+            }
+        },
+    };
 }
 
 //FOUNDATION_EXPORT NSCalendarIdentifier const NSCalendarIdentifierGregorian  API_AVAILABLE(macos(10.6), ios(4.0), watchos(2.0), tvos(9.0)); // the common calendar in Europe, the Western Hemisphere, and elsewhere
@@ -1865,7 +1991,7 @@
 //// The Islamic Umm al-Qura calendar used in Saudi Arabia. This is based on astronomical calculation, instead of tabular behavior.
 //FOUNDATION_EXPORT NSCalendarIdentifier const NSCalendarIdentifierIslamicUmmAlQura    API_AVAILABLE(macos(10.10), ios(8.0), watchos(2.0), tvos(9.0));
 
-- (NSMutableArray *)TestProjectCalendar_class_calendarWithIdentifier {
+- (NSMutableArray *)TestProjectCalendar_class_calendarWithIdentifier:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": @"设置的属性是NSCalendarIdentifierGregorian，公历",
@@ -1940,17 +2066,62 @@
         NSString *title = dic[@"title"];
         NSCalendarIdentifier value = dic[@"value"];
         NSCalendar *canlendar = [NSCalendar calendarWithIdentifier:value];
-        [self createTableModelWithTitle:[NSString stringWithFormat:@"%@\ncalendar:%@", title, canlendar] block:nil];
+        [self createModelWithParams:params
+                              title:[NSString stringWithFormat:@"%@\ncalendar:%@", title, canlendar]
+                              block:nil];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectCalendar_class_property_autoupdatingCurrentCalendar {
-    return [self createTableModelSingleArrayWithTitle:[NSString stringWithFormat:@"currentCalendar:%@", [NSCalendar autoupdatingCurrentCalendar]] block:nil];
+- (NSDictionary *)method_3:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"通过NSCalendarIdentifier获取NSCalendar的实例对象",
+            @"title": @"+ (nullable NSCalendar *)calendarWithIdentifier:(NSCalendarIdentifier)calendarIdentifierConstant API_AVAILABLE(macos(10.9), ios(8.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_class_calendarWithIdentifier:params],
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectCalendar_class_property_currentCalendar {
-    return [self createTableModelSingleArrayWithTitle:[NSString stringWithFormat:@"currentCalendar:%@", [NSCalendar currentCalendar]] block:nil];
+- (NSMutableArray *)TestProjectCalendar_class_property_autoupdatingCurrentCalendar:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                            title:[NSString stringWithFormat:@"currentCalendar:%@", [NSCalendar autoupdatingCurrentCalendar]]
+                                            block:nil];
+}
+
+- (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的class属性autoupdatingCurrentCalendar",
+            @"title": @"@property (class, readonly, strong) NSCalendar *autoupdatingCurrentCalendar API_AVAILABLE(macos(10.5), ios(2.0), watchos(2.0), tvos(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_class_property_autoupdatingCurrentCalendar:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectCalendar_class_property_currentCalendar:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                            title:[NSString stringWithFormat:@"currentCalendar:%@", [NSCalendar currentCalendar]]
+                                            block:nil];
+}
+
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取NSCalendar的class属性currentCalendar",
+            @"title": @"@property (class, readonly, copy) NSCalendar *currentCalendar;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectCalendar_class_property_currentCalendar:params],
+            }
+        },
+    };
 }
 
 @end

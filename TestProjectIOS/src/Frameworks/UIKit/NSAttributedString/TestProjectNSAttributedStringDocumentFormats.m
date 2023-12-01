@@ -9,27 +9,6 @@
 
 @implementation TestProjectNSAttributedStringDocumentFormats
 
-- (NSDictionary *)method_1 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"修改attrText的信息，保持一致",
-            @"title": @"- (nullable instancetype)initWithURL:(NSURL *)url options:(NSDictionary<NSAttributedStringDocumentReadingOptionKey, id> *)options documentAttributes:(NSDictionary<NSAttributedStringDocumentAttributeKey, id> * __nullable * __nullable)dict error:(NSError **)error API_AVAILABLE(macos(10.4), ios(9.0));",
-            @"desc": @"NSMutableAttributedString提供若干方法，即可以修改字符串，又可以修改字符串的属性。经过多次修改后，有些信息可能变的不一致了，为了让信息保持一致，可以使用下面的方法 \n 异常崩溃条件：range超过文字的范围 \n NSVerticalGlyphFormAttributeName 为1的时候英文字母是横着放向的，0的时候是竖着方向的",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectAttributedStringDocumentFormats_initWithURL_options_documentAttributes_error],
-                @"compareViewModel": self.compareViewModel,
-            }
-        },
-    };
-
-    return @{
-        @"- (nullable instancetype)initWithURL:(NSURL *)url options:(NSDictionary<NSAttributedStringDocumentReadingOptionKey, id> *)options documentAttributes:(NSDictionary<NSAttributedStringDocumentAttributeKey, id> * __nullable * __nullable)dict error:(NSError **)error API_AVAILABLE(macos(10.4), ios(9.0));":@{
-            @"method":@"TestProjectAttributedStringDocumentFormats_initWithURL_options_documentAttributes_error",
-            @"desc":@"修改attrText的信息，保持一致 \n NSMutableAttributedString提供若干方法，即可以修改字符串，又可以修改字符串的属性。经过多次修改后，有些信息可能变的不一致了，为了让信息保持一致，可以使用下面的方法"}
-    };
-}
-
 - (TestProjectTableViewModel *)createAttrStrModelWith:(NSDictionary *)keyValue {
     TestProjectTableViewModel *attrStrModel = [[TestProjectTableViewModel alloc] init];
 //    NSAttributedString *firstAttrStr = [[NSAttributedString alloc] initWithString:self.firstAttrText attributes:keyValue];
@@ -77,5 +56,19 @@
     return self.dataMutArr;
 }
 
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"修改attrText的信息，保持一致",
+            @"title": @"- (nullable instancetype)initWithURL:(NSURL *)url options:(NSDictionary<NSAttributedStringDocumentReadingOptionKey, id> *)options documentAttributes:(NSDictionary<NSAttributedStringDocumentAttributeKey, id> * __nullable * __nullable)dict error:(NSError **)error API_AVAILABLE(macos(10.4), ios(9.0));",
+            @"desc": @"NSMutableAttributedString提供若干方法，即可以修改字符串，又可以修改字符串的属性。经过多次修改后，有些信息可能变的不一致了，为了让信息保持一致，可以使用下面的方法 \n 异常崩溃条件：range超过文字的范围 \n NSVerticalGlyphFormAttributeName 为1的时候英文字母是横着放向的，0的时候是竖着方向的",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectAttributedStringDocumentFormats_initWithURL_options_documentAttributes_error],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
+    };
+}
 
 @end

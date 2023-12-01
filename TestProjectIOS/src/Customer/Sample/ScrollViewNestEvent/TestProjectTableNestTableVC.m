@@ -151,7 +151,7 @@
 
 - (void)didTapItemViewWithController:(TestProjectScrollTabController *)scrollTabController
                              childVC:(TestProjectTestTableVC *)childVC
-                             atIndex:(NSInteger)index {
+                             atIndex:(TestProjectTableViewParams *)params {
     if (childVC == self.currentTestTableVC) {
         return;
     }

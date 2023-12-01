@@ -15,7 +15,7 @@
 
 @implementation TestProjectNSLocale
 
-- (id)setPropertyValueObject {
+- (id)setPropertyValueObject:(TestProjectTableViewParams *)params {
     return self.childLocale;
 }
 
@@ -26,33 +26,7 @@
     return _childLocale;
 }
 
-- (NSDictionary *)method_1 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行NSLocale的方法objectForKey",
-            @"title": @"- (nullable id)objectForKey:(NSLocaleKey)key;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectLocale_objectForKey],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_2 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行NSLocale的方法objectForKey",
-            @"title": @"- (nullable NSString *)displayNameForKey:(NSLocaleKey)key value:(id)value;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectLocale_displayNameForKey_value],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectLocale_displayNameForKey_value {
+- (NSMutableArray *)TestProjectLocale_displayNameForKey_value:(TestProjectTableViewParams *)params {
     NSArray *arr = [self getLocaleKey];
     for (NSDictionary *dic in arr) {
         NSString *title = dic[@"title"];
@@ -62,9 +36,22 @@
             continue;
         }
         NSString *displayName = [self.childLocale displayNameForKey:value value:result];
-        [self createTableModelWithTitle:[NSString stringWithFormat:@"%@\n%@", title, displayName] block:nil];
+        [self createModelWithParams:params title:[NSString stringWithFormat:@"%@\n%@", title, displayName] block:nil];
     }
     return self.dataMutArr;
+}
+
+- (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行NSLocale的方法objectForKey",
+            @"title": @"- (nullable NSString *)displayNameForKey:(NSLocaleKey)key value:(id)value;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectLocale_displayNameForKey_value:params],
+            }
+        },
+    };
 }
 
 //FOUNDATION_EXPORT NSLocaleKey const NSLocaleIdentifier;        // NSString
@@ -167,15 +154,28 @@
     ];
 }
 
-- (NSMutableArray *)TestProjectLocale_objectForKey {
+- (NSMutableArray *)TestProjectLocale_objectForKey:(TestProjectTableViewParams *)params {
     NSArray *arr = [self getLocaleKey];
     for (NSDictionary *dic in arr) {
         NSString *title = dic[@"title"];
         NSLocaleKey value = dic[@"value"];
         id result = [self.childLocale objectForKey:value];
-        [self createTableModelWithTitle:[NSString stringWithFormat:@"%@\n%@", title, result] block:nil];
+        [self createModelWithParams:params title:[NSString stringWithFormat:@"%@\n%@", title, result] block:nil];
     }
     return self.dataMutArr;
+}
+
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行NSLocale的方法objectForKey",
+            @"title": @"- (nullable id)objectForKey:(NSLocaleKey)key;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectLocale_objectForKey:params],
+            }
+        },
+    };
 }
 
 @end

@@ -7,16 +7,6 @@
 
 #import "TestProjectTableViewModel.h"
 
-@implementation TestProjectJumpModel
-
-- (id)copyWithZone:(NSZone *)zone {
-    TestProjectJumpModel *m = [[TestProjectJumpModel alloc] init];
-    m.jumpMethod = self.jumpMethod;
-    return m;
-}
-
-@end
-
 @implementation TestProjectTableViewModel {
     CGFloat _viewHeight;
 }
@@ -121,5 +111,9 @@
     bankHeight += 2;
     _viewHeight = _abstractHeight + _titleHeight + _descHeight + _dataViewHeight + bankHeight;
 }
+
+@end
+
+@implementation TestProjectTableViewParams
 
 @end

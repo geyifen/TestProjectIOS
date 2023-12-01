@@ -15,36 +15,6 @@
 
 @implementation TestProjectNSMutableAttributedString
 
-- (NSDictionary *)method_1 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"用NSString替换在range范围内的attrText",
-            @"title": @"- (void)replaceCharactersInRange:(NSRange)range withString:(NSString *)str;",
-            @"desc": @" 替换的字符串的样式是默认的 \n 异常崩溃：range不在文字的范围内会崩溃",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectMutableAttributedString_replaceCharactersInRange_withString],
-                @"compareViewModel": self.compareViewModel,
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_2 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"在range范围内替换NSAttributedStringKey",
-            @"title": @"- (void)setAttributes:(nullable NSDictionary<NSAttributedStringKey, id> *)attrs range:(NSRange)range;",
-            @"desc": @"异常崩溃：range不在文字的范围内会崩溃",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectMutableAttributedString_setAttributes_range],
-                @"compareViewModel": self.compareViewModel,
-            }
-        },
-    };
-}
-
 - (NSMutableArray *)TestProjectMutableAttributedString_setAttributes_range {
     NSArray *arr = @[
         @{
@@ -68,6 +38,21 @@
         [m calculDataViewHeight];
     }
     return self.dataMutArr;
+}
+
+- (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"在range范围内替换NSAttributedStringKey",
+            @"title": @"- (void)setAttributes:(nullable NSDictionary<NSAttributedStringKey, id> *)attrs range:(NSRange)range;",
+            @"desc": @"异常崩溃：range不在文字的范围内会崩溃",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectMutableAttributedString_setAttributes_range],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
+    };
 }
 
 - (NSMutableArray *)TestProjectMutableAttributedString_replaceCharactersInRange_withString {
@@ -96,6 +81,21 @@
         [m calculDataViewHeight];
     }
     return self.dataMutArr;
+}
+
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"用NSString替换在range范围内的attrText",
+            @"title": @"- (void)replaceCharactersInRange:(NSRange)range withString:(NSString *)str;",
+            @"desc": @" 替换的字符串的样式是默认的 \n 异常崩溃：range不在文字的范围内会崩溃",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectMutableAttributedString_replaceCharactersInRange_withString],
+                @"compareViewModel": self.compareViewModel,
+            }
+        },
+    };
 }
 
 @end

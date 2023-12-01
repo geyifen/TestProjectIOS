@@ -50,268 +50,36 @@
 //    self.childView.frame = CGRectMake(btn.tag * 20, 0, btn.tag * 10, btn.tag * 5);
 //}
 
-- (NSDictionary *)method_1 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIView的属性frame",
-            @"title": @"@property(nonatomic) CGRect            frame;",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"改变自己的大小，以及在父view上的位置",
-            @"dataModel": @{
-                @"childItems": [self TestProjectViewViewGeometry_property_frame],
-            }
-        },
-    };
+
+- (NSMutableArray *)TestProjectViewViewGeometry_sizeToFit:(TestProjectTableViewParams *)params {
+    WS(wSelf);
+    [self createModelWithParams:params title:@"是否设置合适的size" block:^{
+        [wSelf.grandChildView sizeToFit];
+    }];
+    return self.dataMutArr;
 }
 
-- (NSDictionary *)method_2 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIView的属性bounds",
-            @"title": @"@property(nonatomic) CGRect            bounds;",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"改变自己的大小，以及自己孩子view在自己上的位置 \n 当x或者y值不为0时，孩子view会距离原点{0,0}产生偏移，为负：向右或者向下偏移；为正：向左或者向上偏移",
-            @"dataModel": @{
-                @"childItems": [self TestProjectViewViewGeometry_property_bounds],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_3 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIView的属性center",
-            @"title": @"@property(nonatomic) CGPoint            center;",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"改变自己在父view上的位置，设置自己的中心位置在父view上的位置",
-            @"dataModel": @{
-                @"childItems": [self TestProjectViewViewGeometry_property_center],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_4 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIView的属性transform",
-            @"title": @"@property(nonatomic) CGAffineTransform transform;",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"作用在UIView上，对UIView进行平移、旋转等操作",
-            @"dataModel": @{
-                @"childItems": [self TestProjectViewViewGeometry_property_transform],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_5 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIView的属性transform3D",
-            @"title": @"@property(nonatomic) CATransform3D     transform3D API_AVAILABLE(ios(13.0),tvos(13.0));",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"作用在CALayer上，对CALayer进行平移、旋转等操作",
-            @"dataModel": @{
-                @"childItems": [self TestProjectViewViewGeometry_property_transform3D],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_6 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIView的属性contentScaleFactor，暂不知道什么作用",
-            @"title": @"@property(nonatomic) CGFloat           contentScaleFactor API_AVAILABLE(ios(4.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectViewViewGeometry_property_contentScaleFactor],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_7 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIView的属性anchorPoint",
-            @"title": @"@property(nonatomic) CGPoint anchorPoint API_AVAILABLE(ios(16.0));",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"改变自己在父view上的位置，设置自己的中心位置在父view上的位置",
-            @"dataModel": @{
-                @"childItems": [self TestProjectViewViewGeometry_property_anchorPoint],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_8 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIView的属性multipleTouchEnabled",
-            @"title": @"@property(nonatomic,getter=isMultipleTouchEnabled) BOOL multipleTouchEnabled API_UNAVAILABLE(tvos);",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectViewViewGeometry_property_multipleTouchEnabled],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_9 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIView的属性exclusiveTouch",
-            @"title": @"@property(nonatomic,getter=isExclusiveTouch) BOOL       exclusiveTouch API_UNAVAILABLE(tvos);",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectViewViewGeometry_property_exclusiveTouch],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_10 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取UIView的某个点上的view",
-            @"title": @"- (nullable UIView *)hitTest:(CGPoint)point withEvent:(nullable UIEvent *)event;",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"获取的是当前view的最顶层的某个显示的子view，不能是隐藏的或者透明度为0",
-            @"dataModel": @{
-                @"childItems": [self TestProjectViewViewGeometry_hitTest_withEvent],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_11 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"判断某个点上是否在UIView的bounds内",
-            @"title": @"- (BOOL)pointInside:(CGPoint)point withEvent:(nullable UIEvent *)event;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectViewViewGeometry_pointInside_withEvent],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_12 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"某个点在某个view上的位置",
-            @"title": @"- (CGPoint)convertPoint:(CGPoint)point toView:(nullable UIView *)view;",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"相对调用的view上的点对于不同的toView对应不同的位置 \n 计算的位置是：point - (toView的顶点point - 调用的view的顶点point)",
-            @"dataModel": @{
-                @"childItems": [self TestProjectViewViewGeometry_convertPoint_toView],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_13 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"某个点在某个view上的位置",
-            @"title": @"- (CGPoint)convertPoint:(CGPoint)point fromView:(nullable UIView *)view;",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"相对调用的view上的点对于不同的fromView对应不同的位置 \n 计算的位置是：fromView的顶点距离 + point",
-            @"dataModel": @{
-                @"childItems": [self TestProjectViewViewGeometry_convertPoint_fromView],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_14 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"某个rect在某个view上的rect",
-            @"title": @"- (CGRect)convertRect:(CGRect)rect toView:(nullable UIView *)view;",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"对调用的view上的点对于不同的toView对应不同的位置 \n 计算的point位置是：point - (toView的顶点point - 调用的view的顶点point), size是rect的size",
-            @"dataModel": @{
-                @"childItems": [self TestProjectViewViewGeometry_convertRect_toView],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_15 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"某个rect在某个view上的rect",
-            @"title": @"- (CGRect)convertRect:(CGRect)rect fromView:(nullable UIView *)view;",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"相对调用的view上的点对于不同的fromView对应不同的位置 \n 计算的point位置是：fromView的顶点距离 + point, size是rect的size",
-            @"dataModel": @{
-                @"childItems": [self TestProjectViewViewGeometry_convertRect_fromView],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_16 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"某个视图在父视图上的约束设置",
-            @"title": @"@property(nonatomic) UIViewAutoresizing autoresizingMask;",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"子视图设置该属性，当父视图的frame发生改变时，子视图的约束生效\n只能设置一次，不能在改变",
-            @"dataModel": @{
-                @"childItems": [self TestProjectViewViewGeometry_property_autoresizingMask],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_17:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"获取view的合适的size，最适合UILabel的按钮",
-            @"title": @"- (CGSize)sizeThatFits:(CGSize)size;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectViewViewGeometry_sizeThatFits:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_18 {
+- (NSDictionary *)method_18:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
             @"abstract": @"把view的大小设置到合适的size，最适合UILabel的按钮",
             @"title": @"- (void)sizeToFit;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectViewViewGeometry_sizeToFit],
+                @"childItems": [self TestProjectViewViewGeometry_sizeToFit:params],
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectViewViewGeometry_sizeToFit {
-    WS(wSelf);
-    [self createTableModelWithTitle:@"是否设置合适的size" block:^{
-        [wSelf.grandChildView sizeToFit];
-    }];
-    return self.dataMutArr;
-}
-
-- (NSMutableArray *)TestProjectViewViewGeometry_sizeThatFits:(NSInteger)index {
+- (NSMutableArray *)TestProjectViewViewGeometry_sizeThatFits:(TestProjectTableViewParams *)params {
     __block TestProjectTableViewModel *m;
     WS(wSelf);
-    m = [self createTableModelWithTitle:@"获取合适的size" block:^{
+    m = [self createModelWithParams:params title:@"获取合适的size" block:^{
         CGSize size = [wSelf.grandChildView sizeThatFits:CGSizeMake(30, 40)];
         m.desc = [NSString stringWithFormat:@"获取的size为:%@", NSStringFromCGSize(size)];
         [m calculDataViewHeight];
-        NSInteger atIndex = wSelf.tableView.dataSourceArray.count - index -1;
+        NSInteger atIndex = wSelf.tableView.dataSourceArray.count - params.selectIndex -1;
         TestProjectTableViewModel *vm = [wSelf.tableView.dataSourceArray objectAtIndex:atIndex];
         [vm calculDataViewHeight];
         [wSelf.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:atIndex inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
@@ -319,6 +87,18 @@
     return self.dataMutArr;
 }
 
+- (NSDictionary *)method_17:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取view的合适的size，最适合UILabel的按钮",
+            @"title": @"- (CGSize)sizeThatFits:(CGSize)size;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectViewViewGeometry_sizeThatFits:params],
+            }
+        },
+    };
+}
 
 //typedef NS_OPTIONS(NSUInteger, UIViewAutoresizing) {
 //    UIViewAutoresizingNone                 = 0,
@@ -330,7 +110,7 @@
 //    UIViewAutoresizingFlexibleBottomMargin = 1 << 5
 //};
 
-- (NSMutableArray *)TestProjectViewViewGeometry_property_autoresizingMask {
+- (NSMutableArray *)TestProjectViewViewGeometry_property_autoresizingMask:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": [NSString stringWithFormat:@"设置的是UIViewAutoresizingNone(%ld)", UIViewAutoresizingNone],
@@ -369,7 +149,7 @@
         WS(wSelf);
         WO(wObjc, self.grandChildView);
         x += 10;
-        [self createTableModelWithTitle:title block:^{
+        [self createModelWithParams:params title:title block:^{
             wObjc.autoresizingMask = [value integerValue];
             wSelf.childView.frame = CGRectMake(x, 0, 30, 30);
         }];
@@ -377,83 +157,214 @@
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectViewViewGeometry_convertRect_fromView {
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"self:%p childView:%p grandView:%p", self, self.childView, self.grandChildView] block:nil];
+- (NSDictionary *)method_16:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"某个视图在父视图上的约束设置",
+            @"title": @"@property(nonatomic) UIViewAutoresizing autoresizingMask;",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"子视图设置该属性，当父视图的frame发生改变时，子视图的约束生效\n只能设置一次，不能在改变",
+            @"dataModel": @{
+                @"childItems": [self TestProjectViewViewGeometry_property_autoresizingMask:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectViewViewGeometry_convertRect_fromView:(TestProjectTableViewParams *)params {
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"self:%p childView:%p grandView:%p", self, self.childView, self.grandChildView] block:nil];
 
     CGRect rect = CGRectMake(0, 0, 6, 6);
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%@", self, NSStringFromCGRect([self convertRect:rect fromView:self])] block:nil];
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%@", self.childView, NSStringFromCGRect([self convertRect:rect fromView:self.childView])] block:nil];
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%@", self.grandChildView, NSStringFromCGRect([self convertRect:rect fromView:self.grandChildView])] block:nil];
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%@", self, NSStringFromCGRect([self convertRect:rect fromView:self])] block:nil];
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%@", self.childView, NSStringFromCGRect([self convertRect:rect fromView:self.childView])] block:nil];
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%@", self.grandChildView, NSStringFromCGRect([self convertRect:rect fromView:self.grandChildView])] block:nil];
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectViewViewGeometry_convertRect_toView {
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"self:%p childView:%p grandView:%p", self, self.childView, self.grandChildView] block:nil];
+- (NSDictionary *)method_15:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"某个rect在某个view上的rect",
+            @"title": @"- (CGRect)convertRect:(CGRect)rect fromView:(nullable UIView *)view;",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"相对调用的view上的点对于不同的fromView对应不同的位置 \n 计算的point位置是：fromView的顶点距离 + point, size是rect的size",
+            @"dataModel": @{
+                @"childItems": [self TestProjectViewViewGeometry_convertRect_fromView:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectViewViewGeometry_convertRect_toView:(TestProjectTableViewParams *)params {
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"self:%p childView:%p grandView:%p", self, self.childView, self.grandChildView] block:nil];
     
     CGRect rect = CGRectMake(0, 0, 6, 6);
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%@", self, NSStringFromCGRect([self convertRect:rect toView:self])] block:nil];
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%@", self.childView, NSStringFromCGRect([self convertRect:rect toView:self.childView])] block:nil];
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%@", self.grandChildView, NSStringFromCGRect([self convertRect:rect toView:self.grandChildView])] block:nil];
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%@", self, NSStringFromCGRect([self convertRect:rect toView:self])] block:nil];
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%@", self.childView, NSStringFromCGRect([self convertRect:rect toView:self.childView])] block:nil];
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%@", self.grandChildView, NSStringFromCGRect([self convertRect:rect toView:self.grandChildView])] block:nil];
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectViewViewGeometry_convertPoint_fromView {
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"self:%p childView:%p grandView:%p", self, self.childView, self.grandChildView] block:nil];
+- (NSDictionary *)method_14:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"某个rect在某个view上的rect",
+            @"title": @"- (CGRect)convertRect:(CGRect)rect toView:(nullable UIView *)view;",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"对调用的view上的点对于不同的toView对应不同的位置 \n 计算的point位置是：point - (toView的顶点point - 调用的view的顶点point), size是rect的size",
+            @"dataModel": @{
+                @"childItems": [self TestProjectViewViewGeometry_convertRect_toView:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectViewViewGeometry_convertPoint_fromView:(TestProjectTableViewParams *)params {
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"self:%p childView:%p grandView:%p", self, self.childView, self.grandChildView] block:nil];
     
     CGPoint point = CGPointMake(6, 6);
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%@", self, NSStringFromCGPoint([self convertPoint:point fromView:self])] block:nil];
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%@", self.childView, NSStringFromCGPoint([self convertPoint:point fromView:self.childView])] block:nil];
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%@", self.grandChildView, NSStringFromCGPoint([self convertPoint:point fromView:self.grandChildView])] block:nil];
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%@", self, NSStringFromCGPoint([self convertPoint:point fromView:self])] block:nil];
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%@", self.childView, NSStringFromCGPoint([self convertPoint:point fromView:self.childView])] block:nil];
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%@", self.grandChildView, NSStringFromCGPoint([self convertPoint:point fromView:self.grandChildView])] block:nil];
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectViewViewGeometry_convertPoint_toView {
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"self:%p childView:%p grandView:%p", self, self.childView, self.grandChildView] block:nil];
+- (NSDictionary *)method_13:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"某个点在某个view上的位置",
+            @"title": @"- (CGPoint)convertPoint:(CGPoint)point fromView:(nullable UIView *)view;",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"相对调用的view上的点对于不同的fromView对应不同的位置 \n 计算的位置是：fromView的顶点距离 + point",
+            @"dataModel": @{
+                @"childItems": [self TestProjectViewViewGeometry_convertPoint_fromView:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectViewViewGeometry_convertPoint_toView:(TestProjectTableViewParams *)params {
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"self:%p childView:%p grandView:%p", self, self.childView, self.grandChildView] block:nil];
     CGPoint point = CGPointMake(6, 6);
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%@", self, NSStringFromCGPoint([self convertPoint:point toView:self])] block:nil];
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%@", self.childView, NSStringFromCGPoint([self convertPoint:point toView:self.childView])] block:nil];
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%@", self.grandChildView, NSStringFromCGPoint([self convertPoint:point toView:self.grandChildView])] block:nil];
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%@", self, NSStringFromCGPoint([self convertPoint:point toView:self])] block:nil];
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%@", self.childView, NSStringFromCGPoint([self convertPoint:point toView:self.childView])] block:nil];
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%@", self.grandChildView, NSStringFromCGPoint([self convertPoint:point toView:self.grandChildView])] block:nil];
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectViewViewGeometry_pointInside_withEvent {
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"self:%p childView:%p grandView:%p", self, self.childView, self.grandChildView] block:nil];
+- (NSDictionary *)method_12:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"某个点在某个view上的位置",
+            @"title": @"- (CGPoint)convertPoint:(CGPoint)point toView:(nullable UIView *)view;",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"相对调用的view上的点对于不同的toView对应不同的位置 \n 计算的位置是：point - (toView的顶点point - 调用的view的顶点point)",
+            @"dataModel": @{
+                @"childItems": [self TestProjectViewViewGeometry_convertPoint_toView:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectViewViewGeometry_pointInside_withEvent:(TestProjectTableViewParams *)params {
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"self:%p childView:%p grandView:%p", self, self.childView, self.grandChildView] block:nil];
     
     CGPoint point = CGPointMake(6, 6);
     [self pointInside:point withEvent:nil];
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%u", self, [self pointInside:point withEvent:nil]] block:nil];
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%u", self.childView, [self.childView pointInside:point withEvent:nil]] block:nil];
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%u", self.grandChildView, [self.grandChildView pointInside:point withEvent:nil]] block:nil];
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%u", self, [self pointInside:point withEvent:nil]] block:nil];
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%u", self.childView, [self.childView pointInside:point withEvent:nil]] block:nil];
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"CGPointMake(6, 6) 是否是在view:%p的bounds内：%u", self.grandChildView, [self.grandChildView pointInside:point withEvent:nil]] block:nil];
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectViewViewGeometry_hitTest_withEvent {
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"self:%p childView:%p grandView:%p", self, self.childView, self.grandChildView] block:nil];
+- (NSDictionary *)method_11:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"判断某个点上是否在UIView的bounds内",
+            @"title": @"- (BOOL)pointInside:(CGPoint)point withEvent:(nullable UIEvent *)event;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectViewViewGeometry_pointInside_withEvent:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectViewViewGeometry_hitTest_withEvent:(TestProjectTableViewParams *)params {
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"self:%p childView:%p grandView:%p", self, self.childView, self.grandChildView] block:nil];
     
     CGPoint point = CGPointMake(6, 6);
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"CGPointMake(6, 6) view:%p", [self hitTest:point withEvent:nil]] block:nil];
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"CGPointMake(6, 6) view:%p", [self.childView hitTest:point withEvent:nil]] block:nil];
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"CGPointMake(6, 6) view:%p", [self.grandChildView hitTest:point withEvent:nil]] block:nil];
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"CGPointMake(6, 6) view:%p", [self hitTest:point withEvent:nil]] block:nil];
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"CGPointMake(6, 6) view:%p", [self.childView hitTest:point withEvent:nil]] block:nil];
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"CGPointMake(6, 6) view:%p", [self.grandChildView hitTest:point withEvent:nil]] block:nil];
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectViewViewGeometry_property_exclusiveTouch {
+- (NSDictionary *)method_10:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"获取UIView的某个点上的view",
+            @"title": @"- (nullable UIView *)hitTest:(CGPoint)point withEvent:(nullable UIEvent *)event;",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"获取的是当前view的最顶层的某个显示的子view，不能是隐藏的或者透明度为0",
+            @"dataModel": @{
+                @"childItems": [self TestProjectViewViewGeometry_hitTest_withEvent:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectViewViewGeometry_property_exclusiveTouch:(TestProjectTableViewParams *)params {
     NSArray *arr = @[@(YES), @(NO)];
     for (NSNumber *num in arr) {
-        [self createClickSetTableModelWithProperty:@"exclusiveTouch" value:num];
+        [self createModelWithParams:params
+                           property:@"exclusiveTouch"
+                              value:num
+                          operation:TestProjectCreateModelGetBeforeClickSet
+                              block:nil];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectViewViewGeometry_property_multipleTouchEnabled {
+- (NSDictionary *)method_9:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIView的属性exclusiveTouch",
+            @"title": @"@property(nonatomic,getter=isExclusiveTouch) BOOL       exclusiveTouch API_UNAVAILABLE(tvos);",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectViewViewGeometry_property_exclusiveTouch:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectViewViewGeometry_property_multipleTouchEnabled:(TestProjectTableViewParams *)params {
     NSArray *arr = @[@(YES), @(NO)];
     for (NSNumber *num in arr) {
-        [self createClickSetTableModelWithProperty:@"multipleTouchEnabled" value:num];
+        [self createModelWithParams:params
+                           property:@"multipleTouchEnabled"
+                              value:num
+                          operation:TestProjectCreateModelGetBeforeClickSet
+                              block:nil];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectViewViewGeometry_property_anchorPoint {
+- (NSDictionary *)method_8:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIView的属性multipleTouchEnabled",
+            @"title": @"@property(nonatomic,getter=isMultipleTouchEnabled) BOOL multipleTouchEnabled API_UNAVAILABLE(tvos);",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectViewViewGeometry_property_multipleTouchEnabled:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectViewViewGeometry_property_anchorPoint:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": [NSString stringWithFormat:@"设置的值是：%@, 中心点是在右下角", NSStringFromCGPoint(CGPointMake(1, 1))],
@@ -495,16 +406,52 @@
     for (NSDictionary *dic in arr) {
         NSString *title = dic[@"title"];
         NSValue *value = dic[@"value"];
-        [self createClickSetTableModelWithProperty:@"anchorPoint" value:value];
+        [self createModelWithParams:params
+                              title:title
+                           property:@"anchorPoint"
+                              value:value
+                          operation:TestProjectCreateModelGetBeforeClickSet
+                              block:nil];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectViewViewGeometry_property_contentScaleFactor {
-    return [self createClickSetSingleArrayTableModelWithProperty:@"contentScaleFactor" value:@-10];
+- (NSDictionary *)method_7:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIView的属性anchorPoint",
+            @"title": @"@property(nonatomic) CGPoint anchorPoint API_AVAILABLE(ios(16.0));",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"改变自己在父view上的位置，设置自己的中心位置在父view上的位置",
+            @"dataModel": @{
+                @"childItems": [self TestProjectViewViewGeometry_property_anchorPoint:params],
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectViewViewGeometry_property_transform3D {
+- (NSMutableArray *)TestProjectViewViewGeometry_property_contentScaleFactor:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"contentScaleFactor"
+                                            value:@-10
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_6:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIView的属性contentScaleFactor，暂不知道什么作用",
+            @"title": @"@property(nonatomic) CGFloat           contentScaleFactor API_AVAILABLE(ios(4.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectViewViewGeometry_property_contentScaleFactor:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectViewViewGeometry_property_transform3D:(TestProjectTableViewParams *)params {
     CATransform3D transform3D = CATransform3DMakeAffineTransform(CGAffineTransformMake(1, 0, 0, 1, 0, 0));
     if (@available(iOS 16.0, *)) {
         NSArray *arr = @[
@@ -549,22 +496,41 @@
             NSValue *value = dic[@"value"];
             CGAffineTransform transform = CATransform3DGetAffineTransform(value.CATransform3DValue);
             NSString *title = [NSString stringWithFormat:@"%@ %@", dic[@"title"], [NSValue valueWithCGAffineTransform:transform]];
-            [self createClickSetTableModelWithProperty:@"transform3D" value:value title:title block:nil];
+            [self createModelWithParams:params
+                                  title:title
+                               property:@"transform3D"
+                                  value:value
+                              operation:TestProjectCreateModelGetBeforeClickSet
+                                  block:nil];
         }
     } else {
         // Fallback on earlier versions
     }
     CGAffineTransform transform = CATransform3DGetAffineTransform(transform3D);
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"通过CATransform3DGetAffineTransform(CATransform3DMakeAffineTransform(CGAffineTransformMake(1, 0, 0, 1, 0, 0)))获取CGAffineTransform: %@", [NSValue valueWithCGAffineTransform:transform]] block:nil];
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"通过CATransform3DIsAffine(CATransform3DMakeAffineTransform(CGAffineTransformMake(1, 0, 0, 1, 0, 0)))判断是不是CGAffineTransform: %u", CATransform3DIsAffine(transform3D)] block:nil];
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"通过CATransform3DIsIdentity(CATransform3DMakeAffineTransform(CGAffineTransformMake(1, 0, 0, 1, 0, 0)))判断是不是CATransform3DIdentity: %u", CATransform3DIsIdentity(transform3D)] block:nil];
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"通过CATransform3DGetAffineTransform(CATransform3DMakeAffineTransform(CGAffineTransformMake(1, 0, 0, 1, 0, 0)))获取CGAffineTransform: %@", [NSValue valueWithCGAffineTransform:transform]] block:nil];
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"通过CATransform3DIsAffine(CATransform3DMakeAffineTransform(CGAffineTransformMake(1, 0, 0, 1, 0, 0)))判断是不是CGAffineTransform: %u", CATransform3DIsAffine(transform3D)] block:nil];
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"通过CATransform3DIsIdentity(CATransform3DMakeAffineTransform(CGAffineTransformMake(1, 0, 0, 1, 0, 0)))判断是不是CATransform3DIdentity: %u", CATransform3DIsIdentity(transform3D)] block:nil];
     
-    [self createTableModelWithTitle:[NSString stringWithFormat:@"通过CATransform3DEqualToTransform(CATransform3DMakeAffineTransform(CGAffineTransformMake(1, 0, 0, 1, 0, 0)))判断是不是同一个CATransform3D: %u", CATransform3DEqualToTransform(transform3D, CATransform3DMakeAffineTransform(transform))] block:nil];
+    [self createModelWithParams:params title:[NSString stringWithFormat:@"通过CATransform3DEqualToTransform(CATransform3DMakeAffineTransform(CGAffineTransformMake(1, 0, 0, 1, 0, 0)))判断是不是同一个CATransform3D: %u", CATransform3DEqualToTransform(transform3D, CATransform3DMakeAffineTransform(transform))] block:nil];
 
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectViewViewGeometry_property_transform {
+- (NSDictionary *)method_5:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIView的属性transform3D",
+            @"title": @"@property(nonatomic) CATransform3D     transform3D API_AVAILABLE(ios(13.0),tvos(13.0));",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"作用在CALayer上，对CALayer进行平移、旋转等操作",
+            @"dataModel": @{
+                @"childItems": [self TestProjectViewViewGeometry_property_transform3D:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectViewViewGeometry_property_transform:(TestProjectTableViewParams *)params {
     if (@available(iOS 16.0, *)) {
         NSArray *arr = @[
             @{
@@ -611,7 +577,12 @@
         for (NSDictionary *dic in arr) {
             NSValue *value = dic[@"value"];
             NSString *title = [NSString stringWithFormat:@"%@ %@", dic[@"title"], value];
-            [self createClickSetTableModelWithProperty:@"transform" value:value title:title block:nil];
+            [self createModelWithParams:params
+                                  title:title
+                               property:@"transform"
+                                  value:value
+                              operation:TestProjectCreateModelGetBeforeClickSet
+                                  block:nil];
         }
     } else {
         // Fallback on earlier versions
@@ -619,19 +590,87 @@
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectViewViewGeometry_property_center {
+- (NSDictionary *)method_4:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIView的属性transform",
+            @"title": @"@property(nonatomic) CGAffineTransform transform;",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"作用在UIView上，对UIView进行平移、旋转等操作",
+            @"dataModel": @{
+                @"childItems": [self TestProjectViewViewGeometry_property_transform:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectViewViewGeometry_property_center:(TestProjectTableViewParams *)params {
     CGPoint point = CGPointMake(20, 20);
-    return [self createClickSetSingleArrayTableModelWithProperty:@"center" value:[NSValue valueWithCGPoint:point]];
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"center"
+                                            value:[NSValue valueWithCGPoint:point]
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectViewViewGeometry_property_bounds {
+- (NSDictionary *)method_3:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIView的属性center",
+            @"title": @"@property(nonatomic) CGPoint            center;",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"改变自己在父view上的位置，设置自己的中心位置在父view上的位置",
+            @"dataModel": @{
+                @"childItems": [self TestProjectViewViewGeometry_property_center:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectViewViewGeometry_property_bounds:(TestProjectTableViewParams *)params {
     CGRect bounds = CGRectMake(20, 10, 30, 30);
-    return [self createClickSetSingleArrayTableModelWithProperty:@"bounds" value:[NSValue valueWithCGRect:bounds]];
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"bounds"
+                                            value:[NSValue valueWithCGRect:bounds]
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectViewViewGeometry_property_frame {
+- (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIView的属性bounds",
+            @"title": @"@property(nonatomic) CGRect            bounds;",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"改变自己的大小，以及自己孩子view在自己上的位置 \n 当x或者y值不为0时，孩子view会距离原点{0,0}产生偏移，为负：向右或者向下偏移；为正：向左或者向上偏移",
+            @"dataModel": @{
+                @"childItems": [self TestProjectViewViewGeometry_property_bounds:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectViewViewGeometry_property_frame:(TestProjectTableViewParams *)params {
     CGRect frame = CGRectMake(30, 30, 30, 30);
-    return [self createClickSetSingleArrayTableModelWithProperty:@"frame" value:[NSValue valueWithCGRect:frame]];
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"frame"
+                                            value:[NSValue valueWithCGRect:frame]
+                                        operation:TestProjectCreateModelGetBeforeClickSet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIView的属性frame",
+            @"title": @"@property(nonatomic) CGRect            frame;",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"改变自己的大小，以及在父view上的位置",
+            @"dataModel": @{
+                @"childItems": [self TestProjectViewViewGeometry_property_frame:params],
+            }
+        },
+    };
 }
 
 @end

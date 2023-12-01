@@ -187,35 +187,6 @@
 
 @implementation TestProjectUIActivityIndicatorView
 
-- (NSDictionary *)method_1 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"通过frame设置转圈视图",
-            @"title": @"- (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;",
-            @"desc": @"设置frame无效,样式还是中等的",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"modelClass": TestProjectActivityIndicatorViewModel.class,
-                @"childItems": [self TestProjectActivityIndicatorView_initWithFrame],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_2 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"通过style设置转圈视图",
-            @"title": @"- (instancetype)initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyle)style NS_DESIGNATED_INITIALIZER;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"modelClass": TestProjectActivityIndicatorViewModel.class,
-                @"childItems": [self TestProjectActivityIndicatorView_initWithActivityIndicatorStyle],
-            }
-        },
-    };
-}
-
 - (NSMutableArray *)TestProjectActivityIndicatorView_initWithActivityIndicatorStyle {
     NSArray *styles = @[
         @{
@@ -239,12 +210,41 @@
     return self.dataMutArr;
 }
 
+- (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"通过style设置转圈视图",
+            @"title": @"- (instancetype)initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyle)style NS_DESIGNATED_INITIALIZER;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectActivityIndicatorViewModel.class,
+                @"childItems": [self TestProjectActivityIndicatorView_initWithActivityIndicatorStyle],
+            }
+        },
+    };
+}
+
 - (NSMutableArray *)TestProjectActivityIndicatorView_initWithFrame {
     TestProjectActivityIndicatorViewModel *m = [[TestProjectActivityIndicatorViewModel alloc] init];
     m.rect = CGRectMake(0, 0, 1, 1);
     m.title = [NSString stringWithFormat:@"我是通过frame创建的，当前的frame：%@", NSStringFromCGRect(m.rect)];
     [self.dataMutArr addObject:m];
     return self.dataMutArr;
+}
+
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"通过frame设置转圈视图",
+            @"title": @"- (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;",
+            @"desc": @"设置frame无效,样式还是中等的",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectActivityIndicatorViewModel.class,
+                @"childItems": [self TestProjectActivityIndicatorView_initWithFrame],
+            }
+        },
+    };
 }
 
 @end

@@ -11,51 +11,11 @@
 
 @implementation TestProjectUIColorDynamicdColors
 
-- (Class)createTableModelClass {
+- (Class)createTableModelClass:(TestProjectTableViewParams *)params {
     return TestProjectUIColorModel.class;
 }
 
-- (NSDictionary *)method_1:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"执行UIColor的class方法, 为了适配暗黑模式，当切换模式的时候，会进行回调改变色值",
-            @"title": @"+ (UIColor *)colorWithDynamicProvider:(UIColor * (^)(UITraitCollection *traitCollection))dynamicProvider API_AVAILABLE(ios(13.0), tvos(13.0)) API_UNAVAILABLE(watchos);", 
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectColorDynamicdColors_colorWithDynamicProvider:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_2:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"为了适配暗黑模式，当切换模式的时候，会进行回调改变色值",
-            @"title": @"- (UIColor *)initWithDynamicProvider:(UIColor * (^)(UITraitCollection *traitCollection))dynamicProvider API_AVAILABLE(ios(13.0), tvos(13.0)) API_UNAVAILABLE(watchos);", 
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectColorDynamicdColors_initWithDynamicProvider:index],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_3:(NSInteger)index {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"动态解析CGColor",
-            @"title": @"- (UIColor *)resolvedColorWithTraitCollection:(UITraitCollection *)traitCollection API_AVAILABLE(ios(13.0), tvos(13.0)) API_UNAVAILABLE(watchos);",
-            @"desc": @"UIColor是动态解析的，但是CGColor是静态的, 使用这个方法可以动态解析CGColor", 
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectColorDynamicdColors_resolvedColorWithTraitCollection:index],
-            }
-        },
-    };
-}
-
-- (NSMutableArray *)TestProjectColorDynamicdColors_resolvedColorWithTraitCollection:(NSInteger)index {
+- (NSMutableArray *)TestProjectColorDynamicdColors_resolvedColorWithTraitCollection:(TestProjectTableViewParams *)params {
     __block NSString *traitCollectionDesc = @"";
     UIColor *color = [[UIColor alloc] initWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
         traitCollectionDesc = [NSString stringWithFormat:@"%@", traitCollection];
@@ -65,14 +25,28 @@
         return [UIColor blackColor];
     }];
     [color resolvedColorWithTraitCollection:self.traitCollection];
-    [self createModelWithIndex:index
+    [self createModelWithParams:params
                          title:traitCollectionDesc
                  modelKeyValue:@{@"backgroundColor": color}
                          block:nil];
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectColorDynamicdColors_initWithDynamicProvider:(NSInteger)index {
+- (NSDictionary *)method_3:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"动态解析CGColor",
+            @"title": @"- (UIColor *)resolvedColorWithTraitCollection:(UITraitCollection *)traitCollection API_AVAILABLE(ios(13.0), tvos(13.0)) API_UNAVAILABLE(watchos);",
+            @"desc": @"UIColor是动态解析的，但是CGColor是静态的, 使用这个方法可以动态解析CGColor",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectColorDynamicdColors_resolvedColorWithTraitCollection:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectColorDynamicdColors_initWithDynamicProvider:(TestProjectTableViewParams *)params {
     UIColor *color = [[UIColor alloc] initWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
         if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
             return [UIColor yellowColor];
@@ -80,7 +54,7 @@
         return [UIColor redColor];
     }];
  
-    [self createModelWithIndex:index
+    [self createModelWithParams:params
                          title:@"这个没有回调数据"
                  modelKeyValue:@{@"backgroundColor": color}
                          block:nil];
@@ -88,7 +62,20 @@
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectColorDynamicdColors_colorWithDynamicProvider:(NSInteger)index {
+- (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"为了适配暗黑模式，当切换模式的时候，会进行回调改变色值",
+            @"title": @"- (UIColor *)initWithDynamicProvider:(UIColor * (^)(UITraitCollection *traitCollection))dynamicProvider API_AVAILABLE(ios(13.0), tvos(13.0)) API_UNAVAILABLE(watchos);",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectColorDynamicdColors_initWithDynamicProvider:params],
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectColorDynamicdColors_colorWithDynamicProvider:(TestProjectTableViewParams *)params {
     __block NSString *traitCollectionDesc = @"";
     UIColor *color = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
         traitCollectionDesc = [NSString stringWithFormat:@"%@", traitCollection];
@@ -98,11 +85,24 @@
         return [UIColor blueColor];
     }];
 
-    [self createModelWithIndex:index
+    [self createModelWithParams:params
                          title:@"这个没有回调数据"
                  modelKeyValue:@{@"backgroundColor": color}
                          block:nil];
     return self.dataMutArr;
+}
+
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"执行UIColor的class方法, 为了适配暗黑模式，当切换模式的时候，会进行回调改变色值",
+            @"title": @"+ (UIColor *)colorWithDynamicProvider:(UIColor * (^)(UITraitCollection *traitCollection))dynamicProvider API_AVAILABLE(ios(13.0), tvos(13.0)) API_UNAVAILABLE(watchos);",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectColorDynamicdColors_colorWithDynamicProvider:params],
+            }
+        },
+    };
 }
 
 @end

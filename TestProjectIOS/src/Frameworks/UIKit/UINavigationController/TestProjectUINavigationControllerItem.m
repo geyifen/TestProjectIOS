@@ -9,24 +9,44 @@
 
 @implementation TestProjectUINavigationControllerItem
 
-- (id)setPropertyValueObject {
+- (id)setPropertyValueObject:(TestProjectTableViewParams *)params {
     return self.parentVC;
 }
 
-- (NSDictionary *)method_1 {
+- (NSMutableArray *)TestProjectViewControllerNavigationControllerItem_property_navigationController:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"navigationController"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_3:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"获取UIViewController的navigationItem",
-            @"title": @"@property(nonatomic,readonly,strong) UINavigationItem *navigationItem;",
+            @"abstract": @"获取UIViewController的navigationController",
+            @"title": @"@property(nullable, nonatomic,readonly,strong) UINavigationController *navigationController;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectViewControllerNavigationControllerItem_property_navigationItem],
+                @"childItems": [self TestProjectViewControllerNavigationControllerItem_property_navigationController:params],
             }
         },
     };
 }
 
-- (NSDictionary *)method_2 {
+- (NSMutableArray *)TestProjectViewControllerNavigationControllerItem_property_hidesBottomBarWhenPushed:(TestProjectTableViewParams *)params {
+    NSArray *arr = @[@(YES), @(NO)];
+    for (NSNumber *value in arr) {
+        [self createModelWithParams:params
+                           property:@"hidesBottomBarWhenPushed"
+                              value:value
+                          operation:TestProjectCreateModelGetBeforeClickSet
+                              block:nil];
+    }
+    return self.dataMutArr;
+}
+
+- (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
             @"abstract": @"设置UIViewController的hidesBottomBarWhenPushed",
@@ -34,39 +54,31 @@
             @"isDataModelExpand": @(YES),
             @"desc": @"设置了没有用",
             @"dataModel": @{
-                @"childItems": [self TestProjectViewControllerNavigationControllerItem_property_hidesBottomBarWhenPushed],
+                @"childItems": [self TestProjectViewControllerNavigationControllerItem_property_hidesBottomBarWhenPushed:params],
             }
         },
     };
 }
 
-- (NSDictionary *)method_3 {
+- (NSMutableArray *)TestProjectViewControllerNavigationControllerItem_property_navigationItem:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"navigationItem"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
-            @"abstract": @"获取UIViewController的navigationController",
-            @"title": @"@property(nullable, nonatomic,readonly,strong) UINavigationController *navigationController;",
+            @"abstract": @"获取UIViewController的navigationItem",
+            @"title": @"@property(nonatomic,readonly,strong) UINavigationItem *navigationItem;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectViewControllerNavigationControllerItem_property_navigationController],
+                @"childItems": [self TestProjectViewControllerNavigationControllerItem_property_navigationItem:params],
             }
         },
     };
-}
-
-- (NSMutableArray *)TestProjectViewControllerNavigationControllerItem_property_navigationController {
-    return [self createTableModelSingleArrayWithProperty:@"navigationController" value:nil];
-}
-
-- (NSMutableArray *)TestProjectViewControllerNavigationControllerItem_property_hidesBottomBarWhenPushed {
-    NSArray *arr = @[@(YES), @(NO)];
-    for (NSNumber *num in arr) {
-        [self createClickSetTableModelWithProperty:@"hidesBottomBarWhenPushed" value:num];
-    }
-    return self.dataMutArr;
-}
-
-- (NSMutableArray *)TestProjectViewControllerNavigationControllerItem_property_navigationItem {
-    return [self createTableModelSingleArrayWithProperty:@"navigationItem" value:nil];
 }
 
 @end

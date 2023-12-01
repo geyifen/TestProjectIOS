@@ -99,22 +99,18 @@
 
 @implementation TestProjectUIAppearance
 
-- (NSDictionary *)method_1 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"在即将出现的时候，会调用属性方法并把值传入",
-            @"title": @"+ (instancetype)appearance;",
-            @"desc": @"如果紧接着有该属性设置这不会执行appearance",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"modelClass": TestProjectAppearanceCellModel.class,
-                @"childItems": [self TestProjectAppearance_appearance],
-            }
-        },
+- (NSMutableArray *)TestProjectAppearance_appearanceWhenContainedInInstancesOfClasses {
+    TestProjectAppearanceCellModel *m = [[TestProjectAppearanceCellModel alloc] init];
+    m.clickBlock = ^{
+        [UIAlertController alertWithTitle:@"TestProjectAppearanceSubView的appear的时候调用该方法" message:@"确定后退出重进" cancelTitle:@"取消" cancelBlock:nil sureTitle:@"确定" sureBlock:^{
+            [TestProjectAppearanceView appearanceWhenContainedInInstancesOfClasses:@[self.class]].viewColor = [UIColor blackColor];
+        }];
     };
+    [self.dataMutArr addObject:m];
+    return self.dataMutArr;
 }
 
-- (NSDictionary *)method_2 {
+- (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
             @"abstract": @"在即将出现的时候，会调用属性方法并把值传入",
@@ -129,17 +125,6 @@
     };
 }
 
-- (NSMutableArray *)TestProjectAppearance_appearanceWhenContainedInInstancesOfClasses {
-    TestProjectAppearanceCellModel *m = [[TestProjectAppearanceCellModel alloc] init];
-    m.clickBlock = ^{
-        [UIAlertController alertWithTitle:@"TestProjectAppearanceSubView的appear的时候调用该方法" message:@"确定后退出重进" cancelTitle:@"取消" cancelBlock:nil sureTitle:@"确定" sureBlock:^{
-            [TestProjectAppearanceView appearanceWhenContainedInInstancesOfClasses:@[self.class]].viewColor = [UIColor blackColor];
-        }];
-    };
-    [self.dataMutArr addObject:m];
-    return self.dataMutArr;
-}
-
 - (NSMutableArray *)TestProjectAppearance_appearance {
     TestProjectAppearanceCellModel *m = [[TestProjectAppearanceCellModel alloc] init];
     m.clickBlock = ^{
@@ -149,6 +134,21 @@
     };
     [self.dataMutArr addObject:m];
     return self.dataMutArr;
+}
+
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"在即将出现的时候，会调用属性方法并把值传入",
+            @"title": @"+ (instancetype)appearance;",
+            @"desc": @"如果紧接着有该属性设置这不会执行appearance",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"modelClass": TestProjectAppearanceCellModel.class,
+                @"childItems": [self TestProjectAppearance_appearance],
+            }
+        },
+    };
 }
 
 @end

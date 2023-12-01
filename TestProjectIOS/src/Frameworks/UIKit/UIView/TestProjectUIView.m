@@ -87,7 +87,7 @@
     return [NSString stringWithFormat:@"%p", self];
 }
 
-- (id)setPropertyValueObject {
+- (id)setPropertyValueObject:(TestProjectTableViewParams *)params {
     return self.childView;
 }
 
@@ -102,7 +102,7 @@
     return self;
 }
 
-- (TestProjectUIChildView *)childView {
+- (TestProjectUIChildView *)childview {
     if (!_childView) {
         _childView = [[TestProjectUIChildView alloc] init];
         dispatch_main_queue_work([self addSubview:self->_childView];)
@@ -114,7 +114,7 @@
     return _childView;
 }
 
-- (UILabel *)grandChildView {
+- (UILabel *)grandChildview {
     if (!_grandChildView) {
         _grandChildView = [[UILabel alloc] init];
         _grandChildView.text = @"t";
@@ -125,189 +125,197 @@
     return _grandChildView;
 }
 
-- (NSDictionary *)method_1 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIView的属性layerClass",
-            @"title": @"@property(class, nonatomic, readonly) Class layerClass;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectUIView_class_property_layerClass],
-            }
-        },
-    };
+- (NSMutableArray *)TestProjectUIView_property_effectiveUserInterfaceLayoutDirection:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"effectiveUserInterfaceLayoutDirection"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSDictionary *)method_2 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIView的属性userInteractionEnabled",
-            @"title": @"@property(nonatomic,getter=isUserInteractionEnabled) BOOL userInteractionEnabled;",
-            @"isDataModelExpand": @(YES),
-            @"desc": @"设置为NO了则当前整个view的页面点击不了了",
-            @"dataModel": @{
-                @"childItems": [self TestProjectUIView_property_userInteractionEnabled],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_3 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIView的属性tag",
-            @"title": @"@property(nonatomic)                                 NSInteger tag;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectUIView_property_tag],
-            }
-        },
-    };
-}
-
-
-- (NSDictionary *)method_4 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIView的属性layer",
-            @"title": @"@property(nonatomic,readonly,strong)                 CALayer  *layer;",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectUIView_property_layer],
-            }
-        },
-    };
-}
-
-
-- (NSDictionary *)method_5 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIView的属性canBecomeFocused",
-            @"title": @"@property(nonatomic,readonly) BOOL canBecomeFocused API_AVAILABLE(ios(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectUIView_property_canBecomeFocused],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_6 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIView的属性focused",
-            @"title": @"@property (readonly, nonatomic, getter=isFocused) BOOL focused API_AVAILABLE(ios(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectUIView_property_focused],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_7 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIView的属性focusGroupIdentifier",
-            @"title": @"@property (nonatomic, readwrite, nullable, copy) NSString *focusGroupIdentifier API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(tvos, watchos);",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectUIView_property_focusGroupIdentifier],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_8 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIView的属性focusGroupPriority",
-            @"title": @"@property (nonatomic, readwrite) UIFocusGroupPriority focusGroupPriority API_AVAILABLE(ios(15.0)) API_UNAVAILABLE(tvos, watchos);",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectUIView_property_focusGroupPriority],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_9 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIView的属性focusEffect",
-            @"title": @"@property (nonatomic, readwrite, nullable, copy) UIFocusEffect *focusEffect API_AVAILABLE(ios(15.0)) API_UNAVAILABLE(tvos, watchos);",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectUIView_property_focusEffect],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_10 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"设置获取UIView的属性semanticContentAttribute",
-            @"title": @"@property (nonatomic) UISemanticContentAttribute semanticContentAttribute API_AVAILABLE(ios(9.0));",
-            @"isDataModelExpand": @(YES),
-            @"dataModel": @{
-                @"childItems": [self TestProjectUIView_property_semanticContentAttribute],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)method_11 {
+- (NSDictionary *)method_11:(TestProjectTableViewParams *)params {
     return @{
         @"dataModel": @{
             @"abstract": @"设置获取UIView的属性effectiveUserInterfaceLayoutDirection",
             @"title": @"@property (readonly, nonatomic) UIUserInterfaceLayoutDirection effectiveUserInterfaceLayoutDirection API_AVAILABLE(ios(10.0));",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectUIView_property_effectiveUserInterfaceLayoutDirection],
+                @"childItems": [self TestProjectUIView_property_effectiveUserInterfaceLayoutDirection:params]
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectUIView_property_effectiveUserInterfaceLayoutDirection {
-    return [self createTableModelSingleArrayWithProperty:@"effectiveUserInterfaceLayoutDirection" value:nil];
+- (NSMutableArray *)TestProjectUIView_property_semanticContentAttribute:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"semanticContentAttribute"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectUIView_property_semanticContentAttribute {
-    return [self createTableModelSingleArrayWithProperty:@"semanticContentAttribute" value:nil];
+- (NSDictionary *)method_10:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIView的属性semanticContentAttribute",
+            @"title": @"@property (nonatomic) UISemanticContentAttribute semanticContentAttribute API_AVAILABLE(ios(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectUIView_property_semanticContentAttribute:params]
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectUIView_property_focusEffect {
-    return [self createTableModelSingleArrayWithProperty:@"focusEffect" value:nil];
+- (NSMutableArray *)TestProjectUIView_property_focusEffect:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"focusEffect"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectUIView_property_focusGroupPriority {
-    return [self createTableModelSingleArrayWithProperty:@"focusGroupPriority" value:nil];
+
+- (NSDictionary *)method_9:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIView的属性focusEffect",
+            @"title": @"@property (nonatomic, readwrite, nullable, copy) UIFocusEffect *focusEffect API_AVAILABLE(ios(15.0)) API_UNAVAILABLE(tvos, watchos);",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectUIView_property_focusEffect:params]
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectUIView_property_focusGroupIdentifier {
-    return [self createTableModelSingleArrayWithProperty:@"focusGroupIdentifier" value:nil];
+- (NSMutableArray *)TestProjectUIView_property_focusGroupPriority:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"focusGroupPriority"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectUIView_property_focused {
-    return [self createTableModelSingleArrayWithProperty:@"focused" value:nil];
+- (NSDictionary *)method_8:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIView的属性focusGroupPriority",
+            @"title": @"@property (nonatomic, readwrite) UIFocusGroupPriority focusGroupPriority API_AVAILABLE(ios(15.0)) API_UNAVAILABLE(tvos, watchos);",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectUIView_property_focusGroupPriority:params]
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectUIView_property_canBecomeFocused {
-    return [self createTableModelSingleArrayWithProperty:@"canBecomeFocused" value:nil];
+- (NSMutableArray *)TestProjectUIView_property_focusGroupIdentifier:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"focusGroupIdentifier"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectUIView_property_layer {
-    return [self createTableModelSingleArrayWithProperty:@"layer" value:nil];
+- (NSDictionary *)method_7:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIView的属性focusGroupIdentifier",
+            @"title": @"@property (nonatomic, readwrite, nullable, copy) NSString *focusGroupIdentifier API_AVAILABLE(ios(14.0)) API_UNAVAILABLE(tvos, watchos);",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectUIView_property_focusGroupIdentifier:params]
+            }
+        },
+    };
 }
 
-- (NSMutableArray *)TestProjectUIView_property_tag {
-    return [self createTableModelSingleArrayWithProperty:@"tag" value:@(10)];
+- (NSMutableArray *)TestProjectUIView_property_focused:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"focused"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
 }
 
-- (NSMutableArray *)TestProjectUIView_property_userInteractionEnabled {
+- (NSDictionary *)method_6:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIView的属性focused",
+            @"title": @"@property (readonly, nonatomic, getter=isFocused) BOOL focused API_AVAILABLE(ios(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectUIView_property_focused:params]
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectUIView_property_canBecomeFocused:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"canBecomeFocused"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_5:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIView的属性canBecomeFocused",
+            @"title": @"@property(nonatomic,readonly) BOOL canBecomeFocused API_AVAILABLE(ios(9.0));",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectUIView_property_canBecomeFocused:params]
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectUIView_property_layer:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"layer"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_4:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIView的属性layer",
+            @"title": @"@property(nonatomic,readonly,strong)                 CALayer  *layer;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectUIView_property_layer:params]
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectUIView_property_tag:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params
+                                         property:@"tag"
+                                            value:nil
+                                        operation:TestProjectCreateModelGetBeforeClickGet
+                                            block:nil];
+}
+
+- (NSDictionary *)method_3:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIView的属性tag",
+            @"title": @"@property(nonatomic)                                 NSInteger tag;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectUIView_property_tag:params]
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectUIView_property_userInteractionEnabled:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": @"设置的是YES，有点击事件",
@@ -321,13 +329,45 @@
     for (NSDictionary *dic in arr) {
         NSString *title = dic[@"title"];
         NSNumber *value = dic[@"value"];
-        [self createClickSetTableModelWithProperty:@"userInteractionEnabled" value:value title:title block:nil];
+        [self createModelWithParams:params
+                              title:title
+                           property:@"userInteractionEnabled"
+                              value:value
+                          operation:TestProjectCreateModelGetBeforeClickSet
+                              block:nil];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectUIView_class_property_layerClass {
-    return [self createTableModelSingleArrayWithTitle:[NSString stringWithFormat:@"获取的是UIView的class属性layerClass(%@)", UIView.layerClass] block:nil];
+- (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIView的属性userInteractionEnabled",
+            @"title": @"@property(nonatomic,getter=isUserInteractionEnabled) BOOL userInteractionEnabled;",
+            @"isDataModelExpand": @(YES),
+            @"desc": @"设置为NO了则当前整个view的页面点击不了了",
+            @"dataModel": @{
+                @"childItems": [self TestProjectUIView_property_userInteractionEnabled:params]
+            }
+        },
+    };
+}
+
+- (NSMutableArray *)TestProjectUIView_class_property_layerClass:(TestProjectTableViewParams *)params {
+    return [self createModelSingleArrayWithParams:params title:[NSString stringWithFormat:@"获取的是UIView的class属性layerClass(%@)", UIView.layerClass] block:nil];
+}
+
+- (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"设置获取UIView的属性layerClass",
+            @"title": @"@property(class, nonatomic, readonly) Class layerClass;",
+            @"isDataModelExpand": @(YES),
+            @"dataModel": @{
+                @"childItems": [self TestProjectUIView_class_property_layerClass:params]
+            }
+        },
+    };
 }
 
 @end

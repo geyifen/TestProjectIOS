@@ -19,12 +19,6 @@ typedef NS_ENUM(NSInteger, TestProjectJumpType) {
 };
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TestProjectJumpModel : NSObject <NSCopying>
-
-@property (nonatomic, copy) NSString *jumpMethod;
-
-@end
-
 @interface TestProjectTableViewModel : TestProjectBaseModel <TestProjectViewModelProtocol, NSCopying> {
 
 @public
@@ -55,6 +49,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)calculDataViewHeight;
 
 - (CGFloat)calculDataModelViewHeight;
+
+@end
+
+@interface TestProjectTableViewParams : NSObject
+
+@property (nonatomic, assign) NSInteger selectIndex;
+@property (nonatomic, assign) NSInteger methodIndex;
 
 @end
 
