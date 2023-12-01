@@ -2,7 +2,7 @@
 //  TestProjectTestTableFooterView.m
 //  TestProjectIOS
 //
-//  Created by zjrcumac on 2023/10/20.
+//  Created by liwenfan on 2023/10/20.
 //
 
 #import "TestProjectTestTableFooterView.h"
