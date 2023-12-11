@@ -46,12 +46,24 @@
         @"atIndex": @0,
         @"itemChilds": @[
             @{
-                @"title": @"UIImage",
-                @"viewKey": @"TestProjectImage",
+                @"title": @"UIImage\n(UIKIT_EXTERN)",
+                @"viewKey": @"TestProjectUIKIT_EXTERN",
             },
             @{
-                @"title": @"UIImage\n(还有其它的)",
-                @"viewKey": @"TestProjectUICollectionViewLayout",
+                @"title": @"UIImage\n(UIImageDeprecated)",
+                @"viewKey": @"TestProjectUIImageDeprecated",
+            },
+            @{
+                @"title": @"UIImage\n(NSTextAttachment)",
+                @"viewKey": @"TestProjectUIImageNSTextAttachment",
+            },
+            @{
+                @"title": @"UIImage\n(PreconfiguredSystemImages)",
+                @"viewKey": @"TestProjectPreconfiguredSystemImages",
+            },
+            @{
+                @"title": @"UIImage",
+                @"viewKey": @"TestProjectImage",
             },
         ]
     };

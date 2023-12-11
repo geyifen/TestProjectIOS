@@ -113,6 +113,14 @@
     return btn;
 }
 
+- (void)addChildView:(UIView *)childView {
+    [self addSubview:childView];
+    [childView testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+        make.width.height.equal(@30);
+        make.centerY.trainling.equal(self);
+    }];
+}
+
 - (void)dataModelExpandReloadData {
     self.viewModel.isDataModelExpand = !self.viewModel.isDataModelExpand;
     [self.delegate performSelector:@selector(reloadData:) withObject:self.viewModel];

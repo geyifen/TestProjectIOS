@@ -814,9 +814,9 @@
 
 - (NSMutableArray *)TestProjectDateFormatter_getObjectValue_forString_range_error:(TestProjectTableViewParams *)params {
     NSString *obj;
-    NSRange range;
+    NSRange range = NSMakeRange(0, 20);
     NSError *err;
-    BOOL result = [self.childDateFormatter getObjectValue:&obj forString:@"1993-12-31 16:00:00 +0000" range:&range error:&err];
+    BOOL result = [self.childDateFormatter getObjectValue:&obj forString:@"1993/12/31 16:00:00 +0000" range:&range error:&err];
     return [self createModelSingleArrayWithParams:params title:[NSString stringWithFormat:@"%@ %@ %u", obj, NSStringFromRange(range), result] block:nil];
 }
 

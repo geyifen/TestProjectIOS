@@ -166,10 +166,6 @@ void finallyExceptionMethodC(id objc, SEL cmd, id args, ...) {
     }
 }
 
-+ (void)dealClassCrashData {
-    
-}
-
 - (void)dealInstanceCrashData:(NSString *)crashInfo {
 #ifdef DEBUG
     NSLog(@"================================TestProject Start==================================");

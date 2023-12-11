@@ -34,23 +34,32 @@
     Method *methodList = class_copyMethodList(self.class, &methodCount);
     NSMutableArray *methodArr = [NSMutableArray array];
     NSString *methodPrefix = @"method_";
+    NSString *methodNameKey = @"methodNameKey";
+    NSString *methodIndexKey = @"methodIndexKey";
+
     for (NSInteger i = 0; i < methodCount; i++) {
         Method m = methodList[i];
         SEL sel = method_getName(m);
         NSString *methodName = NSStringFromSelector(sel);
         if ([methodName hasPrefix:methodPrefix]) {
-            [methodArr addObject:methodName];
+            [methodArr addObject:@{
+                methodNameKey: methodName,
+                methodIndexKey: [methodName substringFromIndex:methodPrefix.length]
+            }];
         }
     }
+    [methodArr sortUsingComparator:^NSComparisonResult(NSDictionary *obj1, NSDictionary *obj2) {
+        return [obj1[methodIndexKey] integerValue] < [obj2[methodIndexKey] integerValue];
+    }];
     NSInteger count = methodArr.count;
-    NSMutableArray *mutArr = [NSMutableArray arrayWithArray:methodArr];
+    NSMutableArray *mutArr = [NSMutableArray array];
     for (NSInteger j = 0; j < count; j++) {
-        NSString *methodName = methodArr[j];
+        NSDictionary *methodDic = methodArr[j];
         TestProjectTableViewParams *params = [[TestProjectTableViewParams alloc] init];
-        params.methodIndex = [[methodName substringFromIndex:methodPrefix.length] integerValue];
-        params.selectIndex = params.methodIndex;
-        NSDictionary *dic = ((NSDictionary *(*)(id, SEL, TestProjectTableViewParams *))objc_msgSend)(self, NSSelectorFromString(methodName), params);
-        [mutArr replaceObjectAtIndex:count - params.selectIndex withObject:dic];
+        params.methodIndex = [methodDic[methodIndexKey] integerValue];
+        params.selectIndex = j;
+        NSDictionary *dic = ((NSDictionary *(*)(id, SEL, TestProjectTableViewParams *))objc_msgSend)(self, NSSelectorFromString(methodDic[methodNameKey]), params);
+        [mutArr addObject:dic];
         self.dataMutArr = [NSMutableArray array];
     }
     free(methodList);
@@ -256,7 +265,7 @@
         if ([wm needAutoCalculViewHeight]) {
             [wm calculDataViewHeight];
         }
-        NSInteger atIndex = wSelf.tableView.dataSourceArray.count - params.selectIndex -1;
+        NSInteger atIndex = params.selectIndex;
         TestProjectTableViewModel *vm = [wSelf.tableView.dataSourceArray objectAtIndex:atIndex];
         if ([vm needAutoCalculViewHeight]) {
             [vm calculDataViewHeight];

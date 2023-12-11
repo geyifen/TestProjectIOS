@@ -25,8 +25,6 @@ NS_ASSUME_NONNULL_BEGIN
               exchangeInstanceClass:(Class)exchangeInstanceClass
                replaceInstanceClass:(Class)replaceInstanceClass;
 
-+ (void)dealClassCrashData;
-
 - (void)dealInstanceCrashData:(NSString *)crashInfo;
 
 @end

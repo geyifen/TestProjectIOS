@@ -78,6 +78,7 @@
 		347338DC28BDB85600B921EC /* TestProjectAModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 347338DB28BDB85600B921EC /* TestProjectAModel.m */; };
 		347338DF28BDB86700B921EC /* TestProjectBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 347338DE28BDB86700B921EC /* TestProjectBModel.m */; };
 		347338E228BDB87E00B921EC /* TestProjectCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 347338E128BDB87E00B921EC /* TestProjectCModel.m */; };
+		34763EFC2B19B18E009DA2ED /* NSDictionary+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 34763EFB2B19B18E009DA2ED /* NSDictionary+TestProject.m */; };
 		34792F1A2A7B870900D275B8 /* TestProjectCollectionViewDragVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 34792F192A7B870900D275B8 /* TestProjectCollectionViewDragVC.m */; };
 		347AAA162A24A39A00F0C475 /* TestProjectUIControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 347AAA152A24A39A00F0C475 /* TestProjectUIControl.m */; };
 		347B44CB2A3FEA3E001061A5 /* TestProjectColorUIWell.m in Sources */ = {isa = PBXBuildFile; fileRef = 347B44CA2A3FEA3E001061A5 /* TestProjectColorUIWell.m */; };
@@ -135,9 +136,10 @@
 		34B4C2FC2A5BF9A9007F019F /* UIWindow+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B4C2FB2A5BF9A9007F019F /* UIWindow+TestProject.m */; };
 		34B4C3002A5BFFB6007F019F /* UIResponder+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B4C2FF2A5BFFB6007F019F /* UIResponder+TestProject.m */; };
 		34B4DFD92A308CB000F2DB23 /* TestProjectUIBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B4DFD82A308CB000F2DB23 /* TestProjectUIBezierPath.m */; };
+		34B50BF92B2314EA00712F5E /* TestProjectPreconfiguredSystemImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B50BF82B2314EA00712F5E /* TestProjectPreconfiguredSystemImages.m */; };
+		34B50BFC2B2318F000712F5E /* TestProjectUIImageNSTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B50BFB2B2318F000712F5E /* TestProjectUIImageNSTextAttachment.m */; };
 		34BA4AB92A1CBE6800997CC4 /* TestProjectUIViewHierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BA4AB82A1CBE6800997CC4 /* TestProjectUIViewHierarchy.m */; };
 		34BB4A6E28D2BF1E00E79698 /* NSObject+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BB4A6D28D2BF1E00E79698 /* NSObject+TestProject.m */; };
-		34BDBBAD2AF8826900FDB5B2 /* TestProjectBaseChildTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BDBBAC2AF8826900FDB5B2 /* TestProjectBaseChildTableViewCell.m */; };
 		34BDBBB12AF8C32500FDB5B2 /* TestProjectCIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BDBBB02AF8C32500FDB5B2 /* TestProjectCIImage.m */; };
 		34BDBBB52AF8DF2D00FDB5B2 /* TestProjectCGContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BDBBB42AF8DF2D00FDB5B2 /* TestProjectCGContext.m */; };
 		34BE0C92283F0FA80003317D /* TestProjectMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BE0C91283F0FA80003317D /* TestProjectMath.m */; };
@@ -145,6 +147,8 @@
 		34C3E5CD29D6768C00BC4C7D /* TestProjectUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C3E5CC29D6768C00BC4C7D /* TestProjectUIView.m */; };
 		34C3E5D329D679FB00BC4C7D /* TestProjectUIActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C3E5D229D679FB00BC4C7D /* TestProjectUIActivityIndicatorView.m */; };
 		34C82ED32AE25613006CC84C /* TestProjectTestTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C82ED22AE25613006CC84C /* TestProjectTestTableFooterView.m */; };
+		34D11F802B26A09C003AD55F /* TestProjectUIImageDeprecated.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D11F7F2B26A09C003AD55F /* TestProjectUIImageDeprecated.m */; };
+		34D11F832B26B060003AD55F /* TestProjectUIKIT_EXTERN.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D11F822B26B060003AD55F /* TestProjectUIKIT_EXTERN.m */; };
 		34D2993929E3EF03002F7A37 /* UIViewController+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2993829E3EF03002F7A37 /* UIViewController+TestProject.m */; };
 		34D2993C29E3F262002F7A37 /* TestProjectUINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2993B29E3F262002F7A37 /* TestProjectUINavigationController.m */; };
 		34D52F0629A5AA1500F5F9C2 /* TestProjectOCController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D52F0529A5AA1500F5F9C2 /* TestProjectOCController.m */; };
@@ -327,6 +331,8 @@
 		347338DE28BDB86700B921EC /* TestProjectBModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectBModel.m; sourceTree = "<group>"; };
 		347338E028BDB87E00B921EC /* TestProjectCModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectCModel.h; sourceTree = "<group>"; };
 		347338E128BDB87E00B921EC /* TestProjectCModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectCModel.m; sourceTree = "<group>"; };
+		34763EFA2B19B18E009DA2ED /* NSDictionary+TestProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+TestProject.h"; sourceTree = "<group>"; };
+		34763EFB2B19B18E009DA2ED /* NSDictionary+TestProject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+TestProject.m"; sourceTree = "<group>"; };
 		34792F182A7B870900D275B8 /* TestProjectCollectionViewDragVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectCollectionViewDragVC.h; sourceTree = "<group>"; };
 		34792F192A7B870900D275B8 /* TestProjectCollectionViewDragVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectCollectionViewDragVC.m; sourceTree = "<group>"; };
 		347AAA142A24A39A00F0C475 /* TestProjectUIControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectUIControl.h; sourceTree = "<group>"; };
@@ -441,12 +447,14 @@
 		34B4C2FF2A5BFFB6007F019F /* UIResponder+TestProject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+TestProject.m"; sourceTree = "<group>"; };
 		34B4DFD72A308CB000F2DB23 /* TestProjectUIBezierPath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectUIBezierPath.h; sourceTree = "<group>"; };
 		34B4DFD82A308CB000F2DB23 /* TestProjectUIBezierPath.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectUIBezierPath.m; sourceTree = "<group>"; };
+		34B50BF72B2314EA00712F5E /* TestProjectPreconfiguredSystemImages.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectPreconfiguredSystemImages.h; sourceTree = "<group>"; };
+		34B50BF82B2314EA00712F5E /* TestProjectPreconfiguredSystemImages.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectPreconfiguredSystemImages.m; sourceTree = "<group>"; };
+		34B50BFA2B2318F000712F5E /* TestProjectUIImageNSTextAttachment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectUIImageNSTextAttachment.h; sourceTree = "<group>"; };
+		34B50BFB2B2318F000712F5E /* TestProjectUIImageNSTextAttachment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectUIImageNSTextAttachment.m; sourceTree = "<group>"; };
 		34BA4AB72A1CBE6800997CC4 /* TestProjectUIViewHierarchy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectUIViewHierarchy.h; sourceTree = "<group>"; };
 		34BA4AB82A1CBE6800997CC4 /* TestProjectUIViewHierarchy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectUIViewHierarchy.m; sourceTree = "<group>"; };
 		34BB4A6C28D2BF1E00E79698 /* NSObject+TestProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+TestProject.h"; sourceTree = "<group>"; };
 		34BB4A6D28D2BF1E00E79698 /* NSObject+TestProject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TestProject.m"; sourceTree = "<group>"; };
-		34BDBBAB2AF8826900FDB5B2 /* TestProjectBaseChildTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectBaseChildTableViewCell.h; sourceTree = "<group>"; };
-		34BDBBAC2AF8826900FDB5B2 /* TestProjectBaseChildTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectBaseChildTableViewCell.m; sourceTree = "<group>"; };
 		34BDBBAF2AF8C32500FDB5B2 /* TestProjectCIImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectCIImage.h; sourceTree = "<group>"; };
 		34BDBBB02AF8C32500FDB5B2 /* TestProjectCIImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectCIImage.m; sourceTree = "<group>"; };
 		34BDBBB32AF8DF2D00FDB5B2 /* TestProjectCGContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectCGContext.h; sourceTree = "<group>"; };
@@ -461,6 +469,10 @@
 		34C3E5D229D679FB00BC4C7D /* TestProjectUIActivityIndicatorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectUIActivityIndicatorView.m; sourceTree = "<group>"; };
 		34C82ED12AE25613006CC84C /* TestProjectTestTableFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectTestTableFooterView.h; sourceTree = "<group>"; };
 		34C82ED22AE25613006CC84C /* TestProjectTestTableFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectTestTableFooterView.m; sourceTree = "<group>"; };
+		34D11F7E2B26A09C003AD55F /* TestProjectUIImageDeprecated.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectUIImageDeprecated.h; sourceTree = "<group>"; };
+		34D11F7F2B26A09C003AD55F /* TestProjectUIImageDeprecated.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectUIImageDeprecated.m; sourceTree = "<group>"; };
+		34D11F812B26B060003AD55F /* TestProjectUIKIT_EXTERN.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectUIKIT_EXTERN.h; sourceTree = "<group>"; };
+		34D11F822B26B060003AD55F /* TestProjectUIKIT_EXTERN.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectUIKIT_EXTERN.m; sourceTree = "<group>"; };
 		34D2993729E3EF03002F7A37 /* UIViewController+TestProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TestProject.h"; sourceTree = "<group>"; };
 		34D2993829E3EF03002F7A37 /* UIViewController+TestProject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TestProject.m"; sourceTree = "<group>"; };
 		34D2993A29E3F262002F7A37 /* TestProjectUINavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectUINavigationController.h; sourceTree = "<group>"; };
@@ -891,6 +903,15 @@
 			path = NSDateFormatter;
 			sourceTree = "<group>";
 		};
+		34763EF82B19B09B009DA2ED /* NSDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				34763EFA2B19B18E009DA2ED /* NSDictionary+TestProject.h */,
+				34763EFB2B19B18E009DA2ED /* NSDictionary+TestProject.m */,
+			);
+			path = NSDictionary;
+			sourceTree = "<group>";
+		};
 		34792F172A7B86C100D275B8 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
@@ -997,6 +1018,7 @@
 				34A5C40729B08F1C00E61F65 /* UIColor */,
 				348799832988B75D00032E22 /* UIView */,
 				34D52F1B29A62A9B00F5F9C2 /* UIApplication */,
+				34763EF82B19B09B009DA2ED /* NSDictionary */,
 				344106DF29E8024700683950 /* NSArray */,
 			);
 			path = Category;
@@ -1081,6 +1103,14 @@
 				349C79262AE8C64E00DDA98C /* TestProjectUIImageCell.m */,
 				349C79222AE8C2A800DDA98C /* TestProjectImage.h */,
 				349C79232AE8C2A800DDA98C /* TestProjectImage.m */,
+				34B50BF72B2314EA00712F5E /* TestProjectPreconfiguredSystemImages.h */,
+				34B50BF82B2314EA00712F5E /* TestProjectPreconfiguredSystemImages.m */,
+				34B50BFA2B2318F000712F5E /* TestProjectUIImageNSTextAttachment.h */,
+				34B50BFB2B2318F000712F5E /* TestProjectUIImageNSTextAttachment.m */,
+				34D11F7E2B26A09C003AD55F /* TestProjectUIImageDeprecated.h */,
+				34D11F7F2B26A09C003AD55F /* TestProjectUIImageDeprecated.m */,
+				34D11F812B26B060003AD55F /* TestProjectUIKIT_EXTERN.h */,
+				34D11F822B26B060003AD55F /* TestProjectUIKIT_EXTERN.m */,
 			);
 			path = UIImage;
 			sourceTree = "<group>";
@@ -1147,8 +1177,6 @@
 				34D52F1229A602A700F5F9C2 /* TestProjectViewModelTableViewCell.m */,
 				34D52F0E29A5EEFA00F5F9C2 /* TestProjectTableViewView.h */,
 				34D52F0F29A5EEFA00F5F9C2 /* TestProjectTableViewView.m */,
-				34BDBBAB2AF8826900FDB5B2 /* TestProjectBaseChildTableViewCell.h */,
-				34BDBBAC2AF8826900FDB5B2 /* TestProjectBaseChildTableViewCell.m */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -1815,7 +1843,6 @@
 				3493CF0329767261008B7CA7 /* TestProjectString.m in Sources */,
 				34A5C41529B1976500E61F65 /* TestProjectNSAttributeStringKit.m in Sources */,
 				3425BE202A4ACBC300D0D625 /* TestProjectUILabel.m in Sources */,
-				34BDBBAD2AF8826900FDB5B2 /* TestProjectBaseChildTableViewCell.m in Sources */,
 				34D52F0629A5AA1500F5F9C2 /* TestProjectOCController.m in Sources */,
 				34BB4A6E28D2BF1E00E79698 /* NSObject+TestProject.m in Sources */,
 				3408F9762A52A786006F33B6 /* TestProjectUIProgressView.m in Sources */,
@@ -1844,6 +1871,7 @@
 				34292E792A37FB8E003884E2 /* TestProjectNSDateComponents.m in Sources */,
 				345E44C229F914D400BBED12 /* TestProjectBaseTableViewCell.m in Sources */,
 				34D52F1329A602A700F5F9C2 /* TestProjectViewModelTableViewCell.m in Sources */,
+				34D11F832B26B060003AD55F /* TestProjectUIKIT_EXTERN.m in Sources */,
 				340D69D92A7205EB001BFB43 /* TestProjectToast.m in Sources */,
 				34D2993929E3EF03002F7A37 /* UIViewController+TestProject.m in Sources */,
 				34EE5C1E2A316FF800B1C5D8 /* TestProjectUICalendarView.m in Sources */,
@@ -1852,6 +1880,7 @@
 				34A0686C29E7D5CF003B115C /* TestProjectBaseModel.m in Sources */,
 				346268D32A39B5A400449570 /* TestProjectNSDateCreation.m in Sources */,
 				34A5C42A29B1F06400E61F65 /* TestProjectNSExtendedAttributeString.m in Sources */,
+				34B50BFC2B2318F000712F5E /* TestProjectUIImageNSTextAttachment.m in Sources */,
 				345EC4BE286548D100F61F2E /* TestProjectCustomModel.m in Sources */,
 				348B9A412AE9FD3000D85925 /* TestProjectGetCoreGraphicsMethod.m in Sources */,
 				3458CB142A6E756900465440 /* TestProjectSampleRefreshView.m in Sources */,
@@ -1915,6 +1944,7 @@
 				348B9A452AEA3B7800D85925 /* TestProjectCGImage.m in Sources */,
 				34C82ED32AE25613006CC84C /* TestProjectTestTableFooterView.m in Sources */,
 				348799752988B74900032E22 /* TestProjectSectionViewTab.m in Sources */,
+				34763EFC2B19B18E009DA2ED /* NSDictionary+TestProject.m in Sources */,
 				3447EDFD280E8EBC001AE2F0 /* ViewController.m in Sources */,
 				34BA4AB92A1CBE6800997CC4 /* TestProjectUIViewHierarchy.m in Sources */,
 				340DC4B82A0CEC250089D175 /* TestProjectUIResponder.m in Sources */,
@@ -1958,9 +1988,11 @@
 				34292E7D2A380AF6003884E2 /* NSDateComponents+TestProject.m in Sources */,
 				34B4C3002A5BFFB6007F019F /* UIResponder+TestProject.m in Sources */,
 				349801DA29E58C6200C2B5E1 /* TestProjectUINavigationBar.m in Sources */,
+				34B50BF92B2314EA00712F5E /* TestProjectPreconfiguredSystemImages.m in Sources */,
 				34F24D672A64E7290004BC62 /* TestProjectUICalendarSelectionMultiDate.m in Sources */,
 				3447EDFA280E8EBC001AE2F0 /* SceneDelegate.m in Sources */,
 				34A5C40A29B096DA00E61F65 /* UIColor+TestProject.m in Sources */,
+				34D11F802B26A09C003AD55F /* TestProjectUIImageDeprecated.m in Sources */,
 				347B44CB2A3FEA3E001061A5 /* TestProjectColorUIWell.m in Sources */,
 				345163A42AB2B43D00E432AA /* TestProjectTableNestTableVC.m in Sources */,
 				340E9F992975378600C1D440 /* TestProjectSignal.m in Sources */,

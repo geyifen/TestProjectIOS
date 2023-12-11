@@ -39,7 +39,7 @@
         //必须设置为属性，否则不持有导致timer不走
 //        self.dispatchSource =
 //        [[TestProjectDispatchSource alloc] init];
-//        [[TestProjectMath alloc] init];
+        [[TestProjectMath alloc] init];
 //        [[TestProjectObjc alloc] init];
 //        [[TestProjectPThread alloc] init];
 //        [[TestProjectSignal alloc] init];

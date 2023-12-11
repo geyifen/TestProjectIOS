@@ -25,7 +25,7 @@
     return _tNibVC;
 }
 
-- (instancetype)init:(TestProjectTableViewParams *)params {
+- (instancetype)init {
     if (self = [super init]) {
         WS(wSelf);
         [NSTimer scheduledTimerWithTimeInterval:0.5 repeats:NO block:^(NSTimer * _Nonnull timer) {
