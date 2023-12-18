@@ -15,6 +15,8 @@
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) UIPanGestureRecognizer *panGes;
 
+@property (nonatomic, strong) NSMutableArray<UIView *> *subChildViews;
+
 //做动画的初始view
 @property (nonatomic, weak) UIView<TestProjectTabChildViewProtocol> *originView;
 //屏幕中心在当前的view中
@@ -50,6 +52,15 @@
     return self;
 }
 
+- (void)setDelegate:(id<TestProjectTabViewProtocol>)delegate {
+    _delegate = delegate;
+    for (UIView<TestProjectTabChildViewProtocol> *subView in self.subChildViews) {
+        if ([subView respondsToSelector:@selector(setDelegate:)]) {
+            [subView setDelegate:delegate];
+        }
+    }
+}
+
 - (void)resetData:(NSArray<TestProjectTabViewModelProtocol> *)viewModelList atIndex:(NSInteger)atIndex {
     [_containerView removeGestureRecognizer:self.panGes];
     [_containerView removeFromSuperview];
@@ -69,7 +80,7 @@
             assert("当前的view没有遵循TestProjectTabViewProtocol协议");
         }
         [view setViewModel:viewModel];
-        
+        [self.subChildViews addObject:view];
         UIView *parentView = [[UIView alloc] init];
         parentView.userInteractionEnabled = YES;
         [self.containerView addSubview:parentView];
@@ -430,6 +441,13 @@
         }];
     }
     return _containerView;
+}
+
+- (NSMutableArray<UIView *> *)subChildViews {
+    if (!_subChildViews) {
+        _subChildViews = [NSMutableArray array];
+    }
+    return _subChildViews;
 }
 
 @end

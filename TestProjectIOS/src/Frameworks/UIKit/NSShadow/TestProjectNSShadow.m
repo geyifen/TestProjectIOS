@@ -9,7 +9,7 @@
 
 @implementation TestProjectNSShadow
 
-- (void)createAttrStrModelWithShadowProperty:(NSString *)key value:(id)value {
+- (void)createAttrStrModelWithShadowProperty:(NSString *)key value:(id)value params:(TestProjectTableViewParams *)params {
     NSShadow *shadow = [[NSShadow alloc] init];
     if (key && value) {
         [shadow setValue:value forKey:key];
@@ -24,11 +24,11 @@
     TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSShadowAttributeName: shadow}];
     m.isTitleExpand = YES;
     m.desc = [NSString stringWithFormat:@"设置的阴影值为:(%@-%@)，得到的attrText:\n%@", key, value, m.titleMutAttrStr];
-    [m calculDataViewHeight];
+    [m calculDataViewHeight:params];
 }
 
-- (NSMutableArray *)TestProjectShadow_property_shadowColor {
-    [self createAttrStrModelWithShadowProperty:@"shadowColor" value:[UIColor redColor]];
+- (NSMutableArray *)TestProjectShadow_property_shadowColor:(TestProjectTableViewParams *)params {
+    [self createAttrStrModelWithShadowProperty:@"shadowColor" value:[UIColor redColor] params:params];
     return self.dataMutArr;
 }
 
@@ -39,17 +39,17 @@
             @"title": @"@property (nullable, nonatomic, strong) id shadowColor;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectShadow_property_shadowColor],
+                @"childItems": [self TestProjectShadow_property_shadowColor:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectShadow_property_shadowBlurRadius {
+- (NSMutableArray *)TestProjectShadow_property_shadowBlurRadius:(TestProjectTableViewParams *)params {
     NSArray *arr = @[@5, @-5];
     for (NSNumber *num in arr) {
-        [self createAttrStrModelWithShadowProperty:@"shadowBlurRadius" value:num];
+        [self createAttrStrModelWithShadowProperty:@"shadowBlurRadius" value:num params:params];
     }
     return self.dataMutArr;
 }
@@ -61,17 +61,17 @@
             @"title": @"@property (nonatomic, assign) CGFloat shadowBlurRadius;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectShadow_property_shadowBlurRadius],
+                @"childItems": [self TestProjectShadow_property_shadowBlurRadius:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectShadow_property_shadowOffset {
+- (NSMutableArray *)TestProjectShadow_property_shadowOffset:(TestProjectTableViewParams *)params {
     NSArray *arr = @[[NSValue valueWithCGSize:CGSizeMake(0, 5)], [NSValue valueWithCGSize:CGSizeMake(0, -5)]];
     for (NSValue *value in arr) {
-        [self createAttrStrModelWithShadowProperty:@"shadowOffset" value:value];
+        [self createAttrStrModelWithShadowProperty:@"shadowOffset" value:value params:params];
     }
     return self.dataMutArr;
 }
@@ -83,7 +83,7 @@
             @"title": @"@property (nonatomic, assign) CGSize shadowOffset;",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectShadow_property_shadowOffset],
+                @"childItems": [self TestProjectShadow_property_shadowOffset:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },

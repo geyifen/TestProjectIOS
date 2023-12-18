@@ -7,6 +7,18 @@
 
 #import "TestProjectTableViewModel.h"
 
+@implementation TestProjectTableViewParams
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"selectIndex:%ld methodIndex:%@%ld", self.selectIndex, self.methodPrefix, self.methodIndex];
+}
+
+@end
+
+@implementation TestProjectMethodModel
+
+@end
+
 @implementation TestProjectTableViewModel {
     CGFloat _viewHeight;
 }
@@ -41,6 +53,10 @@
     return YES;
 }
 
+- (CGFloat)calculCustomerViewHeight:(TestProjectTableViewParams *)params {
+    return 0;
+}
+
 - (CGFloat)calculDataModelViewHeight {
     CGFloat childViewHeight = 0;
     if (self.childItems.count > 0) {
@@ -55,7 +71,7 @@
     return childViewHeight;
 }
 
-- (void)calculDataViewHeight {
+- (void)calculDataViewHeight:(TestProjectTableViewParams *)params {
     CGFloat bankHeight = 15;
     CGFloat borderWidth = _isChild ? 60 : 30;
     CGSize size = CGSizeMake([UIScreen mainScreen].bounds.size.width - borderWidth, CGFLOAT_MAX);
@@ -68,11 +84,15 @@
     if (_abstractAttr) {
         UILabel *abstractLabel = [[UILabel alloc] init];
         abstractLabel.numberOfLines = 0;
+        abstractLabel.lineBreakMode = NSLineBreakByCharWrapping;
+
         abstractLabel.attributedText = _abstractAttr;
         _abstractHeight = [abstractLabel sizeThatFits:size].height;
         bankHeight += 15;
     }
 
+    _customerViewHeight = [self calculCustomerViewHeight:params];
+    
     if (self.titleMutAttrStr) {
         _titleAttr = self.titleMutAttrStr;
     } else if (self.title) {
@@ -109,11 +129,7 @@
         bankHeight += 15;
     }
     bankHeight += 2;
-    _viewHeight = _abstractHeight + _titleHeight + _descHeight + _dataViewHeight + bankHeight;
+    _viewHeight = _abstractHeight + _customerViewHeight + _titleHeight + _descHeight + _dataViewHeight + bankHeight;
 }
-
-@end
-
-@implementation TestProjectTableViewParams
 
 @end

@@ -21,7 +21,7 @@
     return attrStrModel;
 }
 
-- (NSMutableArray *)TestProjectAttributedStringDocumentFormats_initWithURL_options_documentAttributes_error {
+- (NSMutableArray *)TestProjectAttributedStringDocumentFormats_initWithURL_options_documentAttributes_error:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"location": @0,
@@ -51,7 +51,7 @@
 
         m.desc = [NSString stringWithFormat:@"我是在第%ld段的range:%@ attrText:%@", atIndex, NSStringFromRange(range),  m.titleMutAttrStr];
         [m.titleMutAttrStr fixAttributesInRange:range];
-        [m calculDataViewHeight];
+        [m calculDataViewHeight:params];
     }
     return self.dataMutArr;
 }
@@ -64,7 +64,7 @@
             @"desc": @"NSMutableAttributedString提供若干方法，即可以修改字符串，又可以修改字符串的属性。经过多次修改后，有些信息可能变的不一致了，为了让信息保持一致，可以使用下面的方法 \n 异常崩溃条件：range超过文字的范围 \n NSVerticalGlyphFormAttributeName 为1的时候英文字母是横着放向的，0的时候是竖着方向的",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectAttributedStringDocumentFormats_initWithURL_options_documentAttributes_error],
+                @"childItems": [self TestProjectAttributedStringDocumentFormats_initWithURL_options_documentAttributes_error:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },

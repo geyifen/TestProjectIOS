@@ -52,20 +52,39 @@
 
 - (NSArray *)viewDataArray {
     NSArray *arr;
+    self.offsetSelectIndex = 2;
+    if (![self isOnlyPush]) {
+        self.offsetSelectIndex = 4;
+    }
+
     if (self.parentVC) {
         arr = [super viewDataArray];
     }
     NSMutableArray *mutArr = [NSMutableArray arrayWithArray:arr];
-    [mutArr insertObject:[self name_903] atIndex:0];
-    [mutArr insertObject:[self name_901] atIndex:0];
+    
+    NSMutableArray *nameArr = [NSMutableArray array];
+
+    [nameArr insertObject:[self name_904] atIndex:0];
+    [nameArr insertObject:[self name_903] atIndex:0];
     if (![self isOnlyPush]) {
-        [mutArr insertObject:[self name_902] atIndex:0];
-        [mutArr insertObject:[self name_904] atIndex:0];
+        [nameArr insertObject:[self name_902] atIndex:0];
+        [nameArr insertObject:[self name_901] atIndex:0];
     }
+    for (NSInteger i = nameArr.count - 1; i >= 0; i--) {
+        TestProjectTableViewParams *params = [[TestProjectTableViewParams alloc] init];
+        params.selectIndex = i;
+        params.methodIndex = i + 901;
+        params.methodPrefix = @"name_";
+        TestProjectMethodModel *methodM = [[TestProjectMethodModel alloc] init];
+        methodM.params = params;
+        methodM.dataDic = nameArr[i];
+        [mutArr insertObject:methodM atIndex:0];
+    }
+
     return [mutArr copy];
 }
 
-- (NSDictionary *)name_904 {
+- (NSDictionary *)name_901 {
     return @{
         @"dataModel": @{
             @"abstract": @"dismiss vc",
@@ -75,22 +94,6 @@
             @"isDescExpand": @(NO),
             @"dataModel": @{
                 @"childItems": [self TestProjectTestVCViewTable_dismissViewControllerAnimated],
-            }
-        },
-    };
-}
-
-- (NSDictionary *)name_903 {
-    return @{
-        @"dataModel": @{
-            @"abstract": @"pop vc",
-            @"title": @"- (nullable UIViewController *)popViewControllerAnimated:(BOOL)animated;",
-            @"desc": @"这个是UINavigationController里的方法",
-            @"isDataModelExpand": @(YES),
-            @"isTitleExpand": @(NO),
-            @"isDescExpand": @(NO),
-            @"dataModel": @{
-                @"childItems": [self TestProjectTestVCViewTable_popViewControllerAnimated],
             }
         },
     };
@@ -111,7 +114,7 @@
     };
 }
 
-- (NSDictionary *)name_901 {
+- (NSDictionary *)name_903 {
     return @{
         @"dataModel": @{
             @"abstract": @"push tVC",
@@ -122,6 +125,22 @@
             @"isDescExpand": @(NO),
             @"dataModel": @{
                 @"childItems": [self TestProjectTestVCViewTable_pushViewController_animated],
+            }
+        },
+    };
+}
+
+- (NSDictionary *)name_904 {
+    return @{
+        @"dataModel": @{
+            @"abstract": @"pop vc",
+            @"title": @"- (nullable UIViewController *)popViewControllerAnimated:(BOOL)animated;",
+            @"desc": @"这个是UINavigationController里的方法",
+            @"isDataModelExpand": @(YES),
+            @"isTitleExpand": @(NO),
+            @"isDescExpand": @(NO),
+            @"dataModel": @{
+                @"childItems": [self TestProjectTestVCViewTable_popViewControllerAnimated],
             }
         },
     };
@@ -161,7 +180,7 @@
         }
     };
     m.isChild = YES;
-    [m calculDataViewHeight];
+    [m calculDataViewHeight:nil];
     [self.dataMutArr addObject:m];
     return self.dataMutArr;
 }
@@ -187,7 +206,7 @@
         }
     };
     m.isChild = YES;
-    [m calculDataViewHeight];
+    [m calculDataViewHeight:nil];
     [self.dataMutArr addObject:m];
     return self.dataMutArr;
 }

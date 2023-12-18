@@ -1,5 +1,5 @@
 //
-//  TestProjectUIKIT_EXTERN.h
+//  TestProjectUIImage_UIKIT_EXTERN.h
 //  TestProjectIOS
 //
 //  Created by liwenfan on 2023/12/11.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TestProjectUIKIT_EXTERN : TestProjectTableViewView
+@interface TestProjectUIImage_UIKIT_EXTERN : TestProjectTableViewView
 
 @end
 

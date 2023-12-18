@@ -569,7 +569,7 @@
 
 - (NSMutableArray *)TestProjectLabel_property_shadowColor:(TestProjectTableViewParams *)params {
     return [self createModelSingleArrayWithParams:params
-                                         property:@"[NSValue valueWithCGSize:CGSizeMake(0, 5)]"
+                                         property:@"shadowColor"
                                             value:[UIColor yellowColor]
                                         operation:TestProjectCreateModelGetBeforeClickSet
                                             block:nil];

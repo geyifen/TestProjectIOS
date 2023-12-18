@@ -14,6 +14,7 @@
 + (NSArray *)newItemChilds {
     return @[
 //        [self UITextField],
+        [self UIImagePickerController],
         [self UIImage],
         [self UIBezierPath],
         [self UICollectionViewController],
@@ -40,6 +41,27 @@
     };
 }
 
++ (NSDictionary *)UIImagePickerController {
+    return @{
+        @"title": @"UIImagePickerController",
+        @"atIndex": @0,
+        @"itemChilds": @[
+            @{
+                @"title": @"UIImagePickerController\n(UIKIT_EXTERN)",
+                @"viewKey": @"TestProjectUIImagePickerController_UIKIT_EXTERN",
+            },
+            @{
+                @"title": @"UIImagePickerController\n(UIImagePickerControllerDelegate)",
+                @"viewKey": @"TestProjectUIImagePickerControllerDelegate",
+            },
+            @{
+                @"title": @"UIImagePickerController",
+                @"viewKey": @"TestProjectUIImagePickerController",
+            },
+        ]
+    };
+}
+
 + (NSDictionary *)UIImage {
     return @{
         @"title": @"UIImage",
@@ -47,7 +69,7 @@
         @"itemChilds": @[
             @{
                 @"title": @"UIImage\n(UIKIT_EXTERN)",
-                @"viewKey": @"TestProjectUIKIT_EXTERN",
+                @"viewKey": @"TestProjectUIImage_UIKIT_EXTERN",
             },
             @{
                 @"title": @"UIImage\n(UIImageDeprecated)",

@@ -15,7 +15,7 @@
 
 @implementation TestProjectNSMutableAttributedString
 
-- (NSMutableArray *)TestProjectMutableAttributedString_setAttributes_range {
+- (NSMutableArray *)TestProjectMutableAttributedString_setAttributes_range:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"location": @0,
@@ -35,7 +35,7 @@
         [rm.titleMutAttrStr setAttributes:@{NSForegroundColorAttributeName: [UIColor colorFromString:@"#00ff00"]} range:range];
         m.titleMutAttrStr = rm.titleMutAttrStr;
         m.desc = [NSString stringWithFormat:@"被替换的range:%@", NSStringFromRange(range)];
-        [m calculDataViewHeight];
+        [m calculDataViewHeight:params];
     }
     return self.dataMutArr;
 }
@@ -48,14 +48,14 @@
             @"desc": @"异常崩溃：range不在文字的范围内会崩溃",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectMutableAttributedString_setAttributes_range],
+                @"childItems": [self TestProjectMutableAttributedString_setAttributes_range:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectMutableAttributedString_replaceCharactersInRange_withString {
+- (NSMutableArray *)TestProjectMutableAttributedString_replaceCharactersInRange_withString:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"location": @0,
@@ -78,7 +78,7 @@
         [rm.titleMutAttrStr replaceCharactersInRange:range withString:text];
         m.desc = [NSString stringWithFormat:@"被替换的range:%@ 被替换的文字是:%@", NSStringFromRange(range), text];
         m.titleMutAttrStr = rm.titleMutAttrStr;
-        [m calculDataViewHeight];
+        [m calculDataViewHeight:params];
     }
     return self.dataMutArr;
 }
@@ -91,7 +91,7 @@
             @"desc": @" 替换的字符串的样式是默认的 \n 异常崩溃：range不在文字的范围内会崩溃",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectMutableAttributedString_replaceCharactersInRange_withString],
+                @"childItems": [self TestProjectMutableAttributedString_replaceCharactersInRange_withString:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },

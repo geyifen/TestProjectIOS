@@ -75,6 +75,10 @@
 		346268D72A39C66C00449570 /* TestProjectNSDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 346268D62A39C66C00449570 /* TestProjectNSDateFormatter.m */; };
 		346B744E29933A2F00C06A99 /* TestProjectNestScrollTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 346B744D29933A2F00C06A99 /* TestProjectNestScrollTabController.m */; };
 		346B745129938CAC00C06A99 /* TestProjectObjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 346B745029938CAC00C06A99 /* TestProjectObjectController.m */; };
+		346B7E572B29A6CA0002294A /* TestProjectUIImagePickerControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 346B7E562B29A6CA0002294A /* TestProjectUIImagePickerControllerDelegate.m */; };
+		346CD4BB2B2AEA9500CBFA4B /* TestProjectUIImagePickerController_UIKIT_EXTERN.m in Sources */ = {isa = PBXBuildFile; fileRef = 346CD4BA2B2AEA9500CBFA4B /* TestProjectUIImagePickerController_UIKIT_EXTERN.m */; };
+		346CD4BF2B2AF49C00CBFA4B /* TestProjectGetPhotosUIMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 346CD4BE2B2AF49C00CBFA4B /* TestProjectGetPhotosUIMethod.m */; };
+		346CD4C32B2AF9BB00CBFA4B /* TestProjectPHPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 346CD4C22B2AF9BB00CBFA4B /* TestProjectPHPicker.m */; };
 		347338DC28BDB85600B921EC /* TestProjectAModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 347338DB28BDB85600B921EC /* TestProjectAModel.m */; };
 		347338DF28BDB86700B921EC /* TestProjectBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 347338DE28BDB86700B921EC /* TestProjectBModel.m */; };
 		347338E228BDB87E00B921EC /* TestProjectCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 347338E128BDB87E00B921EC /* TestProjectCModel.m */; };
@@ -148,7 +152,8 @@
 		34C3E5D329D679FB00BC4C7D /* TestProjectUIActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C3E5D229D679FB00BC4C7D /* TestProjectUIActivityIndicatorView.m */; };
 		34C82ED32AE25613006CC84C /* TestProjectTestTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C82ED22AE25613006CC84C /* TestProjectTestTableFooterView.m */; };
 		34D11F802B26A09C003AD55F /* TestProjectUIImageDeprecated.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D11F7F2B26A09C003AD55F /* TestProjectUIImageDeprecated.m */; };
-		34D11F832B26B060003AD55F /* TestProjectUIKIT_EXTERN.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D11F822B26B060003AD55F /* TestProjectUIKIT_EXTERN.m */; };
+		34D11F832B26B060003AD55F /* TestProjectUIImage_UIKIT_EXTERN.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D11F822B26B060003AD55F /* TestProjectUIImage_UIKIT_EXTERN.m */; };
+		34D11F892B26BB29003AD55F /* TestProjectUIImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D11F882B26BB29003AD55F /* TestProjectUIImagePickerController.m */; };
 		34D2993929E3EF03002F7A37 /* UIViewController+TestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2993829E3EF03002F7A37 /* UIViewController+TestProject.m */; };
 		34D2993C29E3F262002F7A37 /* TestProjectUINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2993B29E3F262002F7A37 /* TestProjectUINavigationController.m */; };
 		34D52F0629A5AA1500F5F9C2 /* TestProjectOCController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D52F0529A5AA1500F5F9C2 /* TestProjectOCController.m */; };
@@ -325,6 +330,14 @@
 		346B744D29933A2F00C06A99 /* TestProjectNestScrollTabController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectNestScrollTabController.m; sourceTree = "<group>"; };
 		346B744F29938CAC00C06A99 /* TestProjectObjectController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectObjectController.h; sourceTree = "<group>"; };
 		346B745029938CAC00C06A99 /* TestProjectObjectController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectObjectController.m; sourceTree = "<group>"; };
+		346B7E552B29A6CA0002294A /* TestProjectUIImagePickerControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectUIImagePickerControllerDelegate.h; sourceTree = "<group>"; };
+		346B7E562B29A6CA0002294A /* TestProjectUIImagePickerControllerDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectUIImagePickerControllerDelegate.m; sourceTree = "<group>"; };
+		346CD4B92B2AEA9500CBFA4B /* TestProjectUIImagePickerController_UIKIT_EXTERN.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectUIImagePickerController_UIKIT_EXTERN.h; sourceTree = "<group>"; };
+		346CD4BA2B2AEA9500CBFA4B /* TestProjectUIImagePickerController_UIKIT_EXTERN.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectUIImagePickerController_UIKIT_EXTERN.m; sourceTree = "<group>"; };
+		346CD4BD2B2AF49C00CBFA4B /* TestProjectGetPhotosUIMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectGetPhotosUIMethod.h; sourceTree = "<group>"; };
+		346CD4BE2B2AF49C00CBFA4B /* TestProjectGetPhotosUIMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectGetPhotosUIMethod.m; sourceTree = "<group>"; };
+		346CD4C12B2AF9BB00CBFA4B /* TestProjectPHPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectPHPicker.h; sourceTree = "<group>"; };
+		346CD4C22B2AF9BB00CBFA4B /* TestProjectPHPicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectPHPicker.m; sourceTree = "<group>"; };
 		347338DA28BDB85600B921EC /* TestProjectAModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectAModel.h; sourceTree = "<group>"; };
 		347338DB28BDB85600B921EC /* TestProjectAModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectAModel.m; sourceTree = "<group>"; };
 		347338DD28BDB86700B921EC /* TestProjectBModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectBModel.h; sourceTree = "<group>"; };
@@ -471,8 +484,10 @@
 		34C82ED22AE25613006CC84C /* TestProjectTestTableFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectTestTableFooterView.m; sourceTree = "<group>"; };
 		34D11F7E2B26A09C003AD55F /* TestProjectUIImageDeprecated.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectUIImageDeprecated.h; sourceTree = "<group>"; };
 		34D11F7F2B26A09C003AD55F /* TestProjectUIImageDeprecated.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectUIImageDeprecated.m; sourceTree = "<group>"; };
-		34D11F812B26B060003AD55F /* TestProjectUIKIT_EXTERN.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectUIKIT_EXTERN.h; sourceTree = "<group>"; };
-		34D11F822B26B060003AD55F /* TestProjectUIKIT_EXTERN.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectUIKIT_EXTERN.m; sourceTree = "<group>"; };
+		34D11F812B26B060003AD55F /* TestProjectUIImage_UIKIT_EXTERN.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectUIImage_UIKIT_EXTERN.h; sourceTree = "<group>"; };
+		34D11F822B26B060003AD55F /* TestProjectUIImage_UIKIT_EXTERN.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectUIImage_UIKIT_EXTERN.m; sourceTree = "<group>"; };
+		34D11F872B26BB29003AD55F /* TestProjectUIImagePickerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectUIImagePickerController.h; sourceTree = "<group>"; };
+		34D11F882B26BB29003AD55F /* TestProjectUIImagePickerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectUIImagePickerController.m; sourceTree = "<group>"; };
 		34D2993729E3EF03002F7A37 /* UIViewController+TestProject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TestProject.h"; sourceTree = "<group>"; };
 		34D2993829E3EF03002F7A37 /* UIViewController+TestProject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TestProject.m"; sourceTree = "<group>"; };
 		34D2993A29E3F262002F7A37 /* TestProjectUINavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectUINavigationController.h; sourceTree = "<group>"; };
@@ -903,6 +918,25 @@
 			path = NSDateFormatter;
 			sourceTree = "<group>";
 		};
+		346CD4BC2B2AF42900CBFA4B /* PhotosUI */ = {
+			isa = PBXGroup;
+			children = (
+				346CD4BD2B2AF49C00CBFA4B /* TestProjectGetPhotosUIMethod.h */,
+				346CD4BE2B2AF49C00CBFA4B /* TestProjectGetPhotosUIMethod.m */,
+				346CD4C02B2AF4B100CBFA4B /* PHPicker */,
+			);
+			path = PhotosUI;
+			sourceTree = "<group>";
+		};
+		346CD4C02B2AF4B100CBFA4B /* PHPicker */ = {
+			isa = PBXGroup;
+			children = (
+				346CD4C12B2AF9BB00CBFA4B /* TestProjectPHPicker.h */,
+				346CD4C22B2AF9BB00CBFA4B /* TestProjectPHPicker.m */,
+			);
+			path = PHPicker;
+			sourceTree = "<group>";
+		};
 		34763EF82B19B09B009DA2ED /* NSDictionary */ = {
 			isa = PBXGroup;
 			children = (
@@ -1109,8 +1143,8 @@
 				34B50BFB2B2318F000712F5E /* TestProjectUIImageNSTextAttachment.m */,
 				34D11F7E2B26A09C003AD55F /* TestProjectUIImageDeprecated.h */,
 				34D11F7F2B26A09C003AD55F /* TestProjectUIImageDeprecated.m */,
-				34D11F812B26B060003AD55F /* TestProjectUIKIT_EXTERN.h */,
-				34D11F822B26B060003AD55F /* TestProjectUIKIT_EXTERN.m */,
+				34D11F812B26B060003AD55F /* TestProjectUIImage_UIKIT_EXTERN.h */,
+				34D11F822B26B060003AD55F /* TestProjectUIImage_UIKIT_EXTERN.m */,
 			);
 			path = UIImage;
 			sourceTree = "<group>";
@@ -1396,6 +1430,19 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		34D11F842B26B9BF003AD55F /* UIImagePickerController */ = {
+			isa = PBXGroup;
+			children = (
+				34D11F872B26BB29003AD55F /* TestProjectUIImagePickerController.h */,
+				34D11F882B26BB29003AD55F /* TestProjectUIImagePickerController.m */,
+				346B7E552B29A6CA0002294A /* TestProjectUIImagePickerControllerDelegate.h */,
+				346B7E562B29A6CA0002294A /* TestProjectUIImagePickerControllerDelegate.m */,
+				346CD4B92B2AEA9500CBFA4B /* TestProjectUIImagePickerController_UIKIT_EXTERN.h */,
+				346CD4BA2B2AEA9500CBFA4B /* TestProjectUIImagePickerController_UIKIT_EXTERN.m */,
+			);
+			path = UIImagePickerController;
+			sourceTree = "<group>";
+		};
 		34D2993629E3EED2002F7A37 /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1408,6 +1455,7 @@
 		34D52F0829A5B48900F5F9C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				346CD4BC2B2AF42900CBFA4B /* PhotosUI */,
 				348B9A3E2AE9FCC000D85925 /* CoreGraphics */,
 				34A5C41629B1990700E61F65 /* Foundation */,
 				34D52F0929A5B49400F5F9C2 /* UIKit */,
@@ -1420,6 +1468,7 @@
 			children = (
 				34A5C41E29B1CC8600E61F65 /* TestProjectGetUIKitMethod.h */,
 				34A5C41F29B1CC8600E61F65 /* TestProjectGetUIKitMethod.m */,
+				34D11F842B26B9BF003AD55F /* UIImagePickerController */,
 				349C79212AE8C12700DDA98C /* UIImage */,
 				34B4DFD62A308C7600F2DB23 /* UIBezierPath */,
 				340CCD202A8A1363009D1897 /* UICollectionViewController */,
@@ -1871,15 +1920,17 @@
 				34292E792A37FB8E003884E2 /* TestProjectNSDateComponents.m in Sources */,
 				345E44C229F914D400BBED12 /* TestProjectBaseTableViewCell.m in Sources */,
 				34D52F1329A602A700F5F9C2 /* TestProjectViewModelTableViewCell.m in Sources */,
-				34D11F832B26B060003AD55F /* TestProjectUIKIT_EXTERN.m in Sources */,
+				34D11F832B26B060003AD55F /* TestProjectUIImage_UIKIT_EXTERN.m in Sources */,
 				340D69D92A7205EB001BFB43 /* TestProjectToast.m in Sources */,
 				34D2993929E3EF03002F7A37 /* UIViewController+TestProject.m in Sources */,
 				34EE5C1E2A316FF800B1C5D8 /* TestProjectUICalendarView.m in Sources */,
 				345CDF022A209FC2003C1FF3 /* TestProjectUISnapshotting.m in Sources */,
 				E2783EA629A9B51C0035900C /* TestProjectUIColorCell.m in Sources */,
 				34A0686C29E7D5CF003B115C /* TestProjectBaseModel.m in Sources */,
+				34D11F892B26BB29003AD55F /* TestProjectUIImagePickerController.m in Sources */,
 				346268D32A39B5A400449570 /* TestProjectNSDateCreation.m in Sources */,
 				34A5C42A29B1F06400E61F65 /* TestProjectNSExtendedAttributeString.m in Sources */,
+				346CD4BF2B2AF49C00CBFA4B /* TestProjectGetPhotosUIMethod.m in Sources */,
 				34B50BFC2B2318F000712F5E /* TestProjectUIImageNSTextAttachment.m in Sources */,
 				345EC4BE286548D100F61F2E /* TestProjectCustomModel.m in Sources */,
 				348B9A412AE9FD3000D85925 /* TestProjectGetCoreGraphicsMethod.m in Sources */,
@@ -1894,6 +1945,7 @@
 				34E5D44B2990865100FD4F71 /* UIView+TestProject_Frame.m in Sources */,
 				34D77A4628C1A1FF00A0CE9F /* TestProjectUModel.m in Sources */,
 				34D77A4028C19FBB00A0CE9F /* TestProjectXModel.m in Sources */,
+				346CD4BB2B2AEA9500CBFA4B /* TestProjectUIImagePickerController_UIKIT_EXTERN.m in Sources */,
 				349C79242AE8C2A800DDA98C /* TestProjectImage.m in Sources */,
 				347338E228BDB87E00B921EC /* TestProjectCModel.m in Sources */,
 				34A5C42029B1CC8600E61F65 /* TestProjectGetUIKitMethod.m in Sources */,
@@ -1932,6 +1984,7 @@
 				349CDC822A8322D500BFD360 /* TestProjectUICollectionViewLayout.m in Sources */,
 				34B4C2F42A5BED5C007F019F /* TestProjectUIStepper.m in Sources */,
 				346268D02A39A65C00449570 /* TestProjectNSExtendedDate.m in Sources */,
+				346CD4C32B2AF9BB00CBFA4B /* TestProjectPHPicker.m in Sources */,
 				34292E8A2A386991003884E2 /* TestProjectNSExtendedLocale.m in Sources */,
 				34B20F0D2988A9CB009B4EFD /* TestProjectMyController.m in Sources */,
 				34333D442A4D2ABD00DEDA79 /* TestProjectUISwitch.m in Sources */,
@@ -2000,6 +2053,7 @@
 				346B744E29933A2F00C06A99 /* TestProjectNestScrollTabController.m in Sources */,
 				34BE0C92283F0FA80003317D /* TestProjectMath.m in Sources */,
 				3418071B29C1C94700F095C6 /* TestProjectNSDataAsset.m in Sources */,
+				346B7E572B29A6CA0002294A /* TestProjectUIImagePickerControllerDelegate.m in Sources */,
 				3428C1D429C3073600CF06B1 /* TestProjectNSMutableParagraphStyle.m in Sources */,
 				345D97ED2824F43E002D0A83 /* TestProjectDispatchData.m in Sources */,
 				34A0686F29E7E41E003B115C /* TestProjectViewModelTab.m in Sources */,

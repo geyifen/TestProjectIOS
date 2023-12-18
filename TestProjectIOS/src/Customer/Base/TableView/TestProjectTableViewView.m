@@ -28,8 +28,7 @@
     }
     return self;
 }
-
-- (NSArray *)viewDataArray {
+- (NSArray<TestProjectMethodModel *> *)viewDataArray{
     unsigned int methodCount = 0;
     Method *methodList = class_copyMethodList(self.class, &methodCount);
     NSMutableArray *methodArr = [NSMutableArray array];
@@ -57,9 +56,14 @@
         NSDictionary *methodDic = methodArr[j];
         TestProjectTableViewParams *params = [[TestProjectTableViewParams alloc] init];
         params.methodIndex = [methodDic[methodIndexKey] integerValue];
-        params.selectIndex = j;
+        params.selectIndex = j + self.offsetSelectIndex;
+        params.methodPrefix = methodPrefix;
+
         NSDictionary *dic = ((NSDictionary *(*)(id, SEL, TestProjectTableViewParams *))objc_msgSend)(self, NSSelectorFromString(methodDic[methodNameKey]), params);
-        [mutArr addObject:dic];
+        TestProjectMethodModel *methodM = [[TestProjectMethodModel alloc] init];
+        methodM.params = params;
+        methodM.dataDic = dic;
+        [mutArr addObject:methodM];
         self.dataMutArr = [NSMutableArray array];
     }
     free(methodList);
@@ -71,9 +75,10 @@
         NSMutableArray *mutArr = [NSMutableArray array];
         NSArray *viewDataArray = [self viewDataArray];
         for (NSInteger i = 0; i < viewDataArray.count; i++) {
-            NSDictionary *dic = [viewDataArray objectAtIndex:i];
-            TestProjectTableViewModel *tableModel = [TestProjectTableViewModel yy_modelWithDictionary:dic].dataModel;
-            [tableModel calculDataViewHeight];
+            TestProjectMethodModel *methodM = [viewDataArray objectAtIndex:i];
+            TestProjectTableViewModel *tableModel = [TestProjectTableViewModel yy_modelWithDictionary:methodM.dataDic].dataModel;
+            tableModel.abstract = [NSString stringWithFormat:@"%@\n%@", methodM.params, tableModel.abstract];
+            [tableModel calculDataViewHeight:nil];
             [mutArr addObject:tableModel];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -185,16 +190,9 @@
                     [wObjc setValue:value forKey:property];
                 }
                 [mutStr appendFormat:@"\n更新后的属性数据(%@)为: %@", property, [wObjc valueForKey:property]];
-                wm.desc = mutStr;
-                if ([wm needAutoCalculViewHeight]) {
-                    [wm calculDataViewHeight];
-                }
-                NSInteger atIndex = wSelf.tableView.dataSourceArray.count - params.selectIndex -1;
-                TestProjectTableViewModel *vm = [wSelf.tableView.dataSourceArray objectAtIndex:atIndex];
-                if ([vm needAutoCalculViewHeight]) {
-                    [vm calculDataViewHeight];
-                }
-                [wSelf.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:atIndex inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+                [wSelf reloadRowWithParams:params
+                                      desc:mutstr
+                                     model:wm];
                 if (block) {
                     block();
                 }
@@ -202,11 +200,10 @@
         };
     }
     if ([m needAutoCalculViewHeight]) {
-        [m calculDataViewHeight];
+        [m calculDataViewHeight:params];
     }
     [self.dataMutArr addObject:m];
     return m;
-
 }
 
 - (NSMutableArray *)createModelSingleArrayWithParams:(TestProjectTableViewParams *)params
@@ -249,7 +246,7 @@
     m.isChild = YES;
     m.title = [NSString stringWithFormat:@"%@\n点击后获取的描述信息:\n", title];
     if ([m needAutoCalculViewHeight]) {
-        [m calculDataViewHeight];
+        [m calculDataViewHeight:params];
     }
     WS(wSelf);
     WO(wm, m);
@@ -258,19 +255,12 @@
         if (methodBlock) {
             desc = methodBlock();
         }
-        wm.desc = desc;
         if (!desc) {
             return;
         }
-        if ([wm needAutoCalculViewHeight]) {
-            [wm calculDataViewHeight];
-        }
-        NSInteger atIndex = params.selectIndex;
-        TestProjectTableViewModel *vm = [wSelf.tableView.dataSourceArray objectAtIndex:atIndex];
-        if ([vm needAutoCalculViewHeight]) {
-            [vm calculDataViewHeight];
-        }
-        [wSelf.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:atIndex inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+        [wSelf reloadRowWithParams:params
+                              desc:desc
+                             model:wm];
     };
     [self.dataMutArr addObject:m];
     return m;
@@ -316,7 +306,7 @@
         };
     }
     if ([m needAutoCalculViewHeight]) {
-        [m calculDataViewHeight];
+        [m calculDataViewHeight:params];
     }
     [self.dataMutArr addObject:m];
     return m;
@@ -338,7 +328,7 @@
     m.title = title;
     m.isChild = YES;
     if (modelKeyValue) {
-        NSMutableString *mutTitle = [NSMutableString stringWithString:title];
+        NSMutableString *mutTitle = [NSMutableString stringWithString:title?:@""];
         for (NSString *key in modelKeyValue.allKeys) {
             id value = modelKeyValue[key];
             [m setValue:value forKey:key];
@@ -356,7 +346,7 @@
         };
     }
     if ([m needAutoCalculViewHeight]) {
-        [m calculDataViewHeight];
+        [m calculDataViewHeight:params];
     }
     [self.dataMutArr addObject:m];
     return m;
@@ -375,6 +365,28 @@
                                                block:(void (^)(void))block {
     [self createModelWithParams:params title:nil modelKeyValue:modelKeyValue block:block];
     return self.dataMutArr;
+}
+
+- (void)reloadRowWithParams:(TestProjectTableViewParams *)params
+                       desc:(NSString *)desc
+                      model:(TestProjectTableViewModel *)model {
+    model.desc = desc;
+    if ([model needAutoCalculViewHeight]) {
+        [model calculDataViewHeight:params];
+    }
+    NSInteger atIndex = params.selectIndex;
+    TestProjectTableViewModel *vm = [self.tableView.dataSourceArray objectAtIndex:atIndex];
+    if ([vm needAutoCalculViewHeight]) {
+        [vm calculDataViewHeight:params];
+    }
+    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:atIndex inSection:0]]
+                          withRowAnimation:UITableViewRowAnimationNone];
+}
+
+- (void)reloadCurrentTableViewModelWithDesc:(NSString *)desc {
+    [self reloadRowWithParams:_currentSelectTableViewParams
+                         desc:desc
+                        model:_currentSelectTableViewModel];
 }
 
 - (void)addNotificationWithName:(NSString *)name selector:(SEL)selector {

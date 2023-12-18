@@ -16,7 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) TestProjectTableViewModel *viewModel;
 @property (nonatomic, weak) id delegate;
 
-- (void)addChildView:(UIView *)childView;
+- (void)addCustomerChildView:(UIView *)superView
+                   viewModel:(TestProjectTableViewModel *)viewModel;
 
 @end
 

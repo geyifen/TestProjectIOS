@@ -11,6 +11,7 @@
 #import "TestProjectGetUIKitMethod.h"
 #import "TestProjectGetFoundationMethod.h"
 #import "TestProjectGetCoreGraphicsMethod.h"
+#import "TestProjectGetPhotosUIMethod.h"
 
 #import <YYModel/YYModel.h>
 
@@ -56,6 +57,7 @@
             [TestProjectGetUIKitMethod getImplementationProject],
             [TestProjectGetFoundationMethod getImplementationProject],
             [TestProjectGetCoreGraphicsMethod getImplementationProject],
+            [TestProjectGetPhotosUIMethod getImplementationProject],
         ]
     };
 }

@@ -9,7 +9,8 @@
 
 @implementation TestProjectNSTextAttachment
 
-- (TestProjectTableViewModel *)createAttrStrModelWith:(NSTextAttachment *)attachment {
+- (TestProjectTableViewModel *)createAttrStrModelWith:(NSTextAttachment *)attachment
+                                               params:(TestProjectTableViewParams *)params {
     TestProjectTableViewModel *attrStrModel = [[TestProjectTableViewModel alloc] init];
     attrStrModel.isChild = YES;
     NSAttributedString *firstAttrStr = [[NSAttributedString alloc] initWithString:self.firstAttrText];
@@ -21,7 +22,7 @@
     return attrStrModel;
 }
 
-- (NSMutableArray *)TestProjectTextAttachMent_property_lineLayoutPadding {
+- (NSMutableArray *)TestProjectTextAttachMent_property_lineLayoutPadding:(TestProjectTableViewParams *)params {
     if (@available(iOS 15.0, *)) {
         NSArray *arr = @[@(10), @(-10), @(100), @(-100)];
         for (NSNumber *num in arr) {
@@ -32,9 +33,9 @@
             attachment.bounds = bounds;
             CGFloat lineLayoutPadding = num.integerValue;
             attachment.lineLayoutPadding = lineLayoutPadding;
-            TestProjectTableViewModel *m = [self createAttrStrModelWith:attachment];
+            TestProjectTableViewModel *m = [self createAttrStrModelWith:attachment params:params];
             m.desc = [NSString stringWithFormat:@"设置的是lineLayoutPadding:%f attrText:%@", lineLayoutPadding, m.titleMutAttrStr];
-            [m calculDataViewHeight];
+            [m calculDataViewHeight:params];
         }
     }
     return self.dataMutArr;
@@ -47,23 +48,23 @@
             @"title": @"@property CGFloat lineLayoutPadding API_AVAILABLE(macos(12.0), ios(15.0), tvos(15.0)) API_UNAVAILABLE(watchos);",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectTextAttachMent_property_lineLayoutPadding],
+                @"childItems": [self TestProjectTextAttachMent_property_lineLayoutPadding:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectTextAttachMent_property_bounds {
+- (NSMutableArray *)TestProjectTextAttachMent_property_bounds:(TestProjectTableViewParams *)params {
     UIImage *image = [UIImage imageNamed:@"lyf_1"];
     NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
     attachment.image = image;
     CGRect bounds = CGRectMake(0, 0, 100, 50);
     attachment.bounds = bounds;
     
-    TestProjectTableViewModel *m = [self createAttrStrModelWith:attachment];
+    TestProjectTableViewModel *m = [self createAttrStrModelWith:attachment params:params];
     m.desc = [NSString stringWithFormat:@"设置的是bounds:%@ attrText:%@", NSStringFromCGRect(bounds), m.titleMutAttrStr];
-    [m calculDataViewHeight];
+    [m calculDataViewHeight:params];
 
     return self.dataMutArr;
 }
@@ -75,22 +76,22 @@
             @"title": @"@property (NS_NONATOMIC_IOSONLY) CGRect bounds API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0)) API_UNAVAILABLE(watchos);",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectTextAttachMent_property_bounds],
+                @"childItems": [self TestProjectTextAttachMent_property_bounds:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectTextAttachMent_property_image {
+- (NSMutableArray *)TestProjectTextAttachMent_property_image:(TestProjectTableViewParams *)params {
     UIImage *image = [UIImage imageNamed:@"lyf_1"];
     NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
     attachment.image = image;
     attachment.bounds = CGRectMake(0, 0, 100, 50);
     
-    TestProjectTableViewModel *m = [self createAttrStrModelWith:attachment];
+    TestProjectTableViewModel *m = [self createAttrStrModelWith:attachment params:params];
     m.desc = [NSString stringWithFormat:@"设置的是image:%@ attrText:%@", image, m.titleMutAttrStr];
-    [m calculDataViewHeight];
+    [m calculDataViewHeight:params];
 
     return self.dataMutArr;
 }
@@ -102,14 +103,14 @@
             @"title": @"@property (nullable, strong, NS_NONATOMIC_IOSONLY) UIImage *image API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0)) API_UNAVAILABLE(watchos);",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectTextAttachMent_property_image],
+                @"childItems": [self TestProjectTextAttachMent_property_image:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectTextAttachMent_property_fileType {
+- (NSMutableArray *)TestProjectTextAttachMent_property_fileType:(TestProjectTableViewParams *)params {
     return self.dataMutArr;
 }
 
@@ -120,14 +121,14 @@
             @"title": @"@property (nullable, copy, NS_NONATOMIC_IOSONLY) NSData *fileType",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectTextAttachMent_property_fileType],
+                @"childItems": [self TestProjectTextAttachMent_property_fileType:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectTextAttachMent_property_contents {
+- (NSMutableArray *)TestProjectTextAttachMent_property_contents:(TestProjectTableViewParams *)params {
     return self.dataMutArr;
 }
 
@@ -138,14 +139,14 @@
             @"title": @"@property (nullable, copy, NS_NONATOMIC_IOSONLY) NSData *contents",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectTextAttachMent_property_contents],
+                @"childItems": [self TestProjectTextAttachMent_property_contents:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectTextAttachMent_initWithData_ofType {
+- (NSMutableArray *)TestProjectTextAttachMent_initWithData_ofType:(TestProjectTableViewParams *)params {
     return self.dataMutArr;
 }
 
@@ -156,7 +157,7 @@
             @"title": @"- (instancetype)initWithData:(nullable NSData *)contentData ofType:(nullable NSString *)uti NS_DESIGNATED_INITIALIZER API_AVAILABLE(macos(10.11), ios(7.0), tvos(9.0)) API_UNAVAILABLE(watchos);",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectTextAttachMent_initWithData_ofType],
+                @"childItems": [self TestProjectTextAttachMent_initWithData_ofType:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },

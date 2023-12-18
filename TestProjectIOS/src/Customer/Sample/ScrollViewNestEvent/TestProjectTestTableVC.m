@@ -34,7 +34,7 @@
         for (NSInteger i = 0; i < 20; i++) {
             TestProjectTableViewModel *tableModel = [[TestProjectTableViewModel alloc] init];
             tableModel.title = [NSString stringWithFormat:@"test_title_%ld", i];
-            [tableModel calculDataViewHeight];
+            [tableModel calculDataViewHeight:nil];
             [dataSourceMutArr addObject:tableModel];
         }
         

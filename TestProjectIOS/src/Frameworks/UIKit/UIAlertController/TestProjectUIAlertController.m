@@ -19,7 +19,7 @@
 
 @implementation TestProjectUIAlertController
 
-- (void)createTabModelWith:(NSString *)title style:(UIAlertControllerStyle)style isAddText:(BOOL)isAddText {
+- (void)createTabModelWith:(NSString *)title style:(UIAlertControllerStyle)style isAddText:(BOOL)isAddText params:(TestProjectTableViewParams *)params {
     TestProjectAlertControllerViewModel *m = [[TestProjectAlertControllerViewModel alloc] init];
     m.title = title;
     if (isAddText && style == UIAlertControllerStyleActionSheet) {
@@ -46,11 +46,11 @@
         }
         [UIApplication.rootCurrentController presentViewController:alert animated:YES completion:nil];
     };
-    [m calculDataViewHeight];
+    [m calculDataViewHeight:params];
     [self.dataMutArr addObject:m];
 }
 
-- (NSMutableArray *)createAlertController_isAddText:(BOOL)isAddText {
+- (NSMutableArray *)createAlertController_isAddText:(BOOL)isAddText params:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": @"我的样式是alert",
@@ -64,13 +64,13 @@
     for (NSDictionary *dic in arr) {
         NSString *title = dic[@"title"];
         UIAlertControllerStyle style = [dic[@"style"] integerValue];
-        [self createTabModelWith:title style:style isAddText:isAddText];
+        [self createTabModelWith:title style:style isAddText:isAddText params:params];
     }
     return self.dataMutArr;
 }
 
-- (NSMutableArray *)TestProjectAlertController_alertControllerWithTitle_message_preferredStyle {
-    return [self createAlertController_isAddText:NO];
+- (NSMutableArray *)TestProjectAlertController_alertControllerWithTitle_message_preferredStyle:(TestProjectTableViewParams *)params {
+    return [self createAlertController_isAddText:NO params:params];
 }
 
 - (NSDictionary *)method_2:(TestProjectTableViewParams *)params {
@@ -82,14 +82,14 @@
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
                 @"modelClass": TestProjectAlertControllerViewModel.class,
-                @"childItems": [self TestProjectAlertController_addTextFieldWithConfigurationHandler],
+                @"childItems": [self TestProjectAlertController_addTextFieldWithConfigurationHandler:params],
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectAlertController_addTextFieldWithConfigurationHandler {
-    return [self createAlertController_isAddText:YES];
+- (NSMutableArray *)TestProjectAlertController_addTextFieldWithConfigurationHandler:(TestProjectTableViewParams *)params {
+    return [self createAlertController_isAddText:YES params:params];
 }
 
 - (NSDictionary *)method_1:(TestProjectTableViewParams *)params {
@@ -101,7 +101,7 @@
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
                 @"modelClass": TestProjectAlertControllerViewModel.class,
-                @"childItems": [self TestProjectAlertController_alertControllerWithTitle_message_preferredStyle],
+                @"childItems": [self TestProjectAlertController_alertControllerWithTitle_message_preferredStyle:params],
             }
         },
     };

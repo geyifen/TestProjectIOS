@@ -9,8 +9,9 @@
 
 #import "TestProjectScrollTabController.h"
 #import "TestProjectObjectController.h"
+#import "TestProjectSectionViewTab.h"
 
-@interface TestProjectNestScrollTabController ()<TestProjectScrollTabControllerProtocol, TestProjectNestScrollTabChildControllerProtocol>
+@interface TestProjectNestScrollTabController ()<TestProjectScrollTabControllerProtocol, TestProjectNestScrollTabChildControllerProtocol, TestProjectSectionViewTabDelegate>
 
 @property (nonatomic, assign) BOOL isNestVCType;
 @property (nonatomic, strong) NSArray<TestProjectViewModelTab *> *dataItems;
@@ -41,6 +42,11 @@
     [_scrollTabController resetData:(NSArray<TestProjectTabViewModelProtocol> *)self.dataItems];
     [self addChildViewController:_scrollTabController];
     [self.view addSubview:_scrollTabController.view];
+}
+
+#pragma mark - TestProjectSectionViewTabDelegate
+- (void)didTapSectionViewTabForExpand:(TestProjectSectionViewTab *)sectionViewTab {
+    NSLog(@"");
 }
 
 #pragma mark - TestProjectScrollTabControllerProtocol

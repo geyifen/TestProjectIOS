@@ -9,7 +9,7 @@
 
 @implementation TestProjectNSMutableParagraphStyle
 
-- (TestProjectTableViewModel *)createStyleWithProperty:(NSString *)key value:(id)value desc:(NSString *)desc {
+- (TestProjectTableViewModel *)createStyleWithProperty:(NSString *)key value:(id)value desc:(NSString *)desc params:(TestProjectTableViewParams *)params {
     NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
     if (key && value) {
         [style setValue:value forKey:key];
@@ -24,7 +24,7 @@
     m.isTitleExpand = YES;
     m.isDescExpand = NO;
     m.desc = [NSString stringWithFormat:@"%@获取的属性%@：%@ attrText:%@", desc, key, [style valueForKey:key], m.titleMutAttrStr];
-    [m calculDataViewHeight];
+    [m calculDataViewHeight:params];
 
     return m;
 }
@@ -42,7 +42,7 @@
 //    NSLineBreakStrategyStandard API_AVAILABLE(macos(11.0), ios(14.0)) = 0xFFFF
 //};
 
-- (NSMutableArray *)TestProjectMutableParagraphStyle_property_lineBreakStrategy {
+- (NSMutableArray *)TestProjectMutableParagraphStyle_property_lineBreakStrategy:(TestProjectTableViewParams *)params {
     if (@available(iOS 14.0, *)) {
         NSArray *arr = @[
             @{
@@ -62,7 +62,7 @@
             NSString *stringKey = dic[@"stringKey"];
             NSNumber *value = dic[@"value"];
             NSString *desc = [NSString stringWithFormat:@"设置的是(%@-%ld)", stringKey, value.integerValue];
-            [self createStyleWithProperty:@"lineBreakStrategy" value:value desc:desc];
+            [self createStyleWithProperty:@"lineBreakStrategy" value:value desc:desc params:params];
         }
     }
 
@@ -77,14 +77,14 @@
             @"desc": @"获取NSMutableParagraphStyle的属性lineBreakStrategy NSLineBreakStrateg",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectMutableParagraphStyle_property_lineBreakStrategy],
+                @"childItems": [self TestProjectMutableParagraphStyle_property_lineBreakStrategy:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectMutableParagraphStyle_property_allowsDefaultTighteningForTruncation {
+- (NSMutableArray *)TestProjectMutableParagraphStyle_property_allowsDefaultTighteningForTruncation:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"value": @(YES),
@@ -99,7 +99,7 @@
         NSString *stringKey = dic[@"stringKey"];
         NSNumber *value = dic[@"value"];
         NSString *desc = [NSString stringWithFormat:@"设置的是(%@-%ld)", stringKey, value.integerValue];
-        [self createStyleWithProperty:@"allowsDefaultTighteningForTruncation" value:value desc:desc];
+        [self createStyleWithProperty:@"allowsDefaultTighteningForTruncation" value:value desc:desc params:params];
     }
 
     return self.dataMutArr;
@@ -113,15 +113,15 @@
             @"desc": @"获取NSMutableParagraphStyle的属性allowsDefaultTighteningForTruncation BOOL",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectMutableParagraphStyle_property_allowsDefaultTighteningForTruncation],
+                @"childItems": [self TestProjectMutableParagraphStyle_property_allowsDefaultTighteningForTruncation:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectMutableParagraphStyle_property_textLists {
-    [self createStyleWithProperty:@"textLists" value:nil desc:nil];
+- (NSMutableArray *)TestProjectMutableParagraphStyle_property_textLists:(TestProjectTableViewParams *)params {
+    [self createStyleWithProperty:@"textLists" value:nil desc:nil params:params];
     return self.dataMutArr;
 }
 
@@ -133,17 +133,17 @@
             @"desc": @"获取NSMutableParagraphStyle的属性textLists NSArray<NSTextList *> *",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectMutableParagraphStyle_property_textLists],
+                @"childItems": [self TestProjectMutableParagraphStyle_property_textLists:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectMutableParagraphStyle_property_defaultTabInterval {
+- (NSMutableArray *)TestProjectMutableParagraphStyle_property_defaultTabInterval:(TestProjectTableViewParams *)params {
     NSArray *arr = @[@10, @-10];
     for (NSNumber *num in arr) {
-        [self createStyleWithProperty:@"defaultTabInterval" value:num desc:nil];
+        [self createStyleWithProperty:@"defaultTabInterval" value:num desc:nil params:params];
     }
     return self.dataMutArr;
 }
@@ -156,15 +156,15 @@
             @"desc": @"获取NSMutableParagraphStyle的属性defaultTabInterval CGFloat",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectMutableParagraphStyle_property_defaultTabInterval],
+                @"childItems": [self TestProjectMutableParagraphStyle_property_defaultTabInterval:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectMutableParagraphStyle_property_tabStops {
-    [self createStyleWithProperty:@"tabStops" value:nil desc:nil];
+- (NSMutableArray *)TestProjectMutableParagraphStyle_property_tabStops:(TestProjectTableViewParams *)params {
+    [self createStyleWithProperty:@"tabStops" value:nil desc:nil params:params];
     return self.dataMutArr;
 }
 
@@ -176,18 +176,18 @@
             @"desc": @"获取NSMutableParagraphStyle的属性tabStops NSArray<NSTextTab *> *",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectMutableParagraphStyle_property_tabStops],
+                @"childItems": [self TestProjectMutableParagraphStyle_property_tabStops:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectMutableParagraphStyle_property_usesDefaultHyphenation {
+- (NSMutableArray *)TestProjectMutableParagraphStyle_property_usesDefaultHyphenation:(TestProjectTableViewParams *)params {
     if (@available(iOS 15.0, *)) {
         NSArray *arr = @[@1, @0];
         for (NSNumber *num in arr) {
-            [self createStyleWithProperty:@"usesDefaultHyphenation" value:num desc:nil];
+            [self createStyleWithProperty:@"usesDefaultHyphenation" value:num desc:nil params:params];
         }
     }
     return self.dataMutArr;
@@ -201,17 +201,17 @@
             @"desc": @"获取NSMutableParagraphStyle的属性usesDefaultHyphenation BOOL",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectMutableParagraphStyle_property_usesDefaultHyphenation],
+                @"childItems": [self TestProjectMutableParagraphStyle_property_usesDefaultHyphenation:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectMutableParagraphStyle_property_hyphenationFactor {
+- (NSMutableArray *)TestProjectMutableParagraphStyle_property_hyphenationFactor:(TestProjectTableViewParams *)params {
     NSArray *arr = @[@100, @-10];
     for (NSNumber *num in arr) {
-        [self createStyleWithProperty:@"hyphenationFactor" value:num desc:nil];
+        [self createStyleWithProperty:@"hyphenationFactor" value:num desc:nil params:params];
     }
     return self.dataMutArr;
 }
@@ -224,17 +224,17 @@
             @"desc": @"获取NSMutableParagraphStyle的属性hyphenationFactor float \n设置负数无效，要么是1，要么是0，设置其它值也是属于这两个有效值里的",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectMutableParagraphStyle_property_hyphenationFactor],
+                @"childItems": [self TestProjectMutableParagraphStyle_property_hyphenationFactor:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectMutableParagraphStyle_property_paragraphSpacingBefore {
+- (NSMutableArray *)TestProjectMutableParagraphStyle_property_paragraphSpacingBefore:(TestProjectTableViewParams *)params {
     NSArray *arr = @[@10, @-10];
     for (NSNumber *num in arr) {
-        [self createStyleWithProperty:@"paragraphSpacingBefore" value:num desc:nil];
+        [self createStyleWithProperty:@"paragraphSpacingBefore" value:num desc:nil params:params];
     }
     return self.dataMutArr;
 }
@@ -247,17 +247,17 @@
             @"desc": @"获取NSMutableParagraphStyle的属性paragraphSpacingBefore CGFloat \n设置负数，后面段落会前面段落重叠",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectMutableParagraphStyle_property_paragraphSpacingBefore],
+                @"childItems": [self TestProjectMutableParagraphStyle_property_paragraphSpacingBefore:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectMutableParagraphStyle_property_lineHeightMultiple {
+- (NSMutableArray *)TestProjectMutableParagraphStyle_property_lineHeightMultiple:(TestProjectTableViewParams *)params {
     NSArray *arr = @[@2, @-2, @10, @-10];
     for (NSNumber *num in arr) {
-        [self createStyleWithProperty:@"lineHeightMultiple" value:num desc:nil];
+        [self createStyleWithProperty:@"lineHeightMultiple" value:num desc:nil params:params];
     }
     return self.dataMutArr;
 }
@@ -270,7 +270,7 @@
             @"desc": @"获取NSMutableParagraphStyle的属性lineHeightMultiple CGFloat \n设置负数没有用",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectMutableParagraphStyle_property_lineHeightMultiple],
+                @"childItems": [self TestProjectMutableParagraphStyle_property_lineHeightMultiple:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
@@ -283,7 +283,7 @@
 //    NSWritingDirectionRightToLeft   = 1     // Right to left writing direction
 //} API_AVAILABLE(macos(10.0), ios(6.0), watchos(2.0), tvos(9.0));
 
-- (NSMutableArray *)TestProjectMutableParagraphStyle_property_baseWritingDirection {
+- (NSMutableArray *)TestProjectMutableParagraphStyle_property_baseWritingDirection:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"value": @(NSWritingDirectionNatural),
@@ -302,7 +302,7 @@
         NSString *stringKey = dic[@"stringKey"];
         NSNumber *value = dic[@"value"];
         NSString *desc = [NSString stringWithFormat:@"设置的是(%@-%ld)", stringKey, value.integerValue];
-        [self createStyleWithProperty:@"baseWritingDirection" value:value desc:desc];
+        [self createStyleWithProperty:@"baseWritingDirection" value:value desc:desc params:params];
     }
     return self.dataMutArr;
 }
@@ -315,7 +315,7 @@
             @"desc": @"获取NSMutableParagraphStyle的属性baseWritingDirection NSWritingDirection \n优先级比alignment低",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectMutableParagraphStyle_property_baseWritingDirection],
+                @"childItems": [self TestProjectMutableParagraphStyle_property_baseWritingDirection:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
@@ -331,7 +331,7 @@
 //    NSLineBreakByTruncatingMiddle    // Truncate middle of line:  "ab...yz"
 //} API_AVAILABLE(macos(10.0), ios(6.0), watchos(2.0), tvos(9.0));
 
-- (NSMutableArray *)TestProjectMutableParagraphStyle_property_lineBreakMode {
+- (NSMutableArray *)TestProjectMutableParagraphStyle_property_lineBreakMode:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": @"最后一行以单词划分截断",
@@ -369,7 +369,7 @@
         NSString *stringKey = dic[@"stringKey"];
         NSNumber *value = dic[@"value"];
         NSString *desc = [NSString stringWithFormat:@"%@\n设置的是(%@-%ld)", title, stringKey, value.integerValue];
-        TestProjectTableViewModel *m = [self createStyleWithProperty:@"lineBreakMode" value:value desc:desc];
+        TestProjectTableViewModel *m = [self createStyleWithProperty:@"lineBreakMode" value:value desc:desc params:params];
         CGFloat _viewHeight = [[m valueForKey:@"_viewHeight"] floatValue];
         CGFloat _titleHeight = [[m valueForKey:@"_titleHeight"] floatValue];
         CGFloat height = 100;
@@ -390,17 +390,17 @@
             @"desc": @"获取NSMutableParagraphStyle的属性lineBreakMode NSLineBreakMode",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectMutableParagraphStyle_property_lineBreakMode],
+                @"childItems": [self TestProjectMutableParagraphStyle_property_lineBreakMode:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectMutableParagraphStyle_property_maximumLineHeight {
+- (NSMutableArray *)TestProjectMutableParagraphStyle_property_maximumLineHeight:(TestProjectTableViewParams *)params {
     NSArray *arr = @[@10, @-10, @100, @-100];
     for (NSNumber *num in arr) {
-        [self createStyleWithProperty:@"maximumLineHeight" value:num desc:nil];
+        [self createStyleWithProperty:@"maximumLineHeight" value:num desc:nil params:params];
     }
     return self.dataMutArr;
 }
@@ -413,17 +413,17 @@
             @"desc": @"获取NSMutableParagraphStyle的属性maximumLineHeight CGFloat \n设置负数没有用，每行的高度小于这个值也是无效果的",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectMutableParagraphStyle_property_maximumLineHeight],
+                @"childItems": [self TestProjectMutableParagraphStyle_property_maximumLineHeight:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectMutableParagraphStyle_property_minimumLineHeight {
+- (NSMutableArray *)TestProjectMutableParagraphStyle_property_minimumLineHeight:(TestProjectTableViewParams *)params {
     NSArray *arr = @[@10, @-10, @50, @-50];
     for (NSNumber *num in arr) {
-        [self createStyleWithProperty:@"minimumLineHeight" value:num desc:nil];
+        [self createStyleWithProperty:@"minimumLineHeight" value:num desc:nil params:params];
     }
     return self.dataMutArr;
 }
@@ -436,17 +436,17 @@
             @"desc": @"获取NSMutableParagraphStyle的属性minimumLineHeight CGFloat \n设置负数没有用，每行的高度大于这个值也是无效果的",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectMutableParagraphStyle_property_minimumLineHeight],
+                @"childItems": [self TestProjectMutableParagraphStyle_property_minimumLineHeight:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectMutableParagraphStyle_property_firstLineHeadIndent {
+- (NSMutableArray *)TestProjectMutableParagraphStyle_property_firstLineHeadIndent:(TestProjectTableViewParams *)params {
     NSArray *arr = @[@10, @-10];
     for (NSNumber *num in arr) {
-        [self createStyleWithProperty:@"firstLineHeadIndent" value:num desc:nil];
+        [self createStyleWithProperty:@"firstLineHeadIndent" value:num desc:nil params:params];
     }
 
     return self.dataMutArr;
@@ -460,17 +460,17 @@
             @"desc": @"获取NSMutableParagraphStyle的属性firstLineHeadIndent CGFloat \n设置负数没有用",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectMutableParagraphStyle_property_firstLineHeadIndent],
+                @"childItems": [self TestProjectMutableParagraphStyle_property_firstLineHeadIndent:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectMutableParagraphStyle_property_tailIndent {
+- (NSMutableArray *)TestProjectMutableParagraphStyle_property_tailIndent:(TestProjectTableViewParams *)params {
     NSArray *arr = @[@1, @-1, @10, @-10];
     for (NSNumber *num in arr) {
-        [self createStyleWithProperty:@"tailIndent" value:num desc:nil];
+        [self createStyleWithProperty:@"tailIndent" value:num desc:nil params:params];
     }
     return self.dataMutArr;
 }
@@ -483,17 +483,17 @@
             @"desc": @"获取NSMutableParagraphStyle的属性tailIndent CGFloat \n设置负数没有用， 设置正数，每个字符占领一行整的",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectMutableParagraphStyle_property_tailIndent],
+                @"childItems": [self TestProjectMutableParagraphStyle_property_tailIndent:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectMutableParagraphStyle_property_headIndent {
+- (NSMutableArray *)TestProjectMutableParagraphStyle_property_headIndent:(TestProjectTableViewParams *)params {
     NSArray *arr = @[@10, @-10];
     for (NSNumber *num in arr) {
-        [self createStyleWithProperty:@"headIndent" value:num desc:nil];
+        [self createStyleWithProperty:@"headIndent" value:num desc:nil params:params];
     }
     return self.dataMutArr;
 }
@@ -506,7 +506,7 @@
             @"desc": @"获取NSMutableParagraphStyle的属性headIndent CGFloat \n设置负数没有用",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectMutableParagraphStyle_property_headIndent],
+                @"childItems": [self TestProjectMutableParagraphStyle_property_headIndent:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
@@ -526,7 +526,7 @@
 //    NSTextAlignmentNatural   = 4     // Indicates the default alignment for script
 //} API_AVAILABLE(macos(10.0), ios(6.0), watchos(2.0), tvos(9.0));
 
-- (NSMutableArray *)TestProjectMutableParagraphStyle_property_alignment {
+- (NSMutableArray *)TestProjectMutableParagraphStyle_property_alignment:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": @"文本整体居左显示",
@@ -558,7 +558,7 @@
         NSString *stringKey = dic[@"stringKey"];
         NSNumber *value = dic[@"value"];
         NSString *desc = [NSString stringWithFormat:@"设置的是(%@-%ld)", stringKey, value.integerValue];
-        [self createStyleWithProperty:@"alignment" value:value desc:desc];
+        [self createStyleWithProperty:@"alignment" value:value desc:desc params:params];
     }
     return self.dataMutArr;
 }
@@ -571,17 +571,17 @@
             @"desc": @"获取NSMutableParagraphStyle的属性alignment NSTextAlignment",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectMutableParagraphStyle_property_alignment],
+                @"childItems": [self TestProjectMutableParagraphStyle_property_alignment:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectMutableParagraphStyle_property_paragraphSpacing {
+- (NSMutableArray *)TestProjectMutableParagraphStyle_property_paragraphSpacing:(TestProjectTableViewParams *)params {
     NSArray *arr = @[@10, @-10];
     for (NSNumber *num in arr) {
-        [self createStyleWithProperty:@"paragraphSpacing" value:num desc:nil];
+        [self createStyleWithProperty:@"paragraphSpacing" value:num desc:nil params:params];
     }
     return self.dataMutArr;
 }
@@ -594,17 +594,17 @@
             @"desc": @"获取NSMutableParagraphStyle的属性paragraphSpacing CGFloat \n设置负数会与上一段重叠",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectMutableParagraphStyle_property_paragraphSpacing],
+                @"childItems": [self TestProjectMutableParagraphStyle_property_paragraphSpacing:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectMutableParagraphStyle_property_lineSpacing {
+- (NSMutableArray *)TestProjectMutableParagraphStyle_property_lineSpacing:(TestProjectTableViewParams *)params {
     NSArray *arr = @[@10, @-10];
     for (NSNumber *num in arr) {
-        [self createStyleWithProperty:@"lineSpacing" value:num desc:nil];
+        [self createStyleWithProperty:@"lineSpacing" value:num desc:nil params:params];
     }
     return self.dataMutArr;
 }
@@ -617,7 +617,7 @@
             @"desc": @"获取NSMutableParagraphStyle的属性lineSpacing CGFloat \n设置负数没有用",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectMutableParagraphStyle_property_lineSpacing],
+                @"childItems": [self TestProjectMutableParagraphStyle_property_lineSpacing:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },

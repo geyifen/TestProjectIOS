@@ -19,6 +19,21 @@ typedef NS_ENUM(NSInteger, TestProjectJumpType) {
 };
 NS_ASSUME_NONNULL_BEGIN
 
+@interface TestProjectTableViewParams : NSObject
+
+@property (nonatomic, assign) NSInteger selectIndex;
+@property (nonatomic, assign) NSInteger methodIndex;
+@property (nonatomic, copy) NSString *methodPrefix;
+
+@end
+
+@interface TestProjectMethodModel : NSObject
+
+@property (nonatomic, strong) TestProjectTableViewParams *params;
+@property (nonatomic, copy) NSDictionary *dataDic;
+
+@end
+
 @interface TestProjectTableViewModel : TestProjectBaseModel <TestProjectViewModelProtocol, NSCopying> {
 
 @public
@@ -29,6 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
     NSMutableAttributedString *_titleAttr;
     NSMutableAttributedString *_descAttr;
     NSMutableAttributedString *_abstractAttr;
+    CGFloat _customerViewHeight;
 }
 
 @property (nonatomic, copy) NSString *title;
@@ -44,18 +60,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSMutableAttributedString *titleMutAttrStr;
 @property (nonatomic, strong) NSMutableAttributedString *descMutAttrStr;
 
+@property (nonatomic, assign) NSInteger atIndex;
+
 - (BOOL)needAutoCalculViewHeight;
 
-- (void)calculDataViewHeight;
+- (void)calculDataViewHeight:(TestProjectTableViewParams *__nullable)params;
 
 - (CGFloat)calculDataModelViewHeight;
 
-@end
-
-@interface TestProjectTableViewParams : NSObject
-
-@property (nonatomic, assign) NSInteger selectIndex;
-@property (nonatomic, assign) NSInteger methodIndex;
+- (CGFloat)calculCustomerViewHeight:(TestProjectTableViewParams *__nullable)params;
 
 @end
 

@@ -78,10 +78,10 @@
     m = [self createModelWithParams:params title:@"获取合适的size" block:^{
         CGSize size = [wSelf.grandChildView sizeThatFits:CGSizeMake(30, 40)];
         m.desc = [NSString stringWithFormat:@"获取的size为:%@", NSStringFromCGSize(size)];
-        [m calculDataViewHeight];
+        [m calculDataViewHeight:params];
         NSInteger atIndex = wSelf.tableView.dataSourceArray.count - params.selectIndex -1;
         TestProjectTableViewModel *vm = [wSelf.tableView.dataSourceArray objectAtIndex:atIndex];
-        [vm calculDataViewHeight];
+        [vm calculDataViewHeight:params];
         [wSelf.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:atIndex inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
     }];
     return self.dataMutArr;

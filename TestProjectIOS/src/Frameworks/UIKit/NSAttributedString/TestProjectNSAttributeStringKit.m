@@ -13,12 +13,12 @@
 
 @implementation TestProjectNSAttributeStringKit
 
-- (NSMutableArray *)TestProjectAttributeStringKit_key_NSVerticalGlyphFormAttributeName {
+- (NSMutableArray *)TestProjectAttributeStringKit_key_NSVerticalGlyphFormAttributeName:(TestProjectTableViewParams *)params {
     NSArray *arr = @[@1, @0];
     for (NSNumber *num in arr) {
         TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSVerticalGlyphFormAttributeName:num}];
         m.desc = [NSString stringWithFormat:@"设置的是@{NSVerticalGlyphFormAttributeName: @%ld} \n attrText:%@", num.integerValue, m.titleMutAttrStr];
-        [m calculDataViewHeight];
+        [m calculDataViewHeight:params];
     }
 
     return self.dataMutArr;
@@ -32,14 +32,14 @@
             @"desc": @"value 0表示水平，1表示垂直，但在iOS中，只能以横向排版 \n 搜素这个方法[fixAttributesInRange], 设置1的时候，英文的方向是横着的",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectAttributeStringKit_key_NSVerticalGlyphFormAttributeName],
+                @"childItems": [self TestProjectAttributeStringKit_key_NSVerticalGlyphFormAttributeName:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectAttributeStringKit_key_NSWritingDirectionAttributeName {
+- (NSMutableArray *)TestProjectAttributeStringKit_key_NSWritingDirectionAttributeName:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": @"这个文字方向是从左到右展示",
@@ -68,7 +68,7 @@
         NSArray *value = dic[@"value"];
         TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSWritingDirectionAttributeName:value}];
         m.desc = [NSString stringWithFormat:@"%@\n设置的是@{NSWritingDirectionAttributeName: @(%@-%@)} \n attrText:%@", title, stringValue, value, m.titleMutAttrStr];
-        [m calculDataViewHeight];
+        [m calculDataViewHeight:params];
     }
 
     return self.dataMutArr;
@@ -82,19 +82,19 @@
             @"desc": @"NSWritingDirectionLeftToRight从左到右书写，NSWritingDirectionRightToLeft从右到左书写",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectAttributeStringKit_key_NSWritingDirectionAttributeName],
+                @"childItems": [self TestProjectAttributeStringKit_key_NSWritingDirectionAttributeName:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectAttributeStringKit_key_NSExpansionAttributeName {
+- (NSMutableArray *)TestProjectAttributeStringKit_key_NSExpansionAttributeName:(TestProjectTableViewParams *)params {
     NSArray *arr = @[@1, @-1];
     for (NSNumber *num in arr) {
         TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSExpansionAttributeName:num}];
         m.desc = [NSString stringWithFormat:@"设置的是@{NSExpansionAttributeName: @%ld} \n attrText:%@", num.integerValue, m.titleMutAttrStr];
-        [m calculDataViewHeight];
+        [m calculDataViewHeight:params];
     }
 
     return self.dataMutArr;
@@ -107,19 +107,19 @@
             @"title": @"NSExpansionAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectAttributeStringKit_key_NSExpansionAttributeName],
+                @"childItems": [self TestProjectAttributeStringKit_key_NSExpansionAttributeName:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectAttributeStringKit_key_NSObliquenessAttributeName {
+- (NSMutableArray *)TestProjectAttributeStringKit_key_NSObliquenessAttributeName:(TestProjectTableViewParams *)params {
     NSArray *arr = @[@1, @-1];
     for (NSNumber *num in arr) {
         TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSObliquenessAttributeName:num}];
         m.desc = [NSString stringWithFormat:@"设置的是@{NSObliquenessAttributeName: @%ld} \n attrText:%@", num.integerValue, m.titleMutAttrStr];
-        [m calculDataViewHeight];
+        [m calculDataViewHeight:params];
     }
     
     return self.dataMutArr;
@@ -132,17 +132,17 @@
             @"title": @"NSObliquenessAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectAttributeStringKit_key_NSObliquenessAttributeName],
+                @"childItems": [self TestProjectAttributeStringKit_key_NSObliquenessAttributeName:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectAttributeStringKit_key_NSStrikethroughColorAttributeName {
+- (NSMutableArray *)TestProjectAttributeStringKit_key_NSStrikethroughColorAttributeName:(TestProjectTableViewParams *)params {
     TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSStrikethroughColorAttributeName: [UIColor colorFromString:@"#ff0000"], NSStrikethroughStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle | NSUnderlinePatternDashDot], NSBaselineOffsetAttributeName:@0}];
     m.desc = [NSString stringWithFormat:@"设置的是@{NSStrikethroughColorAttributeName: [UIColor colorFromString:@\"#33ffff\"]} \n attrText:%@", m.titleMutAttrStr];
-    [m calculDataViewHeight];
+    [m calculDataViewHeight:params];
 
     return self.dataMutArr;
 }
@@ -154,17 +154,17 @@
             @"title": @"NSStrikethroughColorAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectAttributeStringKit_key_NSStrikethroughColorAttributeName],
+                @"childItems": [self TestProjectAttributeStringKit_key_NSStrikethroughColorAttributeName:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectAttributeStringKit_key_NSUnderlineColorAttributeName {
+- (NSMutableArray *)TestProjectAttributeStringKit_key_NSUnderlineColorAttributeName:(TestProjectTableViewParams *)params {
     TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSUnderlineColorAttributeName: [UIColor colorFromString:@"#33ffff"], NSUnderlineStyleAttributeName: @(NSUnderlineStyleDouble)}];
     m.desc = [NSString stringWithFormat:@"设置的是@{NSUnderlineColorAttributeName: [UIColor colorFromString:@\"#33ffff\"]} \n attrText:%@", m.titleMutAttrStr];
-    [m calculDataViewHeight];
+    [m calculDataViewHeight:params];
 
     return self.dataMutArr;
 }
@@ -176,19 +176,19 @@
             @"title": @"NSUnderlineColorAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectAttributeStringKit_key_NSUnderlineColorAttributeName],
+                @"childItems": [self TestProjectAttributeStringKit_key_NSUnderlineColorAttributeName:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectAttributeStringKit_key_NSBaselineOffsetAttributeName {
+- (NSMutableArray *)TestProjectAttributeStringKit_key_NSBaselineOffsetAttributeName:(TestProjectTableViewParams *)params {
     NSArray *arr = @[@10, @-10, @100, @-100];
     for (NSNumber *num in arr) {
         TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSBackgroundColorAttributeName: [UIColor colorFromString:@"#ff0000"], NSBaselineOffsetAttributeName:num}];
         m.desc = [NSString stringWithFormat:@"设置的是@{NSBaselineOffsetAttributeName: %ld} \n attrText:%@", num.integerValue, m.titleMutAttrStr];
-        [m calculDataViewHeight];
+        [m calculDataViewHeight:params];
     }
     return self.dataMutArr;
 }
@@ -200,17 +200,17 @@
             @"title": @"NSBaselineOffsetAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectAttributeStringKit_key_NSBaselineOffsetAttributeName],
+                @"childItems": [self TestProjectAttributeStringKit_key_NSBaselineOffsetAttributeName:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectAttributeStringKit_key_NSLinkAttributeName {
+- (NSMutableArray *)TestProjectAttributeStringKit_key_NSLinkAttributeName:(TestProjectTableViewParams *)params {
     TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSLinkAttributeName: [NSURL URLWithString:@"https://www.baidu.com"]}];
     m.desc = [NSString stringWithFormat:@"设置的是@{NSLinkAttributeName: [NSURL URLWithString:@\"https://www.baidu.com\"]} \n attrText:%@", m.titleMutAttrStr];
-    [m calculDataViewHeight];
+    [m calculDataViewHeight:params];
 
     return self.dataMutArr;
 }
@@ -223,14 +223,14 @@
             @"desc": @"这个只能UITextView可用UITextView的代理方法中shouldInteractWithURL返回true可用",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectAttributeStringKit_key_NSLinkAttributeName],
+                @"childItems": [self TestProjectAttributeStringKit_key_NSLinkAttributeName:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectAttributeStringKit_key_NSAttachmentAttributeName {
+- (NSMutableArray *)TestProjectAttributeStringKit_key_NSAttachmentAttributeName:(TestProjectTableViewParams *)params {
     NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
     attachment.image = [UIImage imageNamed:@"lyf_1"];
     attachment.bounds = CGRectMake(0, 0, 100, 50);
@@ -238,7 +238,7 @@
     NSAttributedString *attachmentAttrText = [NSAttributedString attributedStringWithAttachment:attachment];
     [m.titleMutAttrStr appendAttributedString:attachmentAttrText];
     m.desc = [NSString stringWithFormat:@"设置图片的attachment \n attrText:%@", m.titleMutAttrStr];
-    [m calculDataViewHeight];
+    [m calculDataViewHeight:params];
 
     return self.dataMutArr;
 }
@@ -250,17 +250,17 @@
             @"title": @"NSAttachmentAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectAttributeStringKit_key_NSAttachmentAttributeName],
+                @"childItems": [self TestProjectAttributeStringKit_key_NSAttachmentAttributeName:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectAttributeStringKit_key_NSTextEffectAttributeName {
+- (NSMutableArray *)TestProjectAttributeStringKit_key_NSTextEffectAttributeName:(TestProjectTableViewParams *)params {
     TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSTextEffectAttributeName: NSTextEffectLetterpressStyle}];
     m.desc = [NSString stringWithFormat:@"设置的是@{NSTextEffectAttributeName: NSTextEffectLetterpressStyle} \n attrText:%@", m.titleMutAttrStr];
-    [m calculDataViewHeight];
+    [m calculDataViewHeight:params];
 
     return self.dataMutArr;
 }
@@ -272,14 +272,14 @@
             @"title": @"NSTextEffectAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectAttributeStringKit_key_NSTextEffectAttributeName],
+                @"childItems": [self TestProjectAttributeStringKit_key_NSTextEffectAttributeName:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectAttributeStringKit_key_NSShadowAttributeName {
+- (NSMutableArray *)TestProjectAttributeStringKit_key_NSShadowAttributeName:(TestProjectTableViewParams *)params {
     NSShadow *shadow = [[NSShadow alloc] init];
     //模糊度
     shadow.shadowBlurRadius = 5;
@@ -314,7 +314,7 @@
 
         TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSShadowAttributeName: shadow, key:value}];
         m.desc = [NSString stringWithFormat:@"shadow是%@ 设置的值@{(%@-%@): %@} 展示的效果是:%@ \n attrText:%@", shadow, stringKey, key, value, title, m.titleMutAttrStr];
-        [m calculDataViewHeight];
+        [m calculDataViewHeight:params];
     }
     return self.dataMutArr;
 }
@@ -326,19 +326,19 @@
             @"title": @"NSShadowAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectAttributeStringKit_key_NSShadowAttributeName],
+                @"childItems": [self TestProjectAttributeStringKit_key_NSShadowAttributeName:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectAttributeStringKit_key_NSStrokeWidthAttributeName {
+- (NSMutableArray *)TestProjectAttributeStringKit_key_NSStrokeWidthAttributeName:(TestProjectTableViewParams *)params {
     NSArray *arr = @[@3, @-3, @100, @-100];
     for (NSNumber *num in arr) {
         TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSStrokeColorAttributeName: [UIColor colorFromString:@"#33ffff"], NSStrokeWidthAttributeName:num}];
         m.desc = [NSString stringWithFormat:@"没有设置NSStrokeWidthAttributeName则文字描边无效@{NSStrokeColorAttributeName: [UIColor colorFromString:@\"#33ffff\"]} \n attrText:%@", m.titleMutAttrStr];
-        [m calculDataViewHeight];
+        [m calculDataViewHeight:params];
     }
     return self.dataMutArr;
 }
@@ -350,19 +350,19 @@
             @"title": @"NSStrokeWidthAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectAttributeStringKit_key_NSStrokeWidthAttributeName],
+                @"childItems": [self TestProjectAttributeStringKit_key_NSStrokeWidthAttributeName:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectAttributeStringKit_key_NSStrokeColorAttributeName {
+- (NSMutableArray *)TestProjectAttributeStringKit_key_NSStrokeColorAttributeName:(TestProjectTableViewParams *)params {
     NSArray *arr = @[@3, @-3, @100, @-100];
     for (NSNumber *num in arr) {
         TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSStrokeColorAttributeName: [UIColor colorFromString:@"#33ffff"], NSStrokeWidthAttributeName:num}];
         m.desc = [NSString stringWithFormat:@"没有设置NSStrokeWidthAttributeName则文字描边无效@{NSStrokeColorAttributeName: [UIColor colorFromString:@\"#33ffff\"]} \n attrText:%@", m.titleMutAttrStr];
-        [m calculDataViewHeight];
+        [m calculDataViewHeight:params];
     }
     return self.dataMutArr;
 }
@@ -374,14 +374,17 @@
             @"title": @"NSStrokeColorAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectAttributeStringKit_key_NSStrokeColorAttributeName],
+                @"childItems": [self TestProjectAttributeStringKit_key_NSStrokeColorAttributeName:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectAttributeStringKit_key_set:(NSString *)desc keyStr:(NSString *)keyStr key:(NSAttributedStringKey)key {
+- (NSMutableArray *)TestProjectAttributeStringKit_key_set:(NSString *)desc
+                                                   keyStr:(NSString *)keyStr
+                                                      key:(NSAttributedStringKey)key
+                                                   params:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": [NSString stringWithFormat:@"无%@", desc],
@@ -435,15 +438,15 @@
         NSNumber *value = dic[@"value"];
         TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{key: value, NSStrikethroughColorAttributeName: [UIColor colorFromString:@"#00ffff"]}];
         m.desc = [NSString stringWithFormat:@"设置的是%@ @{%@: @(%@-%ld)} \n attrText:%@", title, keyStr, stringKey, value.integerValue, m.titleMutAttrStr];
-        [m calculDataViewHeight];
+        [m calculDataViewHeight:params];
     }
     return self.dataMutArr;
 
 }
 
 
-- (NSMutableArray *)TestProjectAttributeStringKit_key_NSUnderlineStyleAttributeName {
-    return [self TestProjectAttributeStringKit_key_set:@"下滑线" keyStr:@"NSUnderlineStyleAttributeName" key:NSUnderlineStyleAttributeName];
+- (NSMutableArray *)TestProjectAttributeStringKit_key_NSUnderlineStyleAttributeName:(TestProjectTableViewParams *)params {
+    return [self TestProjectAttributeStringKit_key_set:@"下滑线" keyStr:@"NSUnderlineStyleAttributeName" key:NSUnderlineStyleAttributeName params:params];
 }
 
 - (NSDictionary *)method_9:(TestProjectTableViewParams *)params {
@@ -453,15 +456,15 @@
             @"title": @"NSUnderlineStyleAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectAttributeStringKit_key_NSUnderlineStyleAttributeName],
+                @"childItems": [self TestProjectAttributeStringKit_key_NSUnderlineStyleAttributeName:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectAttributeStringKit_key_NSStrikethroughStyleAttributeName {
-    return [self TestProjectAttributeStringKit_key_set:@"删除线" keyStr:@"NSStrikethroughStyleAttributeName" key:NSStrikethroughStyleAttributeName];
+- (NSMutableArray *)TestProjectAttributeStringKit_key_NSStrikethroughStyleAttributeName:(TestProjectTableViewParams *)params {
+    return [self TestProjectAttributeStringKit_key_set:@"删除线" keyStr:@"NSStrikethroughStyleAttributeName" key:NSStrikethroughStyleAttributeName params:params];
 }
 
 - (NSDictionary *)method_8:(TestProjectTableViewParams *)params {
@@ -471,20 +474,20 @@
             @"title": @"NSStrikethroughStyleAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectAttributeStringKit_key_NSStrikethroughStyleAttributeName],
+                @"childItems": [self TestProjectAttributeStringKit_key_NSStrikethroughStyleAttributeName:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectAttributeStringKit_key_NSTrackingAttributeName {
+- (NSMutableArray *)TestProjectAttributeStringKit_key_NSTrackingAttributeName:(TestProjectTableViewParams *)params {
     if (@available(iOS 14.0, *)) {
         NSArray *arr = @[@10, @0, @-10];
         for (NSNumber *num in arr) {
             TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSTrackingAttributeName: num}];
             m.desc = [NSString stringWithFormat:@"设置的是@{NSTrackingAttributeName: @%ld} attrText:%@", num.integerValue, m.titleMutAttrStr];
-            [m calculDataViewHeight];
+            [m calculDataViewHeight:params];
         }
     }
     return self.dataMutArr;
@@ -497,19 +500,19 @@
             @"title": @"NSTrackingAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectAttributeStringKit_key_NSTrackingAttributeName],
+                @"childItems": [self TestProjectAttributeStringKit_key_NSTrackingAttributeName:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectAttributeStringKit_key_NSKernAttributeName {
+- (NSMutableArray *)TestProjectAttributeStringKit_key_NSKernAttributeName:(TestProjectTableViewParams *)params {
     NSArray *arr = @[@0, @1, @-100, @10];
     for (NSNumber *num in arr) {
         TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSKernAttributeName: num}];
         m.desc = [NSString stringWithFormat:@"设置的是@{NSKernAttributeName: @%ld} attrText:%@", num.integerValue, m.titleMutAttrStr];
-        [m calculDataViewHeight];
+        [m calculDataViewHeight:params];
     }
     return self.dataMutArr;
 }
@@ -521,19 +524,19 @@
             @"title": @"NSKernAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectAttributeStringKit_key_NSKernAttributeName],
+                @"childItems": [self TestProjectAttributeStringKit_key_NSKernAttributeName:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectAttributeStringKit_key_NSLigatureAttributeName {
+- (NSMutableArray *)TestProjectAttributeStringKit_key_NSLigatureAttributeName:(TestProjectTableViewParams *)params {
     NSArray *arr = @[@0, @1, @-100, @10];
     for (NSNumber *num in arr) {
         TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSLigatureAttributeName: num}];
         m.desc = [NSString stringWithFormat:@"设置的是@{NSLigatureAttributeName: @%ld} attrText:%@", num.integerValue, m.titleMutAttrStr];
-        [m calculDataViewHeight];
+        [m calculDataViewHeight:params];
     }
     return self.dataMutArr;
 }
@@ -546,17 +549,17 @@
             @"desc": @"value 0表示没有连体字符，1表示使用默认的联通字符，一般中文用不到，在英文中可能出现相邻的字母连笔的情况",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectAttributeStringKit_key_NSLigatureAttributeName],
+                @"childItems": [self TestProjectAttributeStringKit_key_NSLigatureAttributeName:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectAttributeStringKit_key_NSBackgroundColorAttributeName {
+- (NSMutableArray *)TestProjectAttributeStringKit_key_NSBackgroundColorAttributeName:(TestProjectTableViewParams *)params {
     TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSBackgroundColorAttributeName: [UIColor colorFromString:@"#33ffff"]}];
     m.desc = [NSString stringWithFormat:@"设置的是@{NSBackgroundColorAttributeName: [UIColor colorFromString:@\"#33ffff\"]} \n attrText:%@", m.titleMutAttrStr];
-    [m calculDataViewHeight];
+    [m calculDataViewHeight:params];
 
     return self.dataMutArr;
 }
@@ -568,17 +571,17 @@
             @"title": @"NSBackgroundColorAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectAttributeStringKit_key_NSBackgroundColorAttributeName],
+                @"childItems": [self TestProjectAttributeStringKit_key_NSBackgroundColorAttributeName:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectAttributeStringKit_key_NSForegroundColorAttributeName {
+- (NSMutableArray *)TestProjectAttributeStringKit_key_NSForegroundColorAttributeName:(TestProjectTableViewParams *)params {
     TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSForegroundColorAttributeName: [UIColor colorFromString:@"#33ffff"]}];
     m.desc = [NSString stringWithFormat:@"设置的是@{NSForegroundColorAttributeName: [UIColor colorFromString:@\"#33ffff\"]} \n attrText:%@", m.titleMutAttrStr];
-    [m calculDataViewHeight];
+    [m calculDataViewHeight:params];
 
     return self.dataMutArr;
 }
@@ -590,18 +593,18 @@
             @"title": @"NSForegroundColorAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectAttributeStringKit_key_NSForegroundColorAttributeName],
+                @"childItems": [self TestProjectAttributeStringKit_key_NSForegroundColorAttributeName:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectAttributeStringKit_key_NSParagraphStyleAttributeName {
+- (NSMutableArray *)TestProjectAttributeStringKit_key_NSParagraphStyleAttributeName:(TestProjectTableViewParams *)params {
     NSParagraphStyle *style = [NSParagraphStyle defaultParagraphStyle];
     TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSParagraphStyleAttributeName: style}];
     m.desc = [NSString stringWithFormat:@"设置的是@{NSParagraphStyleAttributeName: [NSParagraphStyle defaultParagraphStyle]} \n attrText:%@", m.titleMutAttrStr];
-    [m calculDataViewHeight];
+    [m calculDataViewHeight:params];
 
     return self.dataMutArr;
 }
@@ -613,17 +616,17 @@
             @"title": @"NSParagraphStyleAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectAttributeStringKit_key_NSParagraphStyleAttributeName],
+                @"childItems": [self TestProjectAttributeStringKit_key_NSParagraphStyleAttributeName:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectAttributeStringKit_key_NSFontAttributeName {
+- (NSMutableArray *)TestProjectAttributeStringKit_key_NSFontAttributeName:(TestProjectTableViewParams *)params {
     TestProjectTableViewModel *m = [self createAttrStrModelWithAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:40]}];
     m.desc = [NSString stringWithFormat:@"设置的是@{NSFontAttributeName: [UIFont systemFontOfSize:40]} \n attrText:%@", m.titleMutAttrStr];
-    [m calculDataViewHeight];
+    [m calculDataViewHeight:params];
 
     return self.dataMutArr;
 }
@@ -635,7 +638,7 @@
             @"title": @"NSFontAttributeName",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectAttributeStringKit_key_NSFontAttributeName],
+                @"childItems": [self TestProjectAttributeStringKit_key_NSFontAttributeName:params],
                 @"compareViewModel": self.compareViewModel,
             }
         },

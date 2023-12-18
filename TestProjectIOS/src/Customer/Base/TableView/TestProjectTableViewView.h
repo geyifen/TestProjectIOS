@@ -31,7 +31,11 @@ typedef NS_ENUM(NSInteger, TestProjectCreateModelOperation) {
     TestProjectCreateModelGetBeforClickGetBeforeClickSet,
 };
 
-@interface TestProjectTableViewView : UIView <TestProjectViewModelTableViewProtocol, TestProjectCreateViewProtocol>
+@interface TestProjectTableViewView : UIView <TestProjectViewModelTableViewProtocol, TestProjectCreateViewProtocol> {
+@public
+    TestProjectTableViewModel *_currentSelectTableViewModel;
+    TestProjectTableViewParams *_currentSelectTableViewParams;
+}
 
 @property (nonatomic, strong) TestProjectViewModelTableView *tableView;
 @property (nonatomic, strong) id viewModel;
@@ -39,8 +43,10 @@ typedef NS_ENUM(NSInteger, TestProjectCreateModelOperation) {
 @property (nonatomic, strong) NSMutableArray *dataMutArr;
 @property (nonatomic, weak) id<UITableViewDelegate> delegate;
 @property (nonatomic, weak) id<UITableViewDataSource> dataSource;
+//预留的选择selectIndex
+@property (nonatomic, assign) NSInteger offsetSelectIndex;
 
-- (NSArray *)viewDataArray;
+- (NSArray<TestProjectMethodModel *> *)viewDataArray;
 
 - (id)setPropertyValueObject:(TestProjectTableViewParams *)params;
 
@@ -109,6 +115,12 @@ typedef NS_ENUM(NSInteger, TestProjectCreateModelOperation) {
 - (NSMutableArray *)createModelSingleArrayWithParams:(TestProjectTableViewParams *)params
                                        modelKeyValue:(nullable NSDictionary *)modelKeyValue
                                                block:(nullable void (^)(void))block;
+
+- (void)reloadRowWithParams:(TestProjectTableViewParams *)params
+                       desc:(NSString *)desc
+                      model:(TestProjectTableViewModel *)model;
+
+- (void)reloadCurrentTableViewModelWithDesc:(NSString *)desc;
 
 - (void)addNotificationWithName:(NSString *)name selector:(SEL)selector;
 

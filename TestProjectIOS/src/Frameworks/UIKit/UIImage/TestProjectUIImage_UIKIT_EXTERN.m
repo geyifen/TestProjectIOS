@@ -1,21 +1,21 @@
 //
-//  TestProjectUIKIT_EXTERN.m
+//  TestProjectUIImage_UIKIT_EXTERN.m
 //  TestProjectIOS
 //
 //  Created by liwenfan on 2023/12/11.
 //
 
-#import "TestProjectUIKIT_EXTERN.h"
+#import "TestProjectUIImage_UIKIT_EXTERN.h"
 
 #import "TestProjectUIImageCell.h"
 
-@implementation TestProjectUIKIT_EXTERN
+@implementation TestProjectUIImage_UIKIT_EXTERN
 
 - (Class)createTableModelClass:(TestProjectTableViewParams *)params {
     return TestProjectUIImageModel.class;
 }
 
-- (NSMutableArray *)TestProjectUIKIT_EXTERN_UIImageJPEGRepresentation:(TestProjectTableViewParams *)params {
+- (NSMutableArray *)TestProjectUIImage_UIKIT_EXTERN_UIImageJPEGRepresentation:(TestProjectTableViewParams *)params {
     NSArray *arr = @[
         @{
             @"title": @"图片压比例为-1",
@@ -63,13 +63,13 @@
             @"isDataModelExpand": @(YES),
             @"desc": @"压缩比例在0～1之间，低于0的相当于是0，大于1的相当于是1\n为0的比例大致在0.08\njpeg的本身比例是png的0.61",
             @"dataModel": @{
-                @"childItems": [self TestProjectUIKIT_EXTERN_UIImageJPEGRepresentation:params],
+                @"childItems": [self TestProjectUIImage_UIKIT_EXTERN_UIImageJPEGRepresentation:params],
             }
         },
     };
 }
 
-- (NSMutableArray *)TestProjectUIKIT_EXTERN_UIImagePNGRepresentation:(TestProjectTableViewParams *)params {
+- (NSMutableArray *)TestProjectUIImage_UIKIT_EXTERN_UIImagePNGRepresentation:(TestProjectTableViewParams *)params {
     NSData *data = UIImagePNGRepresentation([UIImage imageNamed:@"lyf_2"]);
     UIImage *image = [UIImage imageWithData:data];
     return [self createModelSingleArrayWithParams:params
@@ -85,7 +85,7 @@
             @"title": @"UIKIT_EXTERN  NSData * __nullable UIImagePNGRepresentation(UIImage * __nonnull image);                               // return image as PNG. May return nil if image has no CGImageRef or invalid bitmap format",
             @"isDataModelExpand": @(YES),
             @"dataModel": @{
-                @"childItems": [self TestProjectUIKIT_EXTERN_UIImagePNGRepresentation:params],
+                @"childItems": [self TestProjectUIImage_UIKIT_EXTERN_UIImagePNGRepresentation:params],
             }
         },
     };

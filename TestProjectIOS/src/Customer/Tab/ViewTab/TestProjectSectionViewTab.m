@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UIView *bottomLineView;
+@property (nonatomic, strong) UIButton *arrowRightBtn;
 
 @end
 
@@ -57,6 +58,12 @@
     }
 }
 
+- (void)didTapSectionViewTabForExpand {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didTapSectionViewTabForExpand:)]) {
+        [self.delegate didTapSectionViewTabForExpand:self];
+    }
+}
+
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
@@ -69,7 +76,8 @@
             make.top.bottom.equal(self);
             make.height.equal(@70);
             if (self.viewModel.tabType == TestProjectTab_AutoDivede) {
-                make.width.equal(self);
+                make.leading.equal(self);
+                make.trainling.equal(self.arrowRightBtn.leading);
             } else {
                 make.centerX.equal(self);
             }
@@ -89,6 +97,21 @@
         }];
     }
     return _bottomLineView;
+}
+
+- (UIButton *)arrowRightBtn {
+    if (!_arrowRightBtn) {
+        _arrowRightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        UIImage *image = [UIImage systemImageNamed:@"chevron.forward"];
+        [_arrowRightBtn setImage:image forState:UIControlStateNormal];
+        [_arrowRightBtn addTarget:self action:@selector(didTapSectionViewTabForExpand) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:_arrowRightBtn];
+        [_arrowRightBtn testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+            make.top.bottom.trainling.equal(self);
+            make.width.equal(@30);
+        }];
+    }
+    return _arrowRightBtn;
 }
 
 @end

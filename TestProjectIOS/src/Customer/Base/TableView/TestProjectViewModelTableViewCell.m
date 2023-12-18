@@ -24,6 +24,7 @@
 @property (nonatomic, strong) TestProjectTableViewView *dataModelView;
 @property (nonatomic, strong) TestProjectTableViewModel *dataModel;
 @property (nonatomic, strong) UILabel *canClickLabel;
+@property (nonatomic, strong) UIView *customerChildView;
 
 @end
 
@@ -86,24 +87,22 @@
     if (dataViewHeight > 0) {
         [self.dataModelView testproject_updateConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
             make.height.equal(@(dataViewHeight));
-            make.top.equal(self.abstractLabel.bottom).offset(15);
+            make.top.equal(self.customerChildView.bottom).offset(15);
         }];
     } else {
         [self.dataModelView testproject_updateConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
             make.height.equal(@(dataViewHeight));
-            make.top.equal(self.abstractLabel.bottom).offset(0);
+            make.top.equal(self.customerChildView.bottom).offset(0);
         }];
     }
     
-    if (viewModel->_abstractHeight > 0) {
-        [self.abstractLabel testproject_updateConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
-            make.height.equal(@(viewModel->_abstractHeight));
-        }];
-    } else {
-        [self.abstractLabel testproject_updateConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
-            make.height.equal(@(viewModel->_abstractHeight));
-        }];
-    }
+    [self.customerChildView testproject_updateConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+        make.height.equal(@(viewModel->_customerViewHeight));
+    }];
+    
+    [self.abstractLabel testproject_updateConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+        make.height.equal(@(viewModel->_abstractHeight));
+    }];
 }
 
 - (UIButton *)createExpandBtn {
@@ -113,12 +112,7 @@
     return btn;
 }
 
-- (void)addChildView:(UIView *)childView {
-    [self addSubview:childView];
-    [childView testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
-        make.width.height.equal(@30);
-        make.centerY.trainling.equal(self);
-    }];
+- (void)addCustomerChildView:(UIView *)superView viewModel:(nonnull TestProjectTableViewModel *)viewModel {
 }
 
 - (void)dataModelExpandReloadData {
@@ -145,6 +139,8 @@
     if (!_abstractLabel) {
         _abstractLabel = [[UILabel alloc] init];
         _abstractLabel.numberOfLines = 0;
+        _abstractLabel.lineBreakMode = NSLineBreakByCharWrapping;
+
         [self addSubview:_abstractLabel];
         [_abstractLabel testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
             make.leading.equal(self).offset(15);
@@ -283,6 +279,19 @@
         }];
     }
     return _canClickLabel;
+}
+
+- (UIView *)customerChildView {
+    if (!_customerChildView) {
+        _customerChildView = [[UIView alloc] init];
+        [self addSubview:_customerChildView];
+        [_customerChildView testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+            make.trainling.leading.equal(self.abstractLabel);
+            make.top.equal(self.abstractLabel.bottom);
+        }];
+        [self addCustomerChildView:_customerChildView viewModel:self.viewModel];
+    }
+    return _customerChildView;;
 }
 
 @end

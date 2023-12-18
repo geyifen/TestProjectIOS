@@ -102,7 +102,7 @@
         m.isChild = NO;
         m.desc = [NSString stringWithFormat:@"%@", m.titleMutAttrStr];
         m.isTitleExpand = YES;
-        [m calculDataViewHeight];
+        [m calculDataViewHeight:nil];
         _compareViewModel = m;
     }
     return _compareViewModel;

@@ -38,8 +38,17 @@
 - (NSArray *)viewDataArray:(TestProjectTableViewParams *)params {
     NSMutableArray *mutArr = [NSMutableArray arrayWithArray:[super viewDataArray]];
     if (!self.parentVC) {
-        [mutArr insertObject:[self name_1] atIndex:0];
-        [mutArr insertObject:[self name_2] atIndex:0];
+        NSArray *arr = @[[self name_1], [self name_2]];
+        for (NSInteger i = arr.count - 1; i >= 0; i--) {
+            TestProjectTableViewParams *params = [[TestProjectTableViewParams alloc] init];
+            params.selectIndex = i;
+            params.methodIndex = i + 1;
+            params.methodPrefix = @"name_";
+            TestProjectMethodModel *methodM = [[TestProjectMethodModel alloc] init];
+            methodM.params = params;
+            methodM.dataDic = arr[i];
+            [mutArr insertObject:methodM atIndex:0];
+        }
     }
     return [mutArr copy];
 }
@@ -76,7 +85,7 @@
     m.clickBlock = ^{
         [UIApplication.rootNavController pushViewController: isNib ? wSelf.tNibVC : wSelf.tVC animated:YES];
     };
-    [m calculDataViewHeight];
+    [m calculDataViewHeight:nil];
     [self.dataMutArr addObject:m];
     return self.dataMutArr;
 }

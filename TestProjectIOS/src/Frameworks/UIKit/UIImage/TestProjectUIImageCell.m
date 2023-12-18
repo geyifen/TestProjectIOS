@@ -15,6 +15,13 @@
     return @"TestProjectUIImageCell";
 }
 
+- (CGFloat)calculCustomerViewHeight:(TestProjectTableViewParams *)params {
+    if (!params) {
+        return [super calculCustomerViewHeight:params];
+    }
+    return 30;
+}
+
 @end
 
 @interface TestProjectUIImageCell ()
@@ -30,10 +37,18 @@
     self.subImageView.image = viewModel.image;
 }
 
+- (void)addCustomerChildView:(UIView *)superView
+                   viewModel:(TestProjectTableViewModel *)viewModel {
+    [superView addSubview:self.subImageView];
+    [self.subImageView testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+        make.centerX.centerY.equal(superView);
+        make.height.width.equal(@(viewModel->_customerViewHeight));
+    }];
+}
+
 - (UIImageView *)subImageView {
     if (!_subImageView) {
         _subImageView = [[UIImageView alloc] init];
-        [self addChildView:_subImageView];
     }
     return _subImageView;
 }

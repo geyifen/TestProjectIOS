@@ -63,6 +63,18 @@
 }
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    //防止页面中其它手势导致UIScrollView滑不动
+    if (self.gesture.enabled) {
+        if (self.gesture.state == UIGestureRecognizerStateBegan || self.gesture.state == UIGestureRecognizerStateChanged) {
+            return self;
+        }
+    }
+    if (self.otherGesture.enabled) {
+        if (self.otherGesture.state == UIGestureRecognizerStateBegan || self.otherGesture.state == UIGestureRecognizerStateChanged) {
+            return self;
+        }
+    }
+
     self.gesture.enabled = YES;
     self.otherGesture.enabled = YES;
     return [super hitTest:point withEvent:event];
@@ -97,7 +109,7 @@
         for (NSInteger i = 0; i < 20; i++) {
             TestProjectTableViewModel *tableModel = [[TestProjectTableViewModel alloc] init];
             tableModel.title = [NSString stringWithFormat:@"title_%ld", i];
-            [tableModel calculDataViewHeight];
+            [tableModel calculDataViewHeight:nil];
             [dataSourceMutArr addObject:tableModel];
         }
         
