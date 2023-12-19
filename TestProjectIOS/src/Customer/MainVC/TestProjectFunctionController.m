@@ -24,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self createModelWithTitle:@"右边联动滚动的tableView" vcClassName:@"TestProjectLinkageSideTableViewVC"];
     [self createModelWithTitle:@"UIScrollView嵌套滚动事件" vcClassName:@"TestProjectTableNestTableVC"];
     [self createModelWithTitle:@"瀑布流布局" vcClassName:@"TestProjectWaterfallLayoutVC"];
     [self createModelWithTitle:@"UICollectionView拖动" vcClassName:@"TestProjectCollectionViewDragVC"];

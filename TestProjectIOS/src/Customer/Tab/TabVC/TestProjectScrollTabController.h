@@ -43,6 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *pageTitle;
 
 @property (nonatomic, weak) id<TestProjectScrollTabControllerProtocol> delegate;
+@property (nonatomic, weak) id customerDelegate;
 //是否要关联嵌套ChildVC滚动
 @property (nonatomic, assign) BOOL isNeedRelationNestChildVCScroll;
 //是否是嵌套的ChildVC, 嵌套的ChildVC没有手势，通过调用者的移动距离进行移动

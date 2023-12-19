@@ -58,6 +58,7 @@ typedef NS_ENUM(NSInteger, TestProjectTabType) {
 @property (nonatomic, assign) NSInteger currentIndex;
 
 @property (nonatomic, weak) id<TestProjectTabViewProtocol> delegate;
+@property (nonatomic, weak) id viewTabItemDelegate;
 
 @property (nonatomic, assign) CGFloat moveViewCenterOffset;
 @property (nonatomic, assign) CGFloat moveViewWidthOffset;

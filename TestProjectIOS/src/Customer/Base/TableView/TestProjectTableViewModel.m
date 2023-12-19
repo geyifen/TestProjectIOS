@@ -71,10 +71,14 @@
     return childViewHeight;
 }
 
+- (CGFloat)calculTextMaxWidth {
+    return [UIScreen mainScreen].bounds.size.width;
+}
+
 - (void)calculDataViewHeight:(TestProjectTableViewParams *)params {
     CGFloat bankHeight = 15;
     CGFloat borderWidth = _isChild ? 60 : 30;
-    CGSize size = CGSizeMake([UIScreen mainScreen].bounds.size.width - borderWidth, CGFLOAT_MAX);
+    CGSize size = CGSizeMake([self calculTextMaxWidth] - borderWidth, CGFLOAT_MAX);
     
     if (_abstract) {
         _abstractAttr = [[NSMutableAttributedString alloc] initWithString:self.abstract];

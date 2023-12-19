@@ -70,6 +70,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (CGFloat)calculCustomerViewHeight:(TestProjectTableViewParams *__nullable)params;
 
+- (CGFloat)calculTextMaxWidth;
+
 @end
 
 NS_ASSUME_NONNULL_END

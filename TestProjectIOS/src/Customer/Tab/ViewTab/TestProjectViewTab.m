@@ -79,7 +79,6 @@
         if (![view conformsToProtocol:@protocol(TestProjectViewProtocol)]) {
             assert("当前的view没有遵循TestProjectTabViewProtocol协议");
         }
-        [view setViewModel:viewModel];
         [self.subChildViews addObject:view];
         UIView *parentView = [[UIView alloc] init];
         parentView.userInteractionEnabled = YES;
@@ -125,6 +124,10 @@
         }];
         if (atIndex == i) {
             selectControl = control;
+        }
+        [view setViewModel:viewModel];
+        if (self.delegate && [view respondsToSelector:@selector(setDelegate:)]) {
+            [view setDelegate:self.viewTabItemDelegate];
         }
     }
     [self layoutIfNeeded];

@@ -51,6 +51,11 @@
     self.selfViewWidth = self.view.viewWidth;
 }
 
+- (void)setCustomerDelegate:(id)customerDelegate {
+    _customerDelegate = customerDelegate;
+    self.tabView.viewTabItemDelegate = customerDelegate;
+}
+
 - (void)resetData:(NSArray<TestProjectTabViewModelProtocol> *)viewModelList {
     self.viewModelList = viewModelList;
     [self.tabView resetData:self.viewModelList atIndex:self.atIndex];

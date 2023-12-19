@@ -37,6 +37,7 @@
     _scrollTabController.atIndex = self.atIndex;
     _scrollTabController.pageTitle = self.pageTitle;
     _scrollTabController.delegate = self;
+    _scrollTabController.customerDelegate = self;
     _scrollTabController.isNestChildVC = self.isNestVCType;
     _scrollTabController.isNeedRelationNestChildVCScroll = YES;
     [_scrollTabController resetData:(NSArray<TestProjectTabViewModelProtocol> *)self.dataItems];
