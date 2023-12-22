@@ -46,6 +46,7 @@ typedef NS_ENUM(NSInteger, TestProjectTabType) {
 
 /**tabView的调用者遵循的协议**/
 @protocol TestProjectTabViewProtocol<NSObject>
+
 /**孩子itemView被点击选中**/
 - (void)clickTabView:(TestProjectViewTab *)tabView
              atIndex:(NSInteger)atIndex
@@ -70,6 +71,8 @@ typedef NS_ENUM(NSInteger, TestProjectTabType) {
 - (void)updateDataWithViewModel:(id<TestProjectTabViewModelProtocol>)viewModel atIndex:(NSInteger)atIndex;
 
 - (void)updateData:(NSArray<TestProjectTabViewModelProtocol> *)viewModelList;
+
+- (void)scrollToIndex:(NSInteger)atIndex;
 
 /**
  @param moveAtIndex :即将移动到那个index页面

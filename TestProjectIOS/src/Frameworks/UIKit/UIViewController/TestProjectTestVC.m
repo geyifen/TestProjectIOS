@@ -8,10 +8,12 @@
 #import "TestProjectTestVC.h"
 
 #import "TestProjectTestVCViewTable.h"
+#import "TestProjectSectionViewTab.h"
 
-@interface TestProjectTestVC ()
+@interface TestProjectTestVC () <TestProjectPreviewProtocol>
 
 @property (nonatomic, strong) TestProjectTestVCViewTable *childView;
+@property (nonatomic, strong) UIButton *arrowRightBtn;
 
 @end
 
@@ -88,6 +90,25 @@
         make.top.bottom.leading.trainling.equal(self.view);
     }];
     NSLog(@"TestProjectTestVC %@", NSStringFromSelector(_cmd));
+    UIBarButtonItem *bItem = [[UIBarButtonItem alloc] initWithCustomView:self.arrowRightBtn];
+    self.navigationItem.rightBarButtonItems = @[bItem];
+}
+
+- (void)didTapSectionViewTabForExpand {
+    if (![self.childView respondsToSelector:@selector(optionPreviewForExpand:)]) {
+        return;
+    }
+    TestProjectPreviewState tabViewState = [((UIView <TestProjectPreviewProtocol>*)self.childView)  optionPreviewForExpand:self];
+    if (tabViewState == TestProjectPreviewStateOfYES) {
+        [self.arrowRightBtn setImage:[UIImage systemImageNamed:@"chevron.forward"] forState:UIControlStateNormal];
+    } else if (tabViewState == TestProjectPreviewStateOfNO) {
+        [self.arrowRightBtn setImage:[UIImage systemImageNamed:@"chevron.down"] forState:UIControlStateNormal];
+    }
+}
+
+#pragma mark - TestProjectPreviewProtocol
+- (void)didSelectPreviewItem:(id)viewModel {
+    [self.arrowRightBtn setImage:[UIImage systemImageNamed:@"chevron.forward"] forState:UIControlStateNormal];
 }
 
 - (TestProjectTestVCViewTable *)childView {
@@ -96,6 +117,19 @@
         _childView.parentVC = self;
     }
     return _childView;
+}
+
+- (UIButton *)arrowRightBtn {
+    if (!_arrowRightBtn) {
+        _arrowRightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        UIImage *image = [UIImage systemImageNamed:@"chevron.forward"];
+        [_arrowRightBtn setImage:image forState:UIControlStateNormal];
+        [_arrowRightBtn addTarget:self action:@selector(didTapSectionViewTabForExpand) forControlEvents:UIControlEventTouchUpInside];
+        [_arrowRightBtn testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+            make.height.width.equal(@30);
+        }];
+    }
+    return _arrowRightBtn;
 }
 
 @end

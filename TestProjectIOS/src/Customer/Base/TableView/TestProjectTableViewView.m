@@ -9,14 +9,19 @@
 
 #import "TestProjectTableViewModel.h"
 #import "TestProjectCategoryHeader.h"
+#import "TestProjectSectionViewTab.h"
 
 #import <objc/message.h>
 #import <YYModel/YYModel.h>
 
-@interface TestProjectTableViewView ()
+@interface TestProjectTableViewView () <TestProjectPreviewProtocol>
 
 @property (nonatomic, strong) TestProjectTableViewView *compareViewTable;
 @property (nonatomic, strong) UIButton *dataModelExpandBtn;
+
+@property (nonatomic, strong) TestProjectViewModelTableView *childTableView;
+@property (nonatomic, assign) TestProjectPreviewState tabViewState;
+@property (nonatomic, weak) id<TestProjectPreviewProtocol> previewTarget;
 
 @end
 
@@ -108,6 +113,14 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath viewModel:(TestProjectTableViewModel *)viewModel {
+    if (tableView == _childTableView) {
+        [self.previewTarget didSelectPreviewItem:viewModel];
+        WS(wSelf);
+        [self expandTableViewState:^{
+            [wSelf.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
+        }];
+        return;
+    }
     if (viewModel.clickBlock) {
         viewModel.clickBlock();
     } else {
@@ -394,6 +407,73 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:selector name:name object:nil];
 }
 
+#pragma mark - TestProjectPreviewProtocol
+- (TestProjectPreviewState)optionPreviewForExpand:(id<TestProjectPreviewProtocol>)previewTarget {
+    self.previewTarget = previewTarget;
+    TestProjectPreviewState tabViewState = self.tabViewState;
+    if (!_childTableView) {
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            NSMutableArray *mutArr = [NSMutableArray array];
+            for (NSInteger i = 0; i < self.tableView.dataSourceArray.count; i++) {
+                TestProjectTableViewModel *vm = [self.tableView.dataSourceArray objectAtIndex:i];
+                TestProjectPreviewTableViewModel *viewModel = [[TestProjectPreviewTableViewModel alloc] init];
+                viewModel.title = vm.title;
+                viewModel.abstract = vm.abstract;
+                [viewModel calculDataViewHeight:nil];
+                [mutArr addObject:viewModel];
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.childTableView testproject_makeConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+                    make.top.leading.trainling.equal(self);
+                    make.height.equal(@0);
+                }];
+                [self layoutIfNeeded];
+
+                self.childTableView.dataSourceArray = mutArr;
+                [self expandTableViewState:nil];
+                [self.childTableView reloadData];
+            });
+        });
+    } else {
+        [self expandTableViewState:nil];
+    }
+    return tabViewState;
+}
+
+- (void)expandTableViewState:(dispatch_block_t)completion {
+    if (self.tabViewState == TestProjectPreviewStateOfAnimated) {
+        return;
+    }
+    WS(wSelf);
+    if (self.tabViewState == TestProjectPreviewStateOfNO) {
+        self.tabViewState = TestProjectPreviewStateOfAnimated;
+        [UIView animateWithDuration:0.25 animations:^{
+            [wSelf.childTableView testproject_updateConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+                make.height.equal(@(wSelf.viewHeight));
+            }];
+            [wSelf layoutIfNeeded];
+        } completion:^(BOOL finished) {
+            wSelf.tabViewState = TestProjectPreviewStateOfYES;
+            if (completion) {
+                completion();
+            }
+        }];
+    } else {
+        self.tabViewState = TestProjectPreviewStateOfAnimated;
+        [UIView animateWithDuration:0.25 animations:^{
+            [wSelf.childTableView testproject_updateConstraints:^(TestProjectViewConstrainMake * _Nonnull make) {
+                make.height.equal(@0);
+            }];
+            [wSelf layoutIfNeeded];
+        } completion:^(BOOL finished) {
+            wSelf.tabViewState = TestProjectPreviewStateOfNO;
+            if (completion) {
+                completion();
+            }
+        }];
+    }
+}
+
 - (TestProjectViewModelTableView *)tableView {
     if (!_tableView) {
         _tableView = [[TestProjectViewModelTableView alloc] initWithFrame:CGRectZero
@@ -443,6 +523,15 @@
         }];
     }
     return _dataModelExpandBtn;
+}
+
+- (TestProjectViewModelTableView *)childTableView {
+    if (!_childTableView) {
+        _childTableView = [[TestProjectViewModelTableView alloc] initWithStyleGrouped];
+        _childTableView.tableViewDelegate = self;
+        [self addSubview:_childTableView];
+    }
+    return _childTableView;
 }
 
 @end

@@ -11,6 +11,7 @@
 #import "TestProjectCustomerHeader.h"
 #import "TestProjectTableViewModel.h"
 #import "TestProjectConfig.h"
+#import "TestProjectPreviewTableViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

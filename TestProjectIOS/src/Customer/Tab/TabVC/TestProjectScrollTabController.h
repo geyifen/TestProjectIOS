@@ -62,8 +62,12 @@ NS_ASSUME_NONNULL_BEGIN
                      gesState:(UIGestureRecognizerState)gesState moveX:(CGFloat)moveX;
 /**重置数据**/
 - (void)resetData:(NSArray<TestProjectTabViewModelProtocol> *)viewModelList;
+/**根据viewModel获取子vc**/
+- (UIViewController *)getChildVCWithViewModel:(id)viewModel;
 
 - (instancetype)initWithTabType:(TestProjectTabType)tabType;
+
+- (void)scrollToIndex:(NSInteger)atIndex;
 
 @end
 

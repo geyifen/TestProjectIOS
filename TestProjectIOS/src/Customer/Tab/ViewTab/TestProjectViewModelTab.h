@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface TestProjectViewModelTab : TestProjectBaseModel <TestProjectTabViewModelProtocol>
 
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *abstract;
 @property (nonatomic, copy) NSString *viewKey;
 @property (nonatomic, assign) TestProjectTabType tabType;
 @property (nonatomic, assign) NSInteger atIndex;

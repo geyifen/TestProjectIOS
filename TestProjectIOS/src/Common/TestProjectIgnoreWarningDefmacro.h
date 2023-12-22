@@ -18,6 +18,8 @@
 #define CancelUnusedVariable(work) CancelWarning(work, "clang diagnostic ignored \"-Wunused-variable\"")
 /**方法被废弃**/
 #define CancelDeprecated(work) CancelWarning(work, "clang diagnostic ignored \"-Wdeprecated\"")
+/**返回的对象类型和声明的对象类型不一致**/
+#define CancelIncompatiblePointerTypes(work) CancelWarning(work, "clang diagnostic ignored \"-Wincompatible-pointer-types\"")
 
 #define CancelWarning(work, warning) \
 _Pragma("clang diagnostic push") \

@@ -226,6 +226,17 @@
     }
 }
 
+- (void)scrollToIndex:(NSInteger)atIndex {
+    if (atIndex == self.currentIndex) {
+        return;
+    }
+    UIControl *control = [self viewWithTag:[self defaultTag] + atIndex];
+    if (!control) {
+        return;
+    }
+    [self handDealViewWithControl:control animated:YES];
+}
+
 - (void)didPanGesEvent:(UIPanGestureRecognizer *)pan {
     switch (pan.state) {
         case UIGestureRecognizerStateChanged: {

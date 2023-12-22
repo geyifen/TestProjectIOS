@@ -19,9 +19,7 @@
 
 @end
 
-@implementation TestProjectTableViewModel {
-    CGFloat _viewHeight;
-}
+@implementation TestProjectTableViewModel
 
 - (instancetype)init {
     if (self = [super init]) {

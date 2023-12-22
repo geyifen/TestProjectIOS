@@ -45,6 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
     NSMutableAttributedString *_descAttr;
     NSMutableAttributedString *_abstractAttr;
     CGFloat _customerViewHeight;
+    CGFloat _viewHeight;
 }
 
 @property (nonatomic, copy) NSString *title;

@@ -16,6 +16,7 @@
 		340D69D92A7205EB001BFB43 /* TestProjectToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 340D69D82A7205EB001BFB43 /* TestProjectToast.m */; };
 		340DC4B82A0CEC250089D175 /* TestProjectUIResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 340DC4B72A0CEC250089D175 /* TestProjectUIResponder.m */; };
 		340E9F992975378600C1D440 /* TestProjectSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 340E9F982975378600C1D440 /* TestProjectSignal.m */; };
+		340F4E832B342FAB006BEB01 /* TestProjectPreviewTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 340F4E822B342FAB006BEB01 /* TestProjectPreviewTableViewModel.m */; };
 		3412005929C7FD46007338D0 /* TestProjectNSTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3412005829C7FD46007338D0 /* TestProjectNSTextAttachment.m */; };
 		3412005B29C843F1007338D0 /* lyf_2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3412005A29C843F1007338D0 /* lyf_2.jpeg */; };
 		3412005D29C846B7007338D0 /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3412005C29C846B7007338D0 /* test.txt */; };
@@ -217,6 +218,8 @@
 		340DC4B72A0CEC250089D175 /* TestProjectUIResponder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectUIResponder.m; sourceTree = "<group>"; };
 		340E9F972975378600C1D440 /* TestProjectSignal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectSignal.h; sourceTree = "<group>"; };
 		340E9F982975378600C1D440 /* TestProjectSignal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectSignal.m; sourceTree = "<group>"; };
+		340F4E812B342FAB006BEB01 /* TestProjectPreviewTableViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectPreviewTableViewModel.h; sourceTree = "<group>"; };
+		340F4E822B342FAB006BEB01 /* TestProjectPreviewTableViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectPreviewTableViewModel.m; sourceTree = "<group>"; };
 		3412005729C7FD46007338D0 /* TestProjectNSTextAttachment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProjectNSTextAttachment.h; sourceTree = "<group>"; };
 		3412005829C7FD46007338D0 /* TestProjectNSTextAttachment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProjectNSTextAttachment.m; sourceTree = "<group>"; };
 		3412005A29C843F1007338D0 /* lyf_2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lyf_2.jpeg; sourceTree = "<group>"; };
@@ -1239,6 +1242,8 @@
 				34D52F1229A602A700F5F9C2 /* TestProjectViewModelTableViewCell.m */,
 				34D52F0E29A5EEFA00F5F9C2 /* TestProjectTableViewView.h */,
 				34D52F0F29A5EEFA00F5F9C2 /* TestProjectTableViewView.m */,
+				340F4E812B342FAB006BEB01 /* TestProjectPreviewTableViewModel.h */,
+				340F4E822B342FAB006BEB01 /* TestProjectPreviewTableViewModel.m */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -1990,6 +1995,7 @@
 				3447EE08280E8EBD001AE2F0 /* main.m in Sources */,
 				34D52F0D29A5B4D400F5F9C2 /* TestProjectUIColor.m in Sources */,
 				3484F3282A77BB030080FA5C /* TestProjectFunctionController.m in Sources */,
+				340F4E832B342FAB006BEB01 /* TestProjectPreviewTableViewModel.m in Sources */,
 				344106E229E8027800683950 /* NSMutableArray+TestProject.m in Sources */,
 				349498F62A84E27D006078A2 /* TestProjectWaterfallLayoutVC.m in Sources */,
 				345CDF052A20AFF8003C1FF3 /* TestProjectUIContentSizeCategoryLimit.m in Sources */,

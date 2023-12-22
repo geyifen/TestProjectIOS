@@ -29,6 +29,10 @@
     self.titleLabel.text = viewModel.title;
 }
 
+- (void)didSelectPreviewItem:(id)viewModel {
+    [self.arrowRightBtn setImage:[UIImage systemImageNamed:@"chevron.forward"] forState:UIControlStateNormal];
+}
+
 #pragma mark - TestProjectTabChildViewProtocol
 - (void)tabViewWithSelectItemView:(TestProjectViewTab *)tabView {
     self.bottomLineView.hidden = NO;
@@ -59,8 +63,16 @@
 }
 
 - (void)didTapSectionViewTabForExpand {
+    if (self.bottomLineView.hidden) {
+        return;
+    }
     if (self.delegate && [self.delegate respondsToSelector:@selector(didTapSectionViewTabForExpand:)]) {
-        [self.delegate didTapSectionViewTabForExpand:self];
+        TestProjectPreviewState tabViewState = [self.delegate didTapSectionViewTabForExpand:self];
+        if (tabViewState == TestProjectPreviewStateOfYES) {
+            [self.arrowRightBtn setImage:[UIImage systemImageNamed:@"chevron.forward"] forState:UIControlStateNormal];
+        } else if (tabViewState == TestProjectPreviewStateOfNO) {
+            [self.arrowRightBtn setImage:[UIImage systemImageNamed:@"chevron.down"] forState:UIControlStateNormal];
+        }
     }
 }
 

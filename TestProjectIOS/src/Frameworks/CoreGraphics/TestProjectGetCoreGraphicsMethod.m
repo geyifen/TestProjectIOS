@@ -21,6 +21,7 @@
     return @{
         @"title": @"CoreGraphics",
         @"atIndex": @0,
+        @"abstract": @"CoreGraphics的库",
         @"itemChilds": [self itemChilds],
     };
 }
@@ -29,6 +30,7 @@
     return @{
         @"atIndex": @0,
         @"title": @"CGContext",
+        @"abstract": @"对CGContext使用的文件",
         @"viewKey": @"TestProjectCGContext",
     };
 }
@@ -37,6 +39,7 @@
     return @{
         @"atIndex": @0,
         @"title": @"CIImage",
+        @"abstract": @"对CIImage使用的文件",
         @"viewKey": @"TestProjectCIImage",
     };
 }
@@ -45,6 +48,7 @@
     return @{
         @"atIndex": @0,
         @"title": @"CGImage",
+        @"abstract": @"对CGImage使用的文件",
         @"viewKey": @"TestProjectCGImage",
     };
 }

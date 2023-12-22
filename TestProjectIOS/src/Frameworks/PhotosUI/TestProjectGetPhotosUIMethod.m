@@ -19,6 +19,7 @@
     return @{
         @"title": @"PhotosUI",
         @"atIndex": @0,
+        @"abstract": @"系统图片的库",
         @"itemChilds": [self itemChilds],
     };
 }
@@ -27,6 +28,7 @@
     return @{
         @"atIndex": @0,
         @"title": @"PHPicker",
+        @"abstract": @"系统图片的实例对象类",
         @"viewKey": @"TestProjectPHPicker",
     };
 }

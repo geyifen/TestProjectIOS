@@ -61,6 +61,12 @@
     [self.tabView resetData:self.viewModelList atIndex:self.atIndex];
 }
 
+- (UIViewController *)getChildVCWithViewModel:(id)viewModel {
+    NSString *key = [self vcKeyWithViewModel:viewModel];
+    TestProjectBaseVC *vc = [self.vcMutDic objectForKey:key];
+    return vc;
+}
+
 - (NSString *)vcKeyWithViewModel:(id)viewModel {
     return [NSString stringWithFormat:@"key_%@", viewModel];
 }
@@ -314,6 +320,11 @@
     }
     return YES;
 }
+
+- (void)scrollToIndex:(NSInteger)atIndex {
+    [self.tabView scrollToIndex:atIndex];
+}
+
 #pragma mark - TestProjectTabViewProtocol
 - (void)clickTabView:(TestProjectViewTab *)tabView atIndex:(NSInteger)atIndex viewModel:(id)viewModel {
     UIViewController *childVC = [self addChildControllerAtIndex:atIndex viewModel:viewModel];
