@@ -2,7 +2,7 @@
 //  TestProjectGetPhotosUIMethod.h
 //  TestProjectIOS
 //
-//  Created by zjrcumac on 2023/12/14.
+//  Created by liwenfan on 2023/12/14.
 //
 
 #import "TestProjectGetImplementationMethod.h"
